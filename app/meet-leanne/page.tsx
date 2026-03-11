@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
@@ -27,14 +28,7 @@ export default function MeetLeannePage() {
             {/* Photo */}
             <div>
               <div className="about-photo-frame" style={{ maxWidth: '480px', marginBottom: '2rem' }}>
-                <div className="photo-placeholder">
-                  <svg width="56" height="56" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                  </svg>
-                  <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--pink-deep)' }}>
-                    Leanne · Birth Educator
-                  </span>
-                </div>
+                <Image src="/images/leanne-portrait.jpg" alt="Leanne — birth-hood founder and birth educator" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
               </div>
 
               {/* Quote block */}

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CtaBand from '@/components/CtaBand'
@@ -35,13 +36,13 @@ export default function HomePage() {
         <div className="home-hero-images">
           <div className="hero-slider">
             <div className="hero-slide active">
-              <span className="hero-slide-placeholder">Leanne · Birth Educator</span>
+              <Image src="/images/leanne-portrait.jpg" alt="Leanne — birth-hood founder and birth educator" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} priority />
             </div>
             <div className="hero-slide">
-              <span className="hero-slide-placeholder">Hypnobirthing · Leicester</span>
+              <Image src="/images/hypnobirthing-class.png" alt="Hypnobirthing class in Leicester" fill style={{ objectFit: 'cover' }} />
             </div>
             <div className="hero-slide">
-              <span className="hero-slide-placeholder">Prenatal Yoga · Community</span>
+              <Image src="/images/yoga-class.jpg" alt="Prenatal yoga community class" fill style={{ objectFit: 'cover' }} />
             </div>
           </div>
           <div className="hero-slider-dots">
@@ -158,14 +159,7 @@ export default function HomePage() {
         <div className="about">
           <div className="about-visual">
             <div className="about-photo-frame">
-              <div className="photo-placeholder">
-                <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                </svg>
-                <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>
-                  Leanne · Birth Educator
-                </span>
-              </div>
+              <Image src="/images/leanne-portrait.jpg" alt="Leanne — birth-hood founder" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
             </div>
             <div className="about-accent-box">
               <span className="big-num">200+</span>
