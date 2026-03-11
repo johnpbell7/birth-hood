@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { client, blogPostsQuery } from '@/lib/sanity'
+import { client, blogPostsQuery, isSanityConfigured } from '@/lib/sanity'
 import MarqueeStrip from '@/components/MarqueeStrip'
 
 export const metadata: Metadata = {
@@ -41,7 +41,9 @@ const SAMPLE_POSTS = [
 export default async function BlogPage() {
   let posts: Post[] = []
   try {
-    posts = await client.fetch<Post[]>(blogPostsQuery)
+    if (isSanityConfigured && client) {
+      posts = await client.fetch<Post[]>(blogPostsQuery)
+    }
   } catch {
     // CMS not configured yet — show sample posts
   }

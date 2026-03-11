@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { PortableText } from '@portabletext/react'
-import { client, blogPostQuery } from '@/lib/sanity'
+import { client, blogPostQuery, isSanityConfigured } from '@/lib/sanity'
 
 export const revalidate = 60
 
@@ -11,7 +11,9 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const post = await client.fetch(blogPostQuery, { slug }).catch(() => null)
+  const post = isSanityConfigured && client
+    ? await client.fetch(blogPostQuery, { slug }).catch(() => null)
+    : null
   if (!post) return { title: 'Post not found' }
   return {
     title: post.title,
@@ -21,7 +23,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
-  const post = await client.fetch(blogPostQuery, { slug }).catch(() => null)
+  const post = isSanityConfigured && client
+    ? await client.fetch(blogPostQuery, { slug }).catch(() => null)
+    : null
   if (!post) notFound()
 
   const date = new Date(post.publishedAt).toLocaleDateString('en-GB', {
