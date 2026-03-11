@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Next.js",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "Sanity Studio",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "sanity"],
+      "port": 3333
+    }
+  ]
+}
