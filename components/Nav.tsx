@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -40,7 +41,7 @@ export default function Nav() {
       {/* Main nav */}
       <nav id="nav" className={scrolled ? 'scrolled' : ''}>
         <Link href="/" className="nav-logo">
-          birth<span>-hood</span>
+          <Image src="/images/logo.jpg" alt="birth-hood" width={120} height={120} style={{ width: 'auto', height: '64px', objectFit: 'contain' }} priority />
         </Link>
 
         <ul className="nav-links">
