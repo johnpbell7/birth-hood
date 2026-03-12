@@ -140,7 +140,7 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
   display: grid !important;
   grid-template-columns: 1fr 1fr;
   padding: 0 !important; min-height: 88vh;
-  background: var(--pink-pale);
+  background: var(--pink-deep);
 }
 .home-hero-content {
   display: flex; flex-direction: column; justify-content: center;
@@ -182,11 +182,11 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
 
 /* EYEBROW / HERO */
-.hero-eyebrow { font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: rgba(0,0,0,0.55); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.7rem; }
-.hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: rgba(0,0,0,0.4); flex-shrink: 0; }
-.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(3.2rem,5.5vw,5rem); line-height: 1.0; color: var(--black); font-weight: 900; margin-bottom: 1.2rem; }
-.hero-title em { font-style: italic; color: var(--white); }
-.hero-sub { font-size: 1rem; color: rgba(0,0,0,0.6); line-height: 1.8; max-width: 380px; margin-bottom: 3rem; font-weight: 300; }
+.hero-eyebrow { font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: rgba(255,255,255,0.7); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.7rem; }
+.hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: rgba(255,255,255,0.5); flex-shrink: 0; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(3.2rem,5.5vw,5rem); line-height: 1.0; color: var(--white); font-weight: 900; margin-bottom: 1.2rem; }
+.hero-title em { font-style: italic; color: rgba(255,255,255,0.75); }
+.hero-sub { font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.8; max-width: 380px; margin-bottom: 3rem; font-weight: 300; }
 
 /* BUTTONS */
 .btn-primary {

@@ -50,7 +50,7 @@ export default function HomePage() {
       </section>
 
       {/* MARQUEE */}
-      <MarqueeStrip />
+      <MarqueeStrip dark />
 
       {/* SERVICES */}
       <section id="services" className="services">
