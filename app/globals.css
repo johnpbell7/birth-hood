@@ -264,12 +264,13 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 .stat-label { font-size: 0.76rem; color: rgba(255,255,255,0.5); letter-spacing: 0.04em; font-weight: 300; line-height: 1.4; }
 
 /* SERVICES */
-.services { background: var(--pink-ultra); padding: 6rem 3rem; }
-.services-header { text-align: center; margin-bottom: 4rem; }
+.services { background: var(--white); background-image: url('/images/dots-pattern.png'); background-size: 480px auto; background-repeat: repeat; padding: 6rem 3rem; position: relative; }
+.services::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.82); pointer-events: none; }
+.services-header { text-align: center; margin-bottom: 4rem; position: relative; z-index: 1; }
 .services-header .section-label { justify-content: center; }
 .services-title { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem,4vw,3.5rem); font-weight: 900; line-height: 1.1; }
 .services-title em { font-style: italic; color: var(--pink-deep); }
-.services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; max-width: 1300px; margin: 0 auto; }
+.services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; }
 .service-card { background: var(--white); padding: 2.5rem 2rem; position: relative; overflow: hidden; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; }
 .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--pink); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
 .service-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.07); }
@@ -323,8 +324,9 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 @keyframes glow { 0%,100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.15); opacity: 1; } }
 
 /* FREEBIES TEASER */
-.freebies { background: var(--pink); padding: 5rem 3rem; text-align: center; }
-.freebies-inner { max-width: 680px; margin: 0 auto; }
+.freebies { background: var(--pink); background-image: url('/images/dots-pattern.png'); background-size: 420px auto; background-repeat: repeat; padding: 5rem 3rem; text-align: center; position: relative; }
+.freebies::before { content: ''; position: absolute; inset: 0; background: rgba(232,123,195,0.88); pointer-events: none; }
+.freebies-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
 .freebies-heading { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem,3.5vw,3rem); font-weight: 900; color: var(--black); line-height: 1.1; margin-bottom: 1rem; }
 .freebies-items { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
 .freebie-tag { background: rgba(0,0,0,0.07); color: var(--black); padding: 0.45rem 1rem; border-radius: 2px; font-size: 0.78rem; border: 1px solid rgba(0,0,0,0.13); font-weight: 400; }
