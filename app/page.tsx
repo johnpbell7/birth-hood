@@ -279,6 +279,49 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* INSTAGRAM FEED */}
+      <section className="insta-section">
+        <div className="insta-header">
+          <div>
+            <div className="section-label">Follow along</div>
+            <h2 className="insta-heading">
+              Real moments,<br /><em>real families</em>
+            </h2>
+          </div>
+          <a
+            href="https://www.instagram.com/birthhooduk"
+            className="btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @birthhooduk ↗
+          </a>
+        </div>
+
+        <div className="insta-grid">
+          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-post insta-post--tall" style={{ background: 'var(--pink-pale)' }}>
+            <Image src="/images/leanne-portrait.jpg" alt="Leanne birth-hood" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+            <div className="insta-overlay"><span>♥ Follow</span></div>
+          </a>
+          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-post insta-post--wide" style={{ background: 'var(--pink-pale)' }}>
+            <Image src="/images/hypnobirthing-class.png" alt="Hypnobirthing class" fill style={{ objectFit: 'cover' }} />
+            <div className="insta-overlay"><span>♥ Follow</span></div>
+          </a>
+          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-post" style={{ background: 'var(--pink-pale)' }}>
+            <Image src="/images/doula-support.png" alt="Doula support" fill style={{ objectFit: 'cover' }} />
+            <div className="insta-overlay"><span>♥ Follow</span></div>
+          </a>
+          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-post" style={{ background: 'var(--pink-pale)' }}>
+            <Image src="/images/yoga-class.jpg" alt="Prenatal yoga" fill style={{ objectFit: 'cover' }} />
+            <div className="insta-overlay"><span>♥ Follow</span></div>
+          </a>
+          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-post" style={{ background: 'var(--pink-pale)' }}>
+            <Image src="/images/leanne-speaking.jpg" alt="Leanne speaking" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+            <div className="insta-overlay"><span>♥ Follow</span></div>
+          </a>
+        </div>
+      </section>
+
       {/* BOOKING CTA */}
       <section className="booking-cta">
         <div className="booking-cta-inner">
