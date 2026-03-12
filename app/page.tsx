@@ -33,22 +33,18 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="home-hero-images">
-          <div className="hero-slider">
-            <div className="hero-slide active">
-              <Image src="/images/leanne-portrait.jpg" alt="Leanne — birth-hood founder and birth educator" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} priority />
-            </div>
-            <div className="hero-slide">
-              <Image src="/images/hypnobirthing-class.png" alt="Hypnobirthing class in Leicester" fill style={{ objectFit: 'cover' }} />
-            </div>
-            <div className="hero-slide">
-              <Image src="/images/yoga-class.jpg" alt="Prenatal yoga community class" fill style={{ objectFit: 'cover' }} />
-            </div>
+        <div className="hero-photo-collage">
+          <div className="hero-frame hero-frame-1">
+            <Image src="/images/leanne-portrait.jpg" alt="Leanne — birth-hood founder" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} priority />
           </div>
-          <div className="hero-slider-dots">
-            <button className="hero-dot active" aria-label="Slide 1" />
-            <button className="hero-dot" aria-label="Slide 2" />
-            <button className="hero-dot" aria-label="Slide 3" />
+          <div className="hero-frame hero-frame-2">
+            <Image src="/images/hypnobirthing-class.png" alt="Hypnobirthing class in Leicester" fill style={{ objectFit: 'cover' }} />
+          </div>
+          <div className="hero-frame hero-frame-3">
+            <Image src="/images/yoga-class.jpg" alt="Prenatal yoga class" fill style={{ objectFit: 'cover' }} />
+          </div>
+          <div className="hero-frame hero-frame-4">
+            <Image src="/images/leanne-speaking.jpg" alt="Leanne speaking at a birth event" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
           </div>
         </div>
       </section>
