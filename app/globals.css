@@ -65,7 +65,7 @@ body::after {
 nav {
   position: fixed; top: 36px; left: 0; right: 0; z-index: 200;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 1.4rem 3rem;
+  padding: 0.5rem 3rem;
   background: rgba(255,255,255,0.97);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(232,123,195,0.25);
@@ -452,7 +452,7 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 
 /* RESPONSIVE */
 @media (max-width: 960px) {
-  nav { padding: 1rem 1.5rem; top: 32px; }
+  nav { padding: 0.4rem 1.5rem; top: 32px; }
   .top-bar-inner { padding: 0 1.5rem; }
   .top-bar-insured { display: none; }
   .page-hero { padding: 8rem 1.5rem 4rem; }
