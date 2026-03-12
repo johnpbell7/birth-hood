@@ -459,6 +459,13 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .nav-links { display: none; }
   .nav-ham { display: flex; }
   .home-hero-split { grid-template-columns: 1fr; min-height: auto; }
+  .home-hero-split::after {
+    background-size: 340px auto, 200px auto;
+    -webkit-mask-image: linear-gradient(to top, black 0%, black 30%, transparent 65%);
+    mask-image: linear-gradient(to top, black 0%, black 30%, transparent 65%);
+    background-position: center bottom, center bottom;
+    opacity: 0.15;
+  }
   .home-hero-content { padding: 9rem 1.5rem 3rem; }
   .hero-photo-collage { padding: 2rem 1.2rem 3rem; gap: 0.8rem; }
   .hero-frame-1 { height: 160px; margin-top: 1rem; }
