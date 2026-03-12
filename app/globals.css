@@ -144,7 +144,7 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 }
 .home-hero-content {
   display: flex; flex-direction: column; justify-content: center;
-  padding: 12rem 3.5rem 5rem 3rem;
+  padding: 12rem 3.5rem 5rem 6rem;
   max-width: none !important; margin: 0 !important;
 }
 
@@ -152,20 +152,22 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 .hero-photo-collage {
   position: relative;
   display: flex; align-items: center; justify-content: center;
-  min-height: 520px;
+  min-height: 640px;
   padding: 4rem 2rem;
 }
 .hero-frame {
   position: absolute;
   border-radius: 6px;
   overflow: hidden;
-  border: 6px solid var(--white);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  border: 7px solid var(--white);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.hero-frame-1 { width: 210px; height: 270px; top: 12%; left: 8%;  transform: rotate(-5deg); z-index: 3; }
-.hero-frame-2 { width: 175px; height: 220px; top: 8%;  left: 45%; transform: rotate(4deg);  z-index: 4; }
-.hero-frame-3 { width: 190px; height: 245px; top: 44%; left: 22%; transform: rotate(-3deg); z-index: 2; }
-.hero-frame-4 { width: 150px; height: 195px; top: 42%; left: 60%; transform: rotate(6deg);  z-index: 5; }
+.hero-frame:hover { transform: rotate(0deg) scale(1.04) !important; box-shadow: 0 24px 60px rgba(0,0,0,0.22); z-index: 10 !important; }
+.hero-frame-1 { width: 270px; height: 340px; top: 8%;  left: 4%;  transform: rotate(-5deg); z-index: 3; }
+.hero-frame-2 { width: 230px; height: 285px; top: 5%;  left: 44%; transform: rotate(4deg);  z-index: 4; }
+.hero-frame-3 { width: 250px; height: 315px; top: 46%; left: 18%; transform: rotate(-3deg); z-index: 2; }
+.hero-frame-4 { width: 200px; height: 255px; top: 43%; left: 62%; transform: rotate(6deg);  z-index: 5; }
 
 /* PAGE HERO */
 .page-hero { background: var(--pink); padding: 12rem 3rem 5rem; position: relative; overflow: hidden; }
