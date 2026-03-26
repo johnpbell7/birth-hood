@@ -16,6 +16,8 @@ export default function MeetLeannePage() {
         eyebrow="Your guide"
         title={<>Meet <em>Leanne</em></>}
         subtitle="Certified hypnobirthing practitioner, birth doula, yoga teacher, and passionate advocate for positive birth experiences."
+        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
       />
 
       <MarqueeStrip />

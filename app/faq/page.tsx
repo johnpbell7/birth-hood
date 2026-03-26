@@ -114,6 +114,8 @@ export default function FaqPage() {
         eyebrow="Got questions?"
         title={<>Frequently Asked <em>Questions</em></>}
         subtitle="Everything you need to know about hypnobirthing, doula support, yoga and working with Leanne."
+        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img2={{ src: '/images/yoga-class.jpg', alt: 'Prenatal yoga class' }}
       />
 
       <MarqueeStrip />

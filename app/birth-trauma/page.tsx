@@ -14,6 +14,8 @@ export default function BirthTraumaPage() {
         eyebrow="Healing is possible."
         title={<>Birth <em>Trauma</em> Support</>}
         subtitle="Whether your birth was frightening, overwhelming or just not what you hoped — your feelings are valid, and you don't have to carry them alone."
+        img1={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
+        img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         actions={
           <a
             href="https://calendly.com/birthhood"

@@ -14,6 +14,8 @@ export default function SessionOutlinesPage() {
         eyebrow="Hypnobirthing course"
         title={<>Session <em>Outlines</em></>}
         subtitle="A detailed breakdown of everything covered in the four-session hypnobirthing course."
+        img1={{ src: '/images/hypnobirthing-class.png', alt: 'Hypnobirthing class' }}
+        img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
         actions={
           <Link href="/course-info" className="btn-primary">
             View Course Dates

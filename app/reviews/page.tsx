@@ -71,6 +71,8 @@ export default function ReviewsPage() {
         eyebrow="What clients say"
         title={<>Real <em>Reviews</em></>}
         subtitle="From real clients, unfiltered and unedited. These words mean everything."
+        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img2={{ src: '/images/yoga-class.jpg', alt: 'Prenatal yoga class' }}
       />
 
       <MarqueeStrip />

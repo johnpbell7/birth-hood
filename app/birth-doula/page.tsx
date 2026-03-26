@@ -15,6 +15,8 @@ export default function BirthDoulaPage() {
         eyebrow="Professional birth support"
         title={<>Birth <em>Doula</em> Support</>}
         subtitle="Continuous, compassionate non-medical support before, during and after your birth."
+        img1={{ src: '/images/doula-support.png', alt: 'Doula support' }}
+        img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         actions={
           <a
             href="https://calendly.com/birthhood"

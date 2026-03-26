@@ -14,6 +14,8 @@ export default function VirtualDoulaPage() {
         eyebrow="Support wherever you are"
         title={<>Virtual <em>Doula</em></>}
         subtitle="Full doula support online — from antenatal preparation through to postnatal care, without leaving your home."
+        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
         actions={
           <a
             href="https://calendly.com/birthhood"

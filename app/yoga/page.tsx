@@ -34,6 +34,8 @@ export default function YogaPage() {
         eyebrow="Move. Breathe. Connect."
         title={<>Prenatal <em>Yoga</em></>}
         subtitle="Gentle, evidence-based prenatal yoga designed for all stages of pregnancy. Nourish your body, calm your mind and prepare for birth."
+        img1={{ src: '/images/yoga-class.jpg', alt: 'Prenatal yoga class' }}
+        img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         actions={
           <a
             href="https://calendly.com/birthhood"
