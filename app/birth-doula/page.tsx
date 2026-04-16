@@ -188,7 +188,7 @@ export default function BirthDoulaPage() {
       </section>
 
       {/* PACKAGES / INVESTMENT */}
-      <section className="section-pad" style={{ background: 'var(--pink-pale)' }}>
+      <section className="section-pad">
         <div className="wrap">
           <div className="section-label">Investment</div>
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.1 }}>
