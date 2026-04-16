@@ -29,7 +29,7 @@ export default function TermsPage() {
 
             <h3>1.1 Securing a place</h3>
             <p>
-              All bookings are confirmed on receipt of a 50% non-refundable deposit. Your place
+              All bookings are confirmed on receipt of a £50 non-refundable deposit. Your place
               is not secured until the deposit has been received. The remaining balance is due at
               the start of your first session (or, for doula services, at the beginning of the
               on-call period at 39 weeks of pregnancy).
@@ -58,7 +58,7 @@ export default function TermsPage() {
             <ul>
               <li>
                 <strong>14 or more days before the start date:</strong> Full refund of any amounts
-                paid beyond the initial 50% deposit. The deposit itself is non-refundable.
+                paid beyond the initial £50 deposit. The deposit itself is non-refundable.
               </li>
               <li>
                 <strong>7–14 days before the start date:</strong> 50% refund of the total amount

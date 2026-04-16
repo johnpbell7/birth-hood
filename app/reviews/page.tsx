@@ -66,15 +66,11 @@ export default function ReviewsPage() {
             <div>
               <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '5rem', color: 'var(--black)', lineHeight: 1 }}>5.0</div>
               <div style={{ color: 'var(--pink)', fontSize: '1.4rem', letterSpacing: '0.15em', margin: '0.3rem 0' }}>★★★★★</div>
-              <div style={{ fontSize: '0.78rem', color: 'var(--grey-mid)', fontWeight: 300, letterSpacing: '0.05em' }}>Overall rating</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--grey-mid)', fontWeight: 300, letterSpacing: '0.05em' }}>5 Star rated on Google</div>
             </div>
             <div>
-              <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '5rem', color: 'var(--black)', lineHeight: 1 }}>50+</div>
-              <div style={{ fontSize: '0.78rem', color: 'var(--grey-mid)', fontWeight: 300, letterSpacing: '0.05em', marginTop: '0.3rem' }}>Verified reviews</div>
-            </div>
-            <div>
-              <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '5rem', color: 'var(--black)', lineHeight: 1 }}>200+</div>
-              <div style={{ fontSize: '0.78rem', color: 'var(--grey-mid)', fontWeight: 300, letterSpacing: '0.05em', marginTop: '0.3rem' }}>Families supported</div>
+              <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '5rem', color: 'var(--black)', lineHeight: 1 }}>100's</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--grey-mid)', fontWeight: 300, letterSpacing: '0.05em', marginTop: '0.3rem' }}>of families supported</div>
             </div>
           </div>
         </div>
@@ -116,14 +112,6 @@ export default function ReviewsPage() {
               rel="noopener noreferrer"
             >
               Leave a Google Review
-            </a>
-            <a
-              href="https://doula.org.uk"
-              className="btn-outline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Leave a Doula UK Review
             </a>
           </div>
         </div>

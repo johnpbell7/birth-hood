@@ -94,8 +94,8 @@ export default function BirthDoulaPage() {
                   <div className="stat-label">Less likely to have a negative birth experience</div>
                 </div>
                 <div className="stat-card">
-                  <div className="stat-number">200+</div>
-                  <div className="stat-label">Families supported by Leanne</div>
+                  <div className="stat-number">100's</div>
+                  <div className="stat-label">of families supported by Leanne</div>
                 </div>
               </div>
             </div>

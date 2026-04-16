@@ -97,12 +97,12 @@ export default function HypnobirthingPage() {
                   <div className="stat-label">Fewer requests for pain relief (Cochrane Review)</div>
                 </div>
                 <div className="stat-card">
-                  <div className="stat-number">200+</div>
-                  <div className="stat-label">Families supported by Leanne</div>
+                  <div className="stat-number">100's</div>
+                  <div className="stat-label">of families supported by Leanne</div>
                 </div>
                 <div className="stat-card">
                   <div className="stat-number">5★</div>
-                  <div className="stat-label">Rated 5 stars from 50+ reviews</div>
+                  <div className="stat-label">5 Star rated on Google</div>
                 </div>
                 <div className="stat-card">
                   <div className="stat-number">5+</div>

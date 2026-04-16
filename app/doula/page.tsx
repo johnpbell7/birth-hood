@@ -115,7 +115,7 @@ export default function DoulaPage() {
                 Virtual Doula
               </h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem' }}>
-                Full doula support delivered entirely online — perfect for those outside Leicester, expats,
+                Full doula support delivered entirely online — perfect for those outside NW Leicestershire, expats,
                 or anyone who prefers remote sessions.
               </p>
               <ul style={{ listStyle: 'none', marginBottom: '1.5rem' }}>

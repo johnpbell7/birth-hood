@@ -137,7 +137,7 @@ export default function VirtualDoulaPage() {
           </h2>
           <div className="grid-2" style={{ gap: '1.5rem' }}>
             {[
-              { label: 'Lives outside Leicester', desc: 'Get full doula support wherever you are in the UK or internationally.' },
+              { label: 'Lives outside NW Leicestershire', desc: 'Get full doula support wherever you are in the UK or internationally.' },
               { label: 'Prefers the comfort of home', desc: 'All sessions happen in your own space — comfortable, convenient, no travel.' },
               { label: 'Is looking for affordable support', desc: 'Virtual packages are more accessible whilst maintaining the same quality of care.' },
               { label: 'Is an expat or living abroad', desc: 'Get full doula support wherever you are in the world — online sessions work across time zones.' },

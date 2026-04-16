@@ -5,7 +5,7 @@ import MarqueeStrip from '@/components/MarqueeStrip'
 import CtaBand from '@/components/CtaBand'
 
 export const metadata: Metadata = {
-  title: 'Hypnobirthing, Doula & Prenatal Yoga | Leicester & Online',
+  title: 'Hypnobirthing, Doula & Prenatal Yoga | NW Leicestershire & Online',
 }
 
 export default function HomePage() {
@@ -14,7 +14,7 @@ export default function HomePage() {
       {/* HOME HERO */}
       <section className="home-hero-split">
         <div className="home-hero-content">
-          <div className="hero-eyebrow">Leicester · Midlands · Online</div>
+          <div className="hero-eyebrow">NW Leicestershire · Midlands · Online</div>
           <h1 className="hero-title">Your birth,<br /><em>your way.</em></h1>
           <p className="hero-sub">
             Hypnobirthing, Doula support and Yoga — helping you feel powerful, prepared and genuinely
@@ -158,8 +158,8 @@ export default function HomePage() {
               <Image src="/images/leanne-portrait.jpg" alt="Leanne — birth-hood founder" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
             </div>
             <div className="about-accent-box">
-              <span className="big-num">200+</span>
-              <span className="big-label">Families supported</span>
+              <span className="big-num">100's</span>
+              <span className="big-label">of families supported</span>
             </div>
           </div>
 

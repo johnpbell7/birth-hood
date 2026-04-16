@@ -119,27 +119,27 @@ export default function DoulaFeedbackPage() {
                 </a>
               </div>
 
-              {/* Doula UK */}
+              {/* Facebook */}
               <div className="card" style={{ textAlign: 'center', padding: '2.5rem 2rem' }}>
                 <div style={{ marginBottom: '1rem', color: 'var(--pink-deep)' }}>
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ margin: '0 auto', display: 'block' }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
                   </svg>
                 </div>
                 <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.7rem' }}>
-                  Doula UK Review
+                  Facebook Review
                 </h3>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.85rem', lineHeight: 1.7, fontWeight: 300, marginBottom: '1.5rem' }}>
-                  Leave a review on the Doula UK directory to support my professional profile.
+                  Leave a review on the birth-hood Facebook page to help other families find support.
                 </p>
                 <a
-                  href="https://doula.org.uk"
+                  href="https://www.facebook.com/Birthhooduk"
                   className="btn-outline"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ display: 'block' }}
                 >
-                  Leave Doula UK Review
+                  Leave Facebook Review
                 </a>
               </div>
             </div>

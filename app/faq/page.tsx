@@ -69,7 +69,7 @@ const doulaFaqs = [
   },
   {
     q: 'What if my labour is very fast?',
-    a: 'I will always do everything I can to be with you, and I live within the Leicester area so can typically arrive quickly. In the event your birth is very fast, I will support you and your partner by phone until I arrive. The breathing and relaxation techniques you\'ll have practised will be invaluable in this situation.',
+    a: 'I will always do everything I can to be with you, and I live within the NW Leicestershire area so can typically arrive quickly. In the event your birth is very fast, I will support you and your partner by phone until I arrive. The breathing and relaxation techniques you\'ll have practised will be invaluable in this situation.',
   },
   {
     q: 'Does having a doula mean my midwife will be less involved?',
