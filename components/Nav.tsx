@@ -7,6 +7,9 @@ import Image from 'next/image'
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [mobOpen, setMobOpen] = useState(false)
+  const [mobDoula, setMobDoula] = useState(false)
+  const [mobHypno, setMobHypno] = useState(false)
+  const [mobMore, setMobMore] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -91,28 +94,56 @@ export default function Nav() {
       {/* Mobile menu */}
       <div id="mob" className={`mob-menu${mobOpen ? ' open' : ''}`}>
         <button className="mob-close" onClick={() => setMobOpen(false)} aria-label="Close menu">✕</button>
-        {[
-          ['/', 'Home'],
-          ['/meet-leanne', 'Meet Leanne'],
-          ['/doula', 'Doula Services'],
-          ['/birth-doula', 'Birth Doula'],
-          ['/virtual-doula', 'Virtual Doula'],
-          ['/postnatal-doula', 'Postnatal Doula'],
-          ['/hypnobirthing', 'Hypnobirthing'],
-          ['/course-info', 'Course Dates'],
-          ['/birth-trauma', 'Birth Trauma'],
-          ['/yoga', 'Prenatal Yoga'],
-          ['/podcast', 'Dou-La-La Podcast'],
-          ['/masterclass', 'Masterclass'],
-          ['/blog', 'Blog'],
-          ['/booking', 'Booking'],
-          ['/reviews', 'Reviews'],
-          ['/freebies', 'Free Resources'],
-          ['/faq', 'FAQ'],
-          ['/contact', 'Contact'],
-        ].map(([href, label]) => (
-          <Link key={href} href={href} onClick={() => setMobOpen(false)}>{label}</Link>
-        ))}
+
+        <Link href="/" onClick={() => setMobOpen(false)}>Home</Link>
+        <Link href="/meet-leanne" onClick={() => setMobOpen(false)}>Meet Leanne</Link>
+
+        {/* Doula dropdown */}
+        <button className="mob-section-toggle" onClick={() => setMobDoula(!mobDoula)}>
+          Doula {mobDoula ? '▴' : '▾'}
+        </button>
+        {mobDoula && (
+          <div className="mob-sub-links">
+            <Link href="/doula" onClick={() => setMobOpen(false)}>All Doula Services</Link>
+            <Link href="/birth-doula" onClick={() => setMobOpen(false)}>Birth Doula</Link>
+            <Link href="/postnatal-doula" onClick={() => setMobOpen(false)}>Postnatal Doula</Link>
+            <Link href="/virtual-doula" onClick={() => setMobOpen(false)}>Virtual Doula</Link>
+            <Link href="/doula-feedback" onClick={() => setMobOpen(false)}>Doula Feedback</Link>
+          </div>
+        )}
+
+        {/* Hypnobirthing dropdown */}
+        <button className="mob-section-toggle" onClick={() => setMobHypno(!mobHypno)}>
+          Hypnobirthing {mobHypno ? '▴' : '▾'}
+        </button>
+        {mobHypno && (
+          <div className="mob-sub-links">
+            <Link href="/hypnobirthing" onClick={() => setMobOpen(false)}>About Hypnobirthing</Link>
+            <Link href="/course-info" onClick={() => setMobOpen(false)}>Course Info &amp; Dates</Link>
+            <Link href="/session-outlines" onClick={() => setMobOpen(false)}>Session Outlines</Link>
+          </div>
+        )}
+
+        <Link href="/birth-trauma" onClick={() => setMobOpen(false)}>Birth Trauma</Link>
+        <Link href="/yoga" onClick={() => setMobOpen(false)}>Yoga</Link>
+        <Link href="/podcast" onClick={() => setMobOpen(false)}>Dou-La-La Podcast</Link>
+
+        {/* More dropdown */}
+        <button className="mob-section-toggle" onClick={() => setMobMore(!mobMore)}>
+          More {mobMore ? '▴' : '▾'}
+        </button>
+        {mobMore && (
+          <div className="mob-sub-links">
+            <Link href="/blog" onClick={() => setMobOpen(false)}>Blog</Link>
+            <Link href="/booking" onClick={() => setMobOpen(false)}>Booking</Link>
+            <Link href="/reviews" onClick={() => setMobOpen(false)}>Reviews</Link>
+            <Link href="/freebies" onClick={() => setMobOpen(false)}>Free Resources</Link>
+            <Link href="/faq" onClick={() => setMobOpen(false)}>FAQ</Link>
+            <Link href="/contact" onClick={() => setMobOpen(false)}>Contact</Link>
+          </div>
+        )}
+
+        <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="mob-cta" onClick={() => setMobOpen(false)}>Book Now</a>
       </div>
     </>
   )
