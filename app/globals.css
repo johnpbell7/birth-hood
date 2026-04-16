@@ -336,7 +336,7 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 .testimonials-title em { font-style: italic; color: var(--pink); }
 .stars { color: var(--pink); font-size: 1.05rem; letter-spacing: 0.1em; }
 .stars-label { font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 0.3rem; }
-.reviews-track { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; max-width: 1200px; margin: 0 auto; }
+.reviews-track { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
 .review-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(232,123,195,0.1); padding: 2.2rem 2rem; position: relative; transition: background 0.3s; }
 .review-card:hover { background: rgba(232,123,195,0.05); }
 .review-card::before { content: '\201C'; font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--pink); opacity: 0.2; position: absolute; top: 0.5rem; left: 1.2rem; line-height: 1; pointer-events: none; }
