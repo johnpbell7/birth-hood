@@ -50,43 +50,35 @@ export default function YogaPage() {
 
       <MarqueeStrip />
 
-      {/* WHAT TO EXPECT */}
+      {/* PREGNANCY YOGA */}
       <section className="section-pad">
         <div className="wrap">
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
-              <div className="section-label">What to expect</div>
+              <div className="section-label">Pregnancy Yoga</div>
               <h2>birth-hood yoga</h2>
-              <p style={{ fontStyle: 'italic', color: 'var(--pink-deep)', marginBottom: '0.5rem', fontWeight: 500 }}>
-                Prenatal/Postnatal and Parent and Yoga Classes in NW Leicestershire
+              <p>
+                Pregnancy yoga has many benefits, both physical and emotional, these include providing
+                a safe space to relaxation and connection to your baby, meeting other new mums to be,
+                help manage anxiety, improved sleep, improved mobility, stamina and strength, plus so
+                much more!
               </p>
               <p>
-                Leanne&apos;s prenatal yoga classes are gentle, welcoming and specifically designed for
-                pregnant bodies. Drawing on her 85hr Pregnancy/Postnatal Yoga training with Sally
-                Parkes, each class combines breathwork, gentle movement, deep relaxation and community
-                — creating a beautiful space for you to connect with your body and your baby.
+                Each session will include Pregnancy Yoga activities suitable for both second and third
+                trimester (with adaptations to suit most contraindications in pregnancy).
               </p>
               <p>
-                Classes are suitable for all stages of pregnancy and all levels of yoga experience —
-                including complete beginners. Modifications are always offered, and you are encouraged
-                to move at your own pace and honour what your body needs on any given day.
+                The class is 60 minutes which includes Yoga, Relaxation and weekly birth preparation
+                themes (please see below).
               </p>
               <p>
-                Each session includes a guided relaxation and breathing section — directly preparing
-                your body and mind for birth. You may find some of the techniques feel familiar if
-                you&apos;ve also done hypnobirthing.
+                The course cost varies depending on the length of the course, but includes use of all
+                equipment (though feel free to bring own mat etc).
               </p>
-
-              <h3>Each class includes</h3>
-              <ul>
-                <li>Gentle warm-up and body awareness</li>
-                <li>Adapted asana (poses) for pregnancy</li>
-                <li>Pranayama (breathing) techniques</li>
-                <li>Pelvic floor awareness and activation</li>
-                <li>Birth preparation positions and movements</li>
-                <li>Guided relaxation and visualisation</li>
-                <li>Community time and pregnancy conversation</li>
-              </ul>
+              <p>
+                If you wish to join as a one off session (<strong>\u00A310 PAYG</strong>), please contact
+                me for space availability. Please drop me a message if you want to chat anything through.
+              </p>
 
               <h3>Weekly birth preparation themes</h3>
               <ul>
@@ -99,24 +91,23 @@ export default function YogaPage() {
               </ul>
             </div>
 
-            {/* Benefits */}
             <div>
               <div className="section-label" style={{ marginBottom: '1.5rem' }}>Benefits of prenatal yoga</div>
               <div className="stat-grid">
                 <div className="stat-card">
-                  <div className="stat-number">↓</div>
+                  <div className="stat-number">\u2193</div>
                   <div className="stat-label">Reduces anxiety and stress during pregnancy</div>
                 </div>
                 <div className="stat-card">
-                  <div className="stat-number">↑</div>
+                  <div className="stat-number">\u2191</div>
                   <div className="stat-label">Improves sleep quality and physical comfort</div>
                 </div>
                 <div className="stat-card">
-                  <div className="stat-number">♥</div>
+                  <div className="stat-number">\u2665</div>
                   <div className="stat-label">Strengthens the mind-body connection</div>
                 </div>
                 <div className="stat-card">
-                  <div className="stat-number">✿</div>
+                  <div className="stat-number">\u273F</div>
                   <div className="stat-label">Builds community with other expectant parents</div>
                 </div>
               </div>
@@ -129,6 +120,85 @@ export default function YogaPage() {
                   support you at every stage.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PARENT AND BABY YOGA */}
+      <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
+        <div className="wrap">
+          <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
+            <div className="prose">
+              <div className="section-label">Parent &amp; Baby Yoga</div>
+              <h2>Connect with your body and your baby</h2>
+              <p>
+                Each session will include Postnatal yoga, Baby Yoga and Parent and Baby Yoga activities,
+                both allowing time to connect with your body and your baby.
+              </p>
+              <p>
+                The class is 90 minutes which includes Yoga, Relaxation/Story time and Social time with
+                refreshments, to chat all things postnatal and socialise with other parents!
+              </p>
+              <p>
+                Course cost varies depending on the length of the course but includes use of all
+                equipment (though feel free to bring own mat etc) and refreshments (please let me know
+                of any allergies).
+              </p>
+              <p>
+                You will also get yourselves a snazzy birth-hood Yoga Handbook to use outside of the
+                sessions!
+              </p>
+              <p>
+                If you wish to join as a one off session, please contact me for space availability.
+              </p>
+              <p>
+                There will be plenty of age appropriate toys to help stimulate and distract your baby
+                also! Please bring your own baby blankets.
+              </p>
+            </div>
+
+            <div>
+              <div className="card card-pink" style={{ marginBottom: '1.5rem' }}>
+                <div className="section-label" style={{ marginBottom: '0.8rem' }}>When can I start?</div>
+                <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
+                  This is suitable for babies who are not yet mobile, and parents who are{' '}
+                  <strong style={{ color: 'var(--black)' }}>6 weeks postpartum</strong> (vaginal birth) and{' '}
+                  <strong style={{ color: 'var(--black)' }}>12 weeks postpartum</strong> for caesarean or
+                  instrumental birth / 3rd or 4th degree tears. Please drop me a message if you want to
+                  chat anything through.
+                </p>
+              </div>
+
+              <div className="card">
+                <div className="section-label" style={{ marginBottom: '0.8rem' }}>What&apos;s included</div>
+                <ul style={{ listStyle: 'none' }}>
+                  {[
+                    '90 minute sessions',
+                    'Postnatal yoga, Baby Yoga & Parent and Baby Yoga',
+                    'Relaxation / Story time',
+                    'Social time with refreshments',
+                    'birth-hood Yoga Handbook',
+                    'Age appropriate toys provided',
+                    'All equipment included',
+                  ].map(item => (
+                    <li key={item} style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', paddingLeft: '1.2rem', position: 'relative', marginBottom: '0.5rem', lineHeight: 1.6, fontWeight: 300 }}>
+                      <span style={{ position: 'absolute', left: 0, top: '0.55em', width: '5px', height: '5px', borderRadius: '50%', background: 'var(--pink)', display: 'block' }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <a
+                href="https://calendly.com/birthhood"
+                className="btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'block', textAlign: 'center', marginTop: '1.5rem' }}
+              >
+                Enquire Now
+              </a>
             </div>
           </div>
         </div>
