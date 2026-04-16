@@ -83,7 +83,7 @@ export default function ReviewsPage() {
       {/* REVIEWS GRID */}
       <section className="section-pad" style={{ background: 'var(--black)' }}>
         <div className="wrap">
-          <div className="reviews-track" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div className="reviews-track">
             {reviews.map((review, i) => (
               <div key={i} className="review-card">
                 <div style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--pink)', marginBottom: '1rem', opacity: 0.7 }}>
