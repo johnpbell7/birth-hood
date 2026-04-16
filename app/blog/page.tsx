@@ -67,11 +67,7 @@ export default async function BlogPage() {
 
       <section className="section-pad">
         <div className="wrap">
-          {isSample && (
-            <div style={{ background: 'var(--pink-ultra)', border: '1px solid rgba(232,123,195,0.4)', borderRadius: '3px', padding: '1rem 1.5rem', marginBottom: '3rem', fontSize: '0.85rem', color: 'var(--grey-mid)' }}>
-              <strong>CMS not yet connected.</strong> Showing sample posts. Set up Sanity and add <code>NEXT_PUBLIC_SANITY_PROJECT_ID</code> to your environment to enable real blog content.
-            </div>
-          )}
+          {/* CMS notice hidden — sample posts shown until Sanity is connected */}
 
           {/* Categories */}
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
