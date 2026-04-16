@@ -54,7 +54,12 @@ export default function BirthTraumaPage() {
                 experience deserves to be acknowledged.
               </p>
 
-              <h2>Signs you may be affected</h2>
+              <h2>What are feelings of traumatic birth?</h2>
+              <p>
+                Feelings of traumatic birth may look like, but not limited to, hypervigilance,
+                tearfulness, flashbacks, panic, changes to relationships, numbness surrounding the
+                event and anger.
+              </p>
               <p>
                 Birth trauma can present in many different ways. You may recognise some of the following:
               </p>
@@ -71,6 +76,14 @@ export default function BirthTraumaPage() {
               <p>
                 If any of these resonate, please know that help is available — and that healing
                 is absolutely possible.
+              </p>
+
+              <h2>Why does it happen?</h2>
+              <p>
+                The fight or flight response is one of our most primitive survival systems and is
+                designed to allow us to act in the face of life threatening danger. The highly
+                aroused emotions of fear experienced during the event are &lsquo;frozen&rsquo; in
+                the brain.
               </p>
             </div>
 
@@ -112,48 +125,57 @@ export default function BirthTraumaPage() {
         </div>
       </section>
 
-      {/* HOW LEANNE CAN HELP */}
+      {/* HOW LEANNE CAN HELP — 3 STEP REWIND */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
           <div className="section-label">How I can help</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>
-            Trauma-informed <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>support</em>
+          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '1.5rem', lineHeight: 1.1 }}>
+            The 3 Step <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>Rewind</em>
           </h2>
+
+          <p style={{ color: 'var(--grey-mid)', fontSize: '1rem', lineHeight: 1.8, fontWeight: 300, maxWidth: '700px', marginBottom: '3rem' }}>
+            If this is something you&apos;d like to explore — please contact me for a complimentary
+            consultation. Here we can discuss if this is the right option for you, or if I need to
+            signpost you elsewhere.
+          </p>
 
           <div className="grid-3" style={{ gap: '1.5rem' }}>
             <div className="card">
-              <div className="section-label" style={{ marginBottom: '1rem' }}>Birth story listening</div>
+              <div className="section-label" style={{ marginBottom: '1rem' }}>Session 1 · 1–2 hours</div>
               <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.7rem' }}>
-                A space to be heard
+                Understanding &amp; Relaxation
               </h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
-                Sometimes, the most powerful thing is having someone truly listen to your birth story
-                without judgement, minimising or fixing. Leanne offers a safe, non-judgemental space
-                to share your experience at your own pace.
+                I will ask you some questions about the event and gain an understanding of how it is
+                affecting your life now. We will explore your experience through telling it, and
+                establish how it is affecting your life now. Together we will build a picture of what
+                you would like for the future and what you would like to experience with your symptoms
+                lifted. I will then take you through a guided relaxation and provide you with a
+                recording of this to listen to regularly before session 2.
               </p>
             </div>
 
             <div className="card card-pink">
-              <div className="section-label" style={{ marginBottom: '1rem' }}>Trauma-informed care</div>
+              <div className="section-label" style={{ marginBottom: '1rem' }}>Session 2 · 1 hour</div>
               <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.7rem' }}>
-                Skilled support
+                The Rewind Process
               </h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
-                With specialist perinatal mental health training, Leanne understands the complexity of
-                birth trauma and provides support that is sensitive, gentle and empowering — never
-                retraumatising.
+                We will do the rewind process. I will ease you into a state of relaxation before
+                guiding you through remembering the event in a specific way. You will be able to
+                remain calm and feeling completely safe and secure throughout.
               </p>
             </div>
 
             <div className="card">
-              <div className="section-label" style={{ marginBottom: '1rem' }}>Onward referral</div>
+              <div className="section-label" style={{ marginBottom: '1rem' }}>Session 3 · Up to 1 hour</div>
               <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.7rem' }}>
-                Connecting you to specialists
+                Reflection &amp; Moving Forward
               </h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
-                If Leanne feels you would benefit from specialist psychological support, she can
-                refer you to trusted therapists, EMDR practitioners, Birth Trauma Association
-                resources and NHS services.
+                I will check in with how you have been since session 2 and giving you the opportunity
+                to describe any changes that have taken place. We will then focus on visualising the
+                future and building your confidence in moving forward.
               </p>
             </div>
           </div>

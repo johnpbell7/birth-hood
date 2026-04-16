@@ -52,6 +52,7 @@ export default function Nav() {
               <li><Link href="/doula">All Doula Services</Link></li>
               <li><Link href="/birth-doula">Birth Doula</Link></li>
               <li><Link href="/virtual-doula">Virtual Doula</Link></li>
+              <li><Link href="/postnatal-doula">Postnatal Doula</Link></li>
               <li><Link href="/doula-feedback">Doula Feedback</Link></li>
             </ul>
           </li>
@@ -69,6 +70,7 @@ export default function Nav() {
             <Link href="/blog">More ▾</Link>
             <ul className="nav-drop-menu">
               <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/podcast">Dou-La-La Podcast</Link></li>
               <li><Link href="/reviews">Reviews</Link></li>
               <li><Link href="/masterclass">Masterclass</Link></li>
               <li><Link href="/freebies">Free Resources</Link></li>
@@ -95,12 +97,15 @@ export default function Nav() {
           ['/doula', 'Doula Services'],
           ['/birth-doula', 'Birth Doula'],
           ['/virtual-doula', 'Virtual Doula'],
+          ['/postnatal-doula', 'Postnatal Doula'],
           ['/hypnobirthing', 'Hypnobirthing'],
           ['/course-info', 'Course Dates'],
           ['/birth-trauma', 'Birth Trauma'],
           ['/yoga', 'Prenatal Yoga'],
+          ['/podcast', 'Dou-La-La Podcast'],
           ['/masterclass', 'Masterclass'],
           ['/blog', 'Blog'],
+          ['/booking', 'Booking'],
           ['/reviews', 'Reviews'],
           ['/freebies', 'Free Resources'],
           ['/faq', 'FAQ'],

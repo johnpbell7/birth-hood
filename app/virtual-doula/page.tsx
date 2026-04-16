@@ -69,8 +69,8 @@ export default function VirtualDoulaPage() {
                   <div className="stat-label">Rated by every virtual doula client</div>
                 </div>
                 <div className="stat-card">
-                  <div className="stat-number">POA</div>
-                  <div className="stat-label">Price on application — affordable packages available</div>
+                  <div className="stat-number">£600</div>
+                  <div className="stat-label">Virtual doula package — full support from pregnancy to postnatal</div>
                 </div>
               </div>
             </div>
@@ -161,11 +161,16 @@ export default function VirtualDoulaPage() {
           <div>
             <div className="section-label" style={{ marginBottom: '0.8rem' }}>Investment</div>
             <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.5rem' }}>
-              Price on application
+              Virtual Doula Package: £600
             </h3>
+            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300, maxWidth: '500px', marginBottom: '0.6rem' }}>
+              This service is similar to a birth package, but will be virtual and not face to face, think about having a doula in your pocket!
+            </p>
+            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300, maxWidth: '500px', marginBottom: '0.6rem' }}>
+              It will include 2x virtual antenatal sessions, virtual doula contact throughout pregnancy (9-5 until on call) and during the birth plus a Postnatal debrief and virtual support for 4 weeks post birth.
+            </p>
             <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300, maxWidth: '500px' }}>
-              Virtual doula packages are tailored to your needs and budget. Book a free consultation
-              to discuss pricing and payment plans.
+              This includes full 121 text/call/email support (24/7 from 39 weeks).
             </p>
           </div>
           <a

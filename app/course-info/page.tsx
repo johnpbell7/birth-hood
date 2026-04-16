@@ -138,6 +138,75 @@ export default function CourseInfoPage() {
         </div>
       </section>
 
+      {/* ADDITIONAL COURSE OPTIONS */}
+      <section className="section-pad">
+        <div className="wrap">
+          <div className="section-label">More options</div>
+          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>
+            Specialist <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>courses</em>
+          </h2>
+
+          <div className="grid-2" style={{ gap: '1.5rem' }}>
+            {/* Caesarean Birth Preparation */}
+            <div className="card">
+              <div className="section-label" style={{ marginBottom: '1rem' }}>Caesarean Birth Preparation</div>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
+                Are you planning an elective or having a scheduled caesarean? Not sure what to expect?
+                Want to make it as positive as possible?
+              </p>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
+                Your 3 hour session will include all you need to prepare before, during and post surgery.
+              </p>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.5rem' }}>
+                With Hypnobirthing
+              </p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                <div>
+                  <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '0.25rem' }}>Investment</div>
+                  <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', fontWeight: 700 }}>From £145</div>
+                </div>
+                <a
+                  href="https://calendly.com/birthhood"
+                  className="btn-outline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book Now
+                </a>
+              </div>
+            </div>
+
+            {/* Hasty Hypnobirthing */}
+            <div className="card">
+              <div className="section-label" style={{ marginBottom: '1rem' }}>Hasty Hypnobirthing</div>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
+                In a rush? 37 weeks plus?
+              </p>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
+                Learn some basics, have a whistle stop tour and gain your tools for your awesome birth.
+              </p>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.5rem' }}>
+                We&apos;ll cover what hypnobirthing is, breathing, relaxation, birth positions and more!
+              </p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                <div>
+                  <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '0.25rem' }}>Investment</div>
+                  <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', fontWeight: 700 }}>From £145</div>
+                </div>
+                <a
+                  href="https://calendly.com/birthhood"
+                  className="btn-outline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* BOOKING INFO */}
       <section className="section-pad">
         <div className="wrap" style={{ maxWidth: '720px' }}>

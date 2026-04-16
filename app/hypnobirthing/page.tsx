@@ -137,8 +137,8 @@ export default function HypnobirthingPage() {
               <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
                 Group Course
               </div>
-              <div className="price-amount">£350</div>
-              <div className="price-period">per couple · 4 sessions</div>
+              <div className="price-amount">£345</div>
+              <div className="price-period">face to face · 4 sessions</div>
               <ul className="price-features">
                 <li>4 weekly group sessions (2.5hrs each)</li>
                 <li>KGHypnobirthing full programme</li>
@@ -146,6 +146,7 @@ export default function HypnobirthingPage() {
                 <li>Comprehensive course workbook</li>
                 <li>Supportive WhatsApp group</li>
                 <li>Post-birth debrief session</li>
+                <li>Online option available at £295</li>
               </ul>
               <a
                 href="https://calendly.com/birthhood"
@@ -164,12 +165,12 @@ export default function HypnobirthingPage() {
                 Most popular
               </div>
               <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Private Course
+                Private 121 Course
               </div>
               <div className="price-amount">£550</div>
               <div className="price-period">per couple · your schedule</div>
               <ul className="price-features">
-                <li>4 private sessions tailored to you</li>
+                <li>10 hour fully interactive, fully evidence based birth preparation course</li>
                 <li>Flexible scheduling at your home or online</li>
                 <li>Full KGHypnobirthing programme</li>
                 <li>Personalised birth plan support</li>
@@ -193,7 +194,7 @@ export default function HypnobirthingPage() {
               <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
                 Online Course
               </div>
-              <div className="price-amount">£350</div>
+              <div className="price-amount">£295</div>
               <div className="price-period">per couple · fully online</div>
               <ul className="price-features">
                 <li>4 sessions via video call</li>
@@ -215,8 +216,18 @@ export default function HypnobirthingPage() {
             </div>
           </div>
 
+          {/* Antenatal Package upgrade note */}
+          <div className="card card-pink" style={{ marginTop: '2rem' }}>
+            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300 }}>
+              <strong style={{ color: 'var(--black)' }}>Antenatal Package upgrade:</strong>{' '}
+              You can also upgrade a Hypnobirthing package to include virtual doula support throughout pregnancy,
+              following all antenatal appointments etc (not including the birth) as an Antenatal Package{' '}
+              <strong style={{ color: 'var(--black)' }}>(£425)</strong>.
+            </p>
+          </div>
+
           <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--grey-mid)', fontSize: '0.88rem', fontWeight: 300 }}>
-            Payment plans available. Deposit of 50% secures your place.{' '}
+            £50 deposit upon booking. Remainder of payment due before first session.{' '}
             <Link href="/course-info" style={{ color: 'var(--pink-deep)' }}>View current dates →</Link>
           </p>
         </div>

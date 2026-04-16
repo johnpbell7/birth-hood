@@ -9,58 +9,40 @@ export const metadata: Metadata = {
 
 const reviews = [
   {
-    text: 'Leanne was absolutely incredible. Her hypnobirthing course completely changed how I felt about labour — I went from petrified to actually excited. My birth was everything I hoped for.',
-    author: 'Sophie',
-    location: 'Loughborough',
+    text: 'We instantly felt at ease and comfortable and thoroughly enjoyed learning about the benefits of Hypnobirthing. We are due to have our first baby in 6 weeks and Leanne helped us to feel nothing but calm and excited for this completely unknown experience coming up.',
+    author: 'Client',
+    location: 'Leicestershire',
     service: 'Hypnobirthing',
   },
   {
-    text: 'Having Leanne as my doula was the best decision I made. She was calm, reassuring and exactly who I needed in that room. I couldn\'t have done it without her.',
-    author: 'Emma',
+    text: 'Leanne helped us look at birth in a different way to how it can often be portrayed, and we have come away with loads of affirmations and exercises to do that make me feel totally in control and relaxed!',
+    author: 'Client',
+    location: 'Leicestershire',
+    service: 'Hypnobirthing',
+  },
+  {
+    text: "Thank you so much for everything! I've noticed a massive difference in Lucy and I really am excited to support her, and I know how to now! You gave us invaluable information all the way through with reasoning and justifications. We know we have choice and I feel confident now and expressing our choices to the midwife team!",
+    author: 'Birth Partner',
     location: 'Leicester',
+    service: 'Hypnobirthing',
+  },
+  {
+    text: "We went on an antenatal course last week, and honestly found the two hours spent with Leanne today were much more helpful than the seven hours there!",
+    author: 'Client',
+    location: 'Leicestershire',
+    service: 'Hypnobirthing',
+  },
+  {
+    text: "From my first contact with Leanne we just clicked. She supported me through my concern about fibroids, and gave me some brilliant yoga positions to try when my SPD started. She kept in contact through my pregnancy and made me feel like I really had amazing support whenever I needed it. I can't recommend Leanne highly enough, she's a pro at end-to-end care!",
+    author: 'Beka',
+    location: 'Leicestershire',
     service: 'Birth Doula',
   },
   {
-    text: 'The yoga classes were the highlight of my pregnancy. A beautiful mix of movement, breathing and community. I wish I\'d found Leanne sooner!',
-    author: 'Priya',
-    location: 'Nottingham',
-    service: 'Prenatal Yoga',
-  },
-  {
-    text: 'Leanne helped me process a really difficult previous birth. Her sensitivity and knowledge were invaluable. I felt genuinely heard and supported.',
-    author: 'Rachel',
-    location: 'Derby',
-    service: 'Birth Trauma Support',
-  },
-  {
-    text: 'I did the online hypnobirthing course and it was brilliant. Really comprehensive and Leanne\'s passion comes through in every session. My husband and I both felt so much more confident.',
-    author: 'Jess',
-    location: 'Birmingham',
-    service: 'Hypnobirthing',
-  },
-  {
-    text: 'Best money I spent during my entire pregnancy. I cannot recommend Leanne enough. Would recommend to anyone and everyone.',
-    author: 'Charlotte',
-    location: 'Leicester',
-    service: 'Hypnobirthing',
-  },
-  {
-    text: 'Leanne was at my birth for over 12 hours and never once made me feel like I was a burden. She was constant, calm and completely brilliant. My husband is equally grateful.',
-    author: 'Amy',
-    location: 'Coventry',
+    text: "Just incredible! Leanne was amazing from the moment we booked her. She protected my birth space perfectly and advocated for me many times. She was especially helpful when things didn't quite go to plan.",
+    author: 'Bea',
+    location: 'Leicestershire',
     service: 'Birth Doula',
-  },
-  {
-    text: 'I was so nervous about birth and Leanne just completely transformed my perspective. The breathing techniques alone were worth every penny. I used them throughout my entire labour.',
-    author: 'Natasha',
-    location: 'Leicester',
-    service: 'Hypnobirthing',
-  },
-  {
-    text: 'The prenatal yoga community Leanne has built is so special. I made friends I know I\'ll keep forever. The classes themselves were perfect for my changing body.',
-    author: 'Zoe',
-    location: 'Loughborough',
-    service: 'Prenatal Yoga',
   },
 ]
 

@@ -39,6 +39,7 @@ export default function Footer() {
             <li><Link href="/birth-doula">Birth Doula</Link></li>
             <li><Link href="/doula">Doula Services</Link></li>
             <li><Link href="/virtual-doula">Virtual Doula</Link></li>
+            <li><Link href="/postnatal-doula">Postnatal Doula</Link></li>
             <li><Link href="/yoga">Prenatal Yoga</Link></li>
             <li><Link href="/birth-trauma">Birth Trauma</Link></li>
           </ul>
@@ -49,6 +50,7 @@ export default function Footer() {
           <ul className="footer-links">
             <li><Link href="/meet-leanne">Meet Leanne</Link></li>
             <li><Link href="/blog">Blog</Link></li>
+            <li><Link href="/podcast">Podcast</Link></li>
             <li><Link href="/freebies">Freebies</Link></li>
             <li><Link href="/reviews">Reviews</Link></li>
             <li><Link href="/masterclass">Masterclass</Link></li>

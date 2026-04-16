@@ -16,8 +16,62 @@ export default function DoulaFeedbackPage() {
         img2={{ src: '/images/doula-support.png', alt: 'Doula support' }}
       />
 
-      {/* THANK YOU */}
+      {/* INTRO */}
+      <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
+        <div className="wrap" style={{ maxWidth: '720px', textAlign: 'center' }}>
+          <p style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', lineHeight: 1.75, color: 'var(--black)', fontStyle: 'italic', marginBottom: '2rem' }}>
+            &ldquo;Being a doula is an honour and a privilege. Supporting you as you journey through pregnancy, birth and postpartum is something I do not take lightly and to receive the feedback I do is just beyond words.&rdquo;
+          </p>
+          <a
+            href="https://calendly.com/birthhood"
+            className="btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book your FREE Consultation here!
+          </a>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
       <section className="section-pad">
+        <div className="wrap" style={{ maxWidth: '900px' }}>
+          <div className="section-label" style={{ marginBottom: '2rem', justifyContent: 'center' }}>Client testimonials</div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+
+            {/* Testimonial 1 */}
+            <div className="card card-pink" style={{ padding: '2.5rem 2.5rem 2rem' }}>
+              <div style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '1rem', opacity: 0.8 }}>
+                First baby · Homebirth
+              </div>
+              <blockquote style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.05rem', fontStyle: 'italic', lineHeight: 1.8, color: 'var(--black)', margin: 0, marginBottom: '1.25rem' }}>
+                &ldquo;From my first contact with Leanne we just clicked, she&rsquo;s proudly inclusive and has experience in a wide range of pregnancies and birth situations. She supported me through my concern about fibroids, and gave me some brilliant yoga positions to try when my SPD started. She kept in contact through my pregnancy and made me feel like I really had amazing support whenever I needed it. The prenatal sessions were so brilliant to run through my birth plans of a physiological homebirth. Leanne supported me every step of the way and made me feel so confident and excited for my homebirth. She also helped with some latch issues and supported our undisturbed golden hour. It felt so natural having her there and I didn&rsquo;t want her to leave! Post natally, I felt really looked after by Leanne both in person &amp; virtually. I can&rsquo;t recommend Leanne highly enough, she&rsquo;s a pro at end-to-end care and if you&rsquo;re reading this, book her!!!&rdquo;
+              </blockquote>
+              <div style={{ fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--pink-deep)' }}>
+                Beka &amp; Matt ★★★★★
+              </div>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="card" style={{ padding: '2.5rem 2.5rem 2rem' }}>
+              <div style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '1rem', opacity: 0.8 }}>
+                Second baby · Homebirth
+              </div>
+              <blockquote style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.05rem', fontStyle: 'italic', lineHeight: 1.8, color: 'var(--black)', margin: 0, marginBottom: '1.25rem' }}>
+                &ldquo;Just incredible! Leanne was amazing from the moment we booked her. She was always on hand for any questions and me and my husband loved our antenatal sessions with her and getting to know her, gaining knowledge. Postnatally she was excellent, always a message away and for our sessions. However, I couldn&rsquo;t have done the birth without her. She protected my birth space perfectly and advocated for me many times. She was especially helpful when things didn&rsquo;t quite go to plan.&rdquo;
+              </blockquote>
+              <div style={{ fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--pink-deep)' }}>
+                Bea &amp; Duane ★★★★★
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* THANK YOU + REVIEW LINKS */}
+      <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ maxWidth: '720px' }}>
           <div className="prose">
             <h2>Thank you</h2>

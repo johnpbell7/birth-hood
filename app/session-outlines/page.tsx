@@ -65,13 +65,18 @@ export default function SessionOutlinesPage() {
                   </div>
                   <ul style={{ listStyle: 'none' }}>
                     {[
-                      'The physiology of birth — how your body is perfectly designed for this',
-                      'The fear-tension-pain cycle and how to break it',
-                      'Understanding the role of hormones in birth (oxytocin, adrenaline)',
-                      'Why our beliefs and feelings about birth matter',
-                      'Introduction to relaxation and the body&apos;s natural calm state',
-                      'The difference between sensations and pain in birth',
-                      'How to begin building your positive birth mindset',
+                      'Current mindset and why',
+                      'Uterus',
+                      'Science',
+                      'Fear Tension Pain',
+                      'Mind Body Connection',
+                      'Positive mindset',
+                      'Breathing techniques',
+                      'Hypnosis',
+                      'Anchoring',
+                      'Visualisation',
+                      'Affirmations',
+                      'Mp3s',
                     ].map((item, i) => (
                       <li key={i} style={{ fontSize: '0.88rem', color: 'var(--grey-mid)', paddingLeft: '1.4rem', position: 'relative', marginBottom: '0.55rem', lineHeight: 1.65, fontWeight: 300 }}>
                         <span style={{ position: 'absolute', left: 0, top: '0.55em', width: '5px', height: '5px', borderRadius: '50%', background: 'var(--pink)', display: 'block' }} />
@@ -112,13 +117,15 @@ export default function SessionOutlinesPage() {
                   </div>
                   <ul style={{ listStyle: 'none' }}>
                     {[
-                      'Up breathing — for surges in the first stage of labour',
-                      'Down breathing — for the second stage (birth breathing)',
-                      'Deep relaxation techniques and self-hypnosis',
-                      'Visualisation exercises for birth preparation',
-                      'Positive birth affirmations and how to use them',
-                      'Creating and deepening your relaxation anchor',
-                      'Practising the techniques with your birth partner',
+                      'Birth Plans',
+                      'Hormones',
+                      'The Performance',
+                      'Positioning in Pregnancy and Birth',
+                      'Birth Partners',
+                      'Where to have your baby',
+                      'Birthing environment',
+                      'Pelvic Floor',
+                      'Perineal Massage',
                     ].map((item, i) => (
                       <li key={i} style={{ fontSize: '0.88rem', color: 'var(--grey-mid)', paddingLeft: '1.4rem', position: 'relative', marginBottom: '0.55rem', lineHeight: 1.65, fontWeight: 300 }}>
                         <span style={{ position: 'absolute', left: 0, top: '0.55em', width: '5px', height: '5px', borderRadius: '50%', background: 'var(--pink)', display: 'block' }} />
@@ -159,13 +166,20 @@ export default function SessionOutlinesPage() {
                   </div>
                   <ul style={{ listStyle: 'none' }}>
                     {[
-                      'Your rights in the maternity system — what you can and can&apos;t be told',
-                      'Understanding the BRAIN decision-making framework',
-                      'How to write a birth plan that gets read and respected',
-                      'Options for place of birth, pain relief and interventions',
-                      'What happens in a caesarean birth — and how to prepare',
-                      'Working positively with midwives and doctors',
-                      'Creating your perfect birth environment',
+                      'Your Rights',
+                      'Language and Birth Rights',
+                      'Is Intervention Making Us Safer?',
+                      'Risk',
+                      'Our Own Stories',
+                      'Chilled Out Breathing',
+                      'BRAIN Tool',
+                      'Decisions and Advocacy Tips',
+                      'Distraction Techniques',
+                      'Induction',
+                      'Estimated Due Dates',
+                      '\u2018Natural\u2019 Induction Method',
+                      'Signs Your Body is Getting Ready',
+                      'Early Labour',
                     ].map((item, i) => (
                       <li key={i} style={{ fontSize: '0.88rem', color: 'var(--grey-mid)', paddingLeft: '1.4rem', position: 'relative', marginBottom: '0.55rem', lineHeight: 1.65, fontWeight: 300 }}>
                         <span style={{ position: 'absolute', left: 0, top: '0.55em', width: '5px', height: '5px', borderRadius: '50%', background: 'var(--pink)', display: 'block' }} />
@@ -206,13 +220,20 @@ export default function SessionOutlinesPage() {
                   </div>
                   <ul style={{ listStyle: 'none' }}>
                     {[
-                      'The birth partner&apos;s full toolkit — exactly how to support during labour',
-                      'Practical comfort measures — massage, positions, movement',
-                      'How to protect and manage the birth environment',
-                      'Preparation for induction, caesarean and other variations',
-                      'The early days with your newborn — what to expect',
-                      'Breastfeeding basics and where to go for support',
-                      'Course review, questions and celebration',
+                      'Making Contact with a Midwife',
+                      'The Journey',
+                      'Arriving There/Them Getting to You',
+                      'Active Labour',
+                      'Slow Or Stopped Labour',
+                      'Caesarean Birth',
+                      'Assisted Birth',
+                      'Pain Relief',
+                      'Pushing Stage',
+                      'Birth',
+                      '3rd Stage',
+                      'Golden Hour',
+                      'Vitamin K',
+                      'The 4th Trimester',
                     ].map((item, i) => (
                       <li key={i} style={{ fontSize: '0.88rem', color: 'var(--grey-mid)', paddingLeft: '1.4rem', position: 'relative', marginBottom: '0.55rem', lineHeight: 1.65, fontWeight: 300 }}>
                         <span style={{ position: 'absolute', left: 0, top: '0.55em', width: '5px', height: '5px', borderRadius: '50%', background: 'var(--pink)', display: 'block' }} />

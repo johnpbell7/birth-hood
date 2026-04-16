@@ -15,7 +15,7 @@ export default function MeetLeannePage() {
       <PageHero
         eyebrow="Your guide"
         title={<>Meet <em>Leanne</em></>}
-        subtitle="Certified hypnobirthing practitioner, birth doula, yoga teacher, and passionate advocate for positive birth experiences."
+        subtitle="I'm Leanne (DipHb) — a mum of two Hypnobirth babies and a badass birth nerd! Hypnobirthing teacher, birth doula, Pregnancy & Postnatal yoga teacher, and 3 Step Rewind practitioner, proudly based in NW Leicestershire."
         img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
       />
@@ -40,11 +40,10 @@ export default function MeetLeannePage() {
                 margin: '2rem 0',
               }}>
                 <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.15rem', fontStyle: 'italic', lineHeight: 1.7, color: 'var(--black)', marginBottom: '0.8rem' }}>
-                  &ldquo;Every person deserves to feel powerful, prepared and genuinely excited about their
-                  birth experience — regardless of how it unfolds.&rdquo;
+                  &ldquo;From the moment I had a phone call with Leanne I knew she was the one.&rdquo;
                 </p>
                 <cite style={{ fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--pink-deep)', fontStyle: 'normal' }}>
-                  — Leanne, birth-hood
+                  — A birth-hood client
                 </cite>
               </blockquote>
             </div>
@@ -54,34 +53,41 @@ export default function MeetLeannePage() {
               <div className="section-label">My story</div>
 
               <div className="prose">
-                <h2>How it all began</h2>
+                <h2>Hi, I&apos;m your doula!</h2>
                 <p>
-                  My journey into birth work started with my own experiences and a deep frustration at
-                  how little preparation most people receive for one of the most significant events of
-                  their lives. I trained in hypnobirthing and was instantly passionate about sharing
-                  these powerful techniques with others.
+                  I&apos;m Leanne (DipHb), I am a mum of two Hypnobirth babies and a badass birth nerd! I am a
+                  proud no-nonsense hypnobirthing teacher, doula, Pregnancy/Postnatal yoga teacher and a
+                  3 Step Rewind practitioner.
                 </p>
                 <p>
-                  From there, I went on to train as a birth doula, prenatal yoga teacher and perinatal
-                  mental health support worker — building a holistic set of skills to support people
-                  throughout pregnancy and beyond.
+                  Born and raised in Leicestershire, I now reside in NW Leicestershire with my 2 daughters,
+                  my dogs Ron and Delphi and my cat Albus!
                 </p>
                 <p>
-                  Over five years and 200+ families later, I&apos;ve supported births in hospital, at home,
-                  in birthing centres, by caesarean, in water and everywhere in between. Every single
-                  birth has reinforced my belief that knowledge and support are transformative.
+                  My core values are that everyone is entitled to person centred care, immeasurable support
+                  and education that means they can feel in control throughout their perinatal experiences.
                 </p>
 
-                <h2>My approach</h2>
+                <h2>Why I chose Hypnobirthing?</h2>
                 <p>
-                  I believe in evidence-based education, informed consent and the absolute power of a
-                  calm, supported environment. I work with all pregnancies, all birth choices and all
-                  types of families — LGBTQ+ inclusive, solo parents, those with complex pregnancies.
-                  Everyone is welcome here.
+                  I first became interested in hypnobirthing when I started to research birth stories when I
+                  was expecting my first baby and found how positive it could be, much different to the
+                  scarefest I&apos;d been treated to before this from everyone around me. I found a course, which
+                  I left feeling extremely informed, calm and confident about my birth. I found my passion,
+                  something I wanted others to feel, the &lsquo;I CAN DO THIS&rsquo; moment.
                 </p>
                 <p>
-                  I&apos;m not here to tell you what to do. I&apos;m here to give you the knowledge and
-                  confidence to make the decisions that are right for you.
+                  I am a HUGE advocate for Hypnobirthing and want to help enable parents to have the birth
+                  they want, being aware of their choices through delivering a full antenatal programme.
+                </p>
+                <p>
+                  Following working with 100&apos;s of families, I was regularly approached to attend births,
+                  which was something I&apos;d always dreamt of. This led me to following my dreams to become a
+                  doula and now I absolutely adore what I do every day!
+                </p>
+                <p>
+                  I am so proud to be rated as your 5 STAR Doula — by welcoming me as your Doula, I am a
+                  part of your birth team, to be on your side and by your side.
                 </p>
               </div>
 
@@ -91,31 +97,43 @@ export default function MeetLeannePage() {
                 <div className="credentials" style={{ marginTop: '1rem' }}>
                   <div className="credential">
                     <span className="credential-dot" />
-                    KGHypnobirthing Certified Practitioner
+                    Hypnobirthing — KGHypnobirthing 2019 DipHb
                   </div>
                   <div className="credential">
                     <span className="credential-dot" />
-                    Doula UK Recognised Member
+                    The Birth Uprising conversion 2020
                   </div>
                   <div className="credential">
                     <span className="credential-dot" />
-                    BirthLight Prenatal Yoga Teacher
+                    Doula — Badass Birth 2021
                   </div>
                   <div className="credential">
                     <span className="credential-dot" />
-                    Perinatal Mental Health Trained
+                    3 Step Rewind (Birth Trauma) — Ruth Olayinka 2021
                   </div>
                   <div className="credential">
                     <span className="credential-dot" />
-                    Paediatric First Aid Certified
+                    LGBT+ Competency trained — The Queer Birth Club (AJ Silver) 2021
                   </div>
                   <div className="credential">
                     <span className="credential-dot" />
-                    Featured on BBC Radio Leicester
+                    Advocacy training — Illy Morrison 2021
                   </div>
                   <div className="credential">
                     <span className="credential-dot" />
-                    5+ years, 200+ families supported
+                    Birth Biomechanics — Molly O&apos;Brien 2022
+                  </div>
+                  <div className="credential">
+                    <span className="credential-dot" />
+                    85hr Pregnancy/Postnatal Yoga teaching — Sally Parkes 2022
+                  </div>
+                  <div className="credential">
+                    <span className="credential-dot" />
+                    Doula Enhancement — TBU Academy 2023
+                  </div>
+                  <div className="credential">
+                    <span className="credential-dot" />
+                    Currently completing: Baby Massage, Baby Reflexology & Toddler Yoga
                   </div>
                 </div>
               </div>
@@ -124,8 +142,70 @@ export default function MeetLeannePage() {
         </div>
       </section>
 
-      {/* MEDIA SECTION */}
+      {/* WHY CHOOSE ME */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
+        <div className="wrap">
+          <div className="section-label">Why choose me?</div>
+          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>
+            What you <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>get with me</em>
+          </h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '3rem' }}>
+            {[
+              'A fully unadulterated and interactive hypnobirthing antenatal course, from a birth nerd and advocate for empowered birth.',
+              'Full 121 support throughout the course pregnancy and 4th trimester, always on the end of a text or call!',
+              'Research and evidenced based knowledge specific to your needs and wishes.',
+              'Non-judgemental support and a realistic approach that\'s tailored to you.',
+              'A fierce advocate for you, if or when you need me to. You\'ll have me in your corner.',
+              'I am someone who has used the tools and techniques and has a huge support network of badass birth workers, so if there is something I don\'t know, I sure will do soon enough!',
+              'As a doula and someone who is part of a collective of birth workers, you won\'t get better support elsewhere.',
+              'I aim to be fully inclusive, and that means all births, all people!',
+              'If you are struggling to access the course, due to finances, or are in a marginalised group, please contact me to see how I can support you!',
+              'Birth is the one day in your life you will remember — you deserve to have the best experience possible and I truly believe that investing in my course will bring you SO much closer to the birth you deserve.',
+            ].map((point, i) => (
+              <div key={i} className="card" style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', padding: '1.25rem 1.5rem' }}>
+                <span style={{
+                  flexShrink: 0,
+                  width: '2rem',
+                  height: '2rem',
+                  borderRadius: '50%',
+                  background: 'var(--pink)',
+                  color: '#fff',
+                  fontFamily: 'Playfair Display, serif',
+                  fontWeight: 900,
+                  fontSize: '0.85rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginTop: '0.1rem',
+                }}>
+                  {i + 1}
+                </span>
+                <p style={{ margin: 0, lineHeight: 1.7, color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300 }}>
+                  {point}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* You'll also get */}
+          <div className="section-label" style={{ marginBottom: '1rem' }}>You&apos;ll also get</div>
+          <div className="grid-2" style={{ gap: '1.5rem' }}>
+            <div className="card card-pink">
+              <p style={{ margin: 0, lineHeight: 1.75, color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300 }}>
+                All resources, MP3&apos;s, parent handbook, birth plan, postnatal plan, printable affirmations and more.
+              </p>
+            </div>
+            <div className="card card-pink">
+              <p style={{ margin: 0, lineHeight: 1.75, color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300 }}>
+                Amazing 4th trimester bonus videos, including breastfeeding, sling use and baby massage and more.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MEDIA SECTION */}
+      <section className="section-pad">
         <div className="wrap">
           <div className="section-label">As featured in</div>
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>

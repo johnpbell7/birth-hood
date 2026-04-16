@@ -15,8 +15,9 @@ export default function ContactPage() {
           <div className="page-eyebrow">Let&apos;s talk</div>
           <h1 className="page-title">Get in <em>Touch</em></h1>
           <p className="page-subtitle">
-            Whether you have a question, want to make a booking or just want to say hello —
-            Leanne would love to hear from you.
+            For enquiries, please contact me directly via this page. I will get back to you ASAP!
+            I can&apos;t wait to help you prepare for your birth, knowing your rights, your options,
+            and feeling like you did everything you could to prepare to start parenthood positively.
           </p>
         </div>
       </section>
@@ -31,7 +32,7 @@ export default function ContactPage() {
               <div className="section-label">Ways to connect</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                 <a
-                  href="mailto:hello@birth-hood.co.uk"
+                  href="mailto:leanne@birth-hood.co.uk"
                   style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', textDecoration: 'none', color: 'var(--black)', padding: '1.5rem', border: '1px solid rgba(0,0,0,0.08)', borderRadius: '3px', transition: 'border-color 0.3s, transform 0.3s' }}
                   className="contact-link"
                 >
@@ -43,7 +44,23 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div style={{ fontWeight: 500, fontSize: '0.88rem', marginBottom: '0.2rem' }}>Email</div>
-                    <div style={{ color: 'var(--pink-deep)', fontSize: '0.9rem', fontWeight: 300 }}>hello@birth-hood.co.uk</div>
+                    <div style={{ color: 'var(--pink-deep)', fontSize: '0.9rem', fontWeight: 300 }}>leanne@birth-hood.co.uk</div>
+                  </div>
+                </a>
+
+                <a
+                  href="tel:07814504865"
+                  style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', textDecoration: 'none', color: 'var(--black)', padding: '1.5rem', border: '1px solid rgba(0,0,0,0.08)', borderRadius: '3px', transition: 'border-color 0.3s, transform 0.3s' }}
+                  className="contact-link"
+                >
+                  <div style={{ width: '44px', height: '44px', background: 'var(--pink-pale)', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--pink-deep)', flexShrink: 0 }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: 500, fontSize: '0.88rem', marginBottom: '0.2rem' }}>Phone</div>
+                    <div style={{ color: 'var(--pink-deep)', fontSize: '0.9rem', fontWeight: 300 }}>07814 504865</div>
                   </div>
                 </a>
 
