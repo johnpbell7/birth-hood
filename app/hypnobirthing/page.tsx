@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: 'When should I start hypnobirthing?',
-    a: 'The ideal time to start is between 24 and 28 weeks, as this gives you enough time to practise the techniques before your birth. However, it\'s never too late — even starting at 36+ weeks will give you valuable tools. Some people do the course in early pregnancy and then revisit the materials closer to their due date.',
+    a: 'The ideal time to start is from 20-30 weeks gestation, as this gives you enough time to practise the techniques before your birth. However, it\'s never too late — even starting at 36+ weeks will give you valuable tools. Some people do the course in early pregnancy and then revisit the materials closer to their due date.',
   },
   {
     q: 'Does hypnobirthing work for caesarean births?',
@@ -137,8 +137,8 @@ export default function HypnobirthingPage() {
               <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
                 Group Course
               </div>
-              <div className="price-amount">£345</div>
-              <div className="price-period">face to face · 4 sessions</div>
+              <div className="price-amount">£225</div>
+              <div className="price-period">per couple · face to face</div>
               <ul className="price-features">
                 <li>4 weekly group sessions (2.5hrs each)</li>
                 <li>KGHypnobirthing full programme</li>
@@ -146,7 +146,7 @@ export default function HypnobirthingPage() {
                 <li>Comprehensive course workbook</li>
                 <li>Supportive WhatsApp group</li>
                 <li>Post-birth debrief session</li>
-                <li>Online option available at £295</li>
+                <li>Online: £200</li>
               </ul>
               <a
                 href="https://calendly.com/birthhood"
@@ -167,8 +167,8 @@ export default function HypnobirthingPage() {
               <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
                 Private 121 Course
               </div>
-              <div className="price-amount">£550</div>
-              <div className="price-period">per couple · your schedule</div>
+              <div className="price-amount">£345</div>
+              <div className="price-period">per couple · face to face</div>
               <ul className="price-features">
                 <li>10 hour fully interactive, fully evidence based birth preparation course</li>
                 <li>Flexible scheduling at your home or online</li>
@@ -177,6 +177,7 @@ export default function HypnobirthingPage() {
                 <li>Relaxation audio downloads</li>
                 <li>Unlimited WhatsApp support</li>
                 <li>Post-birth debrief session</li>
+                <li>Online: £325</li>
               </ul>
               <a
                 href="https://calendly.com/birthhood"
@@ -194,8 +195,8 @@ export default function HypnobirthingPage() {
               <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
                 Online Course
               </div>
-              <div className="price-amount">£295</div>
-              <div className="price-period">per couple · fully online</div>
+              <div className="price-amount">£200</div>
+              <div className="price-period">per couple · group online</div>
               <ul className="price-features">
                 <li>4 sessions via video call</li>
                 <li>All the same content as in-person</li>
@@ -203,6 +204,7 @@ export default function HypnobirthingPage() {
                 <li>Relaxation audio downloads</li>
                 <li>Comprehensive course workbook</li>
                 <li>Post-birth debrief session</li>
+                <li>121 online: £325</li>
               </ul>
               <a
                 href="https://calendly.com/birthhood"

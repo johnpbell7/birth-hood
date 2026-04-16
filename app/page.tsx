@@ -170,7 +170,7 @@ export default function HomePage() {
             </h2>
             <p className="about-body">
               Hi, I&apos;m Leanne — a certified hypnobirthing practitioner, birth doula and yoga teacher
-              based in Leicester. For over five years I&apos;ve been helping families across the Midlands
+              based in NW Leicestershire. Since 2019 I&apos;ve been helping families across the Midlands
               and online feel genuinely prepared and excited for birth.
             </p>
             <p className="about-body">
@@ -181,23 +181,23 @@ export default function HomePage() {
             <div className="credentials">
               <div className="credential">
                 <span className="credential-dot" />
-                KGHypnobirthing Certified Practitioner
+                KGHypnobirthing DipHb (2019)
               </div>
               <div className="credential">
                 <span className="credential-dot" />
-                Doula UK Recognised Member
+                Badass Birth Trained Doula (2021)
               </div>
               <div className="credential">
                 <span className="credential-dot" />
-                BirthLight Prenatal Yoga Teacher
+                3 Step Rewind Practitioner (2021)
               </div>
               <div className="credential">
                 <span className="credential-dot" />
-                Perinatal Mental Health Trained
+                LGBT+ Competency — Queer Birth Club (2021)
               </div>
               <div className="credential">
                 <span className="credential-dot" />
-                Paediatric First Aid Certified
+                85hr Pregnancy/Postnatal Yoga — Sally Parkes (2022)
               </div>
               <div className="credential">
                 <span className="credential-dot" />
@@ -222,31 +222,33 @@ export default function HomePage() {
           </div>
           <div style={{ textAlign: 'right' }}>
             <div className="stars">★★★★★</div>
-            <div className="stars-label">5.0 from 50+ reviews</div>
+            <div className="stars-label">5 Star rated on Google</div>
           </div>
         </div>
 
         <div className="reviews-track">
           <div className="review-card">
             <p className="review-text">
-              Leanne&apos;s hypnobirthing course completely changed how I felt about labour — I went from
-              petrified to actually excited. My birth was everything I hoped for.
+              We instantly felt at ease and comfortable and thoroughly enjoyed learning about the benefits
+              of Hypnobirthing. We are due to have our first baby in 6 weeks and Leanne helped us to feel
+              nothing but calm and excited for this completely unknown experience coming up.
             </p>
-            <div className="review-author">Sophie · Loughborough ★★★★★</div>
+            <div className="review-author">Client · Leicestershire ★★★★★</div>
           </div>
           <div className="review-card">
             <p className="review-text">
-              Having Leanne as my doula was the best decision I made. She was calm, reassuring and
-              exactly who I needed in that room. I couldn&apos;t have done it without her.
+              From my first contact with Leanne we just clicked. She supported me through my concern about
+              fibroids, and gave me some brilliant yoga positions to try when my SPD started. I can&apos;t
+              recommend Leanne highly enough, she&apos;s a pro at end-to-end care!
             </p>
-            <div className="review-author">Emma · Leicester ★★★★★</div>
+            <div className="review-author">Beka · Leicestershire ★★★★★</div>
           </div>
           <div className="review-card">
             <p className="review-text">
-              The yoga classes were the highlight of my pregnancy. A beautiful mix of movement, breathing
-              and community. I wish I&apos;d found Leanne sooner!
+              We went on an antenatal course last week, and honestly found the two hours spent with Leanne
+              today were much more helpful than the seven hours there!
             </p>
-            <div className="review-author">Priya · Nottingham ★★★★★</div>
+            <div className="review-author">Client · Leicestershire ★★★★★</div>
           </div>
         </div>
 
@@ -265,13 +267,13 @@ export default function HomePage() {
             Free resources to get you started
           </h2>
           <p style={{ color: 'rgba(0,0,0,0.6)', marginBottom: '2rem', fontWeight: 300, lineHeight: 1.8 }}>
-            Download Leanne&apos;s free birth affirmations, birth plan template and breathing guide —
-            no email required, no strings attached.
+            Download Leanne&apos;s free birth affirmations, birth plan guide and newborn checklist —
+            no email required, no strings attached. Plus a FREE Hypnobirthing MP3 and ELLE TENS machine discount code!
           </p>
           <div className="freebies-items">
             <span className="freebie-tag">Birth Affirmations</span>
-            <span className="freebie-tag">Birth Plan Template</span>
-            <span className="freebie-tag">Breathing Guide</span>
+            <span className="freebie-tag">Birth Plan Guide</span>
+            <span className="freebie-tag">Newborn Checklist</span>
           </div>
           <Link href="/freebies" className="btn-primary">
             Download Free Resources

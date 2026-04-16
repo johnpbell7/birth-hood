@@ -10,50 +10,50 @@ export const metadata: Metadata = {
 const resources = [
   {
     emoji: '✦',
-    title: 'Birth Affirmations',
-    desc: 'A beautiful collection of positive birth affirmations to read, display and use throughout pregnancy and labour. Evidence-backed and created by Leanne.',
-    href: '/downloads/birth-affirmations.pdf',
+    title: 'Colouring Affirmations',
+    desc: 'Printable colouring birth affirmations — colour them in and display them around your home for daily positive reminders.',
+    href: '/downloads/colouring-affirmations.pdf',
     type: 'PDF Download',
     tag: 'Most popular',
   },
   {
     emoji: '◻',
-    title: 'Birth Plan Template',
-    desc: 'A comprehensive birth plan template that covers all your preferences — from environment and pain relief to caesarean preferences and the third stage.',
-    href: '/downloads/birth-plan-template.pdf',
+    title: 'Birth Plan Guide',
+    desc: 'A complimentary birth plan guide to help you plan your A, B & C birth preferences.',
+    href: '/downloads/birth-plan-guide.pdf',
     type: 'PDF Download',
     tag: null,
   },
   {
     emoji: '○',
-    title: 'Breathing Guide',
-    desc: 'Step-by-step guide to the key breathing techniques used in birth — including up breathing for surges and down breathing for the second stage.',
-    href: '/downloads/breathing-guide.pdf',
+    title: 'Newborn Checklist',
+    desc: 'Everything you need for your new arrival — a comprehensive newborn essentials checklist.',
+    href: '/downloads/newborn-checklist.pdf',
     type: 'PDF Download',
     tag: null,
   },
   {
     emoji: '◈',
-    title: 'Relaxation Audio',
-    desc: 'A guided relaxation and visualisation audio track — perfect for practising during pregnancy and using during labour. Recorded by Leanne.',
-    href: '/downloads/relaxation-audio.mp3',
+    title: '15 Ready Made Affirmations',
+    desc: '15 ready-made birth-hood affirmations — print them out and use them throughout your pregnancy and birth.',
+    href: '/downloads/ready-made-affirmations.pdf',
+    type: 'PDF Download',
+    tag: null,
+  },
+  {
+    emoji: '♫',
+    title: 'FREE Hypnobirthing MP3',
+    desc: 'A free hypnobirthing relaxation MP3 to help you practise deep relaxation during pregnancy.',
+    href: '/downloads/hypnobirthing-relaxation.mp3',
     type: 'Audio Download',
     tag: null,
   },
   {
-    emoji: '▣',
-    title: 'Reading List',
-    desc: 'Leanne\'s curated list of the best books, podcasts and resources for pregnancy, birth and the fourth trimester — all personally recommended.',
-    href: '/downloads/reading-list.pdf',
-    type: 'PDF Download',
-    tag: null,
-  },
-  {
     emoji: '◇',
-    title: 'Questions to Ask Your Midwife',
-    desc: 'The questions you didn\'t know to ask — covering everything from growth scans and induction to your rights around interventions.',
-    href: '/downloads/midwife-questions.pdf',
-    type: 'PDF Download',
+    title: 'ELLE TENS Discount',
+    desc: 'A discount code for an ELLE TENS machine — great for managing contractions in early labour.',
+    href: '/downloads/elle-tens-discount.pdf',
+    type: 'Discount Code',
     tag: null,
   },
 ]
@@ -73,11 +73,11 @@ export default function FreebiesPage() {
 
       {/* INTRO */}
       <section style={{ background: 'var(--pink-ultra)', padding: '3rem' }}>
-        <div className="wrap" style={{ textAlign: 'center', maxWidth: '620px' }}>
+        <div className="wrap" style={{ textAlign: 'center', maxWidth: '680px' }}>
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.9, fontWeight: 300 }}>
-            These resources are completely free — no email address required, no opt-in, no strings.
-            Just Leanne&apos;s knowledge, packaged up and ready for you to use whenever you need them.
-            PDFs will open in a new tab or download directly to your device.
+            Find some printable affirmations (colouring AND ready made birth-hood ones), FREE Hypnobirthing MP3,
+            positive birth videos and a complimentary birth plan guide (For your A, B & C!) Plus a BONUS Newborn
+            Checklist! Plus an ELLE TENS machine discount code!
           </p>
         </div>
       </section>
@@ -136,6 +136,26 @@ export default function FreebiesPage() {
                 </div>
               </a>
             ))}
+          </div>
+
+          {/* Birth Videos */}
+          <div style={{ marginTop: '3rem' }}>
+            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.6rem, 2.5vw, 2rem)', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.2 }}>
+              Positive <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>Birth Videos</em>
+            </h2>
+            <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.8, fontWeight: 300, maxWidth: '580px', marginBottom: '1.5rem' }}>
+              Watching positive birth videos is one of the most powerful things you can do during pregnancy.
+              A curated collection of real, positive birth stories is available on YouTube — search
+              {' '}&ldquo;birth-hood positive birth videos&rdquo; or visit the birth-hood YouTube channel.
+            </p>
+            <a
+              href="https://www.youtube.com/@birth-hood"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              Watch on YouTube
+            </a>
           </div>
 
           {/* Note */}

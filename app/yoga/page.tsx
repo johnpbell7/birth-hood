@@ -233,19 +233,6 @@ export default function YogaPage() {
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
-      <section className="testimonials" style={{ padding: '4rem 3rem' }}>
-        <div className="wrap">
-          <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
-            <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.25rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.8)', lineHeight: 1.75, marginBottom: '1.5rem' }}>
-              &ldquo;The yoga classes were the highlight of my pregnancy. A beautiful mix of movement,
-              breathing and community. I wish I&apos;d found Leanne sooner!&rdquo;
-            </p>
-            <div className="review-author">Priya · Nottingham ★★★★★</div>
-          </div>
-        </div>
-      </section>
-
       {/* POSTNATAL YOGA */}
       <section className="section-pad">
         <div className="wrap">

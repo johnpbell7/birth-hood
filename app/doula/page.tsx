@@ -96,7 +96,7 @@ export default function DoulaPage() {
                 Pre-birth antenatal meetings, birth plan help, and a postnatal debrief.
               </p>
               <ul style={{ listStyle: 'none', marginBottom: '1.5rem' }}>
-                {['2 antenatal meetings', 'Continuous labour support', 'Birth plan guidance', 'Postnatal debrief', '24/7 on-call from 38 weeks'].map(item => (
+                {['2 antenatal meetings', 'Continuous labour support', 'Birth plan guidance', 'Postnatal debrief', '24/7 on-call from 39 weeks'].map(item => (
                   <li key={item} style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', paddingLeft: '1.2rem', position: 'relative', marginBottom: '0.4rem', fontWeight: 300 }}>
                     <span style={{ position: 'absolute', left: 0, top: '0.6em', width: '5px', height: '5px', borderRadius: '50%', background: 'var(--pink)', display: 'block' }} />
                     {item}
@@ -169,10 +169,10 @@ export default function DoulaPage() {
           <div className="reviews-track" style={{ gridTemplateColumns: '1fr' }}>
             <div className="review-card" style={{ maxWidth: '700px', margin: '0 auto' }}>
               <p className="review-text">
-                Having Leanne at my birth was the most incredible thing. She held space, kept me grounded
-                and made sure my wishes were respected throughout. I couldn&apos;t have done it without her.
+                Just incredible! Leanne was amazing from the moment we booked her. She protected my birth
+                space perfectly and advocated for me many times.
               </p>
-              <div className="review-author">Jess · Leicester ★★★★★</div>
+              <div className="review-author">Bea, Leicestershire ★★★★★</div>
             </div>
           </div>
         </div>

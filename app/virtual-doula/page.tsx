@@ -62,7 +62,7 @@ export default function VirtualDoulaPage() {
                 </div>
                 <div className="stat-card">
                   <div className="stat-number">24/7</div>
-                  <div className="stat-label">On-call support from 38 weeks via phone and message</div>
+                  <div className="stat-label">On-call support from 39 weeks via phone and message</div>
                 </div>
                 <div className="stat-card">
                   <div className="stat-number">5★</div>
@@ -140,7 +140,7 @@ export default function VirtualDoulaPage() {
               { label: 'Lives outside Leicester', desc: 'Get full doula support wherever you are in the UK or internationally.' },
               { label: 'Prefers the comfort of home', desc: 'All sessions happen in your own space — comfortable, convenient, no travel.' },
               { label: 'Is looking for affordable support', desc: 'Virtual packages are more accessible whilst maintaining the same quality of care.' },
-              { label: 'Is an expat or living abroad', desc: 'Bilingual sessions available — Leanne can support families across time zones.' },
+              { label: 'Is an expat or living abroad', desc: 'Get full doula support wherever you are in the world — online sessions work across time zones.' },
             ].map(item => (
               <div key={item.label} className="card card-pink">
                 <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem' }}>

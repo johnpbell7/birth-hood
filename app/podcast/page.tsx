@@ -25,14 +25,9 @@ export default function PodcastPage() {
         img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
         actions={
-          <a
-            href="https://open.spotify.com"
-            className="btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Listen on Spotify
-          </a>
+          <p style={{ fontSize: '0.95rem', color: 'var(--grey-mid)', fontWeight: 300 }}>
+            Search <strong>&ldquo;Dou-La-La&rdquo;</strong> on your favourite podcast platform
+          </p>
         }
       />
 
@@ -98,30 +93,24 @@ export default function PodcastPage() {
             {[
               {
                 platform: 'Spotify',
-                desc: 'Stream and subscribe on Spotify — available on mobile and desktop.',
-                href: 'https://open.spotify.com',
+                desc: 'Open Spotify and search "Dou-La-La" to find and subscribe to the podcast.',
                 icon: '♫',
               },
               {
                 platform: 'Apple Podcasts',
-                desc: 'Subscribe on Apple Podcasts and get notified when new episodes drop.',
-                href: 'https://podcasts.apple.com',
+                desc: 'Open Apple Podcasts and search "Dou-La-La" to subscribe and get notified when new episodes drop.',
                 icon: '◎',
               },
               {
                 platform: 'Amazon Music',
-                desc: 'Available on Amazon Music and Audible — listen wherever you are.',
-                href: 'https://music.amazon.co.uk',
+                desc: 'Search "Dou-La-La" on Amazon Music or Audible to listen wherever you are.',
                 icon: '◈',
               },
             ].map(item => (
-              <a
+              <div
                 key={item.platform}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="card"
-                style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+                style={{ color: 'inherit', display: 'block' }}
               >
                 <div style={{
                   width: '44px', height: '44px', background: 'var(--pink-pale)',
@@ -138,10 +127,10 @@ export default function PodcastPage() {
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.87rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
                   {item.desc}
                 </p>
-                <span style={{ fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--pink-deep)' }}>
-                  Listen now →
+                <span style={{ fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--grey-light)' }}>
+                  Search &ldquo;Dou-La-La&rdquo;
                 </span>
-              </a>
+              </div>
             ))}
           </div>
         </div>
@@ -176,9 +165,9 @@ export default function PodcastPage() {
 
       <CtaBand
         heading="Subscribe so you never miss an episode"
-        body="New episodes from Leanne and Meg — honest birth talk, myth busting and real conversations about pregnancy and beyond."
-        href="https://open.spotify.com"
-        label="Listen on Spotify"
+        body="Search 'Dou-La-La' on Spotify, Apple Podcasts or Amazon Music — honest birth talk, myth busting and real conversations about pregnancy and beyond."
+        href="/podcast"
+        label="How to find the podcast"
       />
     </>
   )

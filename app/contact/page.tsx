@@ -109,7 +109,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div style={{ fontWeight: 500, fontSize: '0.88rem', marginBottom: '0.2rem' }}>Location</div>
-                    <div style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300 }}>Leicester, England · Online UK-wide</div>
+                    <div style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300 }}>NW Leicestershire · Online UK-wide</div>
                   </div>
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function ContactPage() {
               <div style={{ background: 'var(--pink-ultra)', padding: '2rem', borderRadius: '3px', border: '1px solid rgba(232,123,195,0.3)' }}>
                 <div className="section-label">Or book directly</div>
                 <p style={{ fontSize: '0.9rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.7, marginBottom: '1.2rem' }}>
-                  Skip the form and book a free 20-minute consultation call straight into Leanne&apos;s diary.
+                  Skip the form and book a free consultation call straight into Leanne&apos;s diary.
                 </p>
                 <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="btn-primary">
                   Book Free Consultation

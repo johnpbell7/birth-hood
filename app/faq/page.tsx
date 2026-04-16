@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const generalFaqs = [
   {
     q: 'What areas do you cover?',
-    a: 'I am based in Leicester and primarily serve Leicester and the wider Midlands region for in-person services (hypnobirthing, yoga, birth doula). I also offer online services — hypnobirthing courses, virtual doula support and consultations — to clients anywhere in the UK and internationally.',
+    a: 'I am based in NW Leicestershire (LE67 area) and serve Leicestershire, the Midlands and beyond for in-person services (hypnobirthing, yoga, birth doula). I also offer online services — hypnobirthing courses, virtual doula support and consultations — to clients anywhere in the UK and internationally.',
   },
   {
     q: 'How do I book?',
@@ -30,7 +30,7 @@ const generalFaqs = [
 const hypnobirthingFaqs = [
   {
     q: 'When should I start hypnobirthing?',
-    a: 'The ideal time to start is between 24 and 28 weeks, as this gives you plenty of time to practise the techniques. However, it is never too late to start — even at 36+ weeks you will gain valuable knowledge and tools. Some people also choose to start early in pregnancy.',
+    a: 'The ideal time to start is from 20–30 weeks gestation, as this gives you plenty of time to practise the techniques. However, it is never too late to start — even at 36+ weeks you will gain valuable knowledge and tools. Some people also choose to start early in pregnancy.',
   },
   {
     q: 'Does hypnobirthing work for caesarean births?',
@@ -52,6 +52,10 @@ const hypnobirthingFaqs = [
     q: 'Is hypnobirthing suitable for first-time parents?',
     a: 'It\'s perfect for first-time parents. Hypnobirthing gives you a thorough, evidence-based education in what to expect from birth — alongside the practical tools to manage it calmly. Many of my clients who come back for a second baby say they wish they\'d had this for their first birth.',
   },
+  {
+    q: 'How many couples are in a group course?',
+    a: 'I teach groups between 4–6 couples only, keeping classes small and personal. I also offer semi-private sessions — so if you and a friend want to book together, you both get £50 off using code MATESRATES.',
+  },
 ]
 
 const doulaFaqs = [
@@ -61,7 +65,7 @@ const doulaFaqs = [
   },
   {
     q: 'Will you definitely be at my birth?',
-    a: 'I am on call for you from 38 weeks of pregnancy and will be there for your birth. In the very rare event that I am unable to attend due to illness or emergency, I have a network of experienced backup doulas who are briefed on your wishes and available to step in.',
+    a: 'I am on call for you from 39 weeks of pregnancy and will be there for your birth. In the very rare event that I am unable to attend due to illness or emergency, I have a network of experienced backup doulas who are briefed on your wishes and available to step in.',
   },
   {
     q: 'What if my labour is very fast?',
@@ -95,7 +99,7 @@ const paymentFaqs = [
   },
   {
     q: 'Is a deposit required to secure my place?',
-    a: 'Yes. A deposit of 50% is required to secure your place on any course or service. The balance is due at your first session. For doula services, the balance is due at the start of the on-call period (around 38 weeks).',
+    a: 'Yes. A £50 deposit is required to secure your place upon booking. The remainder is due before your first session. For doula services, the balance is due at the start of the on-call period (around 39 weeks).',
   },
   {
     q: 'What is your cancellation policy?',
@@ -103,7 +107,7 @@ const paymentFaqs = [
   },
   {
     q: 'Do you offer any discounts?',
-    a: 'Discounts are occasionally available for NHS workers, Doula UK bursary recipients and for those booking multiple services. Please ask at your consultation.',
+    a: 'Discounts are occasionally available for NHS workers and for those booking multiple services. Please ask at your consultation.',
   },
 ]
 

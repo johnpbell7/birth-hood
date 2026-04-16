@@ -224,12 +224,12 @@ export default function CourseInfoPage() {
             </p>
             <h3>Payment</h3>
             <p>
-              A 50% deposit is required to secure your place. The balance is due at your first session.
+              A £50 deposit is required upon booking to secure your place. The remainder is due before your first session.
               Payment plans are available — just let me know at the consultation.
             </p>
             <h3>Location</h3>
             <p>
-              Group courses are held at a central Leicester venue (address confirmed on booking).
+              Group courses are held at a NW Leicestershire venue (address confirmed on booking).
               Private courses can be held at your home, online, or at a mutually agreed location.
             </p>
             <h3>What to bring</h3>

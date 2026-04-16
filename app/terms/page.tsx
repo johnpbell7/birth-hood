@@ -32,7 +32,7 @@ export default function TermsPage() {
               All bookings are confirmed on receipt of a 50% non-refundable deposit. Your place
               is not secured until the deposit has been received. The remaining balance is due at
               the start of your first session (or, for doula services, at the beginning of the
-              on-call period at 38 weeks of pregnancy).
+              on-call period at 39 weeks of pregnancy).
             </p>
 
             <h3>1.2 Payment methods</h3>
@@ -94,7 +94,7 @@ export default function TermsPage() {
 
             <h3>3.1 On-call period</h3>
             <p>
-              Leanne is on call for birth doula clients from 38 weeks of pregnancy. She will make
+              Leanne is on call for birth doula clients from 39 weeks of pregnancy. She will make
               every reasonable effort to attend your birth. In the event that she is unable to
               attend due to illness, personal emergency or simultaneous births, she will arrange
               for a fully briefed backup doula to attend in her place.
@@ -145,8 +145,8 @@ export default function TermsPage() {
             <p>
               Leanne holds current professional indemnity and public liability insurance appropriate
               to all services provided. All qualifications are maintained and renewed in line with
-              the requirements of the relevant certifying bodies (KGHypnobirthing, Doula UK,
-              BirthLight).
+              the requirements of the relevant certifying bodies (KGHypnobirthing, Badass Birth,
+              Sally Parkes).
             </p>
 
             <h3>5.2 Limitations of service</h3>
@@ -170,7 +170,7 @@ export default function TermsPage() {
             <p>
               If you have any questions about these terms, or if you would like to discuss anything
               relating to your booking, please get in touch via the Calendly booking form or
-              through Instagram at @birth_hood.
+              through Instagram at @birthhooduk.
             </p>
             <p>
               These terms were last updated in March 2026 and may be updated from time to time.

@@ -226,19 +226,6 @@ export default function PostnatalDoulaPage() {
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
-      <section className="testimonials" style={{ padding: '5rem 3rem' }}>
-        <div className="wrap">
-          <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
-            <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.25rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.8)', lineHeight: 1.75, marginBottom: '1.5rem' }}>
-              &ldquo;Having Leanne come to the house those first few weeks was a lifeline. She made us
-              feel so supported — not just as parents, but as people going through something huge.&rdquo;
-            </p>
-            <div className="review-author">Sophie · Leicester ★★★★★</div>
-          </div>
-        </div>
-      </section>
-
       <CtaBand
         heading="Ready for support in the fourth trimester?"
         body="Book a free consultation to discuss postnatal doula support tailored to your family."

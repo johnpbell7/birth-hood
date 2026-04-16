@@ -152,10 +152,10 @@ export default function DoulaFeedbackPage() {
             </h3>
             <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
               If you&apos;re happy to share your experience on social media, please tag{' '}
-              <strong>@birth_hood</strong> — it means so much and helps other families find us.
+              <strong>@birthhooduk</strong> — it means so much and helps other families find us.
             </p>
             <a
-              href="https://instagram.com/birth_hood"
+              href="https://instagram.com/birthhooduk"
               className="btn-outline"
               target="_blank"
               rel="noopener noreferrer"

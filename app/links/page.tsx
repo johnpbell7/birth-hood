@@ -184,7 +184,7 @@ export default function LinksPage() {
           textAlign: 'center', color: 'var(--grey-light)', fontSize: '0.75rem',
           fontWeight: 300, marginTop: '3rem', lineHeight: 1.6,
         }}>
-          Birth Hood · Leicester · Leanne Bell · Doula, Hypnobirthing Teacher & Prenatal Yoga
+          Birth Hood · Leicester · Leanne Myles · Doula, Hypnobirthing Teacher & Prenatal Yoga
         </p>
       </div>
     </main>
