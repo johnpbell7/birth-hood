@@ -149,7 +149,7 @@ export default function MeetLeannePage() {
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             What you <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>get with me</em>
           </h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '3rem' }}>
+          <div className="grid-2" style={{ gap: '1rem', marginBottom: '3rem', alignItems: 'stretch' }}>
             {[
               'A fully unadulterated and interactive hypnobirthing antenatal course, from a birth nerd and advocate for empowered birth.',
               'Full 121 support throughout the course pregnancy and 4th trimester, always on the end of a text or call!',

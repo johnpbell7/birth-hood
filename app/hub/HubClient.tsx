@@ -17,6 +17,32 @@ type ResourceGroup = {
   items: Resource[]
 }
 
+type AudioTrack = {
+  title: string
+  duration?: string
+  src?: string // to be filled in with uploaded MP3 URLs
+}
+
+type AudioAlbum = {
+  title: string
+  subtitle: string
+  tracks: AudioTrack[]
+}
+
+type Video = {
+  title: string
+  description?: string
+  src?: string
+  poster?: string
+}
+
+type UsefulSite = {
+  name: string
+  url: string
+  description: string
+  logoLetter: string
+}
+
 const groups: ResourceGroup[] = [
   {
     label: 'Hypnobirthing essentials',
@@ -63,6 +89,82 @@ const groups: ResourceGroup[] = [
       { title: 'Breastfeeding 101', href: 'https://www.birth-hood.co.uk/_files/ugd/530235_d87e09096f5c423e88b9a03b7e23b7fe.pdf' },
       { title: 'Parent and Baby Yoga Handbook', href: 'https://www.birth-hood.co.uk/_files/ugd/530235_6933deda18564770a65014550110e057.pdf' },
     ],
+  },
+]
+
+const albums: AudioAlbum[] = [
+  {
+    title: "TBU MP3's No Swearing",
+    subtitle: "Birth-hood relaxation tracks — family friendly edition",
+    tracks: [
+      { title: 'Birth Rehearsal - Ruth - N:S', duration: '50:33' },
+      { title: 'Relaxation - Ruth - N:S', duration: '40:03' },
+      { title: 'Fear Release - Ruth - N:S', duration: '43:40' },
+    ],
+  },
+  {
+    title: "TBU MP3's",
+    subtitle: "Birth-hood relaxation tracks — original edition",
+    tracks: [
+      { title: 'TBU - Affirmation Track', duration: '18:00' },
+      { title: 'TBU - Birth Rehearsal', duration: '—' },
+      { title: 'TBU - Fear Release', duration: '—' },
+      { title: 'TBU - Confidence', duration: '—' },
+    ],
+  },
+  {
+    title: "Additional Relaxations",
+    subtitle: "Extra tracks to support your practice",
+    tracks: [
+      { title: 'Short Relaxation', duration: '—' },
+      { title: 'Partner Relaxation Script', duration: '—' },
+    ],
+  },
+]
+
+const videos: Video[] = [
+  {
+    title: 'Workshop Recordings',
+    description: 'Full recordings of birth-hood course sessions and workshops covering birth positions, coaching, breathing techniques and more.',
+  },
+]
+
+const usefulSites: UsefulSite[] = [
+  {
+    name: 'Dr Sara Wickham',
+    url: 'https://www.sarawickham.com',
+    description: 'Midwife, author, speaker and researcher — evidence-based information on pregnancy and birth.',
+    logoLetter: 'SW',
+  },
+  {
+    name: 'Evidence Based Birth',
+    url: 'https://evidencebasedbirth.com',
+    description: 'Evidence that empowers — research-based articles on every aspect of birth.',
+    logoLetter: 'EB',
+  },
+  {
+    name: 'Birthrights',
+    url: 'https://www.birthrights.org.uk',
+    description: 'The UK charity dedicated to protecting human rights in childbirth.',
+    logoLetter: 'BR',
+  },
+  {
+    name: 'AIMS',
+    url: 'https://www.aims.org.uk',
+    description: 'Association for Improvements in the Maternity Services — for a better birth.',
+    logoLetter: 'AI',
+  },
+  {
+    name: 'MidwifeThinking',
+    url: 'https://midwifethinking.com',
+    description: 'Rachel Reed\u2019s blog — deep dives into the physiology and research behind birth.',
+    logoLetter: 'MT',
+  },
+  {
+    name: 'Spinning Babies',
+    url: 'https://www.spinningbabies.com',
+    description: 'Fetal positioning techniques for easier birth — used by midwives and doulas worldwide.',
+    logoLetter: 'SB',
   },
 ]
 
@@ -175,7 +277,7 @@ export default function HubClient() {
               Welcome to your <em>Client Hub</em>
             </h1>
             <p className="page-subtitle" style={{ maxWidth: '640px', margin: '0 auto 1.5rem' }}>
-              Everything you need, all in one place. Click any resource below to open or download it.
+              Everything you need, all in one place — documents, relaxation audio, workshop videos and useful links.
             </p>
             <button
               onClick={handleLogout}
@@ -204,30 +306,36 @@ export default function HubClient() {
         <div className="wrap" style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', textAlign: 'center' }}>
           <div>
             <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '2.2rem', color: 'var(--pink)', lineHeight: 1 }}>{totalResources}</div>
-            <div style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginTop: '0.4rem' }}>Resources</div>
+            <div style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginTop: '0.4rem' }}>Documents</div>
           </div>
           <div>
-            <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '2.2rem', color: 'var(--pink)', lineHeight: 1 }}>{groups.length}</div>
-            <div style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginTop: '0.4rem' }}>Categories</div>
+            <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '2.2rem', color: 'var(--pink)', lineHeight: 1 }}>
+              {albums.reduce((s, a) => s + a.tracks.length, 0)}
+            </div>
+            <div style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginTop: '0.4rem' }}>Audio tracks</div>
           </div>
           <div>
-            <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '2.2rem', color: 'var(--pink)', lineHeight: 1 }}>∞</div>
-            <div style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginTop: '0.4rem' }}>Access anytime</div>
+            <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '2.2rem', color: 'var(--pink)', lineHeight: 1 }}>{usefulSites.length}</div>
+            <div style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginTop: '0.4rem' }}>Useful sites</div>
           </div>
         </div>
       </section>
 
-      {/* RESOURCE GROUPS */}
+      {/* DOCUMENTS */}
       <section className="section-pad">
         <div className="wrap">
+          <div className="section-label" style={{ marginBottom: '0.6rem' }}>Section 01</div>
+          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>
+            Your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>documents</em>
+          </h2>
+
           {groups.map((group, gi) => (
-            <div key={group.label} style={{ marginBottom: gi === groups.length - 1 ? 0 : '4rem' }}>
+            <div key={group.label} style={{ marginBottom: gi === groups.length - 1 ? 0 : '3.5rem' }}>
               <div style={{ marginBottom: '1.5rem' }}>
-                <div className="section-label">Category {String(gi + 1).padStart(2, '0')}</div>
-                <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 900, marginTop: '0.6rem', marginBottom: '0.6rem', lineHeight: 1.1 }}>
+                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.4rem, 2vw, 1.7rem)', fontWeight: 700, marginBottom: '0.5rem', lineHeight: 1.2 }}>
                   {group.label}
-                </h2>
-                <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, maxWidth: '680px' }}>
+                </h3>
+                <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.8, fontWeight: 300, maxWidth: '680px' }}>
                   {group.intro}
                 </p>
               </div>
@@ -291,6 +399,242 @@ export default function HubClient() {
         </div>
       </section>
 
+      {/* AUDIO */}
+      <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
+        <div className="wrap">
+          <div className="section-label" style={{ marginBottom: '0.6rem' }}>Section 02</div>
+          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: '0.8rem', lineHeight: 1.1 }}>
+            Relaxation <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>audio</em>
+          </h2>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
+            Play these relaxation tracks during pregnancy and your birth. Use headphones for the deepest practice, or play out loud in your birth space.
+          </p>
+
+          <div className="grid-3" style={{ gap: '1.5rem' }}>
+            {albums.map((album) => (
+              <div key={album.title} className="card" style={{ padding: '1.5rem', background: 'var(--white)', borderRadius: '3px' }}>
+                {/* Album header */}
+                <div style={{ marginBottom: '1.2rem', paddingBottom: '1.2rem', borderBottom: '1px solid rgba(0,0,0,0.08)' }}>
+                  <div style={{ fontSize: '0.68rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '0.4rem' }}>
+                    birth-hood album
+                  </div>
+                  <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, color: 'var(--black)', marginBottom: '0.3rem', lineHeight: 1.2 }}>
+                    {album.title}
+                  </h3>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.5 }}>
+                    {album.subtitle}
+                  </p>
+                </div>
+
+                {/* Tracks with HTML5 audio */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {album.tracks.map((track, ti) => (
+                    <div key={track.title} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', minWidth: 0, flex: 1 }}>
+                          <span style={{ fontFamily: 'Abril Fatface, serif', fontSize: '1rem', color: 'var(--pink-deep)', flexShrink: 0 }}>
+                            {String(ti + 1).padStart(2, '0')}
+                          </span>
+                          <span style={{ fontSize: '0.88rem', fontWeight: 500, color: 'var(--black)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                            {track.title}
+                          </span>
+                        </div>
+                        {track.duration && (
+                          <span style={{ fontSize: '0.72rem', color: 'var(--grey-light)', fontWeight: 500, flexShrink: 0 }}>
+                            {track.duration}
+                          </span>
+                        )}
+                      </div>
+                      {track.src ? (
+                        <audio controls preload="none" style={{ width: '100%', height: '36px' }}>
+                          <source src={track.src} type="audio/mpeg" />
+                          Your browser does not support audio playback.
+                        </audio>
+                      ) : (
+                        <div style={{ fontSize: '0.72rem', fontStyle: 'italic', color: 'var(--grey-light)', padding: '0.5rem 0.8rem', background: 'var(--pink-ultra)', borderRadius: '3px' }}>
+                          Audio file coming soon
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ marginTop: '2rem', padding: '1rem 1.5rem', background: 'var(--white)', border: '1px dashed rgba(232,123,195,0.5)', borderRadius: '3px' }}>
+            <p style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.7, margin: 0 }}>
+              <strong style={{ color: 'var(--black)' }}>Tip for Leanne:</strong> Upload MP3 files to the project (or a hosting service) and set each track&apos;s <code>src</code> in <code>app/hub/HubClient.tsx</code> to enable the players.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* VIDEOS */}
+      <section className="section-pad">
+        <div className="wrap">
+          <div className="section-label" style={{ marginBottom: '0.6rem' }}>Section 03</div>
+          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: '0.8rem', lineHeight: 1.1 }}>
+            Workshop <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>videos</em>
+          </h2>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
+            Watch back full recordings of birth-hood sessions and workshops, covering birth positions, coaching, breathing and more.
+          </p>
+
+          <div className="grid-2" style={{ gap: '1.5rem' }}>
+            {videos.map((video) => (
+              <div key={video.title} className="card" style={{ padding: 0, overflow: 'hidden', borderRadius: '3px' }}>
+                {video.src ? (
+                  <video controls poster={video.poster} style={{ width: '100%', display: 'block', background: 'var(--black)' }}>
+                    <source src={video.src} type="video/mp4" />
+                    Your browser does not support video playback.
+                  </video>
+                ) : (
+                  <div style={{
+                    aspectRatio: '16/9',
+                    background: 'linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'var(--white)',
+                    position: 'relative',
+                  }}>
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{
+                        width: '64px',
+                        height: '64px',
+                        borderRadius: '50%',
+                        border: '2px solid var(--pink)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        margin: '0 auto 1rem',
+                      }}>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--pink)">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <div style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)' }}>
+                        Video coming soon
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <div style={{ padding: '1.2rem 1.5rem' }}>
+                  <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.15rem', fontWeight: 700, color: 'var(--black)', marginBottom: '0.4rem' }}>
+                    {video.title}
+                  </h3>
+                  {video.description && (
+                    <p style={{ fontSize: '0.88rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.65, margin: 0 }}>
+                      {video.description}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ marginTop: '2rem', padding: '1rem 1.5rem', background: 'var(--pink-ultra)', border: '1px dashed rgba(232,123,195,0.5)', borderRadius: '3px' }}>
+            <p style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.7, margin: 0 }}>
+              <strong style={{ color: 'var(--black)' }}>Tip for Leanne:</strong> Upload video files or add a YouTube/Vimeo embed URL as the video <code>src</code> in <code>app/hub/HubClient.tsx</code>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* USEFUL WEBSITES */}
+      <section className="section-pad" style={{ background: 'var(--black)', color: 'var(--white)' }}>
+        <div className="wrap">
+          <div className="section-label" style={{ marginBottom: '0.6rem', color: 'var(--pink)' }}>Section 04</div>
+          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: '0.8rem', lineHeight: 1.1, color: 'var(--white)' }}>
+            Useful <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>websites</em>
+          </h2>
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
+            Trusted external resources Leanne recommends for deeper reading on birth choices, rights, physiology and evidence-based research.
+          </p>
+
+          <div className="grid-3" style={{ gap: '1rem' }}>
+            {usefulSites.map((site) => (
+              <a
+                key={site.url}
+                href={site.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '1rem',
+                  padding: '1.2rem',
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  borderRadius: '3px',
+                  transition: 'background 0.25s, border-color 0.25s, transform 0.25s',
+                }}
+              >
+                <div
+                  style={{
+                    width: '48px',
+                    height: '48px',
+                    background: 'var(--pink)',
+                    borderRadius: '3px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    fontFamily: 'Abril Fatface, serif',
+                    fontSize: '1.1rem',
+                    color: 'var(--black)',
+                    letterSpacing: '0.02em',
+                  }}
+                >
+                  {site.logoLetter}
+                </div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem' }}>
+                    <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '1rem', fontWeight: 700, color: 'var(--white)' }}>
+                      {site.name}
+                    </span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: 'var(--pink)', flexShrink: 0 }}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                  <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.6)', fontWeight: 300, lineHeight: 1.6, margin: 0 }}>
+                    {site.description}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* Padlet feature */}
+          <div style={{ marginTop: '2rem', padding: '2rem', background: 'linear-gradient(135deg, rgba(232,123,195,0.12), rgba(232,123,195,0.04))', border: '1px solid rgba(232,123,195,0.3)', borderRadius: '3px' }}>
+            <div style={{ fontSize: '0.68rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pink)', marginBottom: '0.6rem' }}>
+              Featured board
+            </div>
+            <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.3rem', fontWeight: 700, color: 'var(--white)', marginBottom: '0.6rem' }}>
+              My fierce birth padlet
+            </h3>
+            <p style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.7)', fontWeight: 300, lineHeight: 1.7, marginBottom: '1.2rem' }}>
+              Leanne&apos;s curated board of articles and research — pre-labour rupture of membranes, asynclitism, anterior cervical lip, vaginal examinations, fibroids evidence and more. Made with love to support your birthing needs.
+            </p>
+            <a
+              href="https://padlet.com/birthhood"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+            >
+              Open Padlet board
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* HELP NOTICE */}
       <section className="section-pad-sm" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ textAlign: 'center', maxWidth: '640px' }}>
@@ -301,10 +645,7 @@ export default function HubClient() {
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem' }}>
             If any of these files won&apos;t open or you need something that isn&apos;t here, drop Leanne a message and she&apos;ll sort it straight away.
           </p>
-          <a
-            href="mailto:leanne@birth-hood.co.uk"
-            className="btn-outline"
-          >
+          <a href="mailto:leanne@birth-hood.co.uk" className="btn-outline">
             Email Leanne
           </a>
         </div>

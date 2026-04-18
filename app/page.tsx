@@ -15,7 +15,6 @@ export default function HomePage() {
       {/* HOME HERO */}
       <section className="home-hero-split">
         <div className="home-hero-content">
-          <div className="hero-eyebrow">NW Leicestershire · Midlands · Online</div>
           <h1 className="hero-title">Your birth,<br /><em>your way.</em></h1>
           <p className="hero-sub">
             Hypnobirthing, Doula support and Yoga — helping you feel powerful, prepared and genuinely
@@ -30,7 +29,6 @@ export default function HomePage() {
             >
               Book Free Consultation
             </a>
-            <a href="#services" className="btn-ghost">Explore services ↓</a>
           </div>
         </div>
 

@@ -74,12 +74,12 @@ nav {
 nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 .nav-logo-img { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
 .nav-logo-img img { height: 80px; width: auto; display: block; }
-.nav-logo-image { width: auto !important; height: 72px !important; object-fit: contain; }
+.nav-logo-image { width: auto !important; height: 100px !important; object-fit: contain; }
 @media (max-width: 880px) {
-  .nav-logo-image { height: 52px !important; }
+  .nav-logo-image { height: 72px !important; }
 }
-.site-main { padding-top: 116px; }
-@media (max-width: 880px) { .site-main { padding-top: 92px; } }
+.site-main { padding-top: 146px; }
+@media (max-width: 880px) { .site-main { padding-top: 116px; } }
 .nav-logo { font-family: 'Abril Fatface', serif; font-size: 1.5rem; color: var(--black); text-decoration: none; letter-spacing: -0.01em; }
 .nav-logo span { color: var(--pink-deep); }
 .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
@@ -130,7 +130,8 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 .nav-hub:hover::before { background: var(--white); }
 .nav-hub-mobile { display: none !important; }
 @media (max-width: 880px) {
-  .nav-hub-mobile { display: inline-flex !important; margin-right: 0.6rem; font-size: 0.72rem !important; padding: 0.45rem 1rem !important; }
+  .nav-hub-mobile { display: inline-flex !important; margin-right: 0.4rem; font-size: 0.7rem !important; padding: 0.4rem 0.9rem !important; letter-spacing: 0.06em !important; }
+  .nav-hub-mobile::before { width: 5px; height: 5px; }
 }
 
 /* DROPDOWN NAV */
