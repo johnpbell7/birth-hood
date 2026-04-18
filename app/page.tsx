@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CtaBand from '@/components/CtaBand'
+import HeroCollage from '@/components/HeroCollage'
 
 export const metadata: Metadata = {
   title: 'Hypnobirthing, Doula & Prenatal Yoga | NW Leicestershire & Online',
@@ -33,20 +34,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="hero-photo-collage">
-          <div className="hero-frame hero-frame-1">
-            <Image src="/images/leanne-portrait.jpg" alt="Leanne — birth-hood founder" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} priority />
-          </div>
-          <div className="hero-frame hero-frame-2">
-            <Image src="/images/hypnobirthing-class.png" alt="Hypnobirthing class in Leicester" fill style={{ objectFit: 'cover' }} />
-          </div>
-          <div className="hero-frame hero-frame-3">
-            <Image src="/images/yoga-class.jpg" alt="Prenatal yoga class" fill style={{ objectFit: 'cover' }} />
-          </div>
-          <div className="hero-frame hero-frame-4">
-            <Image src="/images/leanne-speaking.jpg" alt="Leanne speaking at a birth event" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
-          </div>
-        </div>
+        <HeroCollage />
       </section>
 
       {/* MARQUEE */}

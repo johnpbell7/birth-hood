@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Nav />
-        <main style={{ paddingTop: '116px' }}>
+        <main className="site-main">
           {children}
         </main>
         <Footer />

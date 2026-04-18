@@ -44,7 +44,7 @@ export default function Nav() {
       {/* Main nav */}
       <nav id="nav" className={scrolled ? 'scrolled' : ''}>
         <Link href="/" className="nav-logo">
-          <Image src="/images/logo.jpg" alt="birth-hood" width={200} height={200} style={{ width: 'auto', height: '110px', objectFit: 'contain' }} priority />
+          <Image src="/images/logo.jpg" alt="birth-hood" width={200} height={200} className="nav-logo-image" priority />
         </Link>
 
         <ul className="nav-links">

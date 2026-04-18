@@ -124,7 +124,7 @@ export default function HypnobirthingPage() {
       </section>
 
       {/* COURSE OPTIONS */}
-      <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
+      <section className="section-pad">
         <div className="wrap">
           <div className="section-label">Choose your course</div>
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>

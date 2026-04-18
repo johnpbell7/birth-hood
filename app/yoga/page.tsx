@@ -205,76 +205,18 @@ export default function YogaPage() {
       </section>
 
       {/* CLASS OPTIONS */}
-      <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
+      <section className="section-pad">
         <div className="wrap">
           <div className="section-label">Classes &amp; Pricing</div>
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.1 }}>
             Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>yoga experience</em>
           </h2>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '3rem' }}>
-            Course cost varies depending on the length of the course.
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.9, fontWeight: 300, marginBottom: '3rem', maxWidth: '600px' }}>
+            Course cost varies depending on the length of the course. Every class includes use of all equipment.
           </p>
 
           <div className="grid-3" style={{ gap: '1.5rem' }}>
-            {/* Prenatal Group classes */}
-            <div className="price-card featured">
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '0.5rem' }}>
-                Prenatal
-              </div>
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Group classes
-              </div>
-              <div className="price-amount">£10</div>
-              <div className="price-period">PAYG · drop-in welcome</div>
-              <ul className="price-features">
-                <li>Weekly group classes</li>
-                <li>NW Leicestershire venue</li>
-                <li>All trimesters welcome</li>
-                <li>No prior yoga experience needed</li>
-                <li>Mat and props provided</li>
-                <li>Community of expectant parents</li>
-              </ul>
-              <a
-                href="https://calendly.com/birthhood"
-                className="btn-primary"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: 'block', textAlign: 'center' }}
-              >
-                Book Class
-              </a>
-            </div>
-
-            {/* Postnatal Group classes */}
-            <div className="price-card">
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Postnatal
-              </div>
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Group classes
-              </div>
-              <div className="price-amount">£10</div>
-              <div className="price-period">PAYG · drop-in welcome</div>
-              <ul className="price-features">
-                <li>Suitable from 6 weeks postpartum</li>
-                <li>12 weeks for C-section / instrumental</li>
-                <li>Restore core and pelvic floor</li>
-                <li>Gentle return to exercise</li>
-                <li>Supportive community space</li>
-                <li>NW Leicestershire venue</li>
-              </ul>
-              <a
-                href="https://calendly.com/birthhood"
-                className="btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: 'block', textAlign: 'center' }}
-              >
-                Book Class
-              </a>
-            </div>
-
-            {/* Private / Online */}
+            {/* Private / Online (left) */}
             <div className="price-card">
               <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
                 Private or online
@@ -297,6 +239,61 @@ export default function YogaPage() {
                 style={{ display: 'block', textAlign: 'center' }}
               >
                 Enquire
+              </a>
+            </div>
+
+            {/* Prenatal Group classes (featured middle) */}
+            <div className="price-card featured">
+              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '0.5rem' }}>
+                Most popular
+              </div>
+              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
+                Prenatal group classes
+              </div>
+              <div className="price-amount">£10</div>
+              <div className="price-period">PAYG · drop-in welcome</div>
+              <ul className="price-features">
+                <li>Weekly group classes</li>
+                <li>NW Leicestershire venue</li>
+                <li>All trimesters welcome</li>
+                <li>No prior yoga experience needed</li>
+                <li>Mat and props provided</li>
+                <li>Community of expectant parents</li>
+              </ul>
+              <a
+                href="https://calendly.com/birthhood"
+                className="btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'block', textAlign: 'center' }}
+              >
+                Book Class
+              </a>
+            </div>
+
+            {/* Postnatal Group classes (right) */}
+            <div className="price-card">
+              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
+                Postnatal group classes
+              </div>
+              <div className="price-amount">£10</div>
+              <div className="price-period">PAYG · drop-in welcome</div>
+              <ul className="price-features">
+                <li>Suitable from 6 weeks postpartum</li>
+                <li>12 weeks for C-section / instrumental</li>
+                <li>Restore core and pelvic floor</li>
+                <li>Gentle return to exercise</li>
+                <li>Supportive community space</li>
+                <li>NW Leicestershire venue</li>
+              </ul>
+              <a
+                href="https://calendly.com/birthhood"
+                className="btn-outline"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'block', textAlign: 'center' }}
+              >
+                Book Class
               </a>
             </div>
           </div>
