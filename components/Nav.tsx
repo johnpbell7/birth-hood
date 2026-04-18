@@ -79,6 +79,7 @@ export default function Nav() {
               <li><Link href="/freebies">Free Resources</Link></li>
               <li><Link href="/faq">FAQ</Link></li>
               <li><Link href="/contact">Contact</Link></li>
+              <li><Link href="/hub">Client Hub</Link></li>
             </ul>
           </li>
           <li>
@@ -140,6 +141,7 @@ export default function Nav() {
             <Link href="/freebies" onClick={() => setMobOpen(false)}>Free Resources</Link>
             <Link href="/faq" onClick={() => setMobOpen(false)}>FAQ</Link>
             <Link href="/contact" onClick={() => setMobOpen(false)}>Contact</Link>
+            <Link href="/hub" onClick={() => setMobOpen(false)}>Client Hub</Link>
           </div>
         )}
 
