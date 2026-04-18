@@ -127,6 +127,26 @@ const videos: Video[] = [
     title: 'Workshop Recordings',
     description: 'Full recordings of birth-hood course sessions and workshops covering birth positions, coaching, breathing techniques and more.',
   },
+  {
+    title: 'Birth Positions Walkthrough',
+    description: 'A visual guide to the most effective positions for each stage of labour and birth.',
+  },
+  {
+    title: 'Breathing Techniques',
+    description: 'Leanne demonstrates up-breathing, down-breathing and relaxation breaths for every stage of labour.',
+  },
+  {
+    title: 'Partner Coaching Session',
+    description: 'How your birth partner can actively support you — comfort measures, advocacy and space-holding.',
+  },
+  {
+    title: 'Caesarean Birth Prep',
+    description: 'What to expect before, during and after a caesarean — making it as positive as possible.',
+  },
+  {
+    title: 'Fourth Trimester Essentials',
+    description: 'Preparing for the early weeks with your baby — feeding, sleep, recovery and emotional wellbeing.',
+  },
 ]
 
 const usefulSites: UsefulSite[] = [

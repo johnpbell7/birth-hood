@@ -63,7 +63,6 @@ export default function CourseInfoPage() {
                   </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--pink-deep)', fontWeight: 500 }}>{course.spaces}</span>
                   <a
                     href="https://calendly.com/birthhood"
                     className="btn-outline"
