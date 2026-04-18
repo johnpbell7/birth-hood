@@ -70,14 +70,14 @@ export default function TermsPage() {
               </li>
             </ul>
             <p>
-              Exceptions may be made at Leanne&apos;s discretion in cases of exceptional circumstances
+              Exceptions may be made at my discretion in cases of exceptional circumstances
               (such as pregnancy complications or bereavement). Please get in touch as soon as
               possible in these situations.
             </p>
 
             <h3>2.2 Cancellations by birth-hood</h3>
             <p>
-              In the unlikely event that Leanne needs to cancel a session or service, every effort
+              In the unlikely event that I need to cancel a session or service, every effort
               will be made to reschedule to a mutually convenient time. If rescheduling is not
               possible, a full refund of all amounts paid will be issued within 14 days.
             </p>
@@ -85,7 +85,7 @@ export default function TermsPage() {
             <h3>2.3 Group courses — missed sessions</h3>
             <p>
               For group courses, missed sessions cannot be refunded or rescheduled individually.
-              If you miss a session, Leanne will provide notes and recordings where possible, and
+              If you miss a session, I will provide notes and recordings where possible, and
               you are welcome to ask questions via WhatsApp or at the next session.
             </p>
 
@@ -94,22 +94,22 @@ export default function TermsPage() {
 
             <h3>3.1 On-call period</h3>
             <p>
-              Leanne is on call for birth doula clients from 39 weeks of pregnancy. She will make
-              every reasonable effort to attend your birth. In the event that she is unable to
-              attend due to illness, personal emergency or simultaneous births, she will arrange
-              for a fully briefed backup doula to attend in her place.
+              I am on call for birth doula clients from 39 weeks of pregnancy. I will make
+              every reasonable effort to attend your birth. In the event that I am unable to
+              attend due to illness, personal emergency or simultaneous births, I will arrange
+              for a fully briefed backup doula to attend in my place.
             </p>
 
             <h3>3.2 Professional boundaries</h3>
             <p>
-              As a birth doula, Leanne provides non-medical support only. She will not perform any
+              As a birth doula, I provide non-medical support only. I will not perform any
               clinical tasks, give medical advice, or make clinical decisions. All clinical care
               remains the responsibility of your midwife and medical team.
             </p>
 
             <h3>3.3 Photography and recording</h3>
             <p>
-              Leanne will not take photographs or make recordings during your birth unless explicitly
+              I will not take photographs or make recordings during your birth unless explicitly
               requested by you. Any photography or recording equipment must be agreed in advance
               with your midwife and birth unit.
             </p>
@@ -119,7 +119,7 @@ export default function TermsPage() {
 
             <h3>4.1 Your information</h3>
             <p>
-              All personal and medical information shared with Leanne is held in strict confidence.
+              All personal and medical information shared with me is held in strict confidence.
               Information will not be shared with third parties without your explicit consent,
               except where required by law or where there is a serious safeguarding concern.
             </p>
@@ -143,7 +143,7 @@ export default function TermsPage() {
 
             <h3>5.1 Qualifications and insurance</h3>
             <p>
-              Leanne holds current professional indemnity and public liability insurance appropriate
+              I hold current professional indemnity and public liability insurance appropriate
               to all services provided. All qualifications are maintained and renewed in line with
               the requirements of the relevant certifying bodies (KGHypnobirthing, Badass Birth,
               Sally Parkes).
@@ -159,8 +159,8 @@ export default function TermsPage() {
 
             <h3>5.3 Scope of practice</h3>
             <p>
-              Leanne works strictly within her scope of practice as defined by her training and
-              professional bodies. She will always refer clients to appropriate specialist services
+              I work strictly within my scope of practice as defined by my training and
+              professional bodies. I will always refer clients to appropriate specialist services
               — including NHS services, mental health support, or other specialists — when this is
               in the client&apos;s best interests.
             </p>

@@ -68,7 +68,7 @@ export default function DoulaPage() {
                 </div>
                 <div className="stat-card">
                   <div className="stat-number">5★</div>
-                  <div className="stat-label">Rated by every client Leanne has supported</div>
+                  <div className="stat-label">Rated by every client I have supported</div>
                 </div>
               </div>
             </div>

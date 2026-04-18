@@ -64,7 +64,7 @@ export default function FreebiesPage() {
       <PageHero
         eyebrow="Yours. For free. No strings."
         title={<><em>Free</em> Resources</>}
-        subtitle="Birth affirmations, guides, templates and audio — all created by Leanne, all completely free."
+        subtitle="Birth affirmations, guides, templates and audio — all created by me, all completely free."
         img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         img2={{ src: '/images/hypnobirthing-class.png', alt: 'Hypnobirthing class' }}
       />

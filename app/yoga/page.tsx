@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: 'Is prenatal yoga safe throughout pregnancy?',
-    a: 'Yes — Leanne\'s classes are specifically designed for pregnancy and are safe from the first trimester through to birth. The classes are adapted for each trimester, with modifications offered at every stage. As always, if you have any concerns or complications, please check with your midwife or doctor before joining.',
+    a: 'Yes — my classes are specifically designed for pregnancy and are safe from the first trimester through to birth. The classes are adapted for each trimester, with modifications offered at every stage. As always, if you have any concerns or complications, please check with your midwife or doctor before joining.',
   },
   {
     q: 'Do I need prior yoga experience?',
@@ -76,7 +76,7 @@ export default function YogaPage() {
                 equipment (though feel free to bring own mat etc).
               </p>
               <p>
-                If you wish to join as a one off session (<strong>\u00A310 PAYG</strong>), please contact
+                If you wish to join as a one off session (<strong>&pound;10 PAYG</strong>), please contact
                 me for space availability. Please drop me a message if you want to chat anything through.
               </p>
 
@@ -95,19 +95,19 @@ export default function YogaPage() {
               <div className="section-label" style={{ marginBottom: '1.5rem' }}>Benefits of prenatal yoga</div>
               <div className="stat-grid">
                 <div className="stat-card">
-                  <div className="stat-number">\u2193</div>
+                  <div className="stat-number">&darr;</div>
                   <div className="stat-label">Reduces anxiety and stress during pregnancy</div>
                 </div>
                 <div className="stat-card">
-                  <div className="stat-number">\u2191</div>
+                  <div className="stat-number">&uarr;</div>
                   <div className="stat-label">Improves sleep quality and physical comfort</div>
                 </div>
                 <div className="stat-card">
-                  <div className="stat-number">\u2665</div>
+                  <div className="stat-number">&hearts;</div>
                   <div className="stat-label">Strengthens the mind-body connection</div>
                 </div>
                 <div className="stat-card">
-                  <div className="stat-number">\u273F</div>
+                  <div className="stat-number">&#10047;</div>
                   <div className="stat-label">Builds community with other expectant parents</div>
                 </div>
               </div>
@@ -115,8 +115,8 @@ export default function YogaPage() {
               <div className="card card-pink" style={{ marginTop: '2rem' }}>
                 <div className="section-label" style={{ marginBottom: '0.8rem' }}>Qualified &amp; trained</div>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
-                  85hr Pregnancy/Postnatal Yoga teaching — Sally Parkes 2022. Leanne is trained in
-                  evidence-based approaches to prenatal and postnatal yoga, equipping her to safely
+                  85hr Pregnancy/Postnatal Yoga teaching — Sally Parkes 2022. I&apos;m trained in
+                  evidence-based approaches to prenatal and postnatal yoga, and I&apos;ll safely
                   support you at every stage.
                 </p>
               </div>

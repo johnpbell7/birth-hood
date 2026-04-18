@@ -95,7 +95,7 @@ export default function BirthDoulaPage() {
                 </div>
                 <div className="stat-card">
                   <div className="stat-number">100's</div>
-                  <div className="stat-label">of families supported by Leanne</div>
+                  <div className="stat-label">of families I&apos;ve supported</div>
                 </div>
               </div>
             </div>

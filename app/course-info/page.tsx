@@ -38,9 +38,9 @@ export default function CourseInfoPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', marginBottom: '2.5rem' }}>
             {[
-              { date: 'Spring 2026 — dates TBC', time: 'Sundays, 10am–12:30pm', location: 'Leicester · 4 sessions', spaces: 'Registering interest', featured: false },
-              { date: 'Summer 2026 — dates TBC', time: 'Saturdays, 1pm–3:30pm', location: 'Leicester · 4 sessions', spaces: 'Registering interest', featured: true },
-              { date: 'Autumn 2026 — dates TBC', time: 'Midweek evenings, 7pm–9:30pm', location: 'Leicester · 4 sessions', spaces: 'Registering interest', featured: false },
+              { date: 'Spring 2026 — dates TBC', time: 'Sundays, 10am–12:30pm', location: 'NW Leicestershire · 4 sessions', spaces: 'Registering interest', featured: false },
+              { date: 'Summer 2026 — dates TBC', time: 'Saturdays, 1pm–3:30pm', location: 'NW Leicestershire · 4 sessions', spaces: 'Registering interest', featured: true },
+              { date: 'Autumn 2026 — dates TBC', time: 'Midweek evenings, 7pm–9:30pm', location: 'NW Leicestershire · 4 sessions', spaces: 'Registering interest', featured: false },
             ].map((course, i) => (
               <div key={i} style={{
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
@@ -117,7 +117,7 @@ export default function CourseInfoPage() {
               },
               {
                 title: 'WhatsApp support group',
-                desc: 'Join the birth-hood community — a supportive group of like-minded parents going through the same journey, moderated by Leanne.',
+                desc: 'Join the birth-hood community — a supportive group of like-minded parents going through the same journey, moderated by me.',
               },
               {
                 title: 'Postnatal debrief',

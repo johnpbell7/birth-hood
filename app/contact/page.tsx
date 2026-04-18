@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
+import PageHero from '@/components/PageHero'
 import ContactForm from './ContactForm'
 
 export const metadata: Metadata = {
@@ -10,17 +11,13 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="page-hero-inner">
-          <div className="page-eyebrow">Let&apos;s talk</div>
-          <h1 className="page-title">Get in <em>Touch</em></h1>
-          <p className="page-subtitle">
-            For enquiries, please contact me directly via this page. I will get back to you ASAP!
-            I can&apos;t wait to help you prepare for your birth, knowing your rights, your options,
-            and feeling like you did everything you could to prepare to start parenthood positively.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Let's talk"
+        title={<>Get in <em>Touch</em></>}
+        subtitle="For enquiries, please contact me directly via this page. I'll get back to you ASAP! I can't wait to help you prepare for your birth, knowing your rights, your options, and feeling like you did everything you could to prepare to start parenthood positively."
+        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img2={{ src: '/images/doula-support.png', alt: 'Doula support' }}
+      />
 
       <MarqueeStrip />
 
@@ -117,7 +114,7 @@ export default function ContactPage() {
               <div style={{ background: 'var(--pink-ultra)', padding: '2rem', borderRadius: '3px', border: '1px solid rgba(232,123,195,0.3)' }}>
                 <div className="section-label">Or book directly</div>
                 <p style={{ fontSize: '0.9rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.7, marginBottom: '1.2rem' }}>
-                  Skip the form and book a free consultation call straight into Leanne&apos;s diary.
+                  Skip the form and book a free consultation call straight into my diary.
                 </p>
                 <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="btn-primary">
                   Book Free Consultation

@@ -133,7 +133,7 @@ const videos: Video[] = [
   },
   {
     title: 'Breathing Techniques',
-    description: 'Leanne demonstrates up-breathing, down-breathing and relaxation breaths for every stage of labour.',
+    description: 'I demonstrate up-breathing, down-breathing and relaxation breaths for every stage of labour.',
   },
   {
     title: 'Partner Coaching Session',
@@ -484,7 +484,7 @@ export default function HubClient() {
 
           <div style={{ marginTop: '2rem', padding: '1rem 1.5rem', background: 'var(--white)', border: '1px dashed rgba(232,123,195,0.5)', borderRadius: '3px' }}>
             <p style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: 'var(--black)' }}>Tip for Leanne:</strong> Upload MP3 files to the project (or a hosting service) and set each track&apos;s <code>src</code> in <code>app/hub/HubClient.tsx</code> to enable the players.
+              <strong style={{ color: 'var(--black)' }}>Tip:</strong> Upload MP3 files to the project (or a hosting service) and set each track&apos;s <code>src</code> in <code>app/hub/HubClient.tsx</code> to enable the players.
             </p>
           </div>
         </div>
@@ -556,7 +556,7 @@ export default function HubClient() {
 
           <div style={{ marginTop: '2rem', padding: '1rem 1.5rem', background: 'var(--pink-ultra)', border: '1px dashed rgba(232,123,195,0.5)', borderRadius: '3px' }}>
             <p style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: 'var(--black)' }}>Tip for Leanne:</strong> Upload video files or add a YouTube/Vimeo embed URL as the video <code>src</code> in <code>app/hub/HubClient.tsx</code>.
+              <strong style={{ color: 'var(--black)' }}>Tip:</strong> Upload video files or add a YouTube/Vimeo embed URL as the video <code>src</code> in <code>app/hub/HubClient.tsx</code>.
             </p>
           </div>
         </div>
@@ -570,7 +570,7 @@ export default function HubClient() {
             Useful <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>websites</em>
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
-            Trusted external resources Leanne recommends for deeper reading on birth choices, rights, physiology and evidence-based research.
+            Trusted external resources I recommend for deeper reading on birth choices, rights, physiology and evidence-based research.
           </p>
 
           <div className="grid-3" style={{ gap: '1rem' }}>
@@ -637,7 +637,7 @@ export default function HubClient() {
               My fierce birth padlet
             </h3>
             <p style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.7)', fontWeight: 300, lineHeight: 1.7, marginBottom: '1.2rem' }}>
-              Leanne&apos;s curated board of articles and research — pre-labour rupture of membranes, asynclitism, anterior cervical lip, vaginal examinations, fibroids evidence and more. Made with love to support your birthing needs.
+              My curated board of articles and research — pre-labour rupture of membranes, asynclitism, anterior cervical lip, vaginal examinations, fibroids evidence and more. Made with love to support your birthing needs.
             </p>
             <a
               href="https://padlet.com/birthhood"
@@ -663,10 +663,10 @@ export default function HubClient() {
             Can&apos;t access a resource?
           </h3>
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem' }}>
-            If any of these files won&apos;t open or you need something that isn&apos;t here, drop Leanne a message and she&apos;ll sort it straight away.
+            If any of these files won&apos;t open or you need something that isn&apos;t here, drop me a message and I&apos;ll sort it straight away.
           </p>
           <a href="mailto:leanne@birth-hood.co.uk" className="btn-outline">
-            Email Leanne
+            Email me
           </a>
         </div>
       </section>

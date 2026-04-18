@@ -50,7 +50,7 @@ const links = [
   },
   {
     label: 'Dou-La-La Podcast',
-    desc: 'Honest birth talk with Leanne &amp; Meg',
+    desc: 'Honest birth talk with me &amp; Meg',
     href: '/podcast',
     external: false,
     featured: false,
@@ -64,7 +64,7 @@ const links = [
   },
   {
     label: 'Reviews',
-    desc: 'What families say about working with Leanne',
+    desc: 'What families say about working with me',
     href: '/reviews',
     external: false,
     featured: false,
@@ -107,7 +107,7 @@ export default function LinksPage() {
             Birth <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>Hood</em>
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', fontWeight: 300, lineHeight: 1.7 }}>
-            Doula support, hypnobirthing, prenatal yoga and more — with Leanne, based in NW Leicestershire.
+            Doula support, hypnobirthing, prenatal yoga and more — based in NW Leicestershire.
           </p>
         </div>
       </div>

@@ -40,11 +40,11 @@ export default function VirtualDoulaPage() {
               <p>
                 A virtual doula offers the same compassionate, evidence-based support as in-person
                 doula care — delivered entirely online. From your first antenatal session to your
-                postnatal debrief, Leanne is with you every step of the way via video call,
+                postnatal debrief, I&apos;m with you every step of the way via video call,
                 phone and message.
               </p>
               <p>
-                During labour, Leanne is available by phone and video call to provide guidance,
+                During labour, I&apos;m available by phone and video call to provide guidance,
                 encouragement and calm support — coaching you and your birth partner in real time
                 through breathing techniques, comfort measures and decision-making.
               </p>

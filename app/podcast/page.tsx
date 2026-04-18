@@ -41,7 +41,7 @@ export default function PodcastPage() {
               <div className="section-label">About the show</div>
               <h2>Real talk about birth, pregnancy and beyond</h2>
               <p>
-                Join Leanne and Meg (Birth Evolution) as they explore all areas of pregnancy,
+                Join me and Meg (Birth Evolution) as we explore all areas of pregnancy,
                 birth and the postnatal period. This is honest, unfiltered conversation from two
                 doulas who have been in the room, heard the stories and know what really matters.
               </p>
@@ -61,7 +61,7 @@ export default function PodcastPage() {
               <div className="stat-grid">
                 <div className="stat-card">
                   <div className="stat-number">2</div>
-                  <div className="stat-label">Doulas — Leanne &amp; Meg from Birth Evolution</div>
+                  <div className="stat-label">Doulas — me &amp; Meg from Birth Evolution</div>
                 </div>
                 <div className="stat-card">
                   <div className="stat-number">Real</div>

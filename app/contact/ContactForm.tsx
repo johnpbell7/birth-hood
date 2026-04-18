@@ -45,7 +45,7 @@ export default function ContactForm() {
           Message sent!
         </h2>
         <p style={{ color: 'var(--grey-mid)', fontWeight: 300 }}>
-          Thank you for getting in touch. Leanne will be in touch within 24–48 hours.
+          Thank you for getting in touch. I&apos;ll be in touch within 24–48 hours.
         </p>
       </div>
     )
@@ -64,7 +64,7 @@ export default function ContactForm() {
           <input id="email" name="email" type="email" placeholder="your@email.com" className="form-input" required />
         </div>
         <div>
-          <label className="form-label" htmlFor="service">How can Leanne help?</label>
+          <label className="form-label" htmlFor="service">How can I help?</label>
           <select id="service" name="service" className="form-select">
             <option value="">Select a service...</option>
             <option>Hypnobirthing Course</option>
@@ -85,7 +85,7 @@ export default function ContactForm() {
           <textarea
             id="message"
             name="message"
-            placeholder="Tell Leanne a little about you and what you're looking for..."
+            placeholder="Tell me a little about you and what you&apos;re looking for..."
             className="form-textarea"
             required
           />
@@ -102,7 +102,7 @@ export default function ContactForm() {
         </button>
 
         <p style={{ fontSize: '0.75rem', color: 'var(--grey-mid)', fontWeight: 300 }}>
-          By submitting this form you agree to being contacted by Leanne at birth-hood. Your data is never shared.
+          By submitting this form you agree to being contacted by me at birth-hood. Your data is never shared.
         </p>
       </form>
     </div>

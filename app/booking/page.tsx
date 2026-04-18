@@ -24,7 +24,7 @@ const bookingOptions = [
   },
   {
     title: 'Free Consultation',
-    desc: 'Not sure which service is right for you? Book a free 30-minute consultation with Leanne.',
+    desc: 'Not sure which service is right for you? Book a free 30-minute consultation with me.',
     href: 'https://calendly.com/birthhood',
     cta: 'Book Free Call',
     featured: false,
@@ -125,11 +125,11 @@ export default function BookingPage() {
               </p>
               <p>
                 After booking you&apos;ll receive an automatic confirmation email with all the details
-                you need. For in-person bookings, Leanne will send the venue address separately.
+                you need. For in-person bookings, I&apos;ll send the venue address separately.
               </p>
               <p>
                 Not sure which service is right for you? Book a free 30-minute consultation
-                and Leanne will help you figure out the best fit for your pregnancy, budget and goals.
+                and I&apos;ll help you figure out the best fit for your pregnancy, budget and goals.
               </p>
             </div>
             <div className="card card-pink" style={{ padding: '2.5rem' }}>
@@ -155,7 +155,7 @@ export default function BookingPage() {
 
       <CtaBand
         heading="Ready to book your place?"
-        body="Spaces fill up quickly — secure your spot on Leanne's next hypnobirthing course or yoga class."
+        body="Spaces fill up quickly — secure your spot on my next hypnobirthing course or yoga class."
         href="https://calendly.com/birthhood"
         label="View All Availability"
       />

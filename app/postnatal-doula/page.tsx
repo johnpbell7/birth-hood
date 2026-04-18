@@ -43,9 +43,9 @@ export default function PostnatalDoulaPage() {
                 your own home, helping you settle into your new role with confidence.
               </p>
               <p>
-                Leanne is there to take care of you, so you can take care of your baby. Whether
+                I&apos;m there to take care of you, so you can take care of your baby. Whether
                 that means holding baby while you sleep, helping with older siblings, making a
-                meal or simply being a calm, experienced presence to talk to — Leanne adapts to
+                meal or simply being a calm, experienced presence to talk to — I adapt to
                 whatever you need most.
               </p>
               <p>
@@ -220,7 +220,7 @@ export default function PostnatalDoulaPage() {
 
           <div className="card card-pink" style={{ marginTop: '2rem', padding: '1.5rem 2rem' }}>
             <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
-              <strong style={{ fontWeight: 600 }}>Please note:</strong> Additional mileage is charged at 45p/mile for distances over 10 miles from Leanne&apos;s base. All visits are a minimum of 2 hours. Hours can be distributed in any way that suits your family.
+              <strong style={{ fontWeight: 600 }}>Please note:</strong> Additional mileage is charged at 45p/mile for distances over 10 miles from my base. All visits are a minimum of 2 hours. Hours can be distributed in any way that suits your family.
             </p>
           </div>
         </div>

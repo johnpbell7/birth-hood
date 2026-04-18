@@ -92,9 +92,9 @@ export default function BirthTraumaPage() {
               <div className="card card-pink" style={{ marginBottom: '1.5rem' }}>
                 <div className="section-label" style={{ marginBottom: '1rem' }}>Important note</div>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300 }}>
-                  Leanne is not a therapist or mental health professional. Her support is
-                  trauma-informed and compassionate, but she is not a replacement for specialist
-                  psychological care. Where appropriate, she will always refer you to the right
+                  I am not a therapist or mental health professional. My support is
+                  trauma-informed and compassionate, but I am not a replacement for specialist
+                  psychological care. Where appropriate, I will always refer you to the right
                   specialist support.
                 </p>
               </div>
@@ -241,7 +241,7 @@ export default function BirthTraumaPage() {
 
       <CtaBand
         heading="Ready to start healing?"
-        body="Book a gentle, no-obligation conversation with Leanne to talk about your experience and how she can support you."
+        body="Book a gentle, no-obligation conversation with me to talk about your experience and how I can support you."
         href="https://calendly.com/birthhood"
         label="Book a Conversation"
       />

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { client, blogPostsQuery, isSanityConfigured } from '@/lib/sanity'
 import MarqueeStrip from '@/components/MarqueeStrip'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -53,15 +54,13 @@ export default async function BlogPage() {
 
   return (
     <>
-      <section className="page-hero">
-        <div className="page-hero-inner">
-          <div className="page-eyebrow">Thoughts · Advice · Stories</div>
-          <h1 className="page-title">The <em>Blog</em></h1>
-          <p className="page-subtitle">
-            Articles, tips and real talk on birth, hypnobirthing, doula support and everything in between.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Thoughts · Advice · Stories"
+        title={<>The <em>Blog</em></>}
+        subtitle="Articles, tips and real talk on birth, hypnobirthing, doula support and everything in between."
+        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img2={{ src: '/images/hypnobirthing-class.png', alt: 'Hypnobirthing class' }}
+      />
 
       <MarqueeStrip />
 
@@ -120,7 +119,7 @@ export default async function BlogPage() {
 
       <div className="cta-band reveal">
         <h2>Want personalised advice? <em style={{ fontStyle: 'italic' }}>Book a chat.</em></h2>
-        <p>A free 20-minute consultation with Leanne — no obligation, just a helpful conversation.</p>
+        <p>A free 20-minute consultation with me — no obligation, just a helpful conversation.</p>
         <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="btn-dark">Book Free Consultation</a>
       </div>
     </>

@@ -33,6 +33,18 @@ const reviews = [
     service: 'Hypnobirthing',
   },
   {
+    text: "Our birth experience was nothing short of amazing, and something we are both extremely proud of. Using everything we learnt from our course, we got the birth we had in mind and we are so proud.",
+    author: 'Client',
+    location: 'Leicestershire',
+    service: 'Hypnobirthing',
+  },
+  {
+    text: "Out of all the things we've spent money on for our little one, this I feel is the most important. We've had an amazing 1-1 course with Leanne, who from our first session has made us feel so calm, comfortable and relaxed, we feel like we've known her for years.",
+    author: 'Client',
+    location: 'Leicestershire',
+    service: 'Private 1-1 Course',
+  },
+  {
     text: "From my first contact with Leanne we just clicked. She supported me through my concern about fibroids, and gave me some brilliant yoga positions to try when my SPD started. She kept in contact through my pregnancy and made me feel like I really had amazing support whenever I needed it. I can't recommend Leanne highly enough, she's a pro at end-to-end care!",
     author: 'Beka',
     location: 'Leicestershire',
@@ -44,6 +56,22 @@ const reviews = [
     location: 'Leicestershire',
     service: 'Birth Doula',
   },
+  {
+    text: "My advice to anyone thinking to book Leanne would be to not hesitate — she's definitely 'worth every penny' as one of the home birth midwives rightly said! She knows her job inside out and ensures she creates a loving and strong relationship with all her clients.",
+    author: 'Home Birth Client',
+    location: 'Leicestershire',
+    service: 'Birth Doula',
+  },
+]
+
+const birthStories = [
+  { title: "Britt's Homebirth", type: 'Homebirth' },
+  { title: "Hannah's FMU Birth", type: 'FMU Birth' },
+  { title: "Emma's Positive Induction", type: 'Induction' },
+  { title: "Stacie's Hospital birth", type: 'Hospital' },
+  { title: "Tom's 'dad' story", type: 'Birth Partner' },
+  { title: "Amy's Positive Induction", type: 'Induction' },
+  { title: "Hannah's Water Birth", type: 'Water Birth' },
 ]
 
 export default function ReviewsPage() {
@@ -93,12 +121,38 @@ export default function ReviewsPage() {
         </div>
       </section>
 
+      {/* BIRTH STORIES */}
+      <section className="section-pad">
+        <div className="wrap">
+          <div className="section-label">Birth stories</div>
+          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 900, marginBottom: '0.8rem', lineHeight: 1.1 }}>
+            Stories from <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>real births</em>
+          </h2>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '640px' }}>
+            A collection of positive birth stories shared by my clients — every birth, every path, every outcome is valid.
+          </p>
+
+          <div className="grid-3" style={{ gap: '1rem' }}>
+            {birthStories.map((story) => (
+              <div key={story.title} className="card" style={{ padding: '1.4rem 1.5rem', borderTop: '3px solid var(--pink)' }}>
+                <div style={{ fontSize: '0.68rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '0.6rem' }}>
+                  {story.type}
+                </div>
+                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.1rem', fontWeight: 700, color: 'var(--black)', lineHeight: 1.3 }}>
+                  {story.title}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* LEAVE A REVIEW */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ textAlign: 'center', maxWidth: '600px' }}>
           <div className="section-label" style={{ justifyContent: 'center', marginBottom: '1rem' }}>Share your experience</div>
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.1 }}>
-            Worked with <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>Leanne?</em>
+            Worked with <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>me?</em>
           </h2>
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2rem' }}>
             Your review helps other families find the support they&apos;re looking for. It would

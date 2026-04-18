@@ -98,7 +98,7 @@ export default function HypnobirthingPage() {
                 </div>
                 <div className="stat-card">
                   <div className="stat-number">100's</div>
-                  <div className="stat-label">of families supported by Leanne</div>
+                  <div className="stat-label">of families I&apos;ve supported</div>
                 </div>
                 <div className="stat-card">
                   <div className="stat-number">5★</div>
@@ -113,7 +113,7 @@ export default function HypnobirthingPage() {
               <div className="card card-pink" style={{ marginTop: '2rem' }}>
                 <div className="section-label" style={{ marginBottom: '1rem' }}>KGHypnobirthing</div>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300 }}>
-                  Leanne is a certified KGHypnobirthing practitioner, trained in the UK&apos;s leading
+                  I&apos;m a certified KGHypnobirthing practitioner, trained in the UK&apos;s leading
                   hypnobirthing method — developed by Katharine Graves, widely regarded as the gold
                   standard in birth preparation.
                 </p>

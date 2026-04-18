@@ -253,7 +253,7 @@ export default function HomePage() {
             Free resources to get you started
           </h2>
           <p style={{ color: 'rgba(0,0,0,0.6)', marginBottom: '2rem', fontWeight: 300, lineHeight: 1.8 }}>
-            Download Leanne&apos;s free birth affirmations, birth plan guide and newborn checklist —
+            Download my free birth affirmations, birth plan guide and newborn checklist —
             no email required, no strings attached. Plus a FREE Hypnobirthing MP3 and ELLE TENS machine discount code!
           </p>
           <div className="freebies-items">
@@ -268,44 +268,106 @@ export default function HomePage() {
       </section>
 
       {/* INSTAGRAM FEED */}
+      {/*
+        TO CONNECT A LIVE INSTAGRAM FEED:
+        1. Sign up for a free account at https://lightwidget.com or https://behold.so
+        2. Connect @birthhooduk
+        3. Replace the .insta-grid-v2 div (below) with the embed code they provide.
+
+        Examples:
+        - LightWidget:
+            <iframe
+              src="https://lightwidget.com/widgets/YOUR_WIDGET_ID.html"
+              scrolling="no"
+              allowTransparency
+              style={{ width: '100%', border: 0, overflow: 'hidden', minHeight: 500 }}
+            />
+        - Behold (no API key needed — free tier available):
+            <script defer src="https://w.behold.so/widget.js"></script>
+            <behold-widget id="YOUR_WIDGET_ID"></behold-widget>
+        - Elfsight:
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+            <div className="elfsight-app-YOUR_APP_ID"></div>
+      */}
       <section className="insta-section">
-        <div className="insta-header">
-          <div>
+
+        {/* Instagram-style profile header */}
+        <div className="insta-profile-header">
+          <div className="insta-profile-avatar">
+            <Image
+              src="/images/leanne-portrait.jpg"
+              alt="@birthhooduk on Instagram"
+              fill
+              style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            />
+          </div>
+          <div className="insta-profile-info">
             <div className="section-label">Follow along</div>
             <h2 className="insta-heading">
-              Real moments,<br /><em>real families</em>
+              Follow me on <em>Instagram</em>
             </h2>
+            <p className="insta-tagline">
+              @birthhooduk — real moments from my day-to-day work supporting families
+            </p>
           </div>
           <a
             href="https://www.instagram.com/birthhooduk"
-            className="btn-outline"
+            className="btn-primary insta-follow-btn"
             target="_blank"
             rel="noopener noreferrer"
           >
-            @birthhooduk ↗
+            Follow @birthhooduk ↗
           </a>
         </div>
 
-        <div className="insta-grid">
-          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-post insta-post--tall" style={{ background: 'var(--pink-pale)' }}>
-            <Image src="/images/leanne-portrait.jpg" alt="Leanne birth-hood" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
-            <div className="insta-overlay"><span>♥ Follow</span></div>
+        {/* 6-tile grid — 2 rows × 3 columns on desktop, 2 columns on mobile */}
+        <div className="insta-grid-v2">
+          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-tile">
+            <Image src="/images/leanne-portrait.jpg" alt="Leanne — @birthhooduk" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+            <div className="insta-tile-overlay">
+              <span className="insta-tile-cta">View on Instagram</span>
+            </div>
           </a>
-          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-post insta-post--wide" style={{ background: 'var(--pink-pale)' }}>
-            <Image src="/images/hypnobirthing-class.png" alt="Hypnobirthing class" fill style={{ objectFit: 'cover' }} />
-            <div className="insta-overlay"><span>♥ Follow</span></div>
+          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-tile">
+            <Image src="/images/hypnobirthing-class.png" alt="Hypnobirthing class — @birthhooduk" fill style={{ objectFit: 'cover' }} />
+            <div className="insta-tile-overlay">
+              <span className="insta-tile-cta">View on Instagram</span>
+            </div>
           </a>
-          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-post" style={{ background: 'var(--pink-pale)' }}>
-            <Image src="/images/doula-support.png" alt="Doula support" fill style={{ objectFit: 'cover' }} />
-            <div className="insta-overlay"><span>♥ Follow</span></div>
+          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-tile">
+            <Image src="/images/doula-support.png" alt="Doula support — @birthhooduk" fill style={{ objectFit: 'cover' }} />
+            <div className="insta-tile-overlay">
+              <span className="insta-tile-cta">View on Instagram</span>
+            </div>
           </a>
-          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-post" style={{ background: 'var(--pink-pale)' }}>
-            <Image src="/images/yoga-class.jpg" alt="Prenatal yoga" fill style={{ objectFit: 'cover' }} />
-            <div className="insta-overlay"><span>♥ Follow</span></div>
+          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-tile">
+            <Image src="/images/yoga-class.jpg" alt="Prenatal yoga — @birthhooduk" fill style={{ objectFit: 'cover' }} />
+            <div className="insta-tile-overlay">
+              <span className="insta-tile-cta">View on Instagram</span>
+            </div>
           </a>
-          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-post" style={{ background: 'var(--pink-pale)' }}>
-            <Image src="/images/leanne-speaking.jpg" alt="Leanne speaking" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
-            <div className="insta-overlay"><span>♥ Follow</span></div>
+          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-tile">
+            <Image src="/images/leanne-speaking.jpg" alt="Leanne speaking — @birthhooduk" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+            <div className="insta-tile-overlay">
+              <span className="insta-tile-cta">View on Instagram</span>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-tile">
+            <Image src="/images/hypnobirthing-class.png" alt="Supporting families — @birthhooduk" fill style={{ objectFit: 'cover', objectPosition: 'center 30%' }} />
+            <div className="insta-tile-overlay">
+              <span className="insta-tile-cta">View on Instagram</span>
+            </div>
+          </a>
+        </div>
+
+        <div className="insta-cta-row">
+          <a
+            href="https://www.instagram.com/birthhooduk"
+            className="btn-outline insta-view-all"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            See more on Instagram @birthhooduk ↗
           </a>
         </div>
       </section>

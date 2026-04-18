@@ -54,8 +54,8 @@ export default function MasterclassPage() {
                 delivers real, life-changing knowledge in a single session.
               </p>
               <p>
-                Delivered by Leanne in a small group format (maximum 8 couples) or as a private session,
-                the masterclass is relaxed, interactive and full of practical tools you can use right away.
+                I deliver this in a small group format (maximum 8 couples) or as a private session —
+                relaxed, interactive and full of practical tools you can use right away.
               </p>
             </div>
 
@@ -72,7 +72,7 @@ export default function MasterclassPage() {
                   <li>Maximum 8 couples</li>
                   <li>Comprehensive workbook included</li>
                   <li>Relaxation audio download</li>
-                  <li>Q&A with Leanne</li>
+                  <li>Q&amp;A with me</li>
                   <li>Leicester venue or online</li>
                 </ul>
                 <a
