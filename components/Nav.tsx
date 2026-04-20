@@ -89,11 +89,12 @@ export default function Nav() {
           </li>
         </ul>
 
-        <Link href="/hub" className="nav-hub nav-hub-mobile" aria-label="Client Hub">Hub</Link>
-
-        <button className="nav-ham" onClick={() => setMobOpen(true)} aria-label="Open menu">
-          <span /><span /><span />
-        </button>
+        <div className="nav-mobile-right">
+          <Link href="/hub" className="nav-hub nav-hub-mobile" aria-label="Client Hub">Hub</Link>
+          <button className="nav-ham" onClick={() => setMobOpen(true)} aria-label="Open menu">
+            <span /><span /><span />
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
@@ -148,7 +149,6 @@ export default function Nav() {
           </div>
         )}
 
-        <Link href="/hub" className="mob-hub-cta" onClick={() => setMobOpen(false)}>Client Hub</Link>
         <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="mob-cta" onClick={() => setMobOpen(false)}>Book Now</a>
       </div>
     </>
