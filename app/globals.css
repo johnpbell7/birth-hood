@@ -78,9 +78,9 @@ nav {
 nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 .nav-logo-img { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
 .nav-logo-img img { height: 80px; width: auto; display: block; }
-.nav-logo-image { width: auto !important; height: 180px !important; object-fit: contain; }
+.nav-logo-image { width: auto !important; height: 110px !important; object-fit: contain; }
 @media (max-width: 880px) {
-  .nav-logo-image { height: 130px !important; }
+  .nav-logo-image { height: 82px !important; }
 }
 .site-main { padding-top: 146px; }
 @media (max-width: 880px) { .site-main { padding-top: 116px; } }
