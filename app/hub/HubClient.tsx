@@ -322,21 +322,23 @@ export default function HubClient() {
       </section>
 
       {/* STATS STRIP */}
-      <section style={{ background: 'var(--black)', padding: '2rem 3rem', color: 'var(--white)' }}>
-        <div className="wrap" style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', textAlign: 'center' }}>
-          <div>
-            <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '2.2rem', color: 'var(--pink)', lineHeight: 1 }}>{totalResources}</div>
-            <div style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginTop: '0.4rem' }}>Documents</div>
+      <section className="hub-stats-strip">
+        <div className="wrap hub-stats-row">
+          <div className="hub-stat">
+            <div className="hub-stat-num">{totalResources}</div>
+            <div className="hub-stat-label">Documents</div>
           </div>
-          <div>
-            <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '2.2rem', color: 'var(--pink)', lineHeight: 1 }}>
-              {albums.reduce((s, a) => s + a.tracks.length, 0)}
-            </div>
-            <div style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginTop: '0.4rem' }}>Audio tracks</div>
+          <div className="hub-stat">
+            <div className="hub-stat-num">{albums.reduce((s, a) => s + a.tracks.length, 0)}</div>
+            <div className="hub-stat-label">Audio tracks</div>
           </div>
-          <div>
-            <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '2.2rem', color: 'var(--pink)', lineHeight: 1 }}>{usefulSites.length}</div>
-            <div style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginTop: '0.4rem' }}>Useful sites</div>
+          <div className="hub-stat">
+            <div className="hub-stat-num">{videos.length}</div>
+            <div className="hub-stat-label">Videos</div>
+          </div>
+          <div className="hub-stat">
+            <div className="hub-stat-num">{usefulSites.length}</div>
+            <div className="hub-stat-label">Useful sites</div>
           </div>
         </div>
       </section>
