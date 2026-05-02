@@ -10,11 +10,14 @@ if (typeof window !== 'undefined') {
 }
 
 /**
- * Auto-animates any element with className "reveal" or `reveal reveal-d{1-4}`
- * with a scroll-triggered fade + slide-up via GSAP.
+ * Auto-animates sections and `.reveal` elements with a smooth GSAP
+ * scroll-triggered fade + slide-up. Re-runs on route change.
  *
- * Replaces the old CSS class-toggle reveal which was janky on slow devices.
- * Re-runs whenever the route changes so newly mounted pages get animated.
+ * Targets:
+ *  - any element with className "reveal" (with optional reveal-d{1-4} delay)
+ *  - <section> elements inside <main>, except the first hero/page-hero
+ *
+ * Respects prefers-reduced-motion.
  */
 export default function ScrollRevealInit() {
   const pathname = usePathname()
@@ -23,21 +26,23 @@ export default function ScrollRevealInit() {
     if (typeof window === 'undefined') return
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
     if (prefersReducedMotion) {
-      document.querySelectorAll<HTMLElement>('.reveal').forEach(el => {
-        el.style.opacity = '1'
-        el.style.transform = 'none'
-      })
+      document
+        .querySelectorAll<HTMLElement>('.reveal, main section')
+        .forEach(el => {
+          el.style.opacity = '1'
+          el.style.transform = 'none'
+        })
       return
     }
 
-    // Small delay so any layout shifts settle first
+    // Small delay so layout settles
     const timer = window.setTimeout(() => {
-      const elements = Array.from(document.querySelectorAll<HTMLElement>('.reveal'))
       const triggers: ScrollTrigger[] = []
 
-      elements.forEach(el => {
-        // skip if already animated by RevealWrapper internal state
+      // 1. Explicit .reveal elements (with optional delay class)
+      document.querySelectorAll<HTMLElement>('.reveal').forEach(el => {
         if (el.dataset.gsapInit === '1') return
         el.dataset.gsapInit = '1'
 
@@ -65,10 +70,46 @@ export default function ScrollRevealInit() {
         if (tween.scrollTrigger) triggers.push(tween.scrollTrigger)
       })
 
-      // Refresh once everything is set up
+      // 2. Auto-target sections inside <main>
+      // Skip the first section (usually a hero) and any element that's
+      // a hero (has class "page-hero" / "home-hero-split" / "page-hero-inner")
+      const sections = Array.from(
+        document.querySelectorAll<HTMLElement>('main section')
+      )
+
+      sections.forEach((section, idx) => {
+        if (section.dataset.gsapInit === '1') return
+
+        // Skip heroes and the very first section on the page
+        if (
+          idx === 0 ||
+          section.classList.contains('page-hero') ||
+          section.classList.contains('home-hero-split')
+        ) {
+          return
+        }
+
+        section.dataset.gsapInit = '1'
+
+        gsap.set(section, { opacity: 0, y: 40 })
+
+        const tween = gsap.to(section, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        })
+
+        if (tween.scrollTrigger) triggers.push(tween.scrollTrigger)
+      })
+
       ScrollTrigger.refresh()
 
-      // store cleanup
       ;(window as unknown as { __birthHoodTriggers?: ScrollTrigger[] }).__birthHoodTriggers = triggers
     }, 50)
 
@@ -78,10 +119,12 @@ export default function ScrollRevealInit() {
       if (stored) {
         stored.forEach(t => t.kill())
       }
-      // mark all reveals as not init so they animate again on next route
-      document.querySelectorAll<HTMLElement>('.reveal').forEach(el => {
-        delete el.dataset.gsapInit
-      })
+      // reset init flag so next route animates again
+      document
+        .querySelectorAll<HTMLElement>('[data-gsap-init]')
+        .forEach(el => {
+          delete el.dataset.gsapInit
+        })
     }
   }, [pathname])
 
