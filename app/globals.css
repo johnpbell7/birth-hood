@@ -130,8 +130,27 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
   background: var(--black);
   display: inline-block;
 }
-.nav-hub:hover { background: var(--pink-deep) !important; color: var(--white) !important; transform: translateY(-1px); }
-.nav-hub:hover::before { background: var(--white); }
+.nav-hub:hover { background: var(--pink-deep) !important; color: var(--white) !important; transform: translateY(-1px); animation: none; }
+.nav-hub:hover::before { background: var(--white); animation: none; }
+
+/* Heartbeat pulse — subtle "lub-dub" on the button shadow + dot */
+@keyframes hub-heartbeat {
+  0%, 100% { box-shadow: 0 2px 8px rgba(232,123,195,0.35); }
+  10% { box-shadow: 0 2px 8px rgba(232,123,195,0.35), 0 0 0 0 rgba(232,123,195,0.55); }
+  18% { box-shadow: 0 2px 8px rgba(232,123,195,0.35), 0 0 0 6px rgba(232,123,195,0); }
+  28% { box-shadow: 0 2px 8px rgba(232,123,195,0.35), 0 0 0 0 rgba(232,123,195,0.4); }
+  36% { box-shadow: 0 2px 8px rgba(232,123,195,0.35), 0 0 0 10px rgba(232,123,195,0); }
+}
+@keyframes hub-dot-pulse {
+  0%, 8%, 25%, 100% { transform: scale(1); }
+  14% { transform: scale(1.5); }
+  32% { transform: scale(1.35); }
+}
+.nav-hub { animation: hub-heartbeat 2.4s ease-in-out infinite; }
+.nav-hub::before { transition: transform 0.2s ease, background 0.2s ease; animation: hub-dot-pulse 2.4s ease-in-out infinite; transform-origin: center; }
+@media (prefers-reduced-motion: reduce) {
+  .nav-hub, .nav-hub::before { animation: none !important; }
+}
 /* HUB STATS STRIP */
 .hub-stats-strip { background: var(--black); color: var(--white); padding: 2rem 3rem; }
 .hub-stats-row { display: flex; justify-content: center; align-items: flex-start; gap: 3rem; flex-wrap: wrap; text-align: center; }
@@ -467,13 +486,11 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: rgba(255,255,255,0.2); max-width: 1200px; margin: 0 auto; }
 
 /* REVEAL ANIMATIONS */
-.reveal { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.will-animate { opacity: 0; transform: translateY(28px); }
-.reveal.will-animate.visible { opacity: 1; transform: none; }
-.reveal-d1 { transition-delay: 0.1s; }
-.reveal-d2 { transition-delay: 0.2s; }
-.reveal-d3 { transition-delay: 0.3s; }
-.reveal-d4 { transition-delay: 0.4s; }
+/* .reveal animations now driven by GSAP via ScrollRevealInit */
+.reveal { /* GSAP sets opacity & transform inline */ }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
 
 /* PAGE TRANSITION */
 .page-transition { animation: pageIn 0.35s ease forwards; }
