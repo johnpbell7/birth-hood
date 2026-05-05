@@ -431,6 +431,10 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 .credentials { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2.5rem; }
 .credential { display: flex; align-items: center; gap: 0.8rem; font-size: 0.85rem; color: var(--grey-mid); }
 .credential-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--pink); flex-shrink: 0; }
+.trust-badges { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.trust-badge { display: inline-flex; align-items: center; opacity: 0.75; transition: opacity 0.2s; }
+.trust-badge:hover { opacity: 1; }
+.trust-badge-logo { height: 36px; width: auto; }
 
 /* TESTIMONIALS */
 .testimonials { background: var(--black); padding: 6rem 3rem; }
@@ -473,8 +477,8 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 /* FOOTER */
 footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.07); max-width: 1200px; margin-left: auto; margin-right: auto; }
-.footer-logo { font-family: 'Abril Fatface', serif; font-size: 1.7rem; color: var(--white); margin-bottom: 1rem; display: block; text-decoration: none; }
-.footer-logo span { color: var(--pink); }
+.footer-logo { display: block; margin-bottom: 1rem; text-decoration: none; }
+.footer-logo-image { width: 110px; height: 110px; object-fit: contain; border-radius: 8px; }
 .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.38); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; }
 .footer-social { display: flex; gap: 0.7rem; }
 .social-icon { width: 34px; height: 34px; background: rgba(255,255,255,0.05); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); text-decoration: none; transition: background 0.3s, color 0.3s; }
@@ -564,7 +568,8 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 /* 6-tile grid */
 .insta-grid-v2 { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 280px 280px; gap: 8px; max-width: 1300px; margin: 0 auto 2rem; }
 .insta-tile { position: relative; overflow: hidden; display: block; text-decoration: none; border-radius: 4px; background: var(--pink-pale); }
-.insta-tile img { transition: transform 0.5s ease; }
+.insta-tile img, .insta-tile-img { transition: transform 0.5s ease; }
+.insta-tile-img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
 .insta-tile:hover img { transform: scale(1.05); }
 .insta-tile-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(232,99,139,0.75) 0%, rgba(0,0,0,0.55) 100%); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.35s ease; }
 .insta-tile:hover .insta-tile-overlay { opacity: 1; }

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getSiteSettings } from '@/lib/sanity-queries'
 
 const DEFAULT_TAGLINE = (
@@ -24,7 +25,9 @@ export default async function Footer() {
     <footer id="footer">
       <div className="footer-top">
         <div>
-          <Link href="/" className="footer-logo">birth<span>-hood</span></Link>
+          <Link href="/" className="footer-logo">
+            <Image src="/images/logo.jpg" alt="birth-hood" width={110} height={110} className="footer-logo-image" />
+          </Link>
           <p className="footer-tagline">
             {tagline || DEFAULT_TAGLINE}
           </p>
