@@ -2,13 +2,14 @@ import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import ContactForm from './ContactForm'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Contact',
   description: "Get in touch with Leanne at birth-hood. Whether you have a question, want to make a booking or just want to say hello — she'd love to hear from you.",
 }
 
-export default function ContactPage() {
+function ContactPageStatic() {
   return (
     <>
       <PageHero
@@ -129,4 +130,8 @@ export default function ContactPage() {
       </section>
     </>
   )
+}
+
+export default async function ContactPage() {
+  return cmsOrStatic('contact', <ContactPageStatic />)
 }

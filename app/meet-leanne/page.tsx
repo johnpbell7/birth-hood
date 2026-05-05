@@ -4,12 +4,13 @@ import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Meet Leanne',
 }
 
-export default function MeetLeannePage() {
+function MeetLeannePageStatic() {
   return (
     <>
       <PageHero
@@ -245,4 +246,8 @@ export default function MeetLeannePage() {
       />
     </>
   )
+}
+
+export default async function MeetLeannePage() {
+  return cmsOrStatic('meet-leanne', <MeetLeannePageStatic />)
 }

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, FormEvent } from 'react'
+import type { HubResource } from '@/lib/sanity-queries'
 
 const HUB_PASSWORD = 'BHCLIENT26'
 const STORAGE_KEY = 'birthhood_hub_unlocked'
@@ -192,7 +193,84 @@ function getFileType(href: string): 'PDF' | 'DOCX' {
   return href.toLowerCase().includes('.docx') ? 'DOCX' : 'PDF'
 }
 
-export default function HubClient() {
+function buildPdfGroups(resources: HubResource[]): ResourceGroup[] {
+  const pdfs = resources.filter((r) => r.type === 'pdf')
+  if (pdfs.length === 0) return []
+  const map = new Map<string, HubResource[]>()
+  for (const r of pdfs) {
+    const key = r.subgroup || 'Resources'
+    if (!map.has(key)) map.set(key, [])
+    map.get(key)!.push(r)
+  }
+  return Array.from(map.entries()).map(([label, items]) => ({
+    label,
+    intro: '',
+    items: items.map((r) => {
+      const href = r.fileUrl || r.externalUrl || '#'
+      return {
+        title: r.title,
+        href,
+        type: href.toLowerCase().includes('.docx') ? 'DOCX' : 'PDF' as 'PDF' | 'DOCX',
+      }
+    }),
+  }))
+}
+
+function buildAudioAlbums(resources: HubResource[]): AudioAlbum[] {
+  const audio = resources.filter((r) => r.type === 'audio')
+  if (audio.length === 0) return []
+  const map = new Map<string, HubResource[]>()
+  for (const r of audio) {
+    const key = r.subgroup || 'Audio tracks'
+    if (!map.has(key)) map.set(key, [])
+    map.get(key)!.push(r)
+  }
+  return Array.from(map.entries()).map(([title, tracks]) => ({
+    title,
+    subtitle: '',
+    tracks: tracks.map((r) => ({
+      title: r.title,
+      duration: r.duration,
+      src: r.fileUrl || r.externalUrl,
+    })),
+  }))
+}
+
+function buildVideos(resources: HubResource[]): Video[] {
+  return resources
+    .filter((r) => r.type === 'video')
+    .map((r) => ({
+      title: r.title,
+      description: r.description,
+      src: r.fileUrl || r.videoUrl,
+    }))
+}
+
+function buildUsefulSites(resources: HubResource[]): UsefulSite[] {
+  return resources
+    .filter((r) => r.type === 'external')
+    .map((r) => ({
+      name: r.title,
+      url: r.externalUrl || '#',
+      description: r.description || '',
+      logoLetter: r.logoLetter || r.title.replace(/[^A-Za-z]/g, '').slice(0, 2).toUpperCase(),
+    }))
+}
+
+type HubClientProps = { sanityResources?: HubResource[] }
+
+export default function HubClient({ sanityResources = [] }: HubClientProps) {
+  const liveGroups = buildPdfGroups(sanityResources)
+  const liveAlbums = buildAudioAlbums(sanityResources)
+  const liveVideos = buildVideos(sanityResources)
+  const liveSites = buildUsefulSites(sanityResources)
+
+  // Per-section: use Sanity data if present for that type, otherwise fall back to static
+  const displayGroups = liveGroups.length > 0 ? liveGroups : groups
+  const displayAlbums = liveAlbums.length > 0 ? liveAlbums : albums
+  const displayVideos = liveVideos.length > 0 ? liveVideos : videos
+  const displaySites = liveSites.length > 0 ? liveSites : usefulSites
+
   const [unlocked, setUnlocked] = useState(false)
   const [password, setPassword] = useState('')
   const [error, setError] = useState(false)
@@ -284,7 +362,7 @@ export default function HubClient() {
     )
   }
 
-  const totalResources = groups.reduce((sum, g) => sum + g.items.length, 0)
+  const totalResources = displayGroups.reduce((sum, g) => sum + g.items.length, 0)
 
   return (
     <>
@@ -329,15 +407,15 @@ export default function HubClient() {
             <div className="hub-stat-label">Documents</div>
           </div>
           <div className="hub-stat">
-            <div className="hub-stat-num">{albums.reduce((s, a) => s + a.tracks.length, 0)}</div>
+            <div className="hub-stat-num">{displayAlbums.reduce((s, a) => s + a.tracks.length, 0)}</div>
             <div className="hub-stat-label">Audio tracks</div>
           </div>
           <div className="hub-stat">
-            <div className="hub-stat-num">{videos.length}</div>
+            <div className="hub-stat-num">{displayVideos.length}</div>
             <div className="hub-stat-label">Videos</div>
           </div>
           <div className="hub-stat">
-            <div className="hub-stat-num">{usefulSites.length}</div>
+            <div className="hub-stat-num">{displaySites.length}</div>
             <div className="hub-stat-label">Useful sites</div>
           </div>
         </div>
@@ -351,8 +429,8 @@ export default function HubClient() {
             Your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>documents</em>
           </h2>
 
-          {groups.map((group, gi) => (
-            <div key={group.label} style={{ marginBottom: gi === groups.length - 1 ? 0 : '3.5rem' }}>
+          {displayGroups.map((group, gi) => (
+            <div key={group.label} style={{ marginBottom: gi === displayGroups.length - 1 ? 0 : '3.5rem' }}>
               <div style={{ marginBottom: '1.5rem' }}>
                 <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.4rem, 2vw, 1.7rem)', fontWeight: 700, marginBottom: '0.5rem', lineHeight: 1.2 }}>
                   {group.label}
@@ -433,7 +511,7 @@ export default function HubClient() {
           </p>
 
           <div className="grid-3" style={{ gap: '1.5rem' }}>
-            {albums.map((album) => (
+            {displayAlbums.map((album) => (
               <div key={album.title} className="card" style={{ padding: '1.5rem', background: 'var(--white)', borderRadius: '3px' }}>
                 {/* Album header */}
                 <div style={{ marginBottom: '1.2rem', paddingBottom: '1.2rem', borderBottom: '1px solid rgba(0,0,0,0.08)' }}>
@@ -504,7 +582,7 @@ export default function HubClient() {
           </p>
 
           <div className="grid-2" style={{ gap: '1.5rem' }}>
-            {videos.map((video) => (
+            {displayVideos.map((video) => (
               <div key={video.title} className="card" style={{ padding: 0, overflow: 'hidden', borderRadius: '3px' }}>
                 {video.src ? (
                   <video controls poster={video.poster} style={{ width: '100%', display: 'block', background: 'var(--black)' }}>
@@ -576,7 +654,7 @@ export default function HubClient() {
           </p>
 
           <div className="grid-3" style={{ gap: '1rem' }}>
-            {usefulSites.map((site) => (
+            {displaySites.map((site) => (
               <a
                 key={site.url}
                 href={site.url}

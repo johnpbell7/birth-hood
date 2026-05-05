@@ -2,12 +2,13 @@ import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Birth Trauma Support',
 }
 
-export default function BirthTraumaPage() {
+function BirthTraumaPageStatic() {
   return (
     <>
       <PageHero
@@ -247,4 +248,8 @@ export default function BirthTraumaPage() {
       />
     </>
   )
+}
+
+export default async function BirthTraumaPage() {
+  return cmsOrStatic('birth-trauma', <BirthTraumaPageStatic />)
 }

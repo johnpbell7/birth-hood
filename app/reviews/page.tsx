@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Reviews',
@@ -74,7 +75,7 @@ const birthStories = [
   { title: "Hannah's Water Birth", type: 'Water Birth' },
 ]
 
-export default function ReviewsPage() {
+function ReviewsPageStatic() {
   return (
     <>
       <PageHero
@@ -179,4 +180,8 @@ export default function ReviewsPage() {
       />
     </>
   )
+}
+
+export default async function ReviewsPage() {
+  return cmsOrStatic('reviews', <ReviewsPageStatic />)
 }

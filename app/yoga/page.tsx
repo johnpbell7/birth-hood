@@ -3,6 +3,7 @@ import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
 import FaqAccordion from '@/components/FaqAccordion'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Prenatal & Postnatal Yoga',
@@ -27,7 +28,7 @@ const faqItems = [
   },
 ]
 
-export default function YogaPage() {
+function YogaPageStatic() {
   return (
     <>
       <PageHero
@@ -394,4 +395,8 @@ export default function YogaPage() {
       />
     </>
   )
+}
+
+export default async function YogaPage() {
+  return cmsOrStatic('yoga', <YogaPageStatic />)
 }

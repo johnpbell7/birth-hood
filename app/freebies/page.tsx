@@ -2,12 +2,13 @@ import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import { getFreebies } from '@/lib/sanity-queries'
 
 export const metadata: Metadata = {
   title: 'Free Resources',
 }
 
-const resources = [
+const fallbackResources = [
   {
     emoji: '✦',
     title: 'Colouring Affirmations',
@@ -58,7 +59,27 @@ const resources = [
   },
 ]
 
-export default function FreebiesPage() {
+const typeLabel = (t?: string) => {
+  if (t === 'pdf') return 'PDF Download'
+  if (t === 'audio') return 'Audio Download'
+  if (t === 'external') return 'External Link'
+  return 'Download'
+}
+
+export default async function FreebiesPage() {
+  const sanityFreebies = await getFreebies()
+
+  const resources = sanityFreebies.length > 0
+    ? sanityFreebies.map((f) => ({
+        emoji: f.emoji ?? '✦',
+        title: f.title,
+        desc: f.description ?? '',
+        href: f.fileUrl ?? f.externalUrl ?? '#',
+        type: typeLabel(f.type),
+        tag: null as string | null,
+      }))
+    : fallbackResources
+
   return (
     <>
       <PageHero

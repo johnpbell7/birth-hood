@@ -3,12 +3,13 @@ import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Birth Doula',
 }
 
-export default function BirthDoulaPage() {
+function BirthDoulaPageStatic() {
   return (
     <>
       <PageHero
@@ -312,4 +313,8 @@ export default function BirthDoulaPage() {
       />
     </>
   )
+}
+
+export default async function BirthDoulaPage() {
+  return cmsOrStatic('birth-doula', <BirthDoulaPageStatic />)
 }

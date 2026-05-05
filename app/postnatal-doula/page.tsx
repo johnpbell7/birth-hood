@@ -2,12 +2,13 @@ import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Postnatal Doula',
 }
 
-export default function PostnatalDoulaPage() {
+function PostnatalDoulaPageStatic() {
   return (
     <>
       <PageHero
@@ -234,4 +235,8 @@ export default function PostnatalDoulaPage() {
       />
     </>
   )
+}
+
+export default async function PostnatalDoulaPage() {
+  return cmsOrStatic('postnatal-doula', <PostnatalDoulaPageStatic />)
 }

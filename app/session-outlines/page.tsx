@@ -2,12 +2,13 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Session Outlines',
 }
 
-export default function SessionOutlinesPage() {
+function SessionOutlinesPageStatic() {
   return (
     <>
       <PageHero
@@ -267,4 +268,8 @@ export default function SessionOutlinesPage() {
       />
     </>
   )
+}
+
+export default async function SessionOutlinesPage() {
+  return cmsOrStatic('session-outlines', <SessionOutlinesPageStatic />)
 }

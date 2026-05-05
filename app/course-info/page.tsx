@@ -2,12 +2,13 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Course Info & Dates',
 }
 
-export default function CourseInfoPage() {
+function CourseInfoPageStatic() {
   return (
     <>
       <PageHero
@@ -262,4 +263,8 @@ export default function CourseInfoPage() {
       />
     </>
   )
+}
+
+export default async function CourseInfoPage() {
+  return cmsOrStatic('course-info', <CourseInfoPageStatic />)
 }
