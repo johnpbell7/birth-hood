@@ -7,15 +7,16 @@ import Image from 'next/image'
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [mobOpen, setMobOpen] = useState(false)
-  const [mobDoula, setMobDoula] = useState(false)
-  const [mobHypno, setMobHypno] = useState(false)
-  const [mobMore, setMobMore] = useState(false)
+  const [openSection, setOpenSection] = useState<string | null>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const close = () => { setMobOpen(false); setOpenSection(null) }
+  const toggle = (s: string) => setOpenSection(o => o === s ? null : s)
 
   return (
     <>
@@ -81,12 +82,8 @@ export default function Nav() {
               <li><Link href="/contact">Contact</Link></li>
             </ul>
           </li>
-          <li>
-            <Link href="/hub" className="nav-hub">Hub</Link>
-          </li>
-          <li>
-            <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="nav-cta">Book Now</a>
-          </li>
+          <li><Link href="/hub" className="nav-hub">Hub</Link></li>
+          <li><a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="nav-cta">Book Now</a></li>
         </ul>
 
         <div className="nav-mobile-right">
@@ -98,58 +95,82 @@ export default function Nav() {
       </nav>
 
       {/* Mobile menu */}
-      <div id="mob" className={`mob-menu${mobOpen ? ' open' : ''}`}>
-        <button className="mob-close" onClick={() => setMobOpen(false)} aria-label="Close menu">✕</button>
+      <div id="mob" className={`mob-menu${mobOpen ? ' open' : ''}`} aria-hidden={!mobOpen}>
+        <div className="mob-header">
+          <Link href="/" onClick={close}>
+            <Image src="/images/logo.jpg" alt="birth-hood" width={56} height={56} className="mob-logo" />
+          </Link>
+          <button className="mob-close" onClick={close} aria-label="Close menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
 
-        <Link href="/" onClick={() => setMobOpen(false)}>Home</Link>
-        <Link href="/meet-leanne" onClick={() => setMobOpen(false)}>Meet Leanne</Link>
+        <div className="mob-nav">
+          <Link href="/" onClick={close} className="mob-link">Home</Link>
 
-        {/* Doula dropdown */}
-        <button className="mob-section-toggle" onClick={() => setMobDoula(!mobDoula)}>
-          Doula {mobDoula ? '▴' : '▾'}
-        </button>
-        {mobDoula && (
-          <div className="mob-sub-links">
-            <Link href="/doula" onClick={() => setMobOpen(false)}>All Doula Services</Link>
-            <Link href="/birth-doula" onClick={() => setMobOpen(false)}>Birth Doula</Link>
-            <Link href="/postnatal-doula" onClick={() => setMobOpen(false)}>Postnatal Doula</Link>
-            <Link href="/virtual-doula" onClick={() => setMobOpen(false)}>Virtual Doula</Link>
-            <Link href="/doula-feedback" onClick={() => setMobOpen(false)}>Doula Feedback</Link>
-          </div>
-        )}
+          {/* Doula section */}
+          <button className="mob-accordion" onClick={() => toggle('doula')} aria-expanded={openSection === 'doula'}>
+            Doula
+            <svg className={`mob-chevron${openSection === 'doula' ? ' open' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          {openSection === 'doula' && (
+            <div className="mob-dropdown">
+              <Link href="/doula" onClick={close} className="mob-link mob-link--sub">All Doula Services</Link>
+              <Link href="/birth-doula" onClick={close} className="mob-link mob-link--sub">Birth Doula</Link>
+              <Link href="/postnatal-doula" onClick={close} className="mob-link mob-link--sub">Postnatal Doula</Link>
+              <Link href="/virtual-doula" onClick={close} className="mob-link mob-link--sub">Virtual Doula</Link>
+            </div>
+          )}
 
-        {/* Hypnobirthing dropdown */}
-        <button className="mob-section-toggle" onClick={() => setMobHypno(!mobHypno)}>
-          Hypnobirthing {mobHypno ? '▴' : '▾'}
-        </button>
-        {mobHypno && (
-          <div className="mob-sub-links">
-            <Link href="/hypnobirthing" onClick={() => setMobOpen(false)}>About Hypnobirthing</Link>
-            <Link href="/course-info" onClick={() => setMobOpen(false)}>Course Info &amp; Dates</Link>
-            <Link href="/session-outlines" onClick={() => setMobOpen(false)}>Session Outlines</Link>
-          </div>
-        )}
+          {/* Hypnobirthing section */}
+          <button className="mob-accordion" onClick={() => toggle('hypno')} aria-expanded={openSection === 'hypno'}>
+            Hypnobirthing
+            <svg className={`mob-chevron${openSection === 'hypno' ? ' open' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          {openSection === 'hypno' && (
+            <div className="mob-dropdown">
+              <Link href="/hypnobirthing" onClick={close} className="mob-link mob-link--sub">About Hypnobirthing</Link>
+              <Link href="/course-info" onClick={close} className="mob-link mob-link--sub">Course Dates</Link>
+              <Link href="/session-outlines" onClick={close} className="mob-link mob-link--sub">Session Outlines</Link>
+            </div>
+          )}
 
-        <Link href="/birth-trauma" onClick={() => setMobOpen(false)}>Birth Trauma</Link>
-        <Link href="/yoga" onClick={() => setMobOpen(false)}>Yoga</Link>
-        <Link href="/podcast" onClick={() => setMobOpen(false)}>Dou-La-La Podcast</Link>
+          <Link href="/meet-leanne" onClick={close} className="mob-link">Meet Leanne</Link>
+          <Link href="/birth-trauma" onClick={close} className="mob-link">Birth Trauma</Link>
+          <Link href="/yoga" onClick={close} className="mob-link">Prenatal Yoga</Link>
 
-        {/* More dropdown */}
-        <button className="mob-section-toggle" onClick={() => setMobMore(!mobMore)}>
-          More {mobMore ? '▴' : '▾'}
-        </button>
-        {mobMore && (
-          <div className="mob-sub-links">
-            <Link href="/blog" onClick={() => setMobOpen(false)}>Blog</Link>
-            <Link href="/booking" onClick={() => setMobOpen(false)}>Booking</Link>
-            <Link href="/reviews" onClick={() => setMobOpen(false)}>Reviews</Link>
-            <Link href="/freebies" onClick={() => setMobOpen(false)}>Free Resources</Link>
-            <Link href="/faq" onClick={() => setMobOpen(false)}>FAQ</Link>
-            <Link href="/contact" onClick={() => setMobOpen(false)}>Contact</Link>
-          </div>
-        )}
+          {/* More section */}
+          <button className="mob-accordion" onClick={() => toggle('more')} aria-expanded={openSection === 'more'}>
+            More
+            <svg className={`mob-chevron${openSection === 'more' ? ' open' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          {openSection === 'more' && (
+            <div className="mob-dropdown">
+              <Link href="/blog" onClick={close} className="mob-link mob-link--sub">Blog</Link>
+              <Link href="/podcast" onClick={close} className="mob-link mob-link--sub">Dou-La-La Podcast</Link>
+              <Link href="/masterclass" onClick={close} className="mob-link mob-link--sub">Masterclass</Link>
+              <Link href="/freebies" onClick={close} className="mob-link mob-link--sub">Free Resources</Link>
+              <Link href="/reviews" onClick={close} className="mob-link mob-link--sub">Reviews</Link>
+              <Link href="/booking" onClick={close} className="mob-link mob-link--sub">Booking</Link>
+              <Link href="/faq" onClick={close} className="mob-link mob-link--sub">FAQ</Link>
+              <Link href="/contact" onClick={close} className="mob-link mob-link--sub">Contact</Link>
+            </div>
+          )}
+        </div>
 
-        <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="mob-cta" onClick={() => setMobOpen(false)}>Book Now</a>
+        <div className="mob-footer">
+          <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="mob-cta" onClick={close}>
+            Book Free Consultation
+          </a>
+        </div>
       </div>
     </>
   )

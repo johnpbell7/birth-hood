@@ -3,7 +3,7 @@ const ITEMS = [
   'Virtual Sessions', 'Postnatal Care', '5★ Rated', 'BBC Radio Leicester',
 ]
 
-export default function MarqueeStrip({ dark = false }: { dark?: boolean }) {
+export default function MarqueeStrip({ dark = true }: { dark?: boolean }) {
   const doubled = [...ITEMS, ...ITEMS]
   return (
     <div className={`strip${dark ? ' strip--dark' : ''}`}>
