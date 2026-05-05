@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Links — Birth Hood',
@@ -85,7 +86,7 @@ const links = [
   },
 ]
 
-export default function LinksPage() {
+function LinksPageStatic() {
   return (
     <main style={{ minHeight: '100vh', background: 'var(--cream)', paddingBottom: '4rem' }}>
       {/* Header */}
@@ -189,4 +190,8 @@ export default function LinksPage() {
       </div>
     </main>
   )
+}
+
+export default async function LinksPage() {
+  return cmsOrStatic('links', <LinksPageStatic />)
 }

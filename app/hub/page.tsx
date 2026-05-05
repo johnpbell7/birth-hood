@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import HubClient from './HubClient'
+import { getHubResources } from '@/lib/sanity-queries'
 
 export const metadata: Metadata = {
   title: 'Client Hub',
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
-export default function HubPage() {
-  return <HubClient />
+export default async function HubPage() {
+  const resources = await getHubResources()
+  return <HubClient sanityResources={resources} />
 }

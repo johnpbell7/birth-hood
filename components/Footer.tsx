@@ -1,34 +1,57 @@
 import Link from 'next/link'
+import { getSiteSettings } from '@/lib/sanity-queries'
 
-export default function Footer() {
+const DEFAULT_TAGLINE = (
+  <>
+    Education · Support · Community<br />
+    Hypnobirthing, Doula support and Prenatal Yoga from<br />
+    Leicester, Midlands and online UK-wide.
+  </>
+)
+const DEFAULT_SOCIAL = {
+  instagram: 'https://www.instagram.com/birthhooduk',
+  facebook: 'http://www.facebook.com/Birthhooduk',
+  youtube: 'https://youtube.com/@birthhooduk',
+  tiktok: '',
+}
+
+export default async function Footer() {
+  const settings = await getSiteSettings()
+  const social = { ...DEFAULT_SOCIAL, ...(settings?.social ?? {}) }
+  const tagline = settings?.tagline ?? null
+
   return (
     <footer id="footer">
       <div className="footer-top">
         <div>
           <Link href="/" className="footer-logo">birth<span>-hood</span></Link>
           <p className="footer-tagline">
-            Education · Support · Community<br />
-            Hypnobirthing, Doula support and Prenatal Yoga from<br />
-            Leicester, Midlands and online UK-wide.
+            {tagline || DEFAULT_TAGLINE}
           </p>
           <div className="footer-social">
-            <a href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="2" y="2" width="20" height="20" rx="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-              </svg>
-            </a>
-            <a href="http://www.facebook.com/Birthhooduk" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-              </svg>
-            </a>
-            <a href="https://youtube.com/@birthhooduk" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="YouTube">
-              <svg width="16" height="16" viewBox="0 0 24 17" fill="currentColor">
-                <path d="M23.5 2.5S23.2.7 22.4.1C21.5-.7 20.5-.7 20-.6 16.7-.5 12-.5 12-.5S7.3-.5 4-.6C3.5-.7 2.5-.7 1.6.1.8.7.5 2.5.5 2.5S.1 4.7.1 7v2.1c0 2.3.4 4.5.4 4.5s.3 1.8 1.1 2.4c.9.8 2.1.7 2.6.8C5.9 17 12 17 12 17s4.7 0 8-.1c.5-.1 1.5-.1 2.4-.9.8-.6 1.1-2.4 1.1-2.4S24 11.4 24 9V6.9C24 4.7 23.5 2.5 23.5 2.5zM9.7 11.3V5.2l6.5 3.1-6.5 3z"/>
-              </svg>
-            </a>
+            {social.instagram && (
+              <a href={social.instagram} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <rect x="2" y="2" width="20" height="20" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+              </a>
+            )}
+            {social.facebook && (
+              <a href={social.facebook} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                </svg>
+              </a>
+            )}
+            {social.youtube && (
+              <a href={social.youtube} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="YouTube">
+                <svg width="16" height="16" viewBox="0 0 24 17" fill="currentColor">
+                  <path d="M23.5 2.5S23.2.7 22.4.1C21.5-.7 20.5-.7 20-.6 16.7-.5 12-.5 12-.5S7.3-.5 4-.6C3.5-.7 2.5-.7 1.6.1.8.7.5 2.5.5 2.5S.1 4.7.1 7v2.1c0 2.3.4 4.5.4 4.5s.3 1.8 1.1 2.4c.9.8 2.1.7 2.6.8C5.9 17 12 17 12 17s4.7 0 8-.1c.5-.1 1.5-.1 2.4-.9.8-.6 1.1-2.4 1.1-2.4S24 11.4 24 9V6.9C24 4.7 23.5 2.5 23.5 2.5zM9.7 11.3V5.2l6.5 3.1-6.5 3z"/>
+                </svg>
+              </a>
+            )}
           </div>
         </div>
 

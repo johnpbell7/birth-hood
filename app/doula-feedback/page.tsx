@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import PageHero from '@/components/PageHero'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Doula Feedback',
 }
 
-export default function DoulaFeedbackPage() {
+function DoulaFeedbackPageStatic() {
   return (
     <>
       <PageHero
@@ -177,4 +178,8 @@ export default function DoulaFeedbackPage() {
       </section>
     </>
   )
+}
+
+export default async function DoulaFeedbackPage() {
+  return cmsOrStatic('doula-feedback', <DoulaFeedbackPageStatic />)
 }

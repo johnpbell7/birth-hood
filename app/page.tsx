@@ -4,12 +4,17 @@ import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CtaBand from '@/components/CtaBand'
 import HeroCollage from '@/components/HeroCollage'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Hypnobirthing, Doula & Prenatal Yoga | NW Leicestershire & Online',
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  return cmsOrStatic('home', <HomePageStatic />)
+}
+
+function HomePageStatic() {
   return (
     <>
       {/* HOME HERO */}

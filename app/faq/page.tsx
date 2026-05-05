@@ -3,6 +3,7 @@ import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import FaqAccordion from '@/components/FaqAccordion'
 import CtaBand from '@/components/CtaBand'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'FAQ',
@@ -111,7 +112,7 @@ const paymentFaqs = [
   },
 ]
 
-export default function FaqPage() {
+function FaqPageStatic() {
   return (
     <>
       <PageHero
@@ -201,4 +202,8 @@ export default function FaqPage() {
       />
     </>
   )
+}
+
+export default async function FaqPage() {
+  return cmsOrStatic('faq', <FaqPageStatic />)
 }

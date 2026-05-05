@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import PageHero from '@/components/PageHero'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions',
 }
 
-export default function TermsPage() {
+function TermsPageStatic() {
   return (
     <>
       <PageHero
@@ -182,4 +183,8 @@ export default function TermsPage() {
       </section>
     </>
   )
+}
+
+export default async function TermsPage() {
+  return cmsOrStatic('terms', <TermsPageStatic />)
 }

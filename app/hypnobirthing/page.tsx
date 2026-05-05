@@ -4,6 +4,7 @@ import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
 import FaqAccordion from '@/components/FaqAccordion'
+import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Hypnobirthing',
@@ -32,7 +33,7 @@ const faqItems = [
   },
 ]
 
-export default function HypnobirthingPage() {
+function HypnobirthingPageStatic() {
   return (
     <>
       <PageHero
@@ -275,4 +276,8 @@ export default function HypnobirthingPage() {
       />
     </>
   )
+}
+
+export default async function HypnobirthingPage() {
+  return cmsOrStatic('hypnobirthing', <HypnobirthingPageStatic />)
 }
