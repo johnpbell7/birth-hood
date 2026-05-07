@@ -4,43 +4,156 @@ export default defineType({
   name: 'siteSettings',
   title: 'Site Settings',
   type: 'document',
-  description: 'Global settings that appear across the whole site.',
+  description: 'Global settings and home page text — edit here to update the live site.',
+  groups: [
+    { name: 'global', title: 'Global' },
+    { name: 'home', title: 'Home page' },
+    { name: 'homeServices', title: 'Home — Services' },
+    { name: 'homeAbout', title: 'Home — About' },
+    { name: 'homeTestimonials', title: 'Home — Testimonials' },
+    { name: 'homeFreebies', title: 'Home — Free Resources' },
+  ],
   fields: [
-    defineField({ name: 'siteName', title: 'Site name', type: 'string' }),
-    defineField({ name: 'tagline', title: 'Tagline', type: 'string' }),
-    defineField({
-      name: 'contactEmail',
-      title: 'Contact email',
-      type: 'string',
-    }),
-    defineField({
-      name: 'phone',
-      title: 'Phone number',
-      type: 'string',
-    }),
+    // ── Global ──────────────────────────────────────────────────────────────
+    defineField({ name: 'siteName', title: 'Site name', type: 'string', group: 'global' }),
+    defineField({ name: 'tagline', title: 'Tagline', type: 'string', group: 'global' }),
+    defineField({ name: 'contactEmail', title: 'Contact email', type: 'string', group: 'global' }),
+    defineField({ name: 'phone', title: 'Phone number', type: 'string', group: 'global' }),
     defineField({
       name: 'social',
       title: 'Social links',
       type: 'object',
+      group: 'global',
       fields: [
         { name: 'instagram', title: 'Instagram URL', type: 'url' },
         { name: 'facebook', title: 'Facebook URL', type: 'url' },
         { name: 'youtube', title: 'YouTube URL', type: 'url' },
         { name: 'tiktok', title: 'TikTok URL', type: 'url' },
+        { name: 'calendly', title: 'Calendly booking URL', type: 'url' },
       ],
     }),
-    defineField({
-      name: 'footerText',
-      title: 'Footer text',
-      type: 'text',
-      rows: 2,
-    }),
+    defineField({ name: 'footerText', title: 'Footer text', type: 'text', rows: 2, group: 'global' }),
     defineField({
       name: 'marqueeWords',
       title: 'Scrolling marquee words',
       type: 'array',
       of: [{ type: 'string' }],
       description: 'Short labels shown in the scrolling strip across the site.',
+      group: 'global',
+    }),
+
+    // ── Home — Hero ──────────────────────────────────────────────────────────
+    defineField({
+      name: 'homeHeroHeadline',
+      title: 'Hero — Headline',
+      type: 'string',
+      description: 'Main headline. e.g. "Your birth, your way."',
+      group: 'home',
+    }),
+    defineField({
+      name: 'homeHeroSubtitle',
+      title: 'Hero — Subtitle',
+      type: 'text',
+      rows: 3,
+      group: 'home',
+    }),
+    defineField({
+      name: 'homeHeroCta',
+      title: 'Hero — Button label',
+      type: 'string',
+      group: 'home',
+    }),
+    defineField({
+      name: 'homeHeroCtaHref',
+      title: 'Hero — Button link',
+      type: 'string',
+      group: 'home',
+    }),
+
+    // ── Home — Services section ──────────────────────────────────────────────
+    defineField({ name: 'homeServicesEyebrow', title: 'Services — Eyebrow', type: 'string', group: 'homeServices' }),
+    defineField({ name: 'homeServicesHeading', title: 'Services — Heading', type: 'string', group: 'homeServices' }),
+    defineField({
+      name: 'homeServices',
+      title: 'Service cards',
+      type: 'array',
+      group: 'homeServices',
+      description: 'Exactly 4 service cards shown on the homepage.',
+      of: [{
+        type: 'object',
+        name: 'serviceCard',
+        fields: [
+          { name: 'name', title: 'Service name', type: 'string', validation: (R) => R.required() },
+          { name: 'description', title: 'Description', type: 'text', rows: 3 },
+          { name: 'href', title: 'Link', type: 'string' },
+        ],
+        preview: { select: { title: 'name', subtitle: 'description' } },
+      }],
+    }),
+
+    // ── Home — About section ─────────────────────────────────────────────────
+    defineField({ name: 'homeAboutEyebrow', title: 'About — Eyebrow', type: 'string', group: 'homeAbout' }),
+    defineField({ name: 'homeAboutHeading', title: 'About — Heading', type: 'string', group: 'homeAbout' }),
+    defineField({
+      name: 'homeAboutBody',
+      title: 'About — Body paragraphs',
+      type: 'array',
+      of: [{ type: 'text' }],
+      group: 'homeAbout',
+      description: 'Each item is one paragraph.',
+    }),
+    defineField({
+      name: 'homeAboutCredentials',
+      title: 'About — Credential bullets',
+      type: 'array',
+      of: [{ type: 'string' }],
+      group: 'homeAbout',
+    }),
+    defineField({ name: 'homeAboutCta', title: 'About — Button label', type: 'string', group: 'homeAbout' }),
+    defineField({ name: 'homeAboutCtaHref', title: 'About — Button link', type: 'string', group: 'homeAbout' }),
+
+    // ── Home — Testimonials ──────────────────────────────────────────────────
+    defineField({ name: 'homeTestimonialsEyebrow', title: 'Testimonials — Eyebrow', type: 'string', group: 'homeTestimonials' }),
+    defineField({ name: 'homeTestimonialsHeading', title: 'Testimonials — Heading', type: 'string', group: 'homeTestimonials' }),
+    defineField({
+      name: 'homeTestimonials',
+      title: 'Testimonials',
+      type: 'array',
+      group: 'homeTestimonials',
+      of: [{
+        type: 'object',
+        name: 'homeReview',
+        fields: [
+          { name: 'quote', title: 'Quote', type: 'text', rows: 4, validation: (R) => R.required() },
+          { name: 'attribution', title: 'Attribution (name · location)', type: 'string' },
+        ],
+        preview: { select: { title: 'attribution', subtitle: 'quote' } },
+      }],
+    }),
+
+    // ── Home — Free resources teaser ─────────────────────────────────────────
+    defineField({ name: 'homeFreebiesHeading', title: 'Free Resources — Heading', type: 'string', group: 'homeFreebies' }),
+    defineField({ name: 'homeFreebiesBody', title: 'Free Resources — Body', type: 'text', rows: 3, group: 'homeFreebies' }),
+    defineField({
+      name: 'homeFreebiesTags',
+      title: 'Free Resources — Tag pills',
+      type: 'array',
+      of: [{ type: 'string' }],
+      group: 'homeFreebies',
+    }),
+    defineField({ name: 'homeFreebiesCta', title: 'Free Resources — Button label', type: 'string', group: 'homeFreebies' }),
+    defineField({
+      name: 'homeBookingHeading',
+      title: 'Booking CTA — Heading',
+      type: 'string',
+      group: 'homeFreebies',
+    }),
+    defineField({
+      name: 'homeBookingBody',
+      title: 'Booking CTA — Body',
+      type: 'text',
+      rows: 2,
+      group: 'homeFreebies',
     }),
   ],
   preview: {

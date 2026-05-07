@@ -2,38 +2,187 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import CtaBand from '@/components/CtaBand'
 import HeroCollage from '@/components/HeroCollage'
 import InstagramSection from '@/components/InstagramSection'
 import { cmsOrStatic } from '@/lib/cms-page'
+import { getSiteSettings, type SiteSettings } from '@/lib/sanity-queries'
 
 export const metadata: Metadata = {
   title: 'Hypnobirthing, Doula & Prenatal Yoga | NW Leicestershire & Online',
 }
 
 export default async function HomePage() {
-  return cmsOrStatic('home', <HomePageStatic />)
+  const settings = await getSiteSettings()
+  return cmsOrStatic('home', <HomePageStatic settings={settings} />)
 }
 
-function HomePageStatic() {
+// ─── Default fallback content ────────────────────────────────────────────────
+
+const DEFAULT_SERVICES = [
+  {
+    num: '01',
+    name: 'Hypnobirthing',
+    description:
+      'Evidence-based antenatal education using relaxation, breathing and visualisation to help you approach birth with calm confidence.',
+    href: '/hypnobirthing',
+    icon: (
+      <svg className="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.5a6.5 6.5 0 100-13 6.5 6.5 0 000 13z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v2m0 16v2M2 12h2m16 0h2" />
+      </svg>
+    ),
+  },
+  {
+    num: '02',
+    name: 'Birth Doula',
+    description:
+      'Continuous, compassionate non-medical support before, during and after your birth. Your person in the room — always in your corner.',
+    href: '/birth-doula',
+    icon: (
+      <svg className="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+      </svg>
+    ),
+  },
+  {
+    num: '03',
+    name: 'Prenatal Yoga',
+    description:
+      'Gentle, evidence-based prenatal yoga for all stages of pregnancy. Nourish your body, calm your mind and build a beautiful community.',
+    href: '/yoga',
+    icon: (
+      <svg className="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="12" cy="5" r="2" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 7v4l-3 3m3-3l3 3M9 21l3-7 3 7" />
+      </svg>
+    ),
+  },
+  {
+    num: '04',
+    name: 'Birth Trauma Support',
+    description:
+      "Trauma-informed support for those processing a difficult birth experience. Your feelings are valid — you don't have to carry them alone.",
+    href: '/birth-trauma',
+    icon: (
+      <svg className="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+      </svg>
+    ),
+  },
+]
+
+const DEFAULT_CREDENTIALS = [
+  'KGHypnobirthing DipHb (2019)',
+  'Badass Birth Trained Doula (2021)',
+  '3 Step Rewind Practitioner (2021)',
+  'LGBT+ Competency — Queer Birth Club (2021)',
+  '85hr Pregnancy/Postnatal Yoga — Sally Parkes (2022)',
+  'Featured on BBC Radio Leicester',
+]
+
+const DEFAULT_TESTIMONIALS = [
+  {
+    quote:
+      'We instantly felt at ease and comfortable and thoroughly enjoyed learning about the benefits of Hypnobirthing. We are due to have our first baby in 6 weeks and Leanne helped us to feel nothing but calm and excited for this completely unknown experience coming up.',
+    attribution: 'Client · Leicestershire ★★★★★',
+  },
+  {
+    quote:
+      "From my first contact with Leanne we just clicked. She supported me through my concern about fibroids, and gave me some brilliant yoga positions to try when my SPD started. I can't recommend Leanne highly enough, she's a pro at end-to-end care!",
+    attribution: 'Beka · Leicestershire ★★★★★',
+  },
+  {
+    quote:
+      'We went on an antenatal course last week, and honestly found the two hours spent with Leanne today were much more helpful than the seven hours there!',
+    attribution: 'Client · Leicestershire ★★★★★',
+  },
+]
+
+const DEFAULT_FREEBIE_TAGS = ['Birth Affirmations', 'Birth Plan Guide', 'Newborn Checklist']
+
+// ─── Static page (with optional CMS overrides) ───────────────────────────────
+
+function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
+  const s = settings ?? {}
+
+  // Hero
+  const heroHeadline = s.homeHeroHeadline ?? 'Your birth, your way.'
+  const heroSubtitle =
+    s.homeHeroSubtitle ??
+    'Hypnobirthing, Doula support and Yoga — helping you feel powerful, prepared and genuinely excited for birth. All pregnancies, all modes of birth, all people.'
+  const heroCta = s.homeHeroCta ?? 'Book Free Consultation'
+  const heroCtaHref = s.homeHeroCtaHref ?? s.social?.calendly ?? 'https://calendly.com/birthhood'
+
+  // Services
+  const servicesEyebrow = s.homeServicesEyebrow ?? 'What I offer'
+  const servicesHeading = s.homeServicesHeading ?? 'Everything you need for a positive birth'
+
+  // Merge CMS services with hardcoded icons (CMS overrides name/desc/href; icons stay)
+  const services = DEFAULT_SERVICES.map((def, i) => {
+    const cms = s.homeServices?.[i]
+    return {
+      ...def,
+      name: cms?.name ?? def.name,
+      description: cms?.description ?? def.description,
+      href: cms?.href ?? def.href,
+    }
+  })
+
+  // About
+  const aboutEyebrow = s.homeAboutEyebrow ?? 'About Leanne'
+  const aboutHeading = s.homeAboutHeading ?? 'A passionate advocate for positive birth'
+  const aboutBody = s.homeAboutBody ?? [
+    "Hi, I'm Leanne — a certified hypnobirthing practitioner, birth doula and yoga teacher based in NW Leicestershire. Since 2019 I've been helping families across the Midlands and online feel genuinely prepared and excited for birth.",
+    "I believe that every person deserves to feel powerful in their birth experience — regardless of how it unfolds. Whether you're planning a home birth, a hospital birth, a caesarean or anything in between, I'm here to give you the knowledge, tools and support you need.",
+  ]
+  const credentials = s.homeAboutCredentials ?? DEFAULT_CREDENTIALS
+  const aboutCta = s.homeAboutCta ?? 'Meet Leanne'
+  const aboutCtaHref = s.homeAboutCtaHref ?? '/meet-leanne'
+
+  // Testimonials
+  const testimonialsEyebrow = s.homeTestimonialsEyebrow ?? 'Real words'
+  const testimonialsHeading = s.homeTestimonialsHeading ?? 'What clients say'
+  const testimonials =
+    s.homeTestimonials && s.homeTestimonials.length > 0 ? s.homeTestimonials : DEFAULT_TESTIMONIALS
+
+  // Freebies
+  const freebiesHeading = s.homeFreebiesHeading ?? 'Free resources to get you started'
+  const freebiesBody =
+    s.homeFreebiesBody ??
+    'Download my free birth affirmations, birth plan guide and newborn checklist — no email required, no strings attached. Plus a FREE Hypnobirthing MP3 and ELLE TENS machine discount code!'
+  const freebiesTags =
+    s.homeFreebiesTags && s.homeFreebiesTags.length > 0 ? s.homeFreebiesTags : DEFAULT_FREEBIE_TAGS
+  const freebiesCta = s.homeFreebiesCta ?? 'Download Free Resources'
+
+  // Booking CTA
+  const bookingHeading = s.homeBookingHeading ?? 'Ready to feel excited about your birth?'
+  const bookingBody =
+    s.homeBookingBody ?? 'Book a free 30-minute consultation — no obligation, just a friendly chat.'
+
   return (
     <>
       {/* HOME HERO */}
       <section className="home-hero-split">
         <div className="home-hero-content">
-          <h1 className="hero-title">Your birth,<br /><em>your way.</em></h1>
-          <p className="hero-sub">
-            Hypnobirthing, Doula support and Yoga — helping you feel powerful, prepared and genuinely
-            excited for birth. All pregnancies, all modes of birth, all people.
-          </p>
+          <h1 className="hero-title">
+            {heroHeadline.includes(',') ? (
+              <>
+                {heroHeadline.split(',')[0]},<br />
+                <em>{heroHeadline.split(',').slice(1).join(',').trim()}</em>
+              </>
+            ) : (
+              heroHeadline
+            )}
+          </h1>
+          <p className="hero-sub">{heroSubtitle}</p>
           <div className="hero-actions">
             <a
-              href="https://calendly.com/birthhood"
+              href={heroCtaHref}
               className="btn-primary"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Book Free Consultation
+              {heroCta}
             </a>
           </div>
         </div>
@@ -47,98 +196,37 @@ function HomePageStatic() {
       {/* SERVICES */}
       <section id="services" className="services">
         <div className="services-header">
-          <div className="section-label">What I offer</div>
+          <div className="section-label">{servicesEyebrow}</div>
           <h2 className="services-title">
-            Everything you need<br />for a <em>positive birth</em>
+            {servicesHeading.includes('positive birth') ? (
+              <>
+                {servicesHeading.split('positive birth')[0]}
+                <em>positive birth</em>
+                {servicesHeading.split('positive birth')[1]}
+              </>
+            ) : (
+              servicesHeading
+            )}
           </h2>
         </div>
 
         <div className="services-grid">
-          {/* Hypnobirthing */}
-          <Link href="/hypnobirthing" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <div className="service-card">
-              <span className="service-num">01</span>
-              <svg className="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.5a6.5 6.5 0 100-13 6.5 6.5 0 000 13z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v2m0 16v2M2 12h2m16 0h2" />
-              </svg>
-              <div className="service-name">Hypnobirthing</div>
-              <p className="service-desc">
-                Evidence-based antenatal education using relaxation, breathing and visualisation to help
-                you approach birth with calm confidence.
-              </p>
-              <span className="service-link">
-                Learn more
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </div>
-          </Link>
-
-          {/* Birth Doula */}
-          <Link href="/birth-doula" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <div className="service-card">
-              <span className="service-num">02</span>
-              <svg className="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-              </svg>
-              <div className="service-name">Birth Doula</div>
-              <p className="service-desc">
-                Continuous, compassionate non-medical support before, during and after your birth.
-                Your person in the room — always in your corner.
-              </p>
-              <span className="service-link">
-                Learn more
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </div>
-          </Link>
-
-          {/* Prenatal Yoga */}
-          <Link href="/yoga" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <div className="service-card">
-              <span className="service-num">03</span>
-              <svg className="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="12" cy="5" r="2" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 7v4l-3 3m3-3l3 3M9 21l3-7 3 7" />
-              </svg>
-              <div className="service-name">Prenatal Yoga</div>
-              <p className="service-desc">
-                Gentle, evidence-based prenatal yoga for all stages of pregnancy. Nourish your body,
-                calm your mind and build a beautiful community.
-              </p>
-              <span className="service-link">
-                Learn more
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </div>
-          </Link>
-
-          {/* Birth Trauma */}
-          <Link href="/birth-trauma" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <div className="service-card">
-              <span className="service-num">04</span>
-              <svg className="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-              </svg>
-              <div className="service-name">Birth Trauma Support</div>
-              <p className="service-desc">
-                Trauma-informed support for those processing a difficult birth experience. Your feelings
-                are valid — you don&apos;t have to carry them alone.
-              </p>
-              <span className="service-link">
-                Learn more
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </div>
-          </Link>
+          {services.map((svc) => (
+            <Link key={svc.href} href={svc.href} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="service-card">
+                <span className="service-num">{svc.num}</span>
+                {svc.icon}
+                <div className="service-name">{svc.name}</div>
+                <p className="service-desc">{svc.description}</p>
+                <span className="service-link">
+                  Learn more
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
@@ -147,63 +235,59 @@ function HomePageStatic() {
         <div className="about">
           <div className="about-visual">
             <div className="about-photo-frame">
-              <Image src="/images/leanne-portrait.jpg" alt="Leanne — birth-hood founder" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+              <Image
+                src="/images/leanne-portrait.jpg"
+                alt="Leanne — birth-hood founder"
+                fill
+                style={{ objectFit: 'cover', objectPosition: 'center top' }}
+              />
             </div>
             <div className="about-accent-box">
-              <span className="big-num">100's</span>
+              <span className="big-num">100&apos;s</span>
               <span className="big-label">of families supported</span>
             </div>
           </div>
 
           <div>
-            <div className="section-label">About Leanne</div>
+            <div className="section-label">{aboutEyebrow}</div>
             <h2 className="about-heading">
-              A passionate advocate for <em>positive birth</em>
+              {aboutHeading.includes('positive birth') ? (
+                <>
+                  {aboutHeading.split('positive birth')[0]}
+                  <em>positive birth</em>
+                  {aboutHeading.split('positive birth')[1]}
+                </>
+              ) : (
+                aboutHeading
+              )}
             </h2>
-            <p className="about-body">
-              Hi, I&apos;m Leanne — a certified hypnobirthing practitioner, birth doula and yoga teacher
-              based in NW Leicestershire. Since 2019 I&apos;ve been helping families across the Midlands
-              and online feel genuinely prepared and excited for birth.
-            </p>
-            <p className="about-body">
-              I believe that every person deserves to feel powerful in their birth experience — regardless
-              of how it unfolds. Whether you&apos;re planning a home birth, a hospital birth, a caesarean
-              or anything in between, I&apos;m here to give you the knowledge, tools and support you need.
-            </p>
+            {aboutBody.map((para, i) => (
+              <p key={i} className="about-body">
+                {para}
+              </p>
+            ))}
             <div className="credentials">
-              <div className="credential">
-                <span className="credential-dot" />
-                KGHypnobirthing DipHb (2019)
-              </div>
-              <div className="credential">
-                <span className="credential-dot" />
-                Badass Birth Trained Doula (2021)
-              </div>
-              <div className="credential">
-                <span className="credential-dot" />
-                3 Step Rewind Practitioner (2021)
-              </div>
-              <div className="credential">
-                <span className="credential-dot" />
-                LGBT+ Competency — Queer Birth Club (2021)
-              </div>
-              <div className="credential">
-                <span className="credential-dot" />
-                85hr Pregnancy/Postnatal Yoga — Sally Parkes (2022)
-              </div>
-              <div className="credential">
-                <span className="credential-dot" />
-                Featured on BBC Radio Leicester
-              </div>
+              {credentials.map((cred, i) => (
+                <div key={i} className="credential">
+                  <span className="credential-dot" />
+                  {cred}
+                </div>
+              ))}
             </div>
             <div className="trust-badges">
-              <a href="https://bgi.uk" target="_blank" rel="noopener noreferrer" className="trust-badge" aria-label="Insured by BGI UK">
+              <a
+                href="https://bgi.uk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="trust-badge"
+                aria-label="Insured by BGI UK"
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/images/bgi-logo.svg" alt="BGI UK — Professional Insurance" className="trust-badge-logo" />
               </a>
             </div>
-            <Link href="/meet-leanne" className="btn-outline">
-              Meet Leanne
+            <Link href={aboutCtaHref} className="btn-outline">
+              {aboutCta}
             </Link>
           </div>
         </div>
@@ -213,9 +297,17 @@ function HomePageStatic() {
       <section className="testimonials">
         <div className="testimonials-header">
           <div>
-            <div className="section-label light">Real words</div>
+            <div className="section-label light">{testimonialsEyebrow}</div>
             <h2 className="testimonials-title">
-              What clients <em>say</em>
+              {testimonialsHeading.includes('say') ? (
+                <>
+                  {testimonialsHeading.split('say')[0]}
+                  <em>say</em>
+                  {testimonialsHeading.split('say')[1]}
+                </>
+              ) : (
+                testimonialsHeading
+              )}
             </h2>
           </div>
           <div style={{ textAlign: 'right' }}>
@@ -225,33 +317,20 @@ function HomePageStatic() {
         </div>
 
         <div className="reviews-track">
-          <div className="review-card">
-            <p className="review-text">
-              We instantly felt at ease and comfortable and thoroughly enjoyed learning about the benefits
-              of Hypnobirthing. We are due to have our first baby in 6 weeks and Leanne helped us to feel
-              nothing but calm and excited for this completely unknown experience coming up.
-            </p>
-            <div className="review-author">Client · Leicestershire ★★★★★</div>
-          </div>
-          <div className="review-card">
-            <p className="review-text">
-              From my first contact with Leanne we just clicked. She supported me through my concern about
-              fibroids, and gave me some brilliant yoga positions to try when my SPD started. I can&apos;t
-              recommend Leanne highly enough, she&apos;s a pro at end-to-end care!
-            </p>
-            <div className="review-author">Beka · Leicestershire ★★★★★</div>
-          </div>
-          <div className="review-card">
-            <p className="review-text">
-              We went on an antenatal course last week, and honestly found the two hours spent with Leanne
-              today were much more helpful than the seven hours there!
-            </p>
-            <div className="review-author">Client · Leicestershire ★★★★★</div>
-          </div>
+          {testimonials.map((t, i) => (
+            <div key={i} className="review-card">
+              <p className="review-text">{t.quote}</p>
+              <div className="review-author">{t.attribution}</div>
+            </div>
+          ))}
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <Link href="/reviews" className="btn-outline" style={{ color: 'rgba(255,255,255,0.6)', borderColor: 'rgba(255,255,255,0.2)' }}>
+          <Link
+            href="/reviews"
+            className="btn-outline"
+            style={{ color: 'rgba(255,255,255,0.6)', borderColor: 'rgba(255,255,255,0.2)' }}
+          >
             Read all reviews
           </Link>
         </div>
@@ -260,29 +339,28 @@ function HomePageStatic() {
       {/* FREE RESOURCES TEASER */}
       <section className="freebies">
         <div className="freebies-inner">
-          <div className="section-label" style={{ justifyContent: 'center' }}>Completely free</div>
-          <h2 className="freebies-heading">
-            Free resources to get you started
-          </h2>
+          <div className="section-label" style={{ justifyContent: 'center' }}>
+            Completely free
+          </div>
+          <h2 className="freebies-heading">{freebiesHeading}</h2>
           <p style={{ color: 'rgba(0,0,0,0.6)', marginBottom: '2rem', fontWeight: 300, lineHeight: 1.8 }}>
-            Download my free birth affirmations, birth plan guide and newborn checklist —
-            no email required, no strings attached. Plus a FREE Hypnobirthing MP3 and ELLE TENS machine discount code!
+            {freebiesBody}
           </p>
           <div className="freebies-items">
-            <span className="freebie-tag">Birth Affirmations</span>
-            <span className="freebie-tag">Birth Plan Guide</span>
-            <span className="freebie-tag">Newborn Checklist</span>
+            {freebiesTags.map((tag, i) => (
+              <span key={i} className="freebie-tag">
+                {tag}
+              </span>
+            ))}
           </div>
           <Link href="/freebies" className="btn-primary">
-            Download Free Resources
+            {freebiesCta}
           </Link>
         </div>
       </section>
 
       {/* INSTAGRAM FEED */}
       <section className="insta-section">
-
-        {/* Instagram-style profile header */}
         <div className="insta-profile-header">
           <div className="insta-profile-avatar">
             <Image
@@ -302,7 +380,7 @@ function HomePageStatic() {
             </p>
           </div>
           <a
-            href="https://www.instagram.com/birthhooduk"
+            href={s.social?.instagram ?? 'https://www.instagram.com/birthhooduk'}
             className="btn-primary insta-follow-btn"
             target="_blank"
             rel="noopener noreferrer"
@@ -311,12 +389,11 @@ function HomePageStatic() {
           </a>
         </div>
 
-        {/* Live Instagram grid — falls back to static images if no token */}
         <InstagramSection />
 
         <div className="insta-cta-row">
           <a
-            href="https://www.instagram.com/birthhooduk"
+            href={s.social?.instagram ?? 'https://www.instagram.com/birthhooduk'}
             className="btn-outline insta-view-all"
             target="_blank"
             rel="noopener noreferrer"
@@ -331,20 +408,26 @@ function HomePageStatic() {
         <div className="booking-cta-inner">
           <div>
             <h2 className="booking-heading">
-              Ready to feel <em>excited</em><br />about your birth?
+              {bookingHeading.includes('excited') ? (
+                <>
+                  {bookingHeading.split('excited')[0]}
+                  <em>excited</em>
+                  {bookingHeading.split('excited')[1]}
+                </>
+              ) : (
+                bookingHeading
+              )}
             </h2>
-            <p className="booking-note">
-              Book a free 30-minute consultation — no obligation, just a friendly chat.
-            </p>
+            <p className="booking-note">{bookingBody}</p>
           </div>
           <a
-            href="https://calendly.com/birthhood"
+            href={heroCtaHref}
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
             style={{ whiteSpace: 'nowrap' }}
           >
-            Book Free Consultation
+            {heroCta}
           </a>
         </div>
       </section>

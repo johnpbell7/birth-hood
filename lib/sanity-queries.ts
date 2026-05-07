@@ -140,9 +140,33 @@ export type SiteSettings = {
     facebook?: string
     youtube?: string
     tiktok?: string
+    calendly?: string
   }
   footerText?: string
   marqueeWords?: string[]
+  // Home page
+  homeHeroHeadline?: string
+  homeHeroSubtitle?: string
+  homeHeroCta?: string
+  homeHeroCtaHref?: string
+  homeServicesEyebrow?: string
+  homeServicesHeading?: string
+  homeServices?: Array<{ name: string; description?: string; href?: string }>
+  homeAboutEyebrow?: string
+  homeAboutHeading?: string
+  homeAboutBody?: string[]
+  homeAboutCredentials?: string[]
+  homeAboutCta?: string
+  homeAboutCtaHref?: string
+  homeTestimonialsEyebrow?: string
+  homeTestimonialsHeading?: string
+  homeTestimonials?: Array<{ quote: string; attribution?: string }>
+  homeFreebiesHeading?: string
+  homeFreebiesBody?: string
+  homeFreebiesTags?: string[]
+  homeFreebiesCta?: string
+  homeBookingHeading?: string
+  homeBookingBody?: string
 }
 
 export async function getSiteSettings(): Promise<SiteSettings | null> {
