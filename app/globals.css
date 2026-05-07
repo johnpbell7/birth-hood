@@ -69,13 +69,17 @@ nav {
   background: rgba(255,255,255,0.97);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(232,123,195,0.25);
-  transition: box-shadow 0.4s;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s;
   height: 112px;
 }
 @media (max-width: 880px) {
   nav { padding: 0 1.5rem; height: 84px; }
 }
 nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+/* Auto-hide on scroll down */
+.top-bar { transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); }
+nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
+.top-bar.nav-hidden { transform: translateY(-100%); }
 .nav-logo-img { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
 .nav-logo-img img { height: 80px; width: auto; display: block; }
 .nav-logo-image { width: auto !important; height: 110px !important; object-fit: contain; }

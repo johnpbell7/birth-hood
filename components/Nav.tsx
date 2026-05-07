@@ -1,19 +1,38 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 export default function Nav() {
+  const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
+  const [hidden, setHidden] = useState(false)
   const [mobOpen, setMobOpen] = useState(false)
   const [openSection, setOpenSection] = useState<string | null>(null)
+  const lastScrollY = useRef(0)
+  const isStudio = pathname?.startsWith('/studio')
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', onScroll)
+    if (isStudio) return
+    const onScroll = () => {
+      const y = window.scrollY
+      setScrolled(y > 50)
+      // Hide when scrolling down past 120px, reveal when scrolling up
+      if (y > 120) {
+        setHidden(y > lastScrollY.current)
+      } else {
+        setHidden(false)
+      }
+      lastScrollY.current = y
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [isStudio])
+
+  // Hide entire nav on studio route
+  if (isStudio) return null
 
   const close = () => { setMobOpen(false); setOpenSection(null) }
   const toggle = (s: string) => setOpenSection(o => o === s ? null : s)
@@ -21,7 +40,7 @@ export default function Nav() {
   return (
     <>
       {/* Top bar */}
-      <div className="top-bar">
+      <div className={`top-bar${hidden ? ' nav-hidden' : ''}`}>
         <div className="top-bar-inner">
           <div className="top-bar-left">
             <div className="top-bar-insured">
@@ -43,7 +62,7 @@ export default function Nav() {
       </div>
 
       {/* Main nav */}
-      <nav id="nav" className={scrolled ? 'scrolled' : ''}>
+      <nav id="nav" className={[scrolled && 'scrolled', hidden && 'nav-hidden'].filter(Boolean).join(' ')}>
         <Link href="/" className="nav-logo">
           <Image src="/images/logo.jpg" alt="birth-hood" width={200} height={200} className="nav-logo-image" priority />
         </Link>
