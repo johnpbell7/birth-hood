@@ -125,7 +125,7 @@ export default function StudioLayout({ children }: { children: React.ReactNode }
           left: 1.2rem;
           top: 50%;
           transform: translateY(-50%);
-          font-family: 'Georgia', serif;
+          font-family: var(--font-playfair), Georgia, serif;
           font-size: 0.78rem;
           font-style: italic;
           letter-spacing: 0.04em;
