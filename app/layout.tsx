@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Questrial, Work_Sans } from 'next/font/google'
+import { Playfair_Display, DM_Sans } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -7,19 +7,19 @@ import ScrollRevealInit from '@/components/ScrollRevealInit'
 
 // Self-hosted via next/font — no Google DNS lookup, no render-blocking @import,
 // no layout shift. Fonts are inlined as CSS variables on <html>.
-// Matches the brand: Questrial for headings, Work Sans for body.
-const questrial = Questrial({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-questrial',
+  weight: ['400', '700', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-playfair',
   display: 'swap',
 })
 
-const workSans = Work_Sans({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['200', '300', '400', '500', '600', '700'],
+  weight: ['200', '300', '400', '500', '600'],
   style: ['normal', 'italic'],
-  variable: '--font-work-sans',
+  variable: '--font-dm-sans',
   display: 'swap',
 })
 
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${questrial.variable} ${workSans.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
       <body>
         <Nav />
         <ScrollRevealInit />
