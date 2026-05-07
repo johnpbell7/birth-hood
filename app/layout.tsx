@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, DM_Sans, Abril_Fatface } from 'next/font/google'
+import { Questrial, Work_Sans } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -7,26 +7,19 @@ import ScrollRevealInit from '@/components/ScrollRevealInit'
 
 // Self-hosted via next/font — no Google DNS lookup, no render-blocking @import,
 // no layout shift. Fonts are inlined as CSS variables on <html>.
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '700', '900'],
-  style: ['normal', 'italic'],
-  variable: '--font-playfair',
-  display: 'swap',
-})
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500'],
-  style: ['normal', 'italic'],
-  variable: '--font-dm-sans',
-  display: 'swap',
-})
-
-const abril = Abril_Fatface({
+// Matches the brand: Questrial for headings, Work Sans for body.
+const questrial = Questrial({
   subsets: ['latin'],
   weight: ['400'],
-  variable: '--font-abril',
+  variable: '--font-questrial',
+  display: 'swap',
+})
+
+const workSans = Work_Sans({
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-work-sans',
   display: 'swap',
 })
 
@@ -46,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmSans.variable} ${abril.variable}`}>
+    <html lang="en" className={`${questrial.variable} ${workSans.variable}`}>
       <body>
         <Nav />
         <ScrollRevealInit />
