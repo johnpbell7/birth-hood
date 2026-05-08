@@ -15,14 +15,13 @@ const photos = [
   { src: '/images/leanne-speaking.jpg',     alt: 'Leanne speaking at birth event', label: 'Birth Events',  rotation:  5 },
 ]
 
-// Slot positions as fractions of container width/height (from centre).
-// [xFraction, yFraction] — e.g. [-0.29, -0.29] means 29% left and 29% up from centre.
+// Pentagon slot positions as fractions of container size, offset from centre.
 const SLOT_FRACTIONS: [number, number][] = [
-  [-0.29, -0.29],  // 0 — top-left
-  [ 0.29, -0.31],  // 1 — top-right
-  [ 0,     0   ],  // 2 — centre (starts active)
-  [-0.29,  0.31],  // 3 — bottom-left
-  [ 0.29,  0.29],  // 4 — bottom-right
+  [-0.29, -0.29],  // top-left
+  [ 0.29, -0.31],  // top-right
+  [ 0,     0   ],  // centre — starting active slot
+  [-0.29,  0.31],  // bottom-left
+  [ 0.29,  0.29],  // bottom-right
 ]
 
 const ACTIVE_SCALE = 1.12
@@ -32,8 +31,12 @@ const CYCLE_MS     = 4500
 export default function HeroCollage() {
   const containerRef = useRef<HTMLDivElement>(null)
   const frameRefs    = useRef<(HTMLDivElement | null)[]>([])
-  const activeRef    = useRef(2) // frame-3 starts active
-  const slotsRef     = useRef<[number, number][]>([])
+  const activeRef    = useRef(2) // index 2 starts centre
+
+  // Tracks where each card actually is right now (x, y in pixels from centre).
+  // This is the source of truth — not a fixed slot map — because cards swap
+  // positions on each transition rather than returning to their own slot.
+  const posRef = useRef<[number, number][]>([])
 
   const { contextSafe } = useGSAP(() => {
     const container = containerRef.current
@@ -42,20 +45,23 @@ export default function HeroCollage() {
     const W = container.offsetWidth
     const H = container.offsetHeight
 
-    // Compute pixel slot positions from fractions
-    slotsRef.current = SLOT_FRACTIONS.map(([fx, fy]) => [W * fx, H * fy])
+    // Convert fractions → pixels
+    const slots: [number, number][] = SLOT_FRACTIONS.map(([fx, fy]) => [W * fx, H * fy])
 
-    // Place every frame: anchor all to centre via CSS left:50%/top:50% then
-    // offset with x/y. xPercent/yPercent: -50 centres the frame on that point.
+    // Seed posRef: active card is at (0,0), others at their initial slot
+    posRef.current = slots.map(([sx, sy], i) =>
+      i === activeRef.current ? [0, 0] : [sx, sy]
+    )
+
+    // Place all frames
     frameRefs.current.forEach((frame, i) => {
       if (!frame) return
-      const [sx, sy] = slotsRef.current[i]
+      const [x, y] = posRef.current[i]
       const isActive = i === activeRef.current
       gsap.set(frame, {
         xPercent: -50,
         yPercent: -50,
-        x: isActive ? 0 : sx,
-        y: isActive ? 0 : sy,
+        x, y,
         rotation: isActive ? -1 : photos[i].rotation,
         scale:    isActive ? ACTIVE_SCALE : 1,
         zIndex:   isActive ? ACTIVE_Z : i + 1,
@@ -71,33 +77,40 @@ export default function HeroCollage() {
     const nextFrame = frameRefs.current[nextIndex]
     if (!prevFrame || !nextFrame) return
 
+    // Snapshot the incoming card's current position BEFORE updating anything
+    const [fromX, fromY] = posRef.current[nextIndex]
+
+    // Update position tracking: cards swap positions
+    posRef.current[prevIndex] = [fromX, fromY]  // outgoing goes to where incoming was
+    posRef.current[nextIndex] = [0, 0]           // incoming goes to centre
+
     activeRef.current = nextIndex
 
-    const [sx, sy] = slotsRef.current[nextIndex]
-    const [px, py] = slotsRef.current[prevIndex]
-
     gsap.killTweensOf([prevFrame, nextFrame])
+
+    // Incoming on top during the transition
     gsap.set(nextFrame, { zIndex: ACTIVE_Z })
     gsap.set(prevFrame, { zIndex: ACTIVE_Z - 1 })
 
     const tl = gsap.timeline()
 
-    // Incoming — fly from its slot to centre and grow
-    tl.fromTo(nextFrame,
-      { x: sx, y: sy, scale: 1, rotation: photos[nextIndex].rotation },
-      { x: 0,  y: 0,  scale: ACTIVE_SCALE, rotation: -1,
-        duration: 1.1, ease: 'expo.out' },
-    0)
+    // Incoming: fly from its current position to centre, grow and straighten
+    tl.fromTo(
+      nextFrame,
+      { x: fromX, y: fromY, scale: 1, rotation: photos[nextIndex].rotation },
+      { x: 0, y: 0, scale: ACTIVE_SCALE, rotation: -1, duration: 1.1, ease: 'expo.out' },
+      0
+    )
 
-    // Outgoing — shrink back to its slot
-    tl.to(prevFrame, {
-      x: px, y: py,
-      scale: 1,
-      rotation: photos[prevIndex].rotation,
-      zIndex: prevIndex + 1,
-      duration: 0.9,
-      ease: 'power2.inOut',
-    }, 0.1)
+    // Outgoing: swap to where the incoming card was, shrink back down
+    tl.to(
+      prevFrame,
+      { x: fromX, y: fromY, scale: 1, rotation: photos[prevIndex].rotation, duration: 0.9, ease: 'power2.inOut' },
+      0.1
+    )
+
+    // Restore outgoing card's z-index after it settles
+    tl.set(prevFrame, { zIndex: prevIndex + 1 }, '>')
   })
 
   // Auto-cycle
