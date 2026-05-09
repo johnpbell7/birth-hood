@@ -24,7 +24,7 @@ const SLOT_FRACTIONS: [number, number][] = [
   [ 0.29,  0.29],  // bottom-right
 ]
 
-const ACTIVE_SCALE = 1.12
+const ACTIVE_SCALE = 1.55
 const ACTIVE_Z     = 20
 const CYCLE_MS     = 4500
 
