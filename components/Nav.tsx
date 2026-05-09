@@ -12,6 +12,7 @@ export default function Nav() {
   const [mobOpen, setMobOpen] = useState(false)
   const [openSection, setOpenSection] = useState<string | null>(null)
   const lastScrollY = useRef(0)
+  const hamRef = useRef<HTMLButtonElement>(null)
   const isStudio = pathname?.startsWith('/studio')
 
   useEffect(() => {
@@ -34,7 +35,13 @@ export default function Nav() {
   // Hide entire nav on studio route
   if (isStudio) return null
 
-  const close = () => { setMobOpen(false); setOpenSection(null) }
+  const close = () => {
+    // Move focus back to the hamburger BEFORE aria-hidden is set,
+    // so the browser never sees a focused element inside aria-hidden.
+    hamRef.current?.focus()
+    setMobOpen(false)
+    setOpenSection(null)
+  }
   const toggle = (s: string) => setOpenSection(o => o === s ? null : s)
 
   return (
@@ -107,7 +114,7 @@ export default function Nav() {
 
         <div className="nav-mobile-right">
           <Link href="/hub" className="nav-hub nav-hub-mobile" aria-label="Client Hub">Hub</Link>
-          <button className="nav-ham" onClick={() => setMobOpen(true)} aria-label="Open menu">
+          <button ref={hamRef} className="nav-ham" onClick={() => setMobOpen(true)} aria-label="Open menu">
             <span /><span /><span />
           </button>
         </div>
