@@ -110,7 +110,7 @@ function DoulaPageStatic() {
             </div>
 
             {/* Virtual Doula */}
-            <div className="card card-pink" style={{ borderTop: '3px solid var(--pink-deep)' }}>
+            <div className="card" style={{ borderTop: '3px solid var(--pink-deep)' }}>
               <div className="section-label" style={{ marginBottom: '1rem' }}>Online support</div>
               <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', fontWeight: 700, marginBottom: '1rem', lineHeight: 1.2 }}>
                 Virtual Doula

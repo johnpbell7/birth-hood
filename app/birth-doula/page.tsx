@@ -138,7 +138,7 @@ function BirthDoulaPageStatic() {
             </div>
 
             {/* During birth */}
-            <div className="card card-pink" style={{ borderTop: '3px solid var(--pink-deep)' }}>
+            <div className="card" style={{ borderTop: '3px solid var(--pink-deep)' }}>
               <div className="section-label" style={{ marginBottom: '1rem' }}>During birth</div>
               <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.3rem', fontWeight: 700, marginBottom: '1rem' }}>
                 Birth support

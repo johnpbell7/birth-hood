@@ -16,17 +16,27 @@ const photos = [
 ]
 
 // Pentagon slot positions as fractions of container size, offset from centre.
-const SLOT_FRACTIONS: [number, number][] = [
+// Desktop uses wider spread; mobile uses tighter fractions so cards stay within the container.
+const SLOT_FRACTIONS_DESKTOP: [number, number][] = [
   [-0.29, -0.29],  // top-left
   [ 0.29, -0.31],  // top-right
   [ 0,     0   ],  // centre — starting active slot
   [-0.29,  0.31],  // bottom-left
   [ 0.29,  0.29],  // bottom-right
 ]
+const SLOT_FRACTIONS_MOBILE: [number, number][] = [
+  [-0.22, -0.20],  // top-left
+  [ 0.22, -0.22],  // top-right
+  [ 0,     0   ],  // centre
+  [-0.22,  0.22],  // bottom-left
+  [ 0.22,  0.20],  // bottom-right
+]
 
-const ACTIVE_SCALE = 1.55
-const ACTIVE_Z     = 20
-const CYCLE_MS     = 4500
+const ACTIVE_SCALE         = 1.55
+const ACTIVE_SCALE_MOBILE  = 1.25  // smaller scale so active card doesn't dominate on mobile
+const ACTIVE_Z             = 20
+const CYCLE_MS             = 4500
+const MOBILE_BREAKPOINT    = 880
 
 export default function HeroCollage() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -36,7 +46,8 @@ export default function HeroCollage() {
   // Tracks where each card actually is right now (x, y in pixels from centre).
   // This is the source of truth — not a fixed slot map — because cards swap
   // positions on each transition rather than returning to their own slot.
-  const posRef = useRef<[number, number][]>([])
+  const posRef        = useRef<[number, number][]>([])
+  const activeScaleRef = useRef(ACTIVE_SCALE)
 
   const { contextSafe } = useGSAP(() => {
     const container = containerRef.current
@@ -45,8 +56,12 @@ export default function HeroCollage() {
     const W = container.offsetWidth
     const H = container.offsetHeight
 
+    const isMobile = W < MOBILE_BREAKPOINT
+    const slotFractions = isMobile ? SLOT_FRACTIONS_MOBILE : SLOT_FRACTIONS_DESKTOP
+    activeScaleRef.current = isMobile ? ACTIVE_SCALE_MOBILE : ACTIVE_SCALE
+
     // Convert fractions → pixels
-    const slots: [number, number][] = SLOT_FRACTIONS.map(([fx, fy]) => [W * fx, H * fy])
+    const slots: [number, number][] = slotFractions.map(([fx, fy]) => [W * fx, H * fy])
 
     // Seed posRef: active card is at (0,0), others at their initial slot
     posRef.current = slots.map(([sx, sy], i) =>
@@ -63,7 +78,7 @@ export default function HeroCollage() {
         yPercent: -50,
         x, y,
         rotation: isActive ? -1 : photos[i].rotation,
-        scale:    isActive ? ACTIVE_SCALE : 1,
+        scale:    isActive ? activeScaleRef.current : 1,
         zIndex:   isActive ? ACTIVE_Z : i + 1,
       })
     })
@@ -98,7 +113,7 @@ export default function HeroCollage() {
     tl.fromTo(
       nextFrame,
       { x: fromX, y: fromY, scale: 1, rotation: photos[nextIndex].rotation },
-      { x: 0, y: 0, scale: ACTIVE_SCALE, rotation: -1, duration: 1.1, ease: 'expo.out' },
+      { x: 0, y: 0, scale: activeScaleRef.current, rotation: -1, duration: 1.1, ease: 'expo.out' },
       0
     )
 
