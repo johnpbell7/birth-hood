@@ -704,3 +704,24 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .cta-band h2 { font-size: 1.9rem; }
   .strip-inner { gap: 2.5rem; }
 }
+
+/* SESSION OUTLINES */
+.so-intro { margin-bottom: 3.5rem; }
+.so-intro p { color: var(--grey-mid); font-size: 1rem; line-height: 1.85; font-weight: 300; margin-bottom: 1rem; }
+.so-list { display: flex; flex-direction: column; }
+.so-session { display: grid; grid-template-columns: 90px 1fr; gap: 2.5rem; padding: 3rem 0; border-top: 1px solid rgba(232,123,195,0.18); }
+.so-session:last-child { border-bottom: 1px solid rgba(232,123,195,0.18); }
+.so-num { font-family: 'Abril Fatface', serif; font-size: 4.5rem; line-height: 1; color: var(--pink-pale); text-align: center; padding-top: 0.3rem; letter-spacing: -0.02em; }
+.so-title { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem,2.2vw,1.65rem); font-weight: 700; line-height: 1.25; margin: 0.4rem 0 0.9rem; color: var(--black); }
+.so-desc { color: var(--grey-mid); font-size: 0.92rem; line-height: 1.85; font-weight: 300; margin-bottom: 1.5rem; }
+.so-topics { background: var(--pink-ultra); border: 1px solid rgba(232,123,195,0.25); border-radius: 6px; padding: 1.25rem 1.5rem; }
+.so-topics-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pink-deep); margin-bottom: 1rem; }
+.so-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.so-pill { background: white; border: 1px solid rgba(232,123,195,0.3); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.78rem; color: var(--charcoal); font-weight: 400; line-height: 1.5; }
+.so-note { margin-top: 3rem; background: var(--black); color: rgba(255,255,255,0.65); border-radius: 6px; padding: 2rem 2.5rem; font-size: 0.9rem; line-height: 1.85; font-weight: 300; }
+.so-note .section-label { color: var(--pink) !important; }
+@media (max-width: 640px) {
+  .so-session { grid-template-columns: 1fr; gap: 0.5rem; padding: 2rem 0; }
+  .so-num { font-size: 3rem; text-align: left; }
+  .so-note { padding: 1.5rem; }
+}
