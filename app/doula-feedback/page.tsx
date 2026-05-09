@@ -36,38 +36,31 @@ function DoulaFeedbackPageStatic() {
 
       {/* TESTIMONIALS */}
       <section className="section-pad">
-        <div className="wrap" style={{ maxWidth: '900px' }}>
-          <div className="section-label" style={{ marginBottom: '2rem', justifyContent: 'center' }}>Client testimonials</div>
+        <div className="wrap" style={{ maxWidth: '760px' }}>
+          <div className="section-label" style={{ marginBottom: '3.5rem', textAlign: 'center' }}>Client testimonials</div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-
-            {/* Testimonial 1 */}
-            <div className="card card-pink" style={{ padding: '2.5rem 2.5rem 2rem' }}>
-              <div style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '1rem', opacity: 0.8 }}>
-                First baby · Homebirth
-              </div>
-              <blockquote style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.05rem', fontStyle: 'italic', lineHeight: 1.8, color: 'var(--black)', margin: 0, marginBottom: '1.25rem' }}>
-                &ldquo;From my first contact with Leanne we just clicked, she&rsquo;s proudly inclusive and has experience in a wide range of pregnancies and birth situations. She supported me through my concern about fibroids, and gave me some brilliant yoga positions to try when my SPD started. She kept in contact through my pregnancy and made me feel like I really had amazing support whenever I needed it. The prenatal sessions were so brilliant to run through my birth plans of a physiological homebirth. Leanne supported me every step of the way and made me feel so confident and excited for my homebirth. She also helped with some latch issues and supported our undisturbed golden hour. It felt so natural having her there and I didn&rsquo;t want her to leave! Post natally, I felt really looked after by Leanne both in person &amp; virtually. I can&rsquo;t recommend Leanne highly enough, she&rsquo;s a pro at end-to-end care and if you&rsquo;re reading this, book her!!!&rdquo;
-              </blockquote>
-              <div style={{ fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--pink-deep)' }}>
-                Beka &amp; Matt ★★★★★
-              </div>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="card" style={{ padding: '2.5rem 2.5rem 2rem' }}>
-              <div style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '1rem', opacity: 0.8 }}>
-                Second baby · Homebirth
-              </div>
-              <blockquote style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.05rem', fontStyle: 'italic', lineHeight: 1.8, color: 'var(--black)', margin: 0, marginBottom: '1.25rem' }}>
-                &ldquo;Just incredible! Leanne was amazing from the moment we booked her. She was always on hand for any questions and me and my husband loved our antenatal sessions with her and getting to know her, gaining knowledge. Postnatally she was excellent, always a message away and for our sessions. However, I couldn&rsquo;t have done the birth without her. She protected my birth space perfectly and advocated for me many times. She was especially helpful when things didn&rsquo;t quite go to plan.&rdquo;
-              </blockquote>
-              <div style={{ fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--pink-deep)' }}>
-                Bea &amp; Duane ★★★★★
+          {[
+            {
+              tag: 'First baby · Homebirth',
+              quote: 'From my first contact with Leanne we just clicked, she’s proudly inclusive and has experience in a wide range of pregnancies and birth situations. She supported me through my concern about fibroids, and gave me some brilliant yoga positions to try when my SPD started. She kept in contact through my pregnancy and made me feel like I really had amazing support whenever I needed it. The prenatal sessions were so brilliant to run through my birth plans of a physiological homebirth. Leanne supported me every step of the way and made me feel so confident and excited for my homebirth. She also helped with some latch issues and supported our undisturbed golden hour. It felt so natural having her there and I didn’t want her to leave! Post natally, I felt really looked after by Leanne both in person & virtually. I can’t recommend Leanne highly enough, she’s a pro at end-to-end care and if you’re reading this, book her!!!',
+              name: 'Beka & Matt',
+            },
+            {
+              tag: 'Second baby · Homebirth',
+              quote: 'Just incredible! Leanne was amazing from the moment we booked her. She was always on hand for any questions and me and my husband loved our antenatal sessions with her and getting to know her, gaining knowledge. Postnatally she was excellent, always a message away and for our sessions. However, I couldn’t have done the birth without her. She protected my birth space perfectly and advocated for me many times. She was especially helpful when things didn’t quite go to plan.',
+              name: 'Bea & Duane',
+            },
+          ].map((t, i) => (
+            <div key={i} className="df-testimonial">
+              <div className="df-quote-mark">&ldquo;</div>
+              <div className="df-tag">{t.tag}</div>
+              <blockquote className="df-quote">{t.quote}</blockquote>
+              <div className="df-attribution">
+                <span className="df-name">{t.name}</span>
+                <span className="df-stars">★★★★★</span>
               </div>
             </div>
-
-          </div>
+          ))}
         </div>
       </section>
 
@@ -94,7 +87,7 @@ function DoulaFeedbackPageStatic() {
 
             <div className="grid-2" style={{ gap: '1.5rem' }}>
               {/* Google */}
-              <div className="card card-pink" style={{ textAlign: 'center', padding: '2.5rem 2rem' }}>
+              <div className="card" style={{ textAlign: 'center', padding: '2.5rem 2rem' }}>
                 <div style={{ marginBottom: '1rem' }}>
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" style={{ margin: '0 auto', display: 'block' }}>
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -147,7 +140,7 @@ function DoulaFeedbackPageStatic() {
           </div>
 
           {/* SOCIAL SHARE */}
-          <div className="card card-pink" style={{ marginTop: '2.5rem', padding: '2rem' }}>
+          <div className="card" style={{ marginTop: '2.5rem', padding: '2rem' }}>
             <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.7rem' }}>
               Share on Instagram
             </h3>
