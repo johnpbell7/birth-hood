@@ -114,7 +114,7 @@ export default function Nav() {
       </nav>
 
       {/* Mobile menu */}
-      <div id="mob" className={`mob-menu${mobOpen ? ' open' : ''}`} aria-hidden={!mobOpen}>
+      <div id="mob" className={`mob-menu${mobOpen ? ' open' : ''}`} aria-hidden={!mobOpen} inert={!mobOpen || undefined}>
         <div className="mob-header">
           <Link href="/" onClick={close}>
             <Image src="/images/logo.jpg" alt="birth-hood" width={56} height={56} className="mob-logo" />
