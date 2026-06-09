@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sanity": "sanity dev"
+    "sanity": "sanity dev",
+    "seed:pages": "node --env-file=.env.local scripts/seed-pages.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
