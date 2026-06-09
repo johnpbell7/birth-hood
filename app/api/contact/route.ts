@@ -76,26 +76,6 @@ export async function POST(req: NextRequest) {
       `,
     })
 
-    // Fire to GHL webhook (non-blocking — form succeeds even if GHL is down)
-    const ghlWebhook = process.env.GHL_WEBHOOK_URL
-    if (ghlWebhook) {
-      fetch(ghlWebhook, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          first_name: name.split(' ')[0],
-          last_name:  name.split(' ').slice(1).join(' ') || '',
-          full_name:  name,
-          email,
-          phone:      '',
-          service,
-          due_date:   dueDate,
-          message,
-          source:     'birth-hood.co.uk contact form',
-        }),
-      }).catch(err => console.error('GHL webhook error:', err))
-    }
-
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error('Contact form error:', error)
