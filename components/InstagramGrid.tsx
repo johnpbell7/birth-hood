@@ -3,11 +3,11 @@ import type { InstagramPost } from '@/lib/instagram'
 
 const STATIC_FALLBACK = [
   { src: '/images/leanne-portrait.jpg', alt: 'Leanne — @birthhooduk', pos: 'center top' },
-  { src: '/images/hypnobirthing-class.png', alt: 'Hypnobirthing class — @birthhooduk', pos: 'center' },
-  { src: '/images/doula-support.png', alt: 'Doula support — @birthhooduk', pos: 'center' },
+  { src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class — @birthhooduk', pos: 'center' },
+  { src: '/images/doula-support.jpg', alt: 'Doula support — @birthhooduk', pos: 'center' },
   { src: '/images/yoga-class.jpg', alt: 'Prenatal yoga — @birthhooduk', pos: 'center' },
   { src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking — @birthhooduk', pos: 'center top' },
-  { src: '/images/hypnobirthing-class.png', alt: 'Supporting families — @birthhooduk', pos: 'center 30%' },
+  { src: '/images/hypnobirthing-class.jpg', alt: 'Supporting families — @birthhooduk', pos: 'center 30%' },
 ]
 
 export default function InstagramGrid({ posts }: { posts: InstagramPost[] }) {

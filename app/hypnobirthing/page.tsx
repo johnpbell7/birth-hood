@@ -40,7 +40,7 @@ function HypnobirthingPageStatic() {
         eyebrow="Calm. Confident. Prepared."
         title={<>Hypno<em>birthing</em></>}
         subtitle="Evidence-based techniques to help you release fear, trust your body and step into birth feeling genuinely excited — not terrified."
-        img1={{ src: '/images/hypnobirthing-class.png', alt: 'Hypnobirthing class' }}
+        img1={{ src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class' }}
         img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         actions={
           <a

@@ -59,7 +59,7 @@ export default async function BlogPage() {
         title={<>The <em>Blog</em></>}
         subtitle="Articles, tips and real talk on birth, hypnobirthing, doula support and everything in between."
         img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/hypnobirthing-class.png', alt: 'Hypnobirthing class' }}
+        img2={{ src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class' }}
       />
 
       <MarqueeStrip />

@@ -17,7 +17,7 @@ function MasterclassPageStatic() {
         title={<>Birth <em>Masterclass</em></>}
         subtitle="A 2-hour deep dive into birth preparation — everything you need to know to approach your birth with confidence."
         img1={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
-        img2={{ src: '/images/hypnobirthing-class.png', alt: 'Hypnobirthing class' }}
+        img2={{ src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class' }}
         actions={
           <>
             <a

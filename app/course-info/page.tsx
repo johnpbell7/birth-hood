@@ -15,7 +15,7 @@ function CourseInfoPageStatic() {
         eyebrow="Hypnobirthing courses"
         title={<>Course <em>Info & Dates</em></>}
         subtitle="Find your perfect course date and everything you need to know before you book."
-        img1={{ src: '/images/hypnobirthing-class.png', alt: 'Hypnobirthing class' }}
+        img1={{ src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class' }}
         img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         actions={
           <a

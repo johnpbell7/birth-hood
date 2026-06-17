@@ -87,7 +87,7 @@ export default async function FreebiesPage() {
         title={<><em>Free</em> Resources</>}
         subtitle="Birth affirmations, guides, templates and audio — all created by me, all completely free."
         img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/hypnobirthing-class.png', alt: 'Hypnobirthing class' }}
+        img2={{ src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class' }}
       />
 
       <MarqueeStrip />

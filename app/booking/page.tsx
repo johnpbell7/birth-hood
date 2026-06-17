@@ -40,7 +40,7 @@ function BookingPageStatic() {
         title={<>Class <em>Booking</em></>}
         subtitle="Book your place on a hypnobirthing course, prenatal yoga class or a free consultation — all in one place."
         img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/hypnobirthing-class.png', alt: 'Hypnobirthing class' }}
+        img2={{ src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class' }}
         actions={
           <a
             href="https://calendly.com/birthhood"

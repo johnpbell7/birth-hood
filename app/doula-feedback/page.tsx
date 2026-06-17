@@ -14,7 +14,7 @@ function DoulaFeedbackPageStatic() {
         title={<>Your <em>Feedback</em></>}
         subtitle="Thank you for allowing me to be part of your birth journey. Your words mean everything — and help other families find the support they need."
         img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/doula-support.png', alt: 'Doula support' }}
+        img2={{ src: '/images/doula-support.jpg', alt: 'Doula support' }}
       />
 
       {/* INTRO */}

@@ -16,7 +16,7 @@ function PostnatalDoulaPageStatic() {
         title={<>Postnatal <em>Doula</em></>}
         subtitle="Support in the fourth trimester — the weeks after birth when you're adjusting to parenthood."
         img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/doula-support.png', alt: 'Postnatal doula support' }}
+        img2={{ src: '/images/doula-support.jpg', alt: 'Postnatal doula support' }}
         actions={
           <a
             href="https://calendly.com/birthhood"
