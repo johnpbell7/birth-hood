@@ -6,13 +6,13 @@
 
 :root {
   --pink:        #e87bc3;
-  --pink-deep:   #c955a8;
+  --pink-deep:   #b83f93;
   --pink-pale:   #f7d4ee;
   --pink-ultra:  #fdf0f9;
   --black:       #111111;
   --charcoal:    #1E1E1E;
   --grey-mid:    #5A5A5A;
-  --grey-light:  #ABABAB;
+  --grey-light:  #767676;
   --white:       #FFFFFF;
 }
 
@@ -226,7 +226,7 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .mob-chevron.open { transform: rotate(180deg); opacity: 1; }
 .mob-dropdown { background: #faf9f9; }
 .mob-footer { padding: 1.25rem 1.5rem 2rem; border-top: 1px solid #f0ecec; flex-shrink: 0; }
-.mob-cta { display: block; width: 100%; text-align: center; background: var(--pink); color: #fff !important; padding: 1rem 2rem; border-radius: 3px; font-family: 'Poppins', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+.mob-cta { display: block; width: 100%; text-align: center; background: var(--pink); color: var(--black) !important; padding: 1rem 2rem; border-radius: 3px; font-family: 'Poppins', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
 .mob-cta:hover { background: var(--pink-deep); }
 .mob-hub-cta { background: var(--pink) !important; color: var(--black) !important; padding: 0.85rem 2.2rem !important; border-radius: 999px !important; font-family: 'Poppins', sans-serif !important; font-size: 0.82rem !important; font-weight: 600 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; margin-top: 1.5rem; box-shadow: 0 3px 12px rgba(232,123,195,0.4); }
 .mob-hub-cta:hover { background: var(--pink-deep) !important; color: var(--white) !important; }
@@ -479,14 +479,14 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .testimonials-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3.5rem; max-width: 1200px; margin-left: auto; margin-right: auto; flex-wrap: wrap; gap: 1.5rem; }
 .testimonials-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem,3.2vw,2.8rem); color: var(--white); font-weight: 700; line-height: 1.2; }
 .testimonials-title em { font-style: italic; color: var(--pink); }
-.stars { color: var(--pink); font-size: 1.05rem; letter-spacing: 0.1em; }
+.stars { color: var(--pink-deep); font-size: 1.05rem; letter-spacing: 0.1em; }
 .stars-label { font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 0.3rem; }
 .reviews-track { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
 .review-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(232,123,195,0.1); padding: 2.2rem 2rem; position: relative; transition: background 0.3s; }
 .review-card:hover { background: rgba(232,123,195,0.05); }
 .review-card::before { content: '\201C'; font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--pink); opacity: 0.2; position: absolute; top: 0.5rem; left: 1.2rem; line-height: 1; pointer-events: none; }
 .review-text { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.85; font-weight: 300; font-style: italic; margin-bottom: 1.5rem; padding-top: 1.8rem; }
-.review-author { font-size: 0.72rem; font-weight: 500; color: var(--pink); letter-spacing: 0.1em; text-transform: uppercase; }
+.review-author { font-size: 0.72rem; font-weight: 500; color: var(--pink-deep); letter-spacing: 0.1em; text-transform: uppercase; }
 
 /* PODCAST */
 .podcast-section { background: var(--white); padding: 6rem 3rem; }
@@ -729,7 +729,7 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .so-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
 .so-pill { background: white; border: 1px solid rgba(232,123,195,0.3); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.78rem; color: var(--charcoal); font-weight: 400; line-height: 1.5; }
 .so-note { margin-top: 3rem; background: var(--black); color: rgba(255,255,255,0.65); border-radius: 6px; padding: 2rem 2.5rem; font-size: 0.9rem; line-height: 1.85; font-weight: 300; }
-.so-note .section-label { color: var(--pink) !important; }
+.so-note .section-label { color: var(--pink-deep) !important; }
 @media (max-width: 640px) {
   .so-session { grid-template-columns: 1fr; gap: 0.5rem; padding: 2rem 0; }
   .so-num { font-size: 3rem; text-align: left; }
