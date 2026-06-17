@@ -17,6 +17,8 @@ export default defineType({
           type: 'object',
           name: 'feature',
           fields: [
+            { name: 'number', title: 'Number (optional)', type: 'string' },
+            { name: 'icon', title: 'Icon (optional)', type: 'string' },
             { name: 'title', title: 'Title', type: 'string', validation: (R) => R.required() },
             { name: 'description', title: 'Description', type: 'text', rows: 3 },
             { name: 'href', title: 'Link (optional)', type: 'string' },

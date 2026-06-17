@@ -33,6 +33,30 @@ const PAGE_FIELDS = `
         ...,
         _type == "image" => { ..., asset-> }
       }
+    },
+    _type == "twoColumnSection" => {
+      ...,
+      image{ ..., asset-> },
+      body[]{
+        ...,
+        _type == "image" => { ..., asset-> }
+      },
+      stats[]{ ... }
+    },
+    _type == "linkListSection" => {
+      ...,
+      links[]{ ... }
+    },
+    _type == "courseDatesSection" => {
+      ...,
+      courses[]{ ... }
+    },
+    _type == "sessionOutlineSection" => {
+      ...,
+      sessions[]{
+        ...,
+        topics[]
+      }
     }
   }
 `

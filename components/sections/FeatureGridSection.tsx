@@ -2,6 +2,8 @@ import Image from 'next/image'
 import { urlFor } from '@/lib/sanity'
 
 type Item = {
+  number?: string
+  icon?: string
   title: string
   description?: string
   href?: string
@@ -39,7 +41,7 @@ export default function FeatureGridSection({ eyebrow, heading, subheading, items
             const cardInner = (
               <>
                 <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '1.6rem', color: 'var(--pink-deep)', marginBottom: '1rem' }}>
-                  {String(i + 1).padStart(2, '0')}
+                  {item.icon ? item.icon : (item.number ?? String(i + 1).padStart(2, '0'))}
                 </div>
                 {imgUrl && (
                   <Image src={imgUrl} alt={item.image?.alt ?? ''} width={400} height={240} style={{ width: '100%', height: '160px', objectFit: 'cover', borderRadius: '3px', marginBottom: '1rem' }} />
