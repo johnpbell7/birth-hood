@@ -34,3 +34,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .migration-assets/
+
+# agent worktrees (isolated build workspaces)
+.claude/worktrees/
