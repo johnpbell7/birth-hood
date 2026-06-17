@@ -54,7 +54,7 @@ function CourseInfoPageStatic() {
                   <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.05rem', fontWeight: 700, marginBottom: '0.3rem' }}>
                     {course.date}
                     {course.featured && (
-                      <span style={{ marginLeft: '0.8rem', background: 'var(--pink)', color: 'var(--black)', fontSize: '0.65rem', fontFamily: 'DM Sans, sans-serif', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '0.2rem 0.6rem', borderRadius: '2px' }}>
+                      <span style={{ marginLeft: '0.8rem', background: 'var(--pink)', color: 'var(--black)', fontSize: '0.65rem', fontFamily: 'Poppins, sans-serif', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '0.2rem 0.6rem', borderRadius: '2px' }}>
                         Popular
                       </span>
                     )}

@@ -331,7 +331,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
                 style={{
                   padding: '1rem 1.2rem',
                   fontSize: '1rem',
-                  fontFamily: 'DM Sans, sans-serif',
+                  fontFamily: 'Poppins, sans-serif',
                   border: `2px solid ${error ? '#d43a3a' : 'rgba(0,0,0,0.12)'}`,
                   borderRadius: '3px',
                   background: 'var(--white)',
@@ -390,7 +390,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
                 textTransform: 'uppercase',
                 borderRadius: '3px',
                 cursor: 'pointer',
-                fontFamily: 'DM Sans, sans-serif',
+                fontFamily: 'Poppins, sans-serif',
               }}
             >
               Lock Hub
