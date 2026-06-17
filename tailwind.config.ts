@@ -24,7 +24,7 @@ const config: Config = {
       },
       fontFamily: {
         playfair: ['"Playfair Display"', 'serif'],
-        'dm-sans': ['"DM Sans"', 'sans-serif'],
+        poppins: ['"Poppins"', 'sans-serif'],
         abril: ['"Abril Fatface"', 'serif'],
       },
     },
