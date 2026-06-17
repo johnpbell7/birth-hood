@@ -9,6 +9,10 @@ import ImageSection from './ImageSection'
 import TestimonialsSection from './TestimonialsSection'
 import PricingSection from './PricingSection'
 import StatsSection from './StatsSection'
+import TwoColumnSection from './TwoColumnSection'
+import LinkListSection from './LinkListSection'
+import CourseDatesSection from './CourseDatesSection'
+import SessionOutlineSection from './SessionOutlineSection'
 import type { SanityPage } from '@/lib/sanity-queries'
 
 type Section = { _type: string; _key: string; [k: string]: unknown }
@@ -48,6 +52,14 @@ function renderSection(s: Section) {
       return <PricingSection key={key} {...(props as Parameters<typeof PricingSection>[0])} />
     case 'statsSection':
       return <StatsSection key={key} {...(props as Parameters<typeof StatsSection>[0])} />
+    case 'twoColumnSection':
+      return <TwoColumnSection key={key} {...(props as Parameters<typeof TwoColumnSection>[0])} />
+    case 'linkListSection':
+      return <LinkListSection key={key} {...(props as Parameters<typeof LinkListSection>[0])} />
+    case 'courseDatesSection':
+      return <CourseDatesSection key={key} {...(props as Parameters<typeof CourseDatesSection>[0])} />
+    case 'sessionOutlineSection':
+      return <SessionOutlineSection key={key} {...(props as Parameters<typeof SessionOutlineSection>[0])} />
     default:
       return null
   }
