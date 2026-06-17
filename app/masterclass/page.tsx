@@ -7,6 +7,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Birth Masterclass',
+  description: 'A 2-hour birth preparation masterclass in Leicester and online UK. Everything you need to approach your birth with calm, confidence and clear information.',
 }
 
 function MasterclassPageStatic() {

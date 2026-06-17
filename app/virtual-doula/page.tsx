@@ -6,6 +6,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Virtual Doula',
+  description: 'Full doula support delivered online across the UK. Antenatal preparation, labour guidance and postnatal care wherever you are, without leaving home.',
 }
 
 function VirtualDoulaPageStatic() {

@@ -7,6 +7,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'FAQ',
+  description: 'Answers to common questions about hypnobirthing, doula support, pregnancy yoga and working with Leanne at birth-hood in Leicester and online UK.',
 }
 
 const generalFaqs = [

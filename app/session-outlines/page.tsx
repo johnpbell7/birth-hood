@@ -6,6 +6,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Session Outlines',
+  description: 'A session-by-session breakdown of the birth-hood hypnobirthing course, from the mind-body connection to breathing, relaxation and birth preferences.',
 }
 
 const sessions = [

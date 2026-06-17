@@ -8,6 +8,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Meet Leanne',
+  description: 'Meet Leanne, NW Leicestershire hypnobirthing teacher, birth doula and pregnancy yoga teacher. A mum of two and 3 Step Rewind practitioner.',
 }
 
 function MeetLeannePageStatic() {

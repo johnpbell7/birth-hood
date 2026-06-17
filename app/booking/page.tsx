@@ -6,6 +6,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Class Booking',
+  description: 'Book your hypnobirthing course, prenatal yoga class or free consultation with birth-hood in Leicester and online UK. Secure your place today.',
 }
 
 const bookingOptions = [

@@ -4,6 +4,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions',
+  description: 'The terms and conditions for booking hypnobirthing, doula and yoga services with birth-hood, covering payment, cancellations and what to expect.',
 }
 
 function TermsPageStatic() {

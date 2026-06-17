@@ -4,6 +4,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Links — Birth Hood',
+  description: 'All the links you need from birth-hood in one place. Book hypnobirthing, doula support and yoga, explore freebies and follow Leanne online.',
 }
 
 const links = [

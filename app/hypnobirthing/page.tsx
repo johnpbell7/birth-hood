@@ -8,6 +8,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Hypnobirthing',
+  description: 'KGHypnobirthing courses in Leicester and online across the UK. Release fear, master calm breathing and prepare for a confident, positive birth.',
 }
 
 const faqItems = [

@@ -6,6 +6,7 @@ import { getFreebies } from '@/lib/sanity-queries'
 
 export const metadata: Metadata = {
   title: 'Free Resources',
+  description: 'Free birth resources from birth-hood, including a hypnobirthing MP3, birth plan guide, newborn checklist and ready-made affirmations to download.',
 }
 
 const fallbackResources = [

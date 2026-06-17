@@ -7,6 +7,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Prenatal & Postnatal Yoga',
+  description: 'Prenatal, postnatal and parent and baby yoga classes in NW Leicestershire. Nourish your body, calm your mind and connect with your baby.',
 }
 
 const faqItems = [

@@ -6,6 +6,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Course Info & Dates',
+  description: 'Upcoming hypnobirthing course dates in Leicester and online UK, plus everything you need to know before you book your group or private place.',
 }
 
 function CourseInfoPageStatic() {

@@ -6,6 +6,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Dou-La-La the Birthy Podcast',
+  description: 'Dou-La-La, the birthy podcast. Two doulas in honest conversation on birth, busting myths and sharing real talk to help you feel informed and empowered.',
 }
 
 const episodes = [

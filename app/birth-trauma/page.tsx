@@ -6,6 +6,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Birth Trauma Support',
+  description: 'Gentle birth trauma support and 3 Step Rewind in Leicester and online UK. If your birth left you overwhelmed, healing is possible and you are not alone.',
 }
 
 function BirthTraumaPageStatic() {

@@ -6,6 +6,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Postnatal Doula',
+  description: 'Nurturing postnatal doula support in Leicester and the Midlands for the fourth trimester. Practical help, feeding support and a listening ear after birth.',
 }
 
 function PostnatalDoulaPageStatic() {

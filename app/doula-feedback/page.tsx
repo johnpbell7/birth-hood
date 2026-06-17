@@ -4,6 +4,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Doula Feedback',
+  description: 'Share your birth-hood doula experience. Your words help other Leicester and Midlands families find the warm, professional support they need.',
 }
 
 function DoulaFeedbackPageStatic() {
