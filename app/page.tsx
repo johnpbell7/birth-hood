@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import HeroCollage from '@/components/HeroCollage'
+import HeroCollage, { DEFAULT_PHOTOS } from '@/components/HeroCollage'
 import InstagramSection from '@/components/InstagramSection'
 import { cmsOrStatic } from '@/lib/cms-page'
 import { getSiteSettings, type SiteSettings } from '@/lib/sanity-queries'
@@ -129,6 +129,16 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
     ? urlFor(s.homeWelcomeImage).width(1100).url()
     : '/images/leanne-speaking.jpg'
 
+  // Hero collage — per-slot CMS image/label/alt, falling back to the defaults
+  const collagePhotos = DEFAULT_PHOTOS.map((def, i) => {
+    const cms = s.homeHeroCollage?.[i]
+    return {
+      src: cms?.image ? urlFor(cms.image).width(600).url() : def.src,
+      alt: cms?.alt || def.alt,
+      label: cms?.label || def.label,
+    }
+  })
+
   // Merge CMS services with hardcoded icons (CMS overrides name/desc/href; icons stay)
   const services = DEFAULT_SERVICES.map((def, i) => {
     const cms = s.homeServices?.[i]
@@ -199,7 +209,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
           </div>
         </div>
 
-        <HeroCollage />
+        <HeroCollage photos={collagePhotos} />
       </section>
 
       {/* MARQUEE */}

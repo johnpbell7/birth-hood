@@ -7,7 +7,7 @@ import { useGSAP } from '@gsap/react'
 
 gsap.registerPlugin(useGSAP)
 
-const photos = [
+export const DEFAULT_PHOTOS = [
   { src: '/images/leanne-portrait.jpg',     alt: 'Leanne — birth-hood founder',   label: 'Leanne',        rotation: -8 },
   { src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class',            label: 'Hypnobirthing', rotation:  7 },
   { src: '/images/doula-support.jpg',       alt: 'Doula support',                  label: 'Doula Support', rotation: -3 },
@@ -38,7 +38,12 @@ const ACTIVE_Z             = 20
 const CYCLE_MS             = 4500
 const MOBILE_BREAKPOINT    = 880
 
-export default function HeroCollage() {
+type CollagePhoto = { src: string; alt: string; label: string }
+
+export default function HeroCollage({ photos: cmsPhotos }: { photos?: CollagePhoto[] }) {
+  const photos = cmsPhotos && cmsPhotos.length === DEFAULT_PHOTOS.length
+    ? cmsPhotos.map((p, i) => ({ ...p, rotation: DEFAULT_PHOTOS[i].rotation }))
+    : DEFAULT_PHOTOS
   const containerRef = useRef<HTMLDivElement>(null)
   const frameRefs    = useRef<(HTMLDivElement | null)[]>([])
   const activeRef    = useRef(2) // index 2 starts centre

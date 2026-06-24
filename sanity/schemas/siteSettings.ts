@@ -70,6 +70,28 @@ export default defineType({
       group: 'home',
     }),
 
+    // ── Home — Hero collage photos ───────────────────────────────────────────
+    defineField({
+      name: 'homeHeroCollage',
+      title: 'Hero — Collage photos',
+      type: 'array',
+      group: 'home',
+      description: 'The rotating polaroid photos in the hero (up to 5). Leave empty to use the defaults. Order matches the on-screen layout.',
+      validation: (R) => R.max(5),
+      of: [
+        {
+          type: 'object',
+          name: 'collagePhoto',
+          fields: [
+            { name: 'image', title: 'Photo', type: 'image', options: { hotspot: true } },
+            { name: 'label', title: 'Label (shown under the photo)', type: 'string' },
+            { name: 'alt', title: 'Alt text (for accessibility)', type: 'string' },
+          ],
+          preview: { select: { title: 'label', media: 'image' } },
+        },
+      ],
+    }),
+
     // ── Home — Welcome intro (under the hero) ────────────────────────────────
     defineField({
       name: 'homeWelcomeHeading',
