@@ -551,10 +551,10 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
     radial-gradient(circle var(--sr) at center,var(--face) 99%,#0000) bottom/calc(2*var(--sr)) calc(2*var(--sr)) repeat-x,
     radial-gradient(circle var(--sr) at center,var(--face) 99%,#0000) left/calc(2*var(--sr)) calc(2*var(--sr)) repeat-y,
     radial-gradient(circle var(--sr) at center,var(--face) 99%,#0000) right/calc(2*var(--sr)) calc(2*var(--sr)) repeat-y,
-    radial-gradient(circle var(--sr) at center,var(--face) 99%,#0000) top left/calc(2*var(--sr)) calc(2*var(--sr)) no-repeat,
-    radial-gradient(circle var(--sr) at center,var(--face) 99%,#0000) top right/calc(2*var(--sr)) calc(2*var(--sr)) no-repeat,
-    radial-gradient(circle var(--sr) at center,var(--face) 99%,#0000) bottom left/calc(2*var(--sr)) calc(2*var(--sr)) no-repeat,
-    radial-gradient(circle var(--sr) at center,var(--face) 99%,#0000) bottom right/calc(2*var(--sr)) calc(2*var(--sr)) no-repeat;
+    radial-gradient(circle calc(1.5*var(--sr)) at center,var(--face) 99%,#0000) top left/calc(3*var(--sr)) calc(3*var(--sr)) no-repeat,
+    radial-gradient(circle calc(1.5*var(--sr)) at center,var(--face) 99%,#0000) top right/calc(3*var(--sr)) calc(3*var(--sr)) no-repeat,
+    radial-gradient(circle calc(1.5*var(--sr)) at center,var(--face) 99%,#0000) bottom left/calc(3*var(--sr)) calc(3*var(--sr)) no-repeat,
+    radial-gradient(circle calc(1.5*var(--sr)) at center,var(--face) 99%,#0000) bottom right/calc(3*var(--sr)) calc(3*var(--sr)) no-repeat;
   filter: drop-shadow(6px 7px 0 var(--sh));
   border: none !important;
   border-radius: 0 !important;
