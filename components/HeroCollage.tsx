@@ -8,8 +8,7 @@ import { DEFAULT_PHOTOS } from '@/lib/hero-photos'
 
 gsap.registerPlugin(useGSAP)
 
-// Pentagon slot positions as fractions of container size, offset from centre.
-// Desktop uses wider spread; mobile uses tighter fractions so cards stay within the container.
+// DESKTOP: 5-card pentagon, active grows in the centre.
 const SLOT_FRACTIONS_DESKTOP: [number, number][] = [
   [-0.56, -0.36],  // top-left
   [ 0.56, -0.38],  // top-right
@@ -17,19 +16,25 @@ const SLOT_FRACTIONS_DESKTOP: [number, number][] = [
   [-0.56,  0.38],  // bottom-left
   [ 0.56,  0.36],  // bottom-right
 ]
+// MOBILE: only cards 0,1,2 shown. 0 = left-top, 1 = left-bottom, 2 = right (active home).
 const SLOT_FRACTIONS_MOBILE: [number, number][] = [
-  [-0.33, -0.28],  // top-left
-  [ 0.33, -0.30],  // top-right
-  [ 0,     0   ],  // centre
-  [-0.33,  0.30],  // bottom-left
-  [ 0.33,  0.28],  // bottom-right
+  [-0.27, -0.25],  // left-top (small)
+  [-0.27,  0.25],  // left-bottom (small)
+  [ 0.20,  0   ],  // right (large/active home)
+  [ 0,     0   ],  // unused (hidden)
+  [ 0,     0   ],  // unused (hidden)
 ]
+// Where the active (large) card sits: centre on desktop, shifted right on mobile.
+const ACTIVE_POS_DESKTOP: [number, number] = [0, 0]
+const ACTIVE_POS_MOBILE:  [number, number] = [0.20, 0]
 
-const ACTIVE_SCALE         = 1.45  // front card prominent for impact
-const ACTIVE_SCALE_MOBILE  = 1.2   // smaller scale so active card doesn't dominate on mobile
-const ACTIVE_Z             = 20
-const CYCLE_MS             = 4500
-const MOBILE_BREAKPOINT    = 880
+const ACTIVE_SCALE          = 1.45  // front card prominent (desktop)
+const ACTIVE_SCALE_MOBILE   = 1.35  // big card on the right (mobile)
+const INACTIVE_SCALE_MOBILE = 0.8   // the two left cards are smaller
+const ACTIVE_Z              = 20
+const CYCLE_MS              = 4500
+const MOBILE_BREAKPOINT     = 880
+const MOBILE_CARD_COUNT     = 3      // cycle through 3 images on mobile
 
 type CollagePhoto = { src: string; alt: string; label: string }
 
@@ -39,13 +44,13 @@ export default function HeroCollage({ photos: cmsPhotos }: { photos?: CollagePho
     : DEFAULT_PHOTOS
   const containerRef = useRef<HTMLDivElement>(null)
   const frameRefs    = useRef<(HTMLDivElement | null)[]>([])
-  const activeRef    = useRef(2) // index 2 starts centre
+  const activeRef    = useRef(2) // index 2 starts active
 
-  // Tracks where each card actually is right now (x, y in pixels from centre).
-  // This is the source of truth — not a fixed slot map — because cards swap
-  // positions on each transition rather than returning to their own slot.
-  const posRef        = useRef<[number, number][]>([])
-  const activeScaleRef = useRef(ACTIVE_SCALE)
+  const posRef           = useRef<[number, number][]>([])
+  const activeScaleRef   = useRef(ACTIVE_SCALE)
+  const inactiveScaleRef = useRef(1)
+  const activePosRef     = useRef<[number, number]>([0, 0])
+  const countRef         = useRef(DEFAULT_PHOTOS.length)
 
   const { contextSafe } = useGSAP(() => {
     const container = containerRef.current
@@ -53,20 +58,25 @@ export default function HeroCollage({ photos: cmsPhotos }: { photos?: CollagePho
 
     const W = container.offsetWidth
     const H = container.offsetHeight
-
     const isMobile = W < MOBILE_BREAKPOINT
-    const slotFractions = isMobile ? SLOT_FRACTIONS_MOBILE : SLOT_FRACTIONS_DESKTOP
-    activeScaleRef.current = isMobile ? ACTIVE_SCALE_MOBILE : ACTIVE_SCALE
 
-    // Convert fractions → pixels
+    const slotFractions = isMobile ? SLOT_FRACTIONS_MOBILE : SLOT_FRACTIONS_DESKTOP
+    activeScaleRef.current   = isMobile ? ACTIVE_SCALE_MOBILE : ACTIVE_SCALE
+    inactiveScaleRef.current = isMobile ? INACTIVE_SCALE_MOBILE : 1
+    countRef.current         = isMobile ? MOBILE_CARD_COUNT : photos.length
+    const apf = isMobile ? ACTIVE_POS_MOBILE : ACTIVE_POS_DESKTOP
+    activePosRef.current = [W * apf[0], H * apf[1]]
+
+    // keep the active index within the cycling set
+    if (activeRef.current >= countRef.current) activeRef.current = countRef.current - 1
+
     const slots: [number, number][] = slotFractions.map(([fx, fy]) => [W * fx, H * fy])
 
-    // Seed posRef: active card is at (0,0), others at their initial slot
+    // Seed posRef: active card sits at the active position, others at their slot
     posRef.current = slots.map(([sx, sy], i) =>
-      i === activeRef.current ? [0, 0] : [sx, sy]
+      i === activeRef.current ? [activePosRef.current[0], activePosRef.current[1]] : [sx, sy]
     )
 
-    // Place all frames
     frameRefs.current.forEach((frame, i) => {
       if (!frame) return
       const [x, y] = posRef.current[i]
@@ -76,7 +86,7 @@ export default function HeroCollage({ photos: cmsPhotos }: { photos?: CollagePho
         yPercent: -50,
         x, y,
         rotation: isActive ? -1 : photos[i].rotation,
-        scale:    isActive ? activeScaleRef.current : 1,
+        scale:    isActive ? activeScaleRef.current : inactiveScaleRef.current,
         zIndex:   isActive ? ACTIVE_Z : i + 1,
       })
     })
@@ -90,46 +100,38 @@ export default function HeroCollage({ photos: cmsPhotos }: { photos?: CollagePho
     const nextFrame = frameRefs.current[nextIndex]
     if (!prevFrame || !nextFrame) return
 
-    // Snapshot the incoming card's current position BEFORE updating anything
     const [fromX, fromY] = posRef.current[nextIndex]
+    const [ax, ay] = activePosRef.current
+    const inScale = inactiveScaleRef.current
 
-    // Update position tracking: cards swap positions
-    posRef.current[prevIndex] = [fromX, fromY]  // outgoing goes to where incoming was
-    posRef.current[nextIndex] = [0, 0]           // incoming goes to centre
-
+    // cards swap positions: outgoing takes the incoming's old slot
+    posRef.current[prevIndex] = [fromX, fromY]
+    posRef.current[nextIndex] = [ax, ay]
     activeRef.current = nextIndex
 
     gsap.killTweensOf([prevFrame, nextFrame])
-
-    // Incoming on top during the transition
     gsap.set(nextFrame, { zIndex: ACTIVE_Z })
     gsap.set(prevFrame, { zIndex: ACTIVE_Z - 1 })
 
     const tl = gsap.timeline()
-
-    // Incoming: fly from its current position to centre, grow and straighten
     tl.fromTo(
       nextFrame,
-      { x: fromX, y: fromY, scale: 1, rotation: photos[nextIndex].rotation },
-      { x: 0, y: 0, scale: activeScaleRef.current, rotation: -1, duration: 1.1, ease: 'expo.out' },
+      { x: fromX, y: fromY, scale: inScale, rotation: photos[nextIndex].rotation },
+      { x: ax, y: ay, scale: activeScaleRef.current, rotation: -1, duration: 1.1, ease: 'expo.out' },
       0
     )
-
-    // Outgoing: swap to where the incoming card was, shrink back down
     tl.to(
       prevFrame,
-      { x: fromX, y: fromY, scale: 1, rotation: photos[prevIndex].rotation, duration: 0.9, ease: 'power2.inOut' },
+      { x: fromX, y: fromY, scale: inScale, rotation: photos[prevIndex].rotation, duration: 0.9, ease: 'power2.inOut' },
       0.1
     )
-
-    // Restore outgoing card's z-index after it settles
     tl.set(prevFrame, { zIndex: prevIndex + 1 }, '>')
   })
 
-  // Auto-cycle
+  // Auto-cycle (3 on mobile, 5 on desktop)
   useGSAP(() => {
     const id = setInterval(() => {
-      transitionTo((activeRef.current + 1) % photos.length)
+      transitionTo((activeRef.current + 1) % countRef.current)
     }, CYCLE_MS)
     return () => clearInterval(id)
   }, { scope: containerRef, dependencies: [transitionTo] })
