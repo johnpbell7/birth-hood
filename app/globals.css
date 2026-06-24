@@ -538,11 +538,24 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .services-header .section-label { justify-content: center; }
 .services-title { font-family: 'Poppins', sans-serif; font-size: clamp(2.4rem,4vw,3.5rem); font-weight: 600; line-height: 1.1; }
 .services-title em { font-style: italic; color: var(--pink-deep); }
-.services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; max-width: 1300px; margin: 0 auto; }
-.service-card { background: var(--white); padding: 2.5rem 2rem; position: relative; overflow: hidden; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; }
-.service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--pink); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
-.service-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.07); }
-.service-card:hover::after { transform: scaleX(1); }
+.services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2.4rem; max-width: 1320px; margin: 0 auto; }
+/* scalloped "sticker" card with an offset pink shadow shape (à la the IG posts) */
+.service-cell { position: relative; display: flex; text-decoration: none; color: inherit; }
+.service-card, .scallop-shadow {
+  --sr: 12px;
+  --scallop:
+    linear-gradient(#000,#000) center/calc(100% - 2*var(--sr)) calc(100% - 2*var(--sr)) no-repeat,
+    radial-gradient(circle var(--sr) at center,#000 99%,#0000) top/calc(2*var(--sr)) calc(2*var(--sr)) repeat-x,
+    radial-gradient(circle var(--sr) at center,#000 99%,#0000) bottom/calc(2*var(--sr)) calc(2*var(--sr)) repeat-x,
+    radial-gradient(circle var(--sr) at center,#000 99%,#0000) left/calc(2*var(--sr)) calc(2*var(--sr)) repeat-y,
+    radial-gradient(circle var(--sr) at center,#000 99%,#0000) right/calc(2*var(--sr)) calc(2*var(--sr)) repeat-y;
+  -webkit-mask: var(--scallop);
+  mask: var(--scallop);
+}
+.scallop-shadow { position: absolute; inset: 0; background: var(--pink); transform: translate(7px, 8px); z-index: 0; pointer-events: none; }
+.service-card { position: relative; z-index: 1; flex: 1; background: var(--white); padding: 2.6rem 2.1rem 2.2rem; cursor: pointer; transition: transform 0.3s; }
+.service-cell:hover .service-card { transform: translate(-2px, -3px); }
+.service-cell:hover .scallop-shadow { transform: translate(10px, 12px); }
 .service-num { font-family: 'Poppins', sans-serif; font-size: 5rem; color: var(--pink-pale); position: absolute; top: 0.8rem; right: 1.2rem; line-height: 1; pointer-events: none; }
 .service-icon { width: 44px; height: 44px; margin-bottom: 1.4rem; color: var(--pink-deep); }
 .service-name { font-family: 'Poppins', sans-serif; font-size: 1.35rem; font-weight: 500; margin-bottom: 0.8rem; line-height: 1.2; }
