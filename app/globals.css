@@ -683,8 +683,10 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .prose ul li::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 5px; height: 5px; border-radius: 50%; background: var(--pink); }
 
 /* CARDS */
-.card { background: var(--white); border: 1px solid rgba(0,0,0,0.07); border-radius: 3px; padding: 2rem; transition: transform 0.3s, box-shadow 0.3s; }
-.card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.07); }
+.card { background: var(--white); border: 1px solid rgba(0,0,0,0.07); border-radius: 3px; padding: 2rem; transition: transform 0.35s, box-shadow 0.3s; transform: rotate(-1.2deg); }
+.card:nth-child(even) { transform: rotate(1.3deg); }
+.card:nth-child(3n) { transform: rotate(0.6deg); }
+.card:hover { transform: rotate(0deg) translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.07); }
 .card-pink { background: var(--pink-ultra); border: 1px solid rgba(254,127,204,0.3); }
 
 /* CTA BAND */
@@ -693,8 +695,10 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .cta-band p { color: rgba(0,0,0,0.6); font-weight: 300; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
 
 /* PRICE CARD */
-.price-card { border: 2px solid rgba(0,0,0,0.08); border-radius: 3px; padding: 2.5rem; text-align: center; transition: border-color 0.3s, transform 0.3s; }
-.price-card:hover { border-color: var(--pink); transform: translateY(-4px); }
+.price-card { border: 2px solid rgba(0,0,0,0.08); border-radius: 3px; padding: 2.5rem; text-align: center; transition: border-color 0.3s, transform 0.35s; transform: rotate(-1.5deg); }
+.price-card:nth-child(even) { transform: rotate(1.6deg); }
+.price-card:nth-child(3n) { transform: rotate(0.8deg); }
+.price-card:hover { border-color: var(--pink); transform: rotate(0deg) translateY(-4px); }
 .price-card.featured { border-color: var(--pink); background: var(--pink-ultra); }
 .price-amount { font-family: 'Poppins', sans-serif; font-size: 3rem; color: var(--black); line-height: 1; margin-bottom: 0.3rem; }
 .price-period { font-size: 0.78rem; color: var(--grey-light); letter-spacing: 0.08em; margin-bottom: 1.5rem; }
