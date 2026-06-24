@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import HeroCollage from '@/components/HeroCollage'
-import { Sparkles, Squiggle } from '@/components/Decor'
+import { Sparkles } from '@/components/Decor'
 import { DEFAULT_PHOTOS } from '@/lib/hero-photos'
 import InstagramSection from '@/components/InstagramSection'
 import { cmsOrStatic } from '@/lib/cms-page'
@@ -260,12 +260,6 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
       <section className="section-pad" style={{ paddingTop: '3.25rem', paddingBottom: 0 }}>
         <div className="wrap welcome-intro">
           <div className="welcome-intro-text">
-            {/* static knocked-back squiggle pattern above the heading */}
-            <div className="welcome-squiggle-row" aria-hidden="true">
-              <Squiggle className="knock static" />
-              <Squiggle className="knock static" />
-              <Squiggle className="knock static" />
-            </div>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 600, lineHeight: 1.15, marginBottom: '1.6rem' }}>
               {welcomeHeading.includes('birth-hood') ? (
                 <>
