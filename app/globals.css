@@ -522,11 +522,11 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .collage-img--sm2 { left: 40%; bottom: 0; width: 22%; height: 24%; transform: rotate(2deg); z-index: 4; }
 
 /* STATS */
-.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
-.stat-card { --face: var(--black); padding: 2rem 1.8rem; transition: filter 0.3s; }
-.stat-card:hover { --face: #222; }
-.stat-card:nth-child(even) { --face: var(--pink); --sh: var(--pink-deep); }
-.stat-card:nth-child(even):hover { --face: var(--pink-deep); }
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+.stat-card { background: var(--black); padding: 2rem 1.8rem; transition: background 0.3s; }
+.stat-card:hover { background: #222; }
+.stat-card:nth-child(even) { background: var(--pink); }
+.stat-card:nth-child(even):hover { background: var(--pink-deep); }
 .stat-card:nth-child(even) .stat-number { color: var(--black); }
 .stat-card:nth-child(even) .stat-label { color: rgba(0,0,0,0.55); }
 .stat-number { font-family: 'Poppins', sans-serif; font-size: 2.8rem; color: var(--pink); line-height: 1; margin-bottom: 0.4rem; }
@@ -539,9 +539,9 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .services-title { font-family: 'Poppins', sans-serif; font-size: clamp(2.4rem,4vw,3.5rem); font-weight: 600; line-height: 1.1; }
 .services-title em { font-style: italic; color: var(--pink-deep); }
 .services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2.4rem; max-width: 1320px; margin: 0 auto; }
-/* ── SCALLOPED "STICKER" CARDS — gradient-drawn scallop edge + offset pink shadow ──
-   One reusable engine: each card sets --face (fill) and --sh (shadow colour).      */
-.card, .price-card, .stat-card, .service-card {
+/* ── SCALLOPED "STICKER" CARD — homepage service cards only ──
+   gradient-drawn scallop edge + offset pink drop-shadow.                           */
+.service-card {
   --sr: 13px;
   --face: #fff;
   --sh: var(--pink);
@@ -679,9 +679,9 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .prose ul li::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 5px; height: 5px; border-radius: 50%; background: var(--pink); }
 
 /* CARDS */
-.card { padding: 2rem; transition: transform 0.3s, filter 0.3s; }
-.card:hover { transform: translateY(-4px); }
-.card-pink { --face: var(--pink-ultra); }
+.card { background: var(--white); border: 1px solid rgba(0,0,0,0.07); border-radius: 3px; padding: 2rem; transition: transform 0.3s, box-shadow 0.3s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.07); }
+.card-pink { background: var(--pink-ultra); border: 1px solid rgba(254,127,204,0.3); }
 
 /* CTA BAND */
 .cta-band { background: var(--pink); padding: 5rem 3rem; text-align: center; }
@@ -689,9 +689,9 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .cta-band p { color: rgba(0,0,0,0.6); font-weight: 300; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
 
 /* PRICE CARD */
-.price-card { padding: 2.5rem; text-align: center; transition: transform 0.3s, filter 0.3s; }
-.price-card:hover { transform: translateY(-4px); }
-.price-card.featured { --face: var(--pink-ultra); }
+.price-card { border: 2px solid rgba(0,0,0,0.08); border-radius: 3px; padding: 2.5rem; text-align: center; transition: border-color 0.3s, transform 0.3s; }
+.price-card:hover { border-color: var(--pink); transform: translateY(-4px); }
+.price-card.featured { border-color: var(--pink); background: var(--pink-ultra); }
 .price-amount { font-family: 'Poppins', sans-serif; font-size: 3rem; color: var(--black); line-height: 1; margin-bottom: 0.3rem; }
 .price-period { font-size: 0.78rem; color: var(--grey-light); letter-spacing: 0.08em; margin-bottom: 1.5rem; }
 .price-features { list-style: none; margin-bottom: 2rem; }
@@ -809,7 +809,7 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .nav-dropdown > a { pointer-events: auto; }
   .nav-drop-menu { display: none !important; }
-  .stat-grid { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+  .stat-grid { grid-template-columns: 1fr 1fr; gap: 3px; }
   .stat-card { padding: 1.4rem 1.1rem; min-width: 0; }
   .stat-number { font-size: 2rem; }
   .stat-label { font-size: 0.72rem; overflow-wrap: anywhere; }
