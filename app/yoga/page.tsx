@@ -3,11 +3,32 @@ import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
 import FaqAccordion from '@/components/FaqAccordion'
+import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Prenatal & Postnatal Yoga',
   description: 'Prenatal, postnatal and parent and baby yoga classes in NW Leicestershire. Nourish your body, calm your mind and connect with your baby.',
+}
+
+const SITE = 'https://www.birth-hood.co.uk'
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Prenatal & postnatal yoga classes',
+  name: 'Prenatal & Postnatal Yoga',
+  description: 'Prenatal, postnatal and parent and baby yoga classes in NW Leicestershire — safe, adapted movement to nourish your body and calm your mind.',
+  url: `${SITE}/yoga`,
+  provider: { '@type': 'HealthAndBeautyBusiness', name: 'birth-hood', url: SITE },
+  areaServed: ['NW Leicestershire', 'Leicestershire', 'Midlands'],
+}
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+    { '@type': 'ListItem', position: 2, name: 'Prenatal & Postnatal Yoga', item: `${SITE}/yoga` },
+  ],
 }
 
 const faqItems = [
@@ -32,6 +53,8 @@ const faqItems = [
 function YogaPageStatic() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         ctaLabel="Book Your Place"
         eyebrow="Move. Breathe. Connect."

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
@@ -10,9 +11,31 @@ export const metadata: Metadata = {
   description: 'Compassionate birth, virtual and postnatal doula support in Leicester and the Midlands. Continuous, non-medical care before, during and after birth.',
 }
 
+const SITE = 'https://www.birth-hood.co.uk'
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Birth doula support',
+  name: 'Doula Services',
+  description: 'Continuous, compassionate non-medical birth, virtual and postnatal doula support in Leicester and the Midlands — before, during and after birth.',
+  url: `${SITE}/doula`,
+  provider: { '@type': 'HealthAndBeautyBusiness', name: 'birth-hood', url: SITE },
+  areaServed: ['Leicester', 'Leicestershire', 'Midlands', 'United Kingdom (online)'],
+}
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+    { '@type': 'ListItem', position: 2, name: 'Doula Services', item: `${SITE}/doula` },
+  ],
+}
+
 function DoulaPageStatic() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         eyebrow="Professional doula support"
         title={<>Doula <em>Services</em></>}

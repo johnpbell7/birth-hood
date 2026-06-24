@@ -3,6 +3,7 @@ import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import FaqAccordion from '@/components/FaqAccordion'
 import CtaBand from '@/components/CtaBand'
+import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
@@ -113,9 +114,26 @@ const paymentFaqs = [
   },
 ]
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ...generalFaqs,
+    ...hypnobirthingFaqs,
+    ...doulaFaqs,
+    ...yogaFaqs,
+    ...paymentFaqs,
+  ].map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+}
+
 function FaqPageStatic() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <PageHero
         eyebrow="Got questions?"
         title={<>Frequently Asked <em>Questions</em></>}

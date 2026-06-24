@@ -4,11 +4,32 @@ import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
 import FaqAccordion from '@/components/FaqAccordion'
+import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
   title: 'Hypnobirthing',
   description: 'KGHypnobirthing courses in Leicester and online across the UK. Release fear, master calm breathing and prepare for a confident, positive birth.',
+}
+
+const SITE = 'https://www.birth-hood.co.uk'
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Hypnobirthing course',
+  name: 'KGHypnobirthing Courses',
+  description: 'Evidence-based KGHypnobirthing courses in Leicester and online across the UK — releasing fear and building calm, confident birth preparation.',
+  url: `${SITE}/hypnobirthing`,
+  provider: { '@type': 'HealthAndBeautyBusiness', name: 'birth-hood', url: SITE },
+  areaServed: ['Leicester', 'Leicestershire', 'Midlands', 'United Kingdom (online)'],
+}
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+    { '@type': 'ListItem', position: 2, name: 'Hypnobirthing', item: `${SITE}/hypnobirthing` },
+  ],
 }
 
 const faqItems = [
@@ -37,6 +58,8 @@ const faqItems = [
 function HypnobirthingPageStatic() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         eyebrow="Calm. Confident. Prepared."
         title={<>Hypno<em>birthing</em></>}

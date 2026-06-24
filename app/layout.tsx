@@ -48,6 +48,13 @@ const businessJsonLd = {
     addressCountry: 'GB',
   },
   areaServed: ['Leicester', 'Leicestershire', 'North West Leicestershire', 'Midlands', 'United Kingdom (online)'],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '67',
+    bestRating: '5',
+    worstRating: '1',
+  },
   sameAs: [
     'https://www.instagram.com/birthhooduk',
     'https://www.youtube.com/@birthhooduk',
