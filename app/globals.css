@@ -587,13 +587,19 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 
 /* TESTIMONIALS */
 .testimonials { background: var(--black); padding: 6rem 3rem; position: relative; z-index: 0; }
-/* white polka dots — solid at the bottom (by the CTA), fading out toward the top */
+/* white abstract polka pattern (the hero dots) — solid at the bottom (by the
+   CTA), fading out toward the top. The PNG is used as a mask over white. */
 .testimonials::before {
   content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.6) 2px, transparent 2.7px);
-  background-size: 22px 22px;
-  -webkit-mask-image: linear-gradient(to top, #000 8%, transparent 72%);
-  mask-image: linear-gradient(to top, #000 8%, transparent 72%);
+  background: rgba(255,255,255,0.62);
+  -webkit-mask-image: url('/images/dots-pattern.png'), linear-gradient(to top, #000 6%, transparent 72%);
+  -webkit-mask-size: 300px auto, 100% 100%;
+  -webkit-mask-repeat: repeat, no-repeat;
+  -webkit-mask-composite: source-in;
+  mask-image: url('/images/dots-pattern.png'), linear-gradient(to top, #000 6%, transparent 72%);
+  mask-size: 300px auto, 100% 100%;
+  mask-repeat: repeat, no-repeat;
+  mask-composite: intersect;
 }
 .testimonials-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3.5rem; max-width: 1200px; margin-left: auto; margin-right: auto; flex-wrap: wrap; gap: 1.5rem; }
 .testimonials-title { font-family: 'Poppins', sans-serif; font-size: clamp(2rem,3.2vw,2.8rem); color: var(--white); font-weight: 500; line-height: 1.2; }
@@ -601,7 +607,7 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .stars { color: var(--pink-deep); font-size: 1.05rem; letter-spacing: 0.1em; }
 .stars-label { font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 0.3rem; }
 .reviews-track { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
-.review-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(254,127,204,0.1); padding: 2.2rem 2rem; position: relative; transition: background 0.3s; }
+.review-card { background: var(--black); border: 1px solid rgba(254,127,204,0.18); padding: 2.2rem 2rem; position: relative; transition: background 0.3s; }
 .review-card:hover { background: rgba(254,127,204,0.05); }
 .review-card::before { content: '\201C'; font-family: 'Poppins', sans-serif; font-size: 5rem; color: var(--pink); opacity: 0.2; position: absolute; top: 0.5rem; left: 1.2rem; line-height: 1; pointer-events: none; }
 .review-text { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.6; font-weight: 300; font-style: italic; margin-bottom: 1.5rem; padding-top: 1.8rem; }
@@ -703,7 +709,7 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
     radial-gradient(circle var(--sr) at center,var(--f) 99%,#0000) right/calc(2*var(--sr)) calc(2*var(--sr)) repeat-y;
 }
 .card-pink::before { --f: var(--pink); transform: translate(5px, 6px); z-index: 0; }
-.card-pink::after { --f: var(--pink-ultra); z-index: 0; }
+.card-pink::after { --f: #fff; z-index: 0; }
 
 /* CTA BAND */
 .cta-band { background: var(--pink); padding: 5rem 3rem; text-align: center; }
