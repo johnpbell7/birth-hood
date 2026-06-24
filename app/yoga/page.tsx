@@ -33,6 +33,7 @@ function YogaPageStatic() {
   return (
     <>
       <PageHero
+        ctaLabel="Book Your Place"
         eyebrow="Move. Breathe. Connect."
         title={<>Prenatal &amp; Postnatal <em>Yoga</em></>}
         subtitle="Prenatal/Postnatal and Parent and Yoga Classes in NW Leicestershire. Nourish your body, calm your mind and prepare for birth."

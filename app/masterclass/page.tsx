@@ -14,6 +14,7 @@ function MasterclassPageStatic() {
   return (
     <>
       <PageHero
+        ctaLabel="Book Your Place — £65"
         eyebrow="One session. Total transformation."
         title={<>Birth <em>Masterclass</em></>}
         subtitle="A 2-hour deep dive into birth preparation — everything you need to know to approach your birth with confidence."

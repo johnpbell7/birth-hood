@@ -13,6 +13,7 @@ function BirthTraumaPageStatic() {
   return (
     <>
       <PageHero
+        ctaLabel="Book a Conversation"
         eyebrow="Healing is possible."
         title={<>Birth <em>Trauma</em> Support</>}
         subtitle="Whether your birth was frightening, overwhelming or just not what you hoped — your feelings are valid, and you don't have to carry them alone."
