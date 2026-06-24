@@ -13,6 +13,7 @@ function CourseInfoPageStatic() {
   return (
     <>
       <PageHero
+        ctaLabel="Book Your Place"
         eyebrow="Hypnobirthing courses"
         title={<>Course <em>Info & Dates</em></>}
         subtitle="Find your perfect course date and everything you need to know before you book."

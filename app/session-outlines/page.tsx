@@ -64,6 +64,8 @@ function SessionOutlinesPageStatic() {
   return (
     <>
       <PageHero
+        ctaLabel="View Course Dates"
+        ctaHref="/course-info"
         eyebrow="Hypnobirthing course"
         title={<>Session <em>Outlines</em></>}
         subtitle="A detailed breakdown of everything covered in the four-session hypnobirthing course."

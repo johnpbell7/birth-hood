@@ -37,6 +37,7 @@ function BookingPageStatic() {
   return (
     <>
       <PageHero
+        ctaLabel="View All Availability"
         eyebrow="Secure your place"
         title={<>Class <em>Booking</em></>}
         subtitle="Book your place on a hypnobirthing course, prenatal yoga class or a free consultation — all in one place."

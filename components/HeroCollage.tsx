@@ -17,20 +17,21 @@ const SLOT_FRACTIONS_DESKTOP: [number, number][] = [
   [ 0.56,  0.36],  // bottom-right
 ]
 // MOBILE: only cards 0,1,2 shown. 0 = left-top, 1 = left-bottom, 2 = right (active home).
+// Cluster sits HIGH in the block so the big card clears the floating book button.
 const SLOT_FRACTIONS_MOBILE: [number, number][] = [
-  [-0.24, -0.27],  // left-top (small)
-  [-0.24,  0.27],  // left-bottom (small)
-  [ 0.15,  0   ],  // right (large/active home)
+  [-0.28, -0.30],  // left-top (medium)
+  [-0.24,  0.05],  // left-bottom (medium)
+  [ 0.17, -0.08],  // right (large/active home)
   [ 0,     0   ],  // unused (hidden)
   [ 0,     0   ],  // unused (hidden)
 ]
-// Where the active (large) card sits: centre on desktop, shifted right on mobile.
+// Where the active (large) card sits: centre on desktop, shifted right + up on mobile.
 const ACTIVE_POS_DESKTOP: [number, number] = [0, 0]
-const ACTIVE_POS_MOBILE:  [number, number] = [0.15, 0]
+const ACTIVE_POS_MOBILE:  [number, number] = [0.17, -0.08]
 
 const ACTIVE_SCALE          = 1.45  // front card prominent (desktop)
-const ACTIVE_SCALE_MOBILE   = 1.4   // big standout card on the right (mobile)
-const INACTIVE_SCALE_MOBILE = 0.62  // the two left cards are clearly smaller
+const ACTIVE_SCALE_MOBILE   = 1.35  // big standout card on the right (mobile)
+const INACTIVE_SCALE_MOBILE = 0.78  // left cards fairly large too — spread, fanned look
 const ACTIVE_Z              = 20
 const CYCLE_MS              = 4500
 const MOBILE_BREAKPOINT     = 960  // must match the collage CSS @media breakpoint

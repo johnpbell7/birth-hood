@@ -12,10 +12,25 @@ interface PageHeroProps {
   actions?: React.ReactNode
   img1?: PolaroidImage
   img2?: PolaroidImage
+  /* Mobile floating button — defaults to the free-consultation CTA.
+     Set these to match this page's hero CTA. */
+  ctaLabel?: string
+  ctaHref?: string
 }
 
-export default function PageHero({ eyebrow, title, subtitle, actions, img1, img2 }: PageHeroProps) {
+export default function PageHero({
+  eyebrow,
+  title,
+  subtitle,
+  actions,
+  img1,
+  img2,
+  ctaLabel = 'Book Free Consultation',
+  ctaHref = 'https://calendly.com/birthhood',
+}: PageHeroProps) {
+  const externalCta = ctaHref.startsWith('http')
   return (
+    <>
     <section className="page-hero">
       <div className="page-hero-inner">
 
@@ -65,5 +80,14 @@ export default function PageHero({ eyebrow, title, subtitle, actions, img1, img2
         </div>
       </div>
     </section>
+    {/* Mobile floating CTA — mirrors this page's hero button */}
+    <a
+      href={ctaHref}
+      className="mobile-book-fab"
+      {...(externalCta ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+    >
+      {ctaLabel}
+    </a>
+    </>
   )
 }

@@ -75,14 +75,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="site-main">
           {children}
         </main>
-        <a
-          href="https://calendly.com/birthhood"
-          className="mobile-book-fab"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Book Free Consultation
-        </a>
         <Footer />
       </body>
     </html>

@@ -190,6 +190,16 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
 
   return (
     <>
+      {/* Mobile floating CTA — mirrors the hero button */}
+      <a
+        href={heroCtaHref}
+        className="mobile-book-fab"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {heroCta}
+      </a>
+
       {/* HOME HERO */}
       <section className="home-hero-split">
         <div className="home-hero-content">
