@@ -604,7 +604,7 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .stars-label { font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 0.3rem; }
 .reviews-track { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
 .review-card { background: var(--black); border: 1px solid rgba(254,127,204,0.18); padding: 2.2rem 2rem; position: relative; transition: background 0.3s; }
-.review-card:hover { background: rgba(254,127,204,0.05); }
+.review-card:hover { background: #1b1b1b; }
 .review-card::before { content: '\201C'; font-family: 'Poppins', sans-serif; font-size: 5rem; color: var(--pink); opacity: 0.2; position: absolute; top: 0.5rem; left: 1.2rem; line-height: 1; pointer-events: none; }
 .review-text { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.6; font-weight: 300; font-style: italic; margin-bottom: 1.5rem; padding-top: 1.8rem; }
 .review-author { font-size: 0.72rem; font-weight: 500; color: var(--pink-deep); letter-spacing: 0.1em; text-transform: uppercase; }
