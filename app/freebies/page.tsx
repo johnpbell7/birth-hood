@@ -131,7 +131,7 @@ export default async function FreebiesPage() {
 
                 <div style={{
                   width: '44px', height: '44px', background: 'var(--pink-ultra)',
-                  border: '1px solid rgba(232,123,195,0.3)', borderRadius: '3px',
+                  border: '1px solid rgba(254,127,204,0.3)', borderRadius: '3px',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: '1.2rem', color: 'var(--pink-deep)', marginBottom: '1.2rem',
                   fontFamily: 'serif',

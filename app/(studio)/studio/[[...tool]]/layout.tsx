@@ -13,14 +13,14 @@ export default function StudioLayout({ children }: { children: React.ReactNode }
         /* ── Light pink accents — safe, non-structural touches only ── */
         /* Focus ring */
         *:focus-visible {
-          outline-color: #e87bc3 !important;
+          outline-color: #fe7fcc !important;
         }
 
         /* Scrollbars (webkit) */
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgba(232,123,195,0.35); border-radius: 99px; }
-        ::-webkit-scrollbar-thumb:hover { background: #e87bc3; }
+        ::-webkit-scrollbar-thumb { background: rgba(254,127,204,0.35); border-radius: 99px; }
+        ::-webkit-scrollbar-thumb:hover { background: #fe7fcc; }
       `}</style>
       {children}
     </>
