@@ -677,11 +677,25 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .prose ul li::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 5px; height: 5px; border-radius: 50%; background: var(--pink); }
 
 /* CARDS */
-.card { background: var(--white); border: 1px solid rgba(0,0,0,0.07); border-radius: 3px; padding: 2rem; transition: transform 0.35s, box-shadow 0.3s; transform: rotate(-0.6deg); }
-.card:nth-child(even) { transform: rotate(0.6deg); }
-.card:nth-child(3n) { transform: rotate(0.3deg); }
-.card:hover { transform: rotate(0deg) translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.07); }
-.card-pink { background: var(--pink-ultra); border: 1px solid rgba(254,127,204,0.3); }
+.card { background: var(--white); border: 1px solid rgba(0,0,0,0.07); border-radius: 3px; padding: 2rem; transition: transform 0.35s, box-shadow 0.3s; }
+.card:not(.card-pink) { transform: rotate(-0.6deg); }
+.card:not(.card-pink):nth-child(even) { transform: rotate(0.6deg); }
+.card:not(.card-pink):nth-child(3n) { transform: rotate(0.3deg); }
+.card:not(.card-pink):hover { transform: rotate(0deg) translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.07); }
+/* pink highlight cards become scalloped "sticker" cards */
+.card-pink { position: relative; background: transparent !important; border: none !important; }
+.card-pink > * { position: relative; z-index: 1; }
+.card-pink::before, .card-pink::after {
+  content: ''; position: absolute; inset: 0; border-radius: 24px; --sr: 12px;
+  background:
+    linear-gradient(var(--f),var(--f)) center/calc(100% - 2*var(--sr)) calc(100% - 2*var(--sr)) no-repeat,
+    radial-gradient(circle var(--sr) at center,var(--f) 99%,#0000) top/calc(2*var(--sr)) calc(2*var(--sr)) repeat-x,
+    radial-gradient(circle var(--sr) at center,var(--f) 99%,#0000) bottom/calc(2*var(--sr)) calc(2*var(--sr)) repeat-x,
+    radial-gradient(circle var(--sr) at center,var(--f) 99%,#0000) left/calc(2*var(--sr)) calc(2*var(--sr)) repeat-y,
+    radial-gradient(circle var(--sr) at center,var(--f) 99%,#0000) right/calc(2*var(--sr)) calc(2*var(--sr)) repeat-y;
+}
+.card-pink::before { --f: var(--pink); transform: translate(5px, 6px); z-index: 0; }
+.card-pink::after { --f: var(--pink-ultra); z-index: 0; }
 
 /* CTA BAND */
 .cta-band { background: var(--pink); padding: 5rem 3rem; text-align: center; }
