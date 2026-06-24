@@ -552,6 +552,10 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .section-pad { padding: 6rem 3rem; }
 .section-pad-sm { padding: 4rem 3rem; }
 
+/* /poppins-preview route only — force the whole homepage into Poppins
+   (overrides inline Playfair/Abril font-families; weights + italics kept) */
+.poppins-preview, .poppins-preview * { font-family: 'Poppins', sans-serif !important; }
+
 /* WELCOME INTRO (under hero) — text left, image right (flush to pink below), white bg */
 .welcome-intro { display: grid; grid-template-columns: 1fr 0.95fr; gap: 2rem; align-items: end; max-width: 1280px; padding-left: 1.5rem; }
 .welcome-intro-text { text-align: left; align-self: start; padding: 0 0 2.25rem; }
