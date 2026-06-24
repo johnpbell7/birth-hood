@@ -334,7 +334,6 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
         <div className="services-grid">
           {services.map((svc) => (
             <Link key={svc.href} href={svc.href} className="service-cell">
-              <span className="scallop-shadow" aria-hidden="true" />
               <div className="service-card">
                 <span className="service-num">{svc.num}</span>
                 {svc.icon}
