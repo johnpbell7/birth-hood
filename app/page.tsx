@@ -416,7 +416,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="testimonials">
+      <section className="testimonials has-dots">
         <Sparkles
           className="sec-decor"
           items={[
