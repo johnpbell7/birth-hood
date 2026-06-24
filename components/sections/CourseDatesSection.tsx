@@ -26,7 +26,7 @@ export default function CourseDatesSection({ heading, intro, courses = [] }: Pro
           </h2>
         )}
         {intro && (
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
             {intro}
           </p>
         )}

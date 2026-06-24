@@ -21,7 +21,7 @@ export default function CtaBandSection({ heading, subheading, ctaLabel, ctaHref,
           {heading}
         </h2>
         {subheading && (
-          <p style={{ color: t.sub, fontSize: '1rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem' }}>
+          <p style={{ color: t.sub, fontSize: '1rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '1.5rem' }}>
             {subheading}
           </p>
         )}

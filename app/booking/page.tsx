@@ -98,7 +98,7 @@ function BookingPageStatic() {
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1.5rem', lineHeight: 1.1 }}>
             Book directly <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>below</em>
           </h2>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.9, fontWeight: 300, maxWidth: '580px', margin: '0 auto 2.5rem' }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.6, fontWeight: 300, maxWidth: '580px', margin: '0 auto 2.5rem' }}>
             Choose a time that works for you. All bookings are confirmed instantly — you&apos;ll receive
             a confirmation email with everything you need.
           </p>
@@ -136,7 +136,7 @@ function BookingPageStatic() {
             </div>
             <div className="card card-pink" style={{ padding: '2.5rem' }}>
               <div className="section-label" style={{ marginBottom: '1.5rem' }}>Need help choosing?</div>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem' }}>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '1.5rem' }}>
                 If you&apos;re not sure where to start, a free consultation is always the best first step.
                 There&apos;s no obligation, no pressure and no hard sell — just an honest conversation
                 about what kind of support would work best for you.

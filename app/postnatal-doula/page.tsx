@@ -221,7 +221,7 @@ function PostnatalDoulaPageStatic() {
           </div>
 
           <div className="card card-pink" style={{ marginTop: '2rem', padding: '1.5rem 2rem' }}>
-            <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
+            <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
               <strong style={{ fontWeight: 600 }}>Please note:</strong> Additional mileage is charged at 45p/mile for distances over 10 miles from my base. All visits are a minimum of 2 hours. Hours can be distributed in any way that suits your family.
             </p>
           </div>

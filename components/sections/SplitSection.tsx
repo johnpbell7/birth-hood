@@ -29,7 +29,7 @@ export default function SplitSection({ eyebrow, heading, body, bullets, ctaLabel
         </h2>
       )}
       {body && (
-        <div style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.85, fontWeight: 300, marginBottom: bullets?.length ? '1.5rem' : 0 }}>
+        <div style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: bullets?.length ? '1.5rem' : 0 }}>
           <PortableText value={body as never} />
         </div>
       )}

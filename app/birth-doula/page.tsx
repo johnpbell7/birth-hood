@@ -46,7 +46,7 @@ function BirthDoulaPageStatic() {
       <section style={{ background: 'var(--pink-pale)', padding: '3.5rem 0' }}>
         <div className="wrap">
           <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
-            <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1rem, 2vw, 1.2rem)', fontStyle: 'italic', color: 'var(--grey-dark)', lineHeight: 1.8, marginBottom: '1rem' }}>
+            <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1rem, 2vw, 1.2rem)', fontStyle: 'italic', color: 'var(--grey-dark)', lineHeight: 1.6, marginBottom: '1rem' }}>
               &ldquo;My advice to anyone thinking to book Leanne would be to not hesitate as she&apos;s definitely &lsquo;worth every penny&rsquo; as one of the home birth midwives rightly said! She knows her job inside out and ensures she creates a loving and strong relationship with all her clients. I&apos;m so glad I found her. My Husband and I could not have been happier with what we achieved. Thank you!&rdquo;
             </p>
             <div style={{ fontSize: '0.8rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--pink-deep)' }}>
@@ -196,7 +196,7 @@ function BirthDoulaPageStatic() {
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.1 }}>
             Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>package</em>
           </h2>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.9, fontWeight: 300, marginBottom: '3rem', maxWidth: '600px' }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '3rem', maxWidth: '600px' }}>
             Every package includes a free initial consultation so we can make sure we&apos;re the right fit before you commit.
           </p>
 

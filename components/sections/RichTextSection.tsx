@@ -42,7 +42,7 @@ export default function RichTextSection({ eyebrow, heading, body, align = 'left'
           </h2>
         )}
         {body && (
-          <div className="prose" style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.85, fontWeight: 300 }}>
+          <div className="prose" style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.6, fontWeight: 300 }}>
             <PortableText value={body as never} components={components} />
           </div>
         )}

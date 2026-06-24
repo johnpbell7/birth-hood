@@ -235,13 +235,8 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
             {welcomeBody.map((para, i) => (
               <p
                 key={i}
-                style={{
-                  color: 'var(--grey-mid)',
-                  fontSize: '1.02rem',
-                  lineHeight: 1.9,
-                  fontWeight: 300,
-                  marginBottom: i === welcomeBody.length - 1 ? 0 : '1.1rem',
-                }}
+                className="welcome-intro-body"
+                style={{ marginBottom: i === welcomeBody.length - 1 ? 0 : '1.1rem' }}
               >
                 {para}
               </p>
@@ -409,7 +404,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
             Completely free
           </div>
           <h2 className="freebies-heading">{freebiesHeading}</h2>
-          <p style={{ color: 'rgba(0,0,0,0.6)', marginBottom: '2rem', fontWeight: 300, lineHeight: 1.8 }}>
+          <p style={{ color: 'rgba(0,0,0,0.6)', marginBottom: '2rem', fontWeight: 300, lineHeight: 1.6 }}>
             {freebiesBody}
           </p>
           <div className="freebies-items">

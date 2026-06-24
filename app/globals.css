@@ -17,7 +17,7 @@
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 106.25%; } /* 17px root → bumps all rem-based text up ~1px for readability */
+html { scroll-behavior: smooth; font-size: 100%; } /* 16px root */
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -348,10 +348,10 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .page-hero-inner { max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 460px; align-items: center; gap: 2rem; }
 .page-hero-text { min-width: 0; }
 .page-eyebrow { font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: rgba(0,0,0,0.55); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.7rem; }
-.page-eyebrow::before { content: ''; width: 28px; height: 1px; background: rgba(0,0,0,0.4); flex-shrink: 0; }
+.page-eyebrow::before { display: none; }
 .page-title { font-family: 'Poppins', sans-serif; font-size: clamp(3rem,6vw,5.5rem); line-height: 1.0; color: var(--black); font-weight: 600; margin-bottom: 1.2rem; }
 .page-title em { font-style: italic; color: var(--white); }
-.page-subtitle { font-size: 1.05rem; color: rgba(0,0,0,0.6); line-height: 1.8; max-width: 560px; font-weight: 300; margin-bottom: 2rem; }
+.page-subtitle { font-size: 1rem; color: rgba(0,0,0,0.72); line-height: 1.65; max-width: 560px; font-weight: 300; margin-bottom: 2rem; }
 
 /* PAGE HERO POLAROIDS */
 .page-hero-polaroids { position: relative; width: 460px; height: 520px; flex-shrink: 0; }
@@ -366,10 +366,10 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 
 /* EYEBROW / HERO */
 .hero-eyebrow { font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: rgba(0,0,0,0.55); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.7rem; }
-.hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: rgba(0,0,0,0.4); flex-shrink: 0; }
+.hero-eyebrow::before { display: none; }
 .hero-title { font-family: 'Poppins', sans-serif; font-size: clamp(3.2rem,5.5vw,5rem); line-height: 1.0; color: var(--black); font-weight: 600; margin-bottom: 1.2rem; }
 .hero-title em { font-style: italic; color: var(--white); }
-.hero-sub { font-size: 1rem; color: rgba(0,0,0,0.6); line-height: 1.8; max-width: 380px; margin-bottom: 3rem; font-weight: 300; }
+.hero-sub { font-size: 0.98rem; color: rgba(0,0,0,0.78); line-height: 1.6; max-width: 380px; margin-bottom: 3rem; font-weight: 400; }
 
 /* BUTTONS */
 .btn-primary {
@@ -414,15 +414,15 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 
 /* SHARED SECTION */
 .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink-deep); display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.2rem; }
-.section-label::before { content: ''; width: 26px; height: 1px; background: var(--pink-deep); }
+.section-label::before { display: none; }
 .section-label.light { color: var(--pink); }
-.section-label.light::before { background: var(--pink); }
+.section-label.light::before { display: none; }
 
 /* INTRO */
 .intro { padding: 7rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; max-width: 1200px; margin: 0 auto; }
 .intro-heading { font-family: 'Poppins', sans-serif; font-size: clamp(2.2rem,3.5vw,3rem); line-height: 1.15; font-weight: 500; margin-bottom: 1.4rem; }
 .intro-heading em { font-style: italic; color: var(--pink-deep); }
-.intro-body { color: var(--grey-mid); line-height: 1.9; font-size: 0.97rem; font-weight: 300; margin-bottom: 1.2rem; }
+.intro-body { color: var(--grey-mid); line-height: 1.6; font-size: 0.97rem; font-weight: 300; margin-bottom: 1.2rem; }
 
 /* IMAGE COLLAGE */
 .intro-collage { position: relative; height: 480px; }
@@ -474,7 +474,7 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .about-accent-box .big-label { font-size: 0.72rem; color: rgba(255,255,255,0.5); letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; }
 .about-heading { font-family: 'Poppins', sans-serif; font-size: clamp(2rem,2.8vw,2.7rem); font-weight: 500; line-height: 1.2; margin-bottom: 1.4rem; }
 .about-heading em { font-style: italic; color: var(--pink-deep); }
-.about-body { color: var(--grey-mid); line-height: 1.9; font-size: 0.97rem; font-weight: 300; margin-bottom: 1.2rem; }
+.about-body { color: var(--grey-mid); line-height: 1.6; font-size: 0.97rem; font-weight: 300; margin-bottom: 1.2rem; }
 .credentials { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2.5rem; }
 .credential { display: flex; align-items: center; gap: 0.8rem; font-size: 0.85rem; color: var(--grey-mid); }
 .credential-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--pink); flex-shrink: 0; }
@@ -494,7 +494,7 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .review-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(232,123,195,0.1); padding: 2.2rem 2rem; position: relative; transition: background 0.3s; }
 .review-card:hover { background: rgba(232,123,195,0.05); }
 .review-card::before { content: '\201C'; font-family: 'Poppins', sans-serif; font-size: 5rem; color: var(--pink); opacity: 0.2; position: absolute; top: 0.5rem; left: 1.2rem; line-height: 1; pointer-events: none; }
-.review-text { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.85; font-weight: 300; font-style: italic; margin-bottom: 1.5rem; padding-top: 1.8rem; }
+.review-text { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.6; font-weight: 300; font-style: italic; margin-bottom: 1.5rem; padding-top: 1.8rem; }
 .review-author { font-size: 0.72rem; font-weight: 500; color: var(--pink-deep); letter-spacing: 0.1em; text-transform: uppercase; }
 
 /* PODCAST */
@@ -502,7 +502,7 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .podcast { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 .podcast-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--pink-pale); color: var(--black); border: 1px solid var(--pink); padding: 0.4rem 1rem; border-radius: 2px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem; }
 .podcast-heading { font-family: 'Poppins', sans-serif; font-size: clamp(2rem,2.8vw,2.7rem); font-weight: 500; line-height: 1.2; margin-bottom: 1rem; }
-.podcast-sub { color: var(--grey-mid); line-height: 1.85; font-size: 0.97rem; font-weight: 300; margin-bottom: 2rem; }
+.podcast-sub { color: var(--grey-mid); line-height: 1.6; font-size: 0.97rem; font-weight: 300; margin-bottom: 2rem; }
 .podcast-visual { background: var(--black); border-radius: 3px; padding: 3rem; display: flex; flex-direction: column; align-items: center; justify-content: center; aspect-ratio: 1; position: relative; overflow: hidden; text-align: center; }
 .podcast-visual::before { content: ''; position: absolute; inset: -50%; background: radial-gradient(circle,rgba(232,123,195,0.12) 0%,transparent 65%); animation: glow 5s ease-in-out infinite; }
 @keyframes glow { 0%,100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.15); opacity: 1; } }
@@ -526,7 +526,7 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.07); max-width: 1200px; margin-left: auto; margin-right: auto; }
 .footer-logo { display: block; margin-bottom: 1rem; text-decoration: none; }
 .footer-logo-image { width: 110px; height: 110px; object-fit: contain; border-radius: 8px; }
-.footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.38); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; }
+.footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.38); line-height: 1.6; margin-bottom: 1.5rem; font-weight: 300; }
 .footer-social { display: flex; gap: 0.7rem; }
 .social-icon { width: 34px; height: 34px; background: rgba(255,255,255,0.05); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); text-decoration: none; transition: background 0.3s, color 0.3s; }
 .social-icon:hover { background: var(--pink); color: var(--black); }
@@ -571,9 +571,11 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .welcome-intro { display: grid; grid-template-columns: 1fr 0.95fr; gap: 2rem; align-items: end; max-width: 1280px; padding-left: 1.5rem; }
 .welcome-intro-text { text-align: left; align-self: start; padding: 0 0 2.25rem; }
 .welcome-intro-media { position: relative; width: 100%; aspect-ratio: 4 / 3.4; max-height: 380px; align-self: end; }
+.welcome-intro-body { color: var(--grey-mid); font-size: 1rem; line-height: 1.6; font-weight: 300; }
 @media (max-width: 820px) {
   .welcome-intro { grid-template-columns: 1fr; gap: 0; }
   .welcome-intro-text { padding: 1rem 0 1rem; }
+  .welcome-intro-body { font-size: 0.9rem; line-height: 1.55; }
   /* full-bleed image: cancel the .wrap 1.5rem side padding so it fills the width */
   .welcome-intro-media { margin: 0 -1.5rem; width: auto; aspect-ratio: 5 / 4; max-height: none; }
 }
@@ -582,9 +584,9 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .prose h2 { font-family: 'Poppins', sans-serif; font-size: 1.9rem; font-weight: 500; margin-bottom: 1rem; margin-top: 2.5rem; line-height: 1.2; }
 .prose h2:first-child { margin-top: 0; }
 .prose h3 { font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 0.7rem; margin-top: 2rem; }
-.prose p { color: var(--grey-mid); line-height: 1.9; font-size: 0.97rem; font-weight: 300; margin-bottom: 1.2rem; }
+.prose p { color: var(--grey-mid); line-height: 1.6; font-size: 0.97rem; font-weight: 300; margin-bottom: 1.2rem; }
 .prose ul { list-style: none; margin-bottom: 1.5rem; }
-.prose ul li { color: var(--grey-mid); font-size: 0.97rem; font-weight: 300; line-height: 1.8; padding-left: 1.4rem; position: relative; margin-bottom: 0.5rem; }
+.prose ul li { color: var(--grey-mid); font-size: 0.97rem; font-weight: 300; line-height: 1.6; padding-left: 1.4rem; position: relative; margin-bottom: 0.5rem; }
 .prose ul li::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 5px; height: 5px; border-radius: 50%; background: var(--pink); }
 
 /* CARDS */
@@ -611,7 +613,7 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .faq-q { font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
 .faq-q::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--pink-deep); flex-shrink: 0; transition: transform 0.3s; }
 .faq-item.open .faq-q::after { transform: rotate(45deg); }
-.faq-a { font-size: 0.93rem; color: var(--grey-mid); line-height: 1.85; font-weight: 300; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+.faq-a { font-size: 0.93rem; color: var(--grey-mid); line-height: 1.6; font-weight: 300; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
 .faq-item.open .faq-a { max-height: 400px; padding-top: 1rem; }
 
 /* GRID HELPERS */
@@ -744,25 +746,25 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .df-testimonial:last-child { border-bottom: 1px solid rgba(232,123,195,0.2); }
 .df-quote-mark { font-family: 'Poppins', sans-serif; font-size: 6rem; line-height: 0.6; color: var(--pink-pale); margin-bottom: 1.5rem; display: block; }
 .df-tag { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink-deep); margin-bottom: 1.25rem; opacity: 0.8; }
-.df-quote { font-family: 'Poppins', sans-serif; font-size: clamp(1rem, 1.6vw, 1.15rem); font-style: italic; line-height: 1.85; color: var(--black); margin: 0 0 1.5rem; }
+.df-quote { font-family: 'Poppins', sans-serif; font-size: clamp(1rem, 1.6vw, 1.15rem); font-style: italic; line-height: 1.6; color: var(--black); margin: 0 0 1.5rem; }
 .df-attribution { display: flex; align-items: center; gap: 1rem; }
 .df-name { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); }
 .df-stars { color: var(--pink-deep); font-size: 0.85rem; letter-spacing: 0.05em; }
 
 /* SESSION OUTLINES */
 .so-intro { margin-bottom: 3.5rem; }
-.so-intro p { color: var(--grey-mid); font-size: 1rem; line-height: 1.85; font-weight: 300; margin-bottom: 1rem; }
+.so-intro p { color: var(--grey-mid); font-size: 1rem; line-height: 1.6; font-weight: 300; margin-bottom: 1rem; }
 .so-list { display: flex; flex-direction: column; }
 .so-session { display: grid; grid-template-columns: 90px 1fr; gap: 2.5rem; padding: 3rem 0; border-top: 1px solid rgba(232,123,195,0.18); }
 .so-session:last-child { border-bottom: 1px solid rgba(232,123,195,0.18); }
 .so-num { font-family: 'Poppins', sans-serif; font-size: 4.5rem; line-height: 1; color: var(--pink-pale); text-align: center; padding-top: 0.3rem; letter-spacing: -0.02em; }
 .so-title { font-family: 'Poppins', sans-serif; font-size: clamp(1.3rem,2.2vw,1.65rem); font-weight: 500; line-height: 1.25; margin: 0.4rem 0 0.9rem; color: var(--black); }
-.so-desc { color: var(--grey-mid); font-size: 0.92rem; line-height: 1.85; font-weight: 300; margin-bottom: 1.5rem; }
+.so-desc { color: var(--grey-mid); font-size: 0.92rem; line-height: 1.6; font-weight: 300; margin-bottom: 1.5rem; }
 .so-topics { background: var(--pink-ultra); border: 1px solid rgba(232,123,195,0.25); border-radius: 6px; padding: 1.25rem 1.5rem; }
 .so-topics-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pink-deep); margin-bottom: 1rem; }
 .so-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
 .so-pill { background: white; border: 1px solid rgba(232,123,195,0.3); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.78rem; color: var(--charcoal); font-weight: 400; line-height: 1.5; }
-.so-note { margin-top: 3rem; background: var(--black); color: rgba(255,255,255,0.65); border-radius: 6px; padding: 2rem 2.5rem; font-size: 0.9rem; line-height: 1.85; font-weight: 300; }
+.so-note { margin-top: 3rem; background: var(--black); color: rgba(255,255,255,0.65); border-radius: 6px; padding: 2rem 2.5rem; font-size: 0.9rem; line-height: 1.6; font-weight: 300; }
 .so-note .section-label { color: var(--pink-deep) !important; }
 @media (max-width: 640px) {
   .so-session { grid-template-columns: 1fr; gap: 0.5rem; padding: 2rem 0; }

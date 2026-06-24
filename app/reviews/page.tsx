@@ -130,7 +130,7 @@ function ReviewsPageStatic() {
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
             Stories from <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>real births</em>
           </h2>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '640px' }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '640px' }}>
             A collection of positive birth stories shared by my clients — every birth, every path, every outcome is valid.
           </p>
 
@@ -156,7 +156,7 @@ function ReviewsPageStatic() {
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.1 }}>
             Worked with <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>me?</em>
           </h2>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2rem' }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '2rem' }}>
             Your review helps other families find the support they&apos;re looking for. It would
             mean the world.
           </p>

@@ -435,7 +435,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
                 <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.4rem, 2vw, 1.7rem)', fontWeight: 500, marginBottom: '0.5rem', lineHeight: 1.2 }}>
                   {group.label}
                 </h3>
-                <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.8, fontWeight: 300, maxWidth: '680px' }}>
+                <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.6, fontWeight: 300, maxWidth: '680px' }}>
                   {group.intro}
                 </p>
               </div>
@@ -506,7 +506,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
             Relaxation <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>audio</em>
           </h2>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
             Play these relaxation tracks during pregnancy and your birth. Use headphones for the deepest practice, or play out loud in your birth space.
           </p>
 
@@ -577,7 +577,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
             Workshop <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>videos</em>
           </h2>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
             Watch back full recordings of birth-hood sessions and workshops, covering birth positions, coaching, breathing and more.
           </p>
 
@@ -649,7 +649,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1, color: 'var(--white)' }}>
             Useful <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>websites</em>
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
             Trusted external resources I recommend for deeper reading on birth choices, rights, physiology and evidence-based research.
           </p>
 
@@ -742,7 +742,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
           <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.4rem', fontWeight: 500, marginBottom: '0.8rem' }}>
             Can&apos;t access a resource?
           </h3>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem' }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '1.5rem' }}>
             If any of these files won&apos;t open or you need something that isn&apos;t here, drop me a message and I&apos;ll sort it straight away.
           </p>
           <a href="mailto:leanne@birth-hood.co.uk" className="btn-outline">
