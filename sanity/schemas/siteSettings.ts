@@ -69,6 +69,14 @@ export default defineType({
       type: 'string',
       group: 'home',
     }),
+    defineField({
+      name: 'homeSignatureImage',
+      title: 'Hero — Signature graphic',
+      type: 'image',
+      options: { hotspot: true },
+      description: 'Handwritten signature shown under the hero text. A PNG with a transparent background works best. Leave empty to use the styled "with Leanne x" text.',
+      group: 'home',
+    }),
 
     // ── Home — Hero collage photos ───────────────────────────────────────────
     defineField({

@@ -57,6 +57,14 @@ const businessJsonLd = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        />
+      </head>
       <body>
         <script
           type="application/ld+json"
@@ -67,6 +75,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="site-main">
           {children}
         </main>
+        <a
+          href="https://calendly.com/birthhood"
+          className="mobile-book-fab"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book Free Consultation
+        </a>
         <Footer />
       </body>
     </html>

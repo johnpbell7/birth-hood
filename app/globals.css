@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+/* Poppins + Dancing Script are loaded via <link> in app/layout.tsx
+   (an @import here would sit after @tailwind and be ignored by browsers). */
 
 :root {
   --pink:        #e87bc3;
@@ -369,7 +370,32 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .hero-eyebrow::before { display: none; }
 .hero-title { font-family: 'Poppins', sans-serif; font-size: clamp(3.2rem,5.5vw,5rem); line-height: 1.0; color: var(--black); font-weight: 600; margin-bottom: 1.2rem; }
 .hero-title em { font-style: italic; color: var(--white); }
-.hero-sub { font-size: 0.98rem; color: rgba(0,0,0,0.78); line-height: 1.6; max-width: 380px; margin-bottom: 3rem; font-weight: 400; }
+.hero-sub { font-size: 0.98rem; color: rgba(0,0,0,0.78); line-height: 1.6; max-width: 380px; margin-bottom: 1.5rem; font-weight: 400; }
+
+/* HERO SIGNATURE (under the body copy) */
+.hero-signature { display: block; font-family: 'Dancing Script', cursive; font-size: 2.6rem; line-height: 1; color: var(--black); margin: 0 0 2.25rem; }
+.hero-signature-img { display: block; width: 240px; max-width: 70%; height: auto; margin: 0.25rem 0 2.25rem; }
+@media (max-width: 960px) {
+  .hero-signature { font-size: 2.3rem; margin-bottom: 1.5rem; }
+  .hero-signature-img { width: 200px; margin-bottom: 1.5rem; }
+}
+
+/* MOBILE FLOATING "BOOK" BUTTON */
+.mobile-book-fab { display: none; }
+@media (max-width: 960px) {
+  .mobile-book-fab {
+    display: flex; align-items: center; justify-content: center;
+    position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 150;
+    background: var(--black); color: var(--white);
+    padding: 1rem 1.4rem; border-radius: 4px;
+    font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+  }
+  /* hero CTA becomes the floating button on mobile */
+  .home-hero-content .hero-actions { display: none; }
+  /* keep the floating button clear of footer content */
+  footer { padding-bottom: 6rem; }
+}
 
 /* BUTTONS */
 .btn-primary {
@@ -721,6 +747,9 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .nav-dropdown > a { pointer-events: auto; }
   .nav-drop-menu { display: none !important; }
   .stat-grid { grid-template-columns: 1fr 1fr; gap: 3px; }
+  .stat-card { padding: 1.4rem 1.1rem; min-width: 0; }
+  .stat-number { font-size: 2rem; }
+  .stat-label { font-size: 0.72rem; overflow-wrap: anywhere; }
   .insta-section { padding: 4rem 1.5rem; }
   .insta-grid { grid-template-columns: repeat(2,1fr); grid-template-rows: 200px 200px 200px; }
   .insta-grid-v2 { grid-template-columns: repeat(2,1fr); grid-template-rows: 200px 200px 200px; }
