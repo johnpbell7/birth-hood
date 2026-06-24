@@ -38,7 +38,7 @@ const businessJsonLd = {
     'Hypnobirthing, doula support and prenatal yoga in Leicester, the Midlands and online across the UK.',
   url: SITE_URL,
   image: `${SITE_URL}/og-image.jpg`,
-  email: 'hello@birth-hood.co.uk',
+  email: 'leanne@birth-hood.co.uk',
   telephone: '+447814504865',
   priceRange: '££',
   address: {
