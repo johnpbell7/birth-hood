@@ -203,13 +203,22 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
 
       {/* HOME HERO */}
       <section className="home-hero-split">
-        {/* extra stars scattered across the hero */}
+        {/* extra stars — desktop: scattered */}
         <Sparkles
-          className="hero-decor"
+          className="hero-decor decor-desktop"
           items={[
             { top: '10%', left: '46%', size: 30, delay: 0.3, dur: 3.1, white: true },
             { bottom: '16%', left: '40%', size: 20, delay: 1.4, dur: 2.7, white: true },
             { top: '70%', right: '40%', size: 24, delay: 0.8, dur: 3.4, white: true },
+          ]}
+        />
+        {/* mobile: a cluster tucked into the top-right corner */}
+        <Sparkles
+          className="hero-decor decor-mobile"
+          items={[
+            { top: '3%', right: '7%', size: 30, delay: 0.2, dur: 3.1, white: true },
+            { top: '1%', right: '21%', size: 15, delay: 1.1, dur: 2.5, white: true },
+            { top: '11%', right: '17%', size: 13, delay: 0.7, dur: 2.8, white: true },
           ]}
         />
         <div className="home-hero-content">

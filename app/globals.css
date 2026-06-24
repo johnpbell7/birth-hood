@@ -74,6 +74,12 @@ body::after {
 .decor-squiggle.static path { animation: none; stroke-dashoffset: 0; }
 .welcome-squiggle-row { display: flex; gap: 0; margin-bottom: 0.7rem; }
 .welcome-squiggle-row .decor-squiggle { position: static; width: 78px; opacity: .35; }
+/* swap hero star sets between desktop and mobile */
+.decor-mobile { display: none; }
+@media (max-width: 960px) {
+  .decor-desktop { display: none; }
+  .decor-mobile { display: block; }
+}
 /* animated quotation marks on review cards */
 .review-card::before { animation: decor-quote 5s ease-in-out infinite; transform-origin: top left; }
 @keyframes decor-quote {
