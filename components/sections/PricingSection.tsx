@@ -26,7 +26,7 @@ export default function PricingSection({ eyebrow, heading, subheading, items, fo
       <div className="wrap">
         {eyebrow && <div className="section-label">{eyebrow}</div>}
         {heading && (
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: subheading ? '1rem' : '3rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: subheading ? '1rem' : '3rem', lineHeight: 1.1 }}>
             {heading}
           </h2>
         )}

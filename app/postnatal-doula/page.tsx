@@ -83,7 +83,7 @@ function PostnatalDoulaPageStatic() {
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
           <div className="section-label">What postnatal doula support includes</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Practical <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>& emotional support</em>
           </h2>
 
@@ -133,7 +133,7 @@ function PostnatalDoulaPageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">Packages</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>support package</em>
           </h2>
 

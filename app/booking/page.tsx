@@ -60,7 +60,7 @@ function BookingPageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">What would you like to book?</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>booking type</em>
           </h2>
 
@@ -70,7 +70,7 @@ function BookingPageStatic() {
                 key={option.title}
                 className={option.featured ? 'price-card featured' : 'price-card'}
               >
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.8rem' }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.3rem', fontWeight: 500, marginBottom: '0.8rem' }}>
                   {option.title}
                 </h3>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '2rem', flexGrow: 1 }}>
@@ -95,7 +95,7 @@ function BookingPageStatic() {
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ textAlign: 'center' }}>
           <div className="section-label" style={{ marginBottom: '1rem' }}>Live availability</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '1.5rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1.5rem', lineHeight: 1.1 }}>
             Book directly <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>below</em>
           </h2>
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.9, fontWeight: 300, maxWidth: '580px', margin: '0 auto 2.5rem' }}>

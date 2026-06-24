@@ -17,7 +17,7 @@ export default function CtaBandSection({ heading, subheading, ctaLabel, ctaHref,
   return (
     <section style={{ background: t.bg, color: t.color, padding: '4rem 0' }}>
       <div className="wrap" style={{ textAlign: 'center', maxWidth: '720px' }}>
-        <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.15 }}>
+        <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.15 }}>
           {heading}
         </h2>
         {subheading && (

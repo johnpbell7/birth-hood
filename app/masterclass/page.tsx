@@ -99,7 +99,7 @@ function MasterclassPageStatic() {
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
           <div className="section-label">What&apos;s covered</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Everything you need in <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>two hours</em>
           </h2>
 
@@ -128,13 +128,13 @@ function MasterclassPageStatic() {
             ].map(item => (
               <div key={item.num} className="card" style={{ display: 'flex', gap: '1.5rem' }}>
                 <div style={{
-                  fontFamily: 'Abril Fatface, serif', fontSize: '2.5rem', color: 'var(--pink-pale)',
+                  fontFamily: 'Poppins, sans-serif', fontSize: '2.5rem', color: 'var(--pink-pale)',
                   lineHeight: 1, flexShrink: 0, width: '3rem',
                 }}>
                   {item.num}
                 </div>
                 <div>
-                  <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem' }}>
+                  <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.5rem' }}>
                     {item.title}
                   </h3>
                   <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
@@ -151,7 +151,7 @@ function MasterclassPageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">Is this right for me?</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Perfect for <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>anyone who…</em>
           </h2>
           <div className="grid-3" style={{ gap: '1.5rem' }}>
@@ -170,7 +170,7 @@ function MasterclassPageStatic() {
               },
             ].map(item => (
               <div key={item.label} className="card card-pink">
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.6rem' }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem' }}>
                   {item.label}
                 </h3>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
@@ -182,7 +182,7 @@ function MasterclassPageStatic() {
 
           <div className="card" style={{ marginTop: '2.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
             <div>
-              <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.3rem' }}>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.3rem' }}>
                 Want more than the masterclass?
               </h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300 }}>

@@ -82,7 +82,7 @@ function DoulaPageStatic() {
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
           <div className="section-label">Services</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Choose the support that&apos;s <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>right for you</em>
           </h2>
           <div className="grid-3" style={{ gap: '1.5rem' }}>
@@ -90,7 +90,7 @@ function DoulaPageStatic() {
             {/* Birth Doula */}
             <div className="card" style={{ borderTop: '3px solid var(--pink)' }}>
               <div className="section-label" style={{ marginBottom: '1rem' }}>In-person support</div>
-              <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', fontWeight: 700, marginBottom: '1rem', lineHeight: 1.2 }}>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.2 }}>
                 Birth Doula
               </h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem' }}>
@@ -113,7 +113,7 @@ function DoulaPageStatic() {
             {/* Virtual Doula */}
             <div className="card" style={{ borderTop: '3px solid var(--pink-deep)' }}>
               <div className="section-label" style={{ marginBottom: '1rem' }}>Online support</div>
-              <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', fontWeight: 700, marginBottom: '1rem', lineHeight: 1.2 }}>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.2 }}>
                 Virtual Doula
               </h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem' }}>
@@ -136,7 +136,7 @@ function DoulaPageStatic() {
             {/* Postnatal Doula */}
             <div className="card" style={{ borderTop: '3px solid var(--pink)' }}>
               <div className="section-label" style={{ marginBottom: '1rem' }}>After birth</div>
-              <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', fontWeight: 700, marginBottom: '1rem', lineHeight: 1.2 }}>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.2 }}>
                 Postnatal Support
               </h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem' }}>

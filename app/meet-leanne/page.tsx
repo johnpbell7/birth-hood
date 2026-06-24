@@ -41,7 +41,7 @@ function MeetLeannePageStatic() {
                 paddingLeft: '1.5rem',
                 margin: '2rem 0',
               }}>
-                <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.15rem', fontStyle: 'italic', lineHeight: 1.7, color: 'var(--black)', marginBottom: '0.8rem' }}>
+                <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.15rem', fontStyle: 'italic', lineHeight: 1.7, color: 'var(--black)', marginBottom: '0.8rem' }}>
                   &ldquo;From the moment I had a phone call with Leanne I knew she was the one.&rdquo;
                 </p>
                 <cite style={{ fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--pink-deep)', fontStyle: 'normal' }}>
@@ -148,7 +148,7 @@ function MeetLeannePageStatic() {
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
           <div className="section-label">Why choose me?</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             What you <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>get with me</em>
           </h2>
           <div className="grid-2" style={{ gap: '1rem', marginBottom: '3rem', alignItems: 'stretch' }}>
@@ -172,8 +172,8 @@ function MeetLeannePageStatic() {
                   borderRadius: '50%',
                   background: 'var(--pink)',
                   color: '#fff',
-                  fontFamily: 'Playfair Display, serif',
-                  fontWeight: 900,
+                  fontFamily: 'Poppins, sans-serif',
+                  fontWeight: 600,
                   fontSize: '0.85rem',
                   display: 'flex',
                   alignItems: 'center',
@@ -210,7 +210,7 @@ function MeetLeannePageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">As featured in</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Media & <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>appearances</em>
           </h2>
           <div className="grid-3" style={{ gap: '1.5rem' }}>

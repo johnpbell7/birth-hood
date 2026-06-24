@@ -18,7 +18,7 @@ export default function SessionOutlineSection({ heading, intro, sessions = [], n
     <section className="section-pad">
       <div className="wrap" style={{ maxWidth: '820px' }}>
         {heading && (
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.9rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: intro ? '0.75rem' : '2.5rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.9rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: intro ? '0.75rem' : '2.5rem', lineHeight: 1.1 }}>
             {heading}
           </h2>
         )}
@@ -32,11 +32,11 @@ export default function SessionOutlineSection({ heading, intro, sessions = [], n
             <div key={session._key ?? i} className="card">
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'baseline', marginBottom: session.description || session.topics?.length ? '0.75rem' : 0 }}>
                 {session.number && (
-                  <span style={{ fontFamily: 'Abril Fatface, serif', fontSize: '1.6rem', color: 'var(--pink-deep)' }}>
+                  <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.6rem', color: 'var(--pink-deep)' }}>
                     {session.number}
                   </span>
                 )}
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700 }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500 }}>
                   {session.title}
                 </h3>
               </div>

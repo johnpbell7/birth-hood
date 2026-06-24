@@ -129,7 +129,7 @@ function HypnobirthingPageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">Choose your course</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Course <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>options</em>
           </h2>
 
@@ -241,7 +241,7 @@ function HypnobirthingPageStatic() {
       <section className="section-pad-sm" style={{ background: 'var(--pink-pale)' }}>
         <div className="wrap" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
           <div>
-            <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.4rem', fontWeight: 700, marginBottom: '0.5rem' }}>
+            <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.4rem', fontWeight: 500, marginBottom: '0.5rem' }}>
               Curious what&apos;s covered each week?
             </h3>
             <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300 }}>
@@ -258,7 +258,7 @@ function HypnobirthingPageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">Common questions</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Hypnobirthing <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>FAQs</em>
           </h2>
           <FaqAccordion items={faqItems} />

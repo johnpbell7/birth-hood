@@ -221,7 +221,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
       <section className="section-pad" style={{ paddingTop: '3.25rem', paddingBottom: 0 }}>
         <div className="wrap welcome-intro">
           <div className="welcome-intro-text">
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 900, lineHeight: 1.15, marginBottom: '1.6rem' }}>
+            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 600, lineHeight: 1.15, marginBottom: '1.6rem' }}>
               {welcomeHeading.includes('birth-hood') ? (
                 <>
                   {welcomeHeading.split('birth-hood')[0]}

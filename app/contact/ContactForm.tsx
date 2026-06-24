@@ -41,7 +41,7 @@ export default function ContactForm() {
     return (
       <div className="reveal reveal-d2" style={{ padding: '3rem', textAlign: 'center', background: 'var(--pink-ultra)', borderRadius: '3px', border: '1px solid rgba(232,123,195,0.3)' }}>
         <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🌸</div>
-        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.8rem' }}>
+        <h2 style={{ fontFamily: "'Poppins', sans-serif", fontSize: '1.5rem', fontWeight: 500, marginBottom: '0.8rem' }}>
           Message sent!
         </h2>
         <p style={{ color: 'var(--grey-mid)', fontWeight: 300 }}>

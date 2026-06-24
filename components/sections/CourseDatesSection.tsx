@@ -21,7 +21,7 @@ export default function CourseDatesSection({ heading, intro, courses = [] }: Pro
     <section className="section-pad">
       <div className="wrap">
         {heading && (
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.9rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: intro ? '0.75rem' : '2.5rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.9rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: intro ? '0.75rem' : '2.5rem', lineHeight: 1.1 }}>
             {heading}
           </h2>
         )}
@@ -34,7 +34,7 @@ export default function CourseDatesSection({ heading, intro, courses = [] }: Pro
           {courses.map((course, i) => (
             <div key={course._key ?? i} className={`card${course.featured ? ' featured' : ''}`} style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center', justifyContent: 'space-between' }}>
               <div style={{ flex: '1 1 260px' }}>
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.4rem' }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.4rem' }}>
                   {course.name}
                 </h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem 1.5rem', color: 'var(--grey-mid)', fontSize: '0.85rem', fontWeight: 300 }}>
@@ -44,7 +44,7 @@ export default function CourseDatesSection({ heading, intro, courses = [] }: Pro
                 </div>
               </div>
               {course.price && (
-                <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '1.6rem', color: 'var(--pink-deep)' }}>
+                <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.6rem', color: 'var(--pink-deep)' }}>
                   {course.price}
                 </div>
               )}

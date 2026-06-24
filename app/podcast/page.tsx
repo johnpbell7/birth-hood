@@ -87,7 +87,7 @@ function PodcastPageStatic() {
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
           <div className="section-label">Listen on</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Find us on your favourite <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>platform</em>
           </h2>
 
@@ -123,7 +123,7 @@ function PodcastPageStatic() {
                 }}>
                   {item.icon}
                 </div>
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.6rem' }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.15rem', fontWeight: 500, marginBottom: '0.6rem' }}>
                   {item.platform}
                 </h3>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.87rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
@@ -142,7 +142,7 @@ function PodcastPageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">What we talk about</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Topics we <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>explore</em>
           </h2>
           <div className="grid-2" style={{ gap: '1.5rem' }}>
@@ -153,7 +153,7 @@ function PodcastPageStatic() {
               { label: 'Birth stories', desc: 'Real stories from real people — every type of birth, told with honesty and compassion.' },
             ].map(item => (
               <div key={item.label} className="card card-pink">
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem' }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.5rem' }}>
                   {item.label}
                 </h3>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300 }}>

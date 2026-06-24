@@ -139,7 +139,7 @@ export default async function FreebiesPage() {
                   {resource.emoji}
                 </div>
 
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.6rem', lineHeight: 1.3 }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.15rem', fontWeight: 500, marginBottom: '0.6rem', lineHeight: 1.3 }}>
                   {resource.title}
                 </h3>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.87rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.2rem' }}>
@@ -162,7 +162,7 @@ export default async function FreebiesPage() {
 
           {/* Birth Videos */}
           <div style={{ marginTop: '3rem' }}>
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.6rem, 2.5vw, 2rem)', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.2 }}>
+            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.6rem, 2.5vw, 2rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.2 }}>
               Positive <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>Birth Videos</em>
             </h2>
             <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.8, fontWeight: 300, maxWidth: '580px', marginBottom: '1.5rem' }}>

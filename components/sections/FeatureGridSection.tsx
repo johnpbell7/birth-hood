@@ -25,7 +25,7 @@ export default function FeatureGridSection({ eyebrow, heading, subheading, items
         <div style={{ marginBottom: '2.5rem' }}>
           {eyebrow && <div className="section-label" style={{ marginBottom: '0.6rem' }}>{eyebrow}</div>}
           {heading && (
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.9rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: '0.6rem', lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.9rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '0.6rem', lineHeight: 1.1 }}>
               {heading}
             </h2>
           )}
@@ -40,13 +40,13 @@ export default function FeatureGridSection({ eyebrow, heading, subheading, items
             const imgUrl = item.image?.asset ? urlFor(item.image as never).width(600).url() : null
             const cardInner = (
               <>
-                <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '1.6rem', color: 'var(--pink-deep)', marginBottom: '1rem' }}>
+                <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.6rem', color: 'var(--pink-deep)', marginBottom: '1rem' }}>
                   {item.icon ? item.icon : (item.number ?? String(i + 1).padStart(2, '0'))}
                 </div>
                 {imgUrl && (
                   <Image src={imgUrl} alt={item.image?.alt ?? ''} width={400} height={240} style={{ width: '100%', height: '160px', objectFit: 'cover', borderRadius: '3px', marginBottom: '1rem' }} />
                 )}
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.5rem' }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.5rem' }}>
                   {item.title}
                 </h3>
                 {item.description && (

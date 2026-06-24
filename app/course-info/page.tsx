@@ -34,7 +34,7 @@ function CourseInfoPageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">Upcoming group courses</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Group <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>course dates</em>
           </h2>
 
@@ -52,7 +52,7 @@ function CourseInfoPageStatic() {
                 borderRadius: '3px',
               }}>
                 <div>
-                  <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.05rem', fontWeight: 700, marginBottom: '0.3rem' }}>
+                  <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.05rem', fontWeight: 500, marginBottom: '0.3rem' }}>
                     {course.date}
                     {course.featured && (
                       <span style={{ marginLeft: '0.8rem', background: 'var(--pink)', color: 'var(--black)', fontSize: '0.65rem', fontFamily: 'Poppins, sans-serif', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '0.2rem 0.6rem', borderRadius: '2px' }}>
@@ -95,7 +95,7 @@ function CourseInfoPageStatic() {
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
           <div className="section-label">What&apos;s included</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Everything you need for <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>birth preparation</em>
           </h2>
 
@@ -127,7 +127,7 @@ function CourseInfoPageStatic() {
               },
             ].map(item => (
               <div key={item.title} className="card">
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--black)' }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.5rem', color: 'var(--black)' }}>
                   {item.title}
                 </h3>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
@@ -143,7 +143,7 @@ function CourseInfoPageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">More options</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Specialist <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>courses</em>
           </h2>
 
@@ -164,7 +164,7 @@ function CourseInfoPageStatic() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
                 <div>
                   <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '0.25rem' }}>Investment</div>
-                  <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', fontWeight: 700 }}>From £145</div>
+                  <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500 }}>From £145</div>
                 </div>
                 <a
                   href="https://calendly.com/birthhood"
@@ -192,7 +192,7 @@ function CourseInfoPageStatic() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
                 <div>
                   <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '0.25rem' }}>Investment</div>
-                  <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', fontWeight: 700 }}>From £145</div>
+                  <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500 }}>From £145</div>
                 </div>
                 <a
                   href="https://calendly.com/birthhood"
@@ -212,7 +212,7 @@ function CourseInfoPageStatic() {
       <section className="section-pad">
         <div className="wrap" style={{ maxWidth: '720px' }}>
           <div className="section-label">How to book</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.5rem)', fontWeight: 900, marginBottom: '2rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.5rem)', fontWeight: 600, marginBottom: '2rem', lineHeight: 1.1 }}>
             Booking <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>information</em>
           </h2>
 

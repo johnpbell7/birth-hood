@@ -21,7 +21,7 @@ function DoulaFeedbackPageStatic() {
       {/* INTRO */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ maxWidth: '720px', textAlign: 'center' }}>
-          <p style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', lineHeight: 1.75, color: 'var(--black)', fontStyle: 'italic', marginBottom: '2rem' }}>
+          <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', lineHeight: 1.75, color: 'var(--black)', fontStyle: 'italic', marginBottom: '2rem' }}>
             &ldquo;Being a doula is an honour and a privilege. Supporting you as you journey through pregnancy, birth and postpartum is something I do not take lightly and to receive the feedback I do is just beyond words.&rdquo;
           </p>
           <a
@@ -97,7 +97,7 @@ function DoulaFeedbackPageStatic() {
                     <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
                   </svg>
                 </div>
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.7rem' }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
                   Google Review
                 </h3>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.85rem', lineHeight: 1.7, fontWeight: 300, marginBottom: '1.5rem' }}>
@@ -121,7 +121,7 @@ function DoulaFeedbackPageStatic() {
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
                   </svg>
                 </div>
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.7rem' }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
                   Facebook Review
                 </h3>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.85rem', lineHeight: 1.7, fontWeight: 300, marginBottom: '1.5rem' }}>
@@ -142,7 +142,7 @@ function DoulaFeedbackPageStatic() {
 
           {/* SOCIAL SHARE */}
           <div className="card" style={{ marginTop: '2.5rem', padding: '2rem' }}>
-            <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.7rem' }}>
+            <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.15rem', fontWeight: 500, marginBottom: '0.7rem' }}>
               Share on Instagram
             </h3>
             <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
@@ -160,7 +160,7 @@ function DoulaFeedbackPageStatic() {
           </div>
 
           <div style={{ marginTop: '3rem', padding: '2rem', borderLeft: '3px solid var(--pink)', background: 'var(--pink-ultra)', borderRadius: '0 3px 3px 0' }}>
-            <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.05rem', fontStyle: 'italic', lineHeight: 1.7, color: 'var(--black)', marginBottom: '0.5rem' }}>
+            <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.05rem', fontStyle: 'italic', lineHeight: 1.7, color: 'var(--black)', marginBottom: '0.5rem' }}>
               &ldquo;Thank you for trusting me to be part of one of the most significant moments of your
               life. It is a privilege I never take for granted.&rdquo;
             </p>

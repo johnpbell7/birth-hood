@@ -425,14 +425,14 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label" style={{ marginBottom: '0.6rem' }}>Section 01</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>documents</em>
           </h2>
 
           {displayGroups.map((group, gi) => (
             <div key={group.label} style={{ marginBottom: gi === displayGroups.length - 1 ? 0 : '3.5rem' }}>
               <div style={{ marginBottom: '1.5rem' }}>
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.4rem, 2vw, 1.7rem)', fontWeight: 700, marginBottom: '0.5rem', lineHeight: 1.2 }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.4rem, 2vw, 1.7rem)', fontWeight: 500, marginBottom: '0.5rem', lineHeight: 1.2 }}>
                   {group.label}
                 </h3>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.8, fontWeight: 300, maxWidth: '680px' }}>
@@ -480,7 +480,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
                         </svg>
                       </div>
                       <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1rem', fontWeight: 700, color: 'var(--black)', lineHeight: 1.3, marginBottom: '0.2rem' }}>
+                        <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1rem', fontWeight: 500, color: 'var(--black)', lineHeight: 1.3, marginBottom: '0.2rem' }}>
                           {item.title}
                         </div>
                         <div style={{ fontSize: '0.68rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--grey-light)' }}>
@@ -503,7 +503,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
           <div className="section-label" style={{ marginBottom: '0.6rem' }}>Section 02</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: '0.8rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
             Relaxation <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>audio</em>
           </h2>
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
@@ -518,7 +518,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
                   <div style={{ fontSize: '0.68rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '0.4rem' }}>
                     birth-hood album
                   </div>
-                  <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, color: 'var(--black)', marginBottom: '0.3rem', lineHeight: 1.2 }}>
+                  <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, color: 'var(--black)', marginBottom: '0.3rem', lineHeight: 1.2 }}>
                     {album.title}
                   </h3>
                   <p style={{ fontSize: '0.82rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.5 }}>
@@ -532,7 +532,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
                     <div key={track.title} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', minWidth: 0, flex: 1 }}>
-                          <span style={{ fontFamily: 'Abril Fatface, serif', fontSize: '1rem', color: 'var(--pink-deep)', flexShrink: 0 }}>
+                          <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1rem', color: 'var(--pink-deep)', flexShrink: 0 }}>
                             {String(ti + 1).padStart(2, '0')}
                           </span>
                           <span style={{ fontSize: '0.88rem', fontWeight: 500, color: 'var(--black)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
@@ -574,7 +574,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label" style={{ marginBottom: '0.6rem' }}>Section 03</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: '0.8rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
             Workshop <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>videos</em>
           </h2>
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
@@ -621,7 +621,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
                   </div>
                 )}
                 <div style={{ padding: '1.2rem 1.5rem' }}>
-                  <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.15rem', fontWeight: 700, color: 'var(--black)', marginBottom: '0.4rem' }}>
+                  <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.15rem', fontWeight: 500, color: 'var(--black)', marginBottom: '0.4rem' }}>
                     {video.title}
                   </h3>
                   {video.description && (
@@ -646,7 +646,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
       <section className="section-pad" style={{ background: 'var(--black)', color: 'var(--white)' }}>
         <div className="wrap">
           <div className="section-label" style={{ marginBottom: '0.6rem', color: 'var(--pink)' }}>Section 04</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: '0.8rem', lineHeight: 1.1, color: 'var(--white)' }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1, color: 'var(--white)' }}>
             Useful <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>websites</em>
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
@@ -683,7 +683,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexShrink: 0,
-                    fontFamily: 'Abril Fatface, serif',
+                    fontFamily: 'Poppins, sans-serif',
                     fontSize: '1.1rem',
                     color: 'var(--black)',
                     letterSpacing: '0.02em',
@@ -693,7 +693,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem' }}>
-                    <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '1rem', fontWeight: 700, color: 'var(--white)' }}>
+                    <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1rem', fontWeight: 500, color: 'var(--white)' }}>
                       {site.name}
                     </span>
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: 'var(--pink)', flexShrink: 0 }}>
@@ -713,7 +713,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
             <div style={{ fontSize: '0.68rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pink)', marginBottom: '0.6rem' }}>
               Featured board
             </div>
-            <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.3rem', fontWeight: 700, color: 'var(--white)', marginBottom: '0.6rem' }}>
+            <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.3rem', fontWeight: 500, color: 'var(--white)', marginBottom: '0.6rem' }}>
               My fierce birth padlet
             </h3>
             <p style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.7)', fontWeight: 300, lineHeight: 1.7, marginBottom: '1.2rem' }}>
@@ -739,7 +739,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
       <section className="section-pad-sm" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ textAlign: 'center', maxWidth: '640px' }}>
           <div className="section-label" style={{ justifyContent: 'center', marginBottom: '0.8rem' }}>Need help?</div>
-          <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.4rem', fontWeight: 700, marginBottom: '0.8rem' }}>
+          <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.4rem', fontWeight: 500, marginBottom: '0.8rem' }}>
             Can&apos;t access a resource?
           </h3>
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem' }}>

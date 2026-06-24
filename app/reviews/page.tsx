@@ -94,12 +94,12 @@ function ReviewsPageStatic() {
         <div className="wrap">
           <div style={{ display: 'flex', justifyContent: 'center', gap: '4rem', flexWrap: 'wrap', alignItems: 'center', textAlign: 'center' }}>
             <div>
-              <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '5rem', color: 'var(--black)', lineHeight: 1 }}>5.0</div>
+              <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '5rem', color: 'var(--black)', lineHeight: 1 }}>5.0</div>
               <div style={{ color: 'var(--pink)', fontSize: '1.4rem', letterSpacing: '0.15em', margin: '0.3rem 0' }}>★★★★★</div>
               <div style={{ fontSize: '0.78rem', color: 'var(--grey-mid)', fontWeight: 300, letterSpacing: '0.05em' }}>5 Star rated on Google</div>
             </div>
             <div>
-              <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '5rem', color: 'var(--black)', lineHeight: 1 }}>100's</div>
+              <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '5rem', color: 'var(--black)', lineHeight: 1 }}>100's</div>
               <div style={{ fontSize: '0.78rem', color: 'var(--grey-mid)', fontWeight: 300, letterSpacing: '0.05em', marginTop: '0.3rem' }}>of families supported</div>
             </div>
           </div>
@@ -127,7 +127,7 @@ function ReviewsPageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">Birth stories</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 900, marginBottom: '0.8rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
             Stories from <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>real births</em>
           </h2>
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '640px' }}>
@@ -140,7 +140,7 @@ function ReviewsPageStatic() {
                 <div style={{ fontSize: '0.68rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '0.6rem' }}>
                   {story.type}
                 </div>
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.1rem', fontWeight: 700, color: 'var(--black)', lineHeight: 1.3 }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, color: 'var(--black)', lineHeight: 1.3 }}>
                   {story.title}
                 </h3>
               </div>
@@ -153,7 +153,7 @@ function ReviewsPageStatic() {
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ textAlign: 'center', maxWidth: '600px' }}>
           <div className="section-label" style={{ justifyContent: 'center', marginBottom: '1rem' }}>Share your experience</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.1 }}>
             Worked with <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>me?</em>
           </h2>
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2rem' }}>

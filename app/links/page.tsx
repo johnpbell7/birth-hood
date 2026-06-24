@@ -102,9 +102,9 @@ function LinksPageStatic() {
             ✿
           </div>
           <h1 style={{
-            fontFamily: 'Playfair Display, serif',
+            fontFamily: 'Poppins, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 2.8rem)',
-            fontWeight: 900, color: '#fff', marginBottom: '0.7rem', lineHeight: 1.1,
+            fontWeight: 600, color: '#fff', marginBottom: '0.7rem', lineHeight: 1.1,
           }}>
             Birth <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>Hood</em>
           </h1>
@@ -125,8 +125,8 @@ function LinksPageStatic() {
               }}>
                 <div>
                   <div style={{
-                    fontFamily: 'Playfair Display, serif',
-                    fontWeight: 700,
+                    fontFamily: 'Poppins, sans-serif',
+                    fontWeight: 500,
                     fontSize: '1rem',
                     color: link.featured ? '#fff' : 'var(--black)',
                     lineHeight: 1.3,

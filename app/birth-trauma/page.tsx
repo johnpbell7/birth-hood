@@ -115,7 +115,7 @@ function BirthTraumaPageStatic() {
                 paddingLeft: '1.5rem',
                 margin: '2rem 0',
               }}>
-                <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.05rem', fontStyle: 'italic', lineHeight: 1.7, color: 'var(--black)', marginBottom: '0.8rem' }}>
+                <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.05rem', fontStyle: 'italic', lineHeight: 1.7, color: 'var(--black)', marginBottom: '0.8rem' }}>
                   &ldquo;Your birth story deserves to be told and heard. You deserve to feel better.&rdquo;
                 </p>
                 <cite style={{ fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--pink-deep)', fontStyle: 'normal' }}>
@@ -131,7 +131,7 @@ function BirthTraumaPageStatic() {
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
           <div className="section-label">How I can help</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '1.5rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1.5rem', lineHeight: 1.1 }}>
             The 3 Step <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>Rewind</em>
           </h2>
 
@@ -144,7 +144,7 @@ function BirthTraumaPageStatic() {
           <div className="grid-3" style={{ gap: '1.5rem' }}>
             <div className="card">
               <div className="section-label" style={{ marginBottom: '1rem' }}>Session 1 · 1–2 hours</div>
-              <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.7rem' }}>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
                 Understanding &amp; Relaxation
               </h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
@@ -159,7 +159,7 @@ function BirthTraumaPageStatic() {
 
             <div className="card card-pink">
               <div className="section-label" style={{ marginBottom: '1rem' }}>Session 2 · 1 hour</div>
-              <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.7rem' }}>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
                 The Rewind Process
               </h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
@@ -171,7 +171,7 @@ function BirthTraumaPageStatic() {
 
             <div className="card">
               <div className="section-label" style={{ marginBottom: '1rem' }}>Session 3 · Up to 1 hour</div>
-              <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.7rem' }}>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
                 Reflection &amp; Moving Forward
               </h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
@@ -188,7 +188,7 @@ function BirthTraumaPageStatic() {
       <section className="section-pad">
         <div className="wrap" style={{ maxWidth: '720px' }}>
           <div className="section-label">Helpful resources</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.3rem)', fontWeight: 900, marginBottom: '2rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.3rem)', fontWeight: 600, marginBottom: '2rem', lineHeight: 1.1 }}>
             You are <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>not alone</em>
           </h2>
 
@@ -220,7 +220,7 @@ function BirthTraumaPageStatic() {
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
                   <div>
-                    <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.05rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--pink-deep)' }}>
+                    <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.05rem', fontWeight: 500, marginBottom: '0.4rem', color: 'var(--pink-deep)' }}>
                       {resource.name} →
                     </h3>
                     <p style={{ color: 'var(--grey-mid)', fontSize: '0.85rem', lineHeight: 1.7, fontWeight: 300 }}>

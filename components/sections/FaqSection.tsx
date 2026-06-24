@@ -18,7 +18,7 @@ export default function FaqSection({ eyebrow, heading, items = [] }: Props) {
       <div className="wrap" style={{ maxWidth: '780px' }}>
         {eyebrow && <div className="section-label" style={{ marginBottom: '0.6rem' }}>{eyebrow}</div>}
         {heading && (
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.9rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: '2rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.9rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '2rem', lineHeight: 1.1 }}>
             {heading}
           </h2>
         )}
@@ -32,7 +32,7 @@ export default function FaqSection({ eyebrow, heading, items = [] }: Props) {
                   style={{
                     width: '100%', textAlign: 'left', padding: '1.2rem 1.4rem',
                     background: 'transparent', border: 'none', cursor: 'pointer',
-                    fontFamily: 'Playfair Display, serif', fontSize: '1.05rem', fontWeight: 700, color: 'var(--black)',
+                    fontFamily: 'Poppins, sans-serif', fontSize: '1.05rem', fontWeight: 500, color: 'var(--black)',
                     display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem',
                   }}
                   aria-expanded={isOpen}

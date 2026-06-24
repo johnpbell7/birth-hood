@@ -132,7 +132,7 @@ function FaqPageStatic() {
           {/* GENERAL */}
           <div style={{ marginBottom: '4rem' }}>
             <div className="section-label" style={{ marginBottom: '1.5rem' }}>General</div>
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', fontWeight: 700, marginBottom: '2rem', lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 500, marginBottom: '2rem', lineHeight: 1.1 }}>
               General questions
             </h2>
             <FaqAccordion items={generalFaqs} />
@@ -141,7 +141,7 @@ function FaqPageStatic() {
           {/* HYPNOBIRTHING */}
           <div style={{ marginBottom: '4rem' }}>
             <div className="section-label" style={{ marginBottom: '1.5rem' }}>Hypnobirthing</div>
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', fontWeight: 700, marginBottom: '2rem', lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 500, marginBottom: '2rem', lineHeight: 1.1 }}>
               Hypnobirthing questions
             </h2>
             <FaqAccordion items={hypnobirthingFaqs} />
@@ -150,7 +150,7 @@ function FaqPageStatic() {
           {/* DOULA */}
           <div style={{ marginBottom: '4rem' }}>
             <div className="section-label" style={{ marginBottom: '1.5rem' }}>Doula support</div>
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', fontWeight: 700, marginBottom: '2rem', lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 500, marginBottom: '2rem', lineHeight: 1.1 }}>
               Doula questions
             </h2>
             <FaqAccordion items={doulaFaqs} />
@@ -159,7 +159,7 @@ function FaqPageStatic() {
           {/* YOGA */}
           <div style={{ marginBottom: '4rem' }}>
             <div className="section-label" style={{ marginBottom: '1.5rem' }}>Prenatal yoga</div>
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', fontWeight: 700, marginBottom: '2rem', lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 500, marginBottom: '2rem', lineHeight: 1.1 }}>
               Yoga questions
             </h2>
             <FaqAccordion items={yogaFaqs} />
@@ -168,7 +168,7 @@ function FaqPageStatic() {
           {/* PAYMENT */}
           <div style={{ marginBottom: '2rem' }}>
             <div className="section-label" style={{ marginBottom: '1.5rem' }}>Booking & payment</div>
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', fontWeight: 700, marginBottom: '2rem', lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 500, marginBottom: '2rem', lineHeight: 1.1 }}>
               Booking & payment
             </h2>
             <FaqAccordion items={paymentFaqs} />
@@ -176,7 +176,7 @@ function FaqPageStatic() {
 
           {/* STILL HAVE QUESTIONS */}
           <div className="card card-pink" style={{ marginTop: '3rem', textAlign: 'center', padding: '2.5rem' }}>
-            <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.4rem', fontWeight: 700, marginBottom: '0.8rem' }}>
+            <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.4rem', fontWeight: 500, marginBottom: '0.8rem' }}>
               Still have questions?
             </h3>
             <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem', maxWidth: '450px', margin: '0 auto 1.5rem' }}>

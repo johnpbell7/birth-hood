@@ -35,7 +35,7 @@ export default function TwoColumnSection({
     <div>
       {eyebrow && <div className="section-label" style={{ marginBottom: '0.6rem' }}>{eyebrow}</div>}
       {heading && (
-        <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 900, marginBottom: '1.25rem', lineHeight: 1.15 }}>
+        <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 600, marginBottom: '1.25rem', lineHeight: 1.15 }}>
           {heading}
         </h2>
       )}
@@ -55,7 +55,7 @@ export default function TwoColumnSection({
       {(sidePanelTitle || stats.length > 0) && (
         <div className="card">
           {sidePanelTitle && (
-            <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem' }}>
+            <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '1rem' }}>
               {sidePanelTitle}
             </h3>
           )}
@@ -63,7 +63,7 @@ export default function TwoColumnSection({
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {stats.map((s, i) => (
                 <div key={s._key ?? i}>
-                  <div style={{ fontFamily: 'Abril Fatface, serif', fontSize: '1.6rem', color: 'var(--pink-deep)' }}>{s.value}</div>
+                  <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.6rem', color: 'var(--pink-deep)' }}>{s.value}</div>
                   <div style={{ fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--grey-mid)' }}>{s.label}</div>
                 </div>
               ))}

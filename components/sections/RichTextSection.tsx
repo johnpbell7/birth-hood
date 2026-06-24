@@ -37,7 +37,7 @@ export default function RichTextSection({ eyebrow, heading, body, align = 'left'
       <div className="wrap" style={{ maxWidth: '760px', textAlign: align }}>
         {eyebrow && <div className="section-label" style={{ justifyContent: align === 'center' ? 'center' : 'flex-start', marginBottom: '0.6rem' }}>{eyebrow}</div>}
         {heading && (
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 900, marginBottom: '1.25rem', lineHeight: 1.15 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 600, marginBottom: '1.25rem', lineHeight: 1.15 }}>
             {heading}
           </h2>
         )}

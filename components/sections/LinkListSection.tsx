@@ -17,7 +17,7 @@ export default function LinkListSection({ heading, intro, links = [] }: Props) {
     <section className="section-pad">
       <div className="wrap" style={{ maxWidth: '640px' }}>
         {heading && (
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.9rem, 3vw, 2.6rem)', fontWeight: 900, marginBottom: intro ? '0.75rem' : '2rem', lineHeight: 1.1, textAlign: 'center' }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.9rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: intro ? '0.75rem' : '2rem', lineHeight: 1.1, textAlign: 'center' }}>
             {heading}
           </h2>
         )}
@@ -36,7 +36,7 @@ export default function LinkListSection({ heading, intro, links = [] }: Props) {
               rel={link.url?.startsWith('http') ? 'noopener noreferrer' : undefined}
               style={{ textDecoration: 'none', color: link.featured ? undefined : 'inherit', display: 'block', textAlign: 'center' }}
             >
-              <span style={{ fontWeight: 700 }}>{link.label}</span>
+              <span style={{ fontWeight: 500 }}>{link.label}</span>
               {link.description && (
                 <span style={{ display: 'block', fontSize: '0.85rem', fontWeight: 300, color: link.featured ? undefined : 'var(--grey-mid)', marginTop: '0.25rem' }}>
                   {link.description}

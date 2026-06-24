@@ -21,7 +21,7 @@ export default function VideoSection({ heading, caption, url }: Props) {
     <section className="section-pad">
       <div className="wrap" style={{ maxWidth: '900px' }}>
         {heading && (
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.15 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.15 }}>
             {heading}
           </h2>
         )}

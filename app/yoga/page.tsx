@@ -210,7 +210,7 @@ function YogaPageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">Classes &amp; Pricing</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.1 }}>
             Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>yoga experience</em>
           </h2>
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.9, fontWeight: 300, marginBottom: '3rem', maxWidth: '600px' }}>
@@ -358,7 +358,7 @@ function YogaPageStatic() {
 
               <div className="card" style={{ marginTop: '2rem' }}>
                 <div className="section-label" style={{ marginBottom: '0.8rem' }}>PAYG pricing</div>
-                <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', fontWeight: 900, color: 'var(--black)', marginBottom: '0.2rem' }}>£10</p>
+                <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 600, color: 'var(--black)', marginBottom: '0.2rem' }}>£10</p>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
                   Per class — drop-in welcome. Course cost varies depending on the length of the course.
                 </p>
@@ -381,7 +381,7 @@ function YogaPageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">Common questions</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Yoga <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>FAQs</em>
           </h2>
           <FaqAccordion items={faqItems} />

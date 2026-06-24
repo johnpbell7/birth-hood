@@ -84,7 +84,7 @@ function VirtualDoulaPageStatic() {
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
           <div className="section-label">What&apos;s included</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Full online <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>doula support</em>
           </h2>
 
@@ -134,7 +134,7 @@ function VirtualDoulaPageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">Is virtual doula right for me?</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Ideal for <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>anyone who…</em>
           </h2>
           <div className="grid-2" style={{ gap: '1.5rem' }}>
@@ -145,7 +145,7 @@ function VirtualDoulaPageStatic() {
               { label: 'Is an expat or living abroad', desc: 'Get full doula support wherever you are in the world — online sessions work across time zones.' },
             ].map(item => (
               <div key={item.label} className="card card-pink">
-                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem' }}>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.5rem' }}>
                   {item.label}
                 </h3>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300 }}>
@@ -162,7 +162,7 @@ function VirtualDoulaPageStatic() {
         <div className="wrap" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
           <div>
             <div className="section-label" style={{ marginBottom: '0.8rem' }}>Investment</div>
-            <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.5rem' }}>
+            <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '0.5rem' }}>
               Virtual Doula Package: £600
             </h3>
             <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300, maxWidth: '500px', marginBottom: '0.6rem' }}>

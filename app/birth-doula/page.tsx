@@ -46,7 +46,7 @@ function BirthDoulaPageStatic() {
       <section style={{ background: 'var(--pink-pale)', padding: '3.5rem 0' }}>
         <div className="wrap">
           <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
-            <p style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1rem, 2vw, 1.2rem)', fontStyle: 'italic', color: 'var(--grey-dark)', lineHeight: 1.8, marginBottom: '1rem' }}>
+            <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1rem, 2vw, 1.2rem)', fontStyle: 'italic', color: 'var(--grey-dark)', lineHeight: 1.8, marginBottom: '1rem' }}>
               &ldquo;My advice to anyone thinking to book Leanne would be to not hesitate as she&apos;s definitely &lsquo;worth every penny&rsquo; as one of the home birth midwives rightly said! She knows her job inside out and ensures she creates a loving and strong relationship with all her clients. I&apos;m so glad I found her. My Husband and I could not have been happier with what we achieved. Thank you!&rdquo;
             </p>
             <div style={{ fontSize: '0.8rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--pink-deep)' }}>
@@ -109,7 +109,7 @@ function BirthDoulaPageStatic() {
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
           <div className="section-label">What&apos;s included</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '3rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Full support <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>before, during &amp; after</em>
           </h2>
 
@@ -117,7 +117,7 @@ function BirthDoulaPageStatic() {
             {/* Before birth */}
             <div className="card" style={{ borderTop: '3px solid var(--pink)' }}>
               <div className="section-label" style={{ marginBottom: '1rem' }}>Before birth</div>
-              <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.3rem', fontWeight: 700, marginBottom: '1rem' }}>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.3rem', fontWeight: 500, marginBottom: '1rem' }}>
                 Antenatal support
               </h3>
               <ul style={{ listStyle: 'none' }}>
@@ -141,7 +141,7 @@ function BirthDoulaPageStatic() {
             {/* During birth */}
             <div className="card" style={{ borderTop: '3px solid var(--pink-deep)' }}>
               <div className="section-label" style={{ marginBottom: '1rem' }}>During birth</div>
-              <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.3rem', fontWeight: 700, marginBottom: '1rem' }}>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.3rem', fontWeight: 500, marginBottom: '1rem' }}>
                 Birth support
               </h3>
               <ul style={{ listStyle: 'none' }}>
@@ -165,7 +165,7 @@ function BirthDoulaPageStatic() {
             {/* After birth */}
             <div className="card" style={{ borderTop: '3px solid var(--pink)' }}>
               <div className="section-label" style={{ marginBottom: '1rem' }}>After birth</div>
-              <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.3rem', fontWeight: 700, marginBottom: '1rem' }}>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.3rem', fontWeight: 500, marginBottom: '1rem' }}>
                 Postnatal support
               </h3>
               <ul style={{ listStyle: 'none' }}>
@@ -193,7 +193,7 @@ function BirthDoulaPageStatic() {
       <section className="section-pad">
         <div className="wrap">
           <div className="section-label">Investment</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.1 }}>
             Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>package</em>
           </h2>
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.9, fontWeight: 300, marginBottom: '3rem', maxWidth: '600px' }}>
@@ -298,7 +298,7 @@ function BirthDoulaPageStatic() {
       <section className="testimonials" style={{ padding: '5rem 3rem' }}>
         <div className="wrap">
           <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
-            <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.25rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.8)', lineHeight: 1.75, marginBottom: '1.5rem' }}>
+            <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.25rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.8)', lineHeight: 1.75, marginBottom: '1.5rem' }}>
               &ldquo;My advice to anyone thinking to book Leanne would be to not hesitate as she&apos;s definitely &lsquo;worth every penny&rsquo; as one of the home birth midwives rightly said! She knows her job inside out and ensures she creates a loving and strong relationship with all her clients. I&apos;m so glad I found her. My Husband and I could not have been happier with what we achieved. Thank you!&rdquo;
             </p>
             <div className="review-author">Birth-hood client ★★★★★</div>

@@ -97,7 +97,7 @@ export default async function BlogPage() {
                       <span style={{ fontSize: '0.7rem', color: 'var(--grey-light)' }}>{post.estimatedReadingTime} min read</span>
                     )}
                   </div>
-                  <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.3rem', fontWeight: 700, lineHeight: 1.25, marginBottom: '0.8rem' }}>
+                  <h2 style={{ fontFamily: "'Poppins', sans-serif", fontSize: '1.3rem', fontWeight: 500, lineHeight: 1.25, marginBottom: '0.8rem' }}>
                     <Link href={href} style={{ textDecoration: 'none', color: 'var(--black)', transition: 'color 0.3s' }}>
                       {post.title}
                     </Link>

@@ -13,7 +13,7 @@ export default function TestimonialsSection({ eyebrow, heading, items = [] }: Pr
         <div style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
           {eyebrow && <div className="section-label" style={{ justifyContent: 'center', marginBottom: '0.6rem' }}>{eyebrow}</div>}
           {heading && (
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.9rem, 3vw, 2.6rem)', fontWeight: 900, lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.9rem, 3vw, 2.6rem)', fontWeight: 600, lineHeight: 1.1 }}>
               {heading}
             </h2>
           )}
