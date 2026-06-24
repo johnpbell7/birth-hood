@@ -99,13 +99,13 @@ export default function Nav() {
           <li className="nav-dropdown">
             <Link href="/blog">More ▾</Link>
             <ul className="nav-drop-menu">
+              <li><Link href="/contact">Contact</Link></li>
               <li><Link href="/blog">Blog</Link></li>
               <li><Link href="/podcast">Dou-La-La Podcast</Link></li>
               <li><Link href="/reviews">Reviews</Link></li>
               <li><Link href="/masterclass">Masterclass</Link></li>
               <li><Link href="/freebies">Free Resources</Link></li>
               <li><Link href="/faq">FAQ</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
             </ul>
           </li>
           <li><Link href="/hub" className="nav-hub">Hub</Link></li>
@@ -180,6 +180,7 @@ export default function Nav() {
           </button>
           {openSection === 'more' && (
             <div className="mob-dropdown">
+              <Link href="/contact" onClick={close} className="mob-link mob-link--sub">Contact</Link>
               <Link href="/blog" onClick={close} className="mob-link mob-link--sub">Blog</Link>
               <Link href="/podcast" onClick={close} className="mob-link mob-link--sub">Dou-La-La Podcast</Link>
               <Link href="/masterclass" onClick={close} className="mob-link mob-link--sub">Masterclass</Link>
@@ -187,7 +188,6 @@ export default function Nav() {
               <Link href="/reviews" onClick={close} className="mob-link mob-link--sub">Reviews</Link>
               <Link href="/booking" onClick={close} className="mob-link mob-link--sub">Booking</Link>
               <Link href="/faq" onClick={close} className="mob-link mob-link--sub">FAQ</Link>
-              <Link href="/contact" onClick={close} className="mob-link mob-link--sub">Contact</Link>
             </div>
           )}
         </div>
