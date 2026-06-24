@@ -183,6 +183,7 @@ export type SiteSettings = {
   homeServices?: Array<{ name: string; description?: string; href?: string }>
   homeAboutEyebrow?: string
   homeAboutHeading?: string
+  homeAboutImage?: SanityImageSource
   homeAboutBody?: string[]
   homeAboutCredentials?: string[]
   homeAboutCta?: string

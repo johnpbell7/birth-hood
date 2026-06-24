@@ -141,6 +141,7 @@ export default defineType({
     // ── Home — About section ─────────────────────────────────────────────────
     defineField({ name: 'homeAboutEyebrow', title: 'About — Eyebrow', type: 'string', group: 'homeAbout' }),
     defineField({ name: 'homeAboutHeading', title: 'About — Heading', type: 'string', group: 'homeAbout' }),
+    defineField({ name: 'homeAboutImage', title: 'About — Photo', type: 'image', options: { hotspot: true }, group: 'homeAbout' }),
     defineField({
       name: 'homeAboutBody',
       title: 'About — Body paragraphs',

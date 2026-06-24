@@ -154,6 +154,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
   // About
   const aboutEyebrow = s.homeAboutEyebrow ?? 'About Leanne'
   const aboutHeading = s.homeAboutHeading ?? 'A passionate advocate for positive birth'
+  const aboutImage = s.homeAboutImage ? urlFor(s.homeAboutImage).width(900).url() : '/images/leanne-portrait.jpg'
   const aboutBody = s.homeAboutBody ?? [
     "Hi, I'm Leanne — a certified hypnobirthing practitioner, birth doula and yoga teacher based in NW Leicestershire. Since 2019 I've been helping families across the Midlands and online feel genuinely prepared and excited for birth.",
     "I believe that every person deserves to feel powerful in their birth experience — regardless of how it unfolds. Whether you're planning a home birth, a hospital birth, a caesarean or anything in between, I'm here to give you the knowledge, tools and support you need.",
@@ -217,7 +218,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
       <MarqueeStrip dark />
 
       {/* WELCOME INTRO */}
-      <section className="section-pad" style={{ paddingTop: '2.25rem', paddingBottom: 0 }}>
+      <section className="section-pad" style={{ paddingTop: '3.25rem', paddingBottom: 0 }}>
         <div className="wrap welcome-intro">
           <div className="welcome-intro-text">
             <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 900, lineHeight: 1.15, marginBottom: '1.6rem' }}>
@@ -301,7 +302,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
           <div className="about-visual">
             <div className="about-photo-frame">
               <Image
-                src="/images/leanne-portrait.jpg"
+                src={aboutImage}
                 alt="Leanne — birth-hood founder"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center top' }}
