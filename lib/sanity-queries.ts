@@ -73,20 +73,24 @@ export type SanityPage = {
 
 export async function getPage(slug: string): Promise<SanityPage | null> {
   if (!client) return null
-  return client.fetch(
-    `*[_type == "page" && slug.current == $slug && !(_id in path("drafts.**"))][0]{ ${PAGE_FIELDS} }`,
-    { slug },
-    { next: { revalidate: 60 } },
-  )
+  try {
+    return await client.fetch(
+      `*[_type == "page" && slug.current == $slug && !(_id in path("drafts.**"))][0]{ ${PAGE_FIELDS} }`,
+      { slug },
+      { next: { revalidate: 60 } },
+    )
+  } catch (e) { console.error('Sanity getPage failed:', e); return null }
 }
 
 export async function getAllPageSlugs(): Promise<string[]> {
   if (!client) return []
-  return client.fetch(
-    `*[_type == "page" && defined(slug.current)].slug.current`,
-    {},
-    { next: { revalidate: 300 } },
-  )
+  try {
+    return await client.fetch(
+      `*[_type == "page" && defined(slug.current)].slug.current`,
+      {},
+      { next: { revalidate: 300 } },
+    )
+  } catch (e) { console.error('Sanity getAllPageSlugs failed:', e); return [] }
 }
 
 export type HubResource = {
@@ -105,7 +109,8 @@ export type HubResource = {
 
 export async function getHubResources(): Promise<HubResource[]> {
   if (!client) return []
-  return client.fetch(
+  try {
+    return await client.fetch(
     `*[_type == "hubResource"] | order(order asc, title asc) {
       _id,
       title,
@@ -121,7 +126,8 @@ export async function getHubResources(): Promise<HubResource[]> {
     }`,
     {},
     { next: { revalidate: 60 } },
-  )
+    )
+  } catch (e) { console.error('Sanity getHubResources failed:', e); return [] }
 }
 
 export type Freebie = {
@@ -138,7 +144,8 @@ export type Freebie = {
 
 export async function getFreebies(): Promise<Freebie[]> {
   if (!client) return []
-  return client.fetch(
+  try {
+    return await client.fetch(
     `*[_type == "freebie"] | order(_createdAt asc) {
       _id,
       title,
@@ -152,7 +159,8 @@ export async function getFreebies(): Promise<Freebie[]> {
     }`,
     {},
     { next: { revalidate: 60 } },
-  )
+    )
+  } catch (e) { console.error('Sanity getFreebies failed:', e); return [] }
 }
 
 export type SiteSettings = {
@@ -202,9 +210,11 @@ export type SiteSettings = {
 
 export async function getSiteSettings(): Promise<SiteSettings | null> {
   if (!client) return null
-  return client.fetch(
-    `*[_type == "siteSettings"][0]`,
-    {},
-    { next: { revalidate: 60 } },
-  )
+  try {
+    return await client.fetch(
+      `*[_type == "siteSettings"][0]`,
+      {},
+      { next: { revalidate: 60 } },
+    )
+  } catch (e) { console.error('Sanity getSiteSettings failed:', e); return null }
 }
