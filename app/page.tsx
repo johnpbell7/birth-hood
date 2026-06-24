@@ -459,8 +459,8 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
           <Link
             href="/reviews"
-            className="btn-outline"
-            style={{ color: 'rgba(255,255,255,0.6)', borderColor: 'rgba(255,255,255,0.2)' }}
+            className="btn-primary"
+            style={{ background: 'var(--pink)', color: 'var(--black)' }}
           >
             Read all reviews
           </Link>
