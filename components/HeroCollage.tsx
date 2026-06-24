@@ -25,7 +25,7 @@ const SLOT_FRACTIONS_MOBILE: [number, number][] = [
   [ 0.33,  0.28],  // bottom-right
 ]
 
-const ACTIVE_SCALE         = 1.38  // front card smaller so the spread-out cards underneath show
+const ACTIVE_SCALE         = 1.45  // front card prominent for impact
 const ACTIVE_SCALE_MOBILE  = 1.2   // smaller scale so active card doesn't dominate on mobile
 const ACTIVE_Z             = 20
 const CYCLE_MS             = 4500
