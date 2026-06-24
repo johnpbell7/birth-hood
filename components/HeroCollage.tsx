@@ -4,16 +4,9 @@ import { useRef } from 'react'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { DEFAULT_PHOTOS } from '@/lib/hero-photos'
 
 gsap.registerPlugin(useGSAP)
-
-export const DEFAULT_PHOTOS = [
-  { src: '/images/leanne-portrait.jpg',     alt: 'Leanne — birth-hood founder',   label: 'Leanne',        rotation: -8 },
-  { src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class',            label: 'Hypnobirthing', rotation:  7 },
-  { src: '/images/doula-support.jpg',       alt: 'Doula support',                  label: 'Doula Support', rotation: -3 },
-  { src: '/images/yoga-class.jpg',          alt: 'Prenatal yoga',                  label: 'Prenatal Yoga', rotation: -6 },
-  { src: '/images/leanne-speaking.jpg',     alt: 'Leanne speaking at birth event', label: 'Birth Events',  rotation:  5 },
-]
 
 // Pentagon slot positions as fractions of container size, offset from centre.
 // Desktop uses wider spread; mobile uses tighter fractions so cards stay within the container.
