@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { Sparkles } from '@/components/Decor'
 
 interface PolaroidImage {
   src: string
@@ -32,6 +33,17 @@ export default function PageHero({
   return (
     <>
     <section className="page-hero">
+      {/* twinkling brand stars — site-wide hero flair */}
+      <Sparkles
+        className="page-hero-decor"
+        items={[
+          { top: '16%', right: '6%', size: 30, delay: 0.2, dur: 3.1, white: true },
+          { top: '34%', right: '20%', size: 16, delay: 1.1, dur: 2.6, white: true },
+          { bottom: '16%', right: '12%', size: 26, delay: 0.6, dur: 3.4, white: true },
+          { top: '18%', left: '3%', size: 22, delay: 1.5, dur: 2.8, white: true },
+          { bottom: '24%', left: '7%', size: 15, delay: 0.9, dur: 2.4, white: true },
+        ]}
+      />
       <div className="page-hero-inner">
 
         {/* Left — text */}
