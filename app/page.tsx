@@ -203,10 +203,6 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
 
       {/* HOME HERO */}
       <section className="home-hero-split">
-        {/* drifting squiggle accents behind the hero (white on pink) */}
-        <Squiggle className="hero-decor light decor-float" style={{ top: '12%', right: '5%', width: '210px' }} />
-        <Squiggle variant="loop" className="hero-decor light decor-float" style={{ bottom: '7%', left: '3%', width: '190px', animationDelay: '1.5s' }} />
-        <Squiggle className="hero-decor light decor-float" style={{ top: '54%', left: '32%', width: '150px', opacity: 0.3, animationDelay: '0.7s' }} />
         {/* extra stars scattered across the hero */}
         <Sparkles
           className="hero-decor"
@@ -254,11 +250,14 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
       {/* WELCOME INTRO */}
       <section className="section-pad" style={{ paddingTop: '3.25rem', paddingBottom: 0 }}>
         <div className="wrap welcome-intro">
-          <div className="welcome-intro-text" style={{ position: 'relative' }}>
-            {/* knocked-back pink squiggles behind the heading */}
-            <Squiggle className="knock decor-float" style={{ top: '-1.4rem', left: '-0.5rem', width: '190px', zIndex: 0 }} />
-            <Squiggle variant="loop" className="knock decor-float" style={{ top: '1.2rem', right: '0', width: '120px', zIndex: 0, animationDelay: '1s' }} />
-            <h2 style={{ position: 'relative', zIndex: 1, fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 600, lineHeight: 1.15, marginBottom: '1.6rem' }}>
+          <div className="welcome-intro-text">
+            {/* static knocked-back squiggle pattern above the heading */}
+            <div className="welcome-squiggle-row" aria-hidden="true">
+              <Squiggle className="knock static" />
+              <Squiggle className="knock static" />
+              <Squiggle className="knock static" />
+            </div>
+            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 600, lineHeight: 1.15, marginBottom: '1.6rem' }}>
               {welcomeHeading.includes('birth-hood') ? (
                 <>
                   {welcomeHeading.split('birth-hood')[0]}
@@ -423,7 +422,6 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
             { top: '24%', left: '46%', size: 16, delay: 2, dur: 2.5, white: true },
           ]}
         />
-        <Squiggle className="sec-decor light decor-float" style={{ top: '10%', left: '6%', width: '170px', opacity: 0.25 }} />
         <div className="testimonials-header">
           <div>
             <div className="section-label light">{testimonialsEyebrow}</div>
@@ -476,7 +474,6 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
             { bottom: '22%', right: '12%', size: 28, delay: 1.8, dur: 2.5, white: true },
           ]}
         />
-        <Squiggle className="sec-decor light decor-float" style={{ bottom: '8%', left: '4%', width: '160px' }} />
         <div className="freebies-inner">
           <div className="section-label" style={{ justifyContent: 'center' }}>
             Completely free
