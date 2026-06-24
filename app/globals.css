@@ -70,6 +70,10 @@ body::after {
 .welcome-sparkles { z-index: 4; }
 .hero-decor { z-index: 1; }
 .sec-decor { z-index: 1; }
+/* static squiggle pattern (no draw / no float) — used above the Welcome heading */
+.decor-squiggle.static path { animation: none; stroke-dashoffset: 0; }
+.welcome-squiggle-row { display: flex; gap: 0; margin-bottom: 0.7rem; }
+.welcome-squiggle-row .decor-squiggle { position: static; width: 78px; opacity: .35; }
 /* animated quotation marks on review cards */
 .review-card::before { animation: decor-quote 5s ease-in-out infinite; transform-origin: top left; }
 @keyframes decor-quote {
