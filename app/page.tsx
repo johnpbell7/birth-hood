@@ -6,6 +6,7 @@ import HeroCollage from '@/components/HeroCollage'
 import InstagramSection from '@/components/InstagramSection'
 import { cmsOrStatic } from '@/lib/cms-page'
 import { getSiteSettings, type SiteSettings } from '@/lib/sanity-queries'
+import { urlFor } from '@/lib/sanity'
 
 export const metadata: Metadata = {
   title: 'Hypnobirthing, Doula & Prenatal Yoga | NW Leicestershire & Online',
@@ -117,6 +118,17 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
   const servicesEyebrow = s.homeServicesEyebrow ?? 'What I offer'
   const servicesHeading = s.homeServicesHeading ?? 'Everything you need for a positive birth'
 
+  // Welcome intro (under the hero)
+  const welcomeHeading = s.homeWelcomeHeading ?? 'Welcome to birth-hood'
+  const welcomeBody = s.homeWelcomeBody ?? [
+    'At birth-hood, I believe every family deserves to enter parenthood feeling informed, supported, connected, and confident. Through education, compassionate care, and community, I help people navigate pregnancy, birth, and beyond in a way that feels right for them.',
+    "From Doula support, Hypnobirthing, 3 Step Rewind Traumatic Birth resolution support, and Yoga you're covered (as featured on BBC Radio Leicester).",
+    'Based in Leicestershire and covering the Midlands (plus online).',
+  ]
+  const welcomeImage = s.homeWelcomeImage
+    ? urlFor(s.homeWelcomeImage).width(1100).url()
+    : '/images/leanne-speaking.jpg'
+
   // Merge CMS services with hardcoded icons (CMS overrides name/desc/href; icons stay)
   const services = DEFAULT_SERVICES.map((def, i) => {
     const cms = s.homeServices?.[i]
@@ -192,6 +204,48 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
 
       {/* MARQUEE */}
       <MarqueeStrip dark />
+
+      {/* WELCOME INTRO */}
+      <section className="section-pad">
+        <div className="wrap welcome-intro">
+          <div className="welcome-intro-text">
+            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 900, lineHeight: 1.15, marginBottom: '1.6rem' }}>
+              {welcomeHeading.includes('birth-hood') ? (
+                <>
+                  {welcomeHeading.split('birth-hood')[0]}
+                  <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>birth-hood</em>
+                  {welcomeHeading.split('birth-hood').slice(1).join('birth-hood')}
+                </>
+              ) : (
+                welcomeHeading
+              )}
+            </h2>
+            {welcomeBody.map((para, i) => (
+              <p
+                key={i}
+                style={{
+                  color: 'var(--grey-mid)',
+                  fontSize: '1.02rem',
+                  lineHeight: 1.9,
+                  fontWeight: 300,
+                  marginBottom: i === welcomeBody.length - 1 ? 0 : '1.1rem',
+                }}
+              >
+                {para}
+              </p>
+            ))}
+          </div>
+          <div className="welcome-intro-media">
+            <Image
+              src={welcomeImage}
+              alt="Leanne at birth-hood"
+              fill
+              sizes="(max-width: 820px) 100vw, 40vw"
+              style={{ objectFit: 'contain', objectPosition: 'center' }}
+            />
+          </div>
+        </div>
+      </section>
 
       {/* SERVICES */}
       <section id="services" className="services">

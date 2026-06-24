@@ -1,4 +1,5 @@
 import { client } from './sanity'
+import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
 const PAGE_FIELDS = `
   _id,
@@ -173,6 +174,9 @@ export type SiteSettings = {
   homeHeroSubtitle?: string
   homeHeroCta?: string
   homeHeroCtaHref?: string
+  homeWelcomeHeading?: string
+  homeWelcomeBody?: string[]
+  homeWelcomeImage?: SanityImageSource
   homeServicesEyebrow?: string
   homeServicesHeading?: string
   homeServices?: Array<{ name: string; description?: string; href?: string }>

@@ -43,6 +43,14 @@ async function main() {
     homeHeroCta: 'Book Free Consultation',
     homeHeroCtaHref: 'https://calendly.com/birthhood',
 
+    // ── Home — Welcome intro ───────────────────────────────────────
+    homeWelcomeHeading: 'Welcome to birth-hood',
+    homeWelcomeBody: [
+      'At birth-hood, I believe every family deserves to enter parenthood feeling informed, supported, connected, and confident. Through education, compassionate care, and community, I help people navigate pregnancy, birth, and beyond in a way that feels right for them.',
+      "From Doula support, Hypnobirthing, 3 Step Rewind Traumatic Birth resolution support, and Yoga you're covered (as featured on BBC Radio Leicester).",
+      'Based in Leicestershire and covering the Midlands (plus online).',
+    ],
+
     // ── Home — Services ────────────────────────────────────────────
     homeServicesEyebrow: 'What I offer',
     homeServicesHeading: 'Everything you need for a positive birth',

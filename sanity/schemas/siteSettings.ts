@@ -70,6 +70,31 @@ export default defineType({
       group: 'home',
     }),
 
+    // ── Home — Welcome intro (under the hero) ────────────────────────────────
+    defineField({
+      name: 'homeWelcomeHeading',
+      title: 'Welcome — Heading',
+      type: 'string',
+      description: 'e.g. "Welcome to birth-hood". The words "birth-hood" are shown in pink italics automatically.',
+      group: 'home',
+    }),
+    defineField({
+      name: 'homeWelcomeBody',
+      title: 'Welcome — Body paragraphs',
+      type: 'array',
+      of: [{ type: 'text', rows: 4 }],
+      description: 'One entry per paragraph.',
+      group: 'home',
+    }),
+    defineField({
+      name: 'homeWelcomeImage',
+      title: 'Welcome — Image (right side)',
+      type: 'image',
+      options: { hotspot: true },
+      description: 'Shown to the right of the welcome text. A cut-out photo (transparent background) works best.',
+      group: 'home',
+    }),
+
     // ── Home — Services section ──────────────────────────────────────────────
     defineField({ name: 'homeServicesEyebrow', title: 'Services — Eyebrow', type: 'string', group: 'homeServices' }),
     defineField({ name: 'homeServicesHeading', title: 'Services — Heading', type: 'string', group: 'homeServices' }),
