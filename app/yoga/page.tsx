@@ -196,7 +196,7 @@ function YogaPageStatic() {
                 </p>
               </div>
 
-              <div className="card">
+              <div className="card card-pink">
                 <div className="section-label" style={{ marginBottom: '0.8rem' }}>What&apos;s included</div>
                 <ul style={{ listStyle: 'none' }}>
                   {[
