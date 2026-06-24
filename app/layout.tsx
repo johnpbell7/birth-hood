@@ -39,6 +39,7 @@ const businessJsonLd = {
   url: SITE_URL,
   image: `${SITE_URL}/og-image.jpg`,
   email: 'hello@birth-hood.co.uk',
+  telephone: '+447814504865',
   priceRange: '££',
   address: {
     '@type': 'PostalAddress',

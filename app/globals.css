@@ -640,21 +640,6 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .section-pad { padding: 6rem 3rem; }
 .section-pad-sm { padding: 4rem 3rem; }
 
-/* /poppins-preview route only — force the whole homepage into Poppins
-   (overrides inline Playfair/Abril font-families; italics kept) */
-.poppins-preview, .poppins-preview * { font-family: 'Poppins', sans-serif !important; }
-/* Drop heading weights down — Poppins at 900 is too punchy */
-.poppins-preview h1, .poppins-preview h2,
-.poppins-preview .hero-title, .poppins-preview .services-title,
-.poppins-preview .about-heading, .poppins-preview .testimonials-title,
-.poppins-preview .freebies-heading, .poppins-preview .booking-heading,
-.poppins-preview .insta-heading, .poppins-preview .page-title,
-.poppins-preview .cta-band h2 { font-weight: 600 !important; }
-.poppins-preview h3, .poppins-preview .service-name,
-.poppins-preview .faq-q, .poppins-preview .section-label { font-weight: 500 !important; }
-.poppins-preview .hero-sub, .poppins-preview .intro-body,
-.poppins-preview .about-body, .poppins-preview p { font-weight: 300 !important; }
-
 /* WELCOME INTRO (under hero) — text left, image right (flush to pink below), white bg */
 .welcome-intro { display: grid; grid-template-columns: 1fr 0.95fr; gap: 2rem; align-items: end; max-width: 1280px; padding-left: 1.5rem; }
 .welcome-intro-text { text-align: left; align-self: start; padding: 0 0 2.25rem; }
