@@ -376,8 +376,8 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .hero-signature { display: block; font-family: 'Dancing Script', cursive; font-size: 2.6rem; line-height: 1; color: var(--black); margin: 0 0 2.25rem; }
 .hero-signature-img { display: block; width: 240px; max-width: 70%; height: auto; margin: 0.25rem 0 2.25rem; }
 @media (max-width: 960px) {
-  .hero-signature { font-size: 2.3rem; margin-bottom: 1.5rem; }
-  .hero-signature-img { width: 200px; margin-bottom: 1.5rem; }
+  .hero-signature { font-size: 2.3rem; margin-bottom: 0.5rem; }
+  .hero-signature-img { width: 200px; margin-bottom: 0.5rem; }
 }
 
 /* MOBILE FLOATING "BOOK" BUTTON */
@@ -696,7 +696,7 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .top-bar-insured { display: none; }
   .page-hero { padding: 3rem 1.5rem 3rem; }
   .page-hero-inner { grid-template-columns: 1fr; gap: 0; }
-  .page-hero-polaroids { display: block; position: relative; width: 100%; height: 230px; margin-top: 2.5rem; }
+  .page-hero-polaroids { display: block; position: relative; width: 100%; height: 230px; margin-top: 0.5rem; }
   .ph-frame-large { width: 165px; top: 10px; left: 6%; transform: rotate(-6deg); }
   .ph-frame-large .ph-img-area { aspect-ratio: 4/5; }
   .ph-frame-small { width: 150px; bottom: 5px; left: 40%; transform: rotate(6deg); }
@@ -711,7 +711,7 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
     background-position: center bottom, center bottom;
     opacity: 0.15;
   }
-  .home-hero-content { padding: 2.5rem 1.5rem 3rem; }
+  .home-hero-content { padding: 2.5rem 1.5rem 0; }
   .hero-photo-collage {
     display: block;
     position: relative;
