@@ -540,25 +540,23 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .services-title em { font-style: italic; color: var(--pink-deep); }
 .services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2.4rem; max-width: 1320px; margin: 0 auto; }
 /* ── SCALLOPED "STICKER" CARD — homepage service cards only ──
-   gradient-drawn scallop edge + offset pink drop-shadow.                           */
-.service-card {
+   gradient-drawn scallop edge with rounded corners + a real offset pink shadow
+   element (a drop-shadow filter leaves a pointed corner in Chrome).               */
+.service-cell { position: relative; display: flex; text-decoration: none; color: inherit; }
+.service-card, .scallop-shadow {
   --sr: 13px;
-  --face: #fff;
-  --sh: var(--pink);
+  border-radius: 26px;            /* rounds the colliding corner bumps into a clean arc */
   background:
     linear-gradient(var(--face),var(--face)) center/calc(100% - 2*var(--sr)) calc(100% - 2*var(--sr)) no-repeat,
     radial-gradient(circle var(--sr) at center,var(--face) 99%,#0000) top/calc(2*var(--sr)) calc(2*var(--sr)) repeat-x,
     radial-gradient(circle var(--sr) at center,var(--face) 99%,#0000) bottom/calc(2*var(--sr)) calc(2*var(--sr)) repeat-x,
     radial-gradient(circle var(--sr) at center,var(--face) 99%,#0000) left/calc(2*var(--sr)) calc(2*var(--sr)) repeat-y,
     radial-gradient(circle var(--sr) at center,var(--face) 99%,#0000) right/calc(2*var(--sr)) calc(2*var(--sr)) repeat-y;
-  filter: drop-shadow(6px 7px 0 var(--sh));
-  border: none !important;
-  border-radius: 26px !important;   /* clips the colliding corner bumps into a clean rounded arc */
-  box-shadow: none !important;
 }
-.service-cell { position: relative; display: block; text-decoration: none; color: inherit; }
-.service-card { position: relative; padding: 2.6rem 2.1rem 2.2rem; cursor: pointer; transition: transform 0.3s, filter 0.3s; }
+.scallop-shadow { position: absolute; inset: 0; --face: var(--pink); z-index: 0; transform: translate(6px, 7px); pointer-events: none; }
+.service-card { position: relative; z-index: 1; flex: 1; --face: #fff; padding: 2.6rem 2.1rem 2.2rem; cursor: pointer; transition: transform 0.3s; }
 .service-cell:hover .service-card { transform: translate(-1px, -3px); }
+.service-cell:hover .scallop-shadow { transform: translate(8px, 10px); }
 .service-num { font-family: 'Poppins', sans-serif; font-size: 5rem; color: var(--pink-pale); position: absolute; top: 0.8rem; right: 1.2rem; line-height: 1; pointer-events: none; }
 .service-icon { width: 44px; height: 44px; margin-bottom: 1.4rem; color: var(--pink-deep); }
 .service-name { font-family: 'Poppins', sans-serif; font-size: 1.35rem; font-weight: 500; margin-bottom: 0.8rem; line-height: 1.2; }
