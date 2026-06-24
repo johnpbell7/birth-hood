@@ -165,12 +165,13 @@ export default function HeroCollage({ photos: cmsPhotos }: { photos?: CollagePho
       <Sparkles
         className="collage-sparkles"
         items={[
-          { top: '6%',  left: '10%', size: 26, delay: 0,   dur: 3.2 },
-          { top: '20%', right: '8%', size: 18, delay: 0.9, dur: 2.6 },
-          { top: '52%', left: '2%',  size: 22, delay: 1.6, dur: 3.6 },
-          { bottom: '12%', right: '14%', size: 28, delay: 0.4, dur: 3 },
-          { bottom: '26%', left: '20%', size: 14, delay: 2.1, dur: 2.4, white: true },
-          { top: '38%', right: '24%', size: 12, delay: 1.2, dur: 2.8, white: true },
+          { top: '4%',  left: '6%',  size: 40, delay: 0,   dur: 3.2 },
+          { top: '16%', right: '4%', size: 28, delay: 0.9, dur: 2.6 },
+          { top: '50%', left: '-2%', size: 32, delay: 1.6, dur: 3.6 },
+          { bottom: '10%', right: '10%', size: 42, delay: 0.4, dur: 3 },
+          { bottom: '24%', left: '16%', size: 22, delay: 2.1, dur: 2.4, white: true },
+          { top: '36%', right: '20%', size: 20, delay: 1.2, dur: 2.8, white: true },
+          { top: '70%', right: '34%', size: 26, delay: 0.6, dur: 3.3, white: true },
         ]}
       />
     </div>

@@ -47,8 +47,10 @@ body::after {
   0%, 100% { opacity: .25; transform: scale(.55) rotate(0deg); }
   50%      { opacity: 1;   transform: scale(1.08) rotate(18deg); }
 }
-.decor-squiggle { position: absolute; pointer-events: none; color: var(--pink); opacity: .55;
+.decor-squiggle { position: absolute; pointer-events: none; color: var(--pink); opacity: .6;
   width: 120px; height: auto; }
+.decor-squiggle.light { color: #fff; opacity: .45; }       /* on pink backgrounds */
+.decor-squiggle.knock { color: var(--pink); opacity: .3; } /* knocked-back accent on white */
 .decor-squiggle path {
   stroke-dasharray: 620; stroke-dashoffset: 620;
   animation: decor-draw 3.2s ease-out forwards, decor-sway 8s ease-in-out 3.2s infinite;
@@ -59,17 +61,27 @@ body::after {
   50%      { transform: translateY(-7px) rotate(-2.5deg); }
 }
 @keyframes decor-drift {
-  0%, 100% { transform: translate(0, 0); }
-  50%      { transform: translate(8px, -12px); }
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(10px, -14px) rotate(4deg); }
 }
 .decor-float { animation: decor-drift 9s ease-in-out infinite; }
 /* placement layers */
 .collage-sparkles { z-index: 30; }
 .welcome-sparkles { z-index: 4; }
-.hero-decor { z-index: 0; }
+.hero-decor { z-index: 1; }
+.sec-decor { z-index: 1; }
+/* animated quotation marks on review cards */
+.review-card::before { animation: decor-quote 5s ease-in-out infinite; transform-origin: top left; }
+@keyframes decor-quote {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); opacity: .2; }
+  50%      { transform: translateY(-6px) rotate(-5deg) scale(1.14); opacity: .4; }
+}
+/* sections that host scattered sparkles need a positioning context */
+.services, .testimonials, .freebies, .insta-section { position: relative; }
 @media (prefers-reduced-motion: reduce) {
   .decor-sparkle, .decor-float { animation: none !important; opacity: .8; }
   .decor-squiggle path { animation: none !important; stroke-dashoffset: 0; }
+  .review-card::before { animation: none !important; }
 }
 
 /* TOP BAR */
