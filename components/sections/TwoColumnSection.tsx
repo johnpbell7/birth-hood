@@ -40,7 +40,7 @@ export default function TwoColumnSection({
         </h2>
       )}
       {body && (
-        <div className="prose" style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.85, fontWeight: 300 }}>
+        <div className="prose" style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.6, fontWeight: 300 }}>
           <PortableText value={body as never} />
         </div>
       )}
@@ -72,7 +72,7 @@ export default function TwoColumnSection({
         </div>
       )}
       {callout && (
-        <div style={{ background: 'var(--pink-ultra)', borderRadius: '4px', padding: '1.5rem', color: 'var(--black)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300 }}>
+        <div style={{ background: 'var(--pink-ultra)', borderRadius: '4px', padding: '1.5rem', color: 'var(--black)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300 }}>
           {callout}
         </div>
       )}

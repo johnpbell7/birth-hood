@@ -30,7 +30,7 @@ export default function FeatureGridSection({ eyebrow, heading, subheading, items
             </h2>
           )}
           {subheading && (
-            <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, maxWidth: '680px' }}>
+            <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, maxWidth: '680px' }}>
               {subheading}
             </p>
           )}

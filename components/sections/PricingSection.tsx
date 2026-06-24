@@ -31,7 +31,7 @@ export default function PricingSection({ eyebrow, heading, subheading, items, fo
           </h2>
         )}
         {subheading && (
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.9, fontWeight: 300, marginBottom: '3rem', maxWidth: '600px' }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '3rem', maxWidth: '600px' }}>
             {subheading}
           </p>
         )}

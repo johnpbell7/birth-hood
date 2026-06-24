@@ -18,22 +18,22 @@ const SLOT_FRACTIONS_DESKTOP: [number, number][] = [
 ]
 // MOBILE: only cards 0,1,2 shown. 0 = left-top, 1 = left-bottom, 2 = right (active home).
 const SLOT_FRACTIONS_MOBILE: [number, number][] = [
-  [-0.27, -0.25],  // left-top (small)
-  [-0.27,  0.25],  // left-bottom (small)
-  [ 0.20,  0   ],  // right (large/active home)
+  [-0.24, -0.27],  // left-top (small)
+  [-0.24,  0.27],  // left-bottom (small)
+  [ 0.15,  0   ],  // right (large/active home)
   [ 0,     0   ],  // unused (hidden)
   [ 0,     0   ],  // unused (hidden)
 ]
 // Where the active (large) card sits: centre on desktop, shifted right on mobile.
 const ACTIVE_POS_DESKTOP: [number, number] = [0, 0]
-const ACTIVE_POS_MOBILE:  [number, number] = [0.20, 0]
+const ACTIVE_POS_MOBILE:  [number, number] = [0.15, 0]
 
 const ACTIVE_SCALE          = 1.45  // front card prominent (desktop)
-const ACTIVE_SCALE_MOBILE   = 1.35  // big card on the right (mobile)
-const INACTIVE_SCALE_MOBILE = 0.8   // the two left cards are smaller
+const ACTIVE_SCALE_MOBILE   = 1.4   // big standout card on the right (mobile)
+const INACTIVE_SCALE_MOBILE = 0.62  // the two left cards are clearly smaller
 const ACTIVE_Z              = 20
 const CYCLE_MS              = 4500
-const MOBILE_BREAKPOINT     = 880
+const MOBILE_BREAKPOINT     = 960  // must match the collage CSS @media breakpoint
 const MOBILE_CARD_COUNT     = 3      // cycle through 3 images on mobile
 
 type CollagePhoto = { src: string; alt: string; label: string }
@@ -58,7 +58,9 @@ export default function HeroCollage({ photos: cmsPhotos }: { photos?: CollagePho
 
     const W = container.offsetWidth
     const H = container.offsetHeight
-    const isMobile = W < MOBILE_BREAKPOINT
+    // Decide mode by the SCREEN width, not the (fixed) container width.
+    const vw = typeof window !== 'undefined' ? window.innerWidth : W
+    const isMobile = vw < MOBILE_BREAKPOINT
 
     const slotFractions = isMobile ? SLOT_FRACTIONS_MOBILE : SLOT_FRACTIONS_DESKTOP
     activeScaleRef.current   = isMobile ? ACTIVE_SCALE_MOBILE : ACTIVE_SCALE

@@ -93,7 +93,7 @@ function DoulaPageStatic() {
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.2 }}>
                 Birth Doula
               </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem' }}>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '1.5rem' }}>
                 Continuous in-person support from early labour through to after your baby arrives.
                 Pre-birth antenatal meetings, birth plan help, and a postnatal debrief.
               </p>
@@ -116,7 +116,7 @@ function DoulaPageStatic() {
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.2 }}>
                 Virtual Doula
               </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem' }}>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '1.5rem' }}>
                 Full doula support delivered entirely online — perfect for those outside NW Leicestershire, expats,
                 or anyone who prefers remote sessions.
               </p>
@@ -139,7 +139,7 @@ function DoulaPageStatic() {
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.2 }}>
                 Postnatal Support
               </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem' }}>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '1.5rem' }}>
                 Support in the fourth trimester — the weeks after birth when you&apos;re adjusting to
                 parenthood. Practical help, emotional support and a listening ear.
               </p>

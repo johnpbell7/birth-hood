@@ -22,7 +22,7 @@ export default function LinkListSection({ heading, intro, links = [] }: Props) {
           </h2>
         )}
         {intro && (
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2rem', textAlign: 'center' }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '2rem', textAlign: 'center' }}>
             {intro}
           </p>
         )}

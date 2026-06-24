@@ -96,7 +96,7 @@ export default async function FreebiesPage() {
       {/* INTRO */}
       <section style={{ background: 'var(--pink-ultra)', padding: '3rem' }}>
         <div className="wrap" style={{ textAlign: 'center', maxWidth: '680px' }}>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.9, fontWeight: 300 }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.6, fontWeight: 300 }}>
             Find some printable affirmations (colouring AND ready made birth-hood ones), FREE Hypnobirthing MP3,
             positive birth videos and a complimentary birth plan guide (For your A, B & C!) Plus a BONUS Newborn
             Checklist! Plus an ELLE TENS machine discount code!
@@ -165,7 +165,7 @@ export default async function FreebiesPage() {
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.6rem, 2.5vw, 2rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.2 }}>
               Positive <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>Birth Videos</em>
             </h2>
-            <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.8, fontWeight: 300, maxWidth: '580px', marginBottom: '1.5rem' }}>
+            <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.6, fontWeight: 300, maxWidth: '580px', marginBottom: '1.5rem' }}>
               Watching positive birth videos is one of the most powerful things you can do during pregnancy.
               A curated collection of real, positive birth stories is available on YouTube — search
               {' '}&ldquo;birth-hood positive birth videos&rdquo; or visit the birth-hood YouTube channel.
@@ -182,7 +182,7 @@ export default async function FreebiesPage() {
 
           {/* Note */}
           <div className="card card-pink" style={{ marginTop: '3rem', textAlign: 'center', padding: '2rem' }}>
-            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300 }}>
+            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300 }}>
               All PDFs open in a new tab and can be downloaded, printed or saved to your device.
               Audio files will download directly. If you have any trouble accessing these resources,
               please{' '}

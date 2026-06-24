@@ -41,7 +41,7 @@ export default function FaqSection({ eyebrow, heading, items = [] }: Props) {
                   <span style={{ color: 'var(--pink-deep)', fontSize: '1.4rem', flexShrink: 0 }}>{isOpen ? '−' : '+'}</span>
                 </button>
                 {isOpen && item.answer && (
-                  <div style={{ padding: '0 1.4rem 1.4rem', color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.8, fontWeight: 300 }}>
+                  <div style={{ padding: '0 1.4rem 1.4rem', color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.6, fontWeight: 300 }}>
                     <PortableText value={item.answer as never} />
                   </div>
                 )}

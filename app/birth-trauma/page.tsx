@@ -93,7 +93,7 @@ function BirthTraumaPageStatic() {
             <div>
               <div className="card card-pink" style={{ marginBottom: '1.5rem' }}>
                 <div className="section-label" style={{ marginBottom: '1rem' }}>Important note</div>
-                <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300 }}>
+                <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300 }}>
                   I am not a therapist or mental health professional. My support is
                   trauma-informed and compassionate, but I am not a replacement for specialist
                   psychological care. Where appropriate, I will always refer you to the right
@@ -103,7 +103,7 @@ function BirthTraumaPageStatic() {
 
               <div className="card" style={{ marginBottom: '1.5rem' }}>
                 <div className="section-label" style={{ marginBottom: '1rem' }}>It&apos;s never too late</div>
-                <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300 }}>
+                <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300 }}>
                   You may be processing a birth that happened recently — or one that was years ago.
                   Birth trauma does not have a time limit. Whether your baby is six weeks or six
                   years old, your experience is valid and deserves to be heard.
@@ -135,7 +135,7 @@ function BirthTraumaPageStatic() {
             The 3 Step <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>Rewind</em>
           </h2>
 
-          <p style={{ color: 'var(--grey-mid)', fontSize: '1rem', lineHeight: 1.8, fontWeight: 300, maxWidth: '700px', marginBottom: '3rem' }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '1rem', lineHeight: 1.6, fontWeight: 300, maxWidth: '700px', marginBottom: '3rem' }}>
             If this is something you&apos;d like to explore — please contact me for a complimentary
             consultation. Here we can discuss if this is the right option for you, or if I need to
             signpost you elsewhere.
@@ -147,7 +147,7 @@ function BirthTraumaPageStatic() {
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
                 Understanding &amp; Relaxation
               </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
                 I will ask you some questions about the event and gain an understanding of how it is
                 affecting your life now. We will explore your experience through telling it, and
                 establish how it is affecting your life now. Together we will build a picture of what
@@ -162,7 +162,7 @@ function BirthTraumaPageStatic() {
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
                 The Rewind Process
               </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
                 We will do the rewind process. I will ease you into a state of relaxation before
                 guiding you through remembering the event in a specific way. You will be able to
                 remain calm and feeling completely safe and secure throughout.
@@ -174,7 +174,7 @@ function BirthTraumaPageStatic() {
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
                 Reflection &amp; Moving Forward
               </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
                 I will check in with how you have been since session 2 and giving you the opportunity
                 to describe any changes that have taken place. We will then focus on visualising the
                 future and building your confidence in moving forward.
@@ -233,7 +233,7 @@ function BirthTraumaPageStatic() {
           </div>
 
           <div className="card card-pink" style={{ marginTop: '2rem' }}>
-            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300 }}>
+            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300 }}>
               If you are in crisis, please contact your GP, midwife, health visitor, or call the
               Samaritans on <strong style={{ color: 'var(--black)' }}>116 123</strong> (free, 24/7).
             </p>

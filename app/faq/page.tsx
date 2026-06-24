@@ -179,7 +179,7 @@ function FaqPageStatic() {
             <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.4rem', fontWeight: 500, marginBottom: '0.8rem' }}>
               Still have questions?
             </h3>
-            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '1.5rem', maxWidth: '450px', margin: '0 auto 1.5rem' }}>
+            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '1.5rem', maxWidth: '450px', margin: '0 auto 1.5rem' }}>
               Book a free 30-minute consultation and ask me anything. No obligation, no pressure —
               just a friendly chat.
             </p>

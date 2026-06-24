@@ -116,7 +116,7 @@ function YogaPageStatic() {
 
               <div className="card card-pink" style={{ marginTop: '2rem' }}>
                 <div className="section-label" style={{ marginBottom: '0.8rem' }}>Qualified &amp; trained</div>
-                <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
+                <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
                   85hr Pregnancy/Postnatal Yoga teaching — Sally Parkes 2022. I&apos;m trained in
                   evidence-based approaches to prenatal and postnatal yoga, and I&apos;ll safely
                   support you at every stage.
@@ -163,7 +163,7 @@ function YogaPageStatic() {
             <div>
               <div className="card card-pink" style={{ marginBottom: '1.5rem' }}>
                 <div className="section-label" style={{ marginBottom: '0.8rem' }}>When can I start?</div>
-                <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
+                <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
                   This is suitable for babies who are not yet mobile, and parents who are{' '}
                   <strong style={{ color: 'var(--black)' }}>6 weeks postpartum</strong> (vaginal birth) and{' '}
                   <strong style={{ color: 'var(--black)' }}>12 weeks postpartum</strong> for caesarean or
@@ -213,7 +213,7 @@ function YogaPageStatic() {
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.1 }}>
             Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>yoga experience</em>
           </h2>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.9, fontWeight: 300, marginBottom: '3rem', maxWidth: '600px' }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '3rem', maxWidth: '600px' }}>
             Course cost varies depending on the length of the course. Every class includes use of all equipment.
           </p>
 
@@ -328,7 +328,7 @@ function YogaPageStatic() {
 
               <div className="card card-pink" style={{ marginTop: '1.5rem' }}>
                 <div className="section-label" style={{ marginBottom: '0.8rem' }}>When can I start?</div>
-                <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
+                <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
                   This class is suitable from <strong style={{ color: 'var(--black)' }}>6 weeks postpartum</strong> (vaginal birth) and{' '}
                   <strong style={{ color: 'var(--black)' }}>12 weeks postpartum</strong> for caesarean or instrumental birth / 3rd or 4th degree tears.
                 </p>
@@ -359,7 +359,7 @@ function YogaPageStatic() {
               <div className="card" style={{ marginTop: '2rem' }}>
                 <div className="section-label" style={{ marginBottom: '0.8rem' }}>PAYG pricing</div>
                 <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 600, color: 'var(--black)', marginBottom: '0.2rem' }}>£10</p>
-                <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.8, fontWeight: 300 }}>
+                <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
                   Per class — drop-in welcome. Course cost varies depending on the length of the course.
                 </p>
                 <a

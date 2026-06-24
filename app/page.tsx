@@ -130,6 +130,11 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
     ? urlFor(s.homeWelcomeImage).width(1100).url()
     : '/images/leanne-speaking.jpg'
 
+  // Optional handwritten signature graphic (falls back to the script-font text)
+  const signatureImage = s.homeSignatureImage
+    ? urlFor(s.homeSignatureImage).width(480).url()
+    : null
+
   // Hero collage — per-slot CMS image/label/alt, falling back to the defaults
   const collagePhotos = DEFAULT_PHOTOS.map((def, i) => {
     const cms = s.homeHeroCollage?.[i]
@@ -199,6 +204,11 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
             )}
           </h1>
           <p className="hero-sub">{heroSubtitle}</p>
+          {signatureImage ? (
+            <img src={signatureImage} alt="With Leanne" className="hero-signature-img" />
+          ) : (
+            <span className="hero-signature">with Leanne x</span>
+          )}
           <div className="hero-actions">
             <a
               href={heroCtaHref}
@@ -235,13 +245,8 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
             {welcomeBody.map((para, i) => (
               <p
                 key={i}
-                style={{
-                  color: 'var(--grey-mid)',
-                  fontSize: '1.02rem',
-                  lineHeight: 1.9,
-                  fontWeight: 300,
-                  marginBottom: i === welcomeBody.length - 1 ? 0 : '1.1rem',
-                }}
+                className="welcome-intro-body"
+                style={{ marginBottom: i === welcomeBody.length - 1 ? 0 : '1.1rem' }}
               >
                 {para}
               </p>
@@ -409,7 +414,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
             Completely free
           </div>
           <h2 className="freebies-heading">{freebiesHeading}</h2>
-          <p style={{ color: 'rgba(0,0,0,0.6)', marginBottom: '2rem', fontWeight: 300, lineHeight: 1.8 }}>
+          <p style={{ color: 'rgba(0,0,0,0.6)', marginBottom: '2rem', fontWeight: 300, lineHeight: 1.6 }}>
             {freebiesBody}
           </p>
           <div className="freebies-items">

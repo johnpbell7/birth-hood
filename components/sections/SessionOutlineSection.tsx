@@ -23,7 +23,7 @@ export default function SessionOutlineSection({ heading, intro, sessions = [], n
           </h2>
         )}
         {intro && (
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, marginBottom: '2.5rem' }}>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '2.5rem' }}>
             {intro}
           </p>
         )}

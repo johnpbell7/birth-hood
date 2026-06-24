@@ -174,6 +174,7 @@ export type SiteSettings = {
   homeHeroSubtitle?: string
   homeHeroCta?: string
   homeHeroCtaHref?: string
+  homeSignatureImage?: SanityImageSource
   homeHeroCollage?: Array<{ image?: SanityImageSource; label?: string; alt?: string }>
   homeWelcomeHeading?: string
   homeWelcomeBody?: string[]
