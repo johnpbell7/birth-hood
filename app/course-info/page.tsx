@@ -49,7 +49,7 @@ function CourseInfoPageStatic() {
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                 padding: '1.5rem 2rem', flexWrap: 'wrap', gap: '1rem',
                 background: course.featured ? 'var(--pink-ultra)' : 'var(--white)',
-                border: course.featured ? '1px solid rgba(232,123,195,0.4)' : '1px solid rgba(0,0,0,0.07)',
+                border: course.featured ? '1px solid rgba(254,127,204,0.4)' : '1px solid rgba(0,0,0,0.07)',
                 borderRadius: '3px',
               }}>
                 <div>

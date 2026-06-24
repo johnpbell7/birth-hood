@@ -467,7 +467,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
                           width: '42px',
                           height: '42px',
                           background: 'var(--pink-ultra)',
-                          border: '1px solid rgba(232,123,195,0.3)',
+                          border: '1px solid rgba(254,127,204,0.3)',
                           borderRadius: '3px',
                           display: 'flex',
                           alignItems: 'center',
@@ -562,7 +562,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
             ))}
           </div>
 
-          <div style={{ marginTop: '2rem', padding: '1rem 1.5rem', background: 'var(--white)', border: '1px dashed rgba(232,123,195,0.5)', borderRadius: '3px' }}>
+          <div style={{ marginTop: '2rem', padding: '1rem 1.5rem', background: 'var(--white)', border: '1px dashed rgba(254,127,204,0.5)', borderRadius: '3px' }}>
             <p style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.7, margin: 0 }}>
               <strong style={{ color: 'var(--black)' }}>Tip:</strong> Upload MP3 files to the project (or a hosting service) and set each track&apos;s <code>src</code> in <code>app/hub/HubClient.tsx</code> to enable the players.
             </p>
@@ -634,7 +634,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
             ))}
           </div>
 
-          <div style={{ marginTop: '2rem', padding: '1rem 1.5rem', background: 'var(--pink-ultra)', border: '1px dashed rgba(232,123,195,0.5)', borderRadius: '3px' }}>
+          <div style={{ marginTop: '2rem', padding: '1rem 1.5rem', background: 'var(--pink-ultra)', border: '1px dashed rgba(254,127,204,0.5)', borderRadius: '3px' }}>
             <p style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.7, margin: 0 }}>
               <strong style={{ color: 'var(--black)' }}>Tip:</strong> Upload video files or add a YouTube/Vimeo embed URL as the video <code>src</code> in <code>app/hub/HubClient.tsx</code>.
             </p>
@@ -709,7 +709,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
           </div>
 
           {/* Padlet feature */}
-          <div style={{ marginTop: '2rem', padding: '2rem', background: 'linear-gradient(135deg, rgba(232,123,195,0.12), rgba(232,123,195,0.04))', border: '1px solid rgba(232,123,195,0.3)', borderRadius: '3px' }}>
+          <div style={{ marginTop: '2rem', padding: '2rem', background: 'linear-gradient(135deg, rgba(254,127,204,0.12), rgba(254,127,204,0.04))', border: '1px solid rgba(254,127,204,0.3)', borderRadius: '3px' }}>
             <div style={{ fontSize: '0.68rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pink)', marginBottom: '0.6rem' }}>
               Featured board
             </div>

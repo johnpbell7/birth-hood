@@ -112,7 +112,7 @@ function ContactPageStatic() {
                 </div>
               </div>
 
-              <div style={{ background: 'var(--pink-ultra)', padding: '2rem', borderRadius: '3px', border: '1px solid rgba(232,123,195,0.3)' }}>
+              <div style={{ background: 'var(--pink-ultra)', padding: '2rem', borderRadius: '3px', border: '1px solid rgba(254,127,204,0.3)' }}>
                 <div className="section-label">Or book directly</div>
                 <p style={{ fontSize: '0.9rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.7, marginBottom: '1.2rem' }}>
                   Skip the form and book a free consultation call straight into my diary.
