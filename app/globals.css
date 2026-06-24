@@ -370,7 +370,7 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .hero-eyebrow::before { display: none; }
 .hero-title { font-family: 'Poppins', sans-serif; font-size: clamp(3.2rem,5.5vw,5rem); line-height: 1.0; color: var(--black); font-weight: 600; margin-bottom: 1.2rem; }
 .hero-title em { font-style: italic; color: var(--white); }
-.hero-sub { font-size: 0.98rem; color: rgba(0,0,0,0.78); line-height: 1.6; max-width: 380px; margin-bottom: 1.5rem; font-weight: 400; }
+.hero-sub { font-size: 0.98rem; color: rgba(0,0,0,0.78); line-height: 1.6; max-width: 380px; margin-bottom: 1.5rem; font-weight: 300; }
 
 /* HERO SIGNATURE (under the body copy) */
 .hero-signature { display: block; font-family: 'Dancing Script', cursive; font-size: 2.6rem; line-height: 1; color: var(--black); margin: 0 0 2.25rem; }
