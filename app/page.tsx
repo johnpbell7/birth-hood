@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import HeroCollage from '@/components/HeroCollage'
+import { Sparkles, Squiggle } from '@/components/Decor'
 import { DEFAULT_PHOTOS } from '@/lib/hero-photos'
 import InstagramSection from '@/components/InstagramSection'
 import { cmsOrStatic } from '@/lib/cms-page'
@@ -202,6 +203,9 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
 
       {/* HOME HERO */}
       <section className="home-hero-split">
+        {/* drifting squiggle accents behind the hero */}
+        <Squiggle className="hero-decor decor-float" style={{ top: '14%', right: '6%', width: '150px' }} />
+        <Squiggle variant="loop" className="hero-decor decor-float" style={{ bottom: '8%', left: '4%', width: '130px', opacity: 0.4, animationDelay: '1.5s' }} />
         <div className="home-hero-content">
           <h1 className="hero-title">
             {heroHeadline.includes(',') ? (
@@ -269,6 +273,17 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
               fill
               sizes="(max-width: 820px) 100vw, 40vw"
               style={{ objectFit: 'contain', objectPosition: 'bottom' }}
+            />
+            {/* stars twinkling over Leanne */}
+            <Sparkles
+              className="welcome-sparkles"
+              items={[
+                { top: '4%', left: '6%', size: 26, delay: 0.2, dur: 3 },
+                { top: '16%', right: '10%', size: 18, delay: 1.1, dur: 2.6 },
+                { top: '40%', left: '-2%', size: 16, delay: 1.8, dur: 3.4 },
+                { bottom: '20%', right: '4%', size: 22, delay: 0.6, dur: 2.9 },
+                { top: '30%', right: '26%', size: 12, delay: 2.2, dur: 2.3, white: true },
+              ]}
             />
           </div>
         </div>

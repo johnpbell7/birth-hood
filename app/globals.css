@@ -34,6 +34,44 @@ body::after {
   pointer-events: none; z-index: 9999;
 }
 
+/* ─────────────── DECORATIVE ANIMATED OVERLAYS (homepage flair) ─────────────── */
+.decor-layer { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
+.decor-sparkle {
+  position: absolute; color: var(--pink); transform-origin: center;
+  animation: decor-twinkle 3s ease-in-out infinite; will-change: transform, opacity;
+}
+.decor-sparkle.white { color: #fff; }
+.decor-sparkle svg { display: block; width: 100%; height: 100%;
+  filter: drop-shadow(0 1px 3px rgba(232,92,174,0.35)); }
+@keyframes decor-twinkle {
+  0%, 100% { opacity: .25; transform: scale(.55) rotate(0deg); }
+  50%      { opacity: 1;   transform: scale(1.08) rotate(18deg); }
+}
+.decor-squiggle { position: absolute; pointer-events: none; color: var(--pink); opacity: .55;
+  width: 120px; height: auto; }
+.decor-squiggle path {
+  stroke-dasharray: 620; stroke-dashoffset: 620;
+  animation: decor-draw 3.2s ease-out forwards, decor-sway 8s ease-in-out 3.2s infinite;
+}
+@keyframes decor-draw { to { stroke-dashoffset: 0; } }
+@keyframes decor-sway {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-7px) rotate(-2.5deg); }
+}
+@keyframes decor-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(8px, -12px); }
+}
+.decor-float { animation: decor-drift 9s ease-in-out infinite; }
+/* placement layers */
+.collage-sparkles { z-index: 30; }
+.welcome-sparkles { z-index: 4; }
+.hero-decor { z-index: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .decor-sparkle, .decor-float { animation: none !important; opacity: .8; }
+  .decor-squiggle path { animation: none !important; stroke-dashoffset: 0; }
+}
+
 /* TOP BAR */
 .top-bar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 201;
