@@ -18,18 +18,18 @@ const photos = [
 // Pentagon slot positions as fractions of container size, offset from centre.
 // Desktop uses wider spread; mobile uses tighter fractions so cards stay within the container.
 const SLOT_FRACTIONS_DESKTOP: [number, number][] = [
-  [-0.42, -0.30],  // top-left
-  [ 0.42, -0.32],  // top-right
+  [-0.56, -0.36],  // top-left
+  [ 0.56, -0.38],  // top-right
   [ 0,     0   ],  // centre — starting active slot
-  [-0.42,  0.32],  // bottom-left
-  [ 0.42,  0.30],  // bottom-right
+  [-0.56,  0.38],  // bottom-left
+  [ 0.56,  0.36],  // bottom-right
 ]
 const SLOT_FRACTIONS_MOBILE: [number, number][] = [
-  [-0.28, -0.25],  // top-left
-  [ 0.28, -0.27],  // top-right
+  [-0.33, -0.28],  // top-left
+  [ 0.33, -0.30],  // top-right
   [ 0,     0   ],  // centre
-  [-0.28,  0.27],  // bottom-left
-  [ 0.28,  0.25],  // bottom-right
+  [-0.33,  0.30],  // bottom-left
+  [ 0.33,  0.28],  // bottom-right
 ]
 
 const ACTIVE_SCALE         = 1.38  // front card smaller so the spread-out cards underneath show
