@@ -203,9 +203,19 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
 
       {/* HOME HERO */}
       <section className="home-hero-split">
-        {/* drifting squiggle accents behind the hero */}
-        <Squiggle className="hero-decor decor-float" style={{ top: '14%', right: '6%', width: '150px' }} />
-        <Squiggle variant="loop" className="hero-decor decor-float" style={{ bottom: '8%', left: '4%', width: '130px', opacity: 0.4, animationDelay: '1.5s' }} />
+        {/* drifting squiggle accents behind the hero (white on pink) */}
+        <Squiggle className="hero-decor light decor-float" style={{ top: '12%', right: '5%', width: '210px' }} />
+        <Squiggle variant="loop" className="hero-decor light decor-float" style={{ bottom: '7%', left: '3%', width: '190px', animationDelay: '1.5s' }} />
+        <Squiggle className="hero-decor light decor-float" style={{ top: '54%', left: '32%', width: '150px', opacity: 0.3, animationDelay: '0.7s' }} />
+        {/* extra stars scattered across the hero */}
+        <Sparkles
+          className="hero-decor"
+          items={[
+            { top: '10%', left: '46%', size: 30, delay: 0.3, dur: 3.1, white: true },
+            { bottom: '16%', left: '40%', size: 20, delay: 1.4, dur: 2.7, white: true },
+            { top: '70%', right: '40%', size: 24, delay: 0.8, dur: 3.4, white: true },
+          ]}
+        />
         <div className="home-hero-content">
           <h1 className="hero-title">
             {heroHeadline.includes(',') ? (
@@ -244,8 +254,11 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
       {/* WELCOME INTRO */}
       <section className="section-pad" style={{ paddingTop: '3.25rem', paddingBottom: 0 }}>
         <div className="wrap welcome-intro">
-          <div className="welcome-intro-text">
-            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 600, lineHeight: 1.15, marginBottom: '1.6rem' }}>
+          <div className="welcome-intro-text" style={{ position: 'relative' }}>
+            {/* knocked-back pink squiggles behind the heading */}
+            <Squiggle className="knock decor-float" style={{ top: '-1.4rem', left: '-0.5rem', width: '190px', zIndex: 0 }} />
+            <Squiggle variant="loop" className="knock decor-float" style={{ top: '1.2rem', right: '0', width: '120px', zIndex: 0, animationDelay: '1s' }} />
+            <h2 style={{ position: 'relative', zIndex: 1, fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 600, lineHeight: 1.15, marginBottom: '1.6rem' }}>
               {welcomeHeading.includes('birth-hood') ? (
                 <>
                   {welcomeHeading.split('birth-hood')[0]}
@@ -278,11 +291,12 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
             <Sparkles
               className="welcome-sparkles"
               items={[
-                { top: '4%', left: '6%', size: 26, delay: 0.2, dur: 3 },
-                { top: '16%', right: '10%', size: 18, delay: 1.1, dur: 2.6 },
-                { top: '40%', left: '-2%', size: 16, delay: 1.8, dur: 3.4 },
-                { bottom: '20%', right: '4%', size: 22, delay: 0.6, dur: 2.9 },
-                { top: '30%', right: '26%', size: 12, delay: 2.2, dur: 2.3, white: true },
+                { top: '2%', left: '4%', size: 40, delay: 0.2, dur: 3 },
+                { top: '14%', right: '8%', size: 28, delay: 1.1, dur: 2.6 },
+                { top: '38%', left: '-3%', size: 24, delay: 1.8, dur: 3.4 },
+                { bottom: '16%', right: '2%', size: 34, delay: 0.6, dur: 2.9 },
+                { top: '28%', right: '22%', size: 18, delay: 2.2, dur: 2.3, white: true },
+                { bottom: '34%', left: '10%', size: 16, delay: 1.5, dur: 2.8, white: true },
               ]}
             />
           </div>
@@ -291,6 +305,15 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
 
       {/* SERVICES */}
       <section id="services" className="services">
+        <Sparkles
+          className="sec-decor"
+          items={[
+            { top: '8%', right: '6%', size: 30, delay: 0.2, dur: 3.1 },
+            { top: '40%', left: '3%', size: 22, delay: 1.2, dur: 2.6 },
+            { bottom: '10%', right: '12%', size: 26, delay: 0.7, dur: 3.4 },
+            { bottom: '22%', left: '8%', size: 16, delay: 1.9, dur: 2.4 },
+          ]}
+        />
         <div className="services-header">
           <div className="section-label">{servicesEyebrow}</div>
           <h2 className="services-title">
@@ -391,6 +414,16 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
 
       {/* TESTIMONIALS */}
       <section className="testimonials">
+        <Sparkles
+          className="sec-decor"
+          items={[
+            { top: '7%', right: '8%', size: 34, delay: 0.3, dur: 3 },
+            { top: '46%', left: '4%', size: 24, delay: 1.3, dur: 2.7, white: true },
+            { bottom: '12%', right: '6%', size: 28, delay: 0.8, dur: 3.3 },
+            { top: '24%', left: '46%', size: 16, delay: 2, dur: 2.5, white: true },
+          ]}
+        />
+        <Squiggle className="sec-decor light decor-float" style={{ top: '10%', left: '6%', width: '170px', opacity: 0.25 }} />
         <div className="testimonials-header">
           <div>
             <div className="section-label light">{testimonialsEyebrow}</div>
@@ -434,6 +467,16 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
 
       {/* FREE RESOURCES TEASER */}
       <section className="freebies">
+        <Sparkles
+          className="sec-decor"
+          items={[
+            { top: '14%', left: '8%', size: 30, delay: 0.4, dur: 3.1, white: true },
+            { top: '20%', right: '10%', size: 24, delay: 1.4, dur: 2.7, white: true },
+            { bottom: '16%', left: '14%', size: 20, delay: 0.9, dur: 3.4, white: true },
+            { bottom: '22%', right: '12%', size: 28, delay: 1.8, dur: 2.5, white: true },
+          ]}
+        />
+        <Squiggle className="sec-decor light decor-float" style={{ bottom: '8%', left: '4%', width: '160px' }} />
         <div className="freebies-inner">
           <div className="section-label" style={{ justifyContent: 'center' }}>
             Completely free
