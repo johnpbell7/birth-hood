@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import HeroCollage from '@/components/HeroCollage'
+import IntroAnimation from '@/components/IntroAnimation'
 import { Sparkles } from '@/components/Decor'
 import { DEFAULT_PHOTOS } from '@/lib/hero-photos'
 import InstagramSection from '@/components/InstagramSection'
@@ -191,6 +192,9 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
 
   return (
     <>
+      {/* First-visit brand intro animation */}
+      <IntroAnimation />
+
       {/* Mobile floating CTA — mirrors the hero button */}
       <a
         href={heroCtaHref}
