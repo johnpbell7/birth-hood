@@ -34,22 +34,6 @@ body::after {
   pointer-events: none; z-index: 9999;
 }
 
-/* ─────────────── INTRO ANIMATION (first visit per session) ─────────────── */
-.intro-overlay {
-  position: fixed; inset: 0; z-index: 99999;
-  background: #fff;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 1.7rem; overflow: hidden;
-}
-.intro-logo { height: 132px; width: auto; }
-.intro-line {
-  font-family: 'Poppins', sans-serif; font-weight: 600;
-  font-size: clamp(1.7rem, 5.5vw, 2.9rem); color: var(--black); letter-spacing: -0.01em;
-}
-.intro-line em { font-style: italic; color: var(--pink-deep); }
-.intro-star { position: absolute; color: var(--pink); }
-.intro-star svg { width: 100%; height: 100%; filter: drop-shadow(0 1px 4px rgba(232,92,174,0.4)); }
-
 /* ─────────────── DECORATIVE ANIMATED OVERLAYS (homepage flair) ─────────────── */
 .decor-layer { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
 .decor-sparkle {

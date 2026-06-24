@@ -11,10 +11,11 @@ const routes = [
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date()
+  // lastModified is intentionally omitted for these static pages: stamping every
+  // route with the build date marks the whole site "modified today" on each
+  // deploy, which is misleading. Google falls back to its own crawl signals.
   return routes.map((r) => ({
     url: `${SITE_URL}${r ? `/${r}` : ''}`,
-    lastModified: now,
     changeFrequency: 'monthly',
     priority: r === '' ? 1 : 0.7,
   }))
