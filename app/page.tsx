@@ -217,7 +217,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
       <MarqueeStrip dark />
 
       {/* WELCOME INTRO */}
-      <section className="section-pad" style={{ paddingBottom: 0 }}>
+      <section className="section-pad" style={{ paddingTop: '2.25rem', paddingBottom: 0 }}>
         <div className="wrap welcome-intro">
           <div className="welcome-intro-text">
             <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 900, lineHeight: 1.15, marginBottom: '1.6rem' }}>
