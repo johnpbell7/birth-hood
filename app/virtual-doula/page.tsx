@@ -108,7 +108,7 @@ function VirtualDoulaPageStatic() {
               </ul>
             </div>
 
-            <div className="card card-pink">
+            <div className="card">
               <div className="section-label" style={{ marginBottom: '1rem' }}>During & after birth</div>
               <ul style={{ listStyle: 'none' }}>
                 {[

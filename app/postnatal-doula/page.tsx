@@ -107,7 +107,7 @@ function PostnatalDoulaPageStatic() {
               </ul>
             </div>
 
-            <div className="card card-pink">
+            <div className="card">
               <div className="section-label" style={{ marginBottom: '1rem' }}>Emotional & feeding support</div>
               <ul style={{ listStyle: 'none' }}>
                 {[
