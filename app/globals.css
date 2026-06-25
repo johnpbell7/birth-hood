@@ -592,7 +592,7 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .testimonials.has-dots::before {
   content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background-image: url('/images/dots-white.png');
-  background-size: 340px auto;
+  background-size: 620px auto;
   background-repeat: repeat;
   -webkit-mask-image: linear-gradient(to top, #000 6%, transparent 72%);
   mask-image: linear-gradient(to top, #000 6%, transparent 72%);
