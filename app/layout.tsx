@@ -3,6 +3,7 @@ import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ScrollRevealInit from '@/components/ScrollRevealInit'
+import { getNavigation } from '@/lib/sanity-queries'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.birth-hood.co.uk'
 
@@ -62,7 +63,9 @@ const businessJsonLd = {
   ],
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // CMS-managed main menu (falls back to the built-in default inside Nav)
+  const navItems = await getNavigation()
   return (
     <html lang="en">
       <head>
@@ -78,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
         />
-        <Nav />
+        <Nav items={navItems} />
         <ScrollRevealInit />
         <main className="site-main">
           {children}

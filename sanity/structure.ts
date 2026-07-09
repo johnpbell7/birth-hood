@@ -20,6 +20,14 @@ export const structure: StructureResolver = (S) =>
         .child(S.documentTypeList('blogPost').title('Blog Posts')),
       S.divider(),
       S.listItem()
+        .title('Navigation (main menu)')
+        .child(
+          S.editor()
+            .id('navigation')
+            .schemaType('navigation')
+            .documentId('navigation'),
+        ),
+      S.listItem()
         .title('Site Settings')
         .child(
           S.editor()

@@ -1,5 +1,6 @@
 import { client } from './sanity'
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import type { NavItem } from '@/lib/nav'
 
 const PAGE_FIELDS = `
   _id,
@@ -217,4 +218,20 @@ export async function getSiteSettings(): Promise<SiteSettings | null> {
       { next: { revalidate: 60 } },
     )
   } catch (e) { console.error('Sanity getSiteSettings failed:', e); return null }
+}
+
+// ── Navigation (main menu) ─────────────────────────────────────────────────
+// Returns the CMS-managed menu, or null when unset/empty/unreachable —
+// callers fall back to DEFAULT_NAV.
+export async function getNavigation(): Promise<NavItem[] | null> {
+  if (!client) return null
+  try {
+    const doc = await client.fetch(
+      `*[_type == "navigation"][0]{ items[]{ label, href, children[]{ label, href } } }`,
+      {},
+      { next: { revalidate: 60 } },
+    )
+    const items = doc?.items?.filter((i: NavItem) => i?.label)
+    return items?.length ? items : null
+  } catch (e) { console.error('Sanity getNavigation failed:', e); return null }
 }

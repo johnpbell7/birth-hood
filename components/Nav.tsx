@@ -4,8 +4,12 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { DEFAULT_NAV, type NavItem } from '@/lib/nav'
 
-export default function Nav() {
+// Renders the main menu from data — either the CMS-managed menu passed in by
+// the layout, or the built-in DEFAULT_NAV.
+export default function Nav({ items }: { items?: NavItem[] | null }) {
+  const nav = items?.length ? items : DEFAULT_NAV
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [hidden, setHidden] = useState(false)
@@ -75,40 +79,20 @@ export default function Nav() {
         </Link>
 
         <ul className="nav-links">
-          <li><Link href="/meet-leanne">Meet Leanne</Link></li>
-          <li className="nav-dropdown">
-            <Link href="/doula">Doula ▾</Link>
-            <ul className="nav-drop-menu">
-              <li><Link href="/doula">All Doula Services</Link></li>
-              <li><Link href="/birth-doula">Birth Doula</Link></li>
-              <li><Link href="/virtual-doula">Virtual Doula</Link></li>
-              <li><Link href="/postnatal-doula">Postnatal Doula</Link></li>
-              <li><Link href="/overnight-doula">Overnight Doula</Link></li>
-              <li><Link href="/doula-feedback">Doula Feedback</Link></li>
-            </ul>
-          </li>
-          <li className="nav-dropdown">
-            <Link href="/hypnobirthing">Hypnobirthing ▾</Link>
-            <ul className="nav-drop-menu">
-              <li><Link href="/hypnobirthing">About Hypnobirthing</Link></li>
-              <li><Link href="/course-info">Course Dates</Link></li>
-              <li><Link href="/session-outlines">Session Outlines</Link></li>
-            </ul>
-          </li>
-          <li><Link href="/birth-trauma">Birth Trauma</Link></li>
-          <li><Link href="/yoga">Yoga</Link></li>
-          <li className="nav-dropdown">
-            <Link href="/blog">More ▾</Link>
-            <ul className="nav-drop-menu">
-              <li><Link href="/contact">Contact</Link></li>
-              <li><Link href="/blog">Blog</Link></li>
-              <li><Link href="/podcast">Dou-La-La Podcast</Link></li>
-              <li><Link href="/reviews">Reviews</Link></li>
-              <li><Link href="/masterclass">Masterclass</Link></li>
-              <li><Link href="/freebies">Free Resources</Link></li>
-              <li><Link href="/faq">FAQ</Link></li>
-            </ul>
-          </li>
+          {nav.map(item =>
+            item.children?.length ? (
+              <li key={item.label} className="nav-dropdown">
+                <Link href={item.href || item.children[0].href}>{item.label} ▾</Link>
+                <ul className="nav-drop-menu">
+                  {item.children.map(child => (
+                    <li key={child.label}><Link href={child.href}>{child.label}</Link></li>
+                  ))}
+                </ul>
+              </li>
+            ) : (
+              <li key={item.label}><Link href={item.href || '/'}>{item.label}</Link></li>
+            )
+          )}
           <li><Link href="/hub" className="nav-hub">Hub</Link></li>
           <li><a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="nav-cta">Book Now</a></li>
         </ul>
@@ -137,60 +121,30 @@ export default function Nav() {
         <div className="mob-nav">
           <Link href="/" onClick={close} className="mob-link">Home</Link>
 
-          {/* Doula section */}
-          <button className="mob-accordion" onClick={() => toggle('doula')} aria-expanded={openSection === 'doula'}>
-            Doula
-            <svg className={`mob-chevron${openSection === 'doula' ? ' open' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="6 9 12 15 18 9"/>
-            </svg>
-          </button>
-          {openSection === 'doula' && (
-            <div className="mob-dropdown">
-              <Link href="/doula" onClick={close} className="mob-link mob-link--sub">All Doula Services</Link>
-              <Link href="/birth-doula" onClick={close} className="mob-link mob-link--sub">Birth Doula</Link>
-              <Link href="/postnatal-doula" onClick={close} className="mob-link mob-link--sub">Postnatal Doula</Link>
-              <Link href="/overnight-doula" onClick={close} className="mob-link mob-link--sub">Overnight Doula</Link>
-              <Link href="/virtual-doula" onClick={close} className="mob-link mob-link--sub">Virtual Doula</Link>
-            </div>
-          )}
-
-          {/* Hypnobirthing section */}
-          <button className="mob-accordion" onClick={() => toggle('hypno')} aria-expanded={openSection === 'hypno'}>
-            Hypnobirthing
-            <svg className={`mob-chevron${openSection === 'hypno' ? ' open' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="6 9 12 15 18 9"/>
-            </svg>
-          </button>
-          {openSection === 'hypno' && (
-            <div className="mob-dropdown">
-              <Link href="/hypnobirthing" onClick={close} className="mob-link mob-link--sub">About Hypnobirthing</Link>
-              <Link href="/course-info" onClick={close} className="mob-link mob-link--sub">Course Dates</Link>
-              <Link href="/session-outlines" onClick={close} className="mob-link mob-link--sub">Session Outlines</Link>
-            </div>
-          )}
-
-          <Link href="/meet-leanne" onClick={close} className="mob-link">Meet Leanne</Link>
-          <Link href="/birth-trauma" onClick={close} className="mob-link">Birth Trauma</Link>
-          <Link href="/yoga" onClick={close} className="mob-link">Prenatal Yoga</Link>
-
-          {/* More section */}
-          <button className="mob-accordion" onClick={() => toggle('more')} aria-expanded={openSection === 'more'}>
-            More
-            <svg className={`mob-chevron${openSection === 'more' ? ' open' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="6 9 12 15 18 9"/>
-            </svg>
-          </button>
-          {openSection === 'more' && (
-            <div className="mob-dropdown">
-              <Link href="/contact" onClick={close} className="mob-link mob-link--sub">Contact</Link>
-              <Link href="/blog" onClick={close} className="mob-link mob-link--sub">Blog</Link>
-              <Link href="/podcast" onClick={close} className="mob-link mob-link--sub">Dou-La-La Podcast</Link>
-              <Link href="/masterclass" onClick={close} className="mob-link mob-link--sub">Masterclass</Link>
-              <Link href="/freebies" onClick={close} className="mob-link mob-link--sub">Free Resources</Link>
-              <Link href="/reviews" onClick={close} className="mob-link mob-link--sub">Reviews</Link>
-              <Link href="/booking" onClick={close} className="mob-link mob-link--sub">Booking</Link>
-              <Link href="/faq" onClick={close} className="mob-link mob-link--sub">FAQ</Link>
-            </div>
+          {nav.map(item =>
+            item.children?.length ? (
+              <div key={item.label}>
+                <button className="mob-accordion" onClick={() => toggle(item.label)} aria-expanded={openSection === item.label}>
+                  {item.label}
+                  <svg className={`mob-chevron${openSection === item.label ? ' open' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </button>
+                {openSection === item.label && (
+                  <div className="mob-dropdown">
+                    {item.children.map(child => (
+                      <Link key={child.label} href={child.href} onClick={close} className="mob-link mob-link--sub">
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link key={item.label} href={item.href || '/'} onClick={close} className="mob-link">
+                {item.label}
+              </Link>
+            )
           )}
         </div>
 
