@@ -108,7 +108,7 @@ function DoulaPageStatic() {
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Choose the support that&apos;s <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>right for you</em>
           </h2>
-          <div className="grid-3" style={{ gap: '1.5rem' }}>
+          <div className="grid-2" style={{ gap: '1.5rem' }}>
 
             {/* Birth Doula */}
             <div className="card" style={{ borderTop: '3px solid var(--pink)' }}>
@@ -174,15 +174,32 @@ function DoulaPageStatic() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="https://calendly.com/birthhood"
-                className="btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: 'block', textAlign: 'center' }}
-              >
-                Book Consultation
-              </a>
+              <Link href="/postnatal-doula" className="btn-outline" style={{ display: 'block', textAlign: 'center' }}>
+                Learn More
+              </Link>
+            </div>
+
+            {/* Overnight Doula */}
+            <div className="card" style={{ borderTop: '3px solid var(--pink-deep)' }}>
+              <div className="section-label" style={{ marginBottom: '1rem' }}>Through the night</div>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.2 }}>
+                Overnight Support
+              </h3>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '1.5rem' }}>
+                Rest through the night while your baby is cared for with compassion and expertise.
+                Overnight shifts run 10pm–8am, tailored to your family.
+              </p>
+              <ul style={{ listStyle: 'none', marginBottom: '1.5rem' }}>
+                {['10-hour overnight shifts (10pm–8am)', 'Feeding & settling support', 'Newborn care through the night', 'Three levels of support from £250', 'Block booking discounts'].map(item => (
+                  <li key={item} style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', paddingLeft: '1.2rem', position: 'relative', marginBottom: '0.4rem', fontWeight: 300 }}>
+                    <span style={{ position: 'absolute', left: 0, top: '0.6em', width: '5px', height: '5px', borderRadius: '50%', background: 'var(--pink)', display: 'block' }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/overnight-doula" className="btn-outline" style={{ display: 'block', textAlign: 'center' }}>
+                Learn More
+              </Link>
             </div>
           </div>
         </div>

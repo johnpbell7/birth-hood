@@ -83,6 +83,7 @@ export default function Nav() {
               <li><Link href="/birth-doula">Birth Doula</Link></li>
               <li><Link href="/virtual-doula">Virtual Doula</Link></li>
               <li><Link href="/postnatal-doula">Postnatal Doula</Link></li>
+              <li><Link href="/overnight-doula">Overnight Doula</Link></li>
               <li><Link href="/doula-feedback">Doula Feedback</Link></li>
             </ul>
           </li>
@@ -148,6 +149,7 @@ export default function Nav() {
               <Link href="/doula" onClick={close} className="mob-link mob-link--sub">All Doula Services</Link>
               <Link href="/birth-doula" onClick={close} className="mob-link mob-link--sub">Birth Doula</Link>
               <Link href="/postnatal-doula" onClick={close} className="mob-link mob-link--sub">Postnatal Doula</Link>
+              <Link href="/overnight-doula" onClick={close} className="mob-link mob-link--sub">Overnight Doula</Link>
               <Link href="/virtual-doula" onClick={close} className="mob-link mob-link--sub">Virtual Doula</Link>
             </div>
           )}
