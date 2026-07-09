@@ -3,6 +3,7 @@ import freebie from './freebie'
 import page from './page'
 import hubResource from './hubResource'
 import siteSettings from './siteSettings'
+import navigation from './navigation'
 import { blockTypes } from './blocks'
 
 export const schemaTypes = [
@@ -11,5 +12,6 @@ export const schemaTypes = [
   freebie,
   blogPost,
   siteSettings,
+  navigation,
   ...blockTypes,
 ]
