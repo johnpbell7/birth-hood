@@ -17,6 +17,9 @@ interface PageHeroProps {
      Set these to match this page's hero CTA. */
   ctaLabel?: string
   ctaHref?: string
+  /* Suppress the mobile floating button entirely (e.g. the Shop, which has its
+     own floating cart bar). */
+  hideFab?: boolean
 }
 
 export default function PageHero({
@@ -28,6 +31,7 @@ export default function PageHero({
   img2,
   ctaLabel = 'Book Free Consultation',
   ctaHref = 'https://calendly.com/birthhood',
+  hideFab = false,
 }: PageHeroProps) {
   const externalCta = ctaHref.startsWith('http')
   return (
@@ -93,13 +97,15 @@ export default function PageHero({
       </div>
     </section>
     {/* Mobile floating CTA — mirrors this page's hero button */}
-    <a
-      href={ctaHref}
-      className="mobile-book-fab"
-      {...(externalCta ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-    >
-      {ctaLabel}
-    </a>
+    {!hideFab && (
+      <a
+        href={ctaHref}
+        className="mobile-book-fab"
+        {...(externalCta ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      >
+        {ctaLabel}
+      </a>
+    )}
     </>
   )
 }

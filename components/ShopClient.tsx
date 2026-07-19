@@ -4,43 +4,47 @@ import { useMemo, useState } from 'react'
 import Image from 'next/image'
 import type { ShopProduct } from '@/lib/sanity-queries'
 
-export default function ShopClient({ products }: { products: ShopProduct[] }) {
-  const [selected, setSelected] = useState<Set<string>>(new Set())
+export default function ShopClient({ products, demo = false }: { products: ShopProduct[]; demo?: boolean }) {
+  const [cart, setCart] = useState<Set<string>>(new Set())
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [notice, setNotice] = useState<string | null>(null)
 
-  const toggle = (id: string) =>
-    setSelected((prev) => {
+  const add = (id: string) => {
+    setNotice(null)
+    setCart((prev) => new Set(prev).add(id))
+  }
+  const remove = (id: string) =>
+    setCart((prev) => {
       const next = new Set(prev)
-      if (next.has(id)) next.delete(id)
-      else next.add(id)
+      next.delete(id)
       return next
     })
 
-  const total = useMemo(
-    () => products.filter((p) => selected.has(p._id)).reduce((s, p) => s + (p.price || 0), 0),
-    [products, selected],
-  )
+  const cartItems = useMemo(() => products.filter((p) => cart.has(p._id)), [products, cart])
+  const total = useMemo(() => cartItems.reduce((s, p) => s + (p.price || 0), 0), [cartItems])
 
   const checkout = async () => {
-    if (selected.size === 0) return
+    if (cart.size === 0) return
+    if (demo) {
+      setNotice('These are sample resources — checkout goes live once the shop is switched on. 🌸')
+      return
+    }
     setLoading(true)
-    setError(null)
+    setNotice(null)
     try {
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ids: [...selected] }),
+        body: JSON.stringify({ ids: [...cart] }),
       })
       const data = await res.json()
-      if (data.url) {
-        window.location.href = data.url
-      } else {
-        setError(data.error || 'Something went wrong. Please try again.')
+      if (data.url) window.location.href = data.url
+      else {
+        setNotice(data.error || 'Something went wrong. Please try again.')
         setLoading(false)
       }
     } catch {
-      setError('Something went wrong. Please try again.')
+      setNotice('Something went wrong. Please try again.')
       setLoading(false)
     }
   }
@@ -49,9 +53,9 @@ export default function ShopClient({ products }: { products: ShopProduct[] }) {
     <>
       <div className="shop-grid">
         {products.map((p) => {
-          const on = selected.has(p._id)
+          const inCart = cart.has(p._id)
           return (
-            <div key={p._id} className={`shop-card${on ? ' selected' : ''}`}>
+            <div key={p._id} className={`shop-card${inCart ? ' selected' : ''}`}>
               {p.imageUrl ? (
                 <div className="shop-card-img">
                   <Image src={p.imageUrl} alt={p.title} fill style={{ objectFit: 'cover' }} sizes="(max-width:820px) 100vw, 33vw" />
@@ -70,11 +74,11 @@ export default function ShopClient({ products }: { products: ShopProduct[] }) {
                   <span className="shop-price">£{(p.price || 0).toFixed(2)}</span>
                   <button
                     type="button"
-                    className={`shop-add${on ? ' on' : ''}`}
-                    onClick={() => toggle(p._id)}
-                    aria-pressed={on}
+                    className={`shop-add${inCart ? ' on' : ''}`}
+                    onClick={() => (inCart ? remove(p._id) : add(p._id))}
+                    aria-pressed={inCart}
                   >
-                    {on ? '✓ Added' : 'Add'}
+                    {inCart ? '✓ In cart' : 'Add to cart'}
                   </button>
                 </div>
               </div>
@@ -83,19 +87,32 @@ export default function ShopClient({ products }: { products: ShopProduct[] }) {
         })}
       </div>
 
-      {selected.size > 0 && (
-        <div className="shop-bar">
-          <div className="shop-bar-inner">
-            <span className="shop-bar-total">
-              {selected.size} item{selected.size > 1 ? 's' : ''} · <strong>£{total.toFixed(2)}</strong>
-            </span>
-            <button type="button" className="btn-primary" onClick={checkout} disabled={loading} style={{ background: 'var(--pink)', color: 'var(--black)' }}>
-              {loading ? 'Redirecting…' : 'Checkout securely'}
-            </button>
+      {/* Floating cart footer — only shows once something is added */}
+      <div className={`cart-bar${cart.size > 0 ? ' open' : ''}`} aria-hidden={cart.size === 0}>
+        <div className="cart-bar-inner">
+          <div className="cart-bar-summary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" width="20" height="20" aria-hidden="true">
+              <circle cx="9" cy="20" r="1.4" /><circle cx="18" cy="20" r="1.4" />
+              <path d="M2 3h2.2l2.1 12.3a1 1 0 0 0 1 .8h9.4a1 1 0 0 0 1-.79L20 7H6" />
+            </svg>
+            <span><strong>{cart.size}</strong> {cart.size === 1 ? 'resource' : 'resources'}</span>
+            <span className="cart-bar-total">£{total.toFixed(2)}</span>
           </div>
-          {error && <p className="shop-bar-error">{error}</p>}
+
+          <div className="cart-bar-chips">
+            {cartItems.map((p) => (
+              <button key={p._id} className="cart-chip" onClick={() => remove(p._id)} title="Remove">
+                {p.title} <span aria-hidden="true">×</span>
+              </button>
+            ))}
+          </div>
+
+          <button type="button" className="cart-checkout" onClick={checkout} disabled={loading}>
+            {loading ? 'Redirecting…' : 'Checkout securely →'}
+          </button>
         </div>
-      )}
+        {notice && <p className="cart-bar-notice">{notice}</p>}
+      </div>
     </>
   )
 }
