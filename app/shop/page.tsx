@@ -3,6 +3,7 @@ import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import ShopClient from '@/components/ShopClient'
 import { getShopProducts } from '@/lib/sanity-queries'
+import { PLACEHOLDER_PRODUCTS } from '@/lib/shop-placeholders'
 
 export const metadata: Metadata = {
   title: 'Shop — Resources',
@@ -10,7 +11,11 @@ export const metadata: Metadata = {
 }
 
 export default async function ShopPage() {
-  const products = await getShopProducts()
+  const real = await getShopProducts()
+  // Until real products are added in the Studio, show sample resources so the
+  // shop is populated (checkout stays disabled in this demo mode).
+  const demo = real.length === 0
+  const products = demo ? PLACEHOLDER_PRODUCTS : real
 
   return (
     <>
@@ -20,8 +25,7 @@ export default async function ShopPage() {
         subtitle="Handpicked guides, audio and tools to support your pregnancy, birth and beyond. Choose what you need — you'll receive your downloads by email straight after secure checkout."
         img1={{ src: '/images/hypnobirthing-class.jpg', alt: 'birth-hood resources' }}
         img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        ctaLabel="Browse resources"
-        ctaHref="/shop"
+        hideFab
       />
 
       <MarqueeStrip />
@@ -33,22 +37,12 @@ export default async function ShopPage() {
             Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>resources</em>
           </h2>
 
-          {products.length > 0 ? (
-            <ShopClient products={products} />
-          ) : (
-            <div className="card card-pink" style={{ textAlign: 'center', padding: '3rem 2rem', maxWidth: '520px', margin: '0 auto' }}>
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.3rem', fontWeight: 500, marginBottom: '0.6rem' }}>
-                Resources coming soon
-              </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.6, fontWeight: 300 }}>
-                New downloadable resources are on their way. Check back shortly, or{' '}
-                <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pink-deep)', fontWeight: 500 }}>
-                  book a free consultation
-                </a>{' '}
-                in the meantime.
-              </p>
-            </div>
+          {demo && (
+            <p style={{ color: 'var(--grey-light)', fontSize: '0.82rem', fontWeight: 300, marginBottom: '1.5rem' }}>
+              ✨ Sample resources shown below — real products &amp; checkout go live once the shop is switched on.
+            </p>
           )}
+          <ShopClient products={products} demo={demo} />
         </div>
       </section>
     </>

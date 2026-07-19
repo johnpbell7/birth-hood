@@ -109,7 +109,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
   const s = settings ?? {}
 
   // Hero
-  const heroHeadline = s.homeHeroHeadline ?? 'Your birth, your way.'
+  const heroHeadline = s.homeHeroHeadline ?? 'Welcome to birth-hood'
   const heroSubtitle =
     s.homeHeroSubtitle ??
     'Hypnobirthing, Doula support and Yoga — helping you feel powerful, prepared and genuinely excited for birth. All pregnancies, all modes of birth, all people.'
@@ -121,7 +121,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
   const servicesHeading = s.homeServicesHeading ?? 'Everything you need for a positive birth'
 
   // Welcome intro (under the hero)
-  const welcomeHeading = s.homeWelcomeHeading ?? 'Welcome to birth-hood'
+  const welcomeHeading = s.homeWelcomeHeading ?? "Hi, I'm Leanne"
   const welcomeBody = s.homeWelcomeBody ?? [
     'At birth-hood, I believe every family deserves to enter parenthood feeling informed, supported, connected, and confident. Through education, compassionate care, and community, I help people navigate pregnancy, birth, and beyond in a way that feels right for them.',
     "From Doula support, Hypnobirthing, 3 Step Rewind Traumatic Birth resolution support, and Yoga you're covered (as featured on BBC Radio Leicester).",
@@ -223,7 +223,13 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
         />
         <div className="home-hero-content">
           <h1 className="hero-title">
-            {heroHeadline.includes(',') ? (
+            {heroHeadline.includes('birth-hood') ? (
+              <>
+                {heroHeadline.split('birth-hood')[0]}
+                <em>birth-hood</em>
+                {heroHeadline.split('birth-hood').slice(1).join('birth-hood')}
+              </>
+            ) : heroHeadline.includes(',') ? (
               <>
                 {heroHeadline.split(',')[0]},<br />
                 <em>{heroHeadline.split(',').slice(1).join(',').trim()}</em>
@@ -266,6 +272,12 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
                   {welcomeHeading.split('birth-hood')[0]}
                   <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>birth-hood</em>
                   {welcomeHeading.split('birth-hood').slice(1).join('birth-hood')}
+                </>
+              ) : welcomeHeading.includes('Leanne') ? (
+                <>
+                  {welcomeHeading.split('Leanne')[0]}
+                  <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>Leanne</em>
+                  {welcomeHeading.split('Leanne').slice(1).join('Leanne')}
                 </>
               ) : (
                 welcomeHeading
