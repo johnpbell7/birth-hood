@@ -221,14 +221,14 @@ function MeetLeannePageStatic() {
                 expectant parents across the Midlands.
               </p>
             </div>
-            <div className="card">
+            <div className="card card-pink">
               <div className="section-label" style={{ marginBottom: '0.8rem' }}>Local press</div>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300 }}>
                 Regular contributor to local parenting publications and community events across
                 Leicester and the wider Midlands region.
               </p>
             </div>
-            <div className="card">
+            <div className="card card-pink">
               <div className="section-label" style={{ marginBottom: '0.8rem' }}>Community events</div>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300 }}>
                 Speaker at pregnancy fairs, NCT events and maternity unit workshops — spreading the
