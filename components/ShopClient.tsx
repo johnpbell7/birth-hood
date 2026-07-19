@@ -1,6 +1,7 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { createPortal } from 'react-dom'
 import type { ShopProduct } from '@/lib/sanity-queries'
 
 // Work out whether a product is an audio or PDF (or other) download from its
@@ -30,6 +31,9 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
   const [cart, setCart] = useState<Set<string>>(new Set())
   const [loading, setLoading] = useState(false)
   const [notice, setNotice] = useState<string | null>(null)
+  // Only portal to <body> after mount (document isn't available during SSR).
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
 
   const add = (id: string) => {
     setNotice(null)
@@ -116,32 +120,38 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
         })}
       </div>
 
-      {/* Floating cart footer — only shows once something is added */}
-      <div className={`cart-bar${cart.size > 0 ? ' open' : ''}`} aria-hidden={cart.size === 0}>
-        <div className="cart-bar-inner">
-          <div className="cart-bar-summary">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" width="20" height="20" aria-hidden="true">
-              <circle cx="9" cy="20" r="1.4" /><circle cx="18" cy="20" r="1.4" />
-              <path d="M2 3h2.2l2.1 12.3a1 1 0 0 0 1 .8h9.4a1 1 0 0 0 1-.79L20 7H6" />
-            </svg>
-            <span><strong>{cart.size}</strong> {cart.size === 1 ? 'resource' : 'resources'}</span>
-            <span className="cart-bar-total">£{total.toFixed(2)}</span>
-          </div>
+      {/* Sticky cart footer — rendered into <body> via a portal so it's always
+          fixed to the viewport (no ancestor transform can trap it), staying at
+          the bottom of the screen while you scroll. Only shows once you add. */}
+      {mounted &&
+        createPortal(
+          <div className={`cart-bar${cart.size > 0 ? ' open' : ''}`} aria-hidden={cart.size === 0}>
+            <div className="cart-bar-inner">
+              <div className="cart-bar-summary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" width="20" height="20" aria-hidden="true">
+                  <circle cx="9" cy="20" r="1.4" /><circle cx="18" cy="20" r="1.4" />
+                  <path d="M2 3h2.2l2.1 12.3a1 1 0 0 0 1 .8h9.4a1 1 0 0 0 1-.79L20 7H6" />
+                </svg>
+                <span><strong>{cart.size}</strong> {cart.size === 1 ? 'resource' : 'resources'}</span>
+                <span className="cart-bar-total">£{total.toFixed(2)}</span>
+              </div>
 
-          <div className="cart-bar-chips">
-            {cartItems.map((p) => (
-              <button key={p._id} className="cart-chip" onClick={() => remove(p._id)} title="Remove">
-                {p.title} <span aria-hidden="true">×</span>
+              <div className="cart-bar-chips">
+                {cartItems.map((p) => (
+                  <button key={p._id} className="cart-chip" onClick={() => remove(p._id)} title="Remove">
+                    {p.title} <span aria-hidden="true">×</span>
+                  </button>
+                ))}
+              </div>
+
+              <button type="button" className="cart-checkout" onClick={checkout} disabled={loading}>
+                {loading ? 'Redirecting…' : 'Checkout securely →'}
               </button>
-            ))}
-          </div>
-
-          <button type="button" className="cart-checkout" onClick={checkout} disabled={loading}>
-            {loading ? 'Redirecting…' : 'Checkout securely →'}
-          </button>
-        </div>
-        {notice && <p className="cart-bar-notice">{notice}</p>}
-      </div>
+            </div>
+            {notice && <p className="cart-bar-notice">{notice}</p>}
+          </div>,
+          document.body,
+        )}
     </>
   )
 }
