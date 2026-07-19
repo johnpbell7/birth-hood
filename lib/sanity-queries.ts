@@ -245,6 +245,9 @@ export type ShopProduct = {
   description?: string
   price: number
   imageUrl?: string | null
+  // File extension of the download (e.g. "pdf", "mp3") — used to show a
+  // "PDF"/"Audio" tag on the card. Safe to expose; the URL is never included.
+  fileExt?: string | null
 }
 // SERVER-ONLY — includes the download URL + filename, used only after payment.
 export type ShopProductFull = ShopProduct & { fileUrl?: string | null; fileName?: string | null }
@@ -254,7 +257,8 @@ export async function getShopProducts(): Promise<ShopProduct[]> {
   try {
     return await client.fetch(
       `*[_type == "product" && active != false]{
-        _id, title, description, price, "imageUrl": image.asset->url
+        _id, title, description, price, "imageUrl": image.asset->url,
+        "fileExt": file.asset->extension
       } | order(order asc, title asc)`,
       {},
       { next: { revalidate: 60 } },
