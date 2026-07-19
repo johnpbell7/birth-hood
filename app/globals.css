@@ -871,6 +871,12 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .footer-top { grid-template-columns: 1fr 1fr; }
   .footer-top > div:first-child { grid-column: 1 / -1; }
   .services-grid { grid-template-columns: 1fr; }
+  /* More left/right room around cards on phones so they don't run edge-to-edge.
+     Card sections that don't use .wrap get inset directly; everything inside
+     .wrap (sub-page cards, shop, pricing) gets a smaller bump on top of its
+     section padding. */
+  .services, .intro, .about, .testimonials, .booking-cta, .insta-section { padding-left: 2.5rem; padding-right: 2.5rem; }
+  .wrap { padding-left: 2rem; padding-right: 2rem; }
 }
 @media (max-width: 480px) {
   .stat-grid { grid-template-columns: 1fr 1fr; }
