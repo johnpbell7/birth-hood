@@ -88,7 +88,7 @@ function DoulaFeedbackPageStatic() {
 
             <div className="grid-2" style={{ gap: '1.5rem' }}>
               {/* Google */}
-              <div className="card" style={{ textAlign: 'center', padding: '2.5rem 2rem' }}>
+              <div className="card card-pink" style={{ textAlign: 'center', padding: '2.5rem 2rem' }}>
                 <div style={{ marginBottom: '1rem' }}>
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" style={{ margin: '0 auto', display: 'block' }}>
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -115,7 +115,7 @@ function DoulaFeedbackPageStatic() {
               </div>
 
               {/* Facebook */}
-              <div className="card" style={{ textAlign: 'center', padding: '2.5rem 2rem' }}>
+              <div className="card card-pink" style={{ textAlign: 'center', padding: '2.5rem 2rem' }}>
                 <div style={{ marginBottom: '1rem', color: 'var(--pink-deep)' }}>
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ margin: '0 auto', display: 'block' }}>
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>

@@ -102,7 +102,7 @@ function BirthTraumaPageStatic() {
                 </p>
               </div>
 
-              <div className="card" style={{ marginBottom: '1.5rem' }}>
+              <div className="card card-pink" style={{ marginBottom: '1.5rem' }}>
                 <div className="section-label" style={{ marginBottom: '1rem' }}>It&apos;s never too late</div>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300 }}>
                   You may be processing a birth that happened recently — or one that was years ago.
