@@ -235,3 +235,45 @@ export async function getNavigation(): Promise<NavItem[] | null> {
     return items?.length ? items : null
   } catch (e) { console.error('Sanity getNavigation failed:', e); return null }
 }
+
+// ── Shop / paid resources ──────────────────────────────────────────────────
+// PUBLIC card data — intentionally excludes the file URL so the paid download
+// is never exposed on the page.
+export type ShopProduct = {
+  _id: string
+  title: string
+  description?: string
+  price: number
+  imageUrl?: string | null
+}
+// SERVER-ONLY — includes the download URL + filename, used only after payment.
+export type ShopProductFull = ShopProduct & { fileUrl?: string | null; fileName?: string | null }
+
+export async function getShopProducts(): Promise<ShopProduct[]> {
+  if (!client) return []
+  try {
+    return await client.fetch(
+      `*[_type == "product" && active != false]{
+        _id, title, description, price, "imageUrl": image.asset->url
+      } | order(order asc, title asc)`,
+      {},
+      { next: { revalidate: 60 } },
+    )
+  } catch (e) { console.error('Sanity getShopProducts failed:', e); return [] }
+}
+
+export async function getShopProductsByIds(ids: string[]): Promise<ShopProductFull[]> {
+  if (!client || !ids.length) return []
+  try {
+    return await client.fetch(
+      `*[_type == "product" && active != false && _id in $ids]{
+        _id, title, description, price,
+        "imageUrl": image.asset->url,
+        "fileUrl": file.asset->url,
+        "fileName": file.asset->originalFilename
+      }`,
+      { ids },
+      { cache: 'no-store' },
+    )
+  } catch (e) { console.error('Sanity getShopProductsByIds failed:', e); return [] }
+}

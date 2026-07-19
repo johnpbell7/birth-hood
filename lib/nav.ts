@@ -42,6 +42,7 @@ export const DEFAULT_NAV: NavItem[] = [
       { label: 'Reviews', href: '/reviews' },
       { label: 'Masterclass', href: '/masterclass' },
       { label: 'Free Resources', href: '/freebies' },
+      { label: 'Shop', href: '/shop' },
       { label: 'Booking', href: '/booking' },
       { label: 'FAQ', href: '/faq' },
     ],

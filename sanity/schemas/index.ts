@@ -4,6 +4,7 @@ import page from './page'
 import hubResource from './hubResource'
 import siteSettings from './siteSettings'
 import navigation from './navigation'
+import product from './product'
 import { blockTypes } from './blocks'
 
 export const schemaTypes = [
@@ -13,5 +14,6 @@ export const schemaTypes = [
   blogPost,
   siteSettings,
   navigation,
+  product,
   ...blockTypes,
 ]

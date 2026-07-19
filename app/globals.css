@@ -911,3 +911,24 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .so-num { font-size: 3rem; text-align: left; }
   .so-note { padding: 1.5rem; }
 }
+
+/* ─────────────────────────────── SHOP ─────────────────────────────── */
+.shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.shop-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .3s, border-color .3s, transform .3s; }
+.shop-card.selected { border-color: var(--pink); box-shadow: 0 12px 34px rgba(232,92,174,0.16); transform: translateY(-2px); }
+.shop-card-img { position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--pink-ultra); }
+.shop-card-img--placeholder { display: flex; align-items: center; justify-content: center; color: var(--pink-deep); }
+.shop-card-body { padding: 1.4rem 1.4rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
+.shop-card-title { font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 500; margin-bottom: .5rem; line-height: 1.25; }
+.shop-card-desc { font-size: .86rem; color: var(--grey-mid); line-height: 1.55; font-weight: 300; margin-bottom: 1.2rem; }
+.shop-card-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.shop-price { font-family: 'Poppins', sans-serif; font-size: 1.35rem; font-weight: 600; color: var(--black); }
+.shop-add { font-size: .74rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--black); background: transparent; border: 1.5px solid var(--black); border-radius: 2px; padding: .55rem 1.2rem; cursor: pointer; transition: background .25s, color .25s, border-color .25s; }
+.shop-add:hover { background: var(--black); color: #fff; }
+.shop-add.on { background: var(--pink); border-color: var(--pink); color: var(--black); }
+.shop-bar { position: sticky; bottom: 1rem; z-index: 120; margin-top: 2.5rem; }
+.shop-bar-inner { background: var(--black); color: #fff; border-radius: 8px; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; box-shadow: 0 12px 44px rgba(0,0,0,.28); }
+.shop-bar-total { font-size: .95rem; font-weight: 300; }
+.shop-bar-error { color: #ffd0d0; text-align: center; margin-top: .6rem; font-size: .85rem; }
+@media (max-width: 960px) { .shop-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .shop-grid { grid-template-columns: 1fr; } .shop-bar-inner { flex-direction: column; gap: .8rem; text-align: center; } }

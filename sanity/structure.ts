@@ -14,6 +14,9 @@ export const structure: StructureResolver = (S) =>
       S.listItem()
         .title('Freebies')
         .child(S.documentTypeList('freebie').title('Freebies')),
+      S.listItem()
+        .title('Shop — Paid Resources')
+        .child(S.documentTypeList('product').title('Shop — Paid Resources')),
       S.divider(),
       S.listItem()
         .title('Blog Posts')
