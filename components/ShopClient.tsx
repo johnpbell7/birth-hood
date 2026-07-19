@@ -1,8 +1,30 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import Image from 'next/image'
 import type { ShopProduct } from '@/lib/sanity-queries'
+
+// Work out whether a product is an audio or PDF (or other) download from its
+// file extension, and give it a short tag label.
+function fileKind(ext?: string | null): { label: string; audio: boolean } {
+  const e = (ext || '').toLowerCase().replace('.', '')
+  if (['mp3', 'wav', 'm4a', 'aac', 'ogg', 'flac'].includes(e)) return { label: 'Audio', audio: true }
+  if (e === 'pdf') return { label: 'PDF', audio: false }
+  if (['mp4', 'mov', 'webm', 'm4v'].includes(e)) return { label: 'Video', audio: false }
+  if (e) return { label: e.toUpperCase(), audio: false }
+  return { label: 'File', audio: false }
+}
+
+function TagIcon({ audio }: { audio: boolean }) {
+  return audio ? (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <path d="M9 18V6l10-2v12" /><circle cx="6" cy="18" r="3" /><circle cx="16" cy="16" r="3" />
+    </svg>
+  ) : (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+      <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" /><path d="M14 3v5h5" />
+    </svg>
+  )
+}
 
 export default function ShopClient({ products, demo = false }: { products: ShopProduct[]; demo?: boolean }) {
   const [cart, setCart] = useState<Set<string>>(new Set())
@@ -54,19 +76,26 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
       <div className="shop-grid">
         {products.map((p) => {
           const inCart = cart.has(p._id)
+          const kind = fileKind(p.fileExt)
           return (
             <div key={p._id} className={`shop-card${inCart ? ' selected' : ''}`}>
-              {p.imageUrl ? (
-                <div className="shop-card-img">
-                  <Image src={p.imageUrl} alt={p.title} fill style={{ objectFit: 'cover' }} sizes="(max-width:820px) 100vw, 33vw" />
-                </div>
-              ) : (
-                <div className="shop-card-img shop-card-img--placeholder">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" width="40" height="40">
-                    <rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="9" cy="10" r="2" /><path d="M4 19l5-5 4 3 3-3 4 4" />
-                  </svg>
-                </div>
-              )}
+              <div className="shop-ph">
+                <span className={`shop-tag${kind.audio ? ' shop-tag--audio' : ''}`}>
+                  <TagIcon audio={kind.audio} />
+                  {kind.label}
+                </span>
+                {p.imageUrl ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={p.imageUrl} alt={p.title} className="shop-ph-photo" />
+                ) : (
+                  <>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.1" width="42" height="42" aria-hidden="true">
+                      <rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="9" cy="10" r="2" /><path d="M4 19l5-5 4 3 3-3 4 4" />
+                    </svg>
+                    <span className="shop-ph-label">Placeholder</span>
+                  </>
+                )}
+              </div>
               <div className="shop-card-body">
                 <h3 className="shop-card-title">{p.title}</h3>
                 {p.description && <p className="shop-card-desc">{p.description}</p>}
