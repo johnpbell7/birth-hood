@@ -684,8 +684,9 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .welcome-intro { grid-template-columns: 1fr; gap: 0; }
   .welcome-intro-text { padding: 1rem 0 1rem; }
   .welcome-intro-body { font-size: 0.9rem; line-height: 1.55; }
-  /* full-bleed image: cancel the .wrap 1.5rem side padding so it fills the width */
-  .welcome-intro-media { margin: 0 -1.5rem; width: auto; aspect-ratio: 5 / 4; max-height: none; }
+  /* full-bleed image: break out to the full viewport width so it fills the
+     screen edge-to-edge, regardless of the wrapper's side padding */
+  .welcome-intro-media { position: relative; left: 50%; width: 100vw; margin-left: -50vw; margin-right: 0; aspect-ratio: 5 / 4; max-height: none; }
 }
 
 /* PROSE */
@@ -877,10 +878,12 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
      section padding. */
   .services, .intro, .about, .testimonials, .booking-cta, .insta-section { padding-left: 2.5rem; padding-right: 2.5rem; }
   .wrap { padding-left: 2rem; padding-right: 2rem; }
+  /* Smaller hero headline on phones so "birth-hood" doesn't span the screen */
+  .hero-title { font-size: 3.1rem; }
 }
 @media (max-width: 480px) {
   .stat-grid { grid-template-columns: 1fr 1fr; }
-  .hero-title { font-size: 3.6rem; }
+  .hero-title { font-size: 2.9rem; }
   .page-title { font-size: 2.8rem; }
   .cta-band { padding: 3.5rem 1.5rem; }
   .cta-band h2 { font-size: 1.9rem; }
