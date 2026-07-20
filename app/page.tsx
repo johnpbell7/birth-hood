@@ -238,8 +238,9 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
           <h1 className="hero-title">
             {heroHeadline.includes('birth-hood') ? (
               <>
-                {heroHeadline.split('birth-hood')[0]}
-                <em>birth-hood</em>
+                {heroHeadline.split('birth-hood')[0].trim()}<br />
+                {/* keep "birth-hood" together on one line (non-breaking hyphen) */}
+                <em style={{ whiteSpace: 'nowrap' }}>birth{'‑'}hood</em>
                 {heroHeadline.split('birth-hood').slice(1).join('birth-hood')}
               </>
             ) : heroHeadline.includes(',') ? (
