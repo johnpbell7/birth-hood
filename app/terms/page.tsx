@@ -34,7 +34,7 @@ function TermsPageStatic() {
               All bookings are confirmed on receipt of a £50 non-refundable deposit. Your place
               is not secured until the deposit has been received. The remaining balance is due at
               the start of your first session (or, for doula services, at the beginning of the
-              on-call period at 39 weeks of pregnancy).
+              on-call period — from 38–39 weeks of pregnancy, depending on your package).
             </p>
 
             <h3>1.2 Payment methods</h3>
@@ -96,7 +96,9 @@ function TermsPageStatic() {
 
             <h3>3.1 On-call period</h3>
             <p>
-              I am on call for birth doula clients from 39 weeks of pregnancy. I will make
+              I am on call for birth doula clients from the start of the on-call period agreed
+              in your package (from 38–39 weeks of pregnancy, or 10 days before your due date,
+              depending on the package chosen). I will make
               every reasonable effort to attend your birth. In the event that I am unable to
               attend due to illness, personal emergency or simultaneous births, I will arrange
               for a fully briefed backup doula to attend in my place.

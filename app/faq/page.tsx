@@ -102,7 +102,7 @@ const paymentFaqs = [
   },
   {
     q: 'Is a deposit required to secure my place?',
-    a: 'Yes. A £50 deposit is required to secure your place upon booking. The remainder is due before your first session. For doula services, the balance is due at the start of the on-call period (around 39 weeks).',
+    a: 'Yes. A £50 deposit is required to secure your place upon booking. The remainder is due before your first session. For doula services, the balance is due at the start of the on-call period (from 38–39 weeks, depending on your package).',
   },
   {
     q: 'What is your cancellation policy?',

@@ -25,7 +25,7 @@ const GROUPS: Group[] = [
   {
     label: 'During birth',
     rows: [
-      { feat: 'On-call from', vals: ['39 weeks', '38 weeks', '38 weeks'] },
+      { feat: 'On-call from', vals: ['39 weeks', '10 days before due date', '38 weeks'] },
       { feat: 'Continuous labour & birth support', vals: ['✓', '✓', '✓'] },
     ],
   },

@@ -122,7 +122,7 @@ function DoulaPageStatic() {
                 Pre-birth antenatal meetings, birth plan help, and a postnatal debrief.
               </p>
               <ul style={{ listStyle: 'none', marginBottom: '1.5rem' }}>
-                {['2 antenatal meetings', 'Continuous labour support', 'Birth plan guidance', 'Postnatal debrief', '24/7 on-call from 39 weeks'].map(item => (
+                {['1–4 antenatal sessions', 'Continuous labour support', 'Birth plan guidance', 'Postnatal debrief', '24/7 on-call (from 38 weeks)'].map(item => (
                   <li key={item} style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', paddingLeft: '1.2rem', position: 'relative', marginBottom: '0.4rem', fontWeight: 300 }}>
                     <span style={{ position: 'absolute', left: 0, top: '0.6em', width: '5px', height: '5px', borderRadius: '50%', background: 'var(--pink)', display: 'block' }} />
                     {item}
