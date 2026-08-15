@@ -200,11 +200,8 @@ function BirthDoulaPageStatic() {
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '1.3rem', maxWidth: '600px' }}>
             Every package includes a free initial consultation so we can make sure we&apos;re the right fit before you commit.
           </p>
-          <div style={{ marginBottom: '3rem', display: 'flex', gap: '0.8rem', flexWrap: 'wrap', alignItems: 'center' }}>
+          <div style={{ marginBottom: '3rem' }}>
             <PackageQuizModal label="Not sure? Find your package →" />
-            <Link href="/find-your-package" style={{ color: 'var(--pink-deep)', fontWeight: 500, fontSize: '0.9rem' }}>
-              or take the full quiz →
-            </Link>
           </div>
 
           <div className="grid-3" style={{ gap: '1.5rem' }}>

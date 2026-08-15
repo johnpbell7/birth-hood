@@ -6,10 +6,12 @@ import Link from 'next/link'
 type Row = { feat: string; vals: [string, string, string] }
 type Group = { label: string; rows: Row[] }
 
+// Each tier gets its own header colour — a coordinated pink→magenta→plum set,
+// all similar weight so no single package stands out above the others.
 const PACKAGES = [
-  { name: 'Foundation', price: '£1,095', tag: 'Essential', popular: false },
-  { name: 'Balanced', price: '£1,495', tag: 'Enhanced', popular: true },
-  { name: 'Ultimate', price: '£2,000', tag: 'Comprehensive', popular: false },
+  { name: 'Foundation', price: '£1,095', tag: 'Essential', color: '#D1589C' },
+  { name: 'Balanced', price: '£1,495', tag: 'Enhanced', color: '#B8459A' },
+  { name: 'Ultimate', price: '£2,000', tag: 'Comprehensive', color: '#9A4AA0' },
 ] as const
 
 const GROUPS: Group[] = [
@@ -61,7 +63,6 @@ function Cell({ value }: { value: string }) {
   return <>{value}</>
 }
 
-/* Mobile value: a labelled row with the value on the right */
 function MobileValue({ value }: { value: string }) {
   const neg = value === '—'
   return (
@@ -72,7 +73,8 @@ function MobileValue({ value }: { value: string }) {
 }
 
 export default function PackageComparison() {
-  const [sel, setSel] = useState(1) // default: Balanced
+  const [sel, setSel] = useState(1)
+  const active = PACKAGES[sel]
 
   return (
     <div className="pkg-compare">
@@ -86,7 +88,7 @@ export default function PackageComparison() {
                   <span className="pkg-corner-label">Compare packages</span>
                 </th>
                 {PACKAGES.map((p) => (
-                  <th key={p.name} scope="col" className={`pkg-head${p.popular ? ' pkg-head--pop' : ''}`}>
+                  <th key={p.name} scope="col" className="pkg-head" style={{ background: p.color }}>
                     <span className="pkg-name">{p.name}</span>
                     <span className="pkg-price">{p.price}</span>
                     <span className="pkg-tag">{p.tag}</span>
@@ -104,7 +106,7 @@ export default function PackageComparison() {
                     <tr key={r.feat}>
                       <th scope="row" className="pkg-feat">{r.feat}</th>
                       {r.vals.map((v, i) => (
-                        <td key={i} className={`pkg-val${PACKAGES[i].popular ? ' pkg-col-pop' : ''}`}>
+                        <td key={i} className="pkg-val">
                           <Cell value={v} />
                         </td>
                       ))}
@@ -115,8 +117,8 @@ export default function PackageComparison() {
               <tr className="pkg-cta-row">
                 <td className="pkg-feat" aria-hidden="true" />
                 {PACKAGES.map((p) => (
-                  <td key={p.name} className={`pkg-val${p.popular ? ' pkg-col-pop' : ''}`}>
-                    <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className={p.popular ? 'btn-primary pkg-btn' : 'btn-outline pkg-btn'}>
+                  <td key={p.name} className="pkg-val">
+                    <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="pkg-enquire" style={{ background: p.color }}>
                       Enquire
                     </a>
                   </td>
@@ -136,21 +138,22 @@ export default function PackageComparison() {
               role="tab"
               aria-selected={sel === i}
               className={`pkgm-tab${sel === i ? ' is-active' : ''}`}
+              style={sel === i ? { borderColor: p.color } : undefined}
               onClick={() => setSel(i)}
             >
               <span className="pkgm-tab-name">{p.name}</span>
-              <span className="pkgm-tab-price">{p.price}</span>
+              <span className="pkgm-tab-price" style={{ color: p.color }}>{p.price}</span>
             </button>
           ))}
         </div>
 
         <div className="pkgm-panel">
-          <div className={`pkgm-head${PACKAGES[sel].popular ? ' is-pop' : ''}`}>
+          <div className="pkgm-head" style={{ background: active.color }}>
             <div>
-              <span className="pkgm-head-name">{PACKAGES[sel].name}</span>
-              <span className="pkgm-head-tag">{PACKAGES[sel].tag}</span>
+              <span className="pkgm-head-name">{active.name}</span>
+              <span className="pkgm-head-tag">{active.tag}</span>
             </div>
-            <span className="pkgm-head-price">{PACKAGES[sel].price}</span>
+            <span className="pkgm-head-price">{active.price}</span>
           </div>
 
           {GROUPS.map((g) => (
@@ -165,8 +168,8 @@ export default function PackageComparison() {
             </div>
           ))}
 
-          <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="btn-primary pkgm-btn">
-            Enquire about {PACKAGES[sel].name}
+          <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="pkgm-btn" style={{ background: active.color }}>
+            Enquire about {active.name}
           </a>
         </div>
         <p className="pkgm-hint">Tap a package above to compare what&apos;s included.</p>
