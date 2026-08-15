@@ -877,7 +877,9 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
      .wrap (sub-page cards, shop, pricing) gets a smaller bump on top of its
      section padding. */
   .services, .intro, .about, .testimonials, .booking-cta, .insta-section { padding-left: 2.5rem; padding-right: 2.5rem; }
-  .wrap { padding-left: 2rem; padding-right: 2rem; }
+  /* .wrap sits INSIDE already-padded sections, so keep its own gutter small to
+     avoid compounding into an over-narrow column. */
+  .wrap { padding-left: 1rem; padding-right: 1rem; }
   /* Smaller hero headline on phones so "birth-hood" doesn't span the screen */
   .hero-title { font-size: 3.1rem; }
 }

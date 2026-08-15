@@ -87,7 +87,6 @@ export default function PackageComparison() {
                 </th>
                 {PACKAGES.map((p) => (
                   <th key={p.name} scope="col" className={`pkg-head${p.popular ? ' pkg-head--pop' : ''}`}>
-                    {p.popular && <span className="pkg-badge">Most popular</span>}
                     <span className="pkg-name">{p.name}</span>
                     <span className="pkg-price">{p.price}</span>
                     <span className="pkg-tag">{p.tag}</span>
@@ -152,7 +151,6 @@ export default function PackageComparison() {
               <span className="pkgm-head-tag">{PACKAGES[sel].tag}</span>
             </div>
             <span className="pkgm-head-price">{PACKAGES[sel].price}</span>
-            {PACKAGES[sel].popular && <span className="pkgm-head-badge">Most popular</span>}
           </div>
 
           {GROUPS.map((g) => (
