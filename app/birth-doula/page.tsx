@@ -128,7 +128,7 @@ function BirthDoulaPageStatic() {
                   'Partner preparation & coaching',
                   'Hypnobirthing booklet & relaxation techniques',
                   'Access to the birth-hood online Hub',
-                  'On-call support from 39 weeks',
+                  'On-call support (from 38 weeks — varies by package)',
                 ].map(item => (
                   <li key={item} style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', paddingLeft: '1.2rem', position: 'relative', marginBottom: '0.6rem', lineHeight: 1.6, fontWeight: 300 }}>
                     <span style={{ position: 'absolute', left: 0, top: '0.55em', width: '5px', height: '5px', borderRadius: '50%', background: 'var(--pink)', display: 'block' }} />
@@ -201,18 +201,19 @@ function BirthDoulaPageStatic() {
           </p>
 
           <div className="grid-3" style={{ gap: '1.5rem' }}>
-            {/* Essential Support */}
+            {/* Foundation */}
             <div className="price-card">
               <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Essential Support
+                Foundation · Essential
               </div>
-              <div className="price-amount">£995</div>
+              <div className="price-amount">£1,095</div>
               <div className="price-period">streamlined but essential</div>
               <ul className="price-features">
-                <li>1 prenatal session (2 hours)</li>
+                <li>1 antenatal session (2 hours)</li>
+                <li>Personalised birth planning (discussion)</li>
                 <li>On-call from 39 weeks</li>
-                <li>Full continuous birth support</li>
-                <li>1 hour post-birth support</li>
+                <li>Full continuous in-person birth support</li>
+                <li>1 hour immediate post-birth support</li>
                 <li>1 postnatal visit (90 minutes)</li>
                 <li>Phone &amp; email support for 2 weeks postpartum</li>
                 <li>Optional birth pool hire (additional cost)</li>
@@ -228,26 +229,26 @@ function BirthDoulaPageStatic() {
               </a>
             </div>
 
-            {/* Ultimate Support (featured) */}
+            {/* Balanced (featured) */}
             <div className="price-card featured">
               <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '0.5rem' }}>
                 Most popular
               </div>
               <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Ultimate Support
+                Balanced · Enhanced
               </div>
-              <div className="price-amount">£2,000</div>
-              <div className="price-period">the most comprehensive package!</div>
+              <div className="price-amount">£1,495</div>
+              <div className="price-period">solid support, perfectly balanced</div>
               <ul className="price-features">
-                <li>Best for first-time parents wanting in-depth preparation</li>
-                <li>birth-hood doula gift bag</li>
-                <li>Free birth pool hire</li>
-                <li>Free TENS machine hire</li>
-                <li>Personalised birth planning</li>
-                <li>Postpartum recovery tips &amp; bespoke care kit</li>
-                <li>Hypnobirthing booklet</li>
-                <li>Digital access to the online Hub</li>
-                <li style={{ fontStyle: 'italic', fontSize: '0.8rem' }}>Min. 2 antenatal &amp; 1 postnatal — sessions can be personalised</li>
+                <li>2 antenatal sessions (2–3 hours each)</li>
+                <li>Personalised birth planning &amp; hypnobirthing resources</li>
+                <li>On-call from 10 days before your due date</li>
+                <li>Full continuous in-person birth support</li>
+                <li>2 hours immediate post-birth support</li>
+                <li>1 postnatal visit (2 hours)</li>
+                <li>Ongoing phone &amp; email support for 6 weeks</li>
+                <li>Birth pool &amp; TENS machine hire included</li>
+                <li>Full online Hub &amp; hypnobirthing access</li>
               </ul>
               <a
                 href="https://calendly.com/birthhood"
@@ -260,20 +261,24 @@ function BirthDoulaPageStatic() {
               </a>
             </div>
 
-            {/* Balanced Support */}
+            {/* Ultimate */}
             <div className="price-card">
               <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Balanced Support
+                Ultimate · Comprehensive
               </div>
-              <div className="price-amount">£1,495</div>
-              <div className="price-period">solid support, perfectly balanced</div>
+              <div className="price-amount">£2,000</div>
+              <div className="price-period">the most comprehensive package!</div>
               <ul className="price-features">
-                <li>2 prenatal sessions (2–3 hours each)</li>
-                <li>Birth planning, comfort &amp; emotional readiness</li>
-                <li>On-call from 39 weeks</li>
-                <li>Full continuous birth attendance</li>
-                <li>Postnatal debrief visit</li>
-                <li>Ongoing email &amp; phone support</li>
+                <li>4 antenatal sessions (2–3 hours each)</li>
+                <li>Dedicated, bespoke birth planning</li>
+                <li>On-call from 38 weeks</li>
+                <li>Full continuous in-person birth support</li>
+                <li>3 hours immediate post-birth support</li>
+                <li>3 postnatal visits (2 hours each)</li>
+                <li>Unlimited phone &amp; email support for 12 weeks</li>
+                <li>Birth pool &amp; TENS hire + all digital resources</li>
+                <li>Appointment accompaniment &amp; flexible sessions</li>
+                <li>Bespoke postpartum recovery kit + doula gift bag</li>
               </ul>
               <a
                 href="https://calendly.com/birthhood"
