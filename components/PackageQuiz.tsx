@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 
 type Key = 'foundation' | 'balanced' | 'ultimate'
@@ -105,9 +105,19 @@ function tally(answers: number[]): Outcome {
 export default function PackageQuiz({ onClose, compact = false }: { onClose?: () => void; compact?: boolean }) {
   const [step, setStep] = useState(0)
   const [answers, setAnswers] = useState<number[]>([])
+  const topRef = useRef<HTMLDivElement>(null)
+  const mounted = useRef(false)
 
   const total = QUESTIONS.length
   const done = step >= total
+
+  // Keep the quiz anchored in the same spot on every step so the page doesn't
+  // jump as questions change height. Skip the very first render (don't yank the
+  // page down on load).
+  useEffect(() => {
+    if (!mounted.current) { mounted.current = true; return }
+    topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [step])
 
   function choose(optIdx: number) {
     const next = [...answers]
@@ -122,7 +132,7 @@ export default function PackageQuiz({ onClose, compact = false }: { onClose?: ()
     const { winner, runnerUp } = tally(answers)
     const r = RESULTS[winner]
     return (
-      <div className={`quiz${compact ? ' quiz--compact' : ''}`}>
+      <div ref={topRef} className={`quiz${compact ? ' quiz--compact' : ''}`}>
         <div className="quiz-result">
           <div className="quiz-result-eyebrow">Your best match</div>
           <div className="quiz-result-card">
@@ -163,7 +173,7 @@ export default function PackageQuiz({ onClose, compact = false }: { onClose?: ()
 
   const cur = QUESTIONS[step]
   return (
-    <div className={`quiz${compact ? ' quiz--compact' : ''}`}>
+    <div ref={topRef} className={`quiz quiz--asking${compact ? ' quiz--compact' : ''}`}>
       <div className="quiz-progress">
         <div className="quiz-progress-bar" style={{ width: `${(step / total) * 100}%` }} />
       </div>
