@@ -219,11 +219,8 @@ function DoulaPageStatic() {
             highly personalised service. Every package includes continuous in-person support throughout
             labour and birth; the difference is how much preparation, access and aftercare comes with it.
           </p>
-          <div style={{ marginTop: '1.3rem', display: 'flex', gap: '0.8rem', flexWrap: 'wrap', alignItems: 'center' }}>
+          <div style={{ marginTop: '1.3rem' }}>
             <PackageQuizModal label="Not sure? Find your package →" />
-            <Link href="/find-your-package" className="btn-outline" style={{ display: 'inline-block' }}>
-              Take the full quiz
-            </Link>
           </div>
           <PackageComparison />
         </div>
