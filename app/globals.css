@@ -1159,3 +1159,7 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .quiz--compact .quiz-result-card { padding: 1.3rem; }
 .quiz-result-runner { margin-top: 1rem; font-size: 0.88rem; line-height: 1.55; color: var(--pink-deep); font-weight: 300; background: var(--pink-ultra); border: 1px solid var(--pink-pale); border-radius: 14px; padding: 0.8rem 1rem; }
 .quiz-result-runner strong { font-weight: 600; }
+/* keep the quiz from jumping: consistent height across questions + clear the sticky nav when we re-anchor on each step */
+.quiz { scroll-margin-top: 90px; }
+.quiz--asking { min-height: 27rem; display: flex; flex-direction: column; }
+.quiz--asking .quiz-options { margin-top: 1.4rem; }
