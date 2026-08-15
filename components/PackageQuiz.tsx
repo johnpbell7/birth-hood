@@ -6,53 +6,55 @@ import Link from 'next/link'
 type Key = 'foundation' | 'balanced' | 'ultimate'
 type Score = Record<Key, number>
 
+// helper so the "in-between" answers are easy to read
+const s = (foundation: number, balanced: number, ultimate: number): Score => ({ foundation, balanced, ultimate })
+
 const QUESTIONS: { q: string; help?: string; options: { label: string; score: Score }[] }[] = [
   {
-    q: 'Is this your first baby?',
-    help: 'First-time parents often value extra preparation.',
+    q: 'How are you feeling about giving birth?',
+    help: 'There are no wrong answers — this just helps gauge how much preparation would help.',
     options: [
-      { label: 'Yes — my first baby', score: { foundation: 0, balanced: 1, ultimate: 2 } },
-      { label: "No — I've given birth before", score: { foundation: 2, balanced: 1, ultimate: 0 } },
+      { label: "It's my first baby and I'm feeling anxious about it", score: s(0, 1, 3) },
+      { label: "First baby, but I'm feeling fairly calm and curious", score: s(0, 3, 2) },
+      { label: "I've birthed before and want solid support again", score: s(2, 2, 0) },
+      { label: "I've birthed before and know exactly what I want", score: s(3, 1, 1) },
     ],
   },
   {
-    q: 'How much birth preparation would you like beforehand?',
+    q: 'How much preparation would you like with me before the birth?',
     options: [
-      { label: 'Just the essentials — one solid session', score: { foundation: 2, balanced: 0, ultimate: 0 } },
-      { label: 'A good amount — a couple of sessions + hypnobirthing', score: { foundation: 0, balanced: 2, ultimate: 1 } },
-      { label: 'As much as possible — in-depth, personalised prep', score: { foundation: 0, balanced: 1, ultimate: 2 } },
+      { label: 'Just the essentials — one good session', score: s(3, 0, 0) },
+      { label: 'A couple of sessions so I feel really ready', score: s(1, 3, 0) },
+      { label: 'Plenty of prep, with hypnobirthing built in', score: s(0, 2, 2) },
+      { label: 'As much as possible — in-depth and tailored to me', score: s(0, 0, 3) },
     ],
   },
   {
-    q: 'Would you like equipment like a birth pool & TENS machine included?',
+    q: 'How much support would you like in the weeks after birth?',
     options: [
-      { label: "Not essential — I'll sort my own if needed", score: { foundation: 2, balanced: 0, ultimate: 0 } },
-      { label: 'Yes please — included would be ideal', score: { foundation: 0, balanced: 2, ultimate: 1 } },
+      { label: 'A visit and a couple of weeks of contact', score: s(3, 0, 0) },
+      { label: 'Ongoing support for around six weeks', score: s(0, 3, 1) },
+      { label: 'More than six weeks — but I might not need everything', score: s(0, 2, 2) },
+      { label: 'Lots — several visits, a recovery kit and 12 weeks unlimited', score: s(0, 0, 3) },
     ],
   },
   {
-    q: 'How much support would you like after your baby arrives?',
+    q: 'How hands-on would you like me to be through your pregnancy?',
+    help: 'Things like check-ins between sessions, attending appointments and flexible timing.',
     options: [
-      { label: 'A visit and a couple of weeks of contact', score: { foundation: 2, balanced: 0, ultimate: 0 } },
-      { label: 'Ongoing support for around 6 weeks', score: { foundation: 0, balanced: 2, ultimate: 1 } },
-      { label: 'Lots — several visits, a recovery kit & 12 weeks unlimited', score: { foundation: 0, balanced: 0, ultimate: 2 } },
+      { label: 'Mainly around the birth itself', score: s(3, 0, 0) },
+      { label: 'A few check-ins between our sessions', score: s(1, 3, 0) },
+      { label: 'Regular contact throughout my pregnancy', score: s(0, 2, 2) },
+      { label: 'Very involved — attend appointments with me, fully flexible', score: s(0, 0, 3) },
     ],
   },
   {
-    q: 'Would you like me to attend appointments with you and keep sessions flexible?',
+    q: 'Would you like equipment and resources included?',
+    help: 'Such as a birth pool, TENS machine and the full online hub.',
     options: [
-      { label: "Not needed", score: { foundation: 1, balanced: 1, ultimate: 0 } },
-      { label: 'That would be reassuring sometimes', score: { foundation: 0, balanced: 1, ultimate: 1 } },
-      { label: 'Yes — accompaniment & flexibility matter to me', score: { foundation: 0, balanced: 0, ultimate: 2 } },
-    ],
-  },
-  {
-    q: 'Which investment level feels most comfortable?',
-    help: 'Payment plans are available on every package.',
-    options: [
-      { label: 'Around £1,095 — essential support', score: { foundation: 2, balanced: 0, ultimate: 0 } },
-      { label: 'Around £1,495 — enhanced support', score: { foundation: 0, balanced: 2, ultimate: 0 } },
-      { label: '£2,000 — the complete, comprehensive experience', score: { foundation: 0, balanced: 0, ultimate: 2 } },
+      { label: "Not needed — I'll sort my own if I want them", score: s(3, 0, 0) },
+      { label: 'Pool & TENS included would be handy', score: s(0, 3, 1) },
+      { label: 'Yes — and I want every digital resource too', score: s(0, 1, 3) },
     ],
   },
 ]
@@ -77,17 +79,27 @@ const RESULTS: Record<Key, { name: string; price: string; tag: string; blurb: st
 
 const ORDER: Key[] = ['balanced', 'ultimate', 'foundation'] // tie-break priority
 
-function tally(answers: number[]): Key {
+type Outcome = { winner: Key; runnerUp: Key | null; totals: Score }
+
+function tally(answers: number[]): Outcome {
   const totals: Score = { foundation: 0, balanced: 0, ultimate: 0 }
   answers.forEach((optIdx, qIdx) => {
-    const s = QUESTIONS[qIdx].options[optIdx].score
-    totals.foundation += s.foundation
-    totals.balanced += s.balanced
-    totals.ultimate += s.ultimate
+    const sc = QUESTIONS[qIdx].options[optIdx].score
+    totals.foundation += sc.foundation
+    totals.balanced += sc.balanced
+    totals.ultimate += sc.ultimate
   })
-  let best = ORDER[0]
-  ORDER.forEach((k) => { if (totals[k] > totals[best]) best = k })
-  return best
+  // rank keys by score, breaking ties with ORDER priority
+  const ranked = (['foundation', 'balanced', 'ultimate'] as Key[]).sort((a, b) => {
+    if (totals[b] !== totals[a]) return totals[b] - totals[a]
+    return ORDER.indexOf(a) - ORDER.indexOf(b)
+  })
+  const winner = ranked[0]
+  const second = ranked[1]
+  // Only flag a runner-up when it's genuinely close (within ~25% of the winner) —
+  // that's the "in between two tiers" case worth mentioning on the call.
+  const close = totals[winner] > 0 && totals[second] >= totals[winner] * 0.75
+  return { winner, runnerUp: close ? second : null, totals }
 }
 
 export default function PackageQuiz({ onClose, compact = false }: { onClose?: () => void; compact?: boolean }) {
@@ -107,8 +119,8 @@ export default function PackageQuiz({ onClose, compact = false }: { onClose?: ()
   function restart() { setStep(0); setAnswers([]) }
 
   if (done) {
-    const key = tally(answers)
-    const r = RESULTS[key]
+    const { winner, runnerUp } = tally(answers)
+    const r = RESULTS[winner]
     return (
       <div className={`quiz${compact ? ' quiz--compact' : ''}`}>
         <div className="quiz-result">
@@ -125,6 +137,12 @@ export default function PackageQuiz({ onClose, compact = false }: { onClose?: ()
                 <li key={h}><span className="quiz-tick">✓</span>{h}</li>
               ))}
             </ul>
+            {runnerUp && (
+              <p className="quiz-result-runner">
+                You&apos;re also a strong fit for <strong>{RESULTS[runnerUp].name}</strong> ({RESULTS[runnerUp].price}) —
+                you&apos;re right between the two, so it&apos;s well worth comparing them on your free call.
+              </p>
+            )}
             <div className="quiz-result-actions">
               <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="btn-primary quiz-btn">
                 Book a free consultation

@@ -1155,3 +1155,5 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .quiz-modal-title { font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 600; line-height: 1.2; margin-top: 0.3rem; color: var(--black); }
 .quiz-modal-sub { margin-top: 0.5rem; font-size: 0.9rem; color: var(--grey-mid); font-weight: 300; line-height: 1.5; }
 .quiz--compact .quiz-result-card { padding: 1.3rem; }
+.quiz-result-runner { margin-top: 1rem; font-size: 0.88rem; line-height: 1.55; color: var(--pink-deep); font-weight: 300; background: var(--pink-ultra); border: 1px solid var(--pink-pale); border-radius: 14px; padding: 0.8rem 1rem; }
+.quiz-result-runner strong { font-weight: 600; }
