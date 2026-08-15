@@ -4,6 +4,7 @@ import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
 import JsonLd from '@/components/JsonLd'
+import PackageComparison from '@/components/PackageComparison'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
@@ -202,6 +203,22 @@ function DoulaPageStatic() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* BIRTH SUPPORT PACKAGES — COMPARISON */}
+      <section className="section-pad">
+        <div className="wrap">
+          <div className="section-label">Birth doula packages</div>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
+            Compare your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>support</em>
+          </h2>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '1rem', lineHeight: 1.6, fontWeight: 300, maxWidth: '640px' }}>
+            Three levels of birth doula support — from essential cover to a fully comprehensive,
+            highly personalised service. Every package includes continuous in-person support throughout
+            labour and birth; the difference is how much preparation, access and aftercare comes with it.
+          </p>
+          <PackageComparison />
         </div>
       </section>
 
