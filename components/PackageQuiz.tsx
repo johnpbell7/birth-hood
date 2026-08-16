@@ -78,8 +78,9 @@ const RESULTS: Record<Key, { name: string; price: string; tag: string; blurb: st
 }
 
 const ORDER: Key[] = ['balanced', 'ultimate', 'foundation'] // tie-break priority
+const RANK: Record<Key, number> = { foundation: 0, balanced: 1, ultimate: 2 }
 
-type Outcome = { winner: Key; runnerUp: Key | null; totals: Score }
+type Outcome = { winner: Key; stepUp: Key | null; totals: Score }
 
 function tally(answers: number[]): Outcome {
   const totals: Score = { foundation: 0, balanced: 0, ultimate: 0 }
@@ -95,11 +96,13 @@ function tally(answers: number[]): Outcome {
     return ORDER.indexOf(a) - ORDER.indexOf(b)
   })
   const winner = ranked[0]
-  const second = ranked[1]
-  // Only flag a runner-up when it's genuinely close (within ~25% of the winner) —
-  // that's the "in between two tiers" case worth mentioning on the call.
-  const close = totals[winner] > 0 && totals[second] >= totals[winner] * 0.75
-  return { winner, runnerUp: close ? second : null, totals }
+  // Only ever suggest stepping UP a tier — never down — and only when the
+  // visitor's answers are genuinely close to that higher package (within ~20%).
+  const stepUp =
+    (['foundation', 'balanced', 'ultimate'] as Key[])
+      .filter((k) => RANK[k] > RANK[winner] && totals[winner] > 0 && totals[k] >= totals[winner] * 0.8)
+      .sort((a, b) => totals[b] - totals[a] || RANK[a] - RANK[b])[0] ?? null
+  return { winner, stepUp, totals }
 }
 
 export default function PackageQuiz({ onClose, compact = false }: { onClose?: () => void; compact?: boolean }) {
@@ -129,7 +132,7 @@ export default function PackageQuiz({ onClose, compact = false }: { onClose?: ()
   function restart() { setStep(0); setAnswers([]) }
 
   if (done) {
-    const { winner, runnerUp } = tally(answers)
+    const { winner, stepUp } = tally(answers)
     const r = RESULTS[winner]
     return (
       <div ref={topRef} className={`quiz${compact ? ' quiz--compact' : ''}`}>
@@ -147,10 +150,10 @@ export default function PackageQuiz({ onClose, compact = false }: { onClose?: ()
                 <li key={h}><span className="quiz-tick">✓</span>{h}</li>
               ))}
             </ul>
-            {runnerUp && (
+            {stepUp && (
               <p className="quiz-result-runner">
-                You&apos;re also a strong fit for <strong>{RESULTS[runnerUp].name}</strong> ({RESULTS[runnerUp].price}) —
-                you&apos;re right between the two, so it&apos;s well worth comparing them on your free call.
+                If you&apos;d like even more support, you&apos;re also close to <strong>{RESULTS[stepUp].name}</strong> ({RESULTS[stepUp].price}) —
+                worth a look, and we can compare the two on your free call.
               </p>
             )}
             <div className="quiz-result-actions">
