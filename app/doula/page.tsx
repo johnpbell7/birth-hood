@@ -6,6 +6,7 @@ import CtaBand from '@/components/CtaBand'
 import JsonLd from '@/components/JsonLd'
 import PackageComparison from '@/components/PackageComparison'
 import PackageQuizModal from '@/components/PackageQuizModal'
+import AreasCovered from '@/components/AreasCovered'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
@@ -225,6 +226,8 @@ function DoulaPageStatic() {
           <PackageComparison />
         </div>
       </section>
+
+      <AreasCovered service="doula support" />
 
       {/* TESTIMONIAL */}
       <section className="testimonials" style={{ padding: '5rem 3rem' }}>
