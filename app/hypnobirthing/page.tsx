@@ -3,6 +3,7 @@ import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import AreasCovered from '@/components/AreasCovered'
 import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
@@ -291,6 +292,8 @@ function HypnobirthingPageStatic() {
           </p>
         </div>
       </section>
+
+      <AreasCovered service="hypnobirthing" />
 
       <CtaBand
         heading="Ready to feel genuinely excited about birth?"

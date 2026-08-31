@@ -3,6 +3,7 @@ import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import AreasCovered from '@/components/AreasCovered'
 import PackageQuizModal from '@/components/PackageQuizModal'
 import { cmsOrStatic } from '@/lib/cms-page'
 
@@ -314,6 +315,8 @@ function BirthDoulaPageStatic() {
           </div>
         </div>
       </section>
+
+      <AreasCovered service="birth doula support" />
 
       <CtaBand
         heading="Ready to have your person in the room?"

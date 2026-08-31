@@ -49,8 +49,9 @@ const businessJsonLd = {
     addressCountry: 'GB',
   },
   areaServed: [
-    'North West Leicestershire', 'Coalville', 'Loughborough', 'Ashby-de-la-Zouch',
-    'Leicester', 'Leicestershire', 'Warwickshire', 'Nuneaton', 'Midlands', 'United Kingdom (online)',
+    'North West Leicestershire', 'Leicestershire', 'Derbyshire', 'Warwickshire', 'Nottinghamshire',
+    'Coalville', 'Ashby-de-la-Zouch', 'Loughborough', 'Leicester', 'Swadlincote', 'Nuneaton',
+    'Nottingham', 'Derby', 'Midlands', 'United Kingdom (online)',
   ],
   aggregateRating: {
     '@type': 'AggregateRating',
