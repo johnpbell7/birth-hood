@@ -1163,3 +1163,16 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .quiz { scroll-margin-top: 90px; }
 .quiz--asking { min-height: 27rem; display: flex; flex-direction: column; }
 .quiz--asking .quiz-options { margin-top: 1.4rem; }
+
+/* ── "Where I work" local-SEO section ────────────────────────────── */
+.areas { padding: 4.5rem 0; background: var(--pink-ultra); }
+.areas-title { font-family: 'Poppins', sans-serif; font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 600; line-height: 1.15; margin: 0.4rem 0 0.8rem; }
+.areas-title em { font-style: italic; color: var(--pink-deep); }
+.areas-intro { max-width: 62ch; color: var(--grey-mid); font-size: 1rem; line-height: 1.65; font-weight: 300; margin: 0 0 1.6rem; }
+.areas-intro strong { color: var(--black); font-weight: 600; }
+.areas-chips { list-style: none; margin: 0 0 1.6rem; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.areas-chip { background: #fff; border: 1.5px solid var(--pink-pale); color: var(--black); font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 0.9rem; padding: 0.5rem 1rem; border-radius: 999px; box-shadow: 0 10px 26px -20px rgba(184,63,147,0.5); }
+.areas-chip:first-child { background: var(--pink-deep); color: #fff; border-color: var(--pink-deep); }
+.areas-online { font-size: 0.95rem; color: var(--grey-mid); font-weight: 300; line-height: 1.6; }
+.areas-online a { color: var(--pink-deep); font-weight: 500; text-decoration: underline; }
+.areas-online-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--pink); margin-right: 0.6rem; vertical-align: middle; box-shadow: 0 0 0 4px rgba(254,127,204,0.25); }

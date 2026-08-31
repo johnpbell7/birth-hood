@@ -48,7 +48,10 @@ const businessJsonLd = {
     addressRegion: 'Leicestershire',
     addressCountry: 'GB',
   },
-  areaServed: ['Leicester', 'Leicestershire', 'North West Leicestershire', 'Midlands', 'United Kingdom (online)'],
+  areaServed: [
+    'North West Leicestershire', 'Coalville', 'Loughborough', 'Ashby-de-la-Zouch',
+    'Leicester', 'Leicestershire', 'Warwickshire', 'Nuneaton', 'Midlands', 'United Kingdom (online)',
+  ],
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',
