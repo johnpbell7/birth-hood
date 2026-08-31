@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import AreasCovered from '@/components/AreasCovered'
 import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
@@ -411,6 +412,8 @@ function YogaPageStatic() {
           <FaqAccordion items={faqItems} />
         </div>
       </section>
+
+      <AreasCovered service="pregnancy yoga" />
 
       <CtaBand
         heading="Ready to move, breathe and connect?"

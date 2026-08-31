@@ -8,14 +8,18 @@ import Link from 'next/link'
 export default function AreasCovered({ service = 'support' }: { service?: string }) {
   const inPerson = [
     'North West Leicestershire',
-    'Coalville',
-    'Loughborough',
-    'Ashby-de-la-Zouch',
-    'Leicester',
     'Leicestershire',
+    'Derbyshire',
     'Warwickshire',
+    'Nottinghamshire',
+    'Coalville',
+    'Ashby-de-la-Zouch',
+    'Loughborough',
+    'Leicester',
+    'Swadlincote',
     'Nuneaton',
-    'The wider Midlands',
+    'Nottingham',
+    'Derby',
   ]
 
   return (
@@ -27,9 +31,9 @@ export default function AreasCovered({ service = 'support' }: { service?: string
         </h2>
         <p className="areas-intro">
           I&apos;m based in <strong>North West Leicestershire</strong> and support families in person across
-          Leicestershire, Warwickshire and the wider Midlands — I travel roughly an hour for births, so if
-          you&apos;re nearby, just ask. Wherever you are, <strong>virtual {service}</strong> is available
-          UK-wide and internationally.
+          <strong> Leicestershire, Derbyshire, Warwickshire and Nottinghamshire</strong> — I travel around an
+          hour for births, so if you&apos;re within reach, just ask. Wherever you are, <strong>virtual {service}</strong> is
+          available UK-wide and internationally.
         </p>
 
         <ul className="areas-chips" aria-label="Areas covered in person">
