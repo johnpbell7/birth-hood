@@ -120,7 +120,7 @@ export default async function BlogPage() {
       <div className="cta-band reveal">
         <h2>Want personalised advice? <em style={{ fontStyle: 'italic' }}>Book a chat.</em></h2>
         <p>A free 20-minute consultation with me — no obligation, just a helpful conversation.</p>
-        <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="btn-dark">Book Free Consultation</a>
+        <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" className="btn-dark">Book Free Consultation</a>
       </div>
     </>
   )

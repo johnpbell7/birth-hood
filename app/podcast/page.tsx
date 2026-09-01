@@ -43,9 +43,11 @@ function PodcastPageStatic() {
               <div className="section-label">About the show</div>
               <h2>Real talk about birth, pregnancy and beyond</h2>
               <p>
-                Join me and Meg (Birth Evolution) as we explore all areas of pregnancy,
-                birth and the postnatal period. This is honest, unfiltered conversation from two
-                doulas who have been in the room, heard the stories and know what really matters.
+                Come and explore all areas of pregnancy, birth and the postnatal period with me —
+                honest, unfiltered conversation from a doula who has been in the room, heard the
+                stories and knows what really matters. The early seasons were co-hosted with Meg
+                (Birth Evolution), who has since stepped away from doula life for now — and there
+                are plenty more episodes on the way.
               </p>
               <p>
                 So let&apos;s deep dive into birth — bringing you knowledge, experience and tips
@@ -62,8 +64,8 @@ function PodcastPageStatic() {
             <div>
               <div className="stat-grid">
                 <div className="stat-card">
-                  <div className="stat-number">2</div>
-                  <div className="stat-label">Doulas — me &amp; Meg from Birth Evolution</div>
+                  <div className="stat-number">New</div>
+                  <div className="stat-label">More episodes on the way</div>
                 </div>
                 <div className="stat-card">
                   <div className="stat-number">Real</div>

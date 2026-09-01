@@ -117,7 +117,7 @@ function ContactPageStatic() {
                 <p style={{ fontSize: '0.9rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.7, marginBottom: '1.2rem' }}>
                   Skip the form and book a free consultation call straight into my diary.
                 </p>
-                <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" className="btn-primary">
                   Book Free Consultation
                 </a>
               </div>

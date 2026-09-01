@@ -23,7 +23,7 @@ function BirthDoulaPageStatic() {
         img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         actions={
           <a
-            href="https://calendly.com/birthhood"
+            href="https://calendly.com/birthhood/free-consultation"
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -224,7 +224,7 @@ function BirthDoulaPageStatic() {
                 <li>Optional birth pool hire (additional cost)</li>
               </ul>
               <a
-                href="https://calendly.com/birthhood"
+                href="https://calendly.com/birthhood/free-consultation"
                 className="btn-outline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -256,7 +256,7 @@ function BirthDoulaPageStatic() {
                 <li>Full online Hub &amp; hypnobirthing access</li>
               </ul>
               <a
-                href="https://calendly.com/birthhood"
+                href="https://calendly.com/birthhood/free-consultation"
                 className="btn-primary"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -286,7 +286,7 @@ function BirthDoulaPageStatic() {
                 <li>Bespoke postpartum recovery kit + doula gift bag</li>
               </ul>
               <a
-                href="https://calendly.com/birthhood"
+                href="https://calendly.com/birthhood/free-consultation"
                 className="btn-outline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -299,7 +299,7 @@ function BirthDoulaPageStatic() {
 
           <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--grey-mid)', fontSize: '0.88rem', fontWeight: 300 }}>
             Payment plans available for all doula services, just let me know!{' '}
-            <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pink-deep)' }}>Book a free consultation →</a>
+            <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pink-deep)' }}>Book a free consultation →</a>
           </p>
         </div>
       </section>
@@ -321,7 +321,7 @@ function BirthDoulaPageStatic() {
       <CtaBand
         heading="Ready to have your person in the room?"
         body="Book a free consultation to discuss birth doula support for your birth."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
     </>

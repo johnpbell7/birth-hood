@@ -79,7 +79,6 @@ export default async function Footer() {
             <li><Link href="/podcast">Podcast</Link></li>
             <li><Link href="/freebies">Freebies</Link></li>
             <li><Link href="/reviews">Reviews</Link></li>
-            <li><Link href="/masterclass">Masterclass</Link></li>
             <li><Link href="/course-info">Course Info</Link></li>
           </ul>
         </div>
@@ -88,7 +87,7 @@ export default async function Footer() {
           <div className="footer-col-title">Connect</div>
           <ul className="footer-links">
             <li><Link href="/contact">Get in Touch</Link></li>
-            <li><a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer">Book a Consultation</a></li>
+            <li><a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer">Book a Consultation</a></li>
             <li><Link href="/faq">FAQ</Link></li>
             <li><Link href="/terms">T&Cs</Link></li>
           </ul>

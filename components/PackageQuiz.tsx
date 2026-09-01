@@ -157,7 +157,7 @@ export default function PackageQuiz({ onClose, compact = false }: { onClose?: ()
               </p>
             )}
             <div className="quiz-result-actions">
-              <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="btn-primary quiz-btn">
+              <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" className="btn-primary quiz-btn">
                 Book a free consultation
               </a>
               <Link href="/birth-doula" className="btn-outline quiz-btn" onClick={onClose}>

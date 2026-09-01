@@ -242,7 +242,7 @@ function MeetLeannePageStatic() {
       <CtaBand
         heading="Ready to work together?"
         body="Book a free 30-minute consultation and let's chat about how I can support you on your birth journey."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
     </>

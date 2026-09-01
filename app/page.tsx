@@ -121,7 +121,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
     s.homeHeroSubtitle ??
     'Hypnobirthing, Doula support and Yoga — helping you feel powerful, prepared and genuinely excited for birth. All pregnancies, all modes of birth, all people.'
   const heroCta = s.homeHeroCta ?? 'Book Free Consultation'
-  const heroCtaHref = s.homeHeroCtaHref ?? s.social?.calendly ?? 'https://calendly.com/birthhood'
+  const heroCtaHref = s.homeHeroCtaHref ?? s.social?.calendly ?? 'https://calendly.com/birthhood/free-consultation'
 
   // Services
   const servicesEyebrow = s.homeServicesEyebrow ?? 'What I offer'

@@ -66,7 +66,7 @@ export async function POST(req: NextRequest) {
           <p>Hi ${name.split(' ')[0]},</p>
           <p>Thank you so much for getting in touch. I've received your message and will get back to you as soon as possible — usually within 24-48 hours.</p>
           ${service ? `<p>You've enquired about: <strong>${service}</strong></p>` : ''}
-          <p>In the meantime, you're very welcome to <a href="https://calendly.com/birthhood" style="color: #c955a8;">book a free consultation call</a> if you'd like to chat sooner.</p>
+          <p>In the meantime, you're very welcome to <a href="https://calendly.com/birthhood/free-consultation" style="color: #c955a8;">book a free consultation call</a> if you'd like to chat sooner.</p>
           <p>Warmly,<br />Leanne<br /><em>birth-hood</em></p>
           <hr style="margin: 24px 0; border: none; border-top: 1px solid #f7d4ee;" />
           <p style="color: #888; font-size: 12px;">

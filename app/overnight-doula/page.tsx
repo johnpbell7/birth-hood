@@ -103,7 +103,7 @@ function OvernightDoulaPageStatic() {
         img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         actions={
           <a
-            href="https://calendly.com/birthhood"
+            href="https://calendly.com/birthhood/free-consultation"
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -193,7 +193,7 @@ function OvernightDoulaPageStatic() {
                 Parents remain responsible for most nappy changes and resettling between feeds.
               </p>
               <a
-                href="https://calendly.com/birthhood"
+                href="https://calendly.com/birthhood/free-consultation"
                 className="btn-outline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -228,7 +228,7 @@ function OvernightDoulaPageStatic() {
                 Focus on healing and sleep while your baby&apos;s needs are lovingly supported.
               </p>
               <a
-                href="https://calendly.com/birthhood"
+                href="https://calendly.com/birthhood/free-consultation"
                 className="btn-primary"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -257,7 +257,7 @@ function OvernightDoulaPageStatic() {
                 <li>Tailored guidance to build your confidence</li>
               </ul>
               <a
-                href="https://calendly.com/birthhood"
+                href="https://calendly.com/birthhood/free-consultation"
                 className="btn-outline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -331,7 +331,7 @@ function OvernightDoulaPageStatic() {
       <CtaBand
         heading="Ready to rest?"
         body="If you'd like to discuss overnight support, check availability, or find the package that's right for your family, I'd love to hear from you. Together, we'll create a calm, supported start to life with your baby."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
     </>

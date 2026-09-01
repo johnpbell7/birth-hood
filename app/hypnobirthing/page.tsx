@@ -69,7 +69,7 @@ function HypnobirthingPageStatic() {
         img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         actions={
           <a
-            href="https://calendly.com/birthhood"
+            href="https://calendly.com/birthhood/free-consultation"
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -175,10 +175,8 @@ function HypnobirthingPageStatic() {
                 <li>Online: £200</li>
               </ul>
               <a
-                href="https://calendly.com/birthhood"
+                href="/booking"
                 className="btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
                 style={{ display: 'block', textAlign: 'center' }}
               >
                 Book Now
@@ -206,10 +204,8 @@ function HypnobirthingPageStatic() {
                 <li>Online: £325</li>
               </ul>
               <a
-                href="https://calendly.com/birthhood"
+                href="/booking"
                 className="btn-primary"
-                target="_blank"
-                rel="noopener noreferrer"
                 style={{ display: 'block', textAlign: 'center' }}
               >
                 Book Now
@@ -233,10 +229,8 @@ function HypnobirthingPageStatic() {
                 <li>121 online: £325</li>
               </ul>
               <a
-                href="https://calendly.com/birthhood"
+                href="/booking"
                 className="btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
                 style={{ display: 'block', textAlign: 'center' }}
               >
                 Book Now
@@ -298,7 +292,7 @@ function HypnobirthingPageStatic() {
       <CtaBand
         heading="Ready to feel genuinely excited about birth?"
         body="Book a free consultation to find the right hypnobirthing course for you."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
     </>

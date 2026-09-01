@@ -66,16 +66,6 @@ const reviews = [
   },
 ]
 
-const birthStories = [
-  { title: "Britt's Homebirth", type: 'Homebirth' },
-  { title: "Hannah's FMU Birth", type: 'FMU Birth' },
-  { title: "Emma's Positive Induction", type: 'Induction' },
-  { title: "Stacie's Hospital birth", type: 'Hospital' },
-  { title: "Tom's 'dad' story", type: 'Birth Partner' },
-  { title: "Amy's Positive Induction", type: 'Induction' },
-  { title: "Hannah's Water Birth", type: 'Water Birth' },
-]
-
 function ReviewsPageStatic() {
   return (
     <>
@@ -123,32 +113,6 @@ function ReviewsPageStatic() {
         </div>
       </section>
 
-      {/* BIRTH STORIES */}
-      <section className="section-pad">
-        <div className="wrap">
-          <div className="section-label">Birth stories</div>
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
-            Stories from <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>real births</em>
-          </h2>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '640px' }}>
-            A collection of positive birth stories shared by my clients — every birth, every path, every outcome is valid.
-          </p>
-
-          <div className="grid-3" style={{ gap: '1rem' }}>
-            {birthStories.map((story) => (
-              <div key={story.title} className="card" style={{ padding: '1.4rem 1.5rem', borderTop: '3px solid var(--pink)' }}>
-                <div style={{ fontSize: '0.68rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '0.6rem' }}>
-                  {story.type}
-                </div>
-                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, color: 'var(--black)', lineHeight: 1.3 }}>
-                  {story.title}
-                </h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* LEAVE A REVIEW */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ textAlign: 'center', maxWidth: '600px' }}>
@@ -176,7 +140,7 @@ function ReviewsPageStatic() {
       <CtaBand
         heading="Ready to add your own story?"
         body="Book a free consultation and start your birth-hood journey today."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
     </>

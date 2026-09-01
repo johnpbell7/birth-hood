@@ -64,7 +64,7 @@ function FindYourPackageStatic() {
       <CtaBand
         heading="Still not sure? Let's chat it through"
         body="Book a free, no-pressure consultation and we'll find the right level of support for your birth together."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
     </>

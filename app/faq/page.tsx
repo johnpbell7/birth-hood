@@ -18,7 +18,7 @@ const generalFaqs = [
   },
   {
     q: 'How do I book?',
-    a: 'The easiest way to get started is to book a free 30-minute consultation via Calendly. This is a no-obligation, friendly chat where we can discuss your needs, answer any questions and figure out the right support for you. You can book at calendly.com/birthhood.',
+    a: 'The easiest way to get started is to book a free 30-minute consultation. This is a no-obligation, friendly chat where we can discuss your needs, answer any questions and figure out the right support for you. Yoga and hypnobirthing courses are booked via Ticket Tailor; everything else is booked through the booking page or by getting in touch.',
   },
   {
     q: 'Do you work with all types of families?',
@@ -102,15 +102,15 @@ const paymentFaqs = [
   },
   {
     q: 'Is a deposit required to secure my place?',
-    a: 'Yes. A £50 deposit is required to secure your place upon booking. The remainder is due before your first session. For doula services, the balance is due at the start of the on-call period (from 38–39 weeks, depending on your package).',
+    a: 'Yes — a deposit secures your booking, and the amount depends on which service you book (it isn\'t a flat fee for everything). The remainder is due before your first session. For doula services, the balance is due at the start of the on-call period (from 38–39 weeks, depending on your package). I\'ll always confirm the exact figures with you before you commit.',
   },
   {
     q: 'What is your cancellation policy?',
-    a: 'Please see the full cancellation policy on the Terms & Conditions page. In brief: cancellations made 14 or more days before the start date receive a full refund; 7–14 days receive a 50% refund; under 7 days are non-refundable. Exceptions may be made in exceptional circumstances — please get in touch.',
+    a: 'Full details are set out on the Terms & Conditions page, so please have a read there before booking. If your circumstances change, the kindest thing is always to get in touch as early as you can and we\'ll do our best to help.',
   },
   {
-    q: 'Do you offer any discounts?',
-    a: 'Discounts are occasionally available for NHS workers and for those booking multiple services. Please ask at your consultation.',
+    q: 'What if money is tight — do you offer discounts?',
+    a: 'I don\'t offer a standard NHS or blanket discount, but I never want cost to be the reason someone goes without support. If money is tight, I can offer a scaled approach for families on lower incomes — just mention it on your free consultation and we\'ll have a discreet, no-pressure chat about what\'s manageable for you.',
   },
 ]
 
@@ -202,7 +202,7 @@ function FaqPageStatic() {
               just a friendly chat.
             </p>
             <a
-              href="https://calendly.com/birthhood"
+              href="https://calendly.com/birthhood/free-consultation"
               className="btn-primary"
               target="_blank"
               rel="noopener noreferrer"
@@ -216,7 +216,7 @@ function FaqPageStatic() {
       <CtaBand
         heading="Ready to get started?"
         body="Book your free consultation and let's find the right support for your birth journey."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
     </>

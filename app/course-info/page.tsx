@@ -21,7 +21,7 @@ function CourseInfoPageStatic() {
         img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         actions={
           <a
-            href="https://calendly.com/birthhood"
+            href="https://calendly.com/birthhood/free-consultation"
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -67,7 +67,7 @@ function CourseInfoPageStatic() {
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                   <a
-                    href="https://calendly.com/birthhood"
+                    href="https://calendly.com/birthhood/free-consultation"
                     className="btn-outline"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -84,7 +84,7 @@ function CourseInfoPageStatic() {
               <strong style={{ color: 'var(--black)' }}>Can&apos;t find a date that works?</strong>{' '}
               Private and online courses are available at a time to suit you. No fixed schedule — just
               4 sessions whenever works best.{' '}
-              <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pink-deep)' }}>
+              <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pink-deep)' }}>
                 Book a free consultation to discuss →
               </a>
             </p>
@@ -168,7 +168,7 @@ function CourseInfoPageStatic() {
                   <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500 }}>From £145</div>
                 </div>
                 <a
-                  href="https://calendly.com/birthhood"
+                  href="https://calendly.com/birthhood/free-consultation"
                   className="btn-outline"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -196,7 +196,7 @@ function CourseInfoPageStatic() {
                   <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500 }}>From £145</div>
                 </div>
                 <a
-                  href="https://calendly.com/birthhood"
+                  href="https://calendly.com/birthhood/free-consultation"
                   className="btn-outline"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -243,7 +243,7 @@ function CourseInfoPageStatic() {
 
           <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <a
-              href="https://calendly.com/birthhood"
+              href="https://calendly.com/birthhood/free-consultation"
               className="btn-primary"
               target="_blank"
               rel="noopener noreferrer"
@@ -260,7 +260,7 @@ function CourseInfoPageStatic() {
       <CtaBand
         heading="Ready to book your place?"
         body="Start with a free 30-minute consultation — no pressure, just a friendly chat to see if we&apos;re the right fit."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
     </>

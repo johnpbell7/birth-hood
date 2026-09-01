@@ -6,41 +6,17 @@ import { getFreebies } from '@/lib/sanity-queries'
 
 export const metadata: Metadata = {
   title: 'Free Resources',
-  description: 'Free birth resources from birth-hood, including a hypnobirthing MP3, birth plan guide, newborn checklist and ready-made affirmations to download.',
+  description: 'Free birth resources from birth-hood, including a hypnobirthing MP3, newborn checklist and ready-made birth affirmations to download.',
 }
 
 const fallbackResources = [
-  {
-    emoji: '✦',
-    title: 'Colouring Affirmations',
-    desc: 'Printable colouring birth affirmations — colour them in and display them around your home for daily positive reminders.',
-    href: '/downloads/colouring-affirmations.pdf',
-    type: 'PDF Download',
-    tag: 'Most popular',
-  },
-  {
-    emoji: '◻',
-    title: 'Birth Plan Guide',
-    desc: 'A complimentary birth plan guide to help you plan your A, B & C birth preferences.',
-    href: '/downloads/birth-plan-guide.pdf',
-    type: 'PDF Download',
-    tag: null,
-  },
-  {
-    emoji: '○',
-    title: 'Newborn Checklist',
-    desc: 'Everything you need for your new arrival — a comprehensive newborn essentials checklist.',
-    href: '/downloads/newborn-checklist.pdf',
-    type: 'PDF Download',
-    tag: null,
-  },
   {
     emoji: '◈',
     title: '15 Ready Made Affirmations',
     desc: '15 ready-made birth-hood affirmations — print them out and use them throughout your pregnancy and birth.',
     href: '/downloads/ready-made-affirmations.pdf',
     type: 'PDF Download',
-    tag: null,
+    tag: 'Most popular',
   },
   {
     emoji: '♫',
@@ -51,11 +27,11 @@ const fallbackResources = [
     tag: null,
   },
   {
-    emoji: '◇',
-    title: 'ELLE TENS Discount',
-    desc: 'A discount code for an ELLE TENS machine — great for managing contractions in early labour.',
-    href: '/downloads/elle-tens-discount.pdf',
-    type: 'Discount Code',
+    emoji: '○',
+    title: 'Newborn Checklist',
+    desc: 'Everything you need for your new arrival — a comprehensive newborn essentials checklist.',
+    href: '/downloads/newborn-checklist.pdf',
+    type: 'PDF Download',
     tag: null,
   },
 ]
@@ -97,9 +73,8 @@ export default async function FreebiesPage() {
       <section style={{ background: 'var(--pink-ultra)', padding: '3rem' }}>
         <div className="wrap" style={{ textAlign: 'center', maxWidth: '680px' }}>
           <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.6, fontWeight: 300 }}>
-            Find some printable affirmations (colouring AND ready made birth-hood ones), FREE Hypnobirthing MP3,
-            positive birth videos and a complimentary birth plan guide (For your A, B & C!) Plus a BONUS Newborn
-            Checklist! Plus an ELLE TENS machine discount code!
+            Find ready-made birth-hood affirmations to print, a FREE Hypnobirthing MP3, positive birth videos
+            and a BONUS Newborn Checklist — all completely free.
           </p>
         </div>
       </section>
@@ -186,7 +161,7 @@ export default async function FreebiesPage() {
               All PDFs open in a new tab and can be downloaded, printed or saved to your device.
               Audio files will download directly. If you have any trouble accessing these resources,
               please{' '}
-              <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pink-deep)' }}>
+              <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pink-deep)' }}>
                 get in touch
               </a>
               .

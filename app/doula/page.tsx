@@ -47,7 +47,7 @@ function DoulaPageStatic() {
         img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
         actions={
           <a
-            href="https://calendly.com/birthhood"
+            href="https://calendly.com/birthhood/free-consultation"
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -247,7 +247,7 @@ function DoulaPageStatic() {
       <CtaBand
         heading="Ready to have your person in the room?"
         body="Book a free 30-minute consultation to discuss the right doula support for your birth."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
     </>

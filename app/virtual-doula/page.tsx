@@ -20,7 +20,7 @@ function VirtualDoulaPageStatic() {
         img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
         actions={
           <a
-            href="https://calendly.com/birthhood"
+            href="https://calendly.com/birthhood/free-consultation"
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -176,7 +176,7 @@ function VirtualDoulaPageStatic() {
             </p>
           </div>
           <a
-            href="https://calendly.com/birthhood"
+            href="https://calendly.com/birthhood/free-consultation"
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -189,7 +189,7 @@ function VirtualDoulaPageStatic() {
       <CtaBand
         heading="Ready to get started online?"
         body="Book your free virtual consultation and let's talk about how I can support you from wherever you are."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
     </>
