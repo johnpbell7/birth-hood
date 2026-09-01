@@ -65,7 +65,7 @@ function YogaPageStatic() {
         img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         actions={
           <a
-            href="https://calendly.com/birthhood"
+            href="https://buytickets.at/birthhood"
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -218,7 +218,7 @@ function YogaPageStatic() {
               </div>
 
               <a
-                href="https://calendly.com/birthhood"
+                href="https://calendly.com/birthhood/free-consultation"
                 className="btn-primary"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -259,7 +259,7 @@ function YogaPageStatic() {
                 <li>Partner welcome to join</li>
               </ul>
               <a
-                href="https://calendly.com/birthhood"
+                href="https://calendly.com/birthhood/free-consultation"
                 className="btn-outline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -288,7 +288,7 @@ function YogaPageStatic() {
                 <li>Community of expectant parents</li>
               </ul>
               <a
-                href="https://calendly.com/birthhood"
+                href="https://calendly.com/birthhood/free-consultation"
                 className="btn-primary"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -314,7 +314,7 @@ function YogaPageStatic() {
                 <li>NW Leicestershire venue</li>
               </ul>
               <a
-                href="https://calendly.com/birthhood"
+                href="https://calendly.com/birthhood/free-consultation"
                 className="btn-outline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -388,7 +388,7 @@ function YogaPageStatic() {
                   Per class — drop-in welcome. Course cost varies depending on the length of the course.
                 </p>
                 <a
-                  href="https://calendly.com/birthhood"
+                  href="https://buytickets.at/birthhood"
                   className="btn-primary"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -418,7 +418,7 @@ function YogaPageStatic() {
       <CtaBand
         heading="Ready to move, breathe and connect?"
         body="Book your first prenatal or postnatal yoga class — all levels welcome."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book Your Place"
       />
     </>

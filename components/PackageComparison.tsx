@@ -118,7 +118,7 @@ export default function PackageComparison() {
                 <td className="pkg-feat" aria-hidden="true" />
                 {PACKAGES.map((p) => (
                   <td key={p.name} className="pkg-val">
-                    <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="pkg-enquire" style={{ background: p.color }}>
+                    <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" className="pkg-enquire" style={{ background: p.color }}>
                       Enquire
                     </a>
                   </td>
@@ -168,7 +168,7 @@ export default function PackageComparison() {
             </div>
           ))}
 
-          <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="pkgm-btn" style={{ background: active.color }}>
+          <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" className="pkgm-btn" style={{ background: active.color }}>
             Enquire about {active.name}
           </a>
         </div>
@@ -178,7 +178,7 @@ export default function PackageComparison() {
       <p className="pkg-note">
         Every package includes full, continuous <strong>in-person support throughout labour and birth</strong>.
         Not sure which fits? <Link href="/find-your-package">Take the 1-minute package finder</Link> or{' '}
-        <Link href="https://calendly.com/birthhood">book a free consultation</Link>.
+        <Link href="https://calendly.com/birthhood/free-consultation">book a free consultation</Link>.
       </p>
     </div>
   )

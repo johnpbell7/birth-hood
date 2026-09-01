@@ -94,7 +94,7 @@ export default function Nav({ items }: { items?: NavItem[] | null }) {
             )
           )}
           <li><Link href="/hub" className="nav-hub">Hub</Link></li>
-          <li><a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="nav-cta">Book Now</a></li>
+          <li><a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" className="nav-cta">Book Now</a></li>
         </ul>
 
         <div className="nav-mobile-right">
@@ -149,7 +149,7 @@ export default function Nav({ items }: { items?: NavItem[] | null }) {
         </div>
 
         <div className="mob-footer">
-          <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="mob-cta" onClick={close}>
+          <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" className="mob-cta" onClick={close}>
             Book Free Consultation
           </a>
         </div>

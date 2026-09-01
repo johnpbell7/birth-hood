@@ -25,7 +25,7 @@ function DoulaFeedbackPageStatic() {
             &ldquo;Being a doula is an honour and a privilege. Supporting you as you journey through pregnancy, birth and postpartum is something I do not take lightly and to receive the feedback I do is just beyond words.&rdquo;
           </p>
           <a
-            href="https://calendly.com/birthhood"
+            href="https://calendly.com/birthhood/free-consultation"
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"

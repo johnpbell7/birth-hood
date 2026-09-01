@@ -20,7 +20,7 @@ function PostnatalDoulaPageStatic() {
         img2={{ src: '/images/doula-support.jpg', alt: 'Postnatal doula support' }}
         actions={
           <a
-            href="https://calendly.com/birthhood"
+            href="https://calendly.com/birthhood/free-consultation"
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -154,7 +154,7 @@ function PostnatalDoulaPageStatic() {
                 <li>Use across days, weeks or months</li>
               </ul>
               <a
-                href="https://calendly.com/birthhood"
+                href="https://calendly.com/birthhood/free-consultation"
                 className="btn-outline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -183,7 +183,7 @@ function PostnatalDoulaPageStatic() {
                 <li>Use across days, weeks or months</li>
               </ul>
               <a
-                href="https://calendly.com/birthhood"
+                href="https://calendly.com/birthhood/free-consultation"
                 className="btn-primary"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -209,7 +209,7 @@ function PostnatalDoulaPageStatic() {
                 <li>No long-term commitment</li>
               </ul>
               <a
-                href="https://calendly.com/birthhood"
+                href="https://calendly.com/birthhood/free-consultation"
                 className="btn-outline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -231,7 +231,7 @@ function PostnatalDoulaPageStatic() {
       <CtaBand
         heading="Ready for support in the fourth trimester?"
         body="Book a free consultation to discuss postnatal doula support tailored to your family."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
     </>

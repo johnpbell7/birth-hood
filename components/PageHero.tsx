@@ -30,7 +30,7 @@ export default function PageHero({
   img1,
   img2,
   ctaLabel = 'Book Free Consultation',
-  ctaHref = 'https://calendly.com/birthhood',
+  ctaHref = 'https://calendly.com/birthhood/free-consultation',
   hideFab = false,
 }: PageHeroProps) {
   const externalCta = ctaHref.startsWith('http')

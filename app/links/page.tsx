@@ -11,7 +11,7 @@ const links = [
   {
     label: 'Book a 1-1 Consultation',
     desc: 'Book directly via Calendly',
-    href: 'https://calendly.com/birthhood',
+    href: 'https://calendly.com/birthhood/free-consultation',
     external: true,
     featured: true,
   },
@@ -52,7 +52,7 @@ const links = [
   },
   {
     label: 'Dou-La-La Podcast',
-    desc: 'Honest birth talk with me &amp; Meg',
+    desc: 'Honest, unfiltered birth talk',
     href: '/podcast',
     external: false,
     featured: false,

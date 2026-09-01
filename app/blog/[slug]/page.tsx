@@ -70,7 +70,7 @@ export default async function BlogPostPage({ params }: Props) {
             <a href="/blog" style={{ fontSize: '0.78rem', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--grey-mid)', textDecoration: 'none' }}>
               ← Back to Blog
             </a>
-            <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: '0.75rem' }}>
+            <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: '0.75rem' }}>
               Book Free Consultation
             </a>
           </div>

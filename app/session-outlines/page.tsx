@@ -121,7 +121,7 @@ function SessionOutlinesPageStatic() {
       <CtaBand
         heading="Ready to start your hypnobirthing journey?"
         body="Book a free consultation to discuss course dates and find the right option for you."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
     </>

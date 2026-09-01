@@ -21,7 +21,7 @@ function BirthTraumaPageStatic() {
         img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         actions={
           <a
-            href="https://calendly.com/birthhood"
+            href="https://calendly.com/birthhood/free-consultation"
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -245,7 +245,7 @@ function BirthTraumaPageStatic() {
       <CtaBand
         heading="Ready to start healing?"
         body="Book a gentle, no-obligation conversation with me to talk about your experience and how I can support you."
-        href="https://calendly.com/birthhood"
+        href="https://calendly.com/birthhood/free-consultation"
         label="Book a Conversation"
       />
     </>

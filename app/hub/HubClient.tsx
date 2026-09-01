@@ -35,6 +35,7 @@ type Video = {
   description?: string
   src?: string
   poster?: string
+  youtube?: string
 }
 
 type UsefulSite = {
@@ -125,28 +126,34 @@ const albums: AudioAlbum[] = [
 
 const videos: Video[] = [
   {
-    title: 'Workshop Recordings',
-    description: 'Full recordings of birth-hood course sessions and workshops covering birth positions, coaching, breathing techniques and more.',
+    title: 'Induction Workshop',
+    description: 'A full recording of the birth-hood induction workshop — understanding your options and making informed choices.',
+    youtube: 'Nxq4Qz-PitU',
   },
   {
-    title: 'Birth Positions Walkthrough',
-    description: 'A visual guide to the most effective positions for each stage of labour and birth.',
+    title: 'Birth Plan Workshop',
+    description: 'Work through your A, B & C birth preferences with me in this recorded workshop.',
+    youtube: 'T68pX7wIZVM',
   },
   {
-    title: 'Breathing Techniques',
-    description: 'I demonstrate up-breathing, down-breathing and relaxation breaths for every stage of labour.',
+    title: 'Pain Management Workshop',
+    description: 'A recording covering comfort measures and pain-management options for labour and birth.',
+    youtube: 'y5xb49dlxDk',
   },
   {
-    title: 'Partner Coaching Session',
-    description: 'How your birth partner can actively support you — comfort measures, advocacy and space-holding.',
+    title: 'Massage Techniques',
+    description: 'Practical massage techniques for your birth partner to use during labour.',
+    youtube: '62C2fqyAH20',
   },
   {
-    title: 'Caesarean Birth Prep',
-    description: 'What to expect before, during and after a caesarean — making it as positive as possible.',
+    title: 'Sifting / Rebozo Tutorial',
+    description: 'A short tutorial on sifting techniques for comfort and optimal positioning.',
+    youtube: 'Je30iRqSb5g',
   },
   {
-    title: 'Fourth Trimester Essentials',
-    description: 'Preparing for the early weeks with your baby — feeding, sleep, recovery and emotional wellbeing.',
+    title: 'Pregnancy Yoga Class',
+    description: 'Follow along with a full recorded birth-hood pregnancy yoga class.',
+    youtube: 'MDGzKPxxj5Y',
   },
 ]
 
@@ -351,7 +358,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
             </form>
             <p style={{ marginTop: '2rem', fontSize: '0.82rem', color: 'var(--grey-mid)', fontWeight: 300 }}>
               Not a client yet?{' '}
-              <a href="https://calendly.com/birthhood" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pink-deep)', textDecoration: 'underline' }}>
+              <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pink-deep)', textDecoration: 'underline' }}>
                 Book a free consultation
               </a>
               .
@@ -584,7 +591,17 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
           <div className="grid-2" style={{ gap: '1.5rem' }}>
             {displayVideos.map((video) => (
               <div key={video.title} className="card" style={{ padding: 0, overflow: 'hidden', borderRadius: '3px' }}>
-                {video.src ? (
+                {video.youtube ? (
+                  <div style={{ aspectRatio: '16/9', background: 'var(--black)' }}>
+                    <iframe
+                      src={`https://www.youtube.com/embed/${video.youtube}`}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      style={{ width: '100%', height: '100%', border: 0, display: 'block' }}
+                    />
+                  </div>
+                ) : video.src ? (
                   <video controls poster={video.poster} style={{ width: '100%', display: 'block', background: 'var(--black)' }}>
                     <source src={video.src} type="video/mp4" />
                     Your browser does not support video playback.
@@ -634,11 +651,6 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
             ))}
           </div>
 
-          <div style={{ marginTop: '2rem', padding: '1rem 1.5rem', background: 'var(--pink-ultra)', border: '1px dashed rgba(254,127,204,0.5)', borderRadius: '3px' }}>
-            <p style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: 'var(--black)' }}>Tip:</strong> Upload video files or add a YouTube/Vimeo embed URL as the video <code>src</code> in <code>app/hub/HubClient.tsx</code>.
-            </p>
-          </div>
         </div>
       </section>
 

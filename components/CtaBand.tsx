@@ -10,7 +10,7 @@ interface CtaBandProps {
 export default function CtaBand({
   heading,
   body,
-  href = 'https://calendly.com/birthhood',
+  href = 'https://calendly.com/birthhood/free-consultation',
   label = 'Book Free Consultation',
 }: CtaBandProps) {
   return (

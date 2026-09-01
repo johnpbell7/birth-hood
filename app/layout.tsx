@@ -63,7 +63,7 @@ const businessJsonLd = {
   sameAs: [
     'https://www.instagram.com/birthhooduk',
     'https://www.youtube.com/@birthhooduk',
-    'https://calendly.com/birthhood',
+    'https://calendly.com/birthhood/free-consultation',
   ],
 }
 
