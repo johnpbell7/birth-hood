@@ -599,7 +599,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
               My curated board of articles and research — pre-labour rupture of membranes, asynclitism, anterior cervical lip, vaginal examinations, fibroids evidence and more. Made with love to support your birthing needs.
             </p>
             <a
-              href="https://padlet.com/birthhood"
+              href="https://padlet.com/birthhooduk/my-fierce-birth-padlet-gi4t6uzf59g0yc6r"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
