@@ -863,6 +863,67 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   --scallop-shadow: var(--pink-deep);
 }
 
+/* ── Reviews page: the rating band ────────────────────────────────────────
+   The Google score gets the room, with the supporting facts stacked beside it
+   rather than two lonely numbers floating in a pink strip. */
+.rating-band { background: var(--pink-ultra); padding: 4.5rem 3rem; }
+.rating-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 3rem;
+  align-items: center;
+}
+.rating-hero-top { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.rating-score {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(4.5rem, 9vw, 7rem);
+  font-weight: 600;
+  line-height: 0.9;
+  color: var(--black);
+}
+.rating-stars { color: var(--pink-deep); font-size: clamp(1.3rem, 2.4vw, 1.9rem); letter-spacing: 0.14em; }
+.rating-hero-label {
+  margin: 1.2rem 0 0;
+  color: var(--grey-mid);
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+.rating-hero-label strong { color: var(--black); font-weight: 600; }
+.rating-cta {
+  display: inline-block;
+  margin-top: 1.4rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--pink);
+  padding-bottom: 3px;
+}
+.rating-cta:hover { color: var(--black); border-color: var(--black); }
+
+.rating-facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(0,0,0,0.08); }
+.rating-fact { background: var(--pink-ultra); padding: 1.6rem 1.4rem; }
+.rating-fact-figure {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--pink-deep);
+  margin-bottom: 0.5rem;
+}
+.rating-fact-label { display: block; color: var(--grey-mid); font-size: 0.82rem; font-weight: 300; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .rating-band { padding: 3.5rem 1.5rem; }
+  .rating-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+@media (max-width: 560px) {
+  .rating-facts { grid-template-columns: 1fr; }
+}
+
 /* CTA BAND */
 .cta-band { background: var(--pink); padding: 5rem 3rem; text-align: center; position: relative; overflow: hidden; }
 .cta-band > h2, .cta-band > p, .cta-band > a { position: relative; z-index: 1; }
@@ -1002,6 +1063,8 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .testimonials-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .stars-block { text-align: left; }
   .reviews-track { grid-template-columns: 1fr; }
+  /* Six cards is a long scroll on a phone — show four until "Read more". */
+  .reviews-track--collapsed > :nth-child(n + 5) { display: none; }
   .podcast { grid-template-columns: 1fr; gap: 3rem; }
   .booking-cta { padding: 4rem 1.5rem; }
   .booking-cta-inner { grid-template-columns: 1fr; }

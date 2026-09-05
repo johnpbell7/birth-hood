@@ -193,7 +193,7 @@ function BirthTraumaPageStatic() {
             {[
               {
                 name: 'Birth Trauma Association',
-                url: 'https://www.birthtraumaassociation.org',
+                url: 'https://www.birthtraumaassociation.org.uk',
                 desc: 'The leading UK charity supporting people affected by birth trauma. Free resources, peer support and professional directory.',
               },
               {

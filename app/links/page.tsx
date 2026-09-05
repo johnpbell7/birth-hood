@@ -10,7 +10,10 @@ export const metadata: Metadata = {
 }
 
 const CALENDLY = 'https://calendly.com/birthhood/free-consultation'
-const GOOGLE_REVIEW = 'https://g.page/r/birthhood/review'
+// Leanne's own review link from her Google Business Profile — it opens the
+// write-a-review dialog directly. (The previous g.page/r/birthhood/review had
+// a placeholder where the place ID goes, so it landed on google.com.)
+const GOOGLE_REVIEW = 'https://g.page/r/CfzJur7y_9nhEAE/review'
 
 const social = {
   instagram: 'https://www.instagram.com/birthhooduk',
