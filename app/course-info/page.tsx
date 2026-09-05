@@ -363,6 +363,36 @@ function CourseInfoPageStatic() {
         </div>
       </section>
 
+      {/* POWER HOURS */}
+      <section className="section-pad-sm" style={{ background: 'var(--black)' }}>
+        <div className="wrap">
+          <div className="grid-2" style={{ gap: '3rem', alignItems: 'center' }}>
+            <div>
+              <div className="section-label light">Not ready for a full course?</div>
+              <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.7rem, 2.6vw, 2.3rem)', fontWeight: 600, lineHeight: 1.15, color: 'var(--white)', marginBottom: '1rem' }}>
+                Book a <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>Power Hour</em>
+              </h2>
+              <p style={{ color: 'rgba(255,255,255,0.72)', fontSize: '0.95rem', lineHeight: 1.75, fontWeight: 300 }}>
+                You&apos;ve read the guides. You&apos;ve Googled. You&apos;ve got questions. Bring your
+                birth plan, induction options, previous birth experience or whatever is currently
+                making you go &ldquo;hang on&hellip; what?&rdquo;, and we&apos;ll work through it
+                together.
+              </p>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+              <a href="https://calendly.com/birthhood/power-hour" target="_blank" rel="noopener noreferrer" className="power-row">
+                <span><strong>Power Hour</strong><br />60 minutes of personalised birth support</span>
+                <span className="power-price">£50</span>
+              </a>
+              <a href="https://calendly.com/birthhood/power-hour" target="_blank" rel="noopener noreferrer" className="power-row">
+                <span><strong>Power Session</strong><br />2 hours — for when there&apos;s a lot to unpack</span>
+                <span className="power-price">£80</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CtaBand
         heading="Ready to book your place?"
         body="Start with a free 30-minute consultation — no pressure, just a friendly chat to see if we&apos;re the right fit."
