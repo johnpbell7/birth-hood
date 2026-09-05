@@ -83,6 +83,7 @@ const DEFAULT_SERVICES = [
 
 const DEFAULT_CREDENTIALS = [
   'KGHypnobirthing DipHb (2019)',
+  'The Birth Uprising Hypnobirthing conversion course (2020)',
   'Badass Birth Trained Doula (2021)',
   '3 Step Rewind Practitioner (2021)',
   'LGBT+ Competency — Queer Birth Club (2021)',
