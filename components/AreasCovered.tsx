@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { getAreas, townSentence } from '@/lib/areas'
 
 /**
  * "Where I work" — local coverage, shown on Meet Leanne only.
@@ -11,16 +12,8 @@ import Link from 'next/link'
  * the human-readable version once.
  */
 
-const COUNTIES = [
-  'Leicestershire',
-  'Northamptonshire',
-  'Derbyshire',
-  'Nottinghamshire',
-  'Warwickshire',
-  'Staffordshire',
-]
-
-export default function AreasCovered() {
+export default async function AreasCovered() {
+  const { counties, towns } = await getAreas()
   return (
     <section className="areas" aria-labelledby="areas-heading">
       <div className="wrap">
@@ -34,12 +27,16 @@ export default function AreasCovered() {
             </h2>
             <p className="areas-intro">
               I&apos;m based in <strong>North West Leicestershire</strong> and support families in
-              person right across the Midlands. I travel around an hour for births — so if
-              you&apos;re within reach, just ask.
+              person across {counties.slice(0, -1).join(', ')} and {counties[counties.length - 1]}
+              &nbsp;— including {townSentence(towns, 5)}.
             </p>
             <p className="areas-intro">
-              Not local? <Link href="/virtual-doula">Virtual support</Link> means we can still work
-              together from anywhere in the UK or abroad.
+              I travel around an hour for births. <strong>Not sure if you&apos;re within reach?</strong>{' '}
+              Just <Link href="/contact">get in touch and ask</Link> — the answer is usually yes.
+            </p>
+            <p className="areas-intro">
+              Not local at all? <Link href="/virtual-doula">Virtual support</Link> means we can still
+              work together from anywhere in the UK or abroad.
             </p>
 
             <div className="areas-photo">
@@ -59,7 +56,7 @@ export default function AreasCovered() {
             <div className="areas-group">
               <h3 className="areas-group-label">Counties covered in person</h3>
               <ul className="areas-chips">
-                {COUNTIES.map((a) => (
+                {counties.map((a) => (
                   <li key={a} className="areas-chip areas-chip--county">{a}</li>
                 ))}
               </ul>

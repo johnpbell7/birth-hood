@@ -5,6 +5,7 @@ import CtaBand from '@/components/CtaBand'
 import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
+import { areaServed, DEFAULT_COUNTIES, DEFAULT_TOWNS } from '@/lib/areas'
 
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
@@ -26,14 +27,7 @@ const serviceSchema = {
   description: 'Pregnancy yoga and parent & baby yoga classes in NW Leicestershire — safe, adapted movement to nourish your body and calm your mind.',
   url: `${SITE}/yoga`,
   provider: { '@type': 'HealthAndBeautyBusiness', name: 'birth-hood', url: SITE },
-  areaServed: [
-    'Leicestershire', 'North West Leicestershire', 'Northamptonshire', 'Derbyshire',
-    'Nottinghamshire', 'Warwickshire', 'Staffordshire',
-    'Coalville', 'Ashby-de-la-Zouch', 'Loughborough', 'Leicester', 'Swadlincote', 'Nuneaton',
-    'Nottingham', 'Derby', 'Burton upon Trent', 'Tamworth', 'Hinckley', 'Market Harborough',
-    'Northampton', 'Lichfield',
-    'Midlands', 'United Kingdom (online)',
-  ],
+  areaServed: areaServed({ counties: DEFAULT_COUNTIES, towns: DEFAULT_TOWNS }),
 }
 const breadcrumbSchema = {
   '@context': 'https://schema.org',

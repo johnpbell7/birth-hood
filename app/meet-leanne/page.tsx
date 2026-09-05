@@ -191,16 +191,12 @@ function MeetLeannePageStatic() {
             ))}
           </div>
 
-          {/* You'll also get */}
-          <div className="grid-2" style={{ gap: '1.5rem' }}>
+          {/* You'll also get — one card now the bonus-videos one has gone, so it
+              runs full width rather than sitting in half a two-column grid. */}
+          <div>
             <div className="card card-pink">
               <p style={{ margin: 0, lineHeight: 1.75, color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300 }}>
                 All resources, MP3&apos;s, parent handbook, birth plan, postnatal plan, printable affirmations and more.
-              </p>
-            </div>
-            <div className="card card-pink">
-              <p style={{ margin: 0, lineHeight: 1.75, color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300 }}>
-                Amazing 4th trimester bonus videos, including breastfeeding, sling use and baby massage and more.
               </p>
             </div>
           </div>

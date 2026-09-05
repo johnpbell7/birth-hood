@@ -6,6 +6,7 @@ import CtaBand from '@/components/CtaBand'
 import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
+import { areaServed, DEFAULT_COUNTIES, DEFAULT_TOWNS } from '@/lib/areas'
 
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
@@ -25,14 +26,7 @@ const serviceSchema = {
   description: 'Evidence-based KGHypnobirthing courses in Leicester and online across the UK — releasing fear and building calm, confident birth preparation.',
   url: `${SITE}/hypnobirthing`,
   provider: { '@type': 'HealthAndBeautyBusiness', name: 'birth-hood', url: SITE },
-  areaServed: [
-    'Leicestershire', 'North West Leicestershire', 'Northamptonshire', 'Derbyshire',
-    'Nottinghamshire', 'Warwickshire', 'Staffordshire',
-    'Coalville', 'Ashby-de-la-Zouch', 'Loughborough', 'Leicester', 'Swadlincote', 'Nuneaton',
-    'Nottingham', 'Derby', 'Burton upon Trent', 'Tamworth', 'Hinckley', 'Market Harborough',
-    'Northampton', 'Lichfield',
-    'Midlands', 'United Kingdom (online)',
-  ],
+  areaServed: areaServed({ counties: DEFAULT_COUNTIES, towns: DEFAULT_TOWNS }),
 }
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -236,15 +230,6 @@ function HypnobirthingPageStatic() {
                   <div className="stat-number">5+</div>
                   <div className="stat-label">Years of experience teaching hypnobirthing</div>
                 </div>
-              </div>
-
-              <div className="card card-pink" style={{ marginTop: '2rem' }}>
-                <div className="section-label" style={{ marginBottom: '1rem' }}>KGHypnobirthing</div>
-                <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300 }}>
-                  I&apos;m a certified KGHypnobirthing practitioner, trained in the UK&apos;s leading
-                  hypnobirthing method — developed by Katharine Graves, widely regarded as the gold
-                  standard in birth preparation.
-                </p>
               </div>
             </div>
           </div>

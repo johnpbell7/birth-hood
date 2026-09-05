@@ -42,6 +42,26 @@ export default defineType({
       group: 'global',
     }),
 
+    // ── Areas covered ────────────────────────────────────────────────────────
+    defineField({
+      name: 'areasCounties',
+      title: 'Areas covered — counties',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description:
+        'Shown as the chips on the "where I work" card. Leave empty to use the built-in list.',
+      group: 'global',
+    }),
+    defineField({
+      name: 'areasTowns',
+      title: 'Areas covered — towns & cities',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description:
+        'These are NOT listed on the page. They go into the hidden location data Google reads, and the first few are named in the sentence on the doula page. Add a town here and you start showing up for it — no need for a separate page per town.',
+      group: 'global',
+    }),
+
     // ── Home — Hero ──────────────────────────────────────────────────────────
     defineField({
       name: 'homeHeroTitle',

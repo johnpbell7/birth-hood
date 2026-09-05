@@ -7,6 +7,7 @@ import JsonLd from '@/components/JsonLd'
 import PackageComparison from '@/components/PackageComparison'
 import PackageQuizModal from '@/components/PackageQuizModal'
 import { cmsOrStatic } from '@/lib/cms-page'
+import { areaServed, getAreas, townSentence, DEFAULT_COUNTIES, DEFAULT_TOWNS } from '@/lib/areas'
 
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
@@ -26,14 +27,7 @@ const serviceSchema = {
   description: 'Continuous, compassionate non-medical birth, virtual and postnatal doula support in Leicester and the Midlands — before, during and after birth.',
   url: `${SITE}/doula`,
   provider: { '@type': 'HealthAndBeautyBusiness', name: 'birth-hood', url: SITE },
-  areaServed: [
-    'Leicestershire', 'North West Leicestershire', 'Northamptonshire', 'Derbyshire',
-    'Nottinghamshire', 'Warwickshire', 'Staffordshire',
-    'Coalville', 'Ashby-de-la-Zouch', 'Loughborough', 'Leicester', 'Swadlincote', 'Nuneaton',
-    'Nottingham', 'Derby', 'Burton upon Trent', 'Tamworth', 'Hinckley', 'Market Harborough',
-    'Northampton', 'Lichfield',
-    'Midlands', 'United Kingdom (online)',
-  ],
+  areaServed: areaServed({ counties: DEFAULT_COUNTIES, towns: DEFAULT_TOWNS }),
 }
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -44,7 +38,7 @@ const breadcrumbSchema = {
   ],
 }
 
-function DoulaPageStatic() {
+function DoulaPageStatic({ towns }: { towns: string[] }) {
   return (
     <>
       <JsonLd data={serviceSchema} />
@@ -260,6 +254,23 @@ function DoulaPageStatic() {
         </div>
       </section>
 
+      {/* WHERE I SUPPORT FAMILIES — the geographic signal, in one sentence
+          rather than a wall of town chips. Towns come from Site Settings. */}
+      <section className="section-pad-sm" style={{ background: 'var(--pink-ultra)' }}>
+        <div className="wrap" style={{ maxWidth: '760px' }}>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.4rem, 2.2vw, 1.9rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.2 }}>
+            Where I support <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>families</em>
+          </h2>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.98rem', lineHeight: 1.75, fontWeight: 300 }}>
+            I&apos;m based in North West Leicestershire and support families across{' '}
+            {townSentence(towns)}. I travel around an hour for births, so if you&apos;re within
+            reach just ask &mdash; and if you&apos;re further afield,{' '}
+            <Link href="/virtual-doula" style={{ color: 'var(--pink-deep)' }}>virtual support</Link>{' '}
+            works anywhere in the UK.
+          </p>
+        </div>
+      </section>
+
       <CtaBand
         heading="Ready to have your person in the room?"
         body="Book a free 30-minute consultation to discuss the right doula support for your birth."
@@ -271,5 +282,6 @@ function DoulaPageStatic() {
 }
 
 export default async function DoulaPage() {
-  return cmsOrStatic('doula', <DoulaPageStatic />)
+  const { towns } = await getAreas()
+  return cmsOrStatic('doula', <DoulaPageStatic towns={towns} />)
 }

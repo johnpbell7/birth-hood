@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ScrollRevealInit from '@/components/ScrollRevealInit'
 import { getNavigation } from '@/lib/sanity-queries'
+import { getAreas, areaServed } from '@/lib/areas'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.birth-hood.co.uk'
 
@@ -31,7 +32,8 @@ export const metadata: Metadata = {
 }
 
 // LocalBusiness structured data — helps Google show birth-hood in local / Maps results
-const businessJsonLd = {
+function buildBusinessJsonLd(areas: string[]) {
+  return {
   '@context': 'https://schema.org',
   '@type': 'HealthAndBeautyBusiness',
   name: 'birth-hood',
@@ -48,16 +50,6 @@ const businessJsonLd = {
     addressRegion: 'Leicestershire',
     addressCountry: 'GB',
   },
-  areaServed: [
-    // Counties
-    'Leicestershire', 'North West Leicestershire', 'Northamptonshire', 'Derbyshire',
-    'Nottinghamshire', 'Warwickshire', 'Staffordshire',
-    // Towns and cities — listed here for local search rather than on the page
-    'Coalville', 'Ashby-de-la-Zouch', 'Loughborough', 'Leicester', 'Swadlincote', 'Nuneaton',
-    'Nottingham', 'Derby', 'Burton upon Trent', 'Tamworth', 'Hinckley', 'Market Harborough',
-    'Northampton', 'Lichfield',
-    'Midlands', 'United Kingdom (online)',
-  ],
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',
@@ -70,11 +62,16 @@ const businessJsonLd = {
     'https://www.youtube.com/@birthhooduk',
     'https://calendly.com/birthhood/free-consultation',
   ],
+  areaServed: areas,
+  }
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   // CMS-managed main menu (falls back to the built-in default inside Nav)
   const navItems = await getNavigation()
+  // Coverage comes from Site Settings, so adding a town in the Studio puts it
+  // straight into the location data Google reads.
+  const businessJsonLd = buildBusinessJsonLd(areaServed(await getAreas()))
   return (
     <html lang="en">
       <head>

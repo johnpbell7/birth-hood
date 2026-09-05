@@ -179,6 +179,8 @@ export type SiteSettings = {
   }
   footerText?: string
   marqueeWords?: string[]
+  areasCounties?: string[]
+  areasTowns?: string[]
   // Home page
   homeHeroTitle?: string
   homeHeroSubtitle?: string
