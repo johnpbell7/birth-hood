@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { client, blogPostsQuery, isSanityConfigured } from '@/lib/sanity'
+import { client, blogPostsQuery, isSanityConfigured, urlFor } from '@/lib/sanity'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import { blogPosts } from '@/lib/blog-posts'
@@ -24,6 +24,8 @@ interface Post {
   estimatedReadingTime?: number
   coverImage?: string
   coverAlt?: string
+  /** Sanity image object — resolved to a URL below. */
+  mainImage?: { alt?: string } | null
 }
 
 // Brand palette only — the previous set drifted into plum, green and slate.
@@ -60,7 +62,15 @@ export default async function BlogPage() {
     // CMS not configured yet — fall back to the migrated posts
   }
 
-  const displayPosts = posts.length > 0 ? posts : FALLBACK_POSTS
+  // Sanity posts carry a mainImage object; the committed ones carry a path.
+  // Normalise to coverImage so the card markup does not care which it got.
+  const displayPosts: Post[] = posts.length > 0
+    ? posts.map((p) => ({
+        ...p,
+        coverImage: p.mainImage ? urlFor(p.mainImage).width(900).height(600).fit('crop').url() : undefined,
+        coverAlt: p.mainImage?.alt ?? '',
+      }))
+    : FALLBACK_POSTS
 
   return (
     <>

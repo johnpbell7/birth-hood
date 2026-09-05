@@ -111,22 +111,51 @@ if (!COMMIT) {
 }
 
 // ── Blog posts ────────────────────────────────────────────────────────────
+// Images are uploaded and referenced, not skipped: Sanity takes precedence
+// over the committed posts, so a post seeded without its images would appear
+// on the live site with them missing.
+const imageCache = new Map()
+async function uploadImage(publicPath) {
+  if (imageCache.has(publicPath)) return imageCache.get(publicPath)
+  const file = path.join('public', publicPath.replace(/^\//, ''))
+  if (!existsSync(file)) { console.warn(`    image missing: ${publicPath}`); return null }
+  const asset = await client.assets.upload('image', createReadStream(file), {
+    filename: path.basename(file),
+  })
+  imageCache.set(publicPath, asset._id)
+  return asset._id
+}
+
 for (const p of blogPosts) {
   const body = []
   for (const b of p.body) {
-    if (b.type === 'img') continue // images are re-attached in the Studio
+    if (b.type === 'img') {
+      const ref = await uploadImage(b.value)
+      if (ref) {
+        body.push({ _type: 'image', _key: key(), alt: b.alt || '',
+          asset: { _type: 'reference', _ref: ref } })
+      }
+      continue
+    }
     const style = b.type === 'h2' ? 'h2' : b.type === 'h3' ? 'h3' : 'normal'
     const text = b.type === 'li' ? `• ${b.value}` : b.value
     body.push({ _type: 'block', _key: key(), style,
       children: [{ _type: 'span', _key: key(), text, marks: [] }] })
   }
-  await client.createOrReplace({
+
+  const doc = {
     _id: `blogPost-${p.slug}`, _type: 'blogPost',
     title: p.title, slug: { _type: 'slug', current: p.slug },
     publishedAt: `${p.publishedAt}T09:00:00Z`,
     category: p.category, excerpt: p.excerpt, body,
-  })
-  console.log('  blog   ', p.slug)
+  }
+  if (p.coverImage) {
+    const ref = await uploadImage(p.coverImage)
+    if (ref) doc.mainImage = { _type: 'image', alt: p.coverAlt || '',
+      asset: { _type: 'reference', _ref: ref } }
+  }
+  await client.createOrReplace(doc)
+  console.log('  blog   ', p.slug, doc.mainImage ? '(with cover)' : '(no cover)')
 }
 
 // ── Birth stories ─────────────────────────────────────────────────────────

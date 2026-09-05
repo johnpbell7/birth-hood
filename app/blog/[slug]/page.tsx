@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PortableText } from '@portabletext/react'
-import { client, blogPostQuery, isSanityConfigured } from '@/lib/sanity'
+import { client, blogPostQuery, isSanityConfigured, urlFor } from '@/lib/sanity'
 import { blogPosts, getBlogPost, type PostBlock } from '@/lib/blog-posts'
 
 export const revalidate = 60
@@ -137,6 +137,20 @@ export default async function BlogPostPage({ params }: Props) {
               <PortableText
                 value={cms.body}
                 components={{
+                  types: {
+                    image: ({ value }) => (
+                      <figure style={{ margin: '2.5rem 0' }}>
+                        <Image
+                          src={urlFor(value).width(1440).url()}
+                          alt={value?.alt || ''}
+                          width={900}
+                          height={600}
+                          sizes="(max-width: 780px) 100vw, 720px"
+                          style={{ width: '100%', height: 'auto', borderRadius: '2px' }}
+                        />
+                      </figure>
+                    ),
+                  },
                   block: {
                     h2: ({ children }) => <h2>{children}</h2>,
                     h3: ({ children }) => <h3>{children}</h3>,
