@@ -1,5 +1,7 @@
-import Image from 'next/image'
+import PageHero from '@/components/PageHero'
 import { urlFor } from '@/lib/sanity'
+
+type CmsImage = { asset?: unknown; alt?: string }
 
 type Props = {
   eyebrow?: string
@@ -7,30 +9,26 @@ type Props = {
   subheading?: string
   ctaLabel?: string
   ctaHref?: string
-  image?: { asset?: unknown; alt?: string }
+  image?: CmsImage
+  image2?: CmsImage
 }
 
-export default function HeroSection({ eyebrow, heading, subheading, ctaLabel, ctaHref, image }: Props) {
-  const imgUrl = image?.asset ? urlFor(image as never).width(1200).url() : null
+function polaroid(image: CmsImage | undefined) {
+  if (!image?.asset) return undefined
+  return { src: urlFor(image as never).width(900).url(), alt: image.alt ?? '' }
+}
+
+/** Renders a CMS hero block with the same two-polaroid layout the rest of the
+    site uses, so a page built in the Studio matches the hand-built pages. */
+export default function HeroSection({ eyebrow, heading, subheading, ctaLabel, ctaHref, image, image2 }: Props) {
   return (
-    <section className="page-hero">
-      <div className="page-hero-inner">
-        <div>
-          {eyebrow && <div className="page-eyebrow">{eyebrow}</div>}
-          <h1 className="page-title">{heading}</h1>
-          {subheading && <p className="page-subtitle">{subheading}</p>}
-          {ctaLabel && ctaHref && (
-            <a href={ctaHref} className="btn-primary" style={{ marginTop: '1rem' }}>
-              {ctaLabel}
-            </a>
-          )}
-        </div>
-        {imgUrl && (
-          <div>
-            <Image src={imgUrl} alt={image?.alt ?? ''} width={600} height={600} style={{ width: '100%', height: 'auto', borderRadius: '4px' }} />
-          </div>
-        )}
-      </div>
-    </section>
+    <PageHero
+      eyebrow={eyebrow ?? ''}
+      title={heading}
+      subtitle={subheading ?? ''}
+      img1={polaroid(image)}
+      img2={polaroid(image2)}
+      {...(ctaLabel && ctaHref ? { ctaLabel, ctaHref } : {})}
+    />
   )
 }

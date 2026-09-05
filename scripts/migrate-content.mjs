@@ -119,7 +119,7 @@ async function migrateSettings() {
       'Online & In-Person',
     ],
     // Home — Hero
-    homeHeroHeadline: 'Your birth, your way.',
+    homeHeroTitle: 'Welcome to birth-hood',
     homeHeroSubtitle:
       'Hypnobirthing, Doula support and Yoga — helping you feel powerful, prepared and genuinely excited for birth. All pregnancies, all modes of birth, all people.',
     homeHeroCta: 'Book Free Consultation',

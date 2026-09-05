@@ -115,14 +115,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
   const s = settings ?? {}
 
   // Hero
-  // NB: a stale value ("Your birth, your way.") is still saved in Sanity and
-  // was overriding the intended headline on the live site. Treat that old
-  // default (and any empty value) as unset so "Welcome to birth-hood" wins,
-  // while still allowing a genuinely new headline set in the Studio.
-  const heroHeadline =
-    !s.homeHeroHeadline || s.homeHeroHeadline.trim() === 'Your birth, your way.'
-      ? 'Welcome to birth-hood'
-      : s.homeHeroHeadline
+  const heroHeadline = s.homeHeroTitle?.trim() || 'Welcome to birth-hood'
   const heroSubtitle =
     s.homeHeroSubtitle ??
     'Hypnobirthing, Doula support and Yoga — helping you feel powerful, prepared and genuinely excited for birth. All pregnancies, all modes of birth, all people.'
@@ -134,13 +127,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
   const servicesHeading = s.homeServicesHeading ?? 'Everything you need for a positive birth'
 
   // Welcome intro (under the hero)
-  // Same guard as the hero: the old default here was "Welcome to birth-hood",
-  // which is now the hero text — treat it (and empty) as unset so this shows
-  // "Hi, I'm Leanne".
-  const welcomeHeading =
-    !s.homeWelcomeHeading || s.homeWelcomeHeading.trim() === 'Welcome to birth-hood'
-      ? "Hi, I'm Leanne"
-      : s.homeWelcomeHeading
+  const welcomeHeading = s.homeWelcomeTitle?.trim() || "Hi, I'm Leanne"
   const welcomeBody = s.homeWelcomeBody ?? [
     'At birth-hood, I believe every family deserves to enter parenthood feeling informed, supported, connected, and confident. Through education, compassionate care, and community, I help people navigate pregnancy, birth, and beyond in a way that feels right for them.',
     "From Doula support, Hypnobirthing, 3 Step Rewind Traumatic Birth resolution support, and Yoga you're covered (as featured on BBC Radio Leicester).",

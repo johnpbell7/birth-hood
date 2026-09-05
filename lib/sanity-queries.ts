@@ -16,7 +16,8 @@ const PAGE_FIELDS = `
     },
     _type == "heroSection" => {
       ...,
-      image{ ..., asset-> }
+      image{ ..., asset-> },
+      image2{ ..., asset-> }
     },
     _type == "imageSection" => {
       ...,
@@ -179,13 +180,13 @@ export type SiteSettings = {
   footerText?: string
   marqueeWords?: string[]
   // Home page
-  homeHeroHeadline?: string
+  homeHeroTitle?: string
   homeHeroSubtitle?: string
   homeHeroCta?: string
   homeHeroCtaHref?: string
   homeSignatureImage?: SanityImageSource
   homeHeroCollage?: Array<{ image?: SanityImageSource; label?: string; alt?: string }>
-  homeWelcomeHeading?: string
+  homeWelcomeTitle?: string
   homeWelcomeBody?: string[]
   homeWelcomeImage?: SanityImageSource
   homeServicesEyebrow?: string

@@ -44,11 +44,21 @@ export default defineType({
 
     // ── Home — Hero ──────────────────────────────────────────────────────────
     defineField({
-      name: 'homeHeroHeadline',
+      name: 'homeHeroTitle',
       title: 'Hero — Headline',
       type: 'string',
       description:
-        'The big headline at the very top of the home page — currently "Welcome to birth-hood". One old value is ignored on purpose: if this field still reads "Your birth, your way." the site falls back to "Welcome to birth-hood". Type anything else here and it shows straight away.',
+        'The big headline at the very top of the home page. Leave empty to use "Welcome to birth-hood".',
+      placeholder: 'Welcome to birth-hood',
+      group: 'home',
+    }),
+    // Superseded by homeHeroTitle. Kept in the schema (hidden) so the stale
+    // value saved in Sanity does not show up as an "unknown field" warning.
+    defineField({
+      name: 'homeHeroHeadline',
+      title: 'Hero — Headline (old, unused)',
+      type: 'string',
+      hidden: true,
       group: 'home',
     }),
     defineField({
@@ -103,11 +113,20 @@ export default defineType({
 
     // ── Home — Welcome intro (under the hero) ────────────────────────────────
     defineField({
-      name: 'homeWelcomeHeading',
+      name: 'homeWelcomeTitle',
       title: 'Welcome — Heading',
       type: 'string',
       description:
-        'The heading of the intro block below the hero — currently "Hi, I\'m Leanne". As above, the old value "Welcome to birth-hood" is ignored here (it is the hero headline now); anything else you type shows straight away. The words "birth-hood" are shown in pink italics automatically.',
+        'Heading of the intro block below the hero. Leave empty to use "Hi, I\'m Leanne". The words "birth-hood" are shown in pink italics automatically.',
+      placeholder: "Hi, I'm Leanne",
+      group: 'home',
+    }),
+    // Superseded by homeWelcomeTitle — see the note above.
+    defineField({
+      name: 'homeWelcomeHeading',
+      title: 'Welcome — Heading (old, unused)',
+      type: 'string',
+      hidden: true,
       group: 'home',
     }),
     defineField({

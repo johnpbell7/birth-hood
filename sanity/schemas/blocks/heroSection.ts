@@ -21,10 +21,19 @@ export default defineType({
     }),
     defineField({
       name: 'image',
-      title: 'Hero image',
+      title: 'Photo 1 — large polaroid',
       type: 'image',
       options: { hotspot: true },
-      fields: [{ name: 'alt', title: 'Alt text', type: 'string' }],
+      description: 'The bigger of the two photos beside the heading.',
+      fields: [{ name: 'alt', title: 'Caption / alt text', type: 'string' }],
+    }),
+    defineField({
+      name: 'image2',
+      title: 'Photo 2 — small polaroid',
+      type: 'image',
+      options: { hotspot: true },
+      description: 'The smaller photo that overlaps the first one.',
+      fields: [{ name: 'alt', title: 'Caption / alt text', type: 'string' }],
     }),
   ],
   preview: {
