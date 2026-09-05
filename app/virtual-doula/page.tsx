@@ -21,7 +21,7 @@ function VirtualDoulaPageStatic() {
         title={<>Antenatal &amp; Virtual <em>Doula</em></>}
         subtitle="Two ways to work together — comprehensive antenatal preparation in person, or full doula support delivered online wherever you are."
         img1={{ src: '/images/private-session-102.jpg', alt: 'Private session' }}
-        img2={{ src: '/images/leanne-peace-111.jpg', alt: 'Leanne' }}
+        img2={{ src: '/images/leanne-play-37.jpg', alt: 'Leanne' }}
         actions={
           <a
             href="https://calendly.com/birthhood/free-consultation"
