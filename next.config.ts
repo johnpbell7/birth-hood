@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
       { source: '/postnataldoula', destination: '/postnatal-doula', permanent: true },
       { source: '/aboutleanne', destination: '/meet-leanne', permanent: true },
       { source: '/faq-s', destination: '/faq', permanent: true },
+      // The doula feedback page's content now lives on /reviews.
+      { source: '/doula-feedback', destination: '/reviews', permanent: true },
       { source: '/t-c-s', destination: '/terms', permanent: true },
     ]
   },

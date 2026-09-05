@@ -7,7 +7,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.birth-hood.co.
 // Public, indexable routes (studio + gated hub are excluded — see robots.ts)
 const routes = [
   '', 'hypnobirthing', 'yoga', 'doula', 'birth-doula', 'postnatal-doula',
-  'overnight-doula', 'virtual-doula', 'doula-feedback', 'birth-trauma', 'meet-leanne',
+  'overnight-doula', 'virtual-doula', 'birth-trauma', 'meet-leanne',
   'course-info', 'session-outlines', 'booking', 'contact',
   'faq', 'reviews', 'podcast', 'links', 'terms', 'freebies', 'shop', 'blog',
   'birth-stories',

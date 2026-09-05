@@ -18,7 +18,6 @@ export const DEFAULT_NAV: NavItem[] = [
       { label: 'Antenatal & Virtual Doula', href: '/virtual-doula' },
       { label: 'Postnatal Doula', href: '/postnatal-doula' },
       { label: 'Overnight Doula', href: '/overnight-doula' },
-      { label: 'Doula Feedback', href: '/doula-feedback' },
     ],
   },
   {

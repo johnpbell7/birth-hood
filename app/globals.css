@@ -418,6 +418,7 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 }
 .page-hero-inner { max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 460px; align-items: center; gap: 2rem; }
 .page-hero-text { min-width: 0; }
+.page-hero-inner--no-photos { grid-template-columns: 1fr; }
 .page-eyebrow { font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: rgba(0,0,0,0.55); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.7rem; }
 .page-eyebrow::before { display: none; }
 .page-title { font-family: 'Poppins', sans-serif; font-size: clamp(3rem,6vw,5.5rem); line-height: 1.0; color: var(--black); font-weight: 600; margin-bottom: 1.2rem; }

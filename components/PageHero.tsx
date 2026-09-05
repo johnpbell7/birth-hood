@@ -34,6 +34,9 @@ export default function PageHero({
   hideFab = false,
 }: PageHeroProps) {
   const externalCta = ctaHref.startsWith('http')
+  // Pages that pass no photos get a text-only banner rather than a pair of
+  // empty polaroid frames.
+  const hasPhotos = Boolean(img1 || img2)
   return (
     <>
     <section className="page-hero">
@@ -48,7 +51,7 @@ export default function PageHero({
           { bottom: '24%', left: '7%', size: 15, delay: 0.9, dur: 2.4, white: true },
         ]}
       />
-      <div className="page-hero-inner">
+      <div className={`page-hero-inner${hasPhotos ? '' : ' page-hero-inner--no-photos'}`}>
 
         {/* Left — text */}
         <div className="page-hero-text">
@@ -59,6 +62,7 @@ export default function PageHero({
         </div>
 
         {/* Right — polaroids */}
+        {hasPhotos && (
         <div className="page-hero-polaroids">
 
           {/* Large frame */}
@@ -94,6 +98,7 @@ export default function PageHero({
           </div>
 
         </div>
+        )}
       </div>
     </section>
     {/* Mobile floating CTA — mirrors this page's hero button */}

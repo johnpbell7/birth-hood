@@ -105,8 +105,6 @@ function OvernightDoulaPageStatic() {
         eyebrow="Rest · Recovery · Reassurance"
         title={<>Overnight <em>Doula Support</em></>}
         subtitle="The early weeks with your baby are precious — but they can be physically and emotionally demanding. Rest through the night knowing your baby is being cared for with compassion and expertise."
-        img1={{ src: '/images/newborn-cuddle-86.jpg', alt: 'Newborn cuddles' }}
-        img2={{ src: '/images/postnatal-support-43.jpg', alt: 'Postnatal support' }}
         actions={
           <a
             href="https://calendly.com/birthhood/free-consultation"

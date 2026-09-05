@@ -24,7 +24,6 @@ export const PAGE_HERO_TARGETS: { title: string; value: string }[] = [
   { title: 'Blog', value: 'blog' },
   { title: 'Birth Stories', value: 'birth-stories' },
   { title: 'Reviews', value: 'reviews' },
-  { title: 'Doula Feedback', value: 'doula-feedback' },
   { title: 'Podcast', value: 'podcast' },
   { title: 'Booking', value: 'booking' },
   { title: 'Find Your Package', value: 'find-your-package' },
