@@ -38,34 +38,19 @@ export default async function AreasCovered() {
               Not local at all? <Link href="/virtual-doula">Virtual support</Link> means we can still
               work together from anywhere in the UK or abroad.
             </p>
-
-            <div className="areas-photo">
-              <Image
-                src="/images/leanne-van-wide-22.jpg"
-                alt="Leanne and the birth-hood van, ready to head out to a client"
-                width={900}
-                height={600}
-                sizes="(max-width: 900px) 100vw, 520px"
-                style={{ width: '100%', height: 'auto' }}
-              />
-            </div>
           </div>
 
-          {/* Right — the coverage itself */}
-          <div className="areas-card">
-            <div className="areas-group">
-              <h3 className="areas-group-label">Counties covered in person</h3>
-              <ul className="areas-chips">
-                {counties.map((a) => (
-                  <li key={a} className="areas-chip areas-chip--county">{a}</li>
-                ))}
-              </ul>
-            </div>
-
-            <p className="areas-online">
-              <span className="areas-online-dot" aria-hidden="true" />
-              Online sessions available UK-wide &amp; internationally
-            </p>
+          {/* Right — the van, where the county chips used to repeat what the
+              paragraph beside them already says. */}
+          <div className="areas-photo">
+            <Image
+              src="/images/leanne-van-wide-22.jpg"
+              alt="Leanne and the birth-hood van, ready to head out to a client"
+              width={900}
+              height={600}
+              sizes="(max-width: 900px) 100vw, 560px"
+              style={{ width: '100%', height: 'auto' }}
+            />
           </div>
         </div>
       </div>

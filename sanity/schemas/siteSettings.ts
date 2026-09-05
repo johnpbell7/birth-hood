@@ -49,7 +49,7 @@ export default defineType({
       type: 'array',
       of: [{ type: 'string' }],
       description:
-        'Shown as the chips on the "where I work" card. Leave empty to use the built-in list.',
+        'Named in the "where I work" paragraph on Meet Leanne, and added to the hidden location data Google reads on every page. List every county you would travel to. Leave empty to use the built-in list.',
       group: 'global',
     }),
     defineField({
@@ -58,7 +58,7 @@ export default defineType({
       type: 'array',
       of: [{ type: 'string' }],
       description:
-        'These are NOT listed on the page. They go into the hidden location data Google reads, and the first few are named in the sentence on the doula page. Add a town here and you start showing up for it — no need for a separate page per town.',
+        'Add as many towns, cities and villages as you like — the more the better for search. The first few are named in the paragraph on Meet Leanne and on the doula page; the rest go into the hidden location data Google reads on every page. Adding a town here is how you start showing up for "doula in <town>" without needing a separate page for it.',
       group: 'global',
     }),
 
