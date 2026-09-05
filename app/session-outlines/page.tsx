@@ -87,7 +87,7 @@ function SessionOutlinesPageStatic() {
 
           {/* Intro */}
           <div className="so-intro">
-            <p>The birth-hood hypnobirthing course follows the KGHypnobirthing curriculum — the UK&apos;s leading hypnobirthing method — delivered over four sessions of approximately 2.5 hours each. Each session builds on the last, creating a comprehensive foundation of knowledge, skills and confidence.</p>
+            <p>The birth-hood hypnobirthing and birth preparation course is designed by birth-hood, drawing on training from both The Birth Uprising (TBU) and KGHypnobirthing (KGH). It runs over four sessions of approximately 2.5 hours each, and each one builds on the last, creating a comprehensive foundation of knowledge, skills and confidence.</p>
             <p>Sessions are available as a group course, private course, or online course. All course types cover the same content.</p>
           </div>
 

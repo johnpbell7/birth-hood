@@ -180,7 +180,7 @@ function CourseInfoPageStatic() {
               <div className="price-period">per couple · face to face</div>
               <ul className="price-features">
                 <li>4 weekly group sessions (2.5hrs each)</li>
-                <li>KGHypnobirthing full programme</li>
+                <li>The full birth-hood hypnobirthing &amp; birth preparation course</li>
                 <li>Relaxation audio downloads</li>
                 <li>Comprehensive course workbook</li>
                 <li>Supportive WhatsApp group</li>
@@ -209,7 +209,7 @@ function CourseInfoPageStatic() {
               <ul className="price-features">
                 <li>10 hour fully interactive, fully evidence based birth preparation course</li>
                 <li>Flexible scheduling at your home or online</li>
-                <li>Full KGHypnobirthing programme</li>
+                <li>The full birth-hood hypnobirthing &amp; birth preparation course</li>
                 <li>Personalised birth plan support</li>
                 <li>Relaxation audio downloads</li>
                 <li>Unlimited WhatsApp support</li>

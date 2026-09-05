@@ -53,7 +53,7 @@ const hypnobirthingFaqs = [
   },
   {
     q: 'Is hypnobirthing evidence-based?',
-    a: 'Yes. The KGHypnobirthing method is grounded in evidence from birth physiology, psychology and neuroscience. Cochrane Review research consistently shows that continuous labour support, calm birthing environments and breathing techniques lead to measurably better outcomes for birthing people and babies.',
+    a: 'Yes. Hypnobirthing is grounded in evidence from birth physiology, psychology and neuroscience. Cochrane Review research consistently shows that continuous labour support, calm birthing environments and breathing techniques lead to measurably better outcomes for birthing people and babies.',
   },
   {
     q: 'Is hypnobirthing suitable for first-time parents?',
