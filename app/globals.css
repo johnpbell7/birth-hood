@@ -523,6 +523,52 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 
 /* STATS */
 .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+
+/* Package panel — the virtual doula page uses this where the other doula pages
+   put .stat-grid. Same column, different content, stacks on mobile. */
+.package-panel {
+  background: var(--pink-ultra);
+  border-top: 3px solid var(--pink);
+  padding: 2.4rem 2.2rem;
+}
+.package-panel-text {
+  color: var(--grey-mid);
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 0.9rem;
+}
+.package-panel-list {
+  list-style: none;
+  margin: 1.4rem 0 1.8rem;
+  padding: 1.4rem 0 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.package-panel-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.6rem;
+  color: var(--grey-mid);
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.package-panel-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--pink);
+}
+.package-panel-cta { display: inline-block; }
+
+@media (max-width: 900px) {
+  .package-panel { padding: 1.8rem 1.5rem; }
+  .package-panel-cta { display: block; text-align: center; }
+}
 .stat-card { background: var(--black); padding: 2rem 1.8rem; transition: background 0.3s; }
 .stat-card:hover { background: #222; }
 .stat-card:nth-child(even) { background: var(--pink); }

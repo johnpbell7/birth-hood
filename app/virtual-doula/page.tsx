@@ -56,25 +56,41 @@ function VirtualDoulaPageStatic() {
                 without compromising on quality.
               </p>
             </div>
-            <div>
-              <div className="stat-grid">
-                <div className="stat-card">
-                  <div className="stat-number">UK-wide</div>
-                  <div className="stat-label">Available to families anywhere in the UK and internationally</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">24/7</div>
-                  <div className="stat-label">On-call support from 39 weeks via phone and message</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">5★</div>
-                  <div className="stat-label">Rated by every virtual doula client</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">£600</div>
-                  <div className="stat-label">Virtual doula package — full support from pregnancy to postnatal</div>
-                </div>
-              </div>
+            {/* Package panel — sits where the stats grid does on the other doula
+                pages, and stacks under the copy on mobile with .grid-2. */}
+            <div className="package-panel">
+              <div className="section-label" style={{ marginBottom: '0.9rem' }}>Investment</div>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.4rem, 2vw, 1.8rem)', fontWeight: 600, lineHeight: 1.15, marginBottom: '1.2rem' }}>
+                Virtual Doula Package: <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>£600</em>
+              </h3>
+
+              <p className="package-panel-text">
+                This service is similar to a birth package, but will be virtual and not face to
+                face — think about having a doula in your pocket!
+              </p>
+              <p className="package-panel-text">
+                It includes 2x virtual antenatal sessions, virtual doula contact throughout
+                pregnancy (9–5 until on call) and during the birth, plus a postnatal debrief and
+                virtual support for 4 weeks post birth.
+              </p>
+              <p className="package-panel-text">
+                This includes full 1-2-1 text/call/email support (24/7 from 39 weeks).
+              </p>
+
+              <ul className="package-panel-list">
+                <li>Available UK-wide and internationally</li>
+                <li>On-call support from 39 weeks by phone and message</li>
+                <li>Rated 5★ by every virtual doula client</li>
+              </ul>
+
+              <a
+                href="https://calendly.com/birthhood/free-consultation"
+                className="btn-primary package-panel-cta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book Free Consultation
+              </a>
             </div>
           </div>
         </div>
@@ -154,35 +170,6 @@ function VirtualDoulaPageStatic() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* INVESTMENT */}
-      <section className="section-pad-sm" style={{ background: 'var(--pink-pale)' }}>
-        <div className="wrap" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
-          <div>
-            <div className="section-label" style={{ marginBottom: '0.8rem' }}>Investment</div>
-            <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '0.5rem' }}>
-              Virtual Doula Package: £600
-            </h3>
-            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300, maxWidth: '500px', marginBottom: '0.6rem' }}>
-              This service is similar to a birth package, but will be virtual and not face to face, think about having a doula in your pocket!
-            </p>
-            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300, maxWidth: '500px', marginBottom: '0.6rem' }}>
-              It will include 2x virtual antenatal sessions, virtual doula contact throughout pregnancy (9-5 until on call) and during the birth plus a Postnatal debrief and virtual support for 4 weeks post birth.
-            </p>
-            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300, maxWidth: '500px' }}>
-              This includes full 121 text/call/email support (24/7 from 39 weeks).
-            </p>
-          </div>
-          <a
-            href="https://calendly.com/birthhood/free-consultation"
-            className="btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book Free Consultation
-          </a>
         </div>
       </section>
 

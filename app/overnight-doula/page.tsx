@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
+import StatBlockImage from '@/components/StatBlockImage'
 import CtaBand from '@/components/CtaBand'
 import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
@@ -156,6 +157,7 @@ function OvernightDoulaPageStatic() {
                   <div className="stat-label">Nights — block booking discounts available</div>
                 </div>
               </div>
+              <StatBlockImage src="/images/leanne-portrait.jpg" alt="Leanne, birth-hood doula" />
             </div>
           </div>
         </div>

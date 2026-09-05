@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
+import StatBlockImage from '@/components/StatBlockImage'
 import CtaBand from '@/components/CtaBand'
 import AreasCovered from '@/components/AreasCovered'
 import PackageQuizModal from '@/components/PackageQuizModal'
@@ -102,6 +103,7 @@ function BirthDoulaPageStatic() {
                   <div className="stat-label">of families I&apos;ve supported</div>
                 </div>
               </div>
+              <StatBlockImage src="/images/doula-support.jpg" alt="Leanne supporting a client through labour" />
             </div>
           </div>
         </div>

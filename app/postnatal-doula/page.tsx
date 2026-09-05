@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
+import StatBlockImage from '@/components/StatBlockImage'
 import CtaBand from '@/components/CtaBand'
 import { cmsOrStatic } from '@/lib/cms-page'
 
@@ -74,6 +75,7 @@ function PostnatalDoulaPageStatic() {
                   <div className="stat-label">Per hour for additional visits (minimum 2 hours)</div>
                 </div>
               </div>
+              <StatBlockImage src="/images/leanne-speaking.jpg" alt="Leanne talking with a group of parents in a relaxed, homely setting" />
             </div>
           </div>
         </div>

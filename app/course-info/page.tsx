@@ -103,8 +103,8 @@ function CourseInfoPageStatic() {
           <div className="grid-2" style={{ gap: '1.5rem' }}>
             {[
               {
-                title: 'KGHypnobirthing full programme',
-                desc: 'The complete KGHypnobirthing course — the UK\'s leading hypnobirthing method, covering everything from the physiology of birth to deep relaxation techniques.',
+                title: 'Full hypnobirthing & birth preparation course',
+                desc: 'Designed by birth-hood using training from both The Birth Uprising (TBU) and KGHypnobirthing (KGH), to provide everything you need to prepare for all births.',
               },
               {
                 title: 'Comprehensive workbook',
