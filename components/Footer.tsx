@@ -64,7 +64,7 @@ export default async function Footer() {
             <li><Link href="/hypnobirthing">Hypnobirthing</Link></li>
             <li><Link href="/birth-doula">Birth Doula</Link></li>
             <li><Link href="/doula">Doula Services</Link></li>
-            <li><Link href="/virtual-doula">Virtual Doula</Link></li>
+            <li><Link href="/virtual-doula">Antenatal &amp; Virtual Doula</Link></li>
             <li><Link href="/postnatal-doula">Postnatal Doula</Link></li>
             <li><Link href="/yoga">Prenatal Yoga</Link></li>
             <li><Link href="/birth-trauma">Birth Trauma</Link></li>

@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
+import StatBlockImage from '@/components/StatBlockImage'
 import CtaBand from '@/components/CtaBand'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
-  title: 'Virtual Doula',
-  description: 'Full doula support delivered online across the UK. Antenatal preparation, labour guidance and postnatal care wherever you are, without leaving home.',
+  title: 'Antenatal & Virtual Doula',
+  description: 'Antenatal doula support from £600 and virtual doula support from £800 — birth education, confidence building and a doula in your pocket, wherever you are in the UK.',
 }
 
 function VirtualDoulaPageStatic() {
@@ -14,8 +15,8 @@ function VirtualDoulaPageStatic() {
     <>
       <PageHero
         eyebrow="Support wherever you are"
-        title={<>Virtual <em>Doula</em></>}
-        subtitle="Full doula support online — from antenatal preparation through to postnatal care, without leaving your home."
+        title={<>Antenatal &amp; Virtual <em>Doula</em></>}
+        subtitle="Two ways to work together — comprehensive antenatal preparation in person, or full doula support delivered online wherever you are."
         img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
         actions={
@@ -56,36 +57,83 @@ function VirtualDoulaPageStatic() {
                 without compromising on quality.
               </p>
             </div>
-            {/* Package panel — sits where the stats grid does on the other doula
-                pages, and stacks under the copy on mobile with .grid-2. */}
-            <div className="package-panel">
-              <div className="section-label" style={{ marginBottom: '0.9rem' }}>Investment</div>
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.4rem, 2vw, 1.8rem)', fontWeight: 600, lineHeight: 1.15, marginBottom: '1.2rem' }}>
-                Virtual Doula Package: <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>£600</em>
-              </h3>
+            <StatBlockImage
+              src="/images/leanne-speaking.jpg"
+              alt="Leanne running an antenatal session with a group of parents"
+            />
+          </div>
+        </div>
+      </section>
 
-              <p className="package-panel-text">
-                This service is similar to a birth package, but will be virtual and not face to
-                face — think about having a doula in your pocket!
-              </p>
-              <p className="package-panel-text">
-                It includes 2x virtual antenatal sessions, virtual doula contact throughout
-                pregnancy (9–5 until on call) and during the birth, plus a postnatal debrief and
-                virtual support for 4 weeks post birth.
-              </p>
-              <p className="package-panel-text">
-                This includes full 1-2-1 text/call/email support (24/7 from 39 weeks).
+      {/* PACKAGES */}
+      <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
+        <div className="wrap">
+          <div className="section-label">Packages</div>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
+            Antenatal <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>&amp; virtual</em> support
+          </h2>
+
+          <div className="grid-2" style={{ gap: '1.5rem', alignItems: 'stretch' }}>
+            {/* Antenatal */}
+            <div className="pkg-card">
+              <div className="section-label" style={{ marginBottom: '0.6rem' }}>Antenatal Doula package</div>
+              <p className="pkg-card-price">From £600</p>
+              <p className="pkg-card-lead">
+                Your comprehensive birth education and confidence-building pregnancy antenatal support.
               </p>
 
-              <ul className="package-panel-list">
-                <li>Available UK-wide and internationally</li>
-                <li>On-call support from 39 weeks by phone and message</li>
-                <li>Rated 5★ by every virtual doula client</li>
+              <h3 className="pkg-card-label">Includes</h3>
+              <ul className="pkg-card-list">
+                <li>3x private antenatal sessions (2 hours each)</li>
+                <li>
+                  Education on:
+                  <ul className="pkg-card-sublist">
+                    <li>how labour works</li>
+                    <li>pain coping strategies</li>
+                    <li>medical options and informed consent</li>
+                    <li>partner support during labour</li>
+                    <li>birth planning support (and so much more)</li>
+                  </ul>
+                </li>
+                <li>Email/WhatsApp support throughout pregnancy</li>
+                <li>Digital birth preparation resources, including hypnobirthing resources</li>
               </ul>
 
               <a
                 href="https://calendly.com/birthhood/free-consultation"
-                className="btn-primary package-panel-cta"
+                className="btn-primary pkg-card-cta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book Free Consultation
+              </a>
+            </div>
+
+            {/* Virtual */}
+            <div className="pkg-card">
+              <div className="section-label" style={{ marginBottom: '0.6rem' }}>Virtual Doula package</div>
+              <p className="pkg-card-price">£800</p>
+              <p className="pkg-card-lead">
+                Similar to the foundation birth package, but virtual rather than face to face — think of it
+                as having a doula in your pocket!
+              </p>
+
+              <h3 className="pkg-card-label">Includes</h3>
+              <ul className="pkg-card-list">
+                <li>2x virtual antenatal sessions</li>
+                <li>Virtual doula contact throughout pregnancy (9&ndash;5 until on call) and during the birth</li>
+                <li>Postnatal debrief</li>
+                <li>Virtual support for 4 weeks post birth</li>
+              </ul>
+
+              <p className="pkg-card-note">
+                Includes full 1-2-1 text/call/email support (24/7 from 39 weeks). For more details on this
+                service, please get in touch.
+              </p>
+
+              <a
+                href="https://calendly.com/birthhood/free-consultation"
+                className="btn-primary pkg-card-cta"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -96,60 +144,10 @@ function VirtualDoulaPageStatic() {
         </div>
       </section>
 
-      {/* WHAT'S INCLUDED */}
-      <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
-        <div className="wrap">
-          <div className="section-label">What&apos;s included</div>
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
-            Full online <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>doula support</em>
-          </h2>
-
-          <div className="grid-2" style={{ gap: '1.5rem' }}>
-            <div className="card">
-              <div className="section-label" style={{ marginBottom: '1rem' }}>During pregnancy</div>
-              <ul style={{ listStyle: 'none' }}>
-                {[
-                  '2 online antenatal sessions (video call)',
-                  'Comprehensive birth plan guidance',
-                  'Evidence-based information about your choices',
-                  'Partner coaching for birth support',
-                  'Preparation for all birth scenarios',
-                  'Unlimited WhatsApp support throughout pregnancy',
-                ].map(item => (
-                  <li key={item} style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', paddingLeft: '1.2rem', position: 'relative', marginBottom: '0.6rem', lineHeight: 1.6, fontWeight: 300 }}>
-                    <span style={{ position: 'absolute', left: 0, top: '0.55em', width: '5px', height: '5px', borderRadius: '50%', background: 'var(--pink)', display: 'block' }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="card">
-              <div className="section-label" style={{ marginBottom: '1rem' }}>During & after birth</div>
-              <ul style={{ listStyle: 'none' }}>
-                {[
-                  'Phone/video support throughout early labour',
-                  'Real-time coaching via call during active labour',
-                  'Text support available throughout',
-                  'Post-birth check-in call',
-                  'Online postnatal debrief session',
-                  'Signposting to local and specialist services',
-                ].map(item => (
-                  <li key={item} style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', paddingLeft: '1.2rem', position: 'relative', marginBottom: '0.6rem', lineHeight: 1.6, fontWeight: 300 }}>
-                    <span style={{ position: 'absolute', left: 0, top: '0.55em', width: '5px', height: '5px', borderRadius: '50%', background: 'var(--pink)', display: 'block' }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* WHO IS IT FOR */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">Is virtual doula right for me?</div>
+          <div className="section-label">Is this right for me?</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Ideal for <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>anyone who…</em>
           </h2>

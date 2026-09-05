@@ -70,7 +70,7 @@ export default function ContactForm() {
             <option>Hypnobirthing Course</option>
             <option>Birth Doula</option>
             <option>Postnatal Doula</option>
-            <option>Virtual Doula</option>
+            <option>Antenatal &amp; Virtual Doula</option>
             <option>Prenatal Yoga</option>
             <option>Birth Trauma Support</option>
             <option>General enquiry</option>

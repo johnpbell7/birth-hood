@@ -15,7 +15,7 @@ export const DEFAULT_NAV: NavItem[] = [
     children: [
       { label: 'All Doula Services', href: '/doula' },
       { label: 'Birth Doula', href: '/birth-doula' },
-      { label: 'Virtual Doula', href: '/virtual-doula' },
+      { label: 'Antenatal & Virtual Doula', href: '/virtual-doula' },
       { label: 'Postnatal Doula', href: '/postnatal-doula' },
       { label: 'Overnight Doula', href: '/overnight-doula' },
       { label: 'Doula Feedback', href: '/doula-feedback' },

@@ -151,18 +151,18 @@ function DoulaPageStatic() {
               </Link>
             </div>
 
-            {/* Virtual Doula */}
+            {/* Antenatal & Virtual Doula */}
             <div className="card" style={{ borderTop: '3px solid var(--pink-deep)' }}>
-              <div className="section-label" style={{ marginBottom: '1rem' }}>Online support</div>
+              <div className="section-label" style={{ marginBottom: '1rem' }}>Antenatal &amp; online support</div>
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.2 }}>
-                Virtual Doula
+                Antenatal &amp; Virtual Doula
               </h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '1.5rem' }}>
-                Full doula support delivered entirely online — perfect for those outside NW Leicestershire, expats,
-                or anyone who prefers remote sessions.
+                Comprehensive antenatal preparation from £600, or full doula support delivered entirely
+                online from £800 — wherever you are in the UK or abroad.
               </p>
               <ul style={{ listStyle: 'none', marginBottom: '1.5rem' }}>
-                {['Online antenatal sessions', 'Video check-ins throughout pregnancy', 'Phone/text support during labour', 'Online postnatal debrief', 'UK-wide & international'].map(item => (
+                {['3x private antenatal sessions (antenatal package)', 'Birth education & informed decision making', 'Virtual doula contact through pregnancy & birth', 'Postnatal debrief & 4 weeks support', 'UK-wide & international'].map(item => (
                   <li key={item} style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', paddingLeft: '1.2rem', position: 'relative', marginBottom: '0.4rem', fontWeight: 300 }}>
                     <span style={{ position: 'absolute', left: 0, top: '0.6em', width: '5px', height: '5px', borderRadius: '50%', background: 'var(--pink)', display: 'block' }} />
                     {item}

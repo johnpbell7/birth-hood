@@ -1551,3 +1551,90 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .hero-actions:has(.hero-download) > :not(.hero-download) { display: none; }
   .hero-download { width: 100%; justify-content: center; }
 }
+
+
+/* ── Package cards (antenatal & virtual doula) ─────────────────────────── */
+.pkg-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-top: 3px solid var(--pink);
+  padding: 2.4rem 2.2rem;
+}
+.pkg-card-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--black);
+  margin: 0 0 1rem;
+}
+.pkg-card-lead {
+  color: var(--grey-mid);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-weight: 300;
+  margin: 0 0 1.8rem;
+}
+.pkg-card-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+  margin: 0 0 1rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.pkg-card-list { list-style: none; margin: 0; padding: 0; }
+.pkg-card-list > li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.7rem;
+  color: var(--grey-mid);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.pkg-card-list > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--pink);
+}
+.pkg-card-sublist { list-style: none; margin: 0.6rem 0 0; padding: 0; }
+.pkg-card-sublist li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.87rem;
+  line-height: 1.55;
+}
+.pkg-card-sublist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 1.5px;
+  background: var(--pink-pale);
+}
+.pkg-card-note {
+  margin: 1.4rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--grey-mid);
+  font-size: 0.87rem;
+  font-weight: 300;
+  line-height: 1.65;
+}
+/* Buttons align across both cards regardless of list length. */
+.pkg-card-cta { margin-top: auto; padding-top: 1.8rem; display: block; text-align: center; }
+
+@media (max-width: 900px) {
+  .pkg-card { padding: 1.8rem 1.5rem; }
+}
