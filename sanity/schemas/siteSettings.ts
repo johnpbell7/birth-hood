@@ -47,7 +47,8 @@ export default defineType({
       name: 'homeHeroHeadline',
       title: 'Hero — Headline',
       type: 'string',
-      description: 'Main headline. e.g. "Your birth, your way."',
+      description:
+        'The big headline at the very top of the home page — currently "Welcome to birth-hood". One old value is ignored on purpose: if this field still reads "Your birth, your way." the site falls back to "Welcome to birth-hood". Type anything else here and it shows straight away.',
       group: 'home',
     }),
     defineField({
@@ -105,7 +106,8 @@ export default defineType({
       name: 'homeWelcomeHeading',
       title: 'Welcome — Heading',
       type: 'string',
-      description: 'e.g. "Welcome to birth-hood". The words "birth-hood" are shown in pink italics automatically.',
+      description:
+        'The heading of the intro block below the hero — currently "Hi, I\'m Leanne". As above, the old value "Welcome to birth-hood" is ignored here (it is the hero headline now); anything else you type shows straight away. The words "birth-hood" are shown in pink italics automatically.',
       group: 'home',
     }),
     defineField({
