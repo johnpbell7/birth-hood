@@ -192,7 +192,7 @@ function YogaPageStatic() {
                 of any allergies).
               </p>
               <p>
-                You will also get yourselves a snazzy birth-hood Yoga Handbook to use outside of the
+                You will also get yourselves a snazzy birth-hood digital Yoga Handbook to use outside of the
                 sessions!
               </p>
               <p>

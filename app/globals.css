@@ -645,8 +645,10 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 /* TESTIMONIALS */
 .testimonials { background: var(--black); padding: 6rem 3rem; position: relative; z-index: 0; }
 /* white abstract polka pattern (the hero dots, recoloured white) — solid at the
-   bottom by the CTA, fading out toward the top. Only on the .has-dots variant. */
-.testimonials.has-dots::before {
+   bottom by the CTA, fading out toward the top. Any dark section can opt in
+   with .has-dots (the home testimonials and the reviews grid both do). */
+.has-dots { position: relative; z-index: 0; }
+.has-dots::before {
   content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background-image: url('/images/dots-white.png');
   background-size: 620px auto;

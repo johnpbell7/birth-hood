@@ -197,7 +197,7 @@ function CourseInfoPageStatic() {
 
           <div className="grid-3" style={{ gap: '1.5rem' }}>
             {/* Caesarean Birth Preparation */}
-            <div className="card">
+            <div className="card card-pink" style={{ display: 'flex', flexDirection: 'column' }}>
               <div className="section-label" style={{ marginBottom: '1rem' }}>Caesarean Birth Preparation</div>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
                 Are you planning an elective or having a scheduled caesarean? Not sure what to expect?
@@ -209,7 +209,7 @@ function CourseInfoPageStatic() {
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.5rem' }}>
                 With Hypnobirthing
               </p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginTop: 'auto', paddingTop: '0.5rem' }}>
                 <div>
                   <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '0.25rem' }}>Investment</div>
                   <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500 }}>From £145</div>
@@ -226,7 +226,7 @@ function CourseInfoPageStatic() {
             </div>
 
             {/* Hasty Hypnobirthing */}
-            <div className="card">
+            <div className="card card-pink" style={{ display: 'flex', flexDirection: 'column' }}>
               <div className="section-label" style={{ marginBottom: '1rem' }}>Hasty Hypnobirthing</div>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
                 In a rush? 37 weeks plus?
@@ -237,7 +237,7 @@ function CourseInfoPageStatic() {
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.5rem' }}>
                 We&apos;ll cover what hypnobirthing is, breathing, relaxation, birth positions and more!
               </p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginTop: 'auto', paddingTop: '0.5rem' }}>
                 <div>
                   <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '0.25rem' }}>Investment</div>
                   <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500 }}>From £145</div>
@@ -254,7 +254,7 @@ function CourseInfoPageStatic() {
             </div>
 
             {/* Hypnobirthing Refresher */}
-            <div className="card">
+            <div className="card card-pink" style={{ display: 'flex', flexDirection: 'column' }}>
               <div className="section-label" style={{ marginBottom: '1rem' }}>Hypnobirthing Refresher</div>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
                 For second, third&hellip; time parents who have already completed a hypnobirthing
@@ -267,7 +267,7 @@ function CourseInfoPageStatic() {
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.5rem' }}>
                 Availability: please get in touch.
               </p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginTop: 'auto', paddingTop: '0.5rem' }}>
                 <div>
                   <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '0.25rem' }}>Investment</div>
                   <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500 }}>From £100</div>

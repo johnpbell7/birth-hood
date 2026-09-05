@@ -52,7 +52,7 @@ function ReviewsPageStatic({ reviews, birthStories }: { reviews: Review[]; birth
       </section>
 
       {/* REVIEWS GRID */}
-      <section className="section-pad" style={{ background: 'var(--black)' }}>
+      <section className="section-pad has-dots" style={{ background: 'var(--black)' }}>
         <div className="wrap">
           <div className="reviews-track">
             {reviews.map((review) => (
