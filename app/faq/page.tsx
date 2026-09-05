@@ -87,7 +87,7 @@ const doulaFaqs = [
 const yogaFaqs = [
   {
     q: 'Is prenatal yoga safe throughout pregnancy?',
-    a: 'Yes — my classes are specifically designed for pregnant bodies at all stages and are safe from the first trimester through to birth. All poses are adapted for pregnancy, modifications are always offered, and you are encouraged to move at your own pace. If you have complications or concerns, always check with your midwife or GP first.',
+    a: 'Yes — my classes are specifically designed for pregnant bodies at all stages and are safe from 12 weeks through to birth. All poses are adapted for pregnancy, modifications are always offered, and you are encouraged to move at your own pace. If you have complications or concerns, always check with your midwife or GP first.',
   },
   {
     q: 'Do I need prior yoga experience?',

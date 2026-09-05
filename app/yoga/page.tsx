@@ -44,7 +44,7 @@ const breadcrumbSchema = {
 const faqItems = [
   {
     q: 'Is prenatal yoga safe throughout pregnancy?',
-    a: 'Yes — my classes are specifically designed for pregnancy and are safe from the first trimester through to birth. The classes are adapted for each trimester, with modifications offered at every stage. As always, if you have any concerns or complications, please check with your midwife or doctor before joining.',
+    a: 'Yes — my classes are specifically designed for pregnancy and are safe from 12 weeks through to birth. The classes are adapted for each trimester, with modifications offered at every stage. As always, if you have any concerns or complications, please check with your midwife or doctor before joining.',
   },
   {
     q: 'Do I need prior yoga experience?',
@@ -52,7 +52,7 @@ const faqItems = [
   },
   {
     q: 'When should I start prenatal yoga?',
-    a: 'You can start prenatal yoga at any point in your pregnancy, though many people find the second trimester (from around 14 weeks) the most comfortable time to begin. However, if you are already a regular yoga practitioner, you can continue adapted classes from the very beginning.',
+    a: 'Classes are open from 12 weeks, and you can join at any point after that right through to birth. Many people find the second trimester the most comfortable time to start, but there is no wrong moment — come whenever you are ready.',
   },
   {
     q: 'What do I need to bring to class?',
