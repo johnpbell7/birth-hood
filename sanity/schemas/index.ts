@@ -1,4 +1,6 @@
+import birthStory from './birthStory'
 import blogPost from './blogPost'
+import review from './review'
 import freebie from './freebie'
 import page from './page'
 import hubResource from './hubResource'
@@ -12,6 +14,8 @@ export const schemaTypes = [
   hubResource,
   freebie,
   blogPost,
+  birthStory,
+  review,
   siteSettings,
   navigation,
   product,

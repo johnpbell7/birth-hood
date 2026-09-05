@@ -3,7 +3,7 @@ import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
 import BirthStoryCards from '@/components/BirthStoryCards'
-import { birthStories } from '@/lib/birth-stories'
+import { loadBirthStories } from '@/lib/birth-stories-source'
 
 export const metadata: Metadata = {
   title: 'Birth Stories',
@@ -11,7 +11,8 @@ export const metadata: Metadata = {
     'Real birth stories from birth-hood clients — home births, water births, inductions, hospital births and a dad’s story. Every birth, every path, every outcome is valid.',
 }
 
-export default function BirthStoriesPage() {
+export default async function BirthStoriesPage() {
+  const birthStories = await loadBirthStories()
   return (
     <>
       <PageHero

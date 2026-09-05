@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
+import type { Review } from '@/lib/reviews'
+import type { BirthStory } from '@/lib/birth-stories'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
 import BirthStoryCards from '@/components/BirthStoryCards'
-import { birthStories } from '@/lib/birth-stories'
+import { loadBirthStories } from '@/lib/birth-stories-source'
 import ReviewCard from '@/components/ReviewCard'
-import { reviews } from '@/lib/reviews'
+import { loadReviews } from '@/lib/reviews-source'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
 }
 
 
-function ReviewsPageStatic() {
+function ReviewsPageStatic({ reviews, birthStories }: { reviews: Review[]; birthStories: BirthStory[] }) {
   return (
     <>
       <PageHero
@@ -107,5 +109,6 @@ function ReviewsPageStatic() {
 }
 
 export default async function ReviewsPage() {
-  return cmsOrStatic('reviews', <ReviewsPageStatic />)
+  const [reviews, birthStories] = await Promise.all([loadReviews(), loadBirthStories()])
+  return cmsOrStatic('reviews', <ReviewsPageStatic reviews={reviews} birthStories={birthStories} />)
 }

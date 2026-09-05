@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import CtaBand from '@/components/CtaBand'
 import BirthStoryCards from '@/components/BirthStoryCards'
-import { birthStories, getBirthStory } from '@/lib/birth-stories'
+import { birthStories } from '@/lib/birth-stories'
+import { loadBirthStories, loadBirthStory } from '@/lib/birth-stories-source'
 
 type Params = { slug: string }
 
@@ -13,7 +14,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params
-  const story = getBirthStory(slug)
+  const story = await loadBirthStory(slug)
   if (!story) return { title: 'Story not found' }
   return {
     title: story.title,
@@ -23,11 +24,12 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
 export default async function BirthStoryPage({ params }: { params: Promise<Params> }) {
   const { slug } = await params
-  const story = getBirthStory(slug)
+  const all = await loadBirthStories()
+  const story = all.find((s) => s.slug === slug)
   if (!story) notFound()
 
   // Show up to three other stories at the foot of the page.
-  const more = birthStories.filter((s) => s.slug !== story.slug).slice(0, 3)
+  const more = all.filter((s) => s.slug !== story.slug).slice(0, 3)
 
   // Drop the pull quote in after the third paragraph, or halfway for short stories.
   const quoteAfter = Math.min(3, Math.floor(story.body.length / 2))

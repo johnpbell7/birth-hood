@@ -21,6 +21,12 @@ export const structure: StructureResolver = (S) =>
       S.listItem()
         .title('Blog Posts')
         .child(S.documentTypeList('blogPost').title('Blog Posts')),
+      S.listItem()
+        .title('Birth Stories')
+        .child(S.documentTypeList('birthStory').title('Birth Stories')),
+      S.listItem()
+        .title('Reviews')
+        .child(S.documentTypeList('review').title('Reviews')),
       S.divider(),
       S.listItem()
         .title('Navigation (main menu)')

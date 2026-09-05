@@ -1,4 +1,4 @@
-import { client } from './sanity'
+import { client, isSanityConfigured } from './sanity'
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import type { NavItem } from '@/lib/nav'
 
@@ -280,4 +280,48 @@ export async function getShopProductsByIds(ids: string[]): Promise<ShopProductFu
       { cache: 'no-store' },
     )
   } catch (e) { console.error('Sanity getShopProductsByIds failed:', e); return [] }
+}
+
+
+/* ── Birth stories ─────────────────────────────────────────────────────── */
+
+export type SanityBirthStory = {
+  title: string
+  slug: string
+  type: string
+  baby?: string
+  place?: string
+  excerpt: string
+  pullQuote?: string
+  /** Portable Text blocks, flattened to plain paragraphs by the caller. */
+  body?: { _type: string; children?: { text?: string }[] }[]
+}
+
+export async function getBirthStories(): Promise<SanityBirthStory[]> {
+  if (!isSanityConfigured || !client) return []
+  try {
+    return await client.fetch<SanityBirthStory[]>(
+      `*[_type == "birthStory"] | order(order asc, title asc) {
+        title, "slug": slug.current, type, baby, place, excerpt, pullQuote, body
+      }`,
+    )
+  } catch (e) { console.error('Sanity getBirthStories failed:', e); return [] }
+}
+
+/* ── Reviews ───────────────────────────────────────────────────────────── */
+
+export type SanityReview = {
+  name: string
+  service: string
+  when?: string
+  text: string
+}
+
+export async function getReviews(): Promise<SanityReview[]> {
+  if (!isSanityConfigured || !client) return []
+  try {
+    return await client.fetch<SanityReview[]>(
+      `*[_type == "review"] | order(order asc, name asc) { name, service, when, text }`,
+    )
+  } catch (e) { console.error('Sanity getReviews failed:', e); return [] }
 }
