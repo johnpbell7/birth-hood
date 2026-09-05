@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
+import PhotoCarousel from '@/components/PhotoCarousel'
 import CtaBand from '@/components/CtaBand'
 import AreasCovered from '@/components/AreasCovered'
 import { cmsOrStatic } from '@/lib/cms-page'
@@ -36,8 +36,14 @@ function MeetLeannePageStatic() {
 
             {/* Photo */}
             <div>
-              <div className="about-photo-frame" style={{ maxWidth: '480px', marginBottom: '2rem' }}>
-                <Image src="/images/leanne-peace-111.jpg" alt="Leanne — birth-hood founder and birth educator" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+              <div style={{ maxWidth: '480px', marginBottom: '2rem' }}>
+                <PhotoCarousel
+                  photos={[
+                    { src: '/images/leanne-peace-111.jpg', alt: 'Leanne — birth-hood founder and birth educator' },
+                    { src: '/images/leanne-ball-121.jpg', alt: 'Leanne with a birth ball' },
+                    { src: '/images/leanne-pool-78.jpg', alt: 'Leanne with a birth pool set up at home' },
+                  ]}
+                />
               </div>
 
               {/* Quote block */}
