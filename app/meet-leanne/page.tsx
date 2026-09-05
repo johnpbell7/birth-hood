@@ -21,7 +21,6 @@ function MeetLeannePageStatic() {
     <>
       <CmsPageHero
         page="meet-leanne"
-        eyebrow="Your guide"
         title={<>Meet <em>Leanne</em></>}
         subtitle="I'm Leanne (DipHb) — a mum of two Hypnobirth babies and a badass birth nerd! Hypnobirthing teacher, birth doula, Pregnancy & Postnatal yoga teacher, and 3 Step Rewind practitioner, proudly based in NW Leicestershire."
         img1={{ src: '/images/leanne-doorway-5.jpg', alt: 'Leanne' }}
@@ -48,17 +47,16 @@ function MeetLeannePageStatic() {
                 margin: '2rem 0',
               }}>
                 <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.15rem', fontStyle: 'italic', lineHeight: 1.7, color: 'var(--black)', marginBottom: '0.8rem' }}>
-                  &ldquo;From the moment I had a phone call with Leanne I knew she was the one.&rdquo;
+                  &ldquo;Leanne is an amazing woman and she really is the best at her job.&rdquo;
                 </p>
                 <cite style={{ fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--pink-deep)', fontStyle: 'normal' }}>
-                  — A birth-hood client
+                  — Stephanie, birth doula client
                 </cite>
               </blockquote>
             </div>
 
             {/* Story */}
             <div>
-              <div className="section-label">My story</div>
 
               <div className="prose">
                 <h2>Hi, I&apos;m your doula!</h2>
@@ -101,7 +99,6 @@ function MeetLeannePageStatic() {
 
               {/* Credentials */}
               <div style={{ marginTop: '2.5rem' }}>
-                <div className="section-label">Qualifications & training</div>
                 <div className="credentials" style={{ marginTop: '1rem' }}>
                   <div className="credential">
                     <span className="credential-dot" />
@@ -195,7 +192,6 @@ function MeetLeannePageStatic() {
           </div>
 
           {/* You'll also get */}
-          <div className="section-label" style={{ marginBottom: '1rem' }}>You&apos;ll also get</div>
           <div className="grid-2" style={{ gap: '1.5rem' }}>
             <div className="card card-pink">
               <p style={{ margin: 0, lineHeight: 1.75, color: 'var(--grey-mid)', fontSize: '0.9rem', fontWeight: 300 }}>

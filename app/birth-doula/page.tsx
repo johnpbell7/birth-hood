@@ -21,7 +21,6 @@ function BirthDoulaPageStatic() {
     <>
       <CmsPageHero
         page="birth-doula"
-        eyebrow="Professional birth support"
         title={<>Birth <em>Doula</em> Support</>}
         subtitle="Continuous, compassionate non-medical support before, during and after your birth."
         img1={{ src: '/images/birth-pool-partner-316.jpg', alt: 'Partner support' }}
@@ -104,7 +103,6 @@ function BirthDoulaPageStatic() {
           <div className="grid-3" style={{ gap: '1.5rem' }}>
             {/* Before birth */}
             <div className="card" style={{ borderTop: '3px solid var(--pink)' }}>
-              <div className="section-label" style={{ marginBottom: '1rem' }}>Before birth</div>
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.3rem', fontWeight: 500, marginBottom: '1rem' }}>
                 Antenatal support
               </h3>
@@ -128,7 +126,6 @@ function BirthDoulaPageStatic() {
 
             {/* During birth */}
             <div className="card" style={{ borderTop: '3px solid var(--pink-deep)' }}>
-              <div className="section-label" style={{ marginBottom: '1rem' }}>During birth</div>
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.3rem', fontWeight: 500, marginBottom: '1rem' }}>
                 Birth support
               </h3>
@@ -152,7 +149,6 @@ function BirthDoulaPageStatic() {
 
             {/* After birth */}
             <div className="card" style={{ borderTop: '3px solid var(--pink)' }}>
-              <div className="section-label" style={{ marginBottom: '1rem' }}>After birth</div>
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.3rem', fontWeight: 500, marginBottom: '1rem' }}>
                 Postnatal support
               </h3>

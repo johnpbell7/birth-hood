@@ -25,7 +25,6 @@ export default async function ShopPage() {
     <>
       <CmsPageHero
         page="shop"
-        eyebrow="Downloadable resources"
         title={<>The <em>Shop</em></>}
         subtitle="Handpicked guides, audio and tools to support your pregnancy, birth and beyond. Choose what you need — you'll receive your downloads by email straight after secure checkout."
         img1={{ src: '/images/tote-bag-33.jpg', alt: 'Resources' }}

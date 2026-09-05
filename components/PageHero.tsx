@@ -7,7 +7,8 @@ interface PolaroidImage {
 }
 
 interface PageHeroProps {
-  eyebrow: string
+  /** Optional — heroes run without one unless the CMS supplies it. */
+  eyebrow?: string
   title: React.ReactNode
   subtitle: string
   actions?: React.ReactNode
@@ -37,6 +38,9 @@ export default function PageHero({
   // Pages that pass no photos get a text-only banner rather than a pair of
   // empty polaroid frames.
   const hasPhotos = Boolean(img1 || img2)
+  // One photo shows on its own rather than beside an empty second frame.
+  const single = Boolean(img1) !== Boolean(img2)
+  const solo = img1 ?? img2
   return (
     <>
     <section className="page-hero">
@@ -55,14 +59,25 @@ export default function PageHero({
 
         {/* Left — text */}
         <div className="page-hero-text">
-          <div className="page-eyebrow">{eyebrow}</div>
+          {eyebrow && <div className="page-eyebrow">{eyebrow}</div>}
           <h1 className="page-title">{title}</h1>
           <p className="page-subtitle">{subtitle}</p>
           {actions && <div className="hero-actions">{actions}</div>}
         </div>
 
         {/* Right — polaroids */}
-        {hasPhotos && (
+        {hasPhotos && single && solo && (
+          <div className="page-hero-polaroids page-hero-polaroids--single">
+            <div className="ph-frame ph-frame-large">
+              <div className="ph-img-area">
+                <Image src={solo.src} alt={solo.alt} fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+              </div>
+              <div className="ph-caption">{solo.alt}</div>
+            </div>
+          </div>
+        )}
+
+        {hasPhotos && !single && (
         <div className="page-hero-polaroids">
 
           {/* Large frame */}

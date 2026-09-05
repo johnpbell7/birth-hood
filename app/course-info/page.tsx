@@ -19,7 +19,6 @@ function CourseInfoPageStatic() {
       <CmsPageHero
         page="course-info"
         ctaLabel="Book Your Place"
-        eyebrow="Hypnobirthing courses"
         title={<>Hypnobirthing <em>Courses</em></>}
         subtitle="Course options, prices and upcoming dates — everything you need to know before you book."
         img1={{ src: '/images/class-group-257.jpg', alt: 'Group course' }}

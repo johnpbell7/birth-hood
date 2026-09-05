@@ -48,7 +48,6 @@ function BookingPageStatic() {
       <CmsPageHero
         page="booking"
         ctaLabel="View All Availability"
-        eyebrow="Secure your place"
         title={<>Class <em>Booking</em></>}
         subtitle="Book your place on a hypnobirthing course, prenatal yoga class or a free consultation — all in one place."
         img1={{ src: '/images/class-group-257.jpg', alt: 'Group course' }}
@@ -151,7 +150,6 @@ function BookingPageStatic() {
               </p>
             </div>
             <div className="card card-pink" style={{ padding: '2.5rem' }}>
-              <div className="section-label" style={{ marginBottom: '1.5rem' }}>Need help choosing?</div>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '1.5rem' }}>
                 If you&apos;re not sure where to start, a free consultation is always the best first step.
                 There&apos;s no obligation, no pressure and no hard sell — just an honest conversation

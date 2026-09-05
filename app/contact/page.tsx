@@ -18,11 +18,9 @@ function ContactPageStatic() {
     <>
       <CmsPageHero
         page="contact"
-        eyebrow="Let's talk"
         title={<>Get in <em>Touch</em></>}
         subtitle="For enquiries, please contact me directly via this page. I'll get back to you ASAP! I can't wait to help you prepare for your birth, knowing your rights, your options, and feeling like you did everything you could to prepare to start parenthood positively."
-        img1={{ src: '/images/quiet-hands-329.jpg', alt: 'A safe space' }}
-        img2={{ src: '/images/leanne-van-14.jpg', alt: 'On the road' }}
+        img1={{ src: '/images/leanne-ball-doorway-118.jpg', alt: 'Leanne' }}
       />
 
       <MarqueeStrip />
@@ -32,7 +30,6 @@ function ContactPageStatic() {
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'start' }}>
             {/* Contact info */}
             <div className="reveal">
-              <div className="section-label">Ways to connect</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                 <a
                   href="mailto:leanne@birth-hood.co.uk"
@@ -118,7 +115,6 @@ function ContactPageStatic() {
               </div>
 
               <div style={{ background: 'var(--pink-ultra)', padding: '2rem', borderRadius: '3px', border: '1px solid rgba(254,127,204,0.3)' }}>
-                <div className="section-label">Or book directly</div>
                 <p style={{ fontSize: '0.9rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.7, marginBottom: '1.2rem' }}>
                   Skip the form and book a free consultation call straight into my diary.
                 </p>

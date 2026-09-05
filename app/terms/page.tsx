@@ -16,7 +16,6 @@ function TermsPageStatic() {
     <>
       <CmsPageHero
         page="terms"
-        eyebrow="Legal stuff"
         title={<>Terms & <em>Conditions</em></>}
         subtitle="Please read these terms carefully before booking any services with birth-hood."
         img1={{ src: '/images/leanne-doorway-5.jpg', alt: 'Leanne' }}

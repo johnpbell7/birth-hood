@@ -20,7 +20,6 @@ export default async function BirthStoriesPage() {
     <>
       <CmsPageHero
         page="birth-stories"
-        eyebrow="In their own words"
         title={<>Birth <em>Stories</em></>}
         subtitle="Real stories from real families — home births, water births, inductions and everything in between. Told honestly, start to finish."
         img1={{ src: '/images/birth-pool-rest-299.jpg', alt: 'In the pool' }}

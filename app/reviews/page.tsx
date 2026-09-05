@@ -25,7 +25,6 @@ function ReviewsPageStatic({ reviews, birthStories }: { reviews: Review[]; birth
     <>
       <CmsPageHero
         page="reviews"
-        eyebrow="What clients say"
         title={<>Real <em>Reviews</em></>}
         subtitle="From real clients, unfiltered and unedited. These words mean everything."
         img1={{ src: '/images/parent-baby-150.jpg', alt: 'Parent & baby' }}
@@ -59,45 +58,6 @@ function ReviewsPageStatic({ reviews, birthStories }: { reviews: Review[]; birth
               <ReviewCard key={review.name} review={review} />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* DOULA CLIENTS — the longer, in-their-own-words testimonials */}
-      <section className="section-pad">
-        <div className="wrap" style={{ maxWidth: '760px' }}>
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
-            Doula clients, in <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>their own words</em>
-          </h2>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '3rem' }}>
-            Being a doula is an honour and a privilege. Supporting you through pregnancy, birth and
-            postpartum is something I never take lightly — and to receive feedback like this is
-            beyond words.
-          </p>
-
-          {[
-            {
-              tag: 'First baby · Homebirth',
-              quote:
-                'From my first contact with Leanne we just clicked, she\u2019s proudly inclusive and has experience in a wide range of pregnancies and birth situations. She supported me through my concern about fibroids, and gave me some brilliant yoga positions to try when my SPD started. She kept in contact through my pregnancy and made me feel like I really had amazing support whenever I needed it. The prenatal sessions were so brilliant to run through my birth plans of a physiological homebirth. Leanne supported me every step of the way and made me feel so confident and excited for my homebirth. She also helped with some latch issues and supported our undisturbed golden hour. It felt so natural having her there and I didn\u2019t want her to leave! Post natally, I felt really looked after by Leanne both in person & virtually. I can\u2019t recommend Leanne highly enough, she\u2019s a pro at end-to-end care and if you\u2019re reading this, book her!!!',
-              name: 'Beka & Matt',
-            },
-            {
-              tag: 'Second baby · Homebirth',
-              quote:
-                'Just incredible! Leanne was amazing from the moment we booked her. She was always on hand for any questions and me and my husband loved our antenatal sessions with her and getting to know her, gaining knowledge. Postnatally she was excellent, always a message away and for our sessions. However, I couldn\u2019t have done the birth without her. She protected my birth space perfectly and advocated for me many times. She was especially helpful when things didn\u2019t quite go to plan.',
-              name: 'Bea & Duane',
-            },
-          ].map((t, i) => (
-            <div key={i} className="df-testimonial">
-              <div className="df-quote-mark">&ldquo;</div>
-              <div className="df-tag">{t.tag}</div>
-              <blockquote className="df-quote">{t.quote}</blockquote>
-              <div className="df-attribution">
-                <span className="df-name">{t.name}</span>
-                <span className="df-stars">★★★★★</span>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 

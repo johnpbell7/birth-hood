@@ -70,7 +70,6 @@ function HypnobirthingPageStatic() {
       <JsonLd data={breadcrumbSchema} />
       <CmsPageHero
         page="hypnobirthing"
-        eyebrow="Calm. Confident. Prepared."
         title={<>Hypno<em>birthing</em></>}
         subtitle="Evidence-based techniques to help you release fear, trust your body and step into birth feeling genuinely excited — not terrified."
         img1={{ src: '/images/class-sofa-265.jpg', alt: 'Class in session' }}

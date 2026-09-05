@@ -102,7 +102,6 @@ function OvernightDoulaPageStatic() {
       <JsonLd data={breadcrumbSchema} />
       <CmsPageHero
         page="overnight-doula"
-        eyebrow="Rest · Recovery · Reassurance"
         title={<>Overnight <em>Doula Support</em></>}
         subtitle="The early weeks with your baby are precious — but they can be physically and emotionally demanding. Rest through the night knowing your baby is being cared for with compassion and expertise."
         actions={
@@ -255,7 +254,6 @@ function OvernightDoulaPageStatic() {
 
           {/* OPTIONAL EXTRAS */}
           <div className="card card-pink" style={{ marginTop: '2.5rem' }}>
-            <div className="section-label" style={{ marginBottom: '1rem' }}>Optional extras</div>
             <ul style={{ listStyle: 'none' }}>
               {extras.map(item => (
                 <li key={item} style={{ fontSize: '0.88rem', color: 'var(--grey-mid)', paddingLeft: '1.2rem', position: 'relative', marginBottom: '0.6rem', lineHeight: 1.6, fontWeight: 300 }}>

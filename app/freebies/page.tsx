@@ -65,7 +65,6 @@ export default async function FreebiesPage() {
     <>
       <CmsPageHero
         page="freebies"
-        eyebrow="Yours. For free. No strings."
         title={<><em>Free</em> Resources</>}
         subtitle="Birth affirmations, guides, templates and audio — all created by me, all completely free."
         img1={{ src: '/images/hospital-bag-64.jpg', alt: 'Birth bag' }}

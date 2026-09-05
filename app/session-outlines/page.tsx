@@ -71,7 +71,6 @@ function SessionOutlinesPageStatic() {
         page="session-outlines"
         ctaLabel="View Courses"
         ctaHref="/course-info"
-        eyebrow="Hypnobirthing course"
         title={<>Session <em>Outlines</em></>}
         subtitle="A detailed breakdown of everything covered in the four-session hypnobirthing course."
         img1={{ src: '/images/class-teaching-291.jpg', alt: 'In class' }}
@@ -115,7 +114,6 @@ function SessionOutlinesPageStatic() {
 
           {/* Practice note */}
           <div className="so-note">
-            <div className="section-label" style={{ marginBottom: '0.6rem' }}>A note on practice</div>
             <p>Between each session you&apos;ll be given relaxation audio tracks and practice exercises. The more you practise the breathing and relaxation techniques, the more effective they will be during birth. Most people practise for around 15–20 minutes per day — it quickly becomes a lovely part of your pregnancy routine.</p>
           </div>
 

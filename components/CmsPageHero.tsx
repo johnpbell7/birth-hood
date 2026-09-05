@@ -9,7 +9,7 @@ interface PolaroidImage {
 interface Props {
   /** Which pageHero doc in Sanity overrides this hero (matches the "Page" list). */
   page: string
-  eyebrow: string
+  eyebrow?: string
   title: React.ReactNode
   subtitle: string
   actions?: React.ReactNode

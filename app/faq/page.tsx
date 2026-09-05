@@ -140,7 +140,6 @@ function FaqPageStatic() {
       <JsonLd data={faqSchema} />
       <CmsPageHero
         page="faq"
-        eyebrow="Got questions?"
         title={<>Frequently Asked <em>Questions</em></>}
         subtitle="Everything you need to know about hypnobirthing, doula support, yoga and working with me."
         img1={{ src: '/images/class-anatomy-256.jpg', alt: 'How birth works' }}

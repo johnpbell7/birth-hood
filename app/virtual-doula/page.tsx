@@ -18,7 +18,6 @@ function VirtualDoulaPageStatic() {
     <>
       <CmsPageHero
         page="virtual-doula"
-        eyebrow="Support wherever you are"
         title={<>Antenatal &amp; Virtual <em>Doula</em></>}
         subtitle="Two ways to work together — comprehensive antenatal preparation in person, or full doula support delivered online wherever you are."
         img1={{ src: '/images/private-session-102.jpg', alt: 'Private session' }}
@@ -64,7 +63,6 @@ function VirtualDoulaPageStatic() {
                 doula pages carry a photo here) — asked for so the investment is
                 visible next to the explanation, stacking below it on mobile. */}
             <aside className="pkg-glance">
-              <div className="section-label">The packages</div>
               <h3 className="pkg-glance-title">Two ways to work together</h3>
 
               <div className="pkg-glance-row">

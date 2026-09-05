@@ -26,7 +26,6 @@ function PodcastPageStatic() {
     <>
       <CmsPageHero
         page="podcast"
-        eyebrow="Honest birth talk"
         title={<>Dou-La-La the <em>Birthy Podcast</em></>}
         subtitle="Two doulas in conversation giving you honest birth talk, myth busting and just generally having a good chat!"
         img1={{ src: '/images/leanne-peace-111.jpg', alt: 'Leanne' }}

@@ -19,7 +19,6 @@ function PostnatalDoulaPageStatic() {
     <>
       <CmsPageHero
         page="postnatal-doula"
-        eyebrow="The fourth trimester"
         title={<>Postnatal <em>Doula</em></>}
         subtitle="Support in the fourth trimester — the weeks after birth when you're adjusting to parenthood."
         img1={{ src: '/images/newborn-held-170.jpg', alt: 'Newborn days' }}

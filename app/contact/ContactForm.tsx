@@ -53,7 +53,6 @@ export default function ContactForm() {
 
   return (
     <div className="reveal reveal-d2">
-      <div className="section-label">Send a message</div>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
         <div>
           <label className="form-label" htmlFor="name">Your name</label>

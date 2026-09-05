@@ -77,7 +77,6 @@ export default async function BlogPage() {
     <>
       <CmsPageHero
         page="blog"
-        eyebrow="Thoughts · Advice · Stories"
         title={<>The <em>Blog</em></>}
         subtitle="Articles, tips and real talk on birth, hypnobirthing, doula support and everything in between."
         img1={{ src: '/images/private-session-102.jpg', alt: 'Private session' }}

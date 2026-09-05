@@ -48,7 +48,6 @@ function DoulaPageStatic() {
       <JsonLd data={breadcrumbSchema} />
       <CmsPageHero
         page="doula"
-        eyebrow="Professional doula support"
         title={<>Doula <em>Services</em></>}
         subtitle="Continuous, compassionate non-medical support before, during and after your birth. For every pregnancy, every birth, every person."
         img1={{ src: '/images/birth-pool-overhead-308.jpg', alt: 'Doula support' }}
@@ -133,7 +132,6 @@ function DoulaPageStatic() {
 
             {/* Birth Doula */}
             <div className="card" style={{ borderTop: '3px solid var(--pink)' }}>
-              <div className="section-label" style={{ marginBottom: '1rem' }}>In-person support</div>
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.2 }}>
                 Birth Doula
               </h3>
@@ -156,7 +154,6 @@ function DoulaPageStatic() {
 
             {/* Antenatal & Virtual Doula */}
             <div className="card" style={{ borderTop: '3px solid var(--pink-deep)' }}>
-              <div className="section-label" style={{ marginBottom: '1rem' }}>Antenatal &amp; online support</div>
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.2 }}>
                 Antenatal &amp; Virtual Doula
               </h3>
@@ -179,7 +176,6 @@ function DoulaPageStatic() {
 
             {/* Postnatal Doula */}
             <div className="card" style={{ borderTop: '3px solid var(--pink)' }}>
-              <div className="section-label" style={{ marginBottom: '1rem' }}>After birth</div>
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.2 }}>
                 Postnatal Support
               </h3>
@@ -202,7 +198,6 @@ function DoulaPageStatic() {
 
             {/* Overnight Doula */}
             <div className="card" style={{ borderTop: '3px solid var(--pink-deep)' }}>
-              <div className="section-label" style={{ marginBottom: '1rem' }}>Through the night</div>
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500, marginBottom: '1rem', lineHeight: 1.2 }}>
                 Overnight Support
               </h3>
@@ -248,13 +243,15 @@ function DoulaPageStatic() {
       {/* TESTIMONIAL */}
       <section className="testimonials" style={{ padding: '5rem 3rem' }}>
         <div className="wrap">
-          <div className="reviews-track" style={{ gridTemplateColumns: '1fr' }}>
-            <div className="review-card" style={{ maxWidth: '700px', margin: '0 auto' }}>
-              <p className="review-text">
-                Just incredible! Leanne was amazing from the moment we booked her. She protected my birth
-                space perfectly and advocated for me many times.
-              </p>
-              <div className="review-author">Bea, Leicestershire ★★★★★</div>
+          {/* A lone quote reads better as plain centred type than as a single
+              card floating in the band. */}
+          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+            <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.25rem, 2.4vw, 1.9rem)', fontStyle: 'italic', lineHeight: 1.55, color: 'rgba(255,255,255,0.9)', marginBottom: '1.5rem' }}>
+              &ldquo;Just incredible! Leanne was amazing from the moment we booked her. She protected my
+              birth space perfectly and advocated for me many times.&rdquo;
+            </p>
+            <div style={{ fontSize: '0.8rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--pink)' }}>
+              Bea, Leicestershire ★★★★★
             </div>
           </div>
         </div>

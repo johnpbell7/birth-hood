@@ -378,7 +378,6 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
       {/* DOCUMENTS */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label" style={{ marginBottom: '0.6rem' }}>Section 01</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>documents</em>
           </h2>
@@ -456,7 +455,6 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
       {/* AUDIO */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
-          <div className="section-label" style={{ marginBottom: '0.6rem' }}>Section 02</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
             Relaxation <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>audio</em>
           </h2>
@@ -527,7 +525,6 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
       {/* USEFUL WEBSITES */}
       <section className="section-pad" style={{ background: 'var(--black)', color: 'var(--white)' }}>
         <div className="wrap">
-          <div className="section-label" style={{ marginBottom: '0.6rem', color: 'var(--pink)' }}>Section 03</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1, color: 'var(--white)' }}>
             Useful <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>websites</em>
           </h2>
@@ -620,7 +617,6 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
       {/* HELP NOTICE */}
       <section className="section-pad-sm" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ textAlign: 'center', maxWidth: '640px' }}>
-          <div className="section-label" style={{ justifyContent: 'center', marginBottom: '0.8rem' }}>Need help?</div>
           <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.4rem', fontWeight: 500, marginBottom: '0.8rem' }}>
             Can&apos;t access a resource?
           </h3>

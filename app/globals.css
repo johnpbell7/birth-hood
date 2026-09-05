@@ -419,6 +419,10 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .page-hero-inner { max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 460px; align-items: center; gap: 2rem; }
 .page-hero-text { min-width: 0; }
 .page-hero-inner--no-photos { grid-template-columns: 1fr; }
+/* A hero with one photo centres it in the column instead of leaving a gap
+   where the second polaroid would sit. */
+.page-hero-polaroids--single { display: flex; align-items: center; justify-content: center; }
+.page-hero-polaroids--single .ph-frame-large { position: static; }
 .page-eyebrow { font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: rgba(0,0,0,0.55); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.7rem; }
 .page-eyebrow::before { display: none; }
 .page-title { font-family: 'Poppins', sans-serif; font-size: clamp(3rem,6vw,5.5rem); line-height: 1.0; color: var(--black); font-weight: 600; margin-bottom: 1.2rem; }
@@ -644,18 +648,6 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 
 /* TESTIMONIALS */
 .testimonials { background: var(--black); padding: 6rem 3rem; position: relative; z-index: 0; }
-/* white abstract polka pattern (the hero dots, recoloured white) — solid at the
-   bottom by the CTA, fading out toward the top. Any dark section can opt in
-   with .has-dots (the home testimonials and the reviews grid both do). */
-.has-dots { position: relative; z-index: 0; }
-.has-dots::before {
-  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background-image: url('/images/dots-white.png');
-  background-size: 620px auto;
-  background-repeat: repeat;
-  -webkit-mask-image: linear-gradient(to top, #000 6%, transparent 72%);
-  mask-image: linear-gradient(to top, #000 6%, transparent 72%);
-}
 .testimonials-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3.5rem; max-width: 1200px; margin-left: auto; margin-right: auto; flex-wrap: wrap; gap: 1.5rem; }
 .testimonials-title { font-family: 'Poppins', sans-serif; font-size: clamp(2rem,3.2vw,2.8rem); color: var(--white); font-weight: 500; line-height: 1.2; }
 .testimonials-title em { font-style: italic; color: var(--pink); }
@@ -797,6 +789,21 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .section-pad::after { bottom: 8%; left: 5%; width: 28px; height: 28px; animation-delay: 1.4s; }
 .section-pad:nth-of-type(even)::before { top: 11%; left: 6%; right: auto; width: 26px; height: 26px; }
 .section-pad:nth-of-type(even)::after { bottom: 12%; right: 7%; left: auto; width: 18px; height: 18px; animation-delay: 0.8s; }
+
+/* White abstract polka pattern (the hero dots, recoloured white) — solid at the
+   bottom, fading out toward the top. Any dark section can opt in with
+   .has-dots; the home testimonials and the reviews grid both do.
+   The class is doubled so this wins over .section-pad's twinkling-star
+   ::before, which is declared above and would otherwise take the slot. */
+.has-dots { position: relative; z-index: 0; }
+.has-dots.has-dots::before {
+  content: ''; position: absolute; inset: 0; width: auto; height: auto;
+  z-index: -1; pointer-events: none; animation: none;
+  background: url('/images/dots-white.png') repeat;
+  background-size: 620px auto;
+  -webkit-mask-image: linear-gradient(to top, #000 6%, transparent 72%);
+  mask-image: linear-gradient(to top, #000 6%, transparent 72%);
+}
 
 /* WELCOME INTRO (under hero) — text left, image right (flush to pink below), white bg */
 .welcome-intro { display: grid; grid-template-columns: 1fr 0.95fr; gap: 2rem; align-items: end; max-width: 1280px; padding-left: 1.5rem; }

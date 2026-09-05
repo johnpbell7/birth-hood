@@ -19,7 +19,6 @@ function BirthTraumaPageStatic() {
       <CmsPageHero
         page="birth-trauma"
         ctaLabel="Book a Conversation"
-        eyebrow="Healing is possible."
         title={<>Birth <em>Trauma</em> Support</>}
         subtitle="Whether your birth was frightening, overwhelming or just not what you hoped — your feelings are valid, and you don't have to carry them alone."
         img1={{ src: '/images/trauma-rewind.jpg', alt: 'A safe space' }}
@@ -97,7 +96,6 @@ function BirthTraumaPageStatic() {
             {/* SUPPORT CARDS */}
             <div>
               <div className="card card-pink" style={{ marginBottom: '1.5rem' }}>
-                <div className="section-label" style={{ marginBottom: '1rem' }}>Important note</div>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300 }}>
                   I am not a therapist or mental health professional. My support is
                   trauma-informed and compassionate, but I am not a replacement for specialist
@@ -107,7 +105,6 @@ function BirthTraumaPageStatic() {
               </div>
 
               <div className="card card-pink" style={{ marginBottom: '1.5rem' }}>
-                <div className="section-label" style={{ marginBottom: '1rem' }}>It&apos;s never too late</div>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300 }}>
                   You may be processing a birth that happened recently — or one that was years ago.
                   Birth trauma does not have a time limit. Whether your baby is six weeks or six
@@ -147,7 +144,6 @@ function BirthTraumaPageStatic() {
 
           <div className="grid-3" style={{ gap: '1.5rem' }}>
             <div className="card card-pink">
-              <div className="section-label" style={{ marginBottom: '1rem' }}>Session 1 · 1–2 hours</div>
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
                 Understanding &amp; Relaxation
               </h3>
@@ -162,7 +158,6 @@ function BirthTraumaPageStatic() {
             </div>
 
             <div className="card card-pink">
-              <div className="section-label" style={{ marginBottom: '1rem' }}>Session 2 · 1 hour</div>
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
                 The Rewind Process
               </h3>
@@ -174,7 +169,6 @@ function BirthTraumaPageStatic() {
             </div>
 
             <div className="card card-pink">
-              <div className="section-label" style={{ marginBottom: '1rem' }}>Session 3 · Up to 1 hour</div>
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
                 Reflection &amp; Moving Forward
               </h3>

@@ -69,7 +69,6 @@ function YogaPageStatic() {
         page="yoga"
         ctaLabel="Book Your Place"
         ctaHref={TICKET_TAILOR}
-        eyebrow="Move. Breathe. Connect."
         title={<>Pregnancy &amp; Baby <em>Yoga</em></>}
         subtitle="Two classes in NW Leicestershire — pregnancy yoga to prepare for birth, and parent &amp; baby yoga for afterwards."
         img1={{ src: '/images/yoga-class-189.jpg', alt: 'Pregnancy yoga' }}
@@ -129,7 +128,6 @@ function YogaPageStatic() {
             </div>
 
             <div>
-              <div className="section-label" style={{ marginBottom: '1.5rem' }}>Benefits of prenatal yoga</div>
               <div className="stat-grid">
                 <div className="stat-card">
                   <div className="stat-number">&darr;</div>

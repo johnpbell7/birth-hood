@@ -35,7 +35,7 @@ export default function ReviewCard({ review }: { review: Review }) {
       )}
 
       <div className="review-author">
-        {review.name} · {review.when}
+        {review.when ? `${review.name} · ${review.when}` : review.name}
         <span className="review-stars">★★★★★</span>
       </div>
     </div>

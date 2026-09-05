@@ -46,6 +46,24 @@ I've also made some wonderful friendships with like-minded mums that have lasted
 Thank you Leanne.`,
   },
   {
+    name: 'Beka & Matt',
+    service: 'Birth Doula · First baby, homebirth',
+    when: '',
+    text: `From my first contact with Leanne we just clicked, she's proudly inclusive and has experience in a wide range of pregnancies and birth situations. She supported me through my concern about fibroids, and gave me some brilliant yoga positions to try when my SPD started. She kept in contact through my pregnancy and made me feel like I really had amazing support whenever I needed it.
+
+The prenatal sessions were so brilliant to run through my birth plans of a physiological homebirth. Leanne supported me every step of the way and made me feel so confident and excited for my homebirth. She also helped with some latch issues and supported our undisturbed golden hour. It felt so natural having her there and I didn't want her to leave!
+
+Post natally, I felt really looked after by Leanne both in person & virtually. I can't recommend Leanne highly enough, she's a pro at end-to-end care and if you're reading this, book her!!!`,
+  },
+  {
+    name: 'Bea & Duane',
+    service: 'Birth Doula · Second baby, homebirth',
+    when: '',
+    text: `Just incredible! Leanne was amazing from the moment we booked her. She was always on hand for any questions and me and my husband loved our antenatal sessions with her and getting to know her, gaining knowledge. Postnatally she was excellent, always a message away and for our sessions.
+
+However, I couldn't have done the birth without her. She protected my birth space perfectly and advocated for me many times. She was especially helpful when things didn't quite go to plan.`,
+  },
+  {
     name: 'Stephanie Love',
     service: 'Birth Doula',
     when: '2 months ago',

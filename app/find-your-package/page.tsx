@@ -33,7 +33,6 @@ function FindYourPackageStatic() {
       <JsonLd data={breadcrumbSchema} />
       <CmsPageHero
         page="find-your-package"
-        eyebrow="Package finder"
         title={<>Find your <em>perfect fit</em></>}
         subtitle="Answer a few quick questions about your birth, your preparation and the aftercare you'd love — and I'll suggest the doula package that fits you best. Takes about a minute."
         img1={{ src: '/images/class-teaching-291.jpg', alt: 'In class' }}

@@ -23,7 +23,7 @@ function polaroid(image: CmsImage | undefined) {
 export default function HeroSection({ eyebrow, heading, subheading, ctaLabel, ctaHref, image, image2 }: Props) {
   return (
     <PageHero
-      eyebrow={eyebrow ?? ''}
+      eyebrow={eyebrow}
       title={heading}
       subtitle={subheading ?? ''}
       img1={polaroid(image)}
