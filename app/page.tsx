@@ -115,7 +115,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
   const welcomeBody = s.homeWelcomeBody ?? [
     'At birth-hood, I believe every family deserves to enter parenthood feeling informed, supported, connected, and confident. Through education, compassionate care, and community, I help people navigate pregnancy, birth, and beyond in a way that feels right for them.',
     "From Doula support, Hypnobirthing, 3 Step Rewind Traumatic Birth resolution support, and Yoga you're covered (as featured on BBC Radio Leicester).",
-    'Based in North West Leicestershire and covering Leicestershire, Derbyshire, Warwickshire and Nottinghamshire in person — plus online support UK-wide.',
+    'Based in North West Leicestershire and covering Leicestershire, Northamptonshire, Derbyshire, Nottinghamshire, Warwickshire and Staffordshire in person — plus online support UK-wide.',
   ]
   const welcomeImage = s.homeWelcomeImage
     ? urlFor(s.homeWelcomeImage).width(1100).url()

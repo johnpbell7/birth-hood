@@ -49,9 +49,14 @@ const businessJsonLd = {
     addressCountry: 'GB',
   },
   areaServed: [
-    'North West Leicestershire', 'Leicestershire', 'Derbyshire', 'Warwickshire', 'Nottinghamshire',
+    // Counties
+    'Leicestershire', 'North West Leicestershire', 'Northamptonshire', 'Derbyshire',
+    'Nottinghamshire', 'Warwickshire', 'Staffordshire',
+    // Towns and cities — listed here for local search rather than on the page
     'Coalville', 'Ashby-de-la-Zouch', 'Loughborough', 'Leicester', 'Swadlincote', 'Nuneaton',
-    'Nottingham', 'Derby', 'Midlands', 'United Kingdom (online)',
+    'Nottingham', 'Derby', 'Burton upon Trent', 'Tamworth', 'Hinckley', 'Market Harborough',
+    'Northampton', 'Lichfield',
+    'Midlands', 'United Kingdom (online)',
   ],
   aggregateRating: {
     '@type': 'AggregateRating',

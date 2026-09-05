@@ -27,9 +27,12 @@ const serviceSchema = {
   url: `${SITE}/yoga`,
   provider: { '@type': 'HealthAndBeautyBusiness', name: 'birth-hood', url: SITE },
   areaServed: [
-    'North West Leicestershire', 'Leicestershire', 'Derbyshire', 'Warwickshire',
-    'Nottinghamshire', 'Coalville', 'Ashby-de-la-Zouch', 'Loughborough', 'Leicester',
-    'Swadlincote', 'Nuneaton', 'Nottingham', 'Derby', 'Midlands', 'United Kingdom (online)',
+    'Leicestershire', 'North West Leicestershire', 'Northamptonshire', 'Derbyshire',
+    'Nottinghamshire', 'Warwickshire', 'Staffordshire',
+    'Coalville', 'Ashby-de-la-Zouch', 'Loughborough', 'Leicester', 'Swadlincote', 'Nuneaton',
+    'Nottingham', 'Derby', 'Burton upon Trent', 'Tamworth', 'Hinckley', 'Market Harborough',
+    'Northampton', 'Lichfield',
+    'Midlands', 'United Kingdom (online)',
   ],
 }
 const breadcrumbSchema = {

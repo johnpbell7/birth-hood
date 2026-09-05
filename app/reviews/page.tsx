@@ -69,8 +69,8 @@ function ReviewsPageStatic({ reviews, birthStories }: { reviews: Review[]; birth
                 <span className="rating-fact-label">of families supported since 2019</span>
               </li>
               <li className="rating-fact">
-                <span className="rating-fact-figure">4</span>
-                <span className="rating-fact-label">counties covered in person, plus online UK-wide</span>
+                <span className="rating-fact-figure">Midlands</span>
+                <span className="rating-fact-label">covered in person, plus online UK-wide</span>
               </li>
               <li className="rating-fact">
                 <span className="rating-fact-figure">BBC</span>

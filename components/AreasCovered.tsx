@@ -12,22 +12,12 @@ import Link from 'next/link'
  */
 
 const COUNTIES = [
-  'North West Leicestershire',
   'Leicestershire',
+  'Northamptonshire',
   'Derbyshire',
-  'Warwickshire',
   'Nottinghamshire',
-]
-
-const TOWNS = [
-  'Coalville',
-  'Ashby-de-la-Zouch',
-  'Loughborough',
-  'Leicester',
-  'Swadlincote',
-  'Nuneaton',
-  'Nottingham',
-  'Derby',
+  'Warwickshire',
+  'Staffordshire',
 ]
 
 export default function AreasCovered() {
@@ -67,19 +57,10 @@ export default function AreasCovered() {
           {/* Right — the coverage itself */}
           <div className="areas-card">
             <div className="areas-group">
-              <h3 className="areas-group-label">Counties</h3>
+              <h3 className="areas-group-label">Counties covered in person</h3>
               <ul className="areas-chips">
                 {COUNTIES.map((a) => (
                   <li key={a} className="areas-chip areas-chip--county">{a}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="areas-group">
-              <h3 className="areas-group-label">Towns &amp; cities</h3>
-              <ul className="areas-chips">
-                {TOWNS.map((a) => (
-                  <li key={a} className="areas-chip">{a}</li>
                 ))}
               </ul>
             </div>
