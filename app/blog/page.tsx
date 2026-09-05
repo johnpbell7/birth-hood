@@ -26,13 +26,14 @@ interface Post {
   coverAlt?: string
 }
 
+// Brand palette only — the previous set drifted into plum, green and slate.
 const CATEGORY_COLORS: Record<string, string> = {
   hypnobirthing: 'var(--pink)',
   doula: 'var(--black)',
-  'birth-trauma': '#6b4c7a',
-  yoga: '#4a7c5e',
-  'birth-rights': '#7a4a4a',
-  postnatal: '#4a6a7a',
+  'birth-trauma': 'var(--pink-deep)',
+  yoga: 'var(--pink)',
+  'birth-rights': 'var(--charcoal)',
+  postnatal: 'var(--pink-deep)',
   general: 'var(--grey-mid)',
 }
 

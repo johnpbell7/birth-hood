@@ -6,7 +6,6 @@ import CtaBand from '@/components/CtaBand'
 import JsonLd from '@/components/JsonLd'
 import PackageComparison from '@/components/PackageComparison'
 import PackageQuizModal from '@/components/PackageQuizModal'
-import AreasCovered from '@/components/AreasCovered'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
@@ -23,7 +22,11 @@ const serviceSchema = {
   description: 'Continuous, compassionate non-medical birth, virtual and postnatal doula support in Leicester and the Midlands — before, during and after birth.',
   url: `${SITE}/doula`,
   provider: { '@type': 'HealthAndBeautyBusiness', name: 'birth-hood', url: SITE },
-  areaServed: ['Leicester', 'Leicestershire', 'Midlands', 'United Kingdom (online)'],
+  areaServed: [
+    'North West Leicestershire', 'Leicestershire', 'Derbyshire', 'Warwickshire',
+    'Nottinghamshire', 'Coalville', 'Ashby-de-la-Zouch', 'Loughborough', 'Leicester',
+    'Swadlincote', 'Nuneaton', 'Nottingham', 'Derby', 'Midlands', 'United Kingdom (online)',
+  ],
 }
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -46,14 +49,26 @@ function DoulaPageStatic() {
         img1={{ src: '/images/doula-support.jpg', alt: 'Doula support' }}
         img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
         actions={
-          <a
-            href="https://calendly.com/birthhood/free-consultation"
-            className="btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book Free Consultation
-          </a>
+          <>
+            <a
+              href="https://calendly.com/birthhood/free-consultation"
+              className="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book Free Consultation
+            </a>
+            <a
+              href="/downloads/birth-hood-doula-pack.pdf"
+              className="btn-outline hero-download"
+              download
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+              </svg>
+              Download Doula Pack
+            </a>
+          </>
         }
       />
 
@@ -227,7 +242,6 @@ function DoulaPageStatic() {
         </div>
       </section>
 
-      <AreasCovered service="doula support" />
 
       {/* TESTIMONIAL */}
       <section className="testimonials" style={{ padding: '5rem 3rem' }}>

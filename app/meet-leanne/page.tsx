@@ -4,6 +4,7 @@ import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import AreasCovered from '@/components/AreasCovered'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
@@ -238,6 +239,8 @@ function MeetLeannePageStatic() {
           </div>
         </div>
       </section>
+
+      <AreasCovered />
 
       <CtaBand
         heading="Ready to work together?"

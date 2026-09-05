@@ -30,14 +30,6 @@ type AudioAlbum = {
   tracks: AudioTrack[]
 }
 
-type Video = {
-  title: string
-  description?: string
-  src?: string
-  poster?: string
-  youtube?: string
-}
-
 type UsefulSite = {
   name: string
   url: string
@@ -75,12 +67,13 @@ const groups: ResourceGroup[] = [
   },
   {
     label: 'Specific situations',
-    intro: "In-depth guides for specific birth pathways — including caesarean, induction, premature birth and biomechanics.",
+    intro: "In-depth guides for specific birth pathways — including caesarean, induction, premature birth, freebirth and biomechanics.",
     items: [
       { title: 'Caesarean Handbook', href: 'https://www.birth-hood.co.uk/_files/ugd/530235_8acc2b34ec3d44568dee402f33964885.pdf' },
       { title: 'Induction guide', href: 'https://www.birth-hood.co.uk/_files/ugd/530235_1a8ef500adc44f0b8312846b80e36eb6.pdf' },
       { title: 'Premature birth guide', href: 'https://www.birth-hood.co.uk/_files/ugd/530235_623176986d0042da9080eb0f2a827be4.pdf' },
       { title: 'Birth Biomechanics eBook', href: 'https://www.birth-hood.co.uk/_files/ugd/530235_36acda55a7f24801b52bcf4101c8f17d.pdf' },
+      { title: 'Freebirth guide', href: '/downloads/birth-hood-freebirth-guide.pdf' },
     ],
   },
   {
@@ -121,39 +114,6 @@ const albums: AudioAlbum[] = [
       { title: 'Short Relaxation', duration: '—' },
       { title: 'Partner Relaxation Script', duration: '—' },
     ],
-  },
-]
-
-const videos: Video[] = [
-  {
-    title: 'Induction Workshop',
-    description: 'A full recording of the birth-hood induction workshop — understanding your options and making informed choices.',
-    youtube: 'Nxq4Qz-PitU',
-  },
-  {
-    title: 'Birth Plan Workshop',
-    description: 'Work through your A, B & C birth preferences with me in this recorded workshop.',
-    youtube: 'T68pX7wIZVM',
-  },
-  {
-    title: 'Pain Management Workshop',
-    description: 'A recording covering comfort measures and pain-management options for labour and birth.',
-    youtube: 'y5xb49dlxDk',
-  },
-  {
-    title: 'Massage Techniques',
-    description: 'Practical massage techniques for your birth partner to use during labour.',
-    youtube: '62C2fqyAH20',
-  },
-  {
-    title: 'Sifting / Rebozo Tutorial',
-    description: 'A short tutorial on sifting techniques for comfort and optimal positioning.',
-    youtube: 'Je30iRqSb5g',
-  },
-  {
-    title: 'Pregnancy Yoga Class',
-    description: 'Follow along with a full recorded birth-hood pregnancy yoga class.',
-    youtube: 'MDGzKPxxj5Y',
   },
 ]
 
@@ -243,16 +203,6 @@ function buildAudioAlbums(resources: HubResource[]): AudioAlbum[] {
   }))
 }
 
-function buildVideos(resources: HubResource[]): Video[] {
-  return resources
-    .filter((r) => r.type === 'video')
-    .map((r) => ({
-      title: r.title,
-      description: r.description,
-      src: r.fileUrl || r.videoUrl,
-    }))
-}
-
 function buildUsefulSites(resources: HubResource[]): UsefulSite[] {
   return resources
     .filter((r) => r.type === 'external')
@@ -269,13 +219,11 @@ type HubClientProps = { sanityResources?: HubResource[] }
 export default function HubClient({ sanityResources = [] }: HubClientProps) {
   const liveGroups = buildPdfGroups(sanityResources)
   const liveAlbums = buildAudioAlbums(sanityResources)
-  const liveVideos = buildVideos(sanityResources)
   const liveSites = buildUsefulSites(sanityResources)
 
   // Per-section: use Sanity data if present for that type, otherwise fall back to static
   const displayGroups = liveGroups.length > 0 ? liveGroups : groups
   const displayAlbums = liveAlbums.length > 0 ? liveAlbums : albums
-  const displayVideos = liveVideos.length > 0 ? liveVideos : videos
   const displaySites = liveSites.length > 0 ? liveSites : usefulSites
 
   const [unlocked, setUnlocked] = useState(false)
@@ -382,7 +330,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
               Welcome to your <em>Client Hub</em>
             </h1>
             <p className="page-subtitle" style={{ maxWidth: '640px', margin: '0 auto 1.5rem' }}>
-              Everything you need, all in one place — documents, relaxation audio, workshop videos and useful links.
+              Everything you need, all in one place — documents, relaxation audio and useful links.
             </p>
             <button
               onClick={handleLogout}
@@ -416,10 +364,6 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
           <div className="hub-stat">
             <div className="hub-stat-num">{displayAlbums.reduce((s, a) => s + a.tracks.length, 0)}</div>
             <div className="hub-stat-label">Audio tracks</div>
-          </div>
-          <div className="hub-stat">
-            <div className="hub-stat-num">{displayVideos.length}</div>
-            <div className="hub-stat-label">Videos</div>
           </div>
           <div className="hub-stat">
             <div className="hub-stat-num">{displaySites.length}</div>
@@ -577,87 +521,10 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
         </div>
       </section>
 
-      {/* VIDEOS */}
-      <section className="section-pad">
-        <div className="wrap">
-          <div className="section-label" style={{ marginBottom: '0.6rem' }}>Section 03</div>
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
-            Workshop <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>videos</em>
-          </h2>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '680px' }}>
-            Watch back full recordings of birth-hood sessions and workshops, covering birth positions, coaching, breathing and more.
-          </p>
-
-          <div className="grid-2" style={{ gap: '1.5rem' }}>
-            {displayVideos.map((video) => (
-              <div key={video.title} className="card" style={{ padding: 0, overflow: 'hidden', borderRadius: '3px' }}>
-                {video.youtube ? (
-                  <div style={{ aspectRatio: '16/9', background: 'var(--black)' }}>
-                    <iframe
-                      src={`https://www.youtube.com/embed/${video.youtube}`}
-                      title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      style={{ width: '100%', height: '100%', border: 0, display: 'block' }}
-                    />
-                  </div>
-                ) : video.src ? (
-                  <video controls poster={video.poster} style={{ width: '100%', display: 'block', background: 'var(--black)' }}>
-                    <source src={video.src} type="video/mp4" />
-                    Your browser does not support video playback.
-                  </video>
-                ) : (
-                  <div style={{
-                    aspectRatio: '16/9',
-                    background: 'linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--white)',
-                    position: 'relative',
-                  }}>
-                    <div style={{ textAlign: 'center' }}>
-                      <div style={{
-                        width: '64px',
-                        height: '64px',
-                        borderRadius: '50%',
-                        border: '2px solid var(--pink)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        margin: '0 auto 1rem',
-                      }}>
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--pink)">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                      <div style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)' }}>
-                        Video coming soon
-                      </div>
-                    </div>
-                  </div>
-                )}
-                <div style={{ padding: '1.2rem 1.5rem' }}>
-                  <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.15rem', fontWeight: 500, color: 'var(--black)', marginBottom: '0.4rem' }}>
-                    {video.title}
-                  </h3>
-                  {video.description && (
-                    <p style={{ fontSize: '0.88rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.65, margin: 0 }}>
-                      {video.description}
-                    </p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
       {/* USEFUL WEBSITES */}
       <section className="section-pad" style={{ background: 'var(--black)', color: 'var(--white)' }}>
         <div className="wrap">
-          <div className="section-label" style={{ marginBottom: '0.6rem', color: 'var(--pink)' }}>Section 04</div>
+          <div className="section-label" style={{ marginBottom: '0.6rem', color: 'var(--pink)' }}>Section 03</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.6rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1, color: 'var(--white)' }}>
             Useful <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>websites</em>
           </h2>

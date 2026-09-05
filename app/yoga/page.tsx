@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
-import AreasCovered from '@/components/AreasCovered'
 import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
@@ -23,7 +22,11 @@ const serviceSchema = {
   description: 'Pregnancy yoga and parent & baby yoga classes in NW Leicestershire — safe, adapted movement to nourish your body and calm your mind.',
   url: `${SITE}/yoga`,
   provider: { '@type': 'HealthAndBeautyBusiness', name: 'birth-hood', url: SITE },
-  areaServed: ['NW Leicestershire', 'Leicestershire', 'Midlands'],
+  areaServed: [
+    'North West Leicestershire', 'Leicestershire', 'Derbyshire', 'Warwickshire',
+    'Nottinghamshire', 'Coalville', 'Ashby-de-la-Zouch', 'Loughborough', 'Leicester',
+    'Swadlincote', 'Nuneaton', 'Nottingham', 'Derby', 'Midlands', 'United Kingdom (online)',
+  ],
 }
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -255,7 +258,6 @@ function YogaPageStatic() {
         </div>
       </section>
 
-      <AreasCovered service="pregnancy yoga" />
 
       <CtaBand
         heading="Ready to move, breathe and connect?"

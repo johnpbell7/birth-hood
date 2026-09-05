@@ -1121,9 +1121,9 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .pkg-corner-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--pink-deep); font-weight: 600; }
 .pkg-head { text-align: center; background: var(--pink-ultra); border-left: 1px solid var(--pink-pale); position: relative; }
 .pkg-head--pop { background: var(--pink-deep); }
-.pkg-head .pkg-name { display: block; font-size: 1.25rem; font-weight: 600; color: #fff; line-height: 1.1; }
-.pkg-head .pkg-price { display: block; font-size: 1.05rem; font-weight: 700; color: #fff; margin-top: 0.15rem; }
-.pkg-head .pkg-tag { display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.85); margin-top: 0.3rem; font-weight: 500; }
+.pkg-head .pkg-name { display: block; font-size: 1.25rem; font-weight: 600; color: var(--pkg-fg, #fff); line-height: 1.1; }
+.pkg-head .pkg-price { display: block; font-size: 1.05rem; font-weight: 700; color: var(--pkg-fg, #fff); margin-top: 0.15rem; }
+.pkg-head .pkg-tag { display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--pkg-fg-muted, rgba(255,255,255,0.85)); margin-top: 0.3rem; font-weight: 500; }
 .pkg-badge {
   position: absolute; top: -0.7rem; left: 50%; transform: translateX(-50%);
   background: var(--pink); color: #fff; font-size: 0.6rem; font-weight: 700;
@@ -1151,7 +1151,7 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 /* enquire row */
 .pkg-cta-row td { padding-top: 1.1rem; padding-bottom: 1.2rem; }
 .pkg-btn { display: inline-block; padding: 0.6rem 1.4rem; font-size: 0.8rem; }
-.pkg-enquire { display: inline-block; padding: 0.6rem 1.4rem; font-size: 0.8rem; font-weight: 600; color: #fff; border-radius: 999px; text-decoration: none; transition: transform 0.15s, box-shadow 0.15s; }
+.pkg-enquire { display: inline-block; padding: 0.6rem 1.4rem; font-size: 0.8rem; font-weight: 600; color: var(--pkg-fg, #fff); border-radius: 999px; text-decoration: none; transition: transform 0.15s, box-shadow 0.15s; }
 .pkg-enquire:hover { transform: translateY(-1px); box-shadow: 0 10px 22px -10px rgba(0,0,0,0.45); }
 
 .pkg-note { margin-top: 1.2rem; font-size: 0.9rem; color: var(--grey-mid); font-weight: 300; line-height: 1.6; text-align: center; }
@@ -1183,10 +1183,10 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   margin: 0 -1.15rem 0.6rem; padding: 0.9rem 1.15rem; background: var(--pink-ultra); position: relative;
 }
 .pkgm-head.is-pop { background: var(--pink-deep); }
-.pkgm-head-name { font-family: 'Poppins', sans-serif; font-size: 1.25rem; font-weight: 600; color: #fff; display: block; line-height: 1.1; }
-.pkgm-head-tag { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.85); font-weight: 600; }
-.pkgm-head-price { margin-left: auto; font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; }
-.pkgm-head-badge { position: absolute; top: -0.55rem; right: 1rem; background: var(--pink); color: #fff; font-size: 0.56rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.2rem 0.6rem; border-radius: 999px; }
+.pkgm-head-name { font-family: 'Poppins', sans-serif; font-size: 1.25rem; font-weight: 600; color: var(--pkg-fg, #fff); display: block; line-height: 1.1; }
+.pkgm-head-tag { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--pkg-fg-muted, rgba(255,255,255,0.85)); font-weight: 600; }
+.pkgm-head-price { margin-left: auto; font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--pkg-fg, #fff); }
+.pkgm-head-badge { position: absolute; top: -0.55rem; right: 1rem; background: var(--black); color: #fff; font-size: 0.56rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.2rem 0.6rem; border-radius: 999px; }
 
 .pkgm-group-label { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--pink-deep); padding: 0.7rem 0 0.35rem; border-bottom: 1.5px solid var(--pink-pale); margin-bottom: 0.15rem; }
 .pkgm-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px solid #f4eaf1; }
@@ -1194,7 +1194,7 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .pkgm-k { font-size: 0.85rem; color: #3a3a40; font-weight: 300; }
 .pkgm-v { font-size: 0.85rem; font-weight: 600; color: var(--black); text-align: right; flex: none; max-width: 55%; }
 .pkgm-v--neg { color: #b9b9c0; font-weight: 400; }
-.pkgm-btn { display: block; text-align: center; margin-top: 1rem; width: 100%; padding: 0.85rem 1rem; border-radius: 999px; font-weight: 600; color: #fff; text-decoration: none; font-family: 'Poppins', sans-serif; }
+.pkgm-btn { display: block; text-align: center; margin-top: 1rem; width: 100%; padding: 0.85rem 1rem; border-radius: 999px; font-weight: 600; color: var(--pkg-fg, #fff); text-decoration: none; font-family: 'Poppins', sans-serif; }
 .pkgm-hint { margin-top: 0.7rem; font-size: 0.78rem; color: var(--grey-light); text-align: center; font-weight: 300; }
 
 @media (max-width: 760px) {
@@ -1270,17 +1270,6 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .quiz--asking .quiz-options { margin-top: 1.4rem; }
 
 /* ── "Where I work" local-SEO section ────────────────────────────── */
-.areas { padding: 4.5rem 0; background: var(--pink-ultra); }
-.areas-title { font-family: 'Poppins', sans-serif; font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 600; line-height: 1.15; margin: 0.4rem 0 0.8rem; }
-.areas-title em { font-style: italic; color: var(--pink-deep); }
-.areas-intro { max-width: 62ch; color: var(--grey-mid); font-size: 1rem; line-height: 1.65; font-weight: 300; margin: 0 0 1.6rem; }
-.areas-intro strong { color: var(--black); font-weight: 600; }
-.areas-chips { list-style: none; margin: 0 0 1.6rem; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.areas-chip { background: #fff; border: 1.5px solid var(--pink-pale); color: var(--black); font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 0.9rem; padding: 0.5rem 1rem; border-radius: 999px; box-shadow: 0 10px 26px -20px rgba(184,63,147,0.5); }
-.areas-chip:first-child { background: var(--pink-deep); color: #fff; border-color: var(--pink-deep); }
-.areas-online { font-size: 0.95rem; color: var(--grey-mid); font-weight: 300; line-height: 1.6; }
-.areas-online a { color: var(--pink-deep); font-weight: 500; text-decoration: underline; }
-.areas-online-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--pink); margin-right: 0.6rem; vertical-align: middle; box-shadow: 0 0 0 4px rgba(254,127,204,0.25); }
 
 
 /* ── Links page (/links) ───────────────────────────────────────────────────
@@ -1427,4 +1416,140 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .links-avatar { width: 96px; height: 96px; }
   .links-title { font-size: 2rem; }
   .links-tile { font-size: 0.88rem; }
+}
+
+
+/* ── Where I work (Meet Leanne) ───────────────────────────────────────────
+   Two columns: the story on the left, the coverage itself in a card on the
+   right. Brand palette only — pink, deep pink and black. */
+.areas { padding: 6rem 0; background: var(--pink-ultra); position: relative; }
+.areas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.areas-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0.4rem 0 1.5rem;
+  color: var(--black);
+}
+.areas-title em { font-style: italic; color: var(--pink-deep); }
+.areas-intro {
+  max-width: 46ch;
+  color: var(--grey-mid);
+  font-size: 1rem;
+  line-height: 1.75;
+  font-weight: 300;
+  margin: 0 0 1.1rem;
+}
+.areas-intro strong { color: var(--black); font-weight: 600; }
+.areas-intro a {
+  color: var(--pink-deep);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--pink);
+  padding-bottom: 1px;
+}
+.areas-intro a:hover { color: var(--black); }
+
+.areas-card {
+  background: var(--white);
+  border-radius: 3px;
+  padding: 2.6rem 2.4rem;
+  box-shadow: 0 24px 60px -40px rgba(184, 63, 147, 0.55);
+}
+.areas-group { margin-bottom: 2.2rem; }
+.areas-group:last-of-type { margin-bottom: 1.8rem; }
+.areas-group-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+  margin: 0 0 1.1rem;
+}
+.areas-chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.areas-chip {
+  background: var(--pink-ultra);
+  border: 1.5px solid var(--pink-pale);
+  color: var(--black);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+}
+.areas-chip--county {
+  background: var(--pink-deep);
+  border-color: var(--pink-deep);
+  color: var(--white);
+}
+
+.areas-online {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--grey-mid);
+}
+.areas-online-dot {
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--pink);
+  box-shadow: 0 0 0 4px rgba(254, 127, 204, 0.25);
+}
+
+@media (max-width: 900px) {
+  .areas { padding: 4rem 0; }
+  .areas-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .areas-card { padding: 2rem 1.5rem; }
+}
+
+
+/* Outline button — pairs with .btn-primary in a hero where a second, lower
+   priority action sits alongside the booking CTA. */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 1.8rem;
+  background: transparent;
+  color: var(--black);
+  border: 2px solid var(--black);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s, transform 0.25s;
+}
+.btn-outline svg { width: 16px; height: 16px; flex-shrink: 0; }
+.btn-outline:hover { background: var(--black); color: var(--white); transform: translateY(-2px); }
+
+@media (max-width: 780px) {
+  /* Hero CTAs are hidden on mobile because the floating button covers booking,
+     but that button does not cover the pack download — so keep it reachable. */
+  .hero-actions:has(.hero-download) { display: flex; }
+  .hero-actions:has(.hero-download) > :not(.hero-download) { display: none; }
+  .hero-download { width: 100%; justify-content: center; }
 }

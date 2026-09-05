@@ -3,7 +3,6 @@ import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
-import AreasCovered from '@/components/AreasCovered'
 import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
@@ -22,7 +21,11 @@ const serviceSchema = {
   description: 'Evidence-based KGHypnobirthing courses in Leicester and online across the UK — releasing fear and building calm, confident birth preparation.',
   url: `${SITE}/hypnobirthing`,
   provider: { '@type': 'HealthAndBeautyBusiness', name: 'birth-hood', url: SITE },
-  areaServed: ['Leicester', 'Leicestershire', 'Midlands', 'United Kingdom (online)'],
+  areaServed: [
+    'North West Leicestershire', 'Leicestershire', 'Derbyshire', 'Warwickshire',
+    'Nottinghamshire', 'Coalville', 'Ashby-de-la-Zouch', 'Loughborough', 'Leicester',
+    'Swadlincote', 'Nuneaton', 'Nottingham', 'Derby', 'Midlands', 'United Kingdom (online)',
+  ],
 }
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -287,7 +290,6 @@ function HypnobirthingPageStatic() {
         </div>
       </section>
 
-      <AreasCovered service="hypnobirthing" />
 
       <CtaBand
         heading="Ready to feel genuinely excited about birth?"

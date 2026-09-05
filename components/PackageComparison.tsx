@@ -6,12 +6,13 @@ import Link from 'next/link'
 type Row = { feat: string; vals: [string, string, string] }
 type Group = { label: string; rows: Row[] }
 
-// Each tier gets its own header colour — a coordinated pink→magenta→plum set,
-// all similar weight so no single package stands out above the others.
+// Tier headers step through the brand palette — brand pink, deep pink, then
+// black — rather than drifting into magenta and plum. `fg` carries the text
+// colour because brand pink needs black type, not white.
 const PACKAGES = [
-  { name: 'Foundation', price: '£1,095', tag: 'Essential', color: '#D1589C' },
-  { name: 'Balanced', price: '£1,495', tag: 'Enhanced', color: '#B8459A' },
-  { name: 'Ultimate', price: '£2,000', tag: 'Comprehensive', color: '#9A4AA0' },
+  { name: 'Foundation', price: '£1,095', tag: 'Essential', color: 'var(--pink)', fg: 'var(--black)', fgMuted: 'rgba(0,0,0,0.6)' },
+  { name: 'Balanced', price: '£1,495', tag: 'Enhanced', color: 'var(--pink-deep)', fg: '#fff', fgMuted: 'rgba(255,255,255,0.85)' },
+  { name: 'Ultimate', price: '£2,000', tag: 'Comprehensive', color: 'var(--black)', fg: '#fff', fgMuted: 'rgba(255,255,255,0.85)' },
 ] as const
 
 const GROUPS: Group[] = [
@@ -88,7 +89,7 @@ export default function PackageComparison() {
                   <span className="pkg-corner-label">Compare packages</span>
                 </th>
                 {PACKAGES.map((p) => (
-                  <th key={p.name} scope="col" className="pkg-head" style={{ background: p.color }}>
+                  <th key={p.name} scope="col" className="pkg-head" style={{ background: p.color, '--pkg-fg': p.fg, '--pkg-fg-muted': p.fgMuted } as React.CSSProperties}>
                     <span className="pkg-name">{p.name}</span>
                     <span className="pkg-price">{p.price}</span>
                     <span className="pkg-tag">{p.tag}</span>
@@ -118,7 +119,7 @@ export default function PackageComparison() {
                 <td className="pkg-feat" aria-hidden="true" />
                 {PACKAGES.map((p) => (
                   <td key={p.name} className="pkg-val">
-                    <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" className="pkg-enquire" style={{ background: p.color }}>
+                    <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" className="pkg-enquire" style={{ background: p.color, '--pkg-fg': p.fg } as React.CSSProperties}>
                       Enquire
                     </a>
                   </td>
@@ -148,7 +149,7 @@ export default function PackageComparison() {
         </div>
 
         <div className="pkgm-panel">
-          <div className="pkgm-head" style={{ background: active.color }}>
+          <div className="pkgm-head" style={{ background: active.color, '--pkg-fg': active.fg, '--pkg-fg-muted': active.fgMuted } as React.CSSProperties}>
             <div>
               <span className="pkgm-head-name">{active.name}</span>
               <span className="pkgm-head-tag">{active.tag}</span>
@@ -168,7 +169,7 @@ export default function PackageComparison() {
             </div>
           ))}
 
-          <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" className="pkgm-btn" style={{ background: active.color }}>
+          <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" className="pkgm-btn" style={{ background: active.color, '--pkg-fg': active.fg } as React.CSSProperties}>
             Enquire about {active.name}
           </a>
         </div>

@@ -114,7 +114,7 @@ function LinksPageStatic() {
         </a>
 
         <p className="links-foot">
-          birth-hood · Leanne Myles · NW Leicestershire
+          birth-hood · Leanne Marsden · NW Leicestershire
           <br />
           Doula · Hypnobirthing Teacher · Pregnancy Yoga
         </p>
