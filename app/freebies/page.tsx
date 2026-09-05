@@ -68,8 +68,8 @@ export default async function FreebiesPage() {
         eyebrow="Yours. For free. No strings."
         title={<><em>Free</em> Resources</>}
         subtitle="Birth affirmations, guides, templates and audio — all created by me, all completely free."
-        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class' }}
+        img1={{ src: '/images/hospital-bag-64.jpg', alt: 'Birth bag' }}
+        img2={{ src: '/images/tote-bag-33.jpg', alt: 'Resources' }}
       />
 
       <MarqueeStrip />

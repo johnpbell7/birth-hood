@@ -28,8 +28,8 @@ export default async function ShopPage() {
         eyebrow="Downloadable resources"
         title={<>The <em>Shop</em></>}
         subtitle="Handpicked guides, audio and tools to support your pregnancy, birth and beyond. Choose what you need — you'll receive your downloads by email straight after secure checkout."
-        img1={{ src: '/images/hypnobirthing-class.jpg', alt: 'birth-hood resources' }}
-        img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img1={{ src: '/images/tote-bag-33.jpg', alt: 'Resources' }}
+        img2={{ src: '/images/relaxation-oils-69.jpg', alt: 'Relaxation' }}
         hideFab
       />
 
@@ -37,7 +37,6 @@ export default async function ShopPage() {
 
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">Resources</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>resources</em>
           </h2>

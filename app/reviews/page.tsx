@@ -28,8 +28,8 @@ function ReviewsPageStatic({ reviews, birthStories }: { reviews: Review[]; birth
         eyebrow="What clients say"
         title={<>Real <em>Reviews</em></>}
         subtitle="From real clients, unfiltered and unedited. These words mean everything."
-        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/yoga-class.jpg', alt: 'Prenatal yoga class' }}
+        img1={{ src: '/images/parent-baby-150.jpg', alt: 'Parent & baby' }}
+        img2={{ src: '/images/class-group-257.jpg', alt: 'Group course' }}
       />
 
       <MarqueeStrip />
@@ -65,7 +65,6 @@ function ReviewsPageStatic({ reviews, birthStories }: { reviews: Review[]; birth
       {/* LEAVE A REVIEW */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ textAlign: 'center', maxWidth: '600px' }}>
-          <div className="section-label" style={{ justifyContent: 'center', marginBottom: '1rem' }}>Share your experience</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.1 }}>
             Worked with <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>me?</em>
           </h2>
@@ -90,7 +89,6 @@ function ReviewsPageStatic({ reviews, birthStories }: { reviews: Review[]; birth
       {/* BIRTH STORIES */}
       <section className="section-pad" id="birth-stories">
         <div className="wrap">
-          <div className="section-label">Birth stories</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
             Stories from <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>real births</em>
           </h2>

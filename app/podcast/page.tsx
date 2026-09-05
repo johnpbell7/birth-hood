@@ -29,8 +29,8 @@ function PodcastPageStatic() {
         eyebrow="Honest birth talk"
         title={<>Dou-La-La the <em>Birthy Podcast</em></>}
         subtitle="Two doulas in conversation giving you honest birth talk, myth busting and just generally having a good chat!"
-        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
+        img1={{ src: '/images/leanne-peace-111.jpg', alt: 'Leanne' }}
+        img2={{ src: '/images/leanne-van-14.jpg', alt: 'On the road' }}
         actions={
           <p style={{ fontSize: '0.95rem', color: 'var(--grey-mid)', fontWeight: 300 }}>
             Search <strong>&ldquo;Dou-La-La&rdquo;</strong> on your favourite podcast platform
@@ -45,7 +45,6 @@ function PodcastPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
-              <div className="section-label">About the show</div>
               <h2>Real talk about birth, pregnancy and beyond</h2>
               <p>
                 Come and explore all areas of pregnancy, birth and the postnatal period with me —
@@ -93,7 +92,6 @@ function PodcastPageStatic() {
       {/* LISTEN ON */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
-          <div className="section-label">Listen on</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Find us on your favourite <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>platform</em>
           </h2>
@@ -148,7 +146,6 @@ function PodcastPageStatic() {
       {/* TOPICS WE COVER */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">What we talk about</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Topics we <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>explore</em>
           </h2>

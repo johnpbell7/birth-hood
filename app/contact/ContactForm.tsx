@@ -71,7 +71,7 @@ export default function ContactForm() {
             <option>Birth Doula</option>
             <option>Postnatal Doula</option>
             <option>Antenatal &amp; Virtual Doula</option>
-            <option>Prenatal Yoga</option>
+            <option>Yoga</option>
             <option>Birth Trauma Support</option>
             <option>General enquiry</option>
           </select>

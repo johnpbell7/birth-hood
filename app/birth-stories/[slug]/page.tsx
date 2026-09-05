@@ -132,7 +132,6 @@ export default async function BirthStoryPage({ params }: { params: Promise<Param
       {more.length > 0 && (
         <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
           <div className="wrap">
-            <div className="section-label">More birth stories</div>
             <h2
               style={{
                 fontFamily: 'Poppins, sans-serif',

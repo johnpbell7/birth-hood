@@ -5,7 +5,7 @@ import { getSiteSettings } from '@/lib/sanity-queries'
 const DEFAULT_TAGLINE = (
   <>
     Education · Support · Community<br />
-    Hypnobirthing, Doula support and Prenatal Yoga from<br />
+    Hypnobirthing, Doula support and Yoga from<br />
     Leicester, Midlands and online UK-wide.
   </>
 )
@@ -66,7 +66,7 @@ export default async function Footer() {
             <li><Link href="/doula">Doula Services</Link></li>
             <li><Link href="/virtual-doula">Antenatal &amp; Virtual Doula</Link></li>
             <li><Link href="/postnatal-doula">Postnatal Doula</Link></li>
-            <li><Link href="/yoga">Prenatal Yoga</Link></li>
+            <li><Link href="/yoga">Yoga</Link></li>
             <li><Link href="/birth-trauma">Birth Trauma</Link></li>
           </ul>
         </div>

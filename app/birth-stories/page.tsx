@@ -23,15 +23,14 @@ export default async function BirthStoriesPage() {
         eyebrow="In their own words"
         title={<>Birth <em>Stories</em></>}
         subtitle="Real stories from real families — home births, water births, inductions and everything in between. Told honestly, start to finish."
-        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class' }}
+        img1={{ src: '/images/birth-pool-rest-299.jpg', alt: 'In the pool' }}
+        img2={{ src: '/images/newborn-held-170.jpg', alt: 'Newborn days' }}
       />
 
       <MarqueeStrip />
 
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">Every birth is valid</div>
           <h2
             style={{
               fontFamily: 'Poppins, sans-serif',

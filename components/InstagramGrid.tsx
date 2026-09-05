@@ -2,12 +2,12 @@ import Image from 'next/image'
 import type { InstagramPost } from '@/lib/instagram'
 
 const STATIC_FALLBACK = [
-  { src: '/images/leanne-portrait.jpg', alt: 'Leanne — @birthhooduk', pos: 'center top' },
-  { src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class — @birthhooduk', pos: 'center' },
-  { src: '/images/doula-support.jpg', alt: 'Doula support — @birthhooduk', pos: 'center' },
-  { src: '/images/yoga-class.jpg', alt: 'Prenatal yoga — @birthhooduk', pos: 'center' },
-  { src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking — @birthhooduk', pos: 'center top' },
-  { src: '/images/hypnobirthing-class.jpg', alt: 'Supporting families — @birthhooduk', pos: 'center 30%' },
+  { src: '/images/leanne-peace-111.jpg', alt: 'Leanne — @birthhooduk', pos: 'center top' },
+  { src: '/images/class-sofa-265.jpg', alt: 'Hypnobirthing class — @birthhooduk', pos: 'center' },
+  { src: '/images/birth-pool-partner-316.jpg', alt: 'Doula support in labour — @birthhooduk', pos: 'center' },
+  { src: '/images/yoga-class-189.jpg', alt: 'Pregnancy yoga — @birthhooduk', pos: 'center' },
+  { src: '/images/newborn-held-170.jpg', alt: 'Newborn cuddles — @birthhooduk', pos: 'center' },
+  { src: '/images/parent-baby-150.jpg', alt: 'Parent and baby class — @birthhooduk', pos: 'center 30%' },
 ]
 
 export default function InstagramGrid({ posts }: { posts: InstagramPost[] }) {

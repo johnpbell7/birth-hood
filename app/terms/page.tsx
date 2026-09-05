@@ -19,6 +19,8 @@ function TermsPageStatic() {
         eyebrow="Legal stuff"
         title={<>Terms & <em>Conditions</em></>}
         subtitle="Please read these terms carefully before booking any services with birth-hood."
+        img1={{ src: '/images/leanne-doorway-5.jpg', alt: 'Leanne' }}
+        img2={{ src: '/images/relaxation-oils-69.jpg', alt: 'Relaxation' }}
       />
 
       <section className="section-pad">

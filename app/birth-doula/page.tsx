@@ -24,8 +24,8 @@ function BirthDoulaPageStatic() {
         eyebrow="Professional birth support"
         title={<>Birth <em>Doula</em> Support</>}
         subtitle="Continuous, compassionate non-medical support before, during and after your birth."
-        img1={{ src: '/images/doula-support.jpg', alt: 'Doula support' }}
-        img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img1={{ src: '/images/birth-pool-partner-316.jpg', alt: 'Partner support' }}
+        img2={{ src: '/images/birth-pool-rest-299.jpg', alt: 'In the pool' }}
         actions={
           <a
             href="https://calendly.com/birthhood/free-consultation"
@@ -68,7 +68,6 @@ function BirthDoulaPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
-              <div className="section-label">What does a birth doula do?</div>
               <h2>Your advocate, your support, your person</h2>
               <p>
                 A birth doula provides continuous, compassionate non-medical support throughout
@@ -89,7 +88,7 @@ function BirthDoulaPageStatic() {
               </p>
             </div>
             <div>
-              <StatBlockImage src="/images/doula-support.jpg" alt="Leanne supporting a client through labour" />
+              <StatBlockImage src="/images/birth-pool-partner-316.jpg" alt="Leanne supporting a couple through labour" />
             </div>
           </div>
         </div>
@@ -98,7 +97,6 @@ function BirthDoulaPageStatic() {
       {/* WHAT'S INCLUDED */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
-          <div className="section-label">What&apos;s included</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Full support <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>before, during &amp; after</em>
           </h2>
@@ -182,7 +180,6 @@ function BirthDoulaPageStatic() {
       {/* PACKAGES / INVESTMENT */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">Investment</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.1 }}>
             Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>package</em>
           </h2>

@@ -21,8 +21,8 @@ function ContactPageStatic() {
         eyebrow="Let's talk"
         title={<>Get in <em>Touch</em></>}
         subtitle="For enquiries, please contact me directly via this page. I'll get back to you ASAP! I can't wait to help you prepare for your birth, knowing your rights, your options, and feeling like you did everything you could to prepare to start parenthood positively."
-        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/doula-support.jpg', alt: 'Doula support' }}
+        img1={{ src: '/images/quiet-hands-329.jpg', alt: 'A safe space' }}
+        img2={{ src: '/images/leanne-van-14.jpg', alt: 'On the road' }}
       />
 
       <MarqueeStrip />

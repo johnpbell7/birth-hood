@@ -36,8 +36,8 @@ function FindYourPackageStatic() {
         eyebrow="Package finder"
         title={<>Find your <em>perfect fit</em></>}
         subtitle="Answer a few quick questions about your birth, your preparation and the aftercare you'd love — and I'll suggest the doula package that fits you best. Takes about a minute."
-        img1={{ src: '/images/doula-support.jpg', alt: 'Doula support' }}
-        img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img1={{ src: '/images/class-teaching-291.jpg', alt: 'In class' }}
+        img2={{ src: '/images/private-session-102.jpg', alt: 'Private session' }}
       />
 
       {/* QUIZ */}
@@ -50,7 +50,6 @@ function FindYourPackageStatic() {
       {/* FULL COMPARISON */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
-          <div className="section-label">Prefer to compare yourself?</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
             The full <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>comparison</em>
           </h2>

@@ -105,8 +105,8 @@ function OvernightDoulaPageStatic() {
         eyebrow="Rest · Recovery · Reassurance"
         title={<>Overnight <em>Doula Support</em></>}
         subtitle="The early weeks with your baby are precious — but they can be physically and emotionally demanding. Rest through the night knowing your baby is being cared for with compassion and expertise."
-        img1={{ src: '/images/doula-support.jpg', alt: 'Overnight doula support' }}
-        img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img1={{ src: '/images/newborn-cuddle-86.jpg', alt: 'Newborn cuddles' }}
+        img2={{ src: '/images/postnatal-support-43.jpg', alt: 'Postnatal support' }}
         actions={
           <a
             href="https://calendly.com/birthhood/free-consultation"
@@ -126,7 +126,6 @@ function OvernightDoulaPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
-              <div className="section-label">Rest. Recovery. Reassurance.</div>
               <h2>A calm presence through the night</h2>
               <p>
                 Whether you&apos;re recovering from birth, navigating feeding, or simply longing
@@ -144,7 +143,7 @@ function OvernightDoulaPageStatic() {
               </p>
             </div>
             <div>
-              <StatBlockImage src="/images/leanne-portrait.jpg" alt="Leanne, birth-hood doula" />
+              <StatBlockImage src="/images/newborn-cuddle-86.jpg" alt="Newborn cuddles in the early days" />
             </div>
           </div>
         </div>
@@ -153,7 +152,6 @@ function OvernightDoulaPageStatic() {
       {/* PACKAGES */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
-          <div className="section-label">Overnight packages</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>level of care</em>
           </h2>
@@ -277,7 +275,6 @@ function OvernightDoulaPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
-              <div className="section-label">Is overnight support right for you?</div>
               <h2>Rest isn&apos;t a luxury — it&apos;s part of recovery</h2>
               <p>
                 Overnight support isn&apos;t about being unable to cope — it&apos;s about giving
@@ -309,7 +306,6 @@ function OvernightDoulaPageStatic() {
       {/* TERMS & CONDITIONS */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ maxWidth: '820px' }}>
-          <div className="section-label" style={{ marginBottom: '1.5rem' }}>The practical bits</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 500, marginBottom: '2rem', lineHeight: 1.1 }}>
             Terms &amp; conditions
           </h2>

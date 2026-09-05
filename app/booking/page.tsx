@@ -27,7 +27,7 @@ const bookingOptions = [
     featured: false,
   },
   {
-    title: 'Prenatal Yoga',
+    title: 'Yoga',
     desc: 'Drop-in class or block booking — booked through Ticket Tailor. Pick your class, pick your date and secure your spot.',
     href: TICKETS,
     cta: 'Book Yoga Class',
@@ -51,8 +51,8 @@ function BookingPageStatic() {
         eyebrow="Secure your place"
         title={<>Class <em>Booking</em></>}
         subtitle="Book your place on a hypnobirthing course, prenatal yoga class or a free consultation — all in one place."
-        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class' }}
+        img1={{ src: '/images/class-group-257.jpg', alt: 'Group course' }}
+        img2={{ src: '/images/leanne-ball-121.jpg', alt: 'Birth ball' }}
         actions={
           <a
             href={TICKETS}
@@ -70,7 +70,6 @@ function BookingPageStatic() {
       {/* BOOKING OPTIONS */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">What would you like to book?</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>booking type</em>
           </h2>
@@ -111,7 +110,6 @@ function BookingPageStatic() {
       {/* WHERE TO BOOK */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ textAlign: 'center' }}>
-          <div className="section-label" style={{ marginBottom: '1rem', justifyContent: 'center' }}>Live availability</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1.5rem', lineHeight: 1.1 }}>
             Book directly <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>online</em>
           </h2>
@@ -138,7 +136,6 @@ function BookingPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
-              <div className="section-label">Before you book</div>
               <h2>Good to know</h2>
               <p>
                 Yoga and hypnobirthing courses are booked through <strong>Ticket Tailor</strong>, and free

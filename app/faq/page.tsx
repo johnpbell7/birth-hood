@@ -143,8 +143,8 @@ function FaqPageStatic() {
         eyebrow="Got questions?"
         title={<>Frequently Asked <em>Questions</em></>}
         subtitle="Everything you need to know about hypnobirthing, doula support, yoga and working with me."
-        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/yoga-class.jpg', alt: 'Prenatal yoga class' }}
+        img1={{ src: '/images/class-anatomy-256.jpg', alt: 'How birth works' }}
+        img2={{ src: '/images/yoga-class-189.jpg', alt: 'Pregnancy yoga' }}
       />
 
       <MarqueeStrip />
@@ -154,7 +154,6 @@ function FaqPageStatic() {
 
           {/* GENERAL */}
           <div style={{ marginBottom: '4rem' }}>
-            <div className="section-label" style={{ marginBottom: '1.5rem' }}>General</div>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 500, marginBottom: '2rem', lineHeight: 1.1 }}>
               General questions
             </h2>
@@ -163,7 +162,6 @@ function FaqPageStatic() {
 
           {/* HYPNOBIRTHING */}
           <div style={{ marginBottom: '4rem' }}>
-            <div className="section-label" style={{ marginBottom: '1.5rem' }}>Hypnobirthing</div>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 500, marginBottom: '2rem', lineHeight: 1.1 }}>
               Hypnobirthing questions
             </h2>
@@ -172,7 +170,6 @@ function FaqPageStatic() {
 
           {/* DOULA */}
           <div style={{ marginBottom: '4rem' }}>
-            <div className="section-label" style={{ marginBottom: '1.5rem' }}>Doula support</div>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 500, marginBottom: '2rem', lineHeight: 1.1 }}>
               Doula questions
             </h2>
@@ -181,7 +178,6 @@ function FaqPageStatic() {
 
           {/* YOGA */}
           <div style={{ marginBottom: '4rem' }}>
-            <div className="section-label" style={{ marginBottom: '1.5rem' }}>Prenatal yoga</div>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 500, marginBottom: '2rem', lineHeight: 1.1 }}>
               Yoga questions
             </h2>
@@ -190,7 +186,6 @@ function FaqPageStatic() {
 
           {/* PAYMENT */}
           <div style={{ marginBottom: '2rem' }}>
-            <div className="section-label" style={{ marginBottom: '1.5rem' }}>Booking & payment</div>
             <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 500, marginBottom: '2rem', lineHeight: 1.1 }}>
               Booking & payment
             </h2>

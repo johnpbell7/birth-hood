@@ -170,3 +170,11 @@ And through my birth, she was an amazing support. A great contribution to my suc
     text: `We would absolutely recommend Leanne's services! We used her full doula services. It was invaluable having Leanne throughout pregnancy and at our birth — she made us feel safe and relaxed. She's very friendly, easy to talk to and down to earth. We'd recommend her to anyone wanting to feel safe, supported, and relaxed for your pregnancy, birth and post natal. After our first conversation with Leanne, we instantly clicked and knew we had to have her. Whether it's your first pregnancy, second or third — you won't regret making a decision to invest in you and your birth!`,
   },
 ]
+
+/** The three shown on the home page — one from each main service, chosen to be
+    short enough for a card. Pulled from the list above so they stay in sync. */
+export const featuredReviewNames = ['Klaudia Mody', 'Rebecca Reed', 'Elle Harty']
+
+export const featuredReviews: Review[] = featuredReviewNames
+  .map((name) => reviews.find((r) => r.name === name))
+  .filter((r): r is Review => Boolean(r))

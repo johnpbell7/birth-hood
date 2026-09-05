@@ -22,8 +22,8 @@ function CourseInfoPageStatic() {
         eyebrow="Hypnobirthing courses"
         title={<>Hypnobirthing <em>Courses</em></>}
         subtitle="Course options, prices and upcoming dates — everything you need to know before you book."
-        img1={{ src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class' }}
-        img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img1={{ src: '/images/class-group-257.jpg', alt: 'Group course' }}
+        img2={{ src: '/images/private-session-102.jpg', alt: 'Private session' }}
         actions={
           <a
             href="https://calendly.com/birthhood/free-consultation"
@@ -36,71 +36,9 @@ function CourseInfoPageStatic() {
         }
       />
 
-      {/* UPCOMING DATES */}
-      <section className="section-pad">
-        <div className="wrap">
-          <div className="section-label">Upcoming group courses</div>
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
-            Group <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>course dates</em>
-          </h2>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', marginBottom: '2.5rem' }}>
-            {[
-              { date: 'Spring 2026 — dates TBC', time: 'Sundays, 10am–12:30pm', location: 'NW Leicestershire · 4 sessions', spaces: 'Registering interest', featured: false },
-              { date: 'Summer 2026 — dates TBC', time: 'Saturdays, 1pm–3:30pm', location: 'NW Leicestershire · 4 sessions', spaces: 'Registering interest', featured: true },
-              { date: 'Autumn 2026 — dates TBC', time: 'Midweek evenings, 7pm–9:30pm', location: 'NW Leicestershire · 4 sessions', spaces: 'Registering interest', featured: false },
-            ].map((course, i) => (
-              <div key={i} style={{
-                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                padding: '1.5rem 2rem', flexWrap: 'wrap', gap: '1rem',
-                background: course.featured ? 'var(--pink-ultra)' : 'var(--white)',
-                border: course.featured ? '1px solid rgba(254,127,204,0.4)' : '1px solid rgba(0,0,0,0.07)',
-                borderRadius: '3px',
-              }}>
-                <div>
-                  <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.05rem', fontWeight: 500, marginBottom: '0.3rem' }}>
-                    {course.date}
-                    {course.featured && (
-                      <span style={{ marginLeft: '0.8rem', background: 'var(--pink)', color: 'var(--black)', fontSize: '0.65rem', fontFamily: 'Poppins, sans-serif', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '0.2rem 0.6rem', borderRadius: '2px' }}>
-                        Popular
-                      </span>
-                    )}
-                  </div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', fontWeight: 300 }}>
-                    {course.time} · {course.location}
-                  </div>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <a
-                    href="https://calendly.com/birthhood/free-consultation"
-                    className="btn-outline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Register Interest
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="card card-pink">
-            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300 }}>
-              <strong style={{ color: 'var(--black)' }}>Can&apos;t find a date that works?</strong>{' '}
-              Private and online courses are available at a time to suit you. No fixed schedule — just
-              4 sessions whenever works best.{' '}
-              <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pink-deep)' }}>
-                Book a free consultation to discuss →
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* WHAT'S INCLUDED */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
-          <div className="section-label">What&apos;s included</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Everything you need for <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>birth preparation</em>
           </h2>
@@ -148,7 +86,6 @@ function CourseInfoPageStatic() {
       {/* COURSE OPTIONS */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">Choose your course</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Course <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>options</em>
           </h2>
@@ -254,12 +191,11 @@ function CourseInfoPageStatic() {
       {/* ADDITIONAL COURSE OPTIONS */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">More options</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Specialist <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>courses</em>
           </h2>
 
-          <div className="grid-2" style={{ gap: '1.5rem' }}>
+          <div className="grid-3" style={{ gap: '1.5rem' }}>
             {/* Caesarean Birth Preparation */}
             <div className="card">
               <div className="section-label" style={{ marginBottom: '1rem' }}>Caesarean Birth Preparation</div>
@@ -316,6 +252,37 @@ function CourseInfoPageStatic() {
                 </a>
               </div>
             </div>
+
+            {/* Hypnobirthing Refresher */}
+            <div className="card">
+              <div className="section-label" style={{ marginBottom: '1rem' }}>Hypnobirthing Refresher</div>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
+                For second, third&hellip; time parents who have already completed a hypnobirthing
+                course and want a refresh before this baby arrives.
+              </p>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
+                Get in touch to let me know what you need and we&apos;ll work out the right package,
+                tailored specifically to you.
+              </p>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.5rem' }}>
+                Availability: please get in touch.
+              </p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                <div>
+                  <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '0.25rem' }}>Investment</div>
+                  <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500 }}>From £100</div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--grey-light)', fontWeight: 300, marginTop: '0.2rem' }}>Depending on your needs</div>
+                </div>
+                <a
+                  href="https://calendly.com/birthhood/free-consultation"
+                  className="btn-outline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book Now
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -325,7 +292,6 @@ function CourseInfoPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '3rem', alignItems: 'center' }}>
             <div>
-              <div className="section-label light">Not ready for a full course?</div>
               <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.7rem, 2.6vw, 2.3rem)', fontWeight: 600, lineHeight: 1.15, color: 'var(--white)', marginBottom: '1rem' }}>
                 Book a <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>Power Hour</em>
               </h2>
@@ -353,7 +319,6 @@ function CourseInfoPageStatic() {
       {/* BOOKING INFO */}
       <section className="section-pad">
         <div className="wrap" style={{ maxWidth: '720px' }}>
-          <div className="section-label">How to book</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.5rem)', fontWeight: 600, marginBottom: '2rem', lineHeight: 1.1 }}>
             Booking <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>information</em>
           </h2>

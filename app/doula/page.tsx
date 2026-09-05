@@ -51,8 +51,8 @@ function DoulaPageStatic() {
         eyebrow="Professional doula support"
         title={<>Doula <em>Services</em></>}
         subtitle="Continuous, compassionate non-medical support before, during and after your birth. For every pregnancy, every birth, every person."
-        img1={{ src: '/images/doula-support.jpg', alt: 'Doula support' }}
-        img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
+        img1={{ src: '/images/birth-pool-overhead-308.jpg', alt: 'Doula support' }}
+        img2={{ src: '/images/birth-pool-support-313.jpg', alt: 'Comfort measures' }}
         actions={
           <>
             <a
@@ -84,7 +84,6 @@ function DoulaPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
-              <div className="section-label">What is a doula?</div>
               <h2>Your person in the room</h2>
               <p>
                 A doula is a trained, non-medical birth professional who provides continuous physical,
@@ -127,7 +126,6 @@ function DoulaPageStatic() {
       {/* SERVICES OVERVIEW */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
-          <div className="section-label">Services</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Choose the support that&apos;s <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>right for you</em>
           </h2>
@@ -231,7 +229,6 @@ function DoulaPageStatic() {
       {/* BIRTH SUPPORT PACKAGES — COMPARISON */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">Birth doula packages</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
             Compare your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>support</em>
           </h2>

@@ -73,8 +73,8 @@ function HypnobirthingPageStatic() {
         eyebrow="Calm. Confident. Prepared."
         title={<>Hypno<em>birthing</em></>}
         subtitle="Evidence-based techniques to help you release fear, trust your body and step into birth feeling genuinely excited — not terrified."
-        img1={{ src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class' }}
-        img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img1={{ src: '/images/class-sofa-265.jpg', alt: 'Class in session' }}
+        img2={{ src: '/images/class-anatomy-256.jpg', alt: 'How birth works' }}
         actions={
           <a
             href="https://calendly.com/birthhood/free-consultation"
@@ -94,7 +94,6 @@ function HypnobirthingPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
-              <div className="section-label">What is it?</div>
               <h2>It&apos;s the name that lets it down</h2>
               <p>
                 Hypnobirthing sounds like some &lsquo;hippy&rsquo; thing that only people having home
@@ -179,7 +178,6 @@ function HypnobirthingPageStatic() {
       {/* THE TOOLS */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
-          <div className="section-label">The toolkit</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.1 }}>
             The tools you&apos;ll <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>actually use</em>
           </h2>
@@ -244,7 +242,6 @@ function HypnobirthingPageStatic() {
       {/* EVIDENCE */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">The evidence</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.1 }}>
             What does the evidence <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>actually say?</em>
           </h2>
@@ -314,7 +311,6 @@ function HypnobirthingPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '3rem', alignItems: 'center' }}>
             <div>
-              <div className="section-label light">Not ready for a full course?</div>
               <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.7rem, 2.6vw, 2.3rem)', fontWeight: 600, lineHeight: 1.15, color: 'var(--white)', marginBottom: '1rem' }}>
                 Book a <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>Power Hour</em>
               </h2>
@@ -359,7 +355,6 @@ function HypnobirthingPageStatic() {
       {/* FAQ */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">Common questions</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Hypnobirthing <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>FAQs</em>
           </h2>

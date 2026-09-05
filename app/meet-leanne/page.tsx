@@ -24,8 +24,8 @@ function MeetLeannePageStatic() {
         eyebrow="Your guide"
         title={<>Meet <em>Leanne</em></>}
         subtitle="I'm Leanne (DipHb) — a mum of two Hypnobirth babies and a badass birth nerd! Hypnobirthing teacher, birth doula, Pregnancy & Postnatal yoga teacher, and 3 Step Rewind practitioner, proudly based in NW Leicestershire."
-        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
+        img1={{ src: '/images/leanne-doorway-5.jpg', alt: 'Leanne' }}
+        img2={{ src: '/images/leanne-van-14.jpg', alt: 'On the road' }}
       />
 
       <MarqueeStrip />
@@ -38,7 +38,7 @@ function MeetLeannePageStatic() {
             {/* Photo */}
             <div>
               <div className="about-photo-frame" style={{ maxWidth: '480px', marginBottom: '2rem' }}>
-                <Image src="/images/leanne-portrait.jpg" alt="Leanne — birth-hood founder and birth educator" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+                <Image src="/images/leanne-peace-111.jpg" alt="Leanne — birth-hood founder and birth educator" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
               </div>
 
               {/* Quote block */}
@@ -153,7 +153,6 @@ function MeetLeannePageStatic() {
       {/* WHY CHOOSE ME */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
-          <div className="section-label">Why choose me?</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             What you <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>get with me</em>
           </h2>
@@ -215,7 +214,6 @@ function MeetLeannePageStatic() {
       {/* MEDIA SECTION */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">As featured in</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Media & <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>appearances</em>
           </h2>

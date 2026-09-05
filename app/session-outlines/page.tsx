@@ -74,8 +74,8 @@ function SessionOutlinesPageStatic() {
         eyebrow="Hypnobirthing course"
         title={<>Session <em>Outlines</em></>}
         subtitle="A detailed breakdown of everything covered in the four-session hypnobirthing course."
-        img1={{ src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class' }}
-        img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
+        img1={{ src: '/images/class-teaching-291.jpg', alt: 'In class' }}
+        img2={{ src: '/images/relaxation-oils-69.jpg', alt: 'Relaxation' }}
         actions={
           <Link href="/course-info" className="btn-primary">
             View Courses
@@ -98,7 +98,6 @@ function SessionOutlinesPageStatic() {
               <div key={s.num} className="so-session">
                 <div className="so-num">{s.num}</div>
                 <div className="so-body">
-                  <div className="section-label">{s.label}</div>
                   <h2 className="so-title">{s.title}</h2>
                   <p className="so-desc">{s.body}</p>
                   <div className="so-topics">

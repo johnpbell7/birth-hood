@@ -36,7 +36,6 @@ export default function AreasCovered() {
         <div className="areas-grid">
           {/* Left — the story */}
           <div>
-            <div className="section-label">Where I work</div>
             <h2 id="areas-heading" className="areas-title">
               Based in Leicestershire,
               <br />

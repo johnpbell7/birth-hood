@@ -22,8 +22,8 @@ function BirthTraumaPageStatic() {
         eyebrow="Healing is possible."
         title={<>Birth <em>Trauma</em> Support</>}
         subtitle="Whether your birth was frightening, overwhelming or just not what you hoped — your feelings are valid, and you don't have to carry them alone."
-        img1={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
-        img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img1={{ src: '/images/quiet-hands-329.jpg', alt: 'A safe space' }}
+        img2={{ src: '/images/leanne-doorway-5.jpg', alt: 'Leanne' }}
         actions={
           <a
             href="https://calendly.com/birthhood/free-consultation"
@@ -43,7 +43,6 @@ function BirthTraumaPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
-              <div className="section-label">Understanding birth trauma</div>
               <h2>What is birth trauma?</h2>
               <p>
                 Birth trauma occurs when a birth experience leaves you feeling frightened, out of
@@ -136,7 +135,6 @@ function BirthTraumaPageStatic() {
       {/* HOW LEANNE CAN HELP — 3 STEP REWIND */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
-          <div className="section-label">How I can help</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1.5rem', lineHeight: 1.1 }}>
             The 3 Step <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>Rewind</em>
           </h2>
@@ -193,7 +191,6 @@ function BirthTraumaPageStatic() {
       {/* RESOURCES */}
       <section className="section-pad">
         <div className="wrap" style={{ maxWidth: '720px' }}>
-          <div className="section-label">Helpful resources</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.3rem)', fontWeight: 600, marginBottom: '2rem', lineHeight: 1.1 }}>
             You are <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>not alone</em>
           </h2>

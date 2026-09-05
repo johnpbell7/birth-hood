@@ -1,5 +1,5 @@
 const ITEMS = [
-  'Hypnobirthing', 'Doula Support', 'Prenatal Yoga', 'Birth Trauma',
+  'Hypnobirthing', 'Doula Support', 'Pregnancy Yoga', 'Birth Trauma',
   'Virtual Sessions', 'Postnatal Care', '5★ Rated', 'BBC Radio Leicester',
 ]
 

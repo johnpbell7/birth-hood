@@ -22,8 +22,8 @@ function PostnatalDoulaPageStatic() {
         eyebrow="The fourth trimester"
         title={<>Postnatal <em>Doula</em></>}
         subtitle="Support in the fourth trimester — the weeks after birth when you're adjusting to parenthood."
-        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/doula-support.jpg', alt: 'Postnatal doula support' }}
+        img1={{ src: '/images/newborn-held-170.jpg', alt: 'Newborn days' }}
+        img2={{ src: '/images/postnatal-group-25.jpg', alt: 'Postnatal group' }}
         actions={
           <a
             href="https://calendly.com/birthhood/free-consultation"
@@ -43,7 +43,6 @@ function PostnatalDoulaPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
-              <div className="section-label">What is a postnatal doula?</div>
               <h2>Caring for you after birth</h2>
               <p>
                 The weeks after birth can be overwhelming, exhausting and emotional — even when
@@ -62,7 +61,7 @@ function PostnatalDoulaPageStatic() {
               </p>
             </div>
             <div>
-              <StatBlockImage src="/images/leanne-speaking.jpg" alt="Leanne talking with a group of parents in a relaxed, homely setting" />
+              <StatBlockImage src="/images/postnatal-group-25.jpg" alt="Parents and babies at a postnatal session" />
             </div>
           </div>
         </div>
@@ -71,7 +70,6 @@ function PostnatalDoulaPageStatic() {
       {/* WHAT'S INCLUDED */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
-          <div className="section-label">What postnatal doula support includes</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Practical <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>& emotional support</em>
           </h2>
@@ -121,7 +119,6 @@ function PostnatalDoulaPageStatic() {
       {/* PACKAGES */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">Packages</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>support package</em>
           </h2>

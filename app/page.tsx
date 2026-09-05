@@ -7,6 +7,7 @@ import { Sparkles } from '@/components/Decor'
 import { DEFAULT_PHOTOS } from '@/lib/hero-photos'
 import InstagramSection from '@/components/InstagramSection'
 import { cmsOrStatic } from '@/lib/cms-page'
+import { featuredReviews } from '@/lib/reviews'
 import { getSiteSettings, type SiteSettings } from '@/lib/sanity-queries'
 import { urlFor } from '@/lib/sanity'
 
@@ -89,24 +90,6 @@ const DEFAULT_CREDENTIALS = [
   'Featured on BBC Radio Leicester',
 ]
 
-const DEFAULT_TESTIMONIALS = [
-  {
-    quote:
-      'We instantly felt at ease and comfortable and thoroughly enjoyed learning about the benefits of Hypnobirthing. We are due to have our first baby in 6 weeks and Leanne helped us to feel nothing but calm and excited for this completely unknown experience coming up.',
-    attribution: 'Client · Leicestershire ★★★★★',
-  },
-  {
-    quote:
-      "From my first contact with Leanne we just clicked. She supported me through my concern about fibroids, and gave me some brilliant yoga positions to try when my SPD started. I can't recommend Leanne highly enough, she's a pro at end-to-end care!",
-    attribution: 'Beka · Leicestershire ★★★★★',
-  },
-  {
-    quote:
-      'We went on an antenatal course last week, and honestly found the two hours spent with Leanne today were much more helpful than the seven hours there!',
-    attribution: 'Client · Leicestershire ★★★★★',
-  },
-]
-
 const DEFAULT_FREEBIE_TAGS = ['Birth Affirmations', 'Birth Plan Guide', 'Newborn Checklist']
 
 // ─── Static page (with optional CMS overrides) ───────────────────────────────
@@ -135,7 +118,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
   ]
   const welcomeImage = s.homeWelcomeImage
     ? urlFor(s.homeWelcomeImage).width(1100).url()
-    : '/images/leanne-speaking.jpg'
+    : '/images/class-teaching-291.jpg'
 
   // Optional handwritten signature graphic (falls back to the script-font text)
   const signatureImage = s.homeSignatureImage
@@ -167,7 +150,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
   // About
   const aboutEyebrow = s.homeAboutEyebrow ?? 'About Leanne'
   const aboutHeading = s.homeAboutHeading ?? 'A passionate advocate for positive birth'
-  const aboutImage = s.homeAboutImage ? urlFor(s.homeAboutImage).width(900).url() : '/images/leanne-portrait.jpg'
+  const aboutImage = s.homeAboutImage ? urlFor(s.homeAboutImage).width(900).url() : '/images/leanne-doorway-5.jpg'
   const aboutBody = s.homeAboutBody ?? [
     "Hi, I'm Leanne — a certified hypnobirthing practitioner, birth doula and yoga teacher based in NW Leicestershire. Since 2019 I've been helping families across the Midlands and online feel genuinely prepared and excited for birth.",
     "I believe that every person deserves to feel powerful in their birth experience — regardless of how it unfolds. Whether you're planning a home birth, a hospital birth, a caesarean or anything in between, I'm here to give you the knowledge, tools and support you need.",
@@ -179,8 +162,21 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
   // Testimonials
   const testimonialsEyebrow = s.homeTestimonialsEyebrow ?? 'Real words'
   const testimonialsHeading = s.homeTestimonialsHeading ?? 'What clients say'
+  // Real Google reviews by default (one doula, one hypnobirthing, one yoga);
+  // the CMS list wins if Leanne has set her own.
   const testimonials =
-    s.homeTestimonials && s.homeTestimonials.length > 0 ? s.homeTestimonials : DEFAULT_TESTIMONIALS
+    s.homeTestimonials && s.homeTestimonials.length > 0
+      ? s.homeTestimonials.map((t) => ({
+          service: undefined as string | undefined,
+          // Strip any stars typed into the attribution — the card adds its own.
+          quote: t.quote,
+          attribution: (t.attribution ?? '').replace(/[★\s]+$/, ''),
+        }))
+      : featuredReviews.map((r) => ({
+          service: r.service,
+          quote: r.text,
+          attribution: `${r.name} · ${r.when}`,
+        }))
 
   // Freebies
   const freebiesHeading = s.homeFreebiesHeading ?? 'Free resources to get you started'
@@ -337,7 +333,6 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
           ]}
         />
         <div className="services-header">
-          <div className="section-label">{servicesEyebrow}</div>
           <h2 className="services-title">
             {servicesHeading.includes('positive birth') ? (
               <>
@@ -391,7 +386,6 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
           </div>
 
           <div>
-            <div className="section-label">{aboutEyebrow}</div>
             <h2 className="about-heading">
               {aboutHeading.includes('positive birth') ? (
                 <>
@@ -448,7 +442,6 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
         />
         <div className="testimonials-header">
           <div>
-            <div className="section-label light">{testimonialsEyebrow}</div>
             <h2 className="testimonials-title">
               {testimonialsHeading.includes('say') ? (
                 <>
@@ -461,7 +454,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
               )}
             </h2>
           </div>
-          <div style={{ textAlign: 'right' }}>
+          <div className="stars-block">
             <div className="stars">★★★★★</div>
             <div className="stars-label">5 Star rated on Google</div>
           </div>
@@ -470,8 +463,12 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
         <div className="reviews-track">
           {testimonials.map((t, i) => (
             <div key={i} className="review-card">
+              {t.service && <div className="review-service">{t.service}</div>}
               <p className="review-text">{t.quote}</p>
-              <div className="review-author">{t.attribution}</div>
+              <div className="review-author">
+                {t.attribution}
+                <span className="review-stars">★★★★★</span>
+              </div>
             </div>
           ))}
         </div>
@@ -524,14 +521,13 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
         <div className="insta-profile-header">
           <div className="insta-profile-avatar">
             <Image
-              src="/images/leanne-portrait.jpg"
+              src="/images/leanne-peace-111.jpg"
               alt="@birthhooduk on Instagram"
               fill
               style={{ objectFit: 'cover', objectPosition: 'center top' }}
             />
           </div>
           <div className="insta-profile-info">
-            <div className="section-label">Follow along</div>
             <h2 className="insta-heading">
               Follow me on <em>Instagram</em>
             </h2>

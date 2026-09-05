@@ -72,8 +72,8 @@ function YogaPageStatic() {
         eyebrow="Move. Breathe. Connect."
         title={<>Pregnancy &amp; Baby <em>Yoga</em></>}
         subtitle="Two classes in NW Leicestershire — pregnancy yoga to prepare for birth, and parent &amp; baby yoga for afterwards."
-        img1={{ src: '/images/yoga-class.jpg', alt: 'Prenatal yoga class' }}
-        img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
+        img1={{ src: '/images/yoga-class-189.jpg', alt: 'Pregnancy yoga' }}
+        img2={{ src: '/images/baby-sensory-113.jpg', alt: 'Parent & baby' }}
         actions={
           <a
             href={TICKET_TAILOR}
@@ -93,7 +93,6 @@ function YogaPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
-              <div className="section-label">Pregnancy Yoga</div>
               <h2>Pregnancy Yoga</h2>
               <p>
                 Pregnancy yoga has many benefits, both physical and emotional, these include providing
@@ -178,7 +177,6 @@ function YogaPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
-              <div className="section-label">Parent &amp; Baby Yoga</div>
               <h2>Parent &amp; Baby Yoga</h2>
               <p>
                 Each session will include Postnatal yoga, Baby Yoga and Parent and Baby Yoga activities,
@@ -255,7 +253,6 @@ function YogaPageStatic() {
       {/* FAQ */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">Common questions</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Yoga <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>FAQs</em>
           </h2>

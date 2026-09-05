@@ -19,8 +19,8 @@ function DoulaFeedbackPageStatic() {
         eyebrow="Share your experience"
         title={<>Your <em>Feedback</em></>}
         subtitle="Thank you for allowing me to be part of your birth journey. Your words mean everything — and help other families find the support they need."
-        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/doula-support.jpg', alt: 'Doula support' }}
+        img1={{ src: '/images/newborn-cuddle-86.jpg', alt: 'Newborn cuddles' }}
+        img2={{ src: '/images/birth-pool-overhead-308.jpg', alt: 'Doula support' }}
       />
 
       {/* INTRO */}

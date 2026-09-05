@@ -21,8 +21,8 @@ function VirtualDoulaPageStatic() {
         eyebrow="Support wherever you are"
         title={<>Antenatal &amp; Virtual <em>Doula</em></>}
         subtitle="Two ways to work together — comprehensive antenatal preparation in person, or full doula support delivered online wherever you are."
-        img1={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
+        img1={{ src: '/images/private-session-102.jpg', alt: 'Private session' }}
+        img2={{ src: '/images/leanne-peace-111.jpg', alt: 'Leanne' }}
         actions={
           <a
             href="https://calendly.com/birthhood/free-consultation"
@@ -42,7 +42,6 @@ function VirtualDoulaPageStatic() {
         <div className="wrap">
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
-              <div className="section-label">How it works</div>
               <h2>All the support, none of the distance</h2>
               <p>
                 A virtual doula offers the same compassionate, evidence-based support as in-person
@@ -65,12 +64,11 @@ function VirtualDoulaPageStatic() {
                 doula pages carry a photo here) — asked for so the investment is
                 visible next to the explanation, stacking below it on mobile. */}
             <aside className="pkg-glance">
-              <div className="section-label">Investment</div>
+              <div className="section-label">The packages</div>
               <h3 className="pkg-glance-title">Two ways to work together</h3>
 
               <div className="pkg-glance-row">
                 <p className="pkg-glance-name">Antenatal Doula</p>
-                <p className="pkg-glance-price">From £600</p>
                 <p className="pkg-glance-desc">
                   3x private antenatal sessions, full birth education and message support
                   right through pregnancy.
@@ -79,7 +77,6 @@ function VirtualDoulaPageStatic() {
 
               <div className="pkg-glance-row">
                 <p className="pkg-glance-name">Virtual Doula</p>
-                <p className="pkg-glance-price">£800</p>
                 <p className="pkg-glance-desc">
                   A doula in your pocket — virtual antenatal sessions, contact through
                   pregnancy and birth, a postnatal debrief and 4 weeks of support after.
@@ -107,7 +104,6 @@ function VirtualDoulaPageStatic() {
       {/* PACKAGES */}
       <section id="packages" className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
-          <div className="section-label">Packages</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Antenatal <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>&amp; virtual</em> support
           </h2>
@@ -186,7 +182,6 @@ function VirtualDoulaPageStatic() {
       {/* WHO IS IT FOR */}
       <section className="section-pad">
         <div className="wrap">
-          <div className="section-label">Is this right for me?</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.1 }}>
             Ideal for <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>anyone who…</em>
           </h2>
