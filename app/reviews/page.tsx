@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
+import BirthStoryCards from '@/components/BirthStoryCards'
+import { birthStories } from '@/lib/birth-stories'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
@@ -134,6 +136,23 @@ function ReviewsPageStatic() {
               Leave a Google Review
             </a>
           </div>
+        </div>
+      </section>
+
+
+      {/* BIRTH STORIES */}
+      <section className="section-pad" id="birth-stories">
+        <div className="wrap">
+          <div className="section-label">Birth stories</div>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
+            Stories from <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>real births</em>
+          </h2>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '640px' }}>
+            A collection of positive birth stories shared by my clients, in their own words — every
+            birth, every path, every outcome is valid.
+          </p>
+
+          <BirthStoryCards stories={birthStories} />
         </div>
       </section>
 

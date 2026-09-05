@@ -1,4 +1,6 @@
 import type { MetadataRoute } from 'next'
+import { birthStories } from '@/lib/birth-stories'
+import { blogPosts } from '@/lib/blog-posts'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.birth-hood.co.uk'
 
@@ -8,6 +10,9 @@ const routes = [
   'overnight-doula', 'virtual-doula', 'doula-feedback', 'birth-trauma', 'meet-leanne',
   'course-info', 'session-outlines', 'booking', 'contact',
   'faq', 'reviews', 'podcast', 'links', 'terms', 'freebies', 'shop', 'blog',
+  'birth-stories',
+  ...birthStories.map((s) => `birth-stories/${s.slug}`),
+  ...blogPosts.map((p) => `blog/${p.slug}`),
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
