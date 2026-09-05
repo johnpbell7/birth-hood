@@ -1,19 +1,23 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
-import StatBlockImage from '@/components/StatBlockImage'
+import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Antenatal & Virtual Doula',
-  description: 'Antenatal doula support from £600 and virtual doula support from £800 — birth education, confidence building and a doula in your pocket, wherever you are in the UK.',
+  title: 'Antenatal & Virtual Doula Support UK-wide',
+  description:
+    'Antenatal and virtual doula support anywhere in the UK. Birth education, confidence and a doula in your pocket — from £600. Online sessions to suit you.',
 }
 
 function VirtualDoulaPageStatic() {
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="virtual-doula"
         eyebrow="Support wherever you are"
         title={<>Antenatal &amp; Virtual <em>Doula</em></>}
         subtitle="Two ways to work together — comprehensive antenatal preparation in person, or full doula support delivered online wherever you are."
@@ -57,16 +61,51 @@ function VirtualDoulaPageStatic() {
                 without compromising on quality.
               </p>
             </div>
-            <StatBlockImage
-              src="/images/leanne-speaking.jpg"
-              alt="Leanne running an antenatal session with a group of parents"
-            />
+            {/* Virtual doula keeps the package summary in this slot (the other
+                doula pages carry a photo here) — asked for so the investment is
+                visible next to the explanation, stacking below it on mobile. */}
+            <aside className="pkg-glance">
+              <div className="section-label">Investment</div>
+              <h3 className="pkg-glance-title">Two ways to work together</h3>
+
+              <div className="pkg-glance-row">
+                <p className="pkg-glance-name">Antenatal Doula</p>
+                <p className="pkg-glance-price">From £600</p>
+                <p className="pkg-glance-desc">
+                  3x private antenatal sessions, full birth education and message support
+                  right through pregnancy.
+                </p>
+              </div>
+
+              <div className="pkg-glance-row">
+                <p className="pkg-glance-name">Virtual Doula</p>
+                <p className="pkg-glance-price">£800</p>
+                <p className="pkg-glance-desc">
+                  A doula in your pocket — virtual antenatal sessions, contact through
+                  pregnancy and birth, a postnatal debrief and 4 weeks of support after.
+                </p>
+              </div>
+
+              <p className="pkg-glance-note">
+                Full 1-2-1 text/call/email support (24/7 from 39 weeks).
+              </p>
+
+              <a
+                href="https://calendly.com/birthhood/free-consultation"
+                className="btn-primary pkg-glance-cta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book Free Consultation
+              </a>
+              <a href="#packages" className="pkg-glance-link">See everything that&apos;s included ↓</a>
+            </aside>
           </div>
         </div>
       </section>
 
       {/* PACKAGES */}
-      <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
+      <section id="packages" className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
           <div className="section-label">Packages</div>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>

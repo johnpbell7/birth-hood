@@ -330,3 +330,28 @@ export async function getReviews(): Promise<SanityReview[]> {
     )
   } catch (e) { console.error('Sanity getReviews failed:', e); return [] }
 }
+
+/* ── Page heroes (per-page hero photos & wording) ──────────────────────── */
+
+export type SanityPageHero = {
+  page: string
+  eyebrow?: string
+  heading?: string
+  subtitle?: string
+  photo1?: { asset?: { url?: string }; alt?: string }
+  photo2?: { asset?: { url?: string }; alt?: string }
+}
+
+export async function getPageHero(page: string): Promise<SanityPageHero | null> {
+  if (!isSanityConfigured || !client) return null
+  try {
+    return await client.fetch<SanityPageHero | null>(
+      `*[_type == "pageHero" && page == $page][0]{
+        page, eyebrow, heading, subtitle,
+        photo1{ alt, asset-> { url } },
+        photo2{ alt, asset-> { url } }
+      }`,
+      { page },
+    )
+  } catch (e) { console.error('Sanity getPageHero failed:', e); return null }
+}

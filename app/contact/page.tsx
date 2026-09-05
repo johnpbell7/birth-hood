@@ -1,18 +1,23 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import ContactForm from './ContactForm'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Contact',
-  description: "Get in touch with Leanne at birth-hood. Whether you have a question, want to make a booking or just want to say hello — she'd love to hear from you.",
+  title: 'Contact Leanne at birth-hood',
+  description:
+    'Get in touch with Leanne at birth-hood in NW Leicestershire — a question, a booking, or just a chat about what support might suit you best.',
 }
 
 function ContactPageStatic() {
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="contact"
         eyebrow="Let's talk"
         title={<>Get in <em>Touch</em></>}
         subtitle="For enquiries, please contact me directly via this page. I'll get back to you ASAP! I can't wait to help you prepare for your birth, knowing your rights, your options, and feeling like you did everything you could to prepare to start parenthood positively."

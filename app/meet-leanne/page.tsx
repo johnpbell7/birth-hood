@@ -2,20 +2,25 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import AreasCovered from '@/components/AreasCovered'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Meet Leanne',
-  description: 'Meet Leanne, NW Leicestershire hypnobirthing teacher, birth doula and pregnancy yoga teacher. A mum of two and 3 Step Rewind practitioner.',
+  title: 'Meet Leanne — Doula & Hypnobirthing Teacher',
+  description:
+    'Leanne is a birth doula, hypnobirthing teacher and pregnancy yoga teacher in NW Leicestershire. Mum of two, 3 Step Rewind practitioner, 5.0 on Google.',
 }
 
 function MeetLeannePageStatic() {
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="meet-leanne"
         eyebrow="Your guide"
         title={<>Meet <em>Leanne</em></>}
         subtitle="I'm Leanne (DipHb) — a mum of two Hypnobirth babies and a badass birth nerd! Hypnobirthing teacher, birth doula, Pregnancy & Postnatal yoga teacher, and 3 Step Rewind practitioner, proudly based in NW Leicestershire."

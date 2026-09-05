@@ -1,12 +1,16 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import { getFreebies } from '@/lib/sanity-queries'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Free Resources',
-  description: 'Free birth resources from birth-hood, including a hypnobirthing MP3, newborn checklist and ready-made birth affirmations to download.',
+  title: 'Free Birth Resources & Affirmations',
+  description:
+    'Free birth resources from birth-hood — 20 printable birth affirmations, a newborn checklist and a hypnobirthing relaxation MP3. No cost, no catch.',
 }
 
 const fallbackResources = [
@@ -59,7 +63,8 @@ export default async function FreebiesPage() {
 
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="freebies"
         eyebrow="Yours. For free. No strings."
         title={<><em>Free</em> Resources</>}
         subtitle="Birth affirmations, guides, templates and audio — all created by me, all completely free."

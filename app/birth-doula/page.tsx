@@ -1,21 +1,26 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import StatBlockImage from '@/components/StatBlockImage'
 import CtaBand from '@/components/CtaBand'
 import PackageQuizModal from '@/components/PackageQuizModal'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Birth Doula',
-  description: 'Continuous in-person birth doula support across Leicester and the Midlands. Antenatal planning, labour comfort and a calm postnatal debrief.',
+  title: 'Birth Doula in Leicester & the Midlands',
+  description:
+    'Continuous in-person birth doula support across Leicestershire and the Midlands. Antenatal planning, comfort in labour and a calm postnatal debrief.',
 }
 
 function BirthDoulaPageStatic() {
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="birth-doula"
         eyebrow="Professional birth support"
         title={<>Birth <em>Doula</em> Support</>}
         subtitle="Continuous, compassionate non-medical support before, during and after your birth."

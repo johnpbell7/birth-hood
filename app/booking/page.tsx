@@ -1,13 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Class Booking',
-  description: 'Book your hypnobirthing course, prenatal yoga class or free consultation with birth-hood in Leicester and online UK. Secure your place today.',
+  title: 'Book a Course, Class or Consultation',
+  description:
+    'Book a hypnobirthing course, pregnancy yoga class or free consultation with birth-hood in Leicestershire and online UK. Secure your place today.',
 }
 
 // Courses & classes are booked via Ticket Tailor; consultations via Calendly.
@@ -41,7 +45,8 @@ const bookingOptions = [
 function BookingPageStatic() {
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="booking"
         ctaLabel="View All Availability"
         eyebrow="Secure your place"
         title={<>Class <em>Booking</em></>}

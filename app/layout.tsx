@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: '%s | birth-hood',
   },
   description:
-    'Hypnobirthing, Doula support and Prenatal Yoga from Leanne in Leicester, Midlands and online UK-wide. Helping you feel powerful, prepared and genuinely excited for birth.',
+    'Hypnobirthing, doula support and pregnancy yoga from Leanne in Leicestershire and online UK-wide. Feel powerful, prepared and genuinely excited for birth.',
   keywords: ['hypnobirthing', 'doula', 'birth doula', 'prenatal yoga', 'birth trauma', 'Leicester', 'UK'],
   openGraph: {
     type: 'website',

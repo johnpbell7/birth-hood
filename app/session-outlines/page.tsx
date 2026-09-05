@@ -1,12 +1,16 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Session Outlines',
-  description: 'A session-by-session breakdown of the birth-hood hypnobirthing course, from the mind-body connection to breathing, relaxation and birth preferences.',
+  title: "What's Covered in the Hypnobirthing Course",
+  description:
+    'A session-by-session breakdown of the birth-hood hypnobirthing course — from birth physiology and breathing to relaxation and birth preferences.',
 }
 
 const sessions = [
@@ -63,7 +67,8 @@ const sessions = [
 function SessionOutlinesPageStatic() {
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="session-outlines"
         ctaLabel="View Courses"
         ctaHref="/course-info"
         eyebrow="Hypnobirthing course"

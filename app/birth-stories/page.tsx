@@ -1,21 +1,25 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import BirthStoryCards from '@/components/BirthStoryCards'
 import { loadBirthStories } from '@/lib/birth-stories-source'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Birth Stories',
+  title: 'Real Birth Stories from birth-hood Clients',
   description:
-    'Real birth stories from birth-hood clients — home births, water births, inductions, hospital births and a dad’s story. Every birth, every path, every outcome is valid.',
+    'Home births, water births, inductions, hospital births and a dad’s story — told by birth-hood clients in their own words. Every birth, every path, valid.',
 }
 
 export default async function BirthStoriesPage() {
   const birthStories = await loadBirthStories()
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="birth-stories"
         eyebrow="In their own words"
         title={<>Birth <em>Stories</em></>}
         subtitle="Real stories from real families — home births, water births, inductions and everything in between. Told honestly, start to finish."

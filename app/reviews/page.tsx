@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import type { Review } from '@/lib/reviews'
 import type { BirthStory } from '@/lib/birth-stories'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import BirthStoryCards from '@/components/BirthStoryCards'
 import { loadBirthStories } from '@/lib/birth-stories-source'
@@ -10,16 +10,21 @@ import ReviewCard from '@/components/ReviewCard'
 import { loadReviews } from '@/lib/reviews-source'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Reviews',
-  description: 'Real, unfiltered reviews from birth-hood clients across Leicester and the Midlands on hypnobirthing, doula support and pregnancy yoga with Leanne.',
+  title: 'Reviews — Rated 5.0 on Google',
+  description:
+    'Real reviews from birth-hood families across Leicestershire — hypnobirthing, doula support and pregnancy yoga with Leanne. Rated 5.0 from 69 Google reviews.',
 }
 
 
 function ReviewsPageStatic({ reviews, birthStories }: { reviews: Review[]; birthStories: BirthStory[] }) {
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="reviews"
         eyebrow="What clients say"
         title={<>Real <em>Reviews</em></>}
         subtitle="From real clients, unfiltered and unedited. These words mean everything."

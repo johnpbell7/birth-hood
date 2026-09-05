@@ -1,19 +1,24 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import StatBlockImage from '@/components/StatBlockImage'
 import CtaBand from '@/components/CtaBand'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Postnatal Doula',
-  description: 'Nurturing postnatal doula support in Leicester and the Midlands for the fourth trimester. Practical help, feeding support and a listening ear after birth.',
+  title: 'Postnatal Doula in Leicester & the Midlands',
+  description:
+    'Postnatal doula support across Leicestershire for the fourth trimester. Practical help, feeding support and a listening ear while you recover.',
 }
 
 function PostnatalDoulaPageStatic() {
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="postnatal-doula"
         eyebrow="The fourth trimester"
         title={<>Postnatal <em>Doula</em></>}
         subtitle="Support in the fourth trimester — the weeks after birth when you're adjusting to parenthood."

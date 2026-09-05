@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import FaqAccordion from '@/components/FaqAccordion'
 import CtaBand from '@/components/CtaBand'
 import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'FAQ',
-  description: 'Answers to common questions about hypnobirthing, doula support, pregnancy yoga and working with Leanne at birth-hood in Leicester and online UK.',
+  title: 'Hypnobirthing & Doula FAQs',
+  description:
+    'Answers to common questions on hypnobirthing, doula support and pregnancy yoga with Leanne at birth-hood in Leicestershire and online UK.',
 }
 
 const generalFaqs = [
@@ -134,7 +138,8 @@ function FaqPageStatic() {
   return (
     <>
       <JsonLd data={faqSchema} />
-      <PageHero
+      <CmsPageHero
+        page="faq"
         eyebrow="Got questions?"
         title={<>Frequently Asked <em>Questions</em></>}
         subtitle="Everything you need to know about hypnobirthing, doula support, yoga and working with me."

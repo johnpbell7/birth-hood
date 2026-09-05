@@ -1,13 +1,17 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import ShopClient from '@/components/ShopClient'
 import { getShopProducts } from '@/lib/sanity-queries'
 import { PLACEHOLDER_PRODUCTS } from '@/lib/shop-placeholders'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Shop — Resources',
-  description: 'Downloadable birth resources from birth-hood — guides, MP3s and tools to support your pregnancy, birth and beyond. Instant download after secure checkout.',
+  title: 'Birth Resources Shop — Guides & MP3s',
+  description:
+    'Downloadable birth guides and relaxation MP3s from birth-hood, plus 1-2-1 Power Hour sessions for when you just need to talk it through with someone.',
 }
 
 export default async function ShopPage() {
@@ -19,7 +23,8 @@ export default async function ShopPage() {
 
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="shop"
         eyebrow="Downloadable resources"
         title={<>The <em>Shop</em></>}
         subtitle="Handpicked guides, audio and tools to support your pregnancy, birth and beyond. Choose what you need — you'll receive your downloads by email straight after secure checkout."

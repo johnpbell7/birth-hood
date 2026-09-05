@@ -1,15 +1,19 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import StatBlockImage from '@/components/StatBlockImage'
 import CtaBand from '@/components/CtaBand'
 import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Overnight Postnatal Doula',
-  description: 'Overnight postnatal doula support in Leicester and the Midlands. Rest while your baby is cared for overnight — feeding support, settling and newborn care from 10pm–8am.',
+  title: 'Overnight Doula in Leicester & the Midlands',
+  description:
+    'Overnight postnatal doula support in Leicestershire, 10pm to 8am. Actually sleep while your baby is fed, settled and cared for by someone experienced.',
 }
 
 const SITE = 'https://www.birth-hood.co.uk'
@@ -96,7 +100,8 @@ function OvernightDoulaPageStatic() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <PageHero
+      <CmsPageHero
+        page="overnight-doula"
         eyebrow="Rest · Recovery · Reassurance"
         title={<>Overnight <em>Doula Support</em></>}
         subtitle="The early weeks with your baby are precious — but they can be physically and emotionally demanding. Rest through the night knowing your baby is being cared for with compassion and expertise."

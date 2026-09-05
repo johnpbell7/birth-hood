@@ -4,9 +4,9 @@ import Link from 'next/link'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
-  title: 'Links',
+  title: 'All birth-hood Links',
   description:
-    'All the links you need from birth-hood in one place — book hypnobirthing, doula support and yoga, reach the client hub, and follow Leanne online.',
+    'Every birth-hood link in one place — book a consultation, reach the client hub, browse courses, yoga and free resources, and follow Leanne online.',
 }
 
 const CALENDLY = 'https://calendly.com/birthhood/free-consultation'

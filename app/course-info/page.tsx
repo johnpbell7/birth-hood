@@ -1,18 +1,23 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Courses',
-  description: 'Hypnobirthing course options, prices and upcoming dates in Leicester and online UK — group, private and online, plus caesarean and hasty hypnobirthing courses.',
+  title: 'Hypnobirthing Course Dates & Prices',
+  description:
+    'Hypnobirthing course options, prices and upcoming dates in Leicestershire and online. Group, private and online courses, plus caesarean preparation.',
 }
 
 function CourseInfoPageStatic() {
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="course-info"
         ctaLabel="Book Your Place"
         eyebrow="Hypnobirthing courses"
         title={<>Hypnobirthing <em>Courses</em></>}
@@ -315,6 +320,36 @@ function CourseInfoPageStatic() {
         </div>
       </section>
 
+      {/* POWER HOURS */}
+      <section className="section-pad-sm" style={{ background: 'var(--black)' }}>
+        <div className="wrap">
+          <div className="grid-2" style={{ gap: '3rem', alignItems: 'center' }}>
+            <div>
+              <div className="section-label light">Not ready for a full course?</div>
+              <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.7rem, 2.6vw, 2.3rem)', fontWeight: 600, lineHeight: 1.15, color: 'var(--white)', marginBottom: '1rem' }}>
+                Book a <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>Power Hour</em>
+              </h2>
+              <p style={{ color: 'rgba(255,255,255,0.72)', fontSize: '0.95rem', lineHeight: 1.75, fontWeight: 300 }}>
+                You&apos;ve read the guides. You&apos;ve Googled. You&apos;ve got questions. Bring your
+                birth plan, induction options, previous birth experience or whatever is currently
+                making you go &ldquo;hang on&hellip; what?&rdquo;, and we&apos;ll work through it
+                together.
+              </p>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+              <a href="https://calendly.com/birthhood/power-hour" target="_blank" rel="noopener noreferrer" className="power-row">
+                <span><strong>Power Hour</strong><br />60 minutes of personalised birth support</span>
+                <span className="power-price">£50</span>
+              </a>
+              <a href="https://calendly.com/birthhood/power-hour" target="_blank" rel="noopener noreferrer" className="power-row">
+                <span><strong>Power Session</strong><br />2 hours — for when there&apos;s a lot to unpack</span>
+                <span className="power-price">£80</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* BOOKING INFO */}
       <section className="section-pad">
         <div className="wrap" style={{ maxWidth: '720px' }}>
@@ -359,36 +394,6 @@ function CourseInfoPageStatic() {
             <Link href="/session-outlines" className="btn-outline">
               View Session Outlines
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* POWER HOURS */}
-      <section className="section-pad-sm" style={{ background: 'var(--black)' }}>
-        <div className="wrap">
-          <div className="grid-2" style={{ gap: '3rem', alignItems: 'center' }}>
-            <div>
-              <div className="section-label light">Not ready for a full course?</div>
-              <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.7rem, 2.6vw, 2.3rem)', fontWeight: 600, lineHeight: 1.15, color: 'var(--white)', marginBottom: '1rem' }}>
-                Book a <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>Power Hour</em>
-              </h2>
-              <p style={{ color: 'rgba(255,255,255,0.72)', fontSize: '0.95rem', lineHeight: 1.75, fontWeight: 300 }}>
-                You&apos;ve read the guides. You&apos;ve Googled. You&apos;ve got questions. Bring your
-                birth plan, induction options, previous birth experience or whatever is currently
-                making you go &ldquo;hang on&hellip; what?&rdquo;, and we&apos;ll work through it
-                together.
-              </p>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-              <a href="https://calendly.com/birthhood/power-hour" target="_blank" rel="noopener noreferrer" className="power-row">
-                <span><strong>Power Hour</strong><br />60 minutes of personalised birth support</span>
-                <span className="power-price">£50</span>
-              </a>
-              <a href="https://calendly.com/birthhood/power-hour" target="_blank" rel="noopener noreferrer" className="power-row">
-                <span><strong>Power Session</strong><br />2 hours — for when there&apos;s a lot to unpack</span>
-                <span className="power-price">£80</span>
-              </a>
-            </div>
           </div>
         </div>
       </section>

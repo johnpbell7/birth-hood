@@ -3,12 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { client, blogPostsQuery, isSanityConfigured, urlFor } from '@/lib/sanity'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import { blogPosts } from '@/lib/blog-posts'
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Articles, tips and advice from Leanne at birth-hood on hypnobirthing, doula support, prenatal yoga and positive birth experiences.',
+  title: 'Birth, Hypnobirthing & Doula Blog',
+  description:
+    'Honest articles on hypnobirthing, doula support, birth physiology and the postnatal period, from Leanne at birth-hood in Leicestershire.',
 }
 
 // Refresh every 60 seconds
@@ -74,7 +75,8 @@ export default async function BlogPage() {
 
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="blog"
         eyebrow="Thoughts · Advice · Stories"
         title={<>The <em>Blog</em></>}
         subtitle="Articles, tips and real talk on birth, hypnobirthing, doula support and everything in between."

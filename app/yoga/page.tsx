@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Pregnancy & Baby Yoga',
-  description: 'Pregnancy yoga and parent & baby yoga classes in NW Leicestershire. Nourish your body, calm your mind and connect with your baby.',
+  title: 'Pregnancy & Baby Yoga in NW Leicestershire',
+  description:
+    'Pregnancy yoga and parent & baby yoga classes in NW Leicestershire. Move safely, meet other parents and prepare your body for birth and beyond.',
 }
 
 const SITE = 'https://www.birth-hood.co.uk'
@@ -61,7 +65,8 @@ function YogaPageStatic() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <PageHero
+      <CmsPageHero
+        page="yoga"
         ctaLabel="Book Your Place"
         ctaHref={TICKET_TAILOR}
         eyebrow="Move. Breathe. Connect."

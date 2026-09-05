@@ -1,18 +1,23 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Birth Trauma Support',
-  description: 'Gentle birth trauma support and 3 Step Rewind in Leicester and online UK. If your birth left you overwhelmed, healing is possible and you are not alone.',
+  title: 'Birth Trauma Support & 3 Step Rewind',
+  description:
+    'Gentle birth trauma support and 3 Step Rewind in Leicestershire and online UK. If your birth left you overwhelmed, healing is possible and you are not alone.',
 }
 
 function BirthTraumaPageStatic() {
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="birth-trauma"
         ctaLabel="Book a Conversation"
         eyebrow="Healing is possible."
         title={<>Birth <em>Trauma</em> Support</>}
@@ -143,7 +148,7 @@ function BirthTraumaPageStatic() {
           </p>
 
           <div className="grid-3" style={{ gap: '1.5rem' }}>
-            <div className="card">
+            <div className="card card-pink">
               <div className="section-label" style={{ marginBottom: '1rem' }}>Session 1 · 1–2 hours</div>
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
                 Understanding &amp; Relaxation
@@ -170,7 +175,7 @@ function BirthTraumaPageStatic() {
               </p>
             </div>
 
-            <div className="card">
+            <div className="card card-pink">
               <div className="section-label" style={{ marginBottom: '1rem' }}>Session 3 · Up to 1 hour</div>
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
                 Reflection &amp; Moving Forward

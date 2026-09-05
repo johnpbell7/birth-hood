@@ -1,16 +1,21 @@
 import type { Metadata } from 'next'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import { cmsOrStatic } from '@/lib/cms-page'
+
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions',
-  description: 'The terms and conditions for booking hypnobirthing, doula and yoga services with birth-hood, covering payment, cancellations and what to expect.',
+  description:
+    'Terms and conditions for booking hypnobirthing, doula and yoga services with birth-hood, covering payment, deposits, cancellations and what to expect.',
 }
 
 function TermsPageStatic() {
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="terms"
         eyebrow="Legal stuff"
         title={<>Terms & <em>Conditions</em></>}
         subtitle="Please read these terms carefully before booking any services with birth-hood."

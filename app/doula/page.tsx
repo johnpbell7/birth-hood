@@ -1,16 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import JsonLd from '@/components/JsonLd'
 import PackageComparison from '@/components/PackageComparison'
 import PackageQuizModal from '@/components/PackageQuizModal'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Doula Services',
-  description: 'Compassionate birth, virtual and postnatal doula support in Leicester and the Midlands. Continuous, non-medical care before, during and after birth.',
+  title: 'Doula Services in Leicester & the Midlands',
+  description:
+    'Birth, postnatal, overnight and virtual doula support across Leicestershire and the Midlands. Continuous, non-medical care before, during and after birth.',
 }
 
 const SITE = 'https://www.birth-hood.co.uk'
@@ -42,7 +46,8 @@ function DoulaPageStatic() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <PageHero
+      <CmsPageHero
+        page="doula"
         eyebrow="Professional doula support"
         title={<>Doula <em>Services</em></>}
         subtitle="Continuous, compassionate non-medical support before, during and after your birth. For every pregnancy, every birth, every person."

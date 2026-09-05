@@ -1,12 +1,16 @@
 import type { Metadata } from 'next'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Dou-La-La the Birthy Podcast',
-  description: 'Dou-La-La, the birthy podcast. Two doulas in honest conversation on birth, busting myths and sharing real talk to help you feel informed and empowered.',
+  title: 'Dou-La-La — The Birthy Podcast',
+  description:
+    'Dou-La-La, the birthy podcast. Two doulas in honest conversation on birth — busting myths and sharing real talk so you feel informed and confident.',
 }
 
 const episodes = [
@@ -20,7 +24,8 @@ const episodes = [
 function PodcastPageStatic() {
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="podcast"
         eyebrow="Honest birth talk"
         title={<>Dou-La-La the <em>Birthy Podcast</em></>}
         subtitle="Two doulas in conversation giving you honest birth talk, myth busting and just generally having a good chat!"

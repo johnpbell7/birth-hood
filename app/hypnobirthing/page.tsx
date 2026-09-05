@@ -1,15 +1,19 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Hypnobirthing',
-  description: 'KGHypnobirthing courses in Leicester and online across the UK. Release fear, master calm breathing and prepare for a confident, positive birth.',
+  title: 'Hypnobirthing Courses in Leicester & Online',
+  description:
+    'Hypnobirthing courses in Leicestershire and online UK-wide. Understand birth, release fear and build real confidence — for every kind of birth.',
 }
 
 const SITE = 'https://www.birth-hood.co.uk'
@@ -64,7 +68,8 @@ function HypnobirthingPageStatic() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <PageHero
+      <CmsPageHero
+        page="hypnobirthing"
         eyebrow="Calm. Confident. Prepared."
         title={<>Hypno<em>birthing</em></>}
         subtitle="Evidence-based techniques to help you release fear, trust your body and step into birth feeling genuinely excited — not terrified."

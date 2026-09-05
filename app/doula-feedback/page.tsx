@@ -1,16 +1,21 @@
 import type { Metadata } from 'next'
-import PageHero from '@/components/PageHero'
+import CmsPageHero from '@/components/CmsPageHero'
 import { cmsOrStatic } from '@/lib/cms-page'
 
+// Hero wording/photos come from Sanity when set, so pick up edits within a minute.
+export const revalidate = 60
+
 export const metadata: Metadata = {
-  title: 'Doula Feedback',
-  description: 'Share your birth-hood doula experience. Your words help other Leicester and Midlands families find the warm, professional support they need.',
+  title: 'Leave Doula Feedback',
+  description:
+    'Share your birth-hood doula experience. Your words help other Leicestershire and Midlands families find the warm, professional support they need.',
 }
 
 function DoulaFeedbackPageStatic() {
   return (
     <>
-      <PageHero
+      <CmsPageHero
+        page="doula-feedback"
         eyebrow="Share your experience"
         title={<>Your <em>Feedback</em></>}
         subtitle="Thank you for allowing me to be part of your birth journey. Your words mean everything — and help other families find the support they need."

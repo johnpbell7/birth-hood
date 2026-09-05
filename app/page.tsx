@@ -11,7 +11,11 @@ import { getSiteSettings, type SiteSettings } from '@/lib/sanity-queries'
 import { urlFor } from '@/lib/sanity'
 
 export const metadata: Metadata = {
-  title: 'Hypnobirthing, Doula & Prenatal Yoga | NW Leicestershire & Online',
+  // Absolute so the "| birth-hood" template is not appended — with it, this
+  // title ran to 78 characters and Google truncated it.
+  title: { absolute: 'Hypnobirthing & Doula Support in Leicestershire | birth-hood' },
+  description:
+    'Hypnobirthing courses, doula support and pregnancy yoga in NW Leicestershire and online UK. Feel informed, prepared and genuinely excited for birth.',
 }
 
 export default async function HomePage() {
