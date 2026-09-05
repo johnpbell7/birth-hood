@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 const fallbackResources = [
   {
     emoji: '◈',
-    title: '15 Ready Made Affirmations',
-    desc: '15 ready-made birth-hood affirmations — print them out and use them throughout your pregnancy and birth.',
-    href: '/downloads/ready-made-affirmations.pdf',
+    title: '20 Ready Made Affirmations',
+    desc: '20 ready-made birth-hood affirmations — print them out, cut them up and put them where you will see them throughout pregnancy and birth.',
+    href: '/downloads/birth-affirmations.pdf',
     type: 'PDF Download',
     tag: 'Most popular',
   },
@@ -155,18 +155,6 @@ export default async function FreebiesPage() {
             </a>
           </div>
 
-          {/* Note */}
-          <div className="card card-pink" style={{ marginTop: '3rem', textAlign: 'center', padding: '2rem' }}>
-            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300 }}>
-              All PDFs open in a new tab and can be downloaded, printed or saved to your device.
-              Audio files will download directly. If you have any trouble accessing these resources,
-              please{' '}
-              <a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pink-deep)' }}>
-                get in touch
-              </a>
-              .
-            </p>
-          </div>
         </div>
       </section>
 
