@@ -6,11 +6,11 @@
 // These render whenever Sanity has no published posts, so the blog is never
 // empty. Sanity posts, once published, take precedence.
 
-export type BlockType = 'p' | 'h2' | 'h3' | 'li' | 'img' | 'ref'
+export type BlockType = 'p' | 'h2' | 'h3' | 'li' | 'img' | 'ref' | 'affirmation'
 
 export interface PostBlock {
   type: BlockType
-  /** Text for p/h2/h3/li/ref; image path for img */
+  /** Text for p/h2/h3/li/ref/affirmation; image path for img */
   value: string
   /** Alt text — img only */
   alt?: string
@@ -79,6 +79,45 @@ export const blogPosts: BlogPost[] = [
     excerpt: `Being a new parent can be a hard adjustment, and that is totally normal. Here are some affirmations to help you settle into it.`,
     body: [
       { type: 'p', value: `Being a new parent can be a hard adjustment, this is totally normal, here are some affirmations to use to help you adjust. Just click and save!` },
+      { type: 'p', value: `Save the ones that land, screenshot them, stick them on the fridge — whatever helps. There is no right way to use them.` },
+      { type: 'affirmation', value: `I AM A GOOD MUM.` },
+      { type: 'affirmation', value: `I AM EXACTLY WHO MY CHILD NEEDS.` },
+      { type: 'affirmation', value: `I AM CAPABLE OF AMAZING THINGS.` },
+      { type: 'affirmation', value: `I AM GRATEFUL FOR THE TIME I GET TO SPEND WITH MY CHILD.` },
+      { type: 'affirmation', value: `MY CHILDREN DON'T NEED A PERFECT MUM.` },
+      { type: 'affirmation', value: `I WILL SHOW MY KIDS LOVE THROUGH MY ACTIONS AND WORDS.` },
+      { type: 'affirmation', value: `I WILL STAY CALM, EVEN IN THE MIDST OF CHAOS.` },
+      { type: 'affirmation', value: `I AM NOT "JUST" A MUM.` },
+      { type: 'affirmation', value: `I AM PATIENT AND UNDERSTANDING.` },
+      { type: 'affirmation', value: `I MAKE A DIFFERENCE TO MY CHILD'S LIFE.` },
+      { type: 'affirmation', value: `I AM THE BEST MOTHER FOR CHILDREN.` },
+      { type: 'affirmation', value: `I AM BECOMING A BETTER MOTHER EACH AND EVERY DAY.` },
+      { type: 'affirmation', value: `I WILL TAKE CARE OF MYSELF SO I CAN TAKE CARE OF MY CHILDREN.` },
+      { type: 'affirmation', value: `WHATEVER I DO TODAY, WILL BE ENOUGH.` },
+      { type: 'affirmation', value: `I AM A GREAT MUM AND I AM DOING A GREAT JOB.` },
+      { type: 'affirmation', value: `I AM CONFIDENT IN MY ABILITIES AS A MOTHER.` },
+      { type: 'affirmation', value: `I AM TAKING CARE OF MYSELF SO THAT I CAN BE THE BEST MUM I CAN BE.` },
+      { type: 'affirmation', value: `I AM PATIENT, KIND, AND LOVING WITH MY BABY.` },
+      { type: 'affirmation', value: `I AM NOT ALONE IN THIS.` },
+      { type: 'affirmation', value: `I WILL GET THROUGH THIS, I AM STRONG ENOUGH TO GET THROUGH THIS.` },
+      { type: 'affirmation', value: `I HAVE EVERYTHING I NEED TO GET THROUGH THIS.` },
+      { type: 'affirmation', value: `THIS IS JUST A PHASE AND I WILL COME OUT OF IT STRONGER THAN BEFORE.` },
+      { type: 'affirmation', value: `THIS IS THE PERIOD OF TIME THAT IS A RECOVERY FOR BOTH ME AND MY BABY. WE WILL REST TOGETHER.` },
+      { type: 'affirmation', value: `I AM VIBRANT, AND MY BODY IS HEALING.` },
+      { type: 'affirmation', value: `I AM A WARRIOR MAMA. MY BODY IS STRONGER THAN IT HAS EVER BEEN BEFORE.` },
+      { type: 'affirmation', value: `I FULFILL MY PURPOSE AS A MOTHER STARTING HERE, RIGHT NOW.` },
+      { type: 'affirmation', value: `I AM GOOD ENOUGH IN ALL THAT I DO.` },
+      { type: 'affirmation', value: `TODAY I EMBRACE ALL THAT I AM.` },
+      { type: 'affirmation', value: `I AM FILLED WITH A MOTHER'S LIGHT OF LOVE, PEACE AND JOY.` },
+      { type: 'affirmation', value: `I MATTER.` },
+      { type: 'affirmation', value: `I'M WORTHY OF GOOD THINGS.` },
+      { type: 'affirmation', value: `I AM STRONG.` },
+      { type: 'affirmation', value: `I AM LOVED. I LOVE MYSELF.` },
+      { type: 'affirmation', value: `I AM A GOOD MUM ALREADY.` },
+      { type: 'affirmation', value: `THERE ARE A MILLION WAYS TO BE A GOOD MUM.` },
+      { type: 'affirmation', value: `I AM MAKING DECISIONS FOR THE BEST INTEREST OF MY FAMILY.` },
+      { type: 'affirmation', value: `IT'S NOT MY JOB TO BE PERFECT, BUT THE BEST MUM I CAN BE.` },
+      { type: 'affirmation', value: `I FORGIVE MYSELF FOR MY FAILURES.` },
     ],
   },
   {

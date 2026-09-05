@@ -4,6 +4,8 @@ import PageHero from '@/components/PageHero'
 import CtaBand from '@/components/CtaBand'
 import BirthStoryCards from '@/components/BirthStoryCards'
 import { birthStories } from '@/lib/birth-stories'
+import ReviewCard from '@/components/ReviewCard'
+import { reviews } from '@/lib/reviews'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
@@ -11,62 +13,6 @@ export const metadata: Metadata = {
   description: 'Real, unfiltered reviews from birth-hood clients across Leicester and the Midlands on hypnobirthing, doula support and pregnancy yoga with Leanne.',
 }
 
-const reviews = [
-  {
-    text: 'We instantly felt at ease and comfortable and thoroughly enjoyed learning about the benefits of Hypnobirthing. We are due to have our first baby in 6 weeks and Leanne helped us to feel nothing but calm and excited for this completely unknown experience coming up.',
-    author: 'Client',
-    location: 'Leicestershire',
-    service: 'Hypnobirthing',
-  },
-  {
-    text: 'Leanne helped us look at birth in a different way to how it can often be portrayed, and we have come away with loads of affirmations and exercises to do that make me feel totally in control and relaxed!',
-    author: 'Client',
-    location: 'Leicestershire',
-    service: 'Hypnobirthing',
-  },
-  {
-    text: "Thank you so much for everything! I've noticed a massive difference in Lucy and I really am excited to support her, and I know how to now! You gave us invaluable information all the way through with reasoning and justifications. We know we have choice and I feel confident now and expressing our choices to the midwife team!",
-    author: 'Birth Partner',
-    location: 'Leicester',
-    service: 'Hypnobirthing',
-  },
-  {
-    text: "We went on an antenatal course last week, and honestly found the two hours spent with Leanne today were much more helpful than the seven hours there!",
-    author: 'Client',
-    location: 'Leicestershire',
-    service: 'Hypnobirthing',
-  },
-  {
-    text: "Our birth experience was nothing short of amazing, and something we are both extremely proud of. Using everything we learnt from our course, we got the birth we had in mind and we are so proud.",
-    author: 'Client',
-    location: 'Leicestershire',
-    service: 'Hypnobirthing',
-  },
-  {
-    text: "Out of all the things we've spent money on for our little one, this I feel is the most important. We've had an amazing 1-1 course with Leanne, who from our first session has made us feel so calm, comfortable and relaxed, we feel like we've known her for years.",
-    author: 'Client',
-    location: 'Leicestershire',
-    service: 'Private 1-1 Course',
-  },
-  {
-    text: "From my first contact with Leanne we just clicked. She supported me through my concern about fibroids, and gave me some brilliant yoga positions to try when my SPD started. She kept in contact through my pregnancy and made me feel like I really had amazing support whenever I needed it. I can't recommend Leanne highly enough, she's a pro at end-to-end care!",
-    author: 'Beka',
-    location: 'Leicestershire',
-    service: 'Birth Doula',
-  },
-  {
-    text: "Just incredible! Leanne was amazing from the moment we booked her. She protected my birth space perfectly and advocated for me many times. She was especially helpful when things didn't quite go to plan.",
-    author: 'Bea',
-    location: 'Leicestershire',
-    service: 'Birth Doula',
-  },
-  {
-    text: "My advice to anyone thinking to book Leanne would be to not hesitate — she's definitely 'worth every penny' as one of the home birth midwives rightly said! She knows her job inside out and ensures she creates a loving and strong relationship with all her clients.",
-    author: 'Home Birth Client',
-    location: 'Leicestershire',
-    service: 'Birth Doula',
-  },
-]
 
 function ReviewsPageStatic() {
   return (
@@ -88,7 +34,7 @@ function ReviewsPageStatic() {
             <div>
               <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '5rem', color: 'var(--black)', lineHeight: 1 }}>5.0</div>
               <div style={{ color: 'var(--pink)', fontSize: '1.4rem', letterSpacing: '0.15em', margin: '0.3rem 0' }}>★★★★★</div>
-              <div style={{ fontSize: '0.78rem', color: 'var(--grey-mid)', fontWeight: 300, letterSpacing: '0.05em' }}>5 Star rated on Google</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--grey-mid)', fontWeight: 300, letterSpacing: '0.05em' }}>Rated 5.0 from 69 Google reviews</div>
             </div>
             <div>
               <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '5rem', color: 'var(--black)', lineHeight: 1 }}>100's</div>
@@ -102,14 +48,8 @@ function ReviewsPageStatic() {
       <section className="section-pad" style={{ background: 'var(--black)' }}>
         <div className="wrap">
           <div className="reviews-track">
-            {reviews.map((review, i) => (
-              <div key={i} className="review-card">
-                <div style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--pink)', marginBottom: '1rem', opacity: 0.7 }}>
-                  {review.service}
-                </div>
-                <p className="review-text">{review.text}</p>
-                <div className="review-author">{review.author} · {review.location} ★★★★★</div>
-              </div>
+            {reviews.map((review) => (
+              <ReviewCard key={review.name} review={review} />
             ))}
           </div>
         </div>

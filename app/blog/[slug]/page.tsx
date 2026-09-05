@@ -37,6 +37,22 @@ function StaticBody({ body }: { body: PostBlock[] }) {
   while (i < body.length) {
     const block = body[i]
 
+    if (block.type === 'affirmation') {
+      const cards: string[] = []
+      while (i < body.length && body[i].type === 'affirmation') {
+        cards.push(body[i].value)
+        i += 1
+      }
+      out.push(
+        <div key={`aff-${i}`} className="affirmation-grid">
+          {cards.map((card, n) => (
+            <p key={n} className="affirmation-card">{card}</p>
+          ))}
+        </div>,
+      )
+      continue
+    }
+
     if (block.type === 'li') {
       const items: string[] = []
       while (i < body.length && body[i].type === 'li') {
@@ -105,7 +121,7 @@ export default async function BlogPostPage({ params }: Props) {
               spilling one element per cell. */}
           <div className="page-hero-text">
             {category && <div className="page-eyebrow">{category.replace(/-/g, ' ')}</div>}
-            <h1 className="page-title" style={{ fontSize: 'clamp(2rem,4vw,3.5rem)', maxWidth: '15ch' }}>{title}</h1>
+            <h1 className="page-title" style={{ fontSize: 'clamp(2rem,4vw,3.5rem)' }}>{title}</h1>
             <p style={{ fontSize: '0.82rem', color: 'rgba(0,0,0,0.5)', fontWeight: 300 }}>
               {date}
               {readingTime ? `${date ? ' · ' : ''}${readingTime} min read` : ''}

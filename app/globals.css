@@ -655,6 +655,65 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .review-text { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.6; font-weight: 300; font-style: italic; margin-bottom: 1.5rem; padding-top: 1.8rem; }
 .review-author { font-size: 0.72rem; font-weight: 500; color: var(--pink-deep); letter-spacing: 0.1em; text-transform: uppercase; }
 
+/* Google review cards — service label, collapsible body, "Read more" toggle. */
+.reviews-track { align-items: start; }
+.review-service {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pink);
+  opacity: 0.75;
+  padding-top: 1.8rem;
+}
+/* The first .review-text after a service label already has the quote-mark
+   clearance, so drop its own top padding. */
+.review-service + .review-text { padding-top: 0.9rem; }
+.review-text + .review-text { padding-top: 0; margin-top: -0.6rem; }
+.review-more {
+  background: none;
+  border: 0;
+  padding: 0 0 2px;
+  margin: -0.4rem 0 1.4rem;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  border-bottom: 1.5px solid var(--pink);
+  cursor: pointer;
+  transition: color 0.25s;
+}
+.review-more:hover { color: var(--pink); }
+/* The card scales on hover, which is distracting while reading a long review. */
+.review-card:has(.review-more):hover { transform: none; }
+
+/* Affirmation cards — the postpartum affirmations post. */
+.affirmation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.9rem;
+  margin: 2.5rem 0;
+}
+.affirmation-card {
+  background: var(--pink-ultra);
+  border-left: 3px solid var(--pink);
+  padding: 1.2rem 1.1rem;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: var(--black);
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  .affirmation-grid { grid-template-columns: 1fr; }
+}
+
 /* PODCAST */
 .podcast-section { background: var(--white); padding: 6rem 3rem; }
 .podcast { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
