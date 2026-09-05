@@ -5,8 +5,8 @@ import CtaBand from '@/components/CtaBand'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
-  title: 'Course Info & Dates',
-  description: 'Upcoming hypnobirthing course dates in Leicester and online UK, plus everything you need to know before you book your group or private place.',
+  title: 'Courses',
+  description: 'Hypnobirthing course options, prices and upcoming dates in Leicester and online UK — group, private and online, plus caesarean and hasty hypnobirthing courses.',
 }
 
 function CourseInfoPageStatic() {
@@ -15,8 +15,8 @@ function CourseInfoPageStatic() {
       <PageHero
         ctaLabel="Book Your Place"
         eyebrow="Hypnobirthing courses"
-        title={<>Course <em>Info & Dates</em></>}
-        subtitle="Find your perfect course date and everything you need to know before you book."
+        title={<>Hypnobirthing <em>Courses</em></>}
+        subtitle="Course options, prices and upcoming dates — everything you need to know before you book."
         img1={{ src: '/images/hypnobirthing-class.jpg', alt: 'Hypnobirthing class' }}
         img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         actions={
@@ -137,6 +137,112 @@ function CourseInfoPageStatic() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* COURSE OPTIONS */}
+      <section className="section-pad">
+        <div className="wrap">
+          <div className="section-label">Choose your course</div>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
+            Course <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>options</em>
+          </h2>
+
+          <div className="grid-3" style={{ gap: '1.5rem' }}>
+            {/* Group Course */}
+            <div className="price-card">
+              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
+                Group Course
+              </div>
+              <div className="price-amount">£225</div>
+              <div className="price-period">per couple · face to face</div>
+              <ul className="price-features">
+                <li>4 weekly group sessions (2.5hrs each)</li>
+                <li>KGHypnobirthing full programme</li>
+                <li>Relaxation audio downloads</li>
+                <li>Comprehensive course workbook</li>
+                <li>Supportive WhatsApp group</li>
+                <li>Post-birth debrief session</li>
+                <li>Online: £200</li>
+              </ul>
+              <a
+                href="/booking"
+                className="btn-outline"
+                style={{ display: 'block', textAlign: 'center' }}
+              >
+                Book Now
+              </a>
+            </div>
+
+            {/* Private Course (featured) */}
+            <div className="price-card featured">
+              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '0.5rem' }}>
+                Most popular
+              </div>
+              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
+                Private 121 Course
+              </div>
+              <div className="price-amount">£345</div>
+              <div className="price-period">per couple · face to face</div>
+              <ul className="price-features">
+                <li>10 hour fully interactive, fully evidence based birth preparation course</li>
+                <li>Flexible scheduling at your home or online</li>
+                <li>Full KGHypnobirthing programme</li>
+                <li>Personalised birth plan support</li>
+                <li>Relaxation audio downloads</li>
+                <li>Unlimited WhatsApp support</li>
+                <li>Post-birth debrief session</li>
+                <li>Online: £325</li>
+              </ul>
+              <a
+                href="/booking"
+                className="btn-primary"
+                style={{ display: 'block', textAlign: 'center' }}
+              >
+                Book Now
+              </a>
+            </div>
+
+            {/* Online Course */}
+            <div className="price-card">
+              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
+                Online Course
+              </div>
+              <div className="price-amount">£200</div>
+              <div className="price-period">per couple · group online</div>
+              <ul className="price-features">
+                <li>4 sessions via video call</li>
+                <li>All the same content as in-person</li>
+                <li>UK-wide availability</li>
+                <li>Relaxation audio downloads</li>
+                <li>Comprehensive course workbook</li>
+                <li>Post-birth debrief session</li>
+                <li>121 online: £325</li>
+              </ul>
+              <a
+                href="/booking"
+                className="btn-outline"
+                style={{ display: 'block', textAlign: 'center' }}
+              >
+                Book Now
+              </a>
+            </div>
+          </div>
+
+          {/* Antenatal Package upgrade note */}
+          <div className="card card-pink" style={{ marginTop: '2rem' }}>
+            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300 }}>
+              <strong style={{ color: 'var(--black)' }}>Antenatal Package upgrade:</strong>{' '}
+              You can also upgrade a Hypnobirthing package to include virtual doula support throughout pregnancy,
+              following all antenatal appointments etc (not including the birth) as an Antenatal Package{' '}
+              <strong style={{ color: 'var(--black)' }}>(£425)</strong>.
+            </p>
+          </div>
+
+          <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--grey-mid)', fontSize: '0.88rem', fontWeight: 300 }}>
+            £50 deposit upon booking. Remainder of payment due before first session.{' '}
+            <Link href="/course-info" style={{ color: 'var(--pink-deep)' }}>View current dates →</Link>
+          </p>
         </div>
       </section>
 

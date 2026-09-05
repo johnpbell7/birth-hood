@@ -64,7 +64,7 @@ function SessionOutlinesPageStatic() {
   return (
     <>
       <PageHero
-        ctaLabel="View Course Dates"
+        ctaLabel="View Courses"
         ctaHref="/course-info"
         eyebrow="Hypnobirthing course"
         title={<>Session <em>Outlines</em></>}
@@ -73,7 +73,7 @@ function SessionOutlinesPageStatic() {
         img2={{ src: '/images/leanne-speaking.jpg', alt: 'Leanne speaking' }}
         actions={
           <Link href="/course-info" className="btn-primary">
-            View Course Dates
+            View Courses
           </Link>
         }
       />

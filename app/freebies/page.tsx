@@ -135,26 +135,6 @@ export default async function FreebiesPage() {
             ))}
           </div>
 
-          {/* Birth Videos */}
-          <div style={{ marginTop: '3rem' }}>
-            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.6rem, 2.5vw, 2rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.2 }}>
-              Positive <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>Birth Videos</em>
-            </h2>
-            <p style={{ color: 'var(--grey-mid)', fontSize: '0.92rem', lineHeight: 1.6, fontWeight: 300, maxWidth: '580px', marginBottom: '1.5rem' }}>
-              Watching positive birth videos is one of the most powerful things you can do during pregnancy.
-              A curated collection of real, positive birth stories is available on YouTube — search
-              {' '}&ldquo;birth-hood positive birth videos&rdquo; or visit the birth-hood YouTube channel.
-            </p>
-            <a
-              href="https://www.youtube.com/@birth-hood"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-            >
-              Watch on YouTube
-            </a>
-          </div>
-
         </div>
       </section>
 

@@ -26,7 +26,7 @@ export const DEFAULT_NAV: NavItem[] = [
     href: '/hypnobirthing',
     children: [
       { label: 'About Hypnobirthing', href: '/hypnobirthing' },
-      { label: 'Course Dates', href: '/course-info' },
+      { label: 'Courses', href: '/course-info' },
       { label: 'Session Outlines', href: '/session-outlines' },
     ],
   },

@@ -79,7 +79,7 @@ export default async function Footer() {
             <li><Link href="/podcast">Podcast</Link></li>
             <li><Link href="/freebies">Freebies</Link></li>
             <li><Link href="/reviews">Reviews</Link></li>
-            <li><Link href="/course-info">Course Info</Link></li>
+            <li><Link href="/course-info">Courses</Link></li>
           </ul>
         </div>
 

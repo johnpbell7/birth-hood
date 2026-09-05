@@ -90,32 +90,51 @@ function HypnobirthingPageStatic() {
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
               <div className="section-label">What is it?</div>
-              <h2>It&apos;s not about being hypnotised</h2>
+              <h2>It&apos;s the name that lets it down</h2>
               <p>
-                Hypnobirthing is a complete antenatal education programme. It combines evidence-based
-                information about how birth works with practical relaxation, breathing and visualisation
-                techniques to help you approach your birth with calm confidence.
+                Hypnobirthing sounds like some &lsquo;hippy&rsquo; thing that only people having home
+                births use, or like it&apos;s just breathing. It is so much more than that — and none
+                of it involves swinging clocks.
               </p>
               <p>
-                Far from putting you into a trance, hypnobirthing teaches you how to work with your
-                body — understanding the physiology of birth, releasing fear and tension, and accessing
-                your body&apos;s natural ability to birth comfortably.
+                It is a complete birth preparation course, built on four things that work together.
+                The breathing everyone has heard about is only the last of them.
               </p>
+
+              <h3>It&apos;s getting informed about birth</h3>
               <p>
-                It works for all birth types — vaginal, caesarean, water birth, hospital, home or
-                birth centre — and all families.
+                Learning how birth actually works — the hormones involved, how to choose your birth
+                place, how your environment helps or hinders the process, the role of the birth
+                partner, the stages of labour, positions that help your baby find their way, and how
+                to write a birth plan. Most of us haven&apos;t been at many births, so you simply
+                won&apos;t know this unless someone tells you. The more you know, the more prepared
+                you feel.
               </p>
-              <h3>What you&apos;ll learn</h3>
-              <ul>
-                <li>How birth works physiologically and how your mindset affects your experience</li>
-                <li>Breathing techniques for each stage of labour</li>
-                <li>Deep relaxation and self-hypnosis skills</li>
-                <li>Visualisation and affirmation practices</li>
-                <li>How to write a birth plan that your care team will respect</li>
-                <li>Your rights in the maternity system and how to advocate for yourself</li>
-                <li>How birth partners can actively support you</li>
-                <li>Preparation for birth in any setting or situation</li>
-              </ul>
+
+              <h3>It&apos;s a change of mindset</h3>
+              <p>
+                Knowing what your body is doing, and how, helps you see birth as a bodily function
+                like any other — which takes a lot of the fear away. Between getting informed and
+                taking in positive information about birth, you can shift from a mindset full of what
+                might &lsquo;go wrong&rsquo; to one that expects birth to go right.
+              </p>
+
+              <h3>It&apos;s learning decision-making tools</h3>
+              <p>
+                Knowing your rights, and knowing where to get reliable information, helps you feel
+                confident making the decisions needed to birth your baby. Just knowing the questions
+                to ask — including whether it&apos;s safe to take 30 minutes to decide — can make an
+                enormous difference. Nobody wants to make a decision in a rush when there was time to
+                think it through.
+              </p>
+
+              <h3>And then the tools you&apos;ve heard about</h3>
+              <p>
+                Breathing, visualisation, affirmations, relaxation, hypnobirthing tracks and
+                anchoring. They are an incredible way to prepare and to stay comfortable — but on
+                their own, without everything above, they are not enough. Together, you&apos;ve got
+                this.
+              </p>
             </div>
 
             {/* Stats */}
@@ -152,109 +171,166 @@ function HypnobirthingPageStatic() {
         </div>
       </section>
 
-      {/* COURSE OPTIONS */}
-      <section className="section-pad">
+      {/* THE TOOLS */}
+      <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap">
-          <div className="section-label">Choose your course</div>
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
-            Course <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>options</em>
+          <div className="section-label">The toolkit</div>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.1 }}>
+            The tools you&apos;ll <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>actually use</em>
           </h2>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.7, fontWeight: 300, marginBottom: '3rem', maxWidth: '640px' }}>
+            Use all of them, throughout pregnancy and in birth, and see how calm you can feel — in
+            any kind of birth.
+          </p>
 
           <div className="grid-3" style={{ gap: '1.5rem' }}>
-            {/* Group Course */}
-            <div className="price-card">
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Group Course
-              </div>
-              <div className="price-amount">£225</div>
-              <div className="price-period">per couple · face to face</div>
-              <ul className="price-features">
-                <li>4 weekly group sessions (2.5hrs each)</li>
-                <li>KGHypnobirthing full programme</li>
-                <li>Relaxation audio downloads</li>
-                <li>Comprehensive course workbook</li>
-                <li>Supportive WhatsApp group</li>
-                <li>Post-birth debrief session</li>
-                <li>Online: £200</li>
-              </ul>
-              <a
-                href="/booking"
-                className="btn-outline"
-                style={{ display: 'block', textAlign: 'center' }}
-              >
-                Book Now
-              </a>
+            <div className="card">
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--black)' }}>
+                Breathing techniques
+              </h3>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
+                Big, even breaths keep oxygen flowing so your uterus can do its job as efficiently and comfortably as possible. They also give you something else to focus on. Simple — but practise them in pregnancy and you will feel the benefit on the day.
+              </p>
+            </div>
+            <div className="card">
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--black)' }}>
+                Visualisation
+              </h3>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
+                A way of almost practising birth before it happens. Picturing how you would like your birth to go helps you feel more confident in your plans, and tricks your mind into thinking it is nothing new when labour starts for real.
+              </p>
+            </div>
+            <div className="card">
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--black)' }}>
+                Affirmations
+              </h3>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
+                Using the law of repetition to convince your brain to believe something. Instead of "I don’t want to tear", you say "my body will stretch to accommodate my baby". After a while it sinks in, and confidence follows.
+              </p>
+            </div>
+            <div className="card">
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--black)' }}>
+                Relaxation
+              </h3>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
+                We rarely spend time doing absolutely nothing, so our neocortex — the rational, thinking part of the brain — is almost never switched off. We very much want it out of the way during labour. Practising relaxation in pregnancy makes it far easier to relax on cue.
+              </p>
+            </div>
+            <div className="card">
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--black)' }}>
+                Hypnobirthing tracks
+              </h3>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
+                Written by hypnotherapists to induce calm, and full of encouragement about how capable you and your body are. Do not worry if you fall asleep listening — it still goes in. Just never while driving.
+              </p>
+            </div>
+            <div className="card">
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--black)' }}>
+                Anchoring
+              </h3>
+              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
+                Cues your brain learns to associate with relaxation — a room spray, an essential oil, a blanket, a particular playlist. Use them while you practise, then bring them to your birth space and they help you relax wherever you are.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* EVIDENCE */}
+      <section className="section-pad">
+        <div className="wrap">
+          <div className="section-label">The evidence</div>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.1 }}>
+            What does the evidence <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>actually say?</em>
+          </h2>
+
+          <div className="grid-2" style={{ gap: '4rem', alignItems: 'flex-start', marginTop: '2.5rem' }}>
+            <div className="prose">
+              <p>
+                Hypnobirthing isn&apos;t about guaranteeing a pain-free birth, avoiding interventions
+                or promising a particular type of birth. The evidence suggests something much more
+                useful: hypnosis and relaxation-based techniques can help you feel calmer, more
+                confident and more positive about your birth, while giving you practical tools for
+                managing fear, anxiety and sensation during labour.
+              </p>
+              <p>
+                <strong>The evidence around medical interventions is less clear.</strong> A 2024
+                systematic review and meta-analysis of 2,937 women across six randomised controlled
+                trials found no statistically significant reduction in epidural or other
+                pharmacological pain relief.
+              </p>
+              <p>
+                And that&apos;s important. Hypnobirthing isn&apos;t a promise that you won&apos;t need
+                pain relief. It&apos;s about giving you another set of tools — breathing, relaxation,
+                visualisation, self-hypnosis, understanding what&apos;s happening in your body,
+                working with your partner, and staying grounded when things don&apos;t go to plan.
+              </p>
+              <p>
+                Because birth isn&apos;t predictable. But feeling informed, prepared and supported can
+                make a huge difference to how you experience it. You don&apos;t have to birth without
+                pain relief to have used hypnobirthing successfully — you can use these tools at home,
+                in a birth centre or on a labour ward, alongside an epidural, an induction or a
+                caesarean birth.
+              </p>
+              <p>
+                <strong>The goal isn&apos;t a perfect birth. It&apos;s feeling like you have the
+                tools, knowledge and confidence to navigate yours.</strong>
+              </p>
             </div>
 
-            {/* Private Course (featured) */}
-            <div className="price-card featured">
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '0.5rem' }}>
-                Most popular
+            <div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {[
+                  { finding: 'Reductions in fear and perceived pain, and improvements in overall experience of childbirth.', source: 'Fernández-Gamero et al. (2024) — systematic review of 7 randomised controlled trials' },
+                  { finding: 'Improvements in antenatal depression reported by the majority of included studies, though researchers noted a need for more consistent methods.', source: 'Betriana et al. (2025) — systematic review & meta-analysis' },
+                  { finding: 'No statistically significant reduction in epidural or other pharmacological analgesia.', source: 'Lai et al. (2024) — 6 RCTs, 2,937 women' },
+                  { finding: 'Potential benefits for anxiety, confidence and emotional wellbeing in pregnancy and after birth.', source: 'Catsaros & Wendland (2022) — systematic review' },
+                ].map((s) => (
+                  <div key={s.source} className="card" style={{ borderLeft: '3px solid var(--pink)' }}>
+                    <p style={{ color: 'var(--black)', fontSize: '0.92rem', lineHeight: 1.65, fontWeight: 400, marginBottom: '0.7rem' }}>
+                      {s.finding}
+                    </p>
+                    <p style={{ color: 'var(--grey-light)', fontSize: '0.75rem', lineHeight: 1.5, fontWeight: 300 }}>
+                      {s.source}
+                    </p>
+                  </div>
+                ))}
               </div>
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Private 121 Course
-              </div>
-              <div className="price-amount">£345</div>
-              <div className="price-period">per couple · face to face</div>
-              <ul className="price-features">
-                <li>10 hour fully interactive, fully evidence based birth preparation course</li>
-                <li>Flexible scheduling at your home or online</li>
-                <li>Full KGHypnobirthing programme</li>
-                <li>Personalised birth plan support</li>
-                <li>Relaxation audio downloads</li>
-                <li>Unlimited WhatsApp support</li>
-                <li>Post-birth debrief session</li>
-                <li>Online: £325</li>
-              </ul>
-              <a
-                href="/booking"
-                className="btn-primary"
-                style={{ display: 'block', textAlign: 'center' }}
-              >
-                Book Now
-              </a>
+              <p style={{ marginTop: '1.4rem', fontSize: '0.78rem', color: 'var(--grey-light)', fontWeight: 300, lineHeight: 1.6 }}>
+                All four reviews are available on PubMed.
+              </p>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Online Course */}
-            <div className="price-card">
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Online Course
-              </div>
-              <div className="price-amount">£200</div>
-              <div className="price-period">per couple · group online</div>
-              <ul className="price-features">
-                <li>4 sessions via video call</li>
-                <li>All the same content as in-person</li>
-                <li>UK-wide availability</li>
-                <li>Relaxation audio downloads</li>
-                <li>Comprehensive course workbook</li>
-                <li>Post-birth debrief session</li>
-                <li>121 online: £325</li>
-              </ul>
-              <a
-                href="/booking"
-                className="btn-outline"
-                style={{ display: 'block', textAlign: 'center' }}
-              >
-                Book Now
+      {/* POWER HOURS */}
+      <section className="section-pad-sm" style={{ background: 'var(--black)' }}>
+        <div className="wrap">
+          <div className="grid-2" style={{ gap: '3rem', alignItems: 'center' }}>
+            <div>
+              <div className="section-label light">Not ready for a full course?</div>
+              <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.7rem, 2.6vw, 2.3rem)', fontWeight: 600, lineHeight: 1.15, color: 'var(--white)', marginBottom: '1rem' }}>
+                Book a <em style={{ fontStyle: 'italic', color: 'var(--pink)' }}>Power Hour</em>
+              </h2>
+              <p style={{ color: 'rgba(255,255,255,0.72)', fontSize: '0.95rem', lineHeight: 1.75, fontWeight: 300 }}>
+                You&apos;ve read the guides. You&apos;ve Googled. You&apos;ve got questions. Bring your
+                birth plan, induction options, previous birth experience or whatever is currently
+                making you go &ldquo;hang on&hellip; what?&rdquo;, and we&apos;ll work through it
+                together.
+              </p>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+              <a href="https://calendly.com/birthhood/power-hour" target="_blank" rel="noopener noreferrer" className="power-row">
+                <span><strong>Power Hour</strong><br />60 minutes of personalised birth support</span>
+                <span className="power-price">£50</span>
+              </a>
+              <a href="https://calendly.com/birthhood/power-hour" target="_blank" rel="noopener noreferrer" className="power-row">
+                <span><strong>Power Session</strong><br />2 hours — for when there&apos;s a lot to unpack</span>
+                <span className="power-price">£80</span>
               </a>
             </div>
           </div>
-
-          {/* Antenatal Package upgrade note */}
-          <div className="card card-pink" style={{ marginTop: '2rem' }}>
-            <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300 }}>
-              <strong style={{ color: 'var(--black)' }}>Antenatal Package upgrade:</strong>{' '}
-              You can also upgrade a Hypnobirthing package to include virtual doula support throughout pregnancy,
-              following all antenatal appointments etc (not including the birth) as an Antenatal Package{' '}
-              <strong style={{ color: 'var(--black)' }}>(£425)</strong>.
-            </p>
-          </div>
-
-          <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--grey-mid)', fontSize: '0.88rem', fontWeight: 300 }}>
-            £50 deposit upon booking. Remainder of payment due before first session.{' '}
-            <Link href="/course-info" style={{ color: 'var(--pink-deep)' }}>View current dates →</Link>
-          </p>
         </div>
       </section>
 
