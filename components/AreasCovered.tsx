@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 /**
@@ -50,6 +51,17 @@ export default function AreasCovered() {
               Not local? <Link href="/virtual-doula">Virtual support</Link> means we can still work
               together from anywhere in the UK or abroad.
             </p>
+
+            <div className="areas-photo">
+              <Image
+                src="/images/leanne-van-wide-22.jpg"
+                alt="Leanne and the birth-hood van, ready to head out to a client"
+                width={900}
+                height={600}
+                sizes="(max-width: 900px) 100vw, 520px"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </div>
           </div>
 
           {/* Right — the coverage itself */}

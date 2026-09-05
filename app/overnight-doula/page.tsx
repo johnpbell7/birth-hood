@@ -303,7 +303,7 @@ function OvernightDoulaPageStatic() {
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ maxWidth: '820px' }}>
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 500, marginBottom: '2rem', lineHeight: 1.1 }}>
-            Terms &amp; conditions
+            Overnight doula <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>Ts &amp; Cs</em>
           </h2>
           <FaqAccordion items={termsItems} />
         </div>

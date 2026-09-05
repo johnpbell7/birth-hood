@@ -13,6 +13,80 @@ export const metadata: Metadata = {
     'Hypnobirthing course options, prices and upcoming dates in Leicestershire and online. Group, private and online courses, plus caesarean preparation.',
 }
 
+/** Line icons for the "everything you need" cards — same weight as the tool
+    icons on the hypnobirthing page so the two sets read as one family. */
+function CardIcon({ children }: { children: React.ReactNode }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+      {children}
+    </svg>
+  )
+}
+
+const INCLUDED = [
+  {
+    title: 'Full hypnobirthing & birth preparation course',
+    desc: 'Designed by birth-hood using training from both The Birth Uprising (TBU) and KGHypnobirthing (KGH), to provide everything you need to prepare for all births.',
+    icon: (
+      <CardIcon>
+        <path d="M12 6.5C10.5 5 8.5 4.2 6 4.2H3.5v13.6H6c2.5 0 4.5.8 6 2.3 1.5-1.5 3.5-2.3 6-2.3h2.5V4.2H18c-2.5 0-4.5.8-6 2.3Z" />
+        <path d="M12 6.5V20" />
+      </CardIcon>
+    ),
+  },
+  {
+    title: 'Comprehensive workbook',
+    desc: 'A beautifully designed birth-hood workbook to accompany each session, full of notes, exercises and resources to keep.',
+    icon: (
+      <CardIcon>
+        <path d="M5.5 3.5h11a2 2 0 0 1 2 2v15a1 1 0 0 1-1 1h-12a2 2 0 0 1 0-4h13" />
+        <path d="M8.5 8h7M8.5 11.5h5" />
+      </CardIcon>
+    ),
+  },
+  {
+    title: 'Relaxation audio downloads',
+    desc: 'A curated collection of relaxation and visualisation audio tracks for you to practise throughout your pregnancy and use during birth.',
+    icon: (
+      <CardIcon>
+        <path d="M12 3.5v11.2" />
+        <path d="M8.5 11.5 12 15l3.5-3.5" />
+        <path d="M4.5 16.5v2a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-2" />
+      </CardIcon>
+    ),
+  },
+  {
+    title: 'Birth plan support',
+    desc: 'Dedicated time to create a birth plan that reflects your wishes and is written in a way that your care team will read and respect.',
+    icon: (
+      <CardIcon>
+        <path d="M8.5 3.5h7a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2Z" />
+        <path d="m9.8 11.8 1.6 1.6 3.2-3.6" />
+        <path d="M9.5 3.5v1.2a.8.8 0 0 0 .8.8h3.4a.8.8 0 0 0 .8-.8V3.5" />
+      </CardIcon>
+    ),
+  },
+  {
+    title: 'WhatsApp support group',
+    desc: 'Join the birth-hood community — a supportive group of like-minded parents going through the same journey, moderated by me.',
+    icon: (
+      <CardIcon>
+        <path d="M20.5 11.8a8 8 0 0 1-11.6 7.1L4 20.5l1.7-4.7a8 8 0 1 1 14.8-4Z" />
+        <path d="M9.5 12h.01M12.5 12h.01M15.5 12h.01" />
+      </CardIcon>
+    ),
+  },
+  {
+    title: 'Postnatal debrief',
+    desc: 'A dedicated session after your baby arrives to process your birth experience, celebrate your achievement and get any support you need.',
+    icon: (
+      <CardIcon>
+        <path d="M20.5 12.6c0 1.7-2.1 3.9-7.6 8.6a1.4 1.4 0 0 1-1.8 0C5.6 16.5 3.5 14.3 3.5 12.6a4.6 4.6 0 0 1 8.5-2.5 4.6 4.6 0 0 1 8.5 2.5Z" />
+      </CardIcon>
+    ),
+  },
+]
+
 function CourseInfoPageStatic() {
   return (
     <>
@@ -43,34 +117,10 @@ function CourseInfoPageStatic() {
           </h2>
 
           <div className="grid-2" style={{ gap: '1.5rem' }}>
-            {[
-              {
-                title: 'Full hypnobirthing & birth preparation course',
-                desc: 'Designed by birth-hood using training from both The Birth Uprising (TBU) and KGHypnobirthing (KGH), to provide everything you need to prepare for all births.',
-              },
-              {
-                title: 'Comprehensive workbook',
-                desc: 'A beautifully designed birth-hood workbook to accompany each session, full of notes, exercises and resources to keep.',
-              },
-              {
-                title: 'Relaxation audio downloads',
-                desc: 'A curated collection of relaxation and visualisation audio tracks for you to practise throughout your pregnancy and use during birth.',
-              },
-              {
-                title: 'Birth plan support',
-                desc: 'Dedicated time to create a birth plan that reflects your wishes and is written in a way that your care team will read and respect.',
-              },
-              {
-                title: 'WhatsApp support group',
-                desc: 'Join the birth-hood community — a supportive group of like-minded parents going through the same journey, moderated by me.',
-              },
-              {
-                title: 'Postnatal debrief',
-                desc: 'A dedicated session after your baby arrives to process your birth experience, celebrate your achievement and get any support you need.',
-              },
-            ].map(item => (
+            {INCLUDED.map(item => (
               <div key={item.title} className="card">
-                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.5rem', color: 'var(--black)' }}>
+                <span className="tool-icon" aria-hidden="true">{item.icon}</span>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.35rem', fontWeight: 600, marginBottom: '0.5rem', color: 'var(--black)' }}>
                   {item.title}
                 </h3>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
@@ -197,7 +247,7 @@ function CourseInfoPageStatic() {
           <div className="grid-3" style={{ gap: '1.5rem' }}>
             {/* Caesarean Birth Preparation */}
             <div className="card card-pink" style={{ display: 'flex', flexDirection: 'column' }}>
-              <div className="section-label" style={{ marginBottom: '1rem' }}>Caesarean Birth Preparation</div>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.35rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--black)', lineHeight: 1.2 }}>Caesarean Birth Preparation</h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
                 Are you planning an elective or having a scheduled caesarean? Not sure what to expect?
                 Want to make it as positive as possible?
@@ -226,7 +276,7 @@ function CourseInfoPageStatic() {
 
             {/* Hasty Hypnobirthing */}
             <div className="card card-pink" style={{ display: 'flex', flexDirection: 'column' }}>
-              <div className="section-label" style={{ marginBottom: '1rem' }}>Hasty Hypnobirthing</div>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.35rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--black)', lineHeight: 1.2 }}>Hasty Hypnobirthing</h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
                 In a rush? 37 weeks plus?
               </p>
@@ -254,7 +304,7 @@ function CourseInfoPageStatic() {
 
             {/* Hypnobirthing Refresher */}
             <div className="card card-pink" style={{ display: 'flex', flexDirection: 'column' }}>
-              <div className="section-label" style={{ marginBottom: '1rem' }}>Hypnobirthing Refresher</div>
+              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.35rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--black)', lineHeight: 1.2 }}>Hypnobirthing Refresher</h3>
               <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
                 For second, third&hellip; time parents who have already completed a hypnobirthing
                 course and want a refresh before this baby arrives.

@@ -51,7 +51,7 @@ function DoulaPageStatic() {
         title={<>Doula <em>Services</em></>}
         subtitle="Continuous, compassionate non-medical support before, during and after your birth. For every pregnancy, every birth, every person."
         img1={{ src: '/images/birth-pool-overhead-308.jpg', alt: 'Doula support' }}
-        img2={{ src: '/images/birth-pool-support-313.jpg', alt: 'Comfort measures' }}
+        img2={{ src: '/images/leanne-pool-78.jpg', alt: 'Home birth setup' }}
         actions={
           <>
             <a

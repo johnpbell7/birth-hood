@@ -61,6 +61,21 @@ function ReviewsPageStatic({ reviews, birthStories }: { reviews: Review[]; birth
         </div>
       </section>
 
+      {/* BIRTH STORIES */}
+      <section className="section-pad" id="birth-stories">
+        <div className="wrap">
+          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
+            Stories from <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>real births</em>
+          </h2>
+          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '640px' }}>
+            A collection of positive birth stories shared by my clients, in their own words — every
+            birth, every path, every outcome is valid.
+          </p>
+
+          <BirthStoryCards stories={birthStories} />
+        </div>
+      </section>
+
       {/* LEAVE A REVIEW */}
       <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
         <div className="wrap" style={{ maxWidth: '720px' }}>
@@ -160,21 +175,6 @@ function ReviewsPageStatic({ reviews, birthStories }: { reviews: Review[]; birth
               — Leanne
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* BIRTH STORIES */}
-      <section className="section-pad" id="birth-stories">
-        <div className="wrap">
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', fontWeight: 600, marginBottom: '0.8rem', lineHeight: 1.1 }}>
-            Stories from <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>real births</em>
-          </h2>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '2.5rem', maxWidth: '640px' }}>
-            A collection of positive birth stories shared by my clients, in their own words — every
-            birth, every path, every outcome is valid.
-          </p>
-
-          <BirthStoryCards stories={birthStories} />
         </div>
       </section>
 

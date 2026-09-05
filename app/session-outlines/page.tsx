@@ -74,7 +74,7 @@ function SessionOutlinesPageStatic() {
         title={<>Session <em>Outlines</em></>}
         subtitle="A detailed breakdown of everything covered in the four-session hypnobirthing course."
         img1={{ src: '/images/class-teaching-291.jpg', alt: 'In class' }}
-        img2={{ src: '/images/relaxation-oils-69.jpg', alt: 'Relaxation' }}
+        img2={{ src: '/images/leanne-prep-46.jpg', alt: 'Course materials' }}
         actions={
           <Link href="/course-info" className="btn-primary">
             View Courses

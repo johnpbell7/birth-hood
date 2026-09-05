@@ -63,6 +63,80 @@ const faqItems = [
   },
 ]
 
+/** Line icons for the six hypnobirthing tools — same weight as the service
+    icons elsewhere so the set reads as one family. */
+function ToolIcon({ children }: { children: React.ReactNode }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+      {children}
+    </svg>
+  )
+}
+
+const TOOLS = [
+  {
+    name: 'Breathing techniques',
+    body: 'Big, even breaths keep oxygen flowing so your uterus can do its job as efficiently and comfortably as possible. They also give you something else to focus on. Simple — but practise them in pregnancy and you will feel the benefit on the day.',
+    icon: (
+      <ToolIcon>
+        <path d="M2 13c2 0 2-5 4-5s2 8 4 8 2-6 4-6 2 4 4 4 2-2 4-2" />
+      </ToolIcon>
+    ),
+  },
+  {
+    name: 'Visualisation',
+    body: 'A way of almost practising birth before it happens. Picturing how you would like your birth to go helps you feel more confident in your plans, and tricks your mind into thinking it is nothing new when labour starts for real.',
+    icon: (
+      <ToolIcon>
+        <path d="M1.8 12S5.2 5.8 12 5.8 22.2 12 22.2 12 18.8 18.2 12 18.2 1.8 12 1.8 12Z" />
+        <circle cx="12" cy="12" r="3" />
+      </ToolIcon>
+    ),
+  },
+  {
+    name: 'Affirmations',
+    body: 'Using the law of repetition to convince your brain to believe something. Instead of "I don\u2019t want to tear", you say "my body will stretch to accommodate my baby". After a while it sinks in, and confidence follows.',
+    icon: (
+      <ToolIcon>
+        <path d="M21 12.5a7.5 7.5 0 0 1-7.5 7.5H8l-4.5 3v-5.4A7.5 7.5 0 0 1 13.5 5 7.5 7.5 0 0 1 21 12.5Z" />
+        <path d="M9 12.5h.01M12.5 12.5h.01M16 12.5h.01" />
+      </ToolIcon>
+    ),
+  },
+  {
+    name: 'Relaxation',
+    body: 'We rarely spend time doing absolutely nothing, so our neocortex — the rational, thinking part of the brain — is almost never switched off. We very much want it out of the way during labour. Practising relaxation in pregnancy makes it far easier to relax on cue.',
+    icon: (
+      <ToolIcon>
+        <path d="M20.4 14.6A8.6 8.6 0 0 1 9.4 3.6a8.6 8.6 0 1 0 11 11Z" />
+      </ToolIcon>
+    ),
+  },
+  {
+    name: 'Hypnobirthing tracks',
+    body: 'Written by hypnotherapists to induce calm, and full of encouragement about how capable you and your body are. Do not worry if you fall asleep listening — it still goes in. Just never while driving.',
+    icon: (
+      <ToolIcon>
+        <path d="M4 15.5v-3.2a8 8 0 0 1 16 0v3.2" />
+        <path d="M4 14.2h2.4a1 1 0 0 1 1 1v3.6a1 1 0 0 1-1 1H5.2a1.2 1.2 0 0 1-1.2-1.2Z" />
+        <path d="M20 14.2h-2.4a1 1 0 0 0-1 1v3.6a1 1 0 0 0 1 1h1.2a1.2 1.2 0 0 0 1.2-1.2Z" />
+      </ToolIcon>
+    ),
+  },
+  {
+    name: 'Anchoring',
+    body: 'Cues your brain learns to associate with relaxation — a room spray, an essential oil, a blanket, a particular playlist. Use them while you practise, then bring them to your birth space and they help you relax wherever you are.',
+    icon: (
+      <ToolIcon>
+        <circle cx="12" cy="4.6" r="2.1" />
+        <path d="M12 6.7V21" />
+        <path d="M7.5 10.4h9" />
+        <path d="M4 13.4a8 8 0 0 0 16 0" />
+      </ToolIcon>
+    ),
+  },
+]
+
 function HypnobirthingPageStatic() {
   return (
     <>
@@ -186,54 +260,17 @@ function HypnobirthingPageStatic() {
           </p>
 
           <div className="grid-3" style={{ gap: '1.5rem' }}>
-            <div className="card">
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--black)' }}>
-                Breathing techniques
-              </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
-                Big, even breaths keep oxygen flowing so your uterus can do its job as efficiently and comfortably as possible. They also give you something else to focus on. Simple — but practise them in pregnancy and you will feel the benefit on the day.
-              </p>
-            </div>
-            <div className="card">
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--black)' }}>
-                Visualisation
-              </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
-                A way of almost practising birth before it happens. Picturing how you would like your birth to go helps you feel more confident in your plans, and tricks your mind into thinking it is nothing new when labour starts for real.
-              </p>
-            </div>
-            <div className="card">
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--black)' }}>
-                Affirmations
-              </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
-                Using the law of repetition to convince your brain to believe something. Instead of "I don’t want to tear", you say "my body will stretch to accommodate my baby". After a while it sinks in, and confidence follows.
-              </p>
-            </div>
-            <div className="card">
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--black)' }}>
-                Relaxation
-              </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
-                We rarely spend time doing absolutely nothing, so our neocortex — the rational, thinking part of the brain — is almost never switched off. We very much want it out of the way during labour. Practising relaxation in pregnancy makes it far easier to relax on cue.
-              </p>
-            </div>
-            <div className="card">
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--black)' }}>
-                Hypnobirthing tracks
-              </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
-                Written by hypnotherapists to induce calm, and full of encouragement about how capable you and your body are. Do not worry if you fall asleep listening — it still goes in. Just never while driving.
-              </p>
-            </div>
-            <div className="card">
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--black)' }}>
-                Anchoring
-              </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
-                Cues your brain learns to associate with relaxation — a room spray, an essential oil, a blanket, a particular playlist. Use them while you practise, then bring them to your birth space and they help you relax wherever you are.
-              </p>
-            </div>
+            {TOOLS.map((tool) => (
+              <div key={tool.name} className="card">
+                <span className="tool-icon" aria-hidden="true">{tool.icon}</span>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--black)' }}>
+                  {tool.name}
+                </h3>
+                <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.75, fontWeight: 300 }}>
+                  {tool.body}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

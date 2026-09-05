@@ -29,7 +29,7 @@ function PodcastPageStatic() {
         title={<>Dou-La-La the <em>Birthy Podcast</em></>}
         subtitle="Two doulas in conversation giving you honest birth talk, myth busting and just generally having a good chat!"
         img1={{ src: '/images/leanne-peace-111.jpg', alt: 'Leanne' }}
-        img2={{ src: '/images/leanne-van-14.jpg', alt: 'On the road' }}
+        img2={{ src: '/images/leanne-play-37.jpg', alt: 'Leanne' }}
         actions={
           <p style={{ fontSize: '0.95rem', color: 'var(--grey-mid)', fontWeight: 300 }}>
             Search <strong>&ldquo;Dou-La-La&rdquo;</strong> on your favourite podcast platform
