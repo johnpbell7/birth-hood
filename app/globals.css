@@ -1483,19 +1483,11 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .links-page {
   min-height: 100vh;
   background: var(--pink-ultra);
-  padding: 2rem 1.1rem 3rem;
+  padding: 1.2rem 1.1rem 3rem;
 }
 .links-inner { max-width: 520px; margin: 0 auto; }
 
-.links-header { text-align: center; margin-bottom: 1.6rem; }
-.links-avatar {
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--white);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
-}
+.links-header { text-align: center; margin-bottom: 1.4rem; }
 .links-title {
   font-family: 'Poppins', sans-serif;
   font-size: 1.75rem;
@@ -1616,8 +1608,7 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 }
 
 @media (min-width: 560px) {
-  .links-page { padding-top: 3rem; }
-  .links-avatar { width: 96px; height: 96px; }
+  .links-page { padding-top: 2rem; }
   .links-title { font-size: 2rem; }
   .links-tile { font-size: 0.88rem; }
 }

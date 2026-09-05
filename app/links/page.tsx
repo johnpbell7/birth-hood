@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { cmsOrStatic } from '@/lib/cms-page'
 
@@ -58,14 +57,6 @@ function LinksPageStatic() {
     <main className="links-page">
       <div className="links-inner">
         <header className="links-header">
-          <Image
-            src="/images/logo.jpg"
-            alt="birth-hood"
-            width={150}
-            height={150}
-            className="links-avatar"
-            priority
-          />
           <h1 className="links-title">birth-hood</h1>
           <p className="links-tagline">
             Education · Support · Community
