@@ -8,17 +8,19 @@ import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
 
 export const metadata: Metadata = {
-  title: 'Prenatal & Postnatal Yoga',
-  description: 'Prenatal, postnatal and parent and baby yoga classes in NW Leicestershire. Nourish your body, calm your mind and connect with your baby.',
+  title: 'Pregnancy & Baby Yoga',
+  description: 'Pregnancy yoga and parent & baby yoga classes in NW Leicestershire. Nourish your body, calm your mind and connect with your baby.',
 }
 
 const SITE = 'https://www.birth-hood.co.uk'
+// All yoga bookings go through Ticket Tailor.
+const TICKET_TAILOR = 'https://www.tickettailor.com/events/birthhood/'
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  serviceType: 'Prenatal & postnatal yoga classes',
-  name: 'Prenatal & Postnatal Yoga',
-  description: 'Prenatal, postnatal and parent and baby yoga classes in NW Leicestershire — safe, adapted movement to nourish your body and calm your mind.',
+  serviceType: 'Pregnancy & parent and baby yoga classes',
+  name: 'Pregnancy & Baby Yoga',
+  description: 'Pregnancy yoga and parent & baby yoga classes in NW Leicestershire — safe, adapted movement to nourish your body and calm your mind.',
   url: `${SITE}/yoga`,
   provider: { '@type': 'HealthAndBeautyBusiness', name: 'birth-hood', url: SITE },
   areaServed: ['NW Leicestershire', 'Leicestershire', 'Midlands'],
@@ -28,7 +30,7 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
-    { '@type': 'ListItem', position: 2, name: 'Prenatal & Postnatal Yoga', item: `${SITE}/yoga` },
+    { '@type': 'ListItem', position: 2, name: 'Pregnancy & Baby Yoga', item: `${SITE}/yoga` },
   ],
 }
 
@@ -58,14 +60,15 @@ function YogaPageStatic() {
       <JsonLd data={breadcrumbSchema} />
       <PageHero
         ctaLabel="Book Your Place"
+        ctaHref={TICKET_TAILOR}
         eyebrow="Move. Breathe. Connect."
-        title={<>Prenatal &amp; Postnatal <em>Yoga</em></>}
-        subtitle="Prenatal/Postnatal and Parent and Yoga Classes in NW Leicestershire. Nourish your body, calm your mind and prepare for birth."
+        title={<>Pregnancy &amp; Baby <em>Yoga</em></>}
+        subtitle="Two classes in NW Leicestershire — pregnancy yoga to prepare for birth, and parent &amp; baby yoga for afterwards."
         img1={{ src: '/images/yoga-class.jpg', alt: 'Prenatal yoga class' }}
         img2={{ src: '/images/leanne-portrait.jpg', alt: 'Leanne' }}
         actions={
           <a
-            href="https://buytickets.at/birthhood"
+            href={TICKET_TAILOR}
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -83,7 +86,7 @@ function YogaPageStatic() {
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
               <div className="section-label">Pregnancy Yoga</div>
-              <h2>birth-hood yoga</h2>
+              <h2>Pregnancy Yoga</h2>
               <p>
                 Pregnancy yoga has many benefits, both physical and emotional, these include providing
                 a safe space to relaxation and connection to your baby, meeting other new mums to be,
@@ -147,6 +150,16 @@ function YogaPageStatic() {
                   support you at every stage.
                 </p>
               </div>
+
+              <a
+                href={TICKET_TAILOR}
+                className="btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'block', textAlign: 'center', marginTop: '1.5rem' }}
+              >
+                Book Pregnancy Yoga
+              </a>
             </div>
           </div>
         </div>
@@ -158,7 +171,7 @@ function YogaPageStatic() {
           <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
             <div className="prose">
               <div className="section-label">Parent &amp; Baby Yoga</div>
-              <h2>Connect with your body and your baby</h2>
+              <h2>Parent &amp; Baby Yoga</h2>
               <p>
                 Each session will include Postnatal yoga, Baby Yoga and Parent and Baby Yoga activities,
                 both allowing time to connect with your body and your baby.
@@ -218,185 +231,14 @@ function YogaPageStatic() {
               </div>
 
               <a
-                href="https://calendly.com/birthhood/free-consultation"
+                href={TICKET_TAILOR}
                 className="btn-primary"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ display: 'block', textAlign: 'center', marginTop: '1.5rem' }}
               >
-                Enquire Now
+                Book Parent &amp; Baby Yoga
               </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CLASS OPTIONS */}
-      <section className="section-pad">
-        <div className="wrap">
-          <div className="section-label">Classes &amp; Pricing</div>
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.1 }}>
-            Choose your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>yoga experience</em>
-          </h2>
-          <p style={{ color: 'var(--grey-mid)', fontSize: '0.97rem', lineHeight: 1.6, fontWeight: 300, marginBottom: '3rem', maxWidth: '600px' }}>
-            Course cost varies depending on the length of the course. Every class includes use of all equipment.
-          </p>
-
-          <div className="grid-3" style={{ gap: '1.5rem' }}>
-            {/* Private / Online (left) */}
-            <div className="price-card">
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Private or online
-              </div>
-              <div className="price-amount">POA</div>
-              <div className="price-period">tailored to you</div>
-              <ul className="price-features">
-                <li>One-to-one sessions</li>
-                <li>Fully personalised practice</li>
-                <li>In-person or online</li>
-                <li>Flexible scheduling</li>
-                <li>Ideal for complex pregnancies</li>
-                <li>Partner welcome to join</li>
-              </ul>
-              <a
-                href="https://calendly.com/birthhood/free-consultation"
-                className="btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: 'block', textAlign: 'center' }}
-              >
-                Enquire
-              </a>
-            </div>
-
-            {/* Prenatal Group classes (featured middle) */}
-            <div className="price-card featured">
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '0.5rem' }}>
-                Most popular
-              </div>
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Prenatal group classes
-              </div>
-              <div className="price-amount">£10</div>
-              <div className="price-period">PAYG · drop-in welcome</div>
-              <ul className="price-features">
-                <li>Weekly group classes</li>
-                <li>NW Leicestershire venue</li>
-                <li>All trimesters welcome</li>
-                <li>No prior yoga experience needed</li>
-                <li>Mat and props provided</li>
-                <li>Community of expectant parents</li>
-              </ul>
-              <a
-                href="https://calendly.com/birthhood/free-consultation"
-                className="btn-primary"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: 'block', textAlign: 'center' }}
-              >
-                Book Class
-              </a>
-            </div>
-
-            {/* Postnatal Group classes (right) */}
-            <div className="price-card">
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Postnatal group classes
-              </div>
-              <div className="price-amount">£10</div>
-              <div className="price-period">PAYG · drop-in welcome</div>
-              <ul className="price-features">
-                <li>Suitable from 6 weeks postpartum</li>
-                <li>12 weeks for C-section / instrumental</li>
-                <li>Restore core and pelvic floor</li>
-                <li>Gentle return to exercise</li>
-                <li>Supportive community space</li>
-                <li>NW Leicestershire venue</li>
-              </ul>
-              <a
-                href="https://calendly.com/birthhood/free-consultation"
-                className="btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: 'block', textAlign: 'center' }}
-              >
-                Book Class
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* POSTNATAL YOGA */}
-      <section className="section-pad">
-        <div className="wrap">
-          <div className="grid-2" style={{ gap: '5rem', alignItems: 'flex-start' }}>
-            <div className="prose">
-              <div className="section-label">Postnatal yoga</div>
-              <h2>Reconnect with your body after birth</h2>
-              <p>
-                This session aims to create a nurturing space to replenish energy, release stress,
-                feel supported, restore the core and pelvic floor, improving strength, stamina and
-                well-being.
-              </p>
-              <p>
-                Postnatal Yoga is suitable for anyone who has given birth and needs to reconnect
-                with their body, release and stretch muscles, rebalancing the pelvic and sacroiliac
-                areas to gently get back into exercise.
-              </p>
-              <p>
-                It takes approximately 12–24 months for your body to return to its pre-pregnancy
-                state, and our hormonal change can affect the strength and mobility of our joints so
-                it&apos;s really important to progressively adapt as opposed to carry on as if nothing
-                has happened.
-              </p>
-
-              <div className="card card-pink" style={{ marginTop: '1.5rem' }}>
-                <div className="section-label" style={{ marginBottom: '0.8rem' }}>When can I start?</div>
-                <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
-                  This class is suitable from <strong style={{ color: 'var(--black)' }}>6 weeks postpartum</strong> (vaginal birth) and{' '}
-                  <strong style={{ color: 'var(--black)' }}>12 weeks postpartum</strong> for caesarean or instrumental birth / 3rd or 4th degree tears.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <div className="section-label" style={{ marginBottom: '1.5rem' }}>Benefits of postnatal yoga</div>
-              <div className="stat-grid">
-                <div className="stat-card">
-                  <div className="stat-number">↑</div>
-                  <div className="stat-label">Restores core strength and pelvic floor</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">↓</div>
-                  <div className="stat-label">Releases stress and replenishes energy</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">♥</div>
-                  <div className="stat-label">Rebalances pelvic and sacroiliac areas</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">✿</div>
-                  <div className="stat-label">Improves strength, stamina and well-being</div>
-                </div>
-              </div>
-
-              <div className="card" style={{ marginTop: '2rem' }}>
-                <div className="section-label" style={{ marginBottom: '0.8rem' }}>PAYG pricing</div>
-                <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2rem', fontWeight: 600, color: 'var(--black)', marginBottom: '0.2rem' }}>£10</p>
-                <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
-                  Per class — drop-in welcome. Course cost varies depending on the length of the course.
-                </p>
-                <a
-                  href="https://buytickets.at/birthhood"
-                  className="btn-primary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: 'inline-block', marginTop: '1rem' }}
-                >
-                  Book Your Place
-                </a>
-              </div>
             </div>
           </div>
         </div>
@@ -417,8 +259,8 @@ function YogaPageStatic() {
 
       <CtaBand
         heading="Ready to move, breathe and connect?"
-        body="Book your first prenatal or postnatal yoga class — all levels welcome."
-        href="https://calendly.com/birthhood/free-consultation"
+        body="Book your place in pregnancy yoga or parent & baby yoga — all levels welcome."
+        href={TICKET_TAILOR}
         label="Book Your Place"
       />
     </>
