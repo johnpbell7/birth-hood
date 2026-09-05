@@ -4,6 +4,10 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'cdn.sanity.io' },
+      // Instagram grid — Behold's cached copies (Instagram's own URLs expire).
+      { protocol: 'https', hostname: 'behold.pictures' },
+      { protocol: 'https', hostname: 'cdn2.behold.pictures' },
+      { protocol: 'https', hostname: '**.cdninstagram.com' },
     ],
   },
   // 301 redirects from the old Wix URLs to the new structure, so existing

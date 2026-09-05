@@ -1030,11 +1030,28 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .insta-tagline { color: rgba(0,0,0,0.55); font-size: 0.9rem; font-weight: 300; line-height: 1.6; margin-top: 0.3rem; }
 .insta-follow-btn { white-space: nowrap; }
 /* 6-tile grid */
-.insta-grid-v2 { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 280px 280px; gap: 8px; max-width: 1300px; margin: 0 auto 2rem; }
+/* Square tiles, like Instagram's own grid — portrait reels lose far less to
+   the crop than they did in a landscape box. */
+.insta-grid-v2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; max-width: 1300px; margin: 0 auto 2rem; }
+.insta-grid-v2 > * { aspect-ratio: 1; }
 .insta-tile { position: relative; overflow: hidden; display: block; text-decoration: none; border-radius: 4px; background: var(--pink-pale); }
 .insta-tile img, .insta-tile-img { transition: transform 0.5s ease; }
 .insta-tile-img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
 .insta-tile:hover img { transform: scale(1.05); }
+.insta-video-badge {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+}
 .insta-tile-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(232,99,139,0.75) 0%, rgba(0,0,0,0.55) 100%); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.35s ease; }
 .insta-tile:hover .insta-tile-overlay { opacity: 1; }
 .insta-tile-cta { color: var(--white); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border: 1.5px solid rgba(255,255,255,0.7); padding: 0.5rem 1.2rem; border-radius: 2rem; backdrop-filter: blur(4px); }
@@ -1138,7 +1155,7 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .stat-label { font-size: 0.72rem; overflow-wrap: anywhere; }
   .insta-section { padding: 4rem 1.5rem; }
   .insta-grid { grid-template-columns: repeat(2,1fr); grid-template-rows: 200px 200px 200px; }
-  .insta-grid-v2 { grid-template-columns: repeat(2,1fr); grid-template-rows: 200px 200px 200px; }
+  .insta-grid-v2 { grid-template-columns: repeat(2,1fr); }
   .insta-profile-header { gap: 1rem; }
   .insta-follow-btn { width: 100%; text-align: center; justify-content: center; }
 }

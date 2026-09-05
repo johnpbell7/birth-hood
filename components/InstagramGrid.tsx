@@ -1,10 +1,17 @@
+import Image from 'next/image'
 import type { InstagramPost } from '@/lib/instagram'
 
-/**
- * The real feed, when INSTAGRAM_ACCESS_TOKEN is set. Until it is, we show a
- * plain follow panel rather than a grid of shoot photos — those aren't
- * Instagram posts and shouldn't be dressed up as them.
- */
+/** Play triangle on video posts, so a still doesn't read as a photo. */
+function PlayBadge() {
+  return (
+    <span className="insta-video-badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+        <path d="M8 5.5v13l11-6.5z" />
+      </svg>
+    </span>
+  )
+}
+
 export default function InstagramGrid({ posts }: { posts: InstagramPost[] }) {
   if (posts.length === 0) {
     return (
@@ -18,18 +25,27 @@ export default function InstagramGrid({ posts }: { posts: InstagramPost[] }) {
 
   return (
     <div className="insta-grid-v2">
-      {posts.map((post) => {
-        const imgSrc = post.media_type === 'VIDEO' ? (post.thumbnail_url ?? '') : post.media_url
-        return (
-          <a key={post.id} href={post.permalink} target="_blank" rel="noopener noreferrer" className="insta-tile">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={imgSrc} alt={post.caption?.slice(0, 80) ?? '@birthhooduk'} className="insta-tile-img" />
-            <div className="insta-tile-overlay">
-              <span className="insta-tile-cta">View on Instagram</span>
-            </div>
-          </a>
-        )
-      })}
+      {posts.map((post) => (
+        <a
+          key={post.id}
+          href={post.permalink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="insta-tile"
+        >
+          <Image
+            src={post.imageUrl}
+            alt={post.alt}
+            fill
+            sizes="(max-width: 900px) 50vw, 33vw"
+            style={{ objectFit: 'cover' }}
+          />
+          {post.isVideo && <PlayBadge />}
+          <div className="insta-tile-overlay">
+            <span className="insta-tile-cta">View on Instagram</span>
+          </div>
+        </a>
+      ))}
     </div>
   )
 }
