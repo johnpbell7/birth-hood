@@ -908,6 +908,23 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .insta-tile:hover .insta-tile-overlay { opacity: 1; }
 .insta-tile-cta { color: var(--white); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border: 1.5px solid rgba(255,255,255,0.7); padding: 0.5rem 1.2rem; border-radius: 2rem; backdrop-filter: blur(4px); }
 /* Bottom CTA row */
+/* Shown until the live feed is connected — a brand panel, not fake posts. */
+.insta-empty {
+  max-width: 1300px;
+  margin: 0 auto 2rem;
+  background: var(--pink-ultra);
+  border-radius: 4px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.insta-empty-text {
+  max-width: 46ch;
+  margin: 0 auto;
+  color: var(--grey-mid);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
 .insta-cta-row { text-align: center; padding-top: 1rem; }
 .insta-view-all { display: inline-flex; align-items: center; gap: 0.4rem; }
 

@@ -1,27 +1,17 @@
-import Image from 'next/image'
 import type { InstagramPost } from '@/lib/instagram'
 
-const STATIC_FALLBACK = [
-  { src: '/images/leanne-peace-111.jpg', alt: 'Leanne — @birthhooduk', pos: 'center top' },
-  { src: '/images/class-sofa-265.jpg', alt: 'Hypnobirthing class — @birthhooduk', pos: 'center' },
-  { src: '/images/birth-pool-partner-316.jpg', alt: 'Doula support in labour — @birthhooduk', pos: 'center' },
-  { src: '/images/yoga-class-189.jpg', alt: 'Pregnancy yoga — @birthhooduk', pos: 'center' },
-  { src: '/images/newborn-held-170.jpg', alt: 'Newborn cuddles — @birthhooduk', pos: 'center' },
-  { src: '/images/parent-baby-150.jpg', alt: 'Parent and baby class — @birthhooduk', pos: 'center 30%' },
-]
-
+/**
+ * The real feed, when INSTAGRAM_ACCESS_TOKEN is set. Until it is, we show a
+ * plain follow panel rather than a grid of shoot photos — those aren't
+ * Instagram posts and shouldn't be dressed up as them.
+ */
 export default function InstagramGrid({ posts }: { posts: InstagramPost[] }) {
   if (posts.length === 0) {
     return (
-      <div className="insta-grid-v2">
-        {STATIC_FALLBACK.map((item, i) => (
-          <a key={i} href="https://www.instagram.com/birthhooduk" target="_blank" rel="noopener noreferrer" className="insta-tile">
-            <Image src={item.src} alt={item.alt} fill style={{ objectFit: 'cover', objectPosition: item.pos }} />
-            <div className="insta-tile-overlay">
-              <span className="insta-tile-cta">View on Instagram</span>
-            </div>
-          </a>
-        ))}
+      <div className="insta-empty">
+        <p className="insta-empty-text">
+          Classes, births, yoga, the odd rant and a lot of babies — it all goes on Instagram first.
+        </p>
       </div>
     )
   }
