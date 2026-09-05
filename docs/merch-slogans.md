@@ -77,9 +77,59 @@ Same lane as "what could possibly go wrong".
 Nobody makes decent partner merch, and partners are the ones stood in the
 corner holding the bag.
 
+The rule for this whole section: he can't claim the choice, so the edge comes
+from him being the one who makes the room hear her. Guard dog, not
+decision maker. Anything that reads as him protecting her — "my wife, my
+rules" and that flavour — is the hero tee with the agency handed to the wrong
+person, and the audience clocks it instantly.
+
+### The pair
+
+Sell as a set with the hero tee. Same typography, one design flipped, so it
+costs nothing extra and doubles the basket.
+
+- Hers: MY BIRTH. MY BODY. MY FUCKING CHOICE.
+- His: **HER BIRTH. HER BODY. HER FUCKING CHOICE.**
+
+### Doorman
+
+- **I'M NOT THE DECISION MAKER. I'M THE FUCKING DOORMAN.**
+- SHE SAID NO. I'M JUST THE VOLUME.
+- HER BODY. HER CALL. MY JOB'S THE DOOR.
+- DON'T ASK ME. IT'S NOT MY BODY.
+- POLITE — UNTIL YOU TOUCH HER WITHOUT ASKING.
+
+### Quietly menacing
+
+- **I WRITE DOWN NAMES.** — ominous, funny, and a real tactic
+- TALK TO HER. I'M JUST HERE TO REMEMBER WHAT YOU SAID.
+- ASK HER AGAIN AND I'LL ASK FOR YOUR NAME.
+- **"IS THAT NECESSARY?" — me, all night.**
+
+### No bullshit
+
+- THE DAD WHO READ THE FUCKING EVIDENCE
+- I'M NOT "JUST THE DAD"
+- YES, I'M ONE OF *THOSE* DADS.
+- SHE'S NOT BEING DIFFICULT. SHE'S BEING FUCKING CLEAR.
+- NO BULLSHIT ON MY WATCH
+- YOUR POLICY. HER BODY. EASY CHOICE.
+
+### Funny, less sweary
+
 - BIRTH PARTNER / TRAINED, NOT TERRIFIED
+- BIRTH PARTNER / PROFESSIONAL PAIN IN THE ARSE
 - I ASK THE QUESTIONS SO SHE DOESN'T HAVE TO
+- SNACK BOY. GUARD DOG. HYPE MAN.
 - CHIEF SNACK OFFICER
+- I KNOW WHAT B.R.A.I.N. STANDS FOR. DO YOU?
+
+### Partner shortlist
+
+1. HER BIRTH. HER BODY. HER FUCKING CHOICE. — sold as the pair
+2. I WRITE DOWN NAMES. — the standalone hit, and not even rude
+3. I'M NOT THE DECISION MAKER. I'M THE FUCKING DOORMAN.
+4. "IS THAT NECESSARY?" — me, all night. — the funny one, and ad-safe
 
 ## Shortlist to print first
 
