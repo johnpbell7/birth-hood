@@ -248,6 +248,11 @@ export type ShopProduct = {
   // File extension of the download (e.g. "pdf", "mp3") — used to show a
   // "PDF"/"Audio" tag on the card. Safe to expose; the URL is never included.
   fileExt?: string | null
+  // Set for services that are booked rather than downloaded (the Power Hours).
+  // A product with a bookingUrl skips the cart entirely and links straight out,
+  // so it is unaffected by whether Stripe checkout is switched on.
+  bookingUrl?: string | null
+  bookingLabel?: string | null
 }
 // SERVER-ONLY — includes the download URL + filename, used only after payment.
 export type ShopProductFull = ShopProduct & { fileUrl?: string | null; fileName?: string | null }
@@ -258,7 +263,7 @@ export async function getShopProducts(): Promise<ShopProduct[]> {
     return await client.fetch(
       `*[_type == "product" && active != false]{
         _id, title, description, price, "imageUrl": image.asset->url,
-        "fileExt": file.asset->extension
+        "fileExt": file.asset->extension, bookingUrl, bookingLabel
       } | order(order asc, title asc)`,
       {},
       { next: { revalidate: 60 } },

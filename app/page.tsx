@@ -49,9 +49,11 @@ const DEFAULT_SERVICES = [
   },
   {
     num: '03',
-    name: 'Prenatal Yoga',
+    name: 'Yoga',
+    // `lead` renders bold ahead of the description, naming both class types.
+    lead: 'Pregnancy and Parent & Baby Yoga.',
     description:
-      'Gentle, evidence-based prenatal yoga for all stages of pregnancy. Nourish your body, calm your mind and build a beautiful community.',
+      ' Gentle, evidence-based yoga for all stages of pregnancy and beyond. Nourish your body, calm your mind and build a beautiful community.',
     href: '/yoga',
     icon: (
       <svg className="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -165,6 +167,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
     return {
       ...def,
       name: cms?.name ?? def.name,
+      lead: 'lead' in def ? (def as { lead?: string }).lead : undefined,
       description: cms?.description ?? def.description,
       href: cms?.href ?? def.href,
     }
@@ -365,7 +368,7 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
                 <span className="service-num">{svc.num}</span>
                 {svc.icon}
                 <div className="service-name">{svc.name}</div>
-                <p className="service-desc">{svc.description}</p>
+                <p className="service-desc">{svc.lead && <strong>{svc.lead}</strong>}{svc.description}</p>
                 <span className="service-link">
                   Learn more
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

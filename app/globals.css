@@ -607,6 +607,7 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .service-icon { width: 44px; height: 44px; margin-bottom: 1.4rem; color: var(--pink-deep); }
 .service-name { font-family: 'Poppins', sans-serif; font-size: 1.35rem; font-weight: 500; margin-bottom: 0.8rem; line-height: 1.2; }
 .service-desc { font-size: 0.86rem; color: var(--grey-mid); line-height: 1.75; font-weight: 300; margin-bottom: 1.5rem; }
+.service-desc strong { color: var(--black); font-weight: 600; }
 .service-link { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
 .service-link svg { width: 13px; height: 13px; transition: transform 0.3s; }
 .service-card:hover .service-link svg { transform: translateX(4px); }
@@ -1638,3 +1639,17 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 @media (max-width: 900px) {
   .pkg-card { padding: 1.8rem 1.5rem; }
 }
+
+
+/* Shop: services that are booked rather than downloaded (the Power Hours). */
+.shop-tag--book { background: var(--black); color: var(--white); }
+.shop-add--book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+.shop-add--book:hover { background: var(--pink-deep); border-color: var(--pink-deep); color: var(--white); }

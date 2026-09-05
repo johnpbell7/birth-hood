@@ -84,10 +84,14 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
           return (
             <div key={p._id} className={`shop-card${inCart ? ' selected' : ''}`}>
               <div className="shop-ph">
-                <span className={`shop-tag${kind.audio ? ' shop-tag--audio' : ''}`}>
-                  <TagIcon audio={kind.audio} />
-                  {kind.label}
-                </span>
+                {p.bookingUrl ? (
+                  <span className="shop-tag shop-tag--book">1-2-1 session</span>
+                ) : (
+                  <span className={`shop-tag${kind.audio ? ' shop-tag--audio' : ''}`}>
+                    <TagIcon audio={kind.audio} />
+                    {kind.label}
+                  </span>
+                )}
                 {p.imageUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={p.imageUrl} alt={p.title} className="shop-ph-photo" />
@@ -105,14 +109,25 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
                 {p.description && <p className="shop-card-desc">{p.description}</p>}
                 <div className="shop-card-foot">
                   <span className="shop-price">£{(p.price || 0).toFixed(2)}</span>
-                  <button
-                    type="button"
-                    className={`shop-add${inCart ? ' on' : ''}`}
-                    onClick={() => (inCart ? remove(p._id) : add(p._id))}
-                    aria-pressed={inCart}
-                  >
-                    {inCart ? '✓ In cart' : 'Add to cart'}
-                  </button>
+                  {p.bookingUrl ? (
+                    <a
+                      className="shop-add shop-add--book"
+                      href={p.bookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {p.bookingLabel || 'Book now'}
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      className={`shop-add${inCart ? ' on' : ''}`}
+                      onClick={() => (inCart ? remove(p._id) : add(p._id))}
+                      aria-pressed={inCart}
+                    >
+                      {inCart ? '✓ In cart' : 'Add to cart'}
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

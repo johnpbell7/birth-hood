@@ -5,6 +5,28 @@ import type { ShopProduct } from '@/lib/sanity-queries'
 // No imageUrl on purpose: the cards render a "placeholder" block plus a
 // PDF/Audio tag derived from fileExt.
 export const PLACEHOLDER_PRODUCTS: ShopProduct[] = [
+  // Booked, not downloaded — these link straight to Calendly and stay out of
+  // the cart, so they work whether or not Stripe checkout is switched on.
+  {
+    _id: 'power-hour',
+    title: '⚡ Birth-Hood Power Hour',
+    description:
+      "60 minutes of personalised birth support. You've read the guides. You've Googled. You've got questions. Now let's actually talk it through — bring your birth plan, induction options, previous birth experience, worries or whatever is currently making you go \"hang on… what?\". We'll spend an hour working through your situation, your options and what matters to you.",
+    price: 50,
+    imageUrl: '/images/shop/power-hour.jpg',
+    bookingUrl: 'https://calendly.com/birthhood/power-hour',
+    bookingLabel: 'Book Power Hour',
+  },
+  {
+    _id: 'power-session',
+    title: '⚡ Birth-Hood Power Session',
+    description:
+      'Two hours of personalised birth support. Got a LOT to unpack? Two hours to properly work through your birth preparation, preferences, questions and decision-making — without trying to cram everything into 60 minutes.',
+    price: 80,
+    imageUrl: '/images/shop/power-session.jpg',
+    bookingUrl: 'https://calendly.com/birthhood/power-hour',
+    bookingLabel: 'Book Power Session',
+  },
   {
     _id: 'demo-hypno-mp3',
     title: 'Complete Hypnobirthing MP3 Bundle',

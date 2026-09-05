@@ -44,6 +44,20 @@ export default defineType({
       validation: (R) => R.required(),
     }),
     defineField({
+      name: 'bookingUrl',
+      title: 'Booking link',
+      type: 'url',
+      description:
+        'For services that are booked rather than downloaded (e.g. a Power Hour). ' +
+        'If set, the card links straight to this URL instead of going through the cart.',
+    }),
+    defineField({
+      name: 'bookingLabel',
+      title: 'Booking button text',
+      type: 'string',
+      description: 'Defaults to "Book now" when a booking link is set.',
+    }),
+    defineField({
       name: 'active',
       title: 'Show in shop',
       type: 'boolean',
