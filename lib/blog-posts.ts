@@ -1,15 +1,16 @@
 // Blog posts migrated from the previous Wix site (birth-hood.co.uk/blog).
-// Text is Leanne's own, unchanged apart from whitespace and list formatting;
-// images were pulled from the old site and re-optimised into /public/images/blog.
+// Text is Leanne's own, unchanged apart from whitespace, list formatting and
+// pulling run-in headings onto their own line. Images were pulled from the old
+// site and re-optimised into /public/images/blog.
 //
 // These render whenever Sanity has no published posts, so the blog is never
 // empty. Sanity posts, once published, take precedence.
 
-export type BlockType = 'p' | 'h2' | 'li' | 'img' | 'ref'
+export type BlockType = 'p' | 'h2' | 'h3' | 'li' | 'img' | 'ref'
 
 export interface PostBlock {
   type: BlockType
-  /** Text for p/h2/li/ref; image path for img */
+  /** Text for p/h2/h3/li/ref; image path for img */
   value: string
   /** Alt text — img only */
   alt?: string
@@ -174,6 +175,45 @@ export const blogPosts: BlogPost[] = [
       { type: 'p', value: `Oxytocin is also impacted by/works together with other hormones, these include prolactin, melatonin, and prostaglandin. The interrelationship between birth hormones is integral in the physiology of birth and the whole perinatal period. Take prostaglandin, this hormone is responsible for softening the cervix and encouraging the initiation of contractions. This is one of the first steps of the birth process, where the contractions draw up the muscles in the uterus which help to dilate the cervix. The perfect design. Alongside this, melatonin receptors are found in the walls of the uterus, when there is low lighting, melatonin is released and this is thought to help trigger the release of oxytocin, which could be a reason that labours often start at night. In relation to evolution, this makes sense, less threat of danger at night, right? And we know bright lights inhibit oxytocin, so another factor in how understanding melatonin can help the birth process. Prolactin, known as the ‘parenting hormone’ builds throughout pregnancy and peaks during birth, alongside oxytocin. Its primary role is in helping produce breast/chest milk, as well as helping parents adjust to their new role, supporting a new-born’s life outside the uterus.` },
       { type: 'p', value: `Adrenaline is the hormone that impacts birth most, in a negative way. It is our fight or flight response and is produced when we feel threatened, usually in birth because we’re fearful/in pain. Adrenaline can stall or stop birth all together and is greatly affected by the environment we are in. Seeking safety, knowing about the birth process, birth rights and having someone to support/advocate for you can really help you to minimise the impact adrenaline can have. Adrenaline does have one positive impact when we are in the ‘transition’ phase, where it helps us to ‘wake up’ and supports the physiological process of the ‘fetal ejection reflex’. This is usually a natural response, and when other hormones are optimal, the rise in adrenaline shouldn’t cause a delay in birth, often in fact, it is the opposite!` },
       { type: 'p', value: `Unfortunately, there are many aspects which inhibit our natural production of birth hormones, which are not what we want or need during the perinatal period. Most of these are avoidable, but many are perpetuated by the media and our HCP when information shared is either biased or simply untrue. Thus, creating fear, or a belief that we are unable to birth without support for external factors. One of the biggest barriers to our birthing hormones.` },
+    ],
+  },
+  {
+    slug: 'what-is-hypnobirthing',
+    title: `What the F is hypnobirthing anyway?`,
+    category: 'hypnobirthing',
+    publishedAt: '2023-04-17',
+    readingTime: 6,
+    excerpt: `It’s the name that lets it down. Hypnobirthing is not swinging clocks and vagina whispering — it’s information, mindset, decision-making tools, and yes, the breathing. Send this to the sceptics.`,
+    coverImage: '/images/blog/hypnobirthing-class-session.jpg',
+    coverAlt: `Leanne running a hypnobirthing session with two couples, using activity cards around a table`,
+    body: [
+      { type: 'p', value: `The chances are hypnobirthing to you may sound like some ‘hippy’ thing that only people having home births use or you may have heard that it is just ‘breathing’.` },
+      { type: 'p', value: `When, it’s the name that lets it down, because it is so much more than that!!` },
+      { type: 'p', value: `Be sure to send this to partners, family or friends who may think it’s a load of rubbish!` },
+      { type: 'h2', value: `It’s getting informed about birth` },
+      { type: 'p', value: `It’s learning all about the process of birth, the hormones involved, how to choose your birth place, how your environment can help you to feel positive and help the process along, the role of the birth partner, the stages of labour, positions to help aid baby’s position, how to write a birth plan and all sorts of other stuff that if you haven’t been at loads of births (and most of us haven’t) you just won’t know unless you’ve been told it or sought it out.` },
+      { type: 'p', value: `The more you know about birth, the more likely it is that you will feel prepared to face it yourself. So ultimately, it’s a change of mindset.` },
+      { type: 'p', value: `Knowing what the body is doing and HOW can really help you to see birth as a bodily function like any other and take a lot of the fear away. Even if your birth is not going to be a planned physiological birth, understanding the processes and maximising hormones can you’re your birth be way more positive.` },
+      { type: 'p', value: `Between getting as informed as possible and taking in lots of positive information about birth, you can completely change your mindset from one full of fear, of what can ‘go wrong’ into one that expects birth to ‘go right’ (whatever that means).` },
+      { type: 'p', value: `Feeling positive and confident at the start of labour can go a long way to helping the process along by keeping away from fight or flight and producing lots of oxytocin (the hormone that is responsible for birth)”.` },
+      { type: 'h2', value: `It’s learning decision making tools` },
+      { type: 'p', value: `Knowing your rights when it comes to birth and knowing how and where to get all the information you need, helps you to feel informed and confident in making the decisions needed to birth your baby. This may be during pregnancy, by getting information from third parties such as AIMS doing your own research or having a go to (your hypnobirthing teacher). It maybe during labour, in which case using decision making tools designed to get as much information about your circumstances will help you to make decisions about your care. Just knowing the questions to ask to find out if it’s safe to take 30 mins to make your decision can make a huge difference. Nobody wants to decide in a rush, knowing some time could have been taken to process it and ensure the choices were understood and considered and the best one for the family chosen!` },
+      { type: 'h2', value: `It’s the hypnobirthing tools you’ve probably heard about` },
+      { type: 'p', value: `Finally here are the famous hypnobirthing tools, what comes to mind when people say hypnobirthing (aside from swinging clocks and vagina whispering). These tools are an incredible way to prepare for birth and remain calm and comfortable throughout. However, on their own without all the stuff above, they’re not enough. Add these into your routine alongside all the information and mindset stuff and you have got this!` },
+      { type: 'h3', value: `Breathing Techniques` },
+      { type: 'p', value: `These ensure you’re taking lots of nice big even breaths throughout your labour to keep the oxygen flowing nicely, this will help your uterus to be able to do its job as efficiently and comfortably as possible. They are also a great way of distracting you from what’s going on around you and giving you something else to focus on. It sounds simple but breathing techniques can do so much to keep you calm and if you practice them during pregnancy, you will feel the benefit on the day.` },
+      { type: 'h3', value: `Visualisation` },
+      { type: 'p', value: `This is a way to almost practise birth before its time to do it for real. Thinking in your head about how you’d like your birth to go or saying it out loud, can help you to feel more confident in your plans and trick your mind into thinking it’s nothing new when labour starts for real! This can help reduce the chance of entering fight or flight and keep oxytocin flowing!` },
+      { type: 'h3', value: `Affirmations` },
+      { type: 'p', value: `Using the law of repetition, you can convince your brain to believe something just by showing it the same information repeatedly. Instead of talking about how you DON’T want labour to go, write affirmations and say things about how you DO want it to go. Giving your brain a bit of cheerleading can help it to believe in you! Instead of saying ‘I don’t want to tear’ say ‘my body WILL stretch to accommodate my baby’. After a while the affirmations sink into your subconscious and help you to have confidence in yourself which in turn will help you feel more relaxed and encourage the hormones needed for labour.` },
+      { type: 'h3', value: `Relaxation` },
+      { type: 'p', value: `As humans living in a world full of things to do, technology etc. we rarely spend time relaxing and doing absolutely nothing! This means that our neocortex, the part of our brain responsible for rational thinking, is almost never switched off. We very much want that part of the brain to be out of the way during labour and not interfering with the process by thinking of unhelpful scenarios! By practising relaxation during pregnancy, you can make it easier to relax on cue, a skill that’s very handy for labour! Try lying back and doing absolutely nothing, on the sofa, in bed or in the bath, wherever you like! If you find it difficult to switch off then doing something that doesn’t require much thought counts too! Colouring in, knitting/ crochet, walking in nature etc. may be more your thing. Do what works for you!` },
+      { type: 'h3', value: `Hypnobirthing tracks` },
+      { type: 'p', value: `Listening to hypnobirthing tracks will help you to relax, they are usually written by hypnotherapists and therefore help to induce a state of calm and relaxation. The words will also provide you with lots of encouragement and self-belief as they talk you through how amazing you and your body are. Don’t worry if you fall asleep listening to them, they will still be going into your subconscious even if you’re not actively listening. Just be sure you don’t listen when driving or operating heavy machinery as this is not safe. It’s fine to listen to affirmation tracks anytime though for that little boost of confidence!` },
+      { type: 'h3', value: `Anchoring` },
+      { type: 'p', value: `Whilst you are practising relaxation you can help by setting up cues for your brain to associate with relaxation and therefore help you to do it whenever you want, these are called anchors. Anchors can help you to incorporate all 5 senses and therefore make the conditions seem the same wherever you are. You may spray a room spray or have an essential oil that you use whilst relaxing that you then use in labour, you may have a blanket or cushion that you have with you whilst relaxing that you can have with you in your birth space or you may use your hypnobirthing tracks or relaxing music to aid your relaxation, then you can use this during labour and it will all help you to relax despite other things being different such as the location (or the fact you’re in labour eeek!).` },
+      { type: 'img', value: '/images/blog/hypnobirthing-class-session.jpg', alt: `Leanne running a hypnobirthing session with two couples, using activity cards around a table` },
+      { type: 'p', value: `TOP TIP- Use all the hypnobirthing tools at once throughout your pregnancy and in birth and see how chilled you can feel (yes all births)!` },
     ],
   },
 ]

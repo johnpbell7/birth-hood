@@ -66,6 +66,8 @@ function StaticBody({ body }: { body: PostBlock[] }) {
       )
     } else if (block.type === 'h2') {
       out.push(<h2 key={i}>{block.value}</h2>)
+    } else if (block.type === 'h3') {
+      out.push(<h3 key={i}>{block.value}</h3>)
     } else if (block.type === 'ref') {
       out.push(
         <p key={i} style={{ fontSize: '0.78rem', lineHeight: 1.7, color: 'var(--grey-light)', wordBreak: 'break-word' }}>
@@ -99,12 +101,16 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       <section className="page-hero">
         <div className="page-hero-inner">
-          {category && <div className="page-eyebrow">{category.replace(/-/g, ' ')}</div>}
-          <h1 className="page-title" style={{ fontSize: 'clamp(2rem,4vw,3.5rem)' }}>{title}</h1>
-          <p style={{ fontSize: '0.82rem', color: 'rgba(0,0,0,0.5)', fontWeight: 300 }}>
-            {date}
-            {readingTime ? `${date ? ' · ' : ''}${readingTime} min read` : ''}
-          </p>
+          {/* Wrapped so the hero text sits in the grid's first column rather than
+              spilling one element per cell. */}
+          <div className="page-hero-text">
+            {category && <div className="page-eyebrow">{category.replace(/-/g, ' ')}</div>}
+            <h1 className="page-title" style={{ fontSize: 'clamp(2rem,4vw,3.5rem)', maxWidth: '15ch' }}>{title}</h1>
+            <p style={{ fontSize: '0.82rem', color: 'rgba(0,0,0,0.5)', fontWeight: 300 }}>
+              {date}
+              {readingTime ? `${date ? ' · ' : ''}${readingTime} min read` : ''}
+            </p>
+          </div>
         </div>
       </section>
 
