@@ -1,9 +1,9 @@
 import Image from 'next/image'
 
 /**
- * Photo that sits directly beneath a `.stat-grid`, sharing its 3px gutter so the
- * two read as one block. Used on the doula service pages to stop the stats
- * panel looking identical on every page.
+ * Section photo that fills the right-hand column of a `.grid-2` where the
+ * doula service pages would otherwise repeat the same stats panel.
+ * /doula keeps its stats; the individual service pages use this instead.
  */
 export default function StatBlockImage({ src, alt }: { src: string; alt: string }) {
   return (
@@ -11,8 +11,7 @@ export default function StatBlockImage({ src, alt }: { src: string; alt: string 
       style={{
         position: 'relative',
         width: '100%',
-        aspectRatio: '16 / 10',
-        marginTop: '3px',
+        aspectRatio: '4 / 5',
         overflow: 'hidden',
         background: 'var(--pink-ultra)',
       }}

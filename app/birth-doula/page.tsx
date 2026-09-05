@@ -85,24 +85,6 @@ function BirthDoulaPageStatic() {
               </p>
             </div>
             <div>
-              <div className="stat-grid">
-                <div className="stat-card">
-                  <div className="stat-number">25%</div>
-                  <div className="stat-label">Fewer caesarean sections (Cochrane Review)</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">31%</div>
-                  <div className="stat-label">Less pain relief requested with doula support</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">34%</div>
-                  <div className="stat-label">Less likely to have a negative birth experience</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">100's</div>
-                  <div className="stat-label">of families I&apos;ve supported</div>
-                </div>
-              </div>
               <StatBlockImage src="/images/doula-support.jpg" alt="Leanne supporting a client through labour" />
             </div>
           </div>

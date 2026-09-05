@@ -57,24 +57,6 @@ function PostnatalDoulaPageStatic() {
               </p>
             </div>
             <div>
-              <div className="stat-grid">
-                <div className="stat-card">
-                  <div className="stat-number">Free</div>
-                  <div className="stat-label">Initial consultation — no obligation</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">Flex</div>
-                  <div className="stat-label">Hours spread across days, weeks or months</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">2hr</div>
-                  <div className="stat-label">Minimum visit length — no rushed drop-ins</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">£40</div>
-                  <div className="stat-label">Per hour for additional visits (minimum 2 hours)</div>
-                </div>
-              </div>
               <StatBlockImage src="/images/leanne-speaking.jpg" alt="Leanne talking with a group of parents in a relaxed, homely setting" />
             </div>
           </div>

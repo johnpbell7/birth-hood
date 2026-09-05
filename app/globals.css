@@ -1281,3 +1281,150 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .areas-online { font-size: 0.95rem; color: var(--grey-mid); font-weight: 300; line-height: 1.6; }
 .areas-online a { color: var(--pink-deep); font-weight: 500; text-decoration: underline; }
 .areas-online-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--pink); margin-right: 0.6rem; vertical-align: middle; box-shadow: 0 0 0 4px rgba(254,127,204,0.25); }
+
+
+/* ── Links page (/links) ───────────────────────────────────────────────────
+   Instagram-bio landing page. Mobile first: everything sits in one narrow
+   column, and the secondary links go two-up so the whole set is reachable
+   without a long scroll. */
+.links-page {
+  min-height: 100vh;
+  background: var(--pink-ultra);
+  padding: 2rem 1.1rem 3rem;
+}
+.links-inner { max-width: 520px; margin: 0 auto; }
+
+.links-header { text-align: center; margin-bottom: 1.6rem; }
+.links-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--white);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+.links-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0.8rem 0 0.4rem;
+  line-height: 1.1;
+}
+.links-tagline {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--grey-mid);
+  margin: 0;
+}
+
+.links-social { display: flex; justify-content: center; gap: 0.7rem; margin-top: 1.1rem; }
+.links-social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.links-social a:hover { background: var(--pink); color: var(--white); transform: translateY(-2px); }
+.links-social svg { width: 19px; height: 19px; }
+
+/* Shared tap-target sizing across every link on the page. */
+.links-primary,
+.links-secondary,
+.links-tile,
+.links-review {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  line-height: 1.3;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+.links-primary:active,
+.links-secondary:active,
+.links-tile:active,
+.links-review:active { transform: scale(0.985); }
+
+.links-primary {
+  min-height: 54px;
+  padding: 0.9rem 1.2rem;
+  margin-bottom: 0.6rem;
+  background: var(--pink);
+  color: var(--black);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 14px rgba(254, 127, 204, 0.4);
+}
+.links-primary:hover { background: var(--pink-deep); color: var(--white); }
+
+.links-secondary {
+  flex-direction: column;
+  gap: 0.15rem;
+  min-height: 54px;
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 0.9rem;
+  background: var(--black);
+  color: var(--white);
+  font-size: 0.98rem;
+}
+.links-secondary span {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.02em;
+}
+.links-secondary:hover { background: #262626; }
+
+.links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.links-tile {
+  min-height: 52px;
+  padding: 0.7rem 0.6rem;
+  background: var(--white);
+  color: var(--black);
+  font-size: 0.83rem;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
+.links-tile:hover { background: var(--pink-pale); border-color: transparent; }
+
+.links-review {
+  min-height: 50px;
+  margin-top: 0.9rem;
+  padding: 0.8rem 1.2rem;
+  background: transparent;
+  color: var(--pink-deep);
+  font-size: 0.85rem;
+  border: 1.5px solid var(--pink);
+}
+.links-review:hover { background: var(--pink); color: var(--black); }
+
+.links-foot {
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--grey-light);
+  margin-top: 2rem;
+}
+
+/* Very narrow phones — one column reads better than cramped pairs. */
+@media (max-width: 340px) {
+  .links-grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 560px) {
+  .links-page { padding-top: 3rem; }
+  .links-avatar { width: 96px; height: 96px; }
+  .links-title { font-size: 2rem; }
+  .links-tile { font-size: 0.88rem; }
+}

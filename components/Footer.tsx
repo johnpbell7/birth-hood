@@ -89,6 +89,7 @@ export default async function Footer() {
             <li><Link href="/contact">Get in Touch</Link></li>
             <li><a href="https://calendly.com/birthhood/free-consultation" target="_blank" rel="noopener noreferrer">Book a Consultation</a></li>
             <li><Link href="/faq">FAQ</Link></li>
+            <li><Link href="/links">All Links</Link></li>
             <li><Link href="/terms">T&Cs</Link></li>
           </ul>
         </div>

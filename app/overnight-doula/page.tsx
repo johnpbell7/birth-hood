@@ -139,24 +139,6 @@ function OvernightDoulaPageStatic() {
               </p>
             </div>
             <div>
-              <div className="stat-grid">
-                <div className="stat-card">
-                  <div className="stat-number">10hr</div>
-                  <div className="stat-label">Overnight shift — 10:00pm to 8:00am</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">£250</div>
-                  <div className="stat-label">Per night, from — three support levels</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">Free</div>
-                  <div className="stat-label">Initial consultation — no obligation</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">5+</div>
-                  <div className="stat-label">Nights — block booking discounts available</div>
-                </div>
-              </div>
               <StatBlockImage src="/images/leanne-portrait.jpg" alt="Leanne, birth-hood doula" />
             </div>
           </div>
