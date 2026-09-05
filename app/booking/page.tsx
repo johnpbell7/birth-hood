@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 }
 
 // Courses & classes are booked via Ticket Tailor; consultations via Calendly.
-const TICKETS = 'https://buytickets.at/birthhood'
+const TICKETS = 'https://www.tickettailor.com/events/birthhood/'
 const CALENDLY = 'https://calendly.com/birthhood/free-consultation'
 
 const bookingOptions = [
