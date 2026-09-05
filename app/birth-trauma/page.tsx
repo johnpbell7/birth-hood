@@ -22,8 +22,8 @@ function BirthTraumaPageStatic() {
         eyebrow="Healing is possible."
         title={<>Birth <em>Trauma</em> Support</>}
         subtitle="Whether your birth was frightening, overwhelming or just not what you hoped — your feelings are valid, and you don't have to carry them alone."
-        img1={{ src: '/images/quiet-hands-329.jpg', alt: 'A safe space' }}
-        img2={{ src: '/images/leanne-doorway-5.jpg', alt: 'Leanne' }}
+        img1={{ src: '/images/trauma-rewind.jpg', alt: 'A safe space' }}
+        img2={{ src: '/images/trauma-hands.jpg', alt: 'You are not alone' }}
         actions={
           <a
             href="https://calendly.com/birthhood/free-consultation"
