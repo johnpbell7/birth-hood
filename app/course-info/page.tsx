@@ -87,6 +87,37 @@ const INCLUDED = [
   },
 ]
 
+const SPECIALIST = [
+  {
+    name: 'Caesarean Birth Preparation',
+    price: 'From £145',
+    body: [
+      'Are you planning an elective or having a scheduled caesarean? Not sure what to expect? Want to make it as positive as possible?',
+      'Your 3 hour session will include all you need to prepare before, during and post surgery.',
+      'With Hypnobirthing.',
+    ],
+  },
+  {
+    name: 'Hasty Hypnobirthing',
+    price: 'From £145',
+    body: [
+      'In a rush? 37 weeks plus?',
+      'Learn some basics, have a whistle stop tour and gain your tools for your awesome birth.',
+      'We\u2019ll cover what hypnobirthing is, breathing, relaxation, birth positions and more!',
+    ],
+  },
+  {
+    name: 'Hypnobirthing Refresher',
+    price: 'From £100',
+    note: 'Depending on your needs',
+    body: [
+      'For second, third\u2026 time parents who have already completed a hypnobirthing course and want a refresh before this baby arrives.',
+      'Get in touch to let me know what you need and we\u2019ll work out the right package, tailored specifically to you.',
+      'Availability: please get in touch.',
+    ],
+  },
+]
+
 function CourseInfoPageStatic() {
   return (
     <>
@@ -245,93 +276,29 @@ function CourseInfoPageStatic() {
           </h2>
 
           <div className="grid-3" style={{ gap: '1.5rem' }}>
-            {/* Caesarean Birth Preparation */}
-            <div className="card card-pink" style={{ display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.35rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--black)', lineHeight: 1.2 }}>Caesarean Birth Preparation</h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
-                Are you planning an elective or having a scheduled caesarean? Not sure what to expect?
-                Want to make it as positive as possible?
-              </p>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
-                Your 3 hour session will include all you need to prepare before, during and post surgery.
-              </p>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.5rem' }}>
-                With Hypnobirthing
-              </p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginTop: 'auto', paddingTop: '0.5rem' }}>
-                <div>
-                  <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '0.25rem' }}>Investment</div>
-                  <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500 }}>From £145</div>
-                </div>
-                <a
-                  href="https://calendly.com/birthhood/free-consultation"
-                  className="btn-outline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Book Now
-                </a>
-              </div>
-            </div>
+            {SPECIALIST.map((course) => (
+              <div key={course.name} className="card card-pink spec-card">
+                <h3 className="spec-card-title">{course.name}</h3>
+                {course.body.map((para, i) => (
+                  <p key={i} className="spec-card-text">{para}</p>
+                ))}
 
-            {/* Hasty Hypnobirthing */}
-            <div className="card card-pink" style={{ display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.35rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--black)', lineHeight: 1.2 }}>Hasty Hypnobirthing</h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
-                In a rush? 37 weeks plus?
-              </p>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
-                Learn some basics, have a whistle stop tour and gain your tools for your awesome birth.
-              </p>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.5rem' }}>
-                We&apos;ll cover what hypnobirthing is, breathing, relaxation, birth positions and more!
-              </p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginTop: 'auto', paddingTop: '0.5rem' }}>
-                <div>
-                  <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '0.25rem' }}>Investment</div>
-                  <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500 }}>From £145</div>
+                <div className="spec-card-foot">
+                  <div className="spec-card-price-label">Investment</div>
+                  <div className="spec-card-price">{course.price}</div>
+                  {/* Kept even when empty so the three cards line up exactly. */}
+                  <div className="spec-card-note">{course.note ?? '\u00A0'}</div>
+                  <a
+                    href="https://calendly.com/birthhood/free-consultation"
+                    className="btn-primary spec-card-cta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Book Now
+                  </a>
                 </div>
-                <a
-                  href="https://calendly.com/birthhood/free-consultation"
-                  className="btn-outline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Book Now
-                </a>
               </div>
-            </div>
-
-            {/* Hypnobirthing Refresher */}
-            <div className="card card-pink" style={{ display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.35rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--black)', lineHeight: 1.2 }}>Hypnobirthing Refresher</h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
-                For second, third&hellip; time parents who have already completed a hypnobirthing
-                course and want a refresh before this baby arrives.
-              </p>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1rem' }}>
-                Get in touch to let me know what you need and we&apos;ll work out the right package,
-                tailored specifically to you.
-              </p>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.5rem' }}>
-                Availability: please get in touch.
-              </p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginTop: 'auto', paddingTop: '0.5rem' }}>
-                <div>
-                  <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '0.25rem' }}>Investment</div>
-                  <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem', fontWeight: 500 }}>From £100</div>
-                  <div style={{ fontSize: '0.78rem', color: 'var(--grey-light)', fontWeight: 300, marginTop: '0.2rem' }}>Depending on your needs</div>
-                </div>
-                <a
-                  href="https://calendly.com/birthhood/free-consultation"
-                  className="btn-outline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Book Now
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

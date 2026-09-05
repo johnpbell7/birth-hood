@@ -924,6 +924,62 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .rating-facts { grid-template-columns: 1fr; }
 }
 
+/* ── Specialist course cards (Courses page) ───────────────────────────────
+   Three cards of different lengths, so the price and button sit in a footer
+   pushed to the bottom. The note line is always rendered — blank on the cards
+   that have none — so all three footers are the same height. */
+.spec-card { display: flex; flex-direction: column; }
+.spec-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+.spec-card-text {
+  color: var(--grey-mid);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.spec-card-foot {
+  margin-top: auto;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.spec-card-price-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--grey-mid);
+  margin-bottom: 0.25rem;
+}
+.spec-card-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--black);
+}
+.spec-card-note {
+  font-size: 0.78rem;
+  color: var(--grey-light);
+  font-weight: 300;
+  margin-top: 0.2rem;
+  min-height: 1.2em;
+}
+.spec-card-cta {
+  display: block;
+  width: 100%;
+  margin-top: 1.4rem;
+  text-align: center;
+  padding: 1.05rem 1.5rem;
+  font-size: 0.8rem;
+}
+
 /* CTA BAND */
 .cta-band { background: var(--pink); padding: 5rem 3rem; text-align: center; position: relative; overflow: hidden; }
 .cta-band > h2, .cta-band > p, .cta-band > a { position: relative; z-index: 1; }
