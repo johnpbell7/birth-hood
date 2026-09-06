@@ -17,6 +17,12 @@ export const metadata: Metadata = {
   description:
     'Hypnobirthing, doula support and pregnancy yoga from Leanne in Leicestershire and online UK-wide. Feel powerful, prepared and genuinely excited for birth.',
   keywords: ['hypnobirthing', 'doula', 'birth doula', 'prenatal yoga', 'birth trauma', 'Leicester', 'UK'],
+  // Carried over from the Wix site, which proved ownership to Google with this
+  // same tag. Without it the Search Console property un-verifies the moment DNS
+  // moves — losing the migration reporting exactly when it is needed.
+  verification: {
+    google: '2nCx1IK9QFAJpFwskGrGd35gVj3Z3lu3BsyGw3wNs0E',
+  },
   openGraph: {
     type: 'website',
     siteName: 'birth-hood',
