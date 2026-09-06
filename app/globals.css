@@ -790,6 +790,26 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .footer-links a:hover { color: var(--pink); }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: rgba(255,255,255,0.2); max-width: 1200px; margin: 0 auto; }
 
+/* Designer credit — the quietest line on the page, one notch below the
+   copyright, so it reads as a signature rather than a second footer. */
+.footer-credit {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 0.5rem 0.7rem; max-width: 1200px; margin: 1.25rem auto 0;
+  padding-top: 1.1rem; border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.66rem; line-height: 1.5; text-align: center;
+  color: rgba(255,255,255,0.22); letter-spacing: 0.02em;
+}
+.footer-credit a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+.footer-credit a:hover { color: rgba(255,255,255,0.5); text-decoration: underline; }
+.footer-credit-role { text-transform: uppercase; letter-spacing: 0.12em; }
+.footer-credit-name { color: rgba(255,255,255,0.4); font-weight: 500; }
+.footer-credit-sep { color: rgba(255,255,255,0.12); }
+@media (max-width: 640px) {
+  .footer-credit { gap: 0.35rem 0.55rem; font-size: 0.62rem; }
+  .footer-credit-sep { display: none; }
+  .footer-credit > span, .footer-credit > a { flex: 0 0 100%; }
+}
+
 /* REVEAL ANIMATIONS */
 /* .reveal animations now driven by GSAP via ScrollRevealInit */
 .reveal { /* GSAP sets opacity & transform inline */ }

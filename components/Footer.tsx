@@ -99,6 +99,17 @@ export default async function Footer() {
         <span>© {new Date().getFullYear()} birth-hood. All rights reserved.</span>
         <span>Made with ♥ for birthing people everywhere</span>
       </div>
+
+      <div className="footer-credit">
+        <span className="footer-credit-role">Website Design &amp; Development</span>
+        <span className="footer-credit-name">John Bell</span>
+        <span className="footer-credit-sep" aria-hidden="true">|</span>
+        <span>Graphic Design: Branding, Print &amp; Web</span>
+        <span className="footer-credit-sep" aria-hidden="true">|</span>
+        <a href="mailto:jb.designagency89@gmail.com">jb.designagency89@gmail.com</a>
+        <span className="footer-credit-sep" aria-hidden="true">|</span>
+        <a href="tel:+447428728780">07428 728780</a>
+      </div>
     </footer>
   )
 }
