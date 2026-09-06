@@ -17,7 +17,12 @@ export async function POST(req: NextRequest) {
     }
 
     // Fetch authoritative prices from Sanity — never trust prices from the client.
-    const products = await getShopProductsByIds(ids)
+    const all = await getShopProductsByIds(ids)
+    // A product with no price set would become a £0 line item — Stripe accepts
+    // that and the webhook would then email out the files for nothing. Drop
+    // them rather than sell them, so an unpriced product in the Studio can
+    // never give the shop away.
+    const products = all.filter((p) => typeof p.price === 'number' && p.price > 0)
     if (products.length === 0) {
       return NextResponse.json({ error: 'Selected items are unavailable.' }, { status: 400 })
     }
