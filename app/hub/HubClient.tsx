@@ -48,59 +48,6 @@ type UsefulSite = {
   logoLetter: string
 }
 
-const groups: ResourceGroup[] = [
-  {
-    label: 'Hypnobirthing essentials',
-    intro: "Your core hypnobirthing toolkit — handbook, affirmations and relaxation tools to practise alongside your course.",
-    items: [
-      { title: 'Your Handbook', href: '/downloads/hypnobirthing-handbook.pdf' },
-      { title: 'Printable Affirmations', href: '/downloads/printable-affirmations.pdf' },
-      { title: 'Extra TBU Colour Affirmations', href: '/downloads/tbu-colour-affirmations.pdf' },
-      { title: 'Short Relaxation Prompts', href: '/downloads/short-relaxation-prompts.pdf' },
-      { title: 'Partner Script', href: '/downloads/partner-script.pdf' },
-      { title: 'Birth Meditations', href: '/downloads/birth-meditations.pdf' },
-    ],
-  },
-  {
-    label: 'Planning for birth',
-    intro: "Everything you need to prepare for the big day — from your birth plan to what to pack and how to use the tools around you.",
-    items: [
-      { title: 'Birth planning guide', href: '/downloads/birth-planning-guide.pdf' },
-      { title: 'Antenatal session outline', href: '/downloads/antenatal-session-outline.pdf' },
-      { title: 'Weekly Agenda', href: '/downloads/weekly-agenda.pdf' },
-      { title: 'Daily activities guide', href: '/downloads/daily-activities-guide.pdf' },
-      { title: 'Partner Movement Guide', href: '/downloads/partner-movement-guide.pdf' },
-      { title: 'Peanut ball guide', href: '/downloads/peanut-ball-guide.pdf' },
-      { title: 'Pool inflation guide', href: '/downloads/pool-inflation-guide.pdf' },
-      { title: 'Birth bag & homebirth checklists', href: '/downloads/checklists.pdf' },
-      { title: 'Door Signs', href: '/downloads/door-signs.pdf' },
-      { title: 'Door counterweight (rebozo)', href: '/downloads/door-counterweight.pdf' },
-      { title: 'Pillars of a birth partner', href: '/downloads/pillars-of-a-birth-partner.pdf' },
-    ],
-  },
-  {
-    label: 'Specific situations',
-    intro: "In-depth guides for specific birth pathways — including caesarean, induction, premature birth, freebirth and biomechanics.",
-    items: [
-      { title: 'Caesarean Handbook', href: '/downloads/caesarean-workbook.pdf' },
-      { title: 'Induction guide', href: '/downloads/induction-guide.pdf' },
-      { title: 'Premature birth guide', href: '/downloads/preterm-birth-guide.pdf' },
-      { title: 'Birth Biomechanics eBook', href: '/downloads/birth-biomechanics.pdf' },
-      { title: 'Freebirth guide', href: '/downloads/birth-hood-freebirth-guide.pdf' },
-    ],
-  },
-  {
-    label: 'Postnatal & the fourth trimester',
-    intro: "Support for the weeks after birth — postpartum planning, feeding, and yoga with your baby.",
-    items: [
-      { title: 'Postpartum planning guide', href: '/downloads/postpartum-planning-guide.pdf' },
-      { title: 'Breastfeeding 101', href: '/downloads/breastfeeding-101.pdf' },
-      { title: 'Parent and Baby Yoga Handbook', href: '/downloads/parent-baby-yoga-handbook.pdf' },
-      { title: 'Postpartum core & stability yoga', href: '/downloads/postpartum-yoga-guide.pdf' },
-    ],
-  },
-]
-
 const albums: AudioAlbum[] = [
   {
     title: "TBU MP3's No Swearing",
@@ -236,7 +183,7 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
   const liveSites = buildUsefulSites(sanityResources)
 
   // Per-section: use Sanity data if present for that type, otherwise fall back to static
-  const displayGroups = liveGroups.length > 0 ? liveGroups : groups
+  const displayGroups = liveGroups
   const displayAlbums = liveAlbums.length > 0 ? liveAlbums : albums
   const displaySites = liveSites.length > 0 ? liveSites : usefulSites
 

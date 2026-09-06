@@ -13,33 +13,6 @@ export const metadata: Metadata = {
     'Free birth resources from birth-hood — 20 printable birth affirmations, a newborn checklist and a hypnobirthing relaxation MP3. No cost, no catch.',
 }
 
-const fallbackResources = [
-  {
-    emoji: '◈',
-    title: '20 Ready Made Affirmations',
-    desc: '20 ready-made birth-hood affirmations — print them out, cut them up and put them where you will see them throughout pregnancy and birth.',
-    href: '/downloads/birth-affirmations.pdf',
-    type: 'PDF Download',
-    tag: 'Most popular',
-  },
-  {
-    emoji: '♫',
-    title: 'FREE Hypnobirthing MP3',
-    desc: 'A free hypnobirthing relaxation MP3 to help you practise deep relaxation during pregnancy.',
-    href: '/downloads/hypnobirthing-relaxation.mp3',
-    type: 'Audio Download',
-    tag: null,
-  },
-  {
-    emoji: '○',
-    title: 'Newborn Checklist',
-    desc: 'Everything you need for your new arrival — a comprehensive newborn essentials checklist.',
-    href: '/downloads/newborn-checklist.pdf',
-    type: 'PDF Download',
-    tag: null,
-  },
-]
-
 const typeLabel = (t?: string) => {
   if (t === 'pdf') return 'PDF Download'
   if (t === 'audio') return 'Audio Download'
@@ -50,16 +23,19 @@ const typeLabel = (t?: string) => {
 export default async function FreebiesPage() {
   const sanityFreebies = await getFreebies()
 
-  const resources = sanityFreebies.length > 0
-    ? sanityFreebies.map((f) => ({
-        emoji: f.emoji ?? '✦',
-        title: f.title,
-        desc: f.description ?? '',
-        href: f.fileUrl ?? f.externalUrl ?? '#',
-        type: typeLabel(f.type),
-        tag: null as string | null,
-      }))
-    : fallbackResources
+  // Sanity is the only source now — the files these used to fall back on were
+  // sitting in public/ where anyone could take them, so they were removed.
+  // A freebie with nothing attached is skipped rather than shown as a dead link.
+  const resources = sanityFreebies
+    .filter((f) => f.fileUrl || f.externalUrl)
+    .map((f) => ({
+      emoji: f.emoji ?? '✦',
+      title: f.title,
+      desc: f.description ?? '',
+      href: (f.fileUrl ?? f.externalUrl) as string,
+      type: typeLabel(f.type),
+      tag: null as string | null,
+    }))
 
   return (
     <>

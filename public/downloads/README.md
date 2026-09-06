@@ -1,20 +1,24 @@
-# Downloads
+# public/downloads
 
-Place PDF and audio files in this directory to make them available for download.
+**Only free, public files belong here.** Everything in this folder is served
+openly by the site and committed to a public repository — there is no gate in
+front of it, and no way to add one.
 
-## Files expected
+Paid products and Client Hub documents live in Sanity instead:
 
-| Filename | Description |
+- Shop products are delivered through signed download links that expire after
+  seven days (`app/api/download/route.ts`).
+- Hub documents are served from the Sanity CDN behind the Hub's password.
+
+Twenty-seven files were removed from here in September 2026 because every paid
+PDF was downloadable for free at a guessable URL. If you are about to add a
+file, check first: would it matter if a stranger downloaded it? If so, upload
+it in the Studio, not here.
+
+## What is left, and why
+
+| File | Why it is public |
 |---|---|
-| `birth-affirmations.pdf` | 20 birth affirmations (printable) |
-| `birth-plan-template.pdf` | Comprehensive birth plan template |
-| `breathing-guide.pdf` | Hypnobirthing breathing techniques guide |
-| `reading-list.pdf` | Leanne's curated reading list |
-| `midwife-questions.pdf` | Questions to ask your midwife |
-
-## Notes
-
-- Files in `/public/downloads/` are served at `/downloads/filename.pdf`
-- They can be linked directly from the freebies page
-- For audio, MP3 or M4A files work well
-- To manage files via CMS instead, upload them to Sanity as freebie assets
+| `birth-hood-doula-pack.pdf` | Free lead magnet, linked from `/doula` |
+| `birth-hood-hypnobirthing-pack.pdf` | Free lead magnet, linked from `/hypnobirthing` |
+| `birth-affirmations.pdf` | Free download on `/freebies` |
