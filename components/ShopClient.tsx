@@ -43,7 +43,7 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
   const checkout = async () => {
     if (cart.size === 0) return
     if (demo) {
-      setNotice('These are sample resources — checkout goes live once the shop is switched on. 🌸')
+      setNotice('These are sample resources — checkout goes live once the shop is switched on. ⚡')
       return
     }
     setLoading(true)

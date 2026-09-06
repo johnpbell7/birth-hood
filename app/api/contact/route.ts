@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: 'Leanne at birth-hood <leanne@birth-hood.co.uk>',
       to: email,
-      subject: `Thanks for getting in touch, ${name.split(' ')[0]} 🌸`,
+      subject: `Thanks for getting in touch, ${name.split(' ')[0]} ⚡`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #c955a8;">Thank you for reaching out!</h2>

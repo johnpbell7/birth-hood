@@ -76,7 +76,7 @@ async function fulfil(session: Stripe.Checkout.Session) {
   await resend.emails.send({
     from: 'birth-hood <noreply@birth-hood.co.uk>',
     to: email,
-    subject: 'Your birth-hood downloads 🌸',
+    subject: 'Your birth-hood downloads ⚡',
     html: `
       <div style="font-family:sans-serif;max-width:600px;margin:0 auto;">
         <h2 style="color:#c955a8;">Thank you for your purchase!</h2>

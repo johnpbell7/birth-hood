@@ -10,7 +10,7 @@ export default function ShopSuccessPage() {
   return (
     <section className="section-pad" style={{ background: 'var(--pink-ultra)' }}>
       <div className="wrap" style={{ maxWidth: '620px', textAlign: 'center' }}>
-        <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌸</div>
+        <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚡</div>
         <h1 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, lineHeight: 1.1, margin: '0.5rem 0 1.5rem' }}>
           Thank you for your <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>purchase</em>
         </h1>
