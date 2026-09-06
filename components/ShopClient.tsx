@@ -119,7 +119,11 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
                   </ul>
                 )}
                 <div className="shop-card-foot">
-                  <span className="shop-price">£{(p.price || 0).toFixed(2)}</span>
+                  {/* Leanne sets the prices; until then, say so rather than
+                      showing £0.00. */}
+                  <span className="shop-price">
+                    {p.price > 0 ? `£${p.price.toFixed(2)}` : 'Price coming soon'}
+                  </span>
                   {p.bookingUrl ? (
                     <a
                       className="shop-add shop-add--book"

@@ -29,28 +29,6 @@ export default defineType({
       validation: (R) => R.required(),
     }),
     defineField({
-      name: 'description',
-      title: 'Short description',
-      type: 'text',
-      rows: 3,
-      description:
-        'The selling line shown on the shop card, e.g. "Your no-BS guide to preparing for birth, whatever your birth looks like." For a bundle you do NOT need to list what is inside — that list builds itself from the box below.',
-    }),
-    defineField({
-      name: 'image',
-      title: 'Cover image',
-      type: 'image',
-      options: { hotspot: true },
-      description: 'Optional. A cover/preview image for the product card.',
-    }),
-    defineField({
-      name: 'price',
-      title: 'Price (£)',
-      type: 'number',
-      description: 'Price in pounds, e.g. 12.50. Buyers are charged this amount.',
-      validation: (R) => R.required().min(0.5).precision(2),
-    }),
-    defineField({
       name: 'files',
       title: 'Files the buyer downloads',
       type: 'array',
@@ -80,7 +58,6 @@ export default defineType({
         'Tick the individual resources this bundle is made of — pick them from the list, no typing. Their files are sent to the buyer automatically, so you never upload the same MP3 or PDF twice. The buyer sees this list on the shop card.',
       of: [{ type: 'reference', to: [{ type: 'product' }] }],
     }),
-    // Kept so products created before bundles existed keep working.
     defineField({
       name: 'file',
       title: 'Download file (old single-file field)',
@@ -88,6 +65,28 @@ export default defineType({
       options: { accept: '.pdf,.docx,.mp3,.m4a,.wav,.mp4,.mov,.zip,.epub' },
       description: 'Older products used this. New ones should use "Download files" above.',
       hidden: ({ document }) => !document?.file,
+    }),
+    defineField({
+      name: 'description',
+      title: 'Short description',
+      type: 'text',
+      rows: 3,
+      description:
+        'The selling line shown on the shop card, e.g. "Your no-BS guide to preparing for birth, whatever your birth looks like." For a bundle you do NOT need to list what is inside — that list builds itself from the box below.',
+    }),
+    defineField({
+      name: 'price',
+      title: 'Price (£)',
+      type: 'number',
+      description: 'Price in pounds, e.g. 12.50. Buyers are charged this amount.',
+      validation: (R) => R.required().min(0.5).precision(2),
+    }),
+    defineField({
+      name: 'image',
+      title: 'Cover image',
+      type: 'image',
+      options: { hotspot: true },
+      description: 'Optional. A cover/preview image for the product card.',
     }),
     defineField({
       name: 'bookingUrl',
