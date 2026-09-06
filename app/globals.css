@@ -1259,7 +1259,6 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   font-size: .64rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
   padding: .32rem .6rem .32rem .5rem; border-radius: 999px; box-shadow: 0 3px 10px rgba(0,0,0,.18); }
 .shop-tag svg { width: 13px; height: 13px; }
-.shop-tag--audio { background: var(--pink-deep); }
 .shop-card-body { padding: 1.4rem 1.4rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
 .shop-card-title { font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 500; margin-bottom: .5rem; line-height: 1.25; }
 .shop-card-desc { font-size: .86rem; color: var(--grey-mid); line-height: 1.55; font-weight: 300; margin-bottom: 1.2rem; }

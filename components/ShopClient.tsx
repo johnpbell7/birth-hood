@@ -4,29 +4,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import type { ShopProduct } from '@/lib/sanity-queries'
 
-// Work out whether a product is an audio or PDF (or other) download from its
-// file extension, and give it a short tag label.
-function fileKind(ext?: string | null): { label: string; audio: boolean } {
-  const e = (ext || '').toLowerCase().replace('.', '')
-  if (['mp3', 'wav', 'm4a', 'aac', 'ogg', 'flac'].includes(e)) return { label: 'Audio', audio: true }
-  if (e === 'pdf') return { label: 'PDF', audio: false }
-  if (['mp4', 'mov', 'webm', 'm4v'].includes(e)) return { label: 'Video', audio: false }
-  if (e) return { label: e.toUpperCase(), audio: false }
-  return { label: 'File', audio: false }
-}
-
-function TagIcon({ audio }: { audio: boolean }) {
-  return audio ? (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <path d="M9 18V6l10-2v12" /><circle cx="6" cy="18" r="3" /><circle cx="16" cy="16" r="3" />
-    </svg>
-  ) : (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-      <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" /><path d="M14 3v5h5" />
-    </svg>
-  )
-}
-
 export default function ShopClient({ products, demo = false }: { products: ShopProduct[]; demo?: boolean }) {
   const [cart, setCart] = useState<Set<string>>(new Set())
   const [loading, setLoading] = useState(false)
@@ -80,22 +57,19 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
       <div className="shop-grid">
         {products.map((p) => {
           const inCart = cart.has(p._id)
-          const kind = fileKind(p.fileExt)
           return (
             <div key={p._id} className={`shop-card${inCart ? ' selected' : ''}`}>
               <div className="shop-ph">
+                {/* Only the two tags that say something the title doesn't.
+                    The PDF/Audio tags were removed — they were derived from the
+                    file, so Leanne couldn't control them anyway. */}
                 {p.bookingUrl ? (
                   <span className="shop-tag shop-tag--book">1-2-1 session</span>
                 ) : p.kind === 'bundle' ? (
                   <span className="shop-tag shop-tag--bundle">
                     Bundle{p.fileCount ? ` · ${p.fileCount} files` : ''}
                   </span>
-                ) : (
-                  <span className={`shop-tag${kind.audio ? ' shop-tag--audio' : ''}`}>
-                    <TagIcon audio={kind.audio} />
-                    {kind.label}
-                  </span>
-                )}
+                ) : null}
                 {p.imageUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={p.imageUrl} alt={p.title} className="shop-ph-photo" />
