@@ -81,15 +81,6 @@ export default defineType({
       placeholder: 'Welcome to birth-hood',
       group: 'home',
     }),
-    // Superseded by homeHeroTitle. Kept in the schema (hidden) so the stale
-    // value saved in Sanity does not show up as an "unknown field" warning.
-    defineField({
-      name: 'homeHeroHeadline',
-      title: 'Hero — Headline (old, unused)',
-      type: 'string',
-      hidden: true,
-      group: 'home',
-    }),
     defineField({
       name: 'homeHeroSubtitle',
       title: 'Hero — Subtitle',
@@ -148,14 +139,6 @@ export default defineType({
       description:
         'Heading of the intro block below the hero. Leave empty to use "Hi, I\'m Leanne". The words "birth-hood" are shown in pink italics automatically.',
       placeholder: "Hi, I'm Leanne",
-      group: 'home',
-    }),
-    // Superseded by homeWelcomeTitle — see the note above.
-    defineField({
-      name: 'homeWelcomeHeading',
-      title: 'Welcome — Heading (old, unused)',
-      type: 'string',
-      hidden: true,
       group: 'home',
     }),
     defineField({
