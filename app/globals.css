@@ -1958,3 +1958,57 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   color: var(--pink);
   line-height: 1;
 }
+
+
+/* HUB AUDIO — one block per track, each with its own player and download.
+   Albums are just headings now; the track is the object. */
+.audio-album + .audio-album { margin-top: 3rem; }
+.audio-album-head {
+  display: flex; align-items: baseline; gap: 1rem;
+  padding-bottom: 0.7rem; margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.audio-album-title {
+  font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 600;
+  color: var(--black); margin: 0; letter-spacing: -0.01em;
+}
+.audio-album-count {
+  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--grey-light); white-space: nowrap;
+}
+.audio-track-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.audio-track {
+  display: flex; flex-direction: column; gap: 0.7rem;
+  background: var(--white); border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 3px; padding: 1.1rem 1.2rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.audio-track:hover { border-color: rgba(254,127,204,0.55); box-shadow: 0 4px 18px rgba(184,63,147,0.07); }
+.audio-track-top { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; }
+.audio-track-title {
+  font-family: 'Poppins', sans-serif; font-size: 0.92rem; font-weight: 500;
+  color: var(--black); margin: 0; line-height: 1.35;
+}
+.audio-track-time {
+  font-size: 0.7rem; font-weight: 500; color: var(--grey-light);
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.audio-track-player { width: 100%; height: 34px; }
+.audio-track-dl {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem;
+  padding: 0.6rem 0.9rem; border: 1px solid var(--black); border-radius: 2px;
+  font-family: 'Poppins', sans-serif; font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--black);
+  text-decoration: none; transition: background 0.2s, color 0.2s;
+}
+.audio-track-dl:hover { background: var(--black); color: var(--white); }
+.audio-track-soon {
+  margin: 0; padding: 0.6rem 0.8rem; background: var(--pink-ultra);
+  border-radius: 2px; font-size: 0.72rem; font-style: italic; color: var(--grey-light);
+}
+@media (max-width: 520px) {
+  .audio-track-grid { grid-template-columns: 1fr; }
+}

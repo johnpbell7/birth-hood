@@ -25,6 +25,16 @@ type AudioTrack = {
   src?: string // to be filled in with uploaded MP3 URLs
 }
 
+/** Sanity serves assets inline by default; ?dl= makes the browser save it
+    under a readable name instead of the asset hash. */
+function downloadUrl(track: AudioTrack): string | undefined {
+  if (!track.src) return undefined
+  const name = track.title.replace(/[\\/:*?"<>|]+/g, '').trim()
+  return track.src.includes('cdn.sanity.io')
+    ? `${track.src}?dl=${encodeURIComponent(name)}.mp3`
+    : track.src
+}
+
 type AudioAlbum = {
   title: string
   subtitle: string
@@ -463,57 +473,49 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
             Play these relaxation tracks during pregnancy and your birth. Use headphones for the deepest practice, or play out loud in your birth space.
           </p>
 
-          <div className="grid-3" style={{ gap: '1.5rem' }}>
-            {displayAlbums.map((album) => (
-              <div key={album.title} className="card" style={{ padding: '1.5rem', background: 'var(--white)', borderRadius: '3px' }}>
-                {/* Album header */}
-                <div style={{ marginBottom: '1.2rem', paddingBottom: '1.2rem', borderBottom: '1px solid rgba(0,0,0,0.08)' }}>
-                  <div style={{ fontSize: '0.68rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '0.4rem' }}>
-                    birth-hood album
-                  </div>
-                  <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, color: 'var(--black)', marginBottom: '0.3rem', lineHeight: 1.2 }}>
-                    {album.title}
-                  </h3>
-                  <p style={{ fontSize: '0.82rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.5 }}>
-                    {album.subtitle}
-                  </p>
-                </div>
+          {displayAlbums.map((album) => (
+            <div key={album.title} className="audio-album">
+              <div className="audio-album-head">
+                <h3 className="audio-album-title">{album.title}</h3>
+                <span className="audio-album-count">
+                  {album.tracks.length} track{album.tracks.length === 1 ? '' : 's'}
+                </span>
+              </div>
 
-                {/* Tracks with HTML5 audio */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  {album.tracks.map((track, ti) => (
-                    <div key={track.title} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', minWidth: 0, flex: 1 }}>
-                          <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1rem', color: 'var(--pink-deep)', flexShrink: 0 }}>
-                            {String(ti + 1).padStart(2, '0')}
-                          </span>
-                          <span style={{ fontSize: '0.88rem', fontWeight: 500, color: 'var(--black)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                            {track.title}
-                          </span>
-                        </div>
-                        {track.duration && (
-                          <span style={{ fontSize: '0.72rem', color: 'var(--grey-light)', fontWeight: 500, flexShrink: 0 }}>
-                            {track.duration}
-                          </span>
+              <div className="audio-track-grid">
+                {album.tracks.map((track) => {
+                  const dl = downloadUrl(track)
+                  return (
+                    <div key={track.title} className="audio-track">
+                      <div className="audio-track-top">
+                        <h4 className="audio-track-title">{track.title}</h4>
+                        {track.duration && track.duration !== '\u2014' && (
+                          <span className="audio-track-time">{track.duration}</span>
                         )}
                       </div>
+
                       {track.src ? (
-                        <audio controls preload="none" style={{ width: '100%', height: '36px' }}>
-                          <source src={track.src} type="audio/mpeg" />
-                          Your browser does not support audio playback.
-                        </audio>
+                        <>
+                          <audio className="audio-track-player" controls preload="none">
+                            <source src={track.src} type="audio/mpeg" />
+                            Your browser does not support audio playback.
+                          </audio>
+                          <a className="audio-track-dl" href={dl} download>
+                            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                              <path d="M12 3v12" /><path d="m7 11 5 5 5-5" /><path d="M4 21h16" />
+                            </svg>
+                            Download MP3
+                          </a>
+                        </>
                       ) : (
-                        <div style={{ fontSize: '0.72rem', fontStyle: 'italic', color: 'var(--grey-light)', padding: '0.5rem 0.8rem', background: 'var(--pink-ultra)', borderRadius: '3px' }}>
-                          Audio file coming soon
-                        </div>
+                        <p className="audio-track-soon">Coming soon</p>
                       )}
                     </div>
-                  ))}
-                </div>
+                  )
+                })}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
