@@ -28,7 +28,13 @@ export async function GET(req: NextRequest) {
     return new NextResponse('Could not fetch the file.', { status: 502 })
   }
 
-  const fileName = file.name || `${product.title}`.replace(/[^\w.-]+/g, '-')
+  // Buyers should get a file named after the resource, not whatever the upload
+  // happened to be called. The label wins, then the original filename.
+  const ext = (file.name?.match(/\.[a-z0-9]+$/i)?.[0] ?? '').toLowerCase()
+  const base = (file.label || product.title || 'birth-hood')
+    .replace(/[\\/:*?"<>|]+/g, '')
+    .trim()
+  const fileName = file.label ? `${base}${ext}` : file.name || `${base}${ext}`
   const headers = new Headers()
   headers.set('Content-Type', fileRes.headers.get('content-type') || 'application/octet-stream')
   const len = fileRes.headers.get('content-length')
