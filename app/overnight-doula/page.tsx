@@ -39,40 +39,44 @@ const breadcrumbSchema = {
 
 const termsItems = [
   {
-    q: 'Booking',
-    a: 'A signed agreement and a 25% non-refundable booking fee are required to secure your dates.',
-  },
-  {
-    q: 'Payment',
-    a: 'The remaining balance is due 48 hours before your booked overnight shift, unless otherwise agreed.',
+    q: 'Booking & payment',
+    a: 'Your booking is secured once I have received your completed Overnight Doula Client Agreement and the booking payment. Your booking payment forms part of the total cost of your overnight support.\n\nThe booking payment is due at the time of booking and allows me to reserve the agreed date specifically for you. I will not normally hold an overnight booking date without the completed agreement and booking payment.\n\nThe remaining balance is due 48 hours before your booked overnight shift, unless we have agreed an alternative payment arrangement in writing. If your booking is made less than 48 hours before the planned shift, the full agreed balance will normally be due at the time of booking.\n\nAdditional hours, travel outside the agreed area and any other agreed extras will be charged at the rate confirmed with you before they are booked.\n\nYour booking payment is part-payment towards the service and is not automatically treated as a penalty or forfeited regardless of the circumstances. If you need to cancel or change your booking, the amount payable will be considered in accordance with the cancellation terms below and applicable consumer law.',
   },
   {
     q: 'Shift times',
-    a: 'Standard overnight support runs from 10:00pm–8:00am. Additional hours are charged at the agreed hourly rate.',
+    a: 'Standard overnight support runs from 10:00pm–8:00am and provides a 10-hour shift. Additional hours before or after your booked shift may be available by prior agreement and are charged at the agreed hourly rate.\n\nOvernight support is not a guarantee that your baby will sleep or that you will get a particular amount of uninterrupted sleep. My role is to provide calm, practical and emotional support and, where agreed, hands-on newborn care so that you have the best opportunity to rest.',
   },
   {
-    q: 'Cancellations',
-    a: "More than 48 hours' notice: your booking may be transferred to another available date where possible. Less than 48 hours' notice: the full fee is payable, as your date has been reserved exclusively for your family.",
+    q: 'Cancellations and changes',
+    a: "If you need to cancel or change a booking, please let me know as soon as possible.\n\nWhere you give more than 48 hours' notice, I will normally try to move your booking to another mutually suitable available date, subject to availability.\n\nWhere you give less than 48 hours' notice, I may need to charge some or all of the agreed fee because the time has been reserved specifically for your family and may no longer be reasonably replaceable.\n\nAny cancellation charge will be considered in light of the circumstances, including the amount of notice given, work already carried out, costs already incurred, any savings made, whether I am able to replace the booking and any other relevant circumstances.\n\nCancellation charges are intended to reflect genuine loss or committed professional time rather than operate as a penalty, and all cancellation arrangements remain subject to applicable consumer law and your statutory rights.",
   },
   {
     q: 'Travel',
-    a: 'Travel within an agreed radius is included. Mileage beyond this may be charged at £0.45 per mile, and any parking costs are payable by the client.',
+    a: 'Travel within the agreed area is included. Where your location falls outside the agreed travel area, additional mileage may be charged at £0.45 per mile, together with any reasonable parking or other agreed travel costs. Any additional travel costs will be discussed with you before booking wherever possible.',
   },
   {
     q: 'Illness',
-    a: 'Please let me know as soon as possible if anyone in the household has a contagious illness so we can discuss whether it is safe to proceed.',
+    a: 'Please let me know as soon as possible if you or anyone in your household has a contagious illness. We will discuss whether it is appropriate and safe for the overnight support to go ahead, be rearranged or be adapted.\n\nI may need to decline or rearrange a booking if attending would create an unreasonable risk of infection to me, another family I support or your household.',
+  },
+  {
+    q: 'Safe sleep & baby care',
+    a: "Your baby's safety comes first. I will support you to follow current safer-sleep guidance and will not knowingly encourage practices that place your baby at unnecessary risk.\n\nOvernight doula support is not automatically a sleeping shift for the doula. I will not fall asleep while I am the only adult responsible for your baby.\n\nWhere you are sleeping while I provide care for your baby, we will agree in advance how this will work and where your baby will sleep.",
   },
   {
     q: 'Scope of practice',
-    a: 'As your doula, I provide emotional, practical and evidence-informed support. I do not provide medical care, clinical assessments, or replace the role of your midwife, health visitor, GP or other healthcare professionals.',
+    a: "As your doula, I provide emotional, practical and evidence-informed support. I do not provide medical care, clinical assessments, diagnosis or treatment, and I do not replace your midwife, health visitor, GP, paediatrician or other healthcare professional.\n\nI can help you understand information, prepare questions, provide practical newborn support and signpost you to appropriate services, but healthcare decisions remain yours and/or those of the relevant healthcare professional.\n\nIf you have an urgent concern about your health or your baby's health, you should contact the appropriate maternity, medical or emergency service.",
   },
   {
     q: 'Safe working environment',
-    a: 'Families are asked to provide a safe, respectful, smoke-free working environment. I reserve the right to end a visit if I feel my safety is compromised.',
+    a: 'I ask families to provide a safe, respectful and smoke-free working environment. I may need to end or pause a visit if I reasonably believe that my safety is compromised, including because of violence, threatening behaviour, unsafe conditions or significant hazards within the home.',
   },
   {
     q: 'Confidentiality',
-    a: "Your family's privacy is extremely important. All personal information shared during our time together will remain confidential unless disclosure is required by law or there is a serious concern about the safety of you or your baby.",
+    a: "Your family's privacy is extremely important. Information shared with me during our work together will be treated confidentially within normal professional and safeguarding boundaries.\n\nThere may be circumstances where I am required to share information by law or where I have a serious safeguarding concern about the safety of you, your baby or another person.",
+  },
+  {
+    q: 'Agreement',
+    a: 'Your signed Overnight Doula Client Agreement, together with the birth-hood Master Website Terms & Conditions, forms the agreement between us. The client agreement contains the specific details of your booking, including your chosen package, date, hours and price.',
   },
 ]
 

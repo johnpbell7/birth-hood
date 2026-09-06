@@ -1023,7 +1023,10 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 .faq-q::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--pink-deep); flex-shrink: 0; transition: transform 0.3s; }
 .faq-item.open .faq-q::after { transform: rotate(45deg); }
 .faq-a { font-size: 0.93rem; color: var(--grey-mid); line-height: 1.6; font-weight: 300; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
-.faq-item.open .faq-a { max-height: 400px; padding-top: 1rem; }
+/* Generous cap so the longer T&Cs answers aren't clipped mid-sentence. */
+.faq-item.open .faq-a { max-height: 2400px; padding-top: 1rem; }
+.faq-a-para { margin: 0 0 0.9rem; }
+.faq-a-para:last-child { margin-bottom: 0; }
 
 /* GRID HELPERS */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }

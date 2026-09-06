@@ -17,7 +17,13 @@ export default function FaqAccordion({ items }: { items: FaqItem[] }) {
           <div className="faq-q" onClick={() => setOpen(open === i ? null : i)}>
             {item.q}
           </div>
-          <div className="faq-a">{item.a}</div>
+          {/* Blank lines in an answer become paragraphs — some of the T&Cs
+              answers run to several. */}
+          <div className="faq-a">
+            {item.a.split('\n\n').map((para, n) => (
+              <p key={n} className="faq-a-para">{para}</p>
+            ))}
+          </div>
         </div>
       ))}
     </div>
