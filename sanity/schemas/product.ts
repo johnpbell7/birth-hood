@@ -23,12 +23,6 @@ export default defineType({
       validation: (R) => R.required(),
     }),
     defineField({
-      name: 'sku',
-      title: 'SKU',
-      type: 'string',
-      description: 'Your own reference code, e.g. BH-BIRTHPREP or BH-BUNDLE-HYPNO. Not shown to buyers.',
-    }),
-    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
@@ -39,7 +33,8 @@ export default defineType({
       title: 'Short description',
       type: 'text',
       rows: 3,
-      description: 'Shown on the product card in the shop.',
+      description:
+        'The selling line shown on the shop card, e.g. "Your no-BS guide to preparing for birth, whatever your birth looks like." For a bundle you do NOT need to list what is inside — that list builds itself from the box below.',
     }),
     defineField({
       name: 'image',
@@ -57,10 +52,10 @@ export default defineType({
     }),
     defineField({
       name: 'files',
-      title: 'Download files',
+      title: 'Files the buyer downloads',
       type: 'array',
       description:
-        'Everything the buyer receives. Add as many as you like — each one is emailed as its own download link, so a set of MP3s does not need zipping.',
+        'Upload the actual PDFs, MP3s and so on here. Add as many as you like — each one is emailed as its own download link, so a set of MP3s does not need zipping. For a BUNDLE, leave this empty and use the box below instead.',
       of: [
         {
           type: 'file',
@@ -78,11 +73,11 @@ export default defineType({
     }),
     defineField({
       name: 'includes',
-      title: 'Bundle contains',
+      title: 'What is in this bundle',
       type: 'array',
       hidden: ({ document }) => document?.kind !== 'bundle',
       description:
-        'Pick the individual resources this bundle contains. Their files are delivered automatically — there is no need to upload them again here.',
+        'Tick the individual resources this bundle is made of — pick them from the list, no typing. Their files are sent to the buyer automatically, so you never upload the same MP3 or PDF twice. The buyer sees this list on the shop card.',
       of: [{ type: 'reference', to: [{ type: 'product' }] }],
     }),
     // Kept so products created before bundles existed keep working.
@@ -107,6 +102,13 @@ export default defineType({
       title: 'Booking button text',
       type: 'string',
       description: 'Defaults to "Book now" when a booking link is set.',
+    }),
+    defineField({
+      name: 'sku',
+      title: 'SKU (optional)',
+      type: 'string',
+      description:
+        'Just a reference code for your own records, e.g. BH-BIRTHPREP or BH-BUNDLE-HYPNO. Buyers never see it, and you can leave it blank.',
     }),
     defineField({
       name: 'active',

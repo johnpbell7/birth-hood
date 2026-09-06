@@ -6,30 +6,43 @@ whatever you type in the Price field is what the customer is charged.
 
 ## Adding an individual resource
 
-1. **Type**: Individual resource
-2. **SKU**: your own code, e.g. `BH-BIRTHPREP`. Not shown to buyers.
-3. **Title** and **Short description** — the description shows on the card.
-4. **Cover image** — optional but the cards look much better with one.
+Every product form has the same fields, in this order:
+
+1. **Type** — Individual resource
+2. **Title** — e.g. Birth-hood Birth Plan Tool Kit
+3. **Short description** — the selling line on the card, e.g. "Because your
+   birth plan should cover more than Plan A."
+4. **Cover image** — optional, but the cards look much better with one
 5. **Price (£)** — e.g. `12.50`
-6. **Download files** — add the PDF, MP3s, whatever the buyer gets. Add as many
-   as you like; each arrives as its own download link, so a set of MP3s does not
-   need zipping. Give each a **Name shown to the buyer** if the filename isn't
-   friendly.
-7. **Show in shop** — untick to hide it without deleting.
+6. **Files the buyer downloads** — this is where the actual PDF or MP3 goes.
+   **You can add as many as you want.** Four MP3s means four files here, and the
+   buyer gets four separate download links. Nothing needs zipping.
+7. **SKU** — optional, near the bottom. Just a code for your own records that
+   buyers never see. Leave it blank if you don't want one.
 
 ## Adding a bundle
 
-1. **Type**: Bundle
-2. Fill in SKU, title, description, image and price as above.
-3. **Bundle contains** — pick the individual resources it includes. Their files
-   are delivered automatically, so **do not upload the same files again**. This
-   matters for the MP3s: upload each one once, on its own product, and every
-   bundle that contains it just points at it.
-4. Only add something to **Download files** on a bundle if it is exclusive to
-   that bundle and doesn't exist as its own product.
+Same form, one difference: **you don't upload any files.**
 
-The shop card shows a "Bundle" tag, the number of files, and a list of what's
-inside.
+1. **Type** — Bundle. (A new box appears further down.)
+2. **Title**, **Short description**, **Cover image**, **Price** — as above.
+3. **Files the buyer downloads** — leave this empty.
+4. **What is in this bundle** — pick the individual resources from a list. No
+   typing, no re-uploading. Their files are sent to the buyer automatically.
+
+So for the Hypnobirthing Bundle you'd tick Birth Prep Handbook, Partner Script,
+Birth Planning Guide, Meditation Scripts, Weekly Agenda, Colouring Affirmations
+and the four MP3s — and the buyer receives every one of those files.
+
+**This is why each file is only ever uploaded once.** The Fourth Trimester Guide
+is in four different bundles; it exists as one product, and the four bundles
+point at it. Change the file later and every bundle updates at once.
+
+You don't need to write out what's in a bundle in the description either — the
+shop card builds that list itself from what you ticked.
+
+Only put something in **Files the buyer downloads** on a bundle if it exists
+*only* in that bundle and isn't sold on its own.
 
 ## What the buyer gets
 
