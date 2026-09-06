@@ -2006,3 +2006,26 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 @media (max-width: 520px) {
   .audio-track-grid { grid-template-columns: 1fr; }
 }
+
+/* MATES RATES — a live discount, so it reads as an offer, not a note. */
+.offer-strip { background: var(--black); color: var(--white); padding: 1.6rem 3rem; }
+.offer-strip-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem 2rem; flex-wrap: wrap;
+}
+.offer-strip-text { display: flex; flex-direction: column; gap: 0.25rem; min-width: 0; }
+.offer-strip-lead {
+  font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 600;
+  color: var(--white); letter-spacing: -0.01em;
+}
+.offer-strip-sub { font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.62); }
+.offer-code {
+  font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 600;
+  letter-spacing: 0.16em; color: var(--black); background: var(--pink);
+  padding: 0.7rem 1.4rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0;
+}
+@media (max-width: 640px) {
+  .offer-strip { padding: 1.4rem 1.5rem; }
+  .offer-strip-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .offer-strip-lead { font-size: 0.98rem; }
+}

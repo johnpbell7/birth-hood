@@ -370,6 +370,20 @@ function HypnobirthingPageStatic() {
         </div>
       </section>
 
+      {/* MATES RATES — a live discount, so it gets its own strip rather than
+          hiding in the FAQ. Applied at the Ticket Tailor checkout. */}
+      <section className="offer-strip">
+        <div className="wrap offer-strip-inner">
+          <div className="offer-strip-text">
+            <span className="offer-strip-lead">Book with a friend and you both save £50</span>
+            <span className="offer-strip-sub">
+              Enter the code at checkout when you book your group course through Ticket Tailor.
+            </span>
+          </div>
+          <span className="offer-code" aria-label="Discount code MATESRATES">MATESRATES</span>
+        </div>
+      </section>
+
       {/* SESSION OUTLINES LINK */}
       <section className="section-pad-sm" style={{ background: 'var(--pink-pale)' }}>
         <div className="wrap" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>

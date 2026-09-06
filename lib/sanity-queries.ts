@@ -109,13 +109,15 @@ export type HubResource = {
   order?: number
 }
 
+/** The Hub's tracklist is published even before the audio is uploaded — a
+    client should see what is coming — so audio entries come through with or
+    without a file and render as "Coming soon". Documents and links still have
+    to have something behind them, or they would render as dead links. */
 export async function getHubResources(): Promise<HubResource[]> {
   if (!client) return []
   try {
     return await client.fetch(
-    // Anything with no file, no video and no link would render as a dead
-    // button, so it stays hidden until Leanne attaches something.
-    `*[_type == "hubResource" && (defined(file.asset) || defined(videoUrl) || defined(externalUrl))] | order(order asc, title asc) {
+    `*[_type == "hubResource" && (type == "audio" || defined(file.asset) || defined(videoUrl) || defined(externalUrl))] | order(order asc, title asc) {
       _id,
       title,
       description,

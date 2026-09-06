@@ -61,7 +61,7 @@ const hypnobirthingFaqs = [
   },
   {
     q: 'How many couples are in a group course?',
-    a: 'I teach groups between 4–6 couples only, keeping classes small and personal. I also offer semi-private sessions — so if you and a friend want to book together, you both get £50 off using code MATESRATES.',
+    a: 'I teach groups between 4–6 couples only, keeping classes small and personal. I also offer semi-private sessions — so if you and a friend want to book together, you both get £50 off. Enter the code MATESRATES at checkout when you book through Ticket Tailor.',
   },
 ]
 
