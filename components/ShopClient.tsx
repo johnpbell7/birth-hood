@@ -127,6 +127,11 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
                     >
                       {p.bookingLabel || 'Book now'}
                     </a>
+                  ) : !(p.price > 0) ? (
+                    /* Visible so people can see what is coming, but not
+                       buyable — checkout refuses an unpriced item, so an
+                       enabled button would just fail at the last step. */
+                    <span className="shop-add shop-add--soon">Coming soon</span>
                   ) : (
                     <button
                       type="button"

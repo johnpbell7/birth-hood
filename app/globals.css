@@ -2029,3 +2029,10 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .offer-strip-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .offer-strip-lead { font-size: 0.98rem; }
 }
+
+/* A resource that is listed but not yet priced — reads as information, not
+   as a button someone should try to press. */
+.shop-add--soon {
+  border-color: rgba(0,0,0,0.15); color: var(--grey-light);
+  background: transparent; cursor: default; pointer-events: none;
+}
