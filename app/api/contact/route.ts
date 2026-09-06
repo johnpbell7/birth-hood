@@ -37,10 +37,16 @@ export async function POST(req: NextRequest) {
 
     // Send notification to Leanne
     await resend.emails.send({
-      from: 'birth-hood website <noreply@birth-hood.co.uk>',
+      from: 'birth-hood website <leanne@birth-hood.co.uk>',
       to,
       replyTo: email,
       subject: `New enquiry from ${name}${service ? ` — ${service}` : ''}`.slice(0, 200),
+      text:
+        `New enquiry via birth-hood.co.uk\n\n` +
+        `Name: ${name}\nEmail: ${email}\n` +
+        (service ? `Service: ${service}\n` : '') +
+        (dueDate ? `Due date: ${dueDate}\n` : '') +
+        `\nMessage:\n${message}\n`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #c955a8;">New enquiry via birth-hood.co.uk</h2>
@@ -71,7 +77,14 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: 'Leanne at birth-hood <leanne@birth-hood.co.uk>',
       to: email,
+      replyTo: 'leanne@birth-hood.co.uk',
       subject: `Thanks for getting in touch, ${name.split(' ')[0]} ⚡`,
+      text:
+        `Hi ${name.split(' ')[0]},\n\n` +
+        `Thank you so much for getting in touch. I've received your message and ` +
+        `will get back to you as soon as possible — usually within 24-48 hours.\n\n` +
+        (service ? `You enquired about: ${service}\n\n` : '') +
+        `Warmly,\nLeanne\nbirth-hood · Leicester, England\nhttps://www.birth-hood.co.uk\n`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #c955a8;">Thank you for reaching out!</h2>

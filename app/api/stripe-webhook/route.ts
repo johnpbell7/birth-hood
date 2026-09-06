@@ -74,9 +74,19 @@ async function fulfil(session: Stripe.Checkout.Session) {
 
   // Delivery email to the buyer
   await resend.emails.send({
-    from: 'birth-hood <noreply@birth-hood.co.uk>',
+    from: 'Leanne at birth-hood <leanne@birth-hood.co.uk>',
     to: email,
+    replyTo: 'leanne@birth-hood.co.uk',
     subject: 'Your birth-hood downloads ⚡',
+    // A plain-text alternative alongside the HTML. Spam filters mark
+    // HTML-only mail down, and some clients only ever show this part.
+    text:
+      `Thank you for your purchase!\n\n` +
+      `Your download${links.length > 1 ? 's are' : ' is'} ready:\n\n` +
+      links.map((l) => `${l.title}\n${l.url}`).join('\n\n') +
+      `\n\nThese links are personal to you and expire in 7 days. If a link ` +
+      `stops working, just reply and I'll send a fresh one.\n\n` +
+      `Warmly,\nLeanne\nbirth-hood · Leicester, England\nhttps://www.birth-hood.co.uk\n`,
     html: `
       <div style="font-family:sans-serif;max-width:600px;margin:0 auto;">
         <h2 style="color:#c955a8;">Thank you for your purchase!</h2>
@@ -92,9 +102,14 @@ async function fulfil(session: Stripe.Checkout.Session) {
   // Notification to Leanne
   const to = process.env.CONTACT_EMAIL_TO ?? 'leanne@birth-hood.co.uk'
   await resend.emails.send({
-    from: 'birth-hood shop <noreply@birth-hood.co.uk>',
+    from: 'birth-hood shop <leanne@birth-hood.co.uk>',
     to,
+    replyTo: email,
     subject: `New shop order — ${products.map((p) => p.title).join(', ')}`,
+    text:
+      `New shop order\n\nBuyer: ${email}\n\n` +
+      products.map((p) => `- ${p.title} — £${(p.price ?? 0).toFixed(2)}`).join('\n') +
+      `\n\nFull details in your Stripe dashboard.\n`,
     html: `
       <div style="font-family:sans-serif;max-width:600px;margin:0 auto;">
         <h2 style="color:#c955a8;">New shop order</h2>
