@@ -17,7 +17,7 @@ async function main() {
     // ── Global ────────────────────────────────────────────────────
     siteName: 'birth-hood',
     tagline: 'Your birth, your way.',
-    contactEmail: 'hello@birth-hood.co.uk',
+    contactEmail: 'leanne@birth-hood.co.uk',
     phone: '',
     social: {
       instagram: 'https://www.instagram.com/birthhooduk',

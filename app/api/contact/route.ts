@@ -69,7 +69,7 @@ export async function POST(req: NextRequest) {
 
     // Send auto-reply to enquirer
     await resend.emails.send({
-      from: 'Leanne at birth-hood <hello@birth-hood.co.uk>',
+      from: 'Leanne at birth-hood <leanne@birth-hood.co.uk>',
       to: email,
       subject: `Thanks for getting in touch, ${name.split(' ')[0]} 🌸`,
       html: `
