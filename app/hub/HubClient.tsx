@@ -513,12 +513,6 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
               </div>
             ))}
           </div>
-
-          <div style={{ marginTop: '2rem', padding: '1rem 1.5rem', background: 'var(--white)', border: '1px dashed rgba(254,127,204,0.5)', borderRadius: '3px' }}>
-            <p style={{ fontSize: '0.85rem', color: 'var(--grey-mid)', fontWeight: 300, lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: 'var(--black)' }}>Tip:</strong> Upload MP3 files to the project (or a hosting service) and set each track&apos;s <code>src</code> in <code>app/hub/HubClient.tsx</code> to enable the players.
-            </p>
-          </div>
         </div>
       </section>
 
