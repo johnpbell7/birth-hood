@@ -331,7 +331,6 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
     )
   }
 
-  const totalResources = displayGroups.reduce((sum, g) => sum + g.items.length, 0)
 
   return (
     <>
@@ -369,23 +368,6 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
       </section>
 
       {/* STATS STRIP */}
-      <section className="hub-stats-strip">
-        <div className="wrap hub-stats-row">
-          <div className="hub-stat">
-            <div className="hub-stat-num">{totalResources}</div>
-            <div className="hub-stat-label">Documents</div>
-          </div>
-          <div className="hub-stat">
-            <div className="hub-stat-num">{displayAlbums.reduce((s, a) => s + a.tracks.length, 0)}</div>
-            <div className="hub-stat-label">Audio tracks</div>
-          </div>
-          <div className="hub-stat">
-            <div className="hub-stat-num">{displaySites.length}</div>
-            <div className="hub-stat-label">Useful sites</div>
-          </div>
-        </div>
-      </section>
-
       {/* DOCUMENTS */}
       <section className="section-pad">
         <div className="wrap">
