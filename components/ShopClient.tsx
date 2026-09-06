@@ -23,6 +23,20 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
       return next
     })
 
+  // Three shelves rather than one long shuffle: sessions you book, resources
+  // you buy one at a time, then the bundles together at the end so the saving
+  // is obvious. Each keeps the order Leanne set in the Studio.
+  const sections = useMemo(() => {
+    const booked = products.filter((p) => p.bookingUrl)
+    const singles = products.filter((p) => !p.bookingUrl && p.kind !== 'bundle')
+    const bundles = products.filter((p) => !p.bookingUrl && p.kind === 'bundle')
+    return [
+      { key: 'booked', heading: '1-2-1 sessions', blurb: 'Time with Leanne, one to one.', items: booked },
+      { key: 'singles', heading: 'Individual resources', blurb: 'Pick up exactly what you need.', items: singles },
+      { key: 'bundles', heading: 'Bundles', blurb: 'Grouped together, cheaper than buying separately.', items: bundles },
+    ].filter((s) => s.items.length > 0)
+  }, [products])
+
   const cartItems = useMemo(() => products.filter((p) => cart.has(p._id)), [products, cart])
   const total = useMemo(() => cartItems.reduce((s, p) => s + (p.price || 0), 0), [cartItems])
 
@@ -54,8 +68,14 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
 
   return (
     <>
-      <div className="shop-grid">
-        {products.map((p) => {
+      {sections.map((section) => (
+       <div key={section.key} className="shop-section">
+        <div className="shop-section-head">
+          <h3 className="shop-section-title">{section.heading}</h3>
+          <p className="shop-section-blurb">{section.blurb}</p>
+        </div>
+        <div className="shop-grid">
+        {section.items.map((p) => {
           const inCart = cart.has(p._id)
           return (
             <div key={p._id} className={`shop-card${inCart ? ' selected' : ''}`}>
@@ -122,7 +142,9 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
             </div>
           )
         })}
-      </div>
+        </div>
+       </div>
+      ))}
 
       {/* Sticky cart footer — rendered into <body> via a portal so it's always
           fixed to the viewport (no ancestor transform can trap it), staying at
