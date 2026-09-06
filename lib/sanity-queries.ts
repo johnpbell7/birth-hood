@@ -113,7 +113,9 @@ export async function getHubResources(): Promise<HubResource[]> {
   if (!client) return []
   try {
     return await client.fetch(
-    `*[_type == "hubResource"] | order(order asc, title asc) {
+    // Anything with no file, no video and no link would render as a dead
+    // button, so it stays hidden until Leanne attaches something.
+    `*[_type == "hubResource" && (defined(file.asset) || defined(videoUrl) || defined(externalUrl))] | order(order asc, title asc) {
       _id,
       title,
       description,
