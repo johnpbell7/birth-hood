@@ -8,7 +8,7 @@ import { DEFAULT_PHOTOS } from '@/lib/hero-photos'
 import InstagramSection from '@/components/InstagramSection'
 import { cmsOrStatic } from '@/lib/cms-page'
 import { featuredReviews } from '@/lib/reviews'
-import { getSiteSettings, type SiteSettings } from '@/lib/sanity-queries'
+import { getFreebies, getSiteSettings, type SiteSettings } from '@/lib/sanity-queries'
 import { urlFor } from '@/lib/sanity'
 
 export const metadata: Metadata = {
@@ -20,8 +20,12 @@ export const metadata: Metadata = {
 }
 
 export default async function HomePage() {
-  const settings = await getSiteSettings()
-  return cmsOrStatic('home', <HomePageStatic settings={settings} />)
+  const [settings, freebies] = await Promise.all([getSiteSettings(), getFreebies()])
+  // The tags under the freebies heading are the actual free resources, read
+  // from the same place /freebies reads them — so adding or renaming one
+  // updates both pages at once.
+  const freebieTitles = freebies.map((f) => f.title).filter(Boolean)
+  return cmsOrStatic('home', <HomePageStatic settings={settings} freebieTitles={freebieTitles} />)
 }
 
 // ─── Default fallback content ────────────────────────────────────────────────
@@ -91,11 +95,17 @@ const DEFAULT_CREDENTIALS = [
   'Featured on BBC Radio Leicester',
 ]
 
-const DEFAULT_FREEBIE_TAGS = ['Birth Affirmations', 'Birth Plan Guide', 'Newborn Checklist']
+const DEFAULT_FREEBIE_TAGS = ['20 Ready Made Affirmations', 'Newborn Checklist', 'FREE Hypnobirthing MP3']
 
 // ─── Static page (with optional CMS overrides) ───────────────────────────────
 
-function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
+function HomePageStatic({
+  settings,
+  freebieTitles = [],
+}: {
+  settings: SiteSettings | null
+  freebieTitles?: string[]
+}) {
   const s = settings ?? {}
 
   // Hero
@@ -185,7 +195,11 @@ function HomePageStatic({ settings }: { settings: SiteSettings | null }) {
     s.homeFreebiesBody ??
     'Download my free birth affirmations, birth plan guide and newborn checklist — no email required, no strings attached. Plus a FREE Hypnobirthing MP3 and ELLE TENS machine discount code!'
   const freebiesTags =
-    s.homeFreebiesTags && s.homeFreebiesTags.length > 0 ? s.homeFreebiesTags : DEFAULT_FREEBIE_TAGS
+    freebieTitles.length > 0
+      ? freebieTitles
+      : s.homeFreebiesTags && s.homeFreebiesTags.length > 0
+        ? s.homeFreebiesTags
+        : DEFAULT_FREEBIE_TAGS
   const freebiesCta = s.homeFreebiesCta ?? 'Download Free Resources'
 
   // Booking CTA

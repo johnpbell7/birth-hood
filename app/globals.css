@@ -632,14 +632,18 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
 .about-photo-frame { background: var(--pink-pale); aspect-ratio: 3/4; border-radius: 3px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
 .about-photo-frame::before { content: ''; position: absolute; top: 16px; left: 16px; right: 16px; bottom: 16px; border: 1px solid rgba(201,85,168,0.25); border-radius: 2px; pointer-events: none; }
 /* Photo carousel (Meet Leanne) — a crossfade inside the existing frame. */
-.carousel-frame { display: block; }
+.carousel-frame { display: block; touch-action: pan-y; }
 .carousel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.9s ease; }
 .carousel-slide[data-active='true'] { opacity: 1; }
-.carousel-dots { display: flex; gap: 0.5rem; justify-content: center; margin-top: 1rem; }
+.carousel-dots { display: flex; gap: 0.15rem; justify-content: center; margin-top: 1rem; }
 .carousel-dot {
   width: 9px;
   height: 9px;
+  /* Padding rather than width/height, so the tap target grows on touch
+     screens without the dot itself getting bigger. */
   padding: 0;
+  box-sizing: content-box;
+  background-clip: content-box;
   border: 1px solid var(--pink-deep);
   border-radius: 50%;
   background: transparent;
@@ -647,6 +651,9 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
   transition: background 0.25s, transform 0.25s;
 }
 .carousel-dot[data-active='true'] { background: var(--pink-deep); transform: scale(1.25); }
+@media (pointer: coarse) {
+  .carousel-dot { padding: 9px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .carousel-slide { transition: none; }
 }

@@ -22,6 +22,7 @@ export default function PhotoCarousel({
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
   const timer = useRef<ReturnType<typeof setInterval> | null>(null)
+  const touchStartX = useRef<number | null>(null)
 
   const go = useCallback(
     (next: number) => setIndex(((next % photos.length) + photos.length) % photos.length),
@@ -47,6 +48,22 @@ export default function PhotoCarousel({
         className="about-photo-frame carousel-frame"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
+        // Swipe on touch screens. Pauses while a finger is down so it doesn't
+        // advance underneath you mid-swipe.
+        onTouchStart={(e) => {
+          touchStartX.current = e.touches[0].clientX
+          setPaused(true)
+        }}
+        onTouchEnd={(e) => {
+          const start = touchStartX.current
+          touchStartX.current = null
+          setPaused(false)
+          if (start === null) return
+          const dx = e.changedTouches[0].clientX - start
+          // Ignore anything too small to be a deliberate swipe.
+          if (Math.abs(dx) < 40) return
+          go(index + (dx < 0 ? 1 : -1))
+        }}
       >
         {photos.map((photo, i) => (
           <div key={photo.src} className="carousel-slide" data-active={i === index} aria-hidden={i !== index}>
