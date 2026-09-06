@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid email address.' }, { status: 400 })
     }
 
-    const to = process.env.CONTACT_EMAIL_TO ?? 'hello@birth-hood.co.uk'
+    const to = process.env.CONTACT_EMAIL_TO ?? 'leanne@birth-hood.co.uk'
 
     // Send notification to Leanne
     await resend.emails.send({
