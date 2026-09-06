@@ -264,6 +264,10 @@ export type ShopProduct = {
   fileCount?: number | null
   /** Titles of the resources inside a bundle, listed on the card. */
   includes?: { _id: string; title: string }[] | null
+  /** Sort position from the Studio. Must stay in the projection: GROQ orders
+      the projected result, so leaving it out makes `order(order asc)` a no-op
+      and the shop falls back to alphabetical. */
+  order?: number | null
 }
 /** One deliverable file. A bundle flattens to its own files plus the files of
     everything it contains. */
@@ -283,7 +287,7 @@ export async function getShopProducts(): Promise<ShopProduct[]> {
     return await client.fetch(
       `*[_type == "product" && active != false]{
         _id, title, description, price, "imageUrl": image.asset->url,
-        kind, sku,
+        kind, sku, order,
         "fileExt": coalesce(files[0].asset->extension, file.asset->extension),
         "fileCount": count(files) + count(includes[]->files[]),
         "includes": includes[]->{ _id, title },
