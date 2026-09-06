@@ -257,7 +257,7 @@ function CourseInfoPageStatic() {
               <strong style={{ color: 'var(--black)' }}>Antenatal Package upgrade:</strong>{' '}
               You can also upgrade a Hypnobirthing package to include virtual doula support throughout pregnancy,
               following all antenatal appointments etc (not including the birth) as an Antenatal Package{' '}
-              <strong style={{ color: 'var(--black)' }}>(£425)</strong>.
+              <strong style={{ color: 'var(--black)' }}>(£600)</strong>.
             </p>
           </div>
 

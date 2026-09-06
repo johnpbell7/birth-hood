@@ -146,14 +146,26 @@ function HypnobirthingPageStatic() {
         img1={{ src: '/images/class-sofa-265.jpg', alt: 'Class in session' }}
         img2={{ src: '/images/class-anatomy-256.jpg', alt: 'How birth works' }}
         actions={
-          <a
-            href="https://calendly.com/birthhood/free-consultation"
-            className="btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book Free Consultation
-          </a>
+          <>
+            <a
+              href="https://calendly.com/birthhood/free-consultation"
+              className="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book Free Consultation
+            </a>
+            <a
+              href="/downloads/birth-hood-hypnobirthing-pack.pdf"
+              className="btn-outline hero-download"
+              download
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+              </svg>
+              Download Hypnobirthing Pack
+            </a>
+          </>
         }
       />
 
@@ -309,7 +321,6 @@ function HypnobirthingPageStatic() {
                 {[
                   { finding: 'Reductions in fear and perceived pain, and improvements in overall experience of childbirth.', source: 'Fernández-Gamero et al. (2024) — systematic review of 7 randomised controlled trials' },
                   { finding: 'Improvements in antenatal depression reported by the majority of included studies, though researchers noted a need for more consistent methods.', source: 'Betriana et al. (2025) — systematic review & meta-analysis' },
-                  { finding: 'No statistically significant reduction in epidural or other pharmacological analgesia.', source: 'Lai et al. (2024) — 6 RCTs, 2,937 women' },
                   { finding: 'Potential benefits for anxiety, confidence and emotional wellbeing in pregnancy and after birth.', source: 'Catsaros & Wendland (2022) — systematic review' },
                 ].map((s) => (
                   <div key={s.source} className="card" style={{ borderLeft: '3px solid var(--pink)' }}>
