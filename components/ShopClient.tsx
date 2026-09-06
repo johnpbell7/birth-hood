@@ -83,7 +83,11 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
                 {/* Only the two tags that say something the title doesn't.
                     The PDF/Audio tags were removed — they were derived from the
                     file, so Leanne couldn't control them anyway. */}
-                {p.bookingUrl ? (
+                {!(p.price > 0) ? (
+                  /* Not on sale yet — say so on the thumbnail, where it reads
+                     at a glance, not just down in the footer. */
+                  <span className="shop-tag shop-tag--soon">Coming soon</span>
+                ) : p.bookingUrl ? (
                   <span className="shop-tag shop-tag--book">1-2-1 session</span>
                 ) : p.kind === 'bundle' ? (
                   <span className="shop-tag shop-tag--bundle">
