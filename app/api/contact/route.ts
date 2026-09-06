@@ -3,6 +3,18 @@ import { Resend } from 'resend'
 
 export const dynamic = 'force-dynamic'
 
+/** Anything typed into the form is untrusted — escape it before it goes into
+    the HTML email, or a message containing markup renders as markup in
+    Leanne's inbox. */
+function esc(value: unknown): string {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY)
   try {
@@ -28,25 +40,25 @@ export async function POST(req: NextRequest) {
       from: 'birth-hood website <noreply@birth-hood.co.uk>',
       to,
       replyTo: email,
-      subject: `New enquiry from ${name}${service ? ` — ${service}` : ''}`,
+      subject: `New enquiry from ${name}${service ? ` — ${service}` : ''}`.slice(0, 200),
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #c955a8;">New enquiry via birth-hood.co.uk</h2>
           <table style="width: 100%; border-collapse: collapse;">
             <tr>
               <td style="padding: 8px 0; font-weight: bold; width: 140px;">Name</td>
-              <td style="padding: 8px 0;">${name}</td>
+              <td style="padding: 8px 0;">${esc(name)}</td>
             </tr>
             <tr>
               <td style="padding: 8px 0; font-weight: bold;">Email</td>
-              <td style="padding: 8px 0;"><a href="mailto:${email}">${email}</a></td>
+              <td style="padding: 8px 0;"><a href="mailto:${esc(email)}">${esc(email)}</a></td>
             </tr>
-            ${service ? `<tr><td style="padding: 8px 0; font-weight: bold;">Service</td><td style="padding: 8px 0;">${service}</td></tr>` : ''}
-            ${dueDate ? `<tr><td style="padding: 8px 0; font-weight: bold;">Due Date</td><td style="padding: 8px 0;">${dueDate}</td></tr>` : ''}
+            ${service ? `<tr><td style="padding: 8px 0; font-weight: bold;">Service</td><td style="padding: 8px 0;">${esc(service)}</td></tr>` : ''}
+            ${dueDate ? `<tr><td style="padding: 8px 0; font-weight: bold;">Due Date</td><td style="padding: 8px 0;">${esc(dueDate)}</td></tr>` : ''}
           </table>
           <h3 style="margin-top: 24px;">Message</h3>
           <div style="background: #fdf0f9; padding: 16px; border-radius: 4px; border-left: 4px solid #e87bc3;">
-            <p style="margin: 0; white-space: pre-wrap;">${message}</p>
+            <p style="margin: 0; white-space: pre-wrap;">${esc(message)}</p>
           </div>
           <p style="margin-top: 24px; color: #888; font-size: 12px;">
             Sent from birth-hood.co.uk contact form
@@ -63,9 +75,9 @@ export async function POST(req: NextRequest) {
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #c955a8;">Thank you for reaching out!</h2>
-          <p>Hi ${name.split(' ')[0]},</p>
+          <p>Hi ${esc(name.split(' ')[0])},</p>
           <p>Thank you so much for getting in touch. I've received your message and will get back to you as soon as possible — usually within 24-48 hours.</p>
-          ${service ? `<p>You've enquired about: <strong>${service}</strong></p>` : ''}
+          ${service ? `<p>You've enquired about: <strong>${esc(service)}</strong></p>` : ''}
           <p>In the meantime, you're very welcome to <a href="https://calendly.com/birthhood/free-consultation" style="color: #c955a8;">book a free consultation call</a> if you'd like to chat sooner.</p>
           <p>Warmly,<br />Leanne<br /><em>birth-hood</em></p>
           <hr style="margin: 24px 0; border: none; border-top: 1px solid #f7d4ee;" />
