@@ -48,11 +48,15 @@ async function fulfil(session: Stripe.Checkout.Session) {
   const products = await getShopProductsByIds(ids)
   if (!products.length) return
 
-  const links = products.map((p) => {
-    const token = isDownloadConfigured() ? signDownload(p._id, email) : ''
-    const url = token ? `${SITE_URL}/api/download?token=${encodeURIComponent(token)}` : p.fileUrl || ''
-    return { title: p.title, url }
-  })
+  // A bundle delivers every file it contains, each as its own signed link.
+  const links = products.flatMap((p) =>
+    p.files.map((f, idx) => {
+      const token = isDownloadConfigured() ? signDownload(p._id, email, idx) : ''
+      const url = token ? `${SITE_URL}/api/download?token=${encodeURIComponent(token)}` : f.url
+      const name = f.label || f.name || p.title
+      return { title: p.files.length > 1 ? `${p.title} — ${name}` : p.title, url }
+    }),
+  )
 
   const resend = new Resend(process.env.RESEND_API_KEY)
 

@@ -256,9 +256,24 @@ export type ShopProduct = {
   // so it is unaffected by whether Stripe checkout is switched on.
   bookingUrl?: string | null
   bookingLabel?: string | null
+  kind?: 'single' | 'bundle' | null
+  sku?: string | null
+  /** How many files the buyer gets — a bundle counts what it contains. */
+  fileCount?: number | null
+  /** Titles of the resources inside a bundle, listed on the card. */
+  includes?: { _id: string; title: string }[] | null
 }
-// SERVER-ONLY — includes the download URL + filename, used only after payment.
-export type ShopProductFull = ShopProduct & { fileUrl?: string | null; fileName?: string | null }
+/** One deliverable file. A bundle flattens to its own files plus the files of
+    everything it contains. */
+export type ShopFile = { url: string; name: string; label?: string | null }
+
+// SERVER-ONLY — includes the download URLs, used only after payment.
+export type ShopProductFull = ShopProduct & {
+  files: ShopFile[]
+  /** Legacy single-file products. */
+  fileUrl?: string | null
+  fileName?: string | null
+}
 
 export async function getShopProducts(): Promise<ShopProduct[]> {
   if (!client) return []
@@ -266,7 +281,11 @@ export async function getShopProducts(): Promise<ShopProduct[]> {
     return await client.fetch(
       `*[_type == "product" && active != false]{
         _id, title, description, price, "imageUrl": image.asset->url,
-        "fileExt": file.asset->extension, bookingUrl, bookingLabel
+        kind, sku,
+        "fileExt": coalesce(files[0].asset->extension, file.asset->extension),
+        "fileCount": count(files) + count(includes[]->files[]),
+        "includes": includes[]->{ _id, title },
+        bookingUrl, bookingLabel
       } | order(order asc, title asc)`,
       {},
       { next: { revalidate: 60 } },
@@ -277,16 +296,27 @@ export async function getShopProducts(): Promise<ShopProduct[]> {
 export async function getShopProductsByIds(ids: string[]): Promise<ShopProductFull[]> {
   if (!client || !ids.length) return []
   try {
-    return await client.fetch(
+    const raw = await client.fetch(
       `*[_type == "product" && active != false && _id in $ids]{
         _id, title, description, price,
         "imageUrl": image.asset->url,
         "fileUrl": file.asset->url,
-        "fileName": file.asset->originalFilename
+        "fileName": file.asset->originalFilename,
+        "ownFiles": files[]{ label, "url": asset->url, "name": asset->originalFilename },
+        "bundledFiles": includes[]->files[]{ label, "url": asset->url, "name": asset->originalFilename }
       }`,
       { ids },
       { cache: 'no-store' },
     )
+    type Raw = ShopProductFull & { ownFiles?: ShopFile[]; bundledFiles?: ShopFile[] }
+    return (raw as Raw[]).map((p) => {
+      const own = (p.ownFiles ?? []).filter((f) => f?.url)
+      const bundled = (p.bundledFiles ?? []).filter((f) => f?.url)
+      // Legacy products only ever had the single `file`.
+      const legacy: ShopFile[] =
+        own.length === 0 && p.fileUrl ? [{ url: p.fileUrl, name: p.fileName ?? p.title }] : []
+      return { ...p, files: [...legacy, ...own, ...bundled] }
+    })
   } catch (e) { console.error('Sanity getShopProductsByIds failed:', e); return [] }
 }
 

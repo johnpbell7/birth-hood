@@ -1837,6 +1837,33 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 }
 
 
+/* Shop: bundles — the tag, and the list of what's inside. */
+.shop-tag--bundle { background: var(--pink-deep); color: var(--white); }
+.shop-bundle-list {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0.9rem 0 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.shop-bundle-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.4rem;
+  color: var(--grey-mid);
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.shop-bundle-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 1.5px;
+  background: var(--pink);
+}
+
 /* Shop: services that are booked rather than downloaded (the Power Hours). */
 .shop-tag--book { background: var(--black); color: var(--white); }
 .shop-add--book {

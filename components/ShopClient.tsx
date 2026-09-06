@@ -86,6 +86,10 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
               <div className="shop-ph">
                 {p.bookingUrl ? (
                   <span className="shop-tag shop-tag--book">1-2-1 session</span>
+                ) : p.kind === 'bundle' ? (
+                  <span className="shop-tag shop-tag--bundle">
+                    Bundle{p.fileCount ? ` · ${p.fileCount} files` : ''}
+                  </span>
                 ) : (
                   <span className={`shop-tag${kind.audio ? ' shop-tag--audio' : ''}`}>
                     <TagIcon audio={kind.audio} />
@@ -107,6 +111,13 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
               <div className="shop-card-body">
                 <h3 className="shop-card-title">{p.title}</h3>
                 {p.description && <p className="shop-card-desc">{p.description}</p>}
+                {p.kind === 'bundle' && p.includes && p.includes.length > 0 && (
+                  <ul className="shop-bundle-list">
+                    {p.includes.map((item) => (
+                      <li key={item._id}>{item.title}</li>
+                    ))}
+                  </ul>
+                )}
                 <div className="shop-card-foot">
                   <span className="shop-price">£{(p.price || 0).toFixed(2)}</span>
                   {p.bookingUrl ? (

@@ -39,15 +39,6 @@ function BirthDoulaPageStatic() {
 
       <MarqueeStrip />
 
-      {/* AVAILABILITY NOTICE */}
-      <section style={{ background: 'var(--pink-ultra)', padding: '1.25rem 0', borderBottom: '1px solid var(--pink-pale)' }}>
-        <div className="wrap" style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--pink-deep)', letterSpacing: '0.02em', margin: 0 }}>
-            I&apos;m taking bookings for births due December 2026 onwards
-          </p>
-        </div>
-      </section>
-
       {/* TESTIMONIAL NEAR TOP */}
       <section style={{ background: 'var(--pink-pale)', padding: '3.5rem 0' }}>
         <div className="wrap">

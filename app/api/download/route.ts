@@ -16,18 +16,19 @@ export async function GET(req: NextRequest) {
   }
 
   const [product] = await getShopProductsByIds([payload.pid])
-  if (!product?.fileUrl) {
+  const file = product?.files?.[payload.idx ?? 0]
+  if (!file?.url) {
     return new NextResponse('File not found.', { status: 404 })
   }
 
   // Stream the file through so the underlying CDN URL is never exposed, and
   // the browser downloads it with a friendly filename.
-  const fileRes = await fetch(product.fileUrl)
+  const fileRes = await fetch(file.url)
   if (!fileRes.ok || !fileRes.body) {
     return new NextResponse('Could not fetch the file.', { status: 502 })
   }
 
-  const fileName = product.fileName || `${product.title}`.replace(/[^\w.-]+/g, '-')
+  const fileName = file.name || `${product.title}`.replace(/[^\w.-]+/g, '-')
   const headers = new Headers()
   headers.set('Content-Type', fileRes.headers.get('content-type') || 'application/octet-stream')
   const len = fileRes.headers.get('content-length')
