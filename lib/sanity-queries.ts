@@ -173,6 +173,8 @@ export type SiteSettings = {
   siteName?: string
   tagline?: string
   contactEmail?: string
+  /** Hides the shop behind a "coming soon" panel while it is being finished. */
+  shopComingSoon?: boolean
   phone?: string
   social?: {
     instagram?: string

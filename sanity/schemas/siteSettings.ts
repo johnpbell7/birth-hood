@@ -20,6 +20,15 @@ export default defineType({
     defineField({ name: 'contactEmail', title: 'Contact email', type: 'string', group: 'global' }),
     defineField({ name: 'phone', title: 'Phone number', type: 'string', group: 'global' }),
     defineField({
+      name: 'shopComingSoon',
+      title: 'Shop: show "Coming soon" instead of the products',
+      type: 'boolean',
+      initialValue: false,
+      description:
+        'Tick this to hide the shop while you finish setting it up. The page stays live and says the shop is on its way — nothing can be bought. Untick it to put the products back.',
+      group: 'global',
+    }),
+    defineField({
       name: 'social',
       title: 'Social links',
       type: 'object',
