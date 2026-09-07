@@ -4,6 +4,16 @@ import { useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import type { ShopProduct } from '@/lib/sanity-queries'
 
+// "What's included" is stored as one semicolon-separated line so Leanne edits
+// it in a single box rather than a list of fiddly array rows. Split it back
+// into bullets here, trimming the trailing full stop.
+function splitContents(raw: string): string[] {
+  return raw
+    .split(';')
+    .map((s) => s.trim().replace(/\.$/, ''))
+    .filter(Boolean)
+}
+
 export default function ShopClient({ products, demo = false }: { products: ShopProduct[]; demo?: boolean }) {
   const [cart, setCart] = useState<Set<string>>(new Set())
   const [loading, setLoading] = useState(false)
@@ -115,7 +125,21 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
               </div>
               <div className="shop-card-body">
                 <h3 className="shop-card-title">{p.title}</h3>
+                {p.format && <p className="shop-card-format">{p.format}</p>}
                 {p.description && <p className="shop-card-desc">{p.description}</p>}
+                {p.contents && (
+                  /* Folded away by default: the full contents list is the
+                     detail that closes a sale, but it would bury the price if
+                     every card printed it in full. */
+                  <details className="shop-more">
+                    <summary>What&rsquo;s included</summary>
+                    <ul>
+                      {splitContents(p.contents).map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
                 {p.previewPages && p.previewPages.length > 0 && (
                   <button type="button" className="shop-preview" onClick={() => setPreview(p)}>
                     <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -130,6 +154,10 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
                       <li key={item._id}>{item.title}</li>
                     ))}
                   </ul>
+                )}
+                <div className="shop-card-close">
+                {p.valueNote && p.price > 0 && (
+                  <p className="shop-value">{p.valueNote}</p>
                 )}
                 <div className="shop-card-foot">
                   {/* Leanne sets the prices; until then, say so rather than
@@ -161,6 +189,7 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
                       {inCart ? '✓ In cart' : 'Add to cart'}
                     </button>
                   )}
+                </div>
                 </div>
               </div>
             </div>

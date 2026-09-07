@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
+import { ALL_EVENTS, CONSULTATION, HYPNOBIRTHING_COURSE } from '@/lib/booking-links'
 import CtaBand from '@/components/CtaBand'
 import { cmsOrStatic } from '@/lib/cms-page'
 
@@ -15,14 +16,14 @@ export const metadata: Metadata = {
 }
 
 // Courses & classes are booked via Ticket Tailor; consultations via Calendly.
-const TICKETS = 'https://www.tickettailor.com/events/birthhood/'
-const CALENDLY = 'https://calendly.com/birthhood/free-consultation'
+const TICKETS = ALL_EVENTS
+const CALENDLY = CONSULTATION
 
 const bookingOptions = [
   {
     title: 'Hypnobirthing Course',
     desc: 'Group or 1-1 hypnobirthing courses — booked through Ticket Tailor. If there are no dates showing, just get in touch and I\'ll sort something.',
-    href: TICKETS,
+    href: HYPNOBIRTHING_COURSE,
     cta: 'Book Hypnobirthing',
     featured: false,
   },

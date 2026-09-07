@@ -4,6 +4,7 @@ import Link from 'next/link'
 import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
 import { cmsOrStatic } from '@/lib/cms-page'
+import { HYPNOBIRTHING_COURSE } from '@/lib/booking-links'
 
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
@@ -131,7 +132,7 @@ function CourseInfoPageStatic() {
         img2={{ src: '/images/private-session-102.jpg', alt: 'Private session' }}
         actions={
           <a
-            href="https://calendly.com/birthhood/free-consultation"
+            href={HYPNOBIRTHING_COURSE}
             className="btn-primary"
             target="_blank"
             rel="noopener noreferrer"
@@ -366,7 +367,7 @@ function CourseInfoPageStatic() {
 
           <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <a
-              href="https://calendly.com/birthhood/free-consultation"
+              href={HYPNOBIRTHING_COURSE}
               className="btn-primary"
               target="_blank"
               rel="noopener noreferrer"
@@ -382,9 +383,9 @@ function CourseInfoPageStatic() {
 
       <CtaBand
         heading="Ready to book your place?"
-        body="Start with a free 30-minute consultation — no pressure, just a friendly chat to see if we&apos;re the right fit."
-        href="https://calendly.com/birthhood/free-consultation"
-        label="Book Free Consultation"
+        body="Book straight onto the next course, or start with a free 30-minute consultation if you&apos;d rather chat it through first."
+        href={HYPNOBIRTHING_COURSE}
+        label="Book the Course"
       />
 
       <SectionNav href="/course-info" />

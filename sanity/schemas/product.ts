@@ -75,6 +75,28 @@ export default defineType({
         'The selling line shown on the shop card, e.g. "Your no-BS guide to preparing for birth, whatever your birth looks like." For a bundle you do NOT need to list what is inside — that list builds itself from the box below.',
     }),
     defineField({
+      name: 'contents',
+      title: "What's included",
+      type: 'text',
+      rows: 4,
+      description:
+        'The list of what is inside, written as one line with semicolons between the parts, e.g. "Hypnobirthing and mindset; breathing and relaxation; hormones". Shown on the card under a "What\u2019s included" heading that people open.',
+    }),
+    defineField({
+      name: 'format',
+      title: 'Format / length',
+      type: 'string',
+      description: 'The short line under the title, e.g. "64-page PDF handbook" or "6-page PDF visual guide".',
+    }),
+    defineField({
+      name: 'valueNote',
+      title: 'Value line (bundles)',
+      type: 'string',
+      hidden: ({ document }) => document?.kind !== 'bundle',
+      description:
+        'The small line above the price, e.g. "Individually \u00a336.96 \u2014 you save \u00a312.97" or "Plus 2 bundle-only resources". Leave blank to show nothing.',
+    }),
+    defineField({
       name: 'price',
       title: 'Price (£)',
       type: 'number',

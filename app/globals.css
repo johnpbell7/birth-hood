@@ -2188,3 +2188,43 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .pv-inner { padding: 1.2rem; }
   .pv-pages { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: .7rem; }
 }
+/* ── SHOP: the longer product copy ──────────────────────────────────────────
+   Format line, the fold-out contents list, and the bundle value line. The
+   contents list is closed by default so the price stays above the fold on a
+   card; opening it pushes the card taller without disturbing its neighbours,
+   since the grid rows size independently. */
+.shop-card-format {
+  font-family: 'Poppins', sans-serif;
+  font-size: .72rem; font-weight: 500; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--pink-deep);
+  margin: -.25rem 0 .55rem;
+}
+.shop-more { margin: 0 0 1.1rem; }
+.shop-more > summary {
+  cursor: pointer; list-style: none;
+  font-family: 'Poppins', sans-serif; font-size: .76rem; font-weight: 500;
+  color: var(--grey-mid); display: inline-flex; align-items: center; gap: .4rem;
+}
+.shop-more > summary::-webkit-details-marker { display: none; }
+.shop-more > summary::after {
+  content: '+'; font-size: .95rem; line-height: 1; color: var(--pink-deep);
+}
+.shop-more[open] > summary::after { content: '\2212'; }
+.shop-more > summary:hover { color: var(--black); }
+.shop-more ul { list-style: none; margin: .7rem 0 0; padding: 0; }
+.shop-more li {
+  position: relative; padding-left: 1.1rem; margin-bottom: .35rem;
+  color: var(--grey-mid); font-size: .8rem; font-weight: 300; line-height: 1.5;
+}
+.shop-more li::before {
+  content: ''; position: absolute; left: 0; top: .6em;
+  width: 6px; height: 1.5px; background: var(--pink);
+}
+
+/* Value line and price/button pinned together at the foot of the card. */
+.shop-card-close { margin-top: auto; }
+.shop-card-close .shop-card-foot { margin-top: 0; }
+.shop-value {
+  font-size: .76rem; font-weight: 400; color: var(--grey-mid);
+  margin: 0 0 .55rem; line-height: 1.4;
+}

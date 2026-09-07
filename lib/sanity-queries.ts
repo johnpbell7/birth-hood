@@ -279,6 +279,12 @@ export type ShopProduct = {
   /** Pages shown in the "See preview" viewer. Blurred ones are blurred in the
       image itself, so the content cannot be recovered from the browser. */
   previewPages?: { url: string; page: number; blurred: boolean }[] | null
+  /** "What's included" — one line, semicolon-separated, shown in a fold-out. */
+  contents?: string | null
+  /** "64-page PDF handbook" — the small line under the title. */
+  format?: string | null
+  /** Bundles only: the saving, or a note about bundle-only extras. */
+  valueNote?: string | null
 }
 /** One deliverable file. A bundle flattens to its own files plus the files of
     everything it contains. */
@@ -301,7 +307,7 @@ export async function getShopProducts(): Promise<ShopProduct[]> {
         "coverUrl": coverImage.asset->url,
         pageCount,
         "previewPages": previewPages[]{ "url": image.asset->url, page, blurred },
-        kind, sku, order,
+        kind, sku, order, contents, format, valueNote,
         "fileExt": coalesce(files[0].asset->extension, file.asset->extension),
         "fileCount": count(files) + count(includes[]->files[]),
         "includes": includes[]->{ _id, title },

@@ -8,6 +8,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
 import { areaServed, DEFAULT_COUNTIES, DEFAULT_TOWNS } from '@/lib/areas'
+import { HYPNOBIRTHING_COURSE } from '@/lib/booking-links'
 
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
@@ -149,12 +150,12 @@ function HypnobirthingPageStatic() {
         actions={
           <>
             <a
-              href="https://calendly.com/birthhood/free-consultation"
+              href={HYPNOBIRTHING_COURSE}
               className="btn-primary"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Book Free Consultation
+              Book the Course
             </a>
             <a
               href="/downloads/birth-hood-hypnobirthing-pack.pdf"
@@ -422,9 +423,9 @@ function HypnobirthingPageStatic() {
 
       <CtaBand
         heading="Ready to feel genuinely excited about birth?"
-        body="Book a free consultation to find the right hypnobirthing course for you."
-        href="https://calendly.com/birthhood/free-consultation"
-        label="Book Free Consultation"
+        body="Book your place on the next hypnobirthing course, or get in touch if the dates don't work for you."
+        href={HYPNOBIRTHING_COURSE}
+        label="Book the Course"
       />
 
       <SectionNav href="/hypnobirthing" />
