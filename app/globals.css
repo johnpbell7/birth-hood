@@ -2124,3 +2124,67 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .section-nav-next { text-align: left; }
   .section-nav-next .section-nav-dir { justify-content: flex-start; }
 }
+
+/* ── SHOP: PDF cover as the product shot ─────────────────────────────────── */
+/* The cover sits tilted on a coloured ground. Grounds alternate down the grid
+   so the shop reads as a checkerboard rather than stripes. */
+.shop-ph--dots {
+  background: var(--pink);
+  background-image: radial-gradient(rgba(254,127,204,0.32) 9px, transparent 10px);
+  background-size: 46px 46px;
+}
+.shop-ph--pale { background: linear-gradient(140deg, var(--pink-pale), var(--pink-ultra)); }
+.shop-ph--dots, .shop-ph--pale { overflow: hidden; }
+.shop-cover {
+  position: relative; z-index: 2; height: 112%; width: auto; display: block;
+  border-radius: 3px; background: #fff;
+  box-shadow: 0 14px 34px rgba(17,17,17,0.26), 0 3px 8px rgba(17,17,17,0.14);
+  transform: rotate(-5deg);
+  transition: transform .35s ease;
+}
+.shop-ph--pale .shop-cover { transform: rotate(-3deg); height: 118%; }
+.shop-card:hover .shop-cover { transform: rotate(-5deg) scale(1.03); }
+.shop-card:hover .shop-ph--pale .shop-cover { transform: rotate(-3deg) scale(1.03); }
+@media (prefers-reduced-motion: reduce) {
+  .shop-cover, .shop-card:hover .shop-cover { transition: none; }
+}
+
+/* "See preview" — a link, not another button competing with Add to cart */
+.shop-preview {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: .4rem;
+  background: none; border: 0; padding: 0; margin: 0 0 1.1rem; cursor: pointer;
+  font-family: 'Poppins', sans-serif; font-size: .76rem; font-weight: 500;
+  color: var(--pink-deep); border-bottom: 1px solid currentColor;
+}
+.shop-preview:hover { color: var(--black); }
+
+/* ── SHOP: the preview viewer ────────────────────────────────────────────── */
+.pv {
+  position: fixed; inset: 0; z-index: 300; background: rgba(17,17,17,0.82);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 3rem 1.5rem; overflow: auto;
+}
+.pv-inner { background: var(--white); border-radius: 6px; max-width: 940px; width: 100%; padding: 1.8rem; }
+.pv-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.3rem; }
+.pv-title { font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 600; margin: 0 0 .2rem; line-height: 1.25; }
+.pv-meta { margin: 0; font-size: .84rem; color: var(--grey-mid); font-weight: 300; }
+.pv-close { background: none; border: 0; font-size: 1.8rem; line-height: 1; cursor: pointer; color: var(--grey-light); padding: 0 .2rem; }
+.pv-close:hover { color: var(--black); }
+.pv-pages { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; }
+.pv-page { margin: 0; }
+.pv-page img { width: 100%; display: block; border: 1px solid rgba(0,0,0,0.1); border-radius: 3px; }
+.pv-page figcaption {
+  font-family: 'Poppins', sans-serif; font-size: .64rem; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--grey-light); margin-top: .4rem; text-align: center;
+}
+.pv-page--locked figcaption { color: var(--pink-deep); }
+.pv-foot {
+  margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(0,0,0,0.1);
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+}
+.pv-foot p { margin: 0; font-size: .86rem; color: var(--grey-mid); font-weight: 300; max-width: 46ch; }
+@media (max-width: 640px) {
+  .pv { padding: 1.2rem .8rem; }
+  .pv-inner { padding: 1.2rem; }
+  .pv-pages { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: .7rem; }
+}

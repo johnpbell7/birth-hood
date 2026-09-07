@@ -8,6 +8,7 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
   const [cart, setCart] = useState<Set<string>>(new Set())
   const [loading, setLoading] = useState(false)
   const [notice, setNotice] = useState<string | null>(null)
+  const [preview, setPreview] = useState<ShopProduct | null>(null)
   // Only portal to <body> after mount (document isn't available during SSR).
   const [mounted, setMounted] = useState(false)
   useEffect(() => setMounted(true), [])
@@ -75,11 +76,12 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
           <p className="shop-section-blurb">{section.blurb}</p>
         </div>
         <div className="shop-grid">
-        {section.items.map((p) => {
+        {section.items.map((p, i) => {
           const inCart = cart.has(p._id)
+          const ground = p.coverUrl ? (i % 2 === 0 ? ' shop-ph--dots' : ' shop-ph--pale') : ''
           return (
             <div key={p._id} className={`shop-card${inCart ? ' selected' : ''}`}>
-              <div className="shop-ph">
+              <div className={`shop-ph${ground}`}>
                 {/* Only the two tags that say something the title doesn't.
                     The PDF/Audio tags were removed — they were derived from the
                     file, so Leanne couldn't control them anyway. */}
@@ -94,7 +96,12 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
                     Bundle{p.fileCount ? ` · ${p.fileCount} files` : ''}
                   </span>
                 ) : null}
-                {p.imageUrl ? (
+                {p.coverUrl ? (
+                  /* The PDF's own front page, tilted on a coloured ground —
+                     the cover is the product shot, and the title sits below. */
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={p.coverUrl} alt={`${p.title} cover`} className="shop-cover" />
+                ) : p.imageUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={p.imageUrl} alt={p.title} className="shop-ph-photo" />
                 ) : (
@@ -109,6 +116,14 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
               <div className="shop-card-body">
                 <h3 className="shop-card-title">{p.title}</h3>
                 {p.description && <p className="shop-card-desc">{p.description}</p>}
+                {p.previewPages && p.previewPages.length > 0 && (
+                  <button type="button" className="shop-preview" onClick={() => setPreview(p)}>
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" /><circle cx="12" cy="12" r="3" />
+                    </svg>
+                    See preview
+                  </button>
+                )}
                 {p.kind === 'bundle' && p.includes && p.includes.length > 0 && (
                   <ul className="shop-bundle-list">
                     {p.includes.map((item) => (
@@ -154,6 +169,59 @@ export default function ShopClient({ products, demo = false }: { products: ShopP
         </div>
        </div>
       ))}
+
+      {/* Preview viewer — a few real pages, the rest blurred. The blur is
+          baked into the images themselves, so it cannot be undone in the
+          browser and the paid content stays paid. */}
+      {mounted && preview &&
+        createPortal(
+          <div
+            className="pv"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${preview.title} preview`}
+            onClick={(e) => { if (e.target === e.currentTarget) setPreview(null) }}
+          >
+            <div className="pv-inner">
+              <div className="pv-head">
+                <div>
+                  <h2 className="pv-title">{preview.title}</h2>
+                  <p className="pv-meta">
+                    {preview.pageCount ? `${preview.pageCount} pages · ` : ''}
+                    a look inside before you buy
+                  </p>
+                </div>
+                <button type="button" className="pv-close" onClick={() => setPreview(null)} aria-label="Close preview">×</button>
+              </div>
+
+              <div className="pv-pages">
+                {preview.previewPages?.map((pg) => (
+                  <figure key={pg.page} className={`pv-page${pg.blurred ? ' pv-page--locked' : ''}`}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={pg.url} alt={pg.blurred ? `Page ${pg.page}, locked` : `Page ${pg.page}`} loading="lazy" />
+                    <figcaption>{pg.blurred ? `Page ${pg.page} — in the full copy` : `Page ${pg.page}`}</figcaption>
+                  </figure>
+                ))}
+              </div>
+
+              <div className="pv-foot">
+                <p>
+                  {preview.pageCount
+                    ? `All ${preview.pageCount} pages are yours the moment you buy — delivered as a PDF straight to your inbox.`
+                    : 'The full copy is yours the moment you buy — delivered straight to your inbox.'}
+                </p>
+                <button
+                  type="button"
+                  className={`shop-add${cart.has(preview._id) ? ' on' : ''}`}
+                  onClick={() => { add(preview._id); setPreview(null) }}
+                >
+                  {cart.has(preview._id) ? '✓ In cart' : `Add to cart · £${preview.price.toFixed(2)}`}
+                </button>
+              </div>
+            </div>
+          </div>,
+          document.body,
+        )}
 
       {/* Sticky cart footer — rendered into <body> via a portal so it's always
           fixed to the viewport (no ancestor transform can trap it), staying at

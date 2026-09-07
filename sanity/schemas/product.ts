@@ -82,6 +82,45 @@ export default defineType({
       validation: (R) => R.required().min(0.5).precision(2),
     }),
     defineField({
+      name: 'coverImage',
+      title: 'Cover preview (front page of the PDF)',
+      type: 'image',
+      options: { hotspot: true },
+      description:
+        'Shown as the product photo on the shop card, tilted on a coloured ground. Generated from page 1 of the PDF — replace it here if a different page sells the product better.',
+    }),
+    defineField({
+      name: 'previewPages',
+      title: 'Preview pages',
+      type: 'array',
+      description:
+        'Pages shown in the "See preview" viewer. Blurred pages are blurred in the image itself, not by the website, so the content cannot be recovered.',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'image', title: 'Page', type: 'image' },
+            { name: 'page', title: 'Page number', type: 'number' },
+            { name: 'blurred', title: 'Blurred (locked until purchase)', type: 'boolean' },
+          ],
+          preview: {
+            select: { media: 'image', page: 'page', blurred: 'blurred' },
+            prepare: (sel: Record<string, unknown>) => ({
+              title: `Page ${(sel.page as number) ?? '?'}`,
+              subtitle: sel.blurred ? 'Blurred' : 'Shown in full',
+              media: sel.media as never,
+            }),
+          },
+        },
+      ],
+    }),
+    defineField({
+      name: 'pageCount',
+      title: 'Total pages',
+      type: 'number',
+      description: 'Shown in the preview as "64 pages". Filled in automatically from the PDF.',
+    }),
+    defineField({
       name: 'image',
       title: 'Cover image',
       type: 'image',

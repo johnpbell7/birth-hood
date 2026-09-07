@@ -272,6 +272,13 @@ export type ShopProduct = {
       the projected result, so leaving it out makes `order(order asc)` a no-op
       and the shop falls back to alphabetical. */
   order?: number | null
+  /** Page one of the PDF, shown tilted as the card's product shot. */
+  coverUrl?: string | null
+  /** Total pages in the PDF, shown in the preview header. */
+  pageCount?: number | null
+  /** Pages shown in the "See preview" viewer. Blurred ones are blurred in the
+      image itself, so the content cannot be recovered from the browser. */
+  previewPages?: { url: string; page: number; blurred: boolean }[] | null
 }
 /** One deliverable file. A bundle flattens to its own files plus the files of
     everything it contains. */
@@ -291,6 +298,9 @@ export async function getShopProducts(): Promise<ShopProduct[]> {
     return await client.fetch(
       `*[_type == "product" && active != false]{
         _id, title, description, price, "imageUrl": image.asset->url,
+        "coverUrl": coverImage.asset->url,
+        pageCount,
+        "previewPages": previewPages[]{ "url": image.asset->url, page, blurred },
         kind, sku, order,
         "fileExt": coalesce(files[0].asset->extension, file.asset->extension),
         "fileCount": count(files) + count(includes[]->files[]),
