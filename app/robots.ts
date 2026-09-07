@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
       // Studio is the CMS; hub is a gated client area — keep both out of search
-      disallow: ['/studio', '/hub'],
+      disallow: ['/studio', '/hub', '/shop/preview'],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
   }

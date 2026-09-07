@@ -2228,3 +2228,19 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   font-size: .76rem; font-weight: 400; color: var(--grey-mid);
   margin: 0 0 .55rem; line-height: 1.4;
 }
+
+/* Unlisted preview pages: a bar across the top so nobody mistakes a preview
+   for the live page. Sticky, because the shop is a long scroll. */
+.preview-bar {
+  position: sticky; top: 0; z-index: 250;
+  background: var(--black); color: #fff;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .7rem;
+  padding: .6rem 1.5rem;
+  font-size: .78rem; font-weight: 300; line-height: 1.5;
+}
+.preview-bar strong {
+  font-family: 'Poppins', sans-serif; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase; font-size: .68rem;
+  color: var(--pink);
+}
+.preview-bar a { color: #fff; text-decoration: underline; }
