@@ -459,12 +459,18 @@ nav.nav-hidden { transform: translateY(calc(-100% - 36px)); }
     padding: 1rem 1.4rem; border-radius: 4px;
     font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
     text-decoration: none; box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  /* Out of the way once the footer arrives, so it stops covering the
+     contact details people scrolled down to read. */
+  .mobile-book-fab.is-hidden {
+    opacity: 0; transform: translateY(120%); pointer-events: none;
   }
   /* hero CTA becomes the floating button on mobile */
   /* all hero CTAs hidden on mobile — the floating footer button covers booking site-wide */
   .hero-actions { display: none; }
-  /* keep the floating button clear of footer content */
-  footer { padding-bottom: 6rem; }
+  /* The button now clears itself when the footer arrives, so the footer no
+     longer needs to reserve space for it. */
 }
 
 /* BUTTONS */
@@ -2058,4 +2064,42 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 }
 .shop-soon-actions {
   display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.8rem;
+}
+
+/* SECTION NAV — previous/next along a service journey, above the closing CTA.
+   Quiet by default so it reads as a signpost, not a second call to action. */
+.section-nav { padding: 0 3rem 3.5rem; }
+.section-nav-inner {
+  display: flex; justify-content: space-between; align-items: stretch; gap: 1rem;
+  padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.09);
+}
+.section-nav-link {
+  display: flex; flex-direction: column; gap: 0.3rem;
+  text-decoration: none; color: var(--black); max-width: 46%;
+  padding: 0.9rem 1.2rem; border: 1px solid rgba(0,0,0,0.1); border-radius: 3px;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.section-nav-link:hover {
+  border-color: rgba(254,127,204,0.6);
+  box-shadow: 0 6px 20px rgba(184,63,147,0.08);
+}
+.section-nav-prev:hover { transform: translateX(-3px); }
+.section-nav-next:hover { transform: translateX(3px); }
+.section-nav-next { margin-left: auto; text-align: right; }
+.section-nav-dir {
+  display: flex; align-items: center; gap: 0.35rem;
+  font-family: 'Poppins', sans-serif; font-size: 0.66rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--pink-deep);
+}
+.section-nav-next .section-nav-dir { justify-content: flex-end; }
+.section-nav-title {
+  font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 500;
+  line-height: 1.3; color: var(--black);
+}
+@media (max-width: 640px) {
+  .section-nav { padding: 0 1.5rem 2.5rem; }
+  .section-nav-inner { flex-direction: column; gap: 0.75rem; }
+  .section-nav-link { max-width: 100%; }
+  .section-nav-next { text-align: left; }
+  .section-nav-next .section-nav-dir { justify-content: flex-start; }
 }

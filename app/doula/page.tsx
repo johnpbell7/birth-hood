@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import SectionNav from '@/components/SectionNav'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
@@ -270,6 +271,8 @@ function DoulaPageStatic({ towns }: { towns: string[] }) {
           </p>
         </div>
       </section>
+
+      <SectionNav href="/doula" />
 
       <CtaBand
         heading="Ready to have your person in the room?"

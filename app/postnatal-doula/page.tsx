@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import SectionNav from '@/components/SectionNav'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
 import StatBlockImage from '@/components/StatBlockImage'
@@ -212,6 +213,8 @@ function PostnatalDoulaPageStatic() {
           </div>
         </div>
       </section>
+
+      <SectionNav href="/postnatal-doula" />
 
       <CtaBand
         heading="Ready for support in the fourth trimester?"

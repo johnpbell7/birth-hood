@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import SectionNav from '@/components/SectionNav'
 import Link from 'next/link'
 import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
@@ -119,6 +120,8 @@ function SessionOutlinesPageStatic() {
 
         </div>
       </section>
+
+      <SectionNav href="/session-outlines" />
 
       <CtaBand
         heading="Ready to start your hypnobirthing journey?"

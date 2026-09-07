@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import SectionNav from '@/components/SectionNav'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
 import StatBlockImage from '@/components/StatBlockImage'
@@ -312,6 +313,8 @@ function OvernightDoulaPageStatic() {
           <FaqAccordion items={termsItems} />
         </div>
       </section>
+
+      <SectionNav href="/overnight-doula" />
 
       <CtaBand
         heading="Ready to rest?"

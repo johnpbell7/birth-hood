@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Sparkles } from '@/components/Decor'
+import MobileBookFab from '@/components/MobileBookFab'
 
 interface PolaroidImage {
   src: string
@@ -116,15 +117,10 @@ export default function PageHero({
         )}
       </div>
     </section>
-    {/* Mobile floating CTA — mirrors this page's hero button */}
+    {/* Mobile floating CTA — mirrors this page's hero button, and gets out of
+        the way once the footer is on screen. */}
     {!hideFab && (
-      <a
-        href={ctaHref}
-        className="mobile-book-fab"
-        {...(externalCta ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      >
-        {ctaLabel}
-      </a>
+      <MobileBookFab href={ctaHref} label={ctaLabel} external={externalCta} />
     )}
     </>
   )

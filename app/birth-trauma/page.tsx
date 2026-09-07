@@ -18,7 +18,7 @@ function BirthTraumaPageStatic() {
     <>
       <CmsPageHero
         page="birth-trauma"
-        ctaLabel="Book a Conversation"
+        ctaLabel="Book a Free Consultation"
         title={<>Birth <em>Trauma</em> Support</>}
         subtitle="Whether your birth was frightening, overwhelming or just not what you hoped — your feelings are valid, and you don't have to carry them alone."
         img1={{ src: '/images/trauma-rewind.jpg', alt: 'A safe space' }}
@@ -30,7 +30,7 @@ function BirthTraumaPageStatic() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Book a Conversation
+            Book a Free Consultation
           </a>
         }
       />
@@ -242,7 +242,7 @@ function BirthTraumaPageStatic() {
         heading="Ready to start healing?"
         body="Book a gentle, no-obligation conversation with me to talk about your experience and how I can support you."
         href="https://calendly.com/birthhood/free-consultation"
-        label="Book a Conversation"
+        label="Book a Free Consultation"
       />
     </>
   )

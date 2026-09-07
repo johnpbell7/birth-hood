@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import SectionNav from '@/components/SectionNav'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
@@ -415,6 +416,8 @@ function HypnobirthingPageStatic() {
         </div>
       </section>
 
+
+      <SectionNav href="/hypnobirthing" />
 
       <CtaBand
         heading="Ready to feel genuinely excited about birth?"

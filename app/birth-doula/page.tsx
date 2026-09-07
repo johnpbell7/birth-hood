@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import SectionNav from '@/components/SectionNav'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
@@ -288,6 +289,8 @@ function BirthDoulaPageStatic() {
         </div>
       </section>
 
+
+      <SectionNav href="/birth-doula" />
 
       <CtaBand
         heading="Ready to have your person in the room?"

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import SectionNav from '@/components/SectionNav'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
@@ -202,6 +203,8 @@ function VirtualDoulaPageStatic() {
           </div>
         </div>
       </section>
+
+      <SectionNav href="/virtual-doula" />
 
       <CtaBand
         heading="Ready to get started online?"

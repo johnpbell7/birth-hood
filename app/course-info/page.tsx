@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import SectionNav from '@/components/SectionNav'
 import Link from 'next/link'
 import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
@@ -378,6 +379,8 @@ function CourseInfoPageStatic() {
           </div>
         </div>
       </section>
+
+      <SectionNav href="/course-info" />
 
       <CtaBand
         heading="Ready to book your place?"
