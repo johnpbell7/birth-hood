@@ -2014,30 +2014,38 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   .audio-track-grid { grid-template-columns: 1fr; }
 }
 
-/* MATES RATES — a live discount, so it reads as an offer, not a note. */
-.offer-strip { background: var(--black); color: var(--white); padding: 1.6rem 3rem; }
+/* MATES RATES — a live discount, in brand pink so it reads as an offer
+   rather than another dark band. */
+.offer-strip { background: var(--pink); color: var(--black); padding: 1.8rem 3rem; }
 .offer-strip-inner {
   display: flex; align-items: center; justify-content: space-between;
   gap: 1.5rem 2rem; flex-wrap: wrap;
 }
 .offer-strip-text { display: flex; flex-direction: column; gap: 0.25rem; min-width: 0; }
 .offer-strip-lead {
-  font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 600;
-  color: var(--white); letter-spacing: -0.01em;
+  font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 600;
+  color: var(--black); letter-spacing: -0.01em;
 }
-.offer-strip-sub { font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.62); }
-/* Reads as a coupon: a dashed ticket edge, monospace like a real code, and
-   notches punched out of both sides. */
+.offer-strip-sub { font-size: 0.86rem; font-weight: 300; color: rgba(0,0,0,0.65); }
+
+/* Reads as a coupon: dashed ticket edge and notches punched from both sides. */
 .offer-code {
   position: relative; flex-shrink: 0; white-space: nowrap;
+  display: flex; flex-direction: column; align-items: center; gap: 0.15rem;
+  padding: 0.75rem 1.7rem; background: var(--white);
+  border: 2px dashed var(--black); border-radius: 4px;
+}
+.offer-code-label {
+  font-family: 'Poppins', sans-serif; font-size: 0.6rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-light);
+}
+.offer-code-value {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 1.05rem; font-weight: 700; letter-spacing: 0.22em;
-  color: var(--pink); background: transparent;
-  padding: 0.85rem 1.6rem; border: 2px dashed var(--pink); border-radius: 4px;
+  font-size: 1.1rem; font-weight: 700; letter-spacing: 0.2em; color: var(--black);
 }
 .offer-code::before, .offer-code::after {
   content: ''; position: absolute; top: 50%; width: 14px; height: 14px;
-  background: var(--black); border-radius: 50%; transform: translateY(-50%);
+  background: var(--pink); border-radius: 50%; transform: translateY(-50%);
 }
 .offer-code::before { left: -8px; }
 .offer-code::after { right: -8px; }

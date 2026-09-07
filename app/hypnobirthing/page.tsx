@@ -381,7 +381,10 @@ function HypnobirthingPageStatic() {
               Enter the code at checkout when you book your group course through Ticket Tailor.
             </span>
           </div>
-          <span className="offer-code" aria-label="Discount code MATESRATES">MATESRATES</span>
+          <span className="offer-code">
+            <span className="offer-code-label">Use code</span>
+            <span className="offer-code-value">MATESRATES</span>
+          </span>
         </div>
       </section>
 
