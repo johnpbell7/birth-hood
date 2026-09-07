@@ -16,7 +16,7 @@ const GOOGLE_REVIEW = 'https://g.page/r/CfzJur7y_9nhEAE/review'
 
 const social = {
   instagram: 'https://www.instagram.com/birthhooduk',
-  facebook: 'http://www.facebook.com/Birthhooduk',
+  facebook: 'https://www.facebook.com/Birthhooduk',
   youtube: 'https://youtube.com/@birthhooduk',
 }
 

@@ -84,7 +84,7 @@ function ContactPageStatic() {
                 </a>
 
                 <a
-                  href="http://www.facebook.com/Birthhooduk"
+                  href="https://www.facebook.com/Birthhooduk"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', textDecoration: 'none', color: 'var(--black)', padding: '1.5rem', border: '1px solid rgba(0,0,0,0.08)', borderRadius: '3px', transition: 'border-color 0.3s, transform 0.3s' }}

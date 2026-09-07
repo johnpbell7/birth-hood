@@ -11,7 +11,7 @@ const DEFAULT_TAGLINE = (
 )
 const DEFAULT_SOCIAL = {
   instagram: 'https://www.instagram.com/birthhooduk',
-  facebook: 'http://www.facebook.com/Birthhooduk',
+  facebook: 'https://www.facebook.com/Birthhooduk',
   youtube: 'https://youtube.com/@birthhooduk',
   tiktok: '',
 }

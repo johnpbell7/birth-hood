@@ -3,6 +3,7 @@ import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ScrollRevealInit from '@/components/ScrollRevealInit'
+import Analytics from '@/components/Analytics'
 import { getNavigation } from '@/lib/sanity-queries'
 import { getAreas, areaServed } from '@/lib/areas'
 
@@ -99,6 +100,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
