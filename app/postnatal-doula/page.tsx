@@ -214,14 +214,14 @@ function PostnatalDoulaPageStatic() {
         </div>
       </section>
 
-      <SectionNav href="/postnatal-doula" />
-
       <CtaBand
         heading="Ready for support in the fourth trimester?"
         body="Book a free consultation to discuss postnatal doula support tailored to your family."
         href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
+
+      <SectionNav href="/postnatal-doula" />
     </>
   )
 }

@@ -272,14 +272,14 @@ function DoulaPageStatic({ towns }: { towns: string[] }) {
         </div>
       </section>
 
-      <SectionNav href="/doula" />
-
       <CtaBand
         heading="Ready to have your person in the room?"
         body="Book a free 30-minute consultation to discuss the right doula support for your birth."
         href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
+
+      <SectionNav href="/doula" />
     </>
   )
 }

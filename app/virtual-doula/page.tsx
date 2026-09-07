@@ -204,14 +204,14 @@ function VirtualDoulaPageStatic() {
         </div>
       </section>
 
-      <SectionNav href="/virtual-doula" />
-
       <CtaBand
         heading="Ready to get started online?"
         body="Book your free virtual consultation and let's talk about how I can support you from wherever you are."
         href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
+
+      <SectionNav href="/virtual-doula" />
     </>
   )
 }

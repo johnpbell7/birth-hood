@@ -314,14 +314,14 @@ function OvernightDoulaPageStatic() {
         </div>
       </section>
 
-      <SectionNav href="/overnight-doula" />
-
       <CtaBand
         heading="Ready to rest?"
         body="If you'd like to discuss overnight support, check availability, or find the package that's right for your family, I'd love to hear from you. Together, we'll create a calm, supported start to life with your baby."
         href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
+
+      <SectionNav href="/overnight-doula" />
     </>
   )
 }

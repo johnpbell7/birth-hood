@@ -417,14 +417,14 @@ function HypnobirthingPageStatic() {
       </section>
 
 
-      <SectionNav href="/hypnobirthing" />
-
       <CtaBand
         heading="Ready to feel genuinely excited about birth?"
         body="Book a free consultation to find the right hypnobirthing course for you."
         href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
+
+      <SectionNav href="/hypnobirthing" />
     </>
   )
 }

@@ -290,14 +290,14 @@ function BirthDoulaPageStatic() {
       </section>
 
 
-      <SectionNav href="/birth-doula" />
-
       <CtaBand
         heading="Ready to have your person in the room?"
         body="Book a free consultation to discuss birth doula support for your birth."
         href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
+
+      <SectionNav href="/birth-doula" />
     </>
   )
 }

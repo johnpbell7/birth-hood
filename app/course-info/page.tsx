@@ -380,14 +380,14 @@ function CourseInfoPageStatic() {
         </div>
       </section>
 
-      <SectionNav href="/course-info" />
-
       <CtaBand
         heading="Ready to book your place?"
         body="Start with a free 30-minute consultation — no pressure, just a friendly chat to see if we&apos;re the right fit."
         href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
+
+      <SectionNav href="/course-info" />
     </>
   )
 }

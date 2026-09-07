@@ -121,14 +121,14 @@ function SessionOutlinesPageStatic() {
         </div>
       </section>
 
-      <SectionNav href="/session-outlines" />
-
       <CtaBand
         heading="Ready to start your hypnobirthing journey?"
         body="Book a free consultation to discuss course dates and find the right option for you."
         href="https://calendly.com/birthhood/free-consultation"
         label="Book Free Consultation"
       />
+
+      <SectionNav href="/session-outlines" />
     </>
   )
 }
