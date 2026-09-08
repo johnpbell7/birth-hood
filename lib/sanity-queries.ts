@@ -175,6 +175,9 @@ export type SiteSettings = {
   contactEmail?: string
   /** Hides the shop behind a "coming soon" panel while it is being finished. */
   shopComingSoon?: boolean
+  /** Lead-magnet PDFs served from Sanity rather than shipped with the site. */
+  doulaPackUrl?: string | null
+  hypnobirthingPackUrl?: string | null
   phone?: string
   social?: {
     instagram?: string
@@ -222,7 +225,13 @@ export async function getSiteSettings(): Promise<SiteSettings | null> {
   if (!client) return null
   try {
     return await client.fetch(
-      `*[_type == "siteSettings"][0]`,
+      // Spread the whole document, then resolve the two uploaded PDFs to
+      // their URLs — a raw file field is only an asset reference.
+      `*[_type == "siteSettings"][0]{
+        ...,
+        "doulaPackUrl": doulaPack.asset->url,
+        "hypnobirthingPackUrl": hypnobirthingPack.asset->url
+      }`,
       {},
       { next: { revalidate: 60 } },
     )

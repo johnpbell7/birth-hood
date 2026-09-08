@@ -8,6 +8,7 @@ import JsonLd from '@/components/JsonLd'
 import PackageComparison from '@/components/PackageComparison'
 import PackageQuizModal from '@/components/PackageQuizModal'
 import { cmsOrStatic } from '@/lib/cms-page'
+import { getSiteSettings } from '@/lib/sanity-queries'
 import { areaServed, getAreas, townSentence, DEFAULT_COUNTIES, DEFAULT_TOWNS } from '@/lib/areas'
 
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
@@ -39,7 +40,9 @@ const breadcrumbSchema = {
   ],
 }
 
-function DoulaPageStatic({ towns }: { towns: string[] }) {
+const PACK = '/downloads/birth-hood-doula-pack.pdf'
+
+function DoulaPageStatic({ towns, packUrl }: { towns: string[]; packUrl?: string | null }) {
   return (
     <>
       <JsonLd data={serviceSchema} />
@@ -60,8 +63,10 @@ function DoulaPageStatic({ towns }: { towns: string[] }) {
             >
               Book Free Consultation
             </a>
+            {/* Upload a pack in the Studio and it wins; otherwise the copy
+                shipped with the site is served, so the button always works. */}
             <a
-              href="/downloads/birth-hood-doula-pack.pdf"
+              href={packUrl || PACK}
               className="btn-outline hero-download"
               download
             >
@@ -285,6 +290,6 @@ function DoulaPageStatic({ towns }: { towns: string[] }) {
 }
 
 export default async function DoulaPage() {
-  const { towns } = await getAreas()
-  return cmsOrStatic('doula', <DoulaPageStatic towns={towns} />)
+  const [{ towns }, settings] = await Promise.all([getAreas(), getSiteSettings()])
+  return cmsOrStatic('doula', <DoulaPageStatic towns={towns} packUrl={settings?.doulaPackUrl} />)
 }

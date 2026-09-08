@@ -11,7 +11,7 @@ A full-featured website for birth-hood built with Next.js 15, Tailwind CSS, Sani
 | CMS | Sanity v3 (blog posts + free resources) |
 | Contact form | Resend API |
 | Hosting | Vercel (recommended) |
-| PDF downloads | `/public/downloads/` |
+| PDF downloads | Sanity (Site Settings → Page downloads, and Freebies) |
 
 ## Getting started
 
@@ -93,13 +93,14 @@ sanity/schemas/
 ├── blogPost.ts        # Blog post schema
 └── freebie.ts         # Free resource schema
 
-public/downloads/      # PDF files for download
+public/downloads/      # fallback copies of the two lead-magnet packs
 ```
 
 ## Adding PDF downloads
 
-1. Place PDF files in `/public/downloads/`
-2. Link them from the freebies page at `/downloads/filename.pdf`
+1. Upload the PDF in the Studio — Freebies for the free resources page,
+   or Site Settings → Page downloads for the Doula and Hypnobirthing packs
+2. Nothing else to do: the buttons pick it up within a minute
 3. Or upload them to Sanity as freebie file assets (managed via CMS)
 
 ## CMS Content Types

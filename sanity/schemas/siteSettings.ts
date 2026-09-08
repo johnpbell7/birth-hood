@@ -12,6 +12,7 @@ export default defineType({
     { name: 'homeAbout', title: 'Home — About' },
     { name: 'homeTestimonials', title: 'Home — Testimonials' },
     { name: 'homeFreebies', title: 'Home — Free Resources' },
+    { name: 'downloads', title: 'Page downloads' },
   ],
   fields: [
     // ── Global ──────────────────────────────────────────────────────────────
@@ -243,6 +244,29 @@ export default defineType({
       type: 'text',
       rows: 2,
       group: 'homeFreebies',
+    }),
+
+    // ── Page downloads ──────────────────────────────────────────────────────
+    // The two lead-magnet PDFs offered from the top of the Doula and
+    // Hypnobirthing pages. Uploading here rather than shipping them with the
+    // website means you can swap a pack yourself, and the site stays small.
+    defineField({
+      name: 'doulaPack',
+      title: 'Doula Pack PDF',
+      type: 'file',
+      options: { accept: '.pdf' },
+      description:
+        'The "Download Doula Pack" button at the top of the Doula page. Upload a new PDF to replace it — the button disappears if this is empty.',
+      group: 'downloads',
+    }),
+    defineField({
+      name: 'hypnobirthingPack',
+      title: 'Hypnobirthing Pack PDF',
+      type: 'file',
+      options: { accept: '.pdf' },
+      description:
+        'The "Download Hypnobirthing Pack" button at the top of the Hypnobirthing page. Upload a new PDF to replace it — the button disappears if this is empty.',
+      group: 'downloads',
     }),
   ],
   preview: {

@@ -7,6 +7,7 @@ import CtaBand from '@/components/CtaBand'
 import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
+import { getSiteSettings } from '@/lib/sanity-queries'
 import { areaServed, DEFAULT_COUNTIES, DEFAULT_TOWNS } from '@/lib/areas'
 import { HYPNOBIRTHING_COURSE } from '@/lib/booking-links'
 
@@ -136,7 +137,9 @@ const TOOLS = [
   },
 ]
 
-function HypnobirthingPageStatic() {
+const PACK = '/downloads/birth-hood-hypnobirthing-pack.pdf'
+
+function HypnobirthingPageStatic({ packUrl }: { packUrl?: string | null }) {
   return (
     <>
       <JsonLd data={serviceSchema} />
@@ -157,8 +160,10 @@ function HypnobirthingPageStatic() {
             >
               Book the Course
             </a>
+            {/* Upload a pack in the Studio and it wins; otherwise the copy
+                shipped with the site is served, so the button always works. */}
             <a
-              href="/downloads/birth-hood-hypnobirthing-pack.pdf"
+              href={packUrl || PACK}
               className="btn-outline hero-download"
               download
             >
@@ -434,5 +439,9 @@ function HypnobirthingPageStatic() {
 }
 
 export default async function HypnobirthingPage() {
-  return cmsOrStatic('hypnobirthing', <HypnobirthingPageStatic />)
+  const settings = await getSiteSettings()
+  return cmsOrStatic(
+    'hypnobirthing',
+    <HypnobirthingPageStatic packUrl={settings?.hypnobirthingPackUrl} />,
+  )
 }
