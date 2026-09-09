@@ -2244,3 +2244,68 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   color: var(--pink);
 }
 .preview-bar a { color: #fff; text-decoration: underline; }
+
+/* ── CONTACT: the phone box, split ───────────────────────────────────────────
+   Phone details on the left, a square WhatsApp button on the right. The outer
+   box keeps the border the other contact rows have, so the row still reads as
+   one card; the divider between the two halves is what shows they are separate
+   links. */
+.contact-split {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+  transition: border-color .3s;
+}
+.contact-split:hover { border-color: var(--pink); }
+.contact-split-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--black);
+  min-width: 0;
+}
+.contact-wa {
+  flex: 0 0 108px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  padding: .8rem .6rem;
+  text-align: center;
+  text-decoration: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--pink-pale);
+  color: #128C4A;
+  transition: background .25s, color .25s;
+}
+.contact-wa span {
+  font-family: 'Poppins', sans-serif;
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  color: var(--black);
+}
+.contact-wa:hover { background: #25D366; color: #fff; }
+.contact-wa:hover span { color: #fff; }
+
+@media (max-width: 420px) {
+  /* Too narrow to sit side by side without squeezing the number, so the
+     button becomes a full-width strip under the phone details. */
+  .contact-split { flex-direction: column; }
+  .contact-wa {
+    flex: none;
+    flex-direction: row;
+    gap: .7rem;
+    padding: .9rem;
+    border-left: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
