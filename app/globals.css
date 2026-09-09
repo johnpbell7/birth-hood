@@ -2309,3 +2309,60 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
     border-top: 1px solid rgba(0, 0, 0, 0.08);
   }
 }
+
+/* ── BIRTH TRAUMA: the 3 Step Rewind ─────────────────────────────────────── */
+.rewind-price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .7rem;
+  flex-wrap: wrap;
+  margin: -1.6rem 0 3rem;
+  padding: .7rem 1.2rem;
+  background: var(--white);
+  border-left: 3px solid var(--pink);
+  border-radius: 2px;
+}
+.rewind-price strong {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 1;
+}
+.rewind-price span {
+  font-size: .84rem;
+  font-weight: 300;
+  color: var(--grey-mid);
+}
+
+/* Numbered so people can see the shape of the programme at a glance. */
+.rewind-step {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+  margin-bottom: .5rem;
+}
+
+.rewind-how {
+  max-width: 700px;
+  margin: 3.5rem 0 0;
+}
+.rewind-how-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 1.2rem;
+}
+.rewind-how p {
+  color: var(--grey-mid);
+  font-size: .95rem;
+  line-height: 1.7;
+  font-weight: 300;
+  margin: 0 0 1rem;
+}
+.rewind-how p:last-child { margin-bottom: 0; }

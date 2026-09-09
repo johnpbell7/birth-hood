@@ -7,6 +7,35 @@ import { cmsOrStatic } from '@/lib/cms-page'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
+// The three Rewind sessions, in order. Numbering them matters: people booking
+// this want to know what they are committing to before the first session.
+const REWIND_SESSIONS = [
+  {
+    title: 'Understanding & Relaxation',
+    body:
+      'I will ask you some questions about the event and gain an understanding of how it is ' +
+      'affecting your life now. We will explore your experience through telling it, and establish ' +
+      'how it is affecting your life now. Together we will build a picture of what you would like ' +
+      'for the future and what you would like to experience with your symptoms lifted. I will then ' +
+      'take you through a guided relaxation and provide you with a recording of this to listen to ' +
+      'regularly before session 2.',
+  },
+  {
+    title: 'The Rewind Process',
+    body:
+      'We will do the rewind process. I will ease you into a state of relaxation before guiding ' +
+      'you through remembering the event in a specific way. You will be able to remain calm and ' +
+      'feeling completely safe and secure throughout.',
+  },
+  {
+    title: 'Reflection & Moving Forward',
+    body:
+      'I will check in with how you have been since session 2, giving you the opportunity to ' +
+      'describe any changes that have taken place. We will then focus on visualising the future ' +
+      'and building your confidence in moving forward.',
+  },
+]
+
 export const metadata: Metadata = {
   title: 'Birth Trauma Support & 3 Step Rewind',
   description:
@@ -142,42 +171,47 @@ function BirthTraumaPageStatic() {
             signpost you elsewhere.
           </p>
 
+          <p className="rewind-price">
+            <strong>£145</strong>
+            <span>plus travel, depending on location</span>
+          </p>
+
           <div className="grid-3" style={{ gap: '1.5rem' }}>
-            <div className="card card-pink">
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
-                Understanding &amp; Relaxation
-              </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
-                I will ask you some questions about the event and gain an understanding of how it is
-                affecting your life now. We will explore your experience through telling it, and
-                establish how it is affecting your life now. Together we will build a picture of what
-                you would like for the future and what you would like to experience with your symptoms
-                lifted. I will then take you through a guided relaxation and provide you with a
-                recording of this to listen to regularly before session 2.
-              </p>
-            </div>
+            {REWIND_SESSIONS.map((session, i) => (
+              <div key={session.title} className="card card-pink">
+                <span className="rewind-step">Session {i + 1}</span>
+                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
+                  {session.title}
+                </h3>
+                <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
+                  {session.body}
+                </p>
+              </div>
+            ))}
+          </div>
 
-            <div className="card card-pink">
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
-                The Rewind Process
-              </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
-                We will do the rewind process. I will ease you into a state of relaxation before
-                guiding you through remembering the event in a specific way. You will be able to
-                remain calm and feeling completely safe and secure throughout.
-              </p>
-            </div>
-
-            <div className="card card-pink">
-              <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.7rem' }}>
-                Reflection &amp; Moving Forward
-              </h3>
-              <p style={{ color: 'var(--grey-mid)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 300 }}>
-                I will check in with how you have been since session 2 and giving you the opportunity
-                to describe any changes that have taken place. We will then focus on visualising the
-                future and building your confidence in moving forward.
-              </p>
-            </div>
+          {/* HOW IT WORKS — Leanne's own explanation of the method, kept as
+              one piece of prose rather than broken into claims. */}
+          <div className="rewind-how">
+            <h3 className="rewind-how-title">So, how does Rewind actually work?</h3>
+            <p>
+              The 3-Step Rewind process has its roots in Neuro-Linguistic Programming (NLP) and
+              uses guided relaxation and visualisation to change the way your mind and body respond
+              to a difficult memory. Rather than asking you to repeatedly relive or analyse what
+              happened, Rewind allows you to revisit the memory from a safe, detached perspective
+              while deeply relaxed.
+            </p>
+            <p>
+              The process works with the emotional response attached to the memory — helping to
+              reduce the fear, panic, distress or other unwanted emotions that may have become
+              linked to it. The aim isn&apos;t to erase what happened or make you forget your birth;
+              it&apos;s to help your brain recognise that the event is in the past, so the memory no
+              longer needs to trigger the same intense emotional response in the present.
+            </p>
+            <p>
+              We then look towards the future and the feelings you would like to experience
+              instead — helping you move forward with greater calm, confidence and choice.
+            </p>
           </div>
         </div>
       </section>
