@@ -13,7 +13,7 @@ export const revalidate = 60
 export const metadata: Metadata = {
   title: 'Hypnobirthing Course Dates & Prices',
   description:
-    'Hypnobirthing course options, prices and upcoming dates in Leicestershire and online. Group, private and online courses, plus caesarean preparation.',
+    'Hypnobirthing course options, prices and upcoming dates in Leicestershire and online. One-day and private courses, plus caesarean preparation.',
 }
 
 /** Line icons for the "everything you need" cards — same weight as the tool
@@ -175,37 +175,10 @@ function CourseInfoPageStatic() {
 
           <NextCourse />
 
-          <div className="grid-3" style={{ gap: '1.5rem' }}>
-            {/* Group Course */}
-            <div className="price-card">
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Group Course
-              </div>
-              <div className="price-amount">£225</div>
-              <div className="price-period">per couple · face to face</div>
-              <ul className="price-features">
-                <li>4 weekly group sessions (2.5hrs each)</li>
-                <li>The full birth-hood hypnobirthing &amp; birth preparation course</li>
-                <li>Relaxation audio downloads</li>
-                <li>Comprehensive course workbook</li>
-                <li>Supportive WhatsApp group</li>
-                <li>Post-birth debrief session</li>
-                <li>Online: £200</li>
-              </ul>
-              <a
-                href="/booking"
-                className="btn-outline"
-                style={{ display: 'block', textAlign: 'center' }}
-              >
-                Book Now
-              </a>
-            </div>
-
-            {/* Private Course (featured) */}
+          <div className="price-solo">
+            {/* The one-day course is booked through the band above; this is the
+                private course, which is arranged rather than scheduled. */}
             <div className="price-card featured">
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--pink-deep)', marginBottom: '0.5rem' }}>
-                Most popular
-              </div>
               <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
                 Private 121 Course
               </div>
@@ -222,38 +195,14 @@ function CourseInfoPageStatic() {
                 <li>Online: £325</li>
               </ul>
               <a
-                href="/booking"
+                href="/contact"
                 className="btn-primary"
                 style={{ display: 'block', textAlign: 'center' }}
               >
-                Book Now
+                Contact for availability
               </a>
             </div>
 
-            {/* Online Course */}
-            <div className="price-card">
-              <div style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--grey-mid)', marginBottom: '1rem' }}>
-                Online Course
-              </div>
-              <div className="price-amount">£200</div>
-              <div className="price-period">per couple · group online</div>
-              <ul className="price-features">
-                <li>4 sessions via video call</li>
-                <li>All the same content as in-person</li>
-                <li>UK-wide availability</li>
-                <li>Relaxation audio downloads</li>
-                <li>Comprehensive course workbook</li>
-                <li>Post-birth debrief session</li>
-                <li>121 online: £325</li>
-              </ul>
-              <a
-                href="/booking"
-                className="btn-outline"
-                style={{ display: 'block', textAlign: 'center' }}
-              >
-                Book Now
-              </a>
-            </div>
           </div>
 
           {/* Antenatal Package upgrade note */}
