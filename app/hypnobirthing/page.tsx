@@ -4,6 +4,7 @@ import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
+import NextCourse from '@/components/NextCourse'
 import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
 import { cmsOrStatic } from '@/lib/cms-page'
@@ -177,6 +178,12 @@ function HypnobirthingPageStatic({ packUrl }: { packUrl?: string | null }) {
       />
 
       <MarqueeStrip />
+
+      <section className="section-pad" style={{ paddingBottom: 0 }}>
+        <div className="wrap">
+          <NextCourse />
+        </div>
+      </section>
 
       {/* WHAT IS HYPNOBIRTHING */}
       <section className="section-pad">

@@ -2366,3 +2366,64 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
   margin: 0 0 1rem;
 }
 .rewind-how p:last-child { margin-bottom: 0; }
+
+/* ── The next course date, on the hypnobirthing pages ────────────────────────
+   The date, place and price up front, because those are what decide whether
+   someone books — asking them to click through to find out loses them. */
+.next-course {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem 2rem;
+  margin: 0 0 3rem;
+  padding: 1.6rem 1.8rem;
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 3px solid var(--pink);
+  border-radius: 3px;
+}
+.next-course-body { min-width: 0; }
+.next-course-tag {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: .64rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+  margin-bottom: .45rem;
+}
+.next-course-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 .9rem;
+}
+.next-course-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 2rem;
+  margin: 0;
+}
+.next-course-facts div { display: flex; flex-direction: column; gap: .15rem; }
+.next-course-facts dt {
+  font-family: 'Poppins', sans-serif;
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--grey-light);
+}
+.next-course-facts dd {
+  margin: 0;
+  font-size: .9rem;
+  font-weight: 300;
+  color: var(--black);
+}
+.next-course-cta { flex-shrink: 0; white-space: nowrap; }
+
+@media (max-width: 560px) {
+  .next-course-cta { display: block; width: 100%; text-align: center; }
+}

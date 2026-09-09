@@ -3,6 +3,7 @@ import SectionNav from '@/components/SectionNav'
 import Link from 'next/link'
 import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
+import NextCourse from '@/components/NextCourse'
 import { cmsOrStatic } from '@/lib/cms-page'
 import { HYPNOBIRTHING_COURSE } from '@/lib/booking-links'
 
@@ -171,6 +172,8 @@ function CourseInfoPageStatic() {
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, marginBottom: '3rem', lineHeight: 1.1 }}>
             Course <em style={{ fontStyle: 'italic', color: 'var(--pink-deep)' }}>options</em>
           </h2>
+
+          <NextCourse />
 
           <div className="grid-3" style={{ gap: '1.5rem' }}>
             {/* Group Course */}

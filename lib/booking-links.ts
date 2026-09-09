@@ -16,3 +16,20 @@ export const CONSULTATION = 'https://calendly.com/birthhood/free-consultation'
 
 /** Paid 1-2-1 session. */
 export const POWER_HOUR = 'https://calendly.com/birthhood/power-hour'
+
+/**
+ * The next bookable course, shown as a band on the hypnobirthing pages.
+ *
+ * This is the one place to change it. When the November course sells out or a
+ * new date goes up, edit these five lines — nothing else refers to the date.
+ * Set `date` to an empty string to hide the band entirely and fall back to the
+ * plain "Book the Course" buttons.
+ */
+export const NEXT_COURSE = {
+  name: 'One Day Hypnobirthing & Birth Prep',
+  date: 'Saturday 14 November 2026',
+  time: '10am – 5pm',
+  place: 'Coalville, Leicestershire',
+  price: '£145 per birth team',
+  url: HYPNOBIRTHING_COURSE,
+}
