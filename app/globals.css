@@ -2427,3 +2427,16 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 @media (max-width: 560px) {
   .next-course-cta { display: block; width: 100%; text-align: center; }
 }
+
+/* Two price cards rather than three — the online course was withdrawn, and a
+   three-column grid would leave a hole where it used to be. */
+.price-pair {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+@media (max-width: 700px) {
+  .price-pair { grid-template-columns: 1fr; }
+}
