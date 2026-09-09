@@ -2427,9 +2427,3 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 @media (max-width: 560px) {
   .next-course-cta { display: block; width: 100%; text-align: center; }
 }
-
-/* A single price card, centred — the group and online courses were withdrawn,
-   so a three-column grid would leave one card stranded on the left. */
-.price-solo { max-width: 420px; margin: 0 auto; }
-.price-solo .price-card { transform: rotate(-0.5deg); }
-.price-solo .price-card:hover { transform: rotate(0deg) translateY(-4px); }
