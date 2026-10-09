@@ -2440,3 +2440,27 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 @media (max-width: 700px) {
   .price-pair { grid-template-columns: 1fr; }
 }
+
+/* Leanne's contact details in the footer, under the logo — where people look
+   once they have scrolled to the bottom wanting to get in touch. Brighter than
+   the tagline above them, because they are the thing being looked for. */
+.footer-contact {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.footer-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .85rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: color .3s;
+}
+.footer-contact a:hover { color: var(--pink); }
+.footer-contact svg { flex-shrink: 0; color: var(--pink); }
