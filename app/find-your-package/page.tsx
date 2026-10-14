@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import Link from 'next/link'
 import CmsPageHero from '@/components/CmsPageHero'
 import PackageQuiz from '@/components/PackageQuiz'
@@ -10,11 +11,12 @@ import { cmsOrStatic } from '@/lib/cms-page'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/find-your-package',
   title: 'Find Your Doula Package — 1 Minute Quiz',
   description:
     'Not sure which birth doula package suits you? Take the one-minute quiz for a personalised recommendation — Foundation, Balanced or Ultimate.',
-}
+})
 
 const SITE = 'https://www.birth-hood.co.uk'
 const breadcrumbSchema = {

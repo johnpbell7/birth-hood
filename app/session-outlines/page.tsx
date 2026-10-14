@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import SectionNav from '@/components/SectionNav'
 import Link from 'next/link'
 import CmsPageHero from '@/components/CmsPageHero'
@@ -8,11 +9,12 @@ import { cmsOrStatic } from '@/lib/cms-page'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/session-outlines',
   title: "What's Covered in the Hypnobirthing Course",
   description:
     'A session-by-session breakdown of the birth-hood hypnobirthing course — from birth physiology and breathing to relaxation and birth preferences.',
-}
+})
 
 const sessions = [
   {

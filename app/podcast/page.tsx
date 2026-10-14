@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
@@ -7,11 +8,12 @@ import { cmsOrStatic } from '@/lib/cms-page'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/podcast',
   title: 'Dou-La-La — The Birthy Podcast',
   description:
     'Dou-La-La, the birthy podcast. Two doulas in honest conversation on birth — busting myths and sharing real talk so you feel informed and confident.',
-}
+})
 
 const episodes = [
   {

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import Link from 'next/link'
 import CmsPageHero from '@/components/CmsPageHero'
 import { cmsOrStatic } from '@/lib/cms-page'
@@ -6,11 +7,12 @@ import { cmsOrStatic } from '@/lib/cms-page'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/terms',
   title: 'Terms & Conditions',
   description:
     'Terms and conditions for booking hypnobirthing, doula and yoga services with birth-hood, covering payment, deposits, cancellations and what to expect.',
-}
+})
 
 function TermsPageStatic() {
   return (

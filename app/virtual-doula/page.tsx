@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import SectionNav from '@/components/SectionNav'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
@@ -8,11 +9,12 @@ import { cmsOrStatic } from '@/lib/cms-page'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/virtual-doula',
   title: 'Antenatal & Virtual Doula Support UK-wide',
   description:
     'Antenatal and virtual doula support anywhere in the UK. Birth education, confidence and a doula in your pocket — from £600. Online sessions to suit you.',
-}
+})
 
 function VirtualDoulaPageStatic() {
   return (

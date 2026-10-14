@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
@@ -36,11 +37,12 @@ const REWIND_SESSIONS = [
   },
 ]
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/birth-trauma',
   title: 'Birth Trauma Support & 3 Step Rewind',
   description:
     'Gentle birth trauma support and 3 Step Rewind in Leicestershire and online UK. If your birth left you overwhelmed, healing is possible and you are not alone.',
-}
+})
 
 function BirthTraumaPageStatic() {
   return (

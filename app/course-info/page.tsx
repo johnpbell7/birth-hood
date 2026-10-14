@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import SectionNav from '@/components/SectionNav'
 import Link from 'next/link'
 import CmsPageHero from '@/components/CmsPageHero'
@@ -10,11 +11,12 @@ import { HYPNOBIRTHING_COURSE } from '@/lib/booking-links'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/course-info',
   title: 'Hypnobirthing Course Dates & Prices',
   description:
     'Hypnobirthing course options, prices and upcoming dates in Leicestershire and online. One-day, group and private courses, plus caesarean preparation.',
-}
+})
 
 /** Line icons for the "everything you need" cards — same weight as the tool
     icons on the hypnobirthing page so the two sets read as one family. */

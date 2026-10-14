@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import SectionNav from '@/components/SectionNav'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
@@ -15,11 +16,12 @@ import { HYPNOBIRTHING_COURSE } from '@/lib/booking-links'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/hypnobirthing',
   title: 'Hypnobirthing Courses in Leicester & Online',
   description:
     'Hypnobirthing courses in Leicestershire and online UK-wide. Understand birth, release fear and build real confidence — for every kind of birth.',
-}
+})
 
 const SITE = 'https://www.birth-hood.co.uk'
 const serviceSchema = {

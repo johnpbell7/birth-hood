@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import Image from 'next/image'
 import Link from 'next/link'
 import { client, blogPostsQuery, isSanityConfigured, urlFor } from '@/lib/sanity'
@@ -6,11 +7,12 @@ import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
 import { blogPosts } from '@/lib/blog-posts'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/blog',
   title: 'Birth, Hypnobirthing & Doula Blog',
   description:
     'Honest articles on hypnobirthing, doula support, birth physiology and the postnatal period, from Leanne at birth-hood in Leicestershire.',
-}
+})
 
 // Refresh every 60 seconds
 export const revalidate = 60

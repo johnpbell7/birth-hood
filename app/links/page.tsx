@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import Link from 'next/link'
 import { cmsOrStatic } from '@/lib/cms-page'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/links',
   title: 'All birth-hood Links',
   description:
     'Every birth-hood link in one place — book a consultation, reach the client hub, browse courses, yoga and free resources, and follow Leanne online.',
-}
+})
 
 const CALENDLY = 'https://calendly.com/birthhood/free-consultation'
 // Leanne's own review link from her Google Business Profile — it opens the

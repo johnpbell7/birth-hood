@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import SectionNav from '@/components/SectionNav'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
@@ -11,11 +12,12 @@ import { cmsOrStatic } from '@/lib/cms-page'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/birth-doula',
   title: 'Birth Doula in Leicester & the Midlands',
   description:
     'Continuous in-person birth doula support across Leicestershire and the Midlands. Antenatal planning, comfort in labour and a calm postnatal debrief.',
-}
+})
 
 function BirthDoulaPageStatic() {
   return (

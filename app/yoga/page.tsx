@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
@@ -10,11 +11,12 @@ import { areaServed, DEFAULT_COUNTIES, DEFAULT_TOWNS } from '@/lib/areas'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/yoga',
   title: 'Pregnancy & Baby Yoga in NW Leicestershire',
   description:
     'Pregnancy yoga and parent & baby yoga classes in NW Leicestershire. Move safely, meet other parents and prepare your body for birth and beyond.',
-}
+})
 
 const SITE = 'https://www.birth-hood.co.uk'
 // All yoga bookings go through Ticket Tailor.

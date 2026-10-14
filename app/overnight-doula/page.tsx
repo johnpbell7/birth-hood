@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import SectionNav from '@/components/SectionNav'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
@@ -11,11 +12,12 @@ import { cmsOrStatic } from '@/lib/cms-page'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/overnight-doula',
   title: 'Overnight Doula in Leicester & the Midlands',
   description:
     'Overnight postnatal doula support in Leicestershire, 10pm to 8am. Actually sleep while your baby is fed, settled and cared for by someone experienced.',
-}
+})
 
 const SITE = 'https://www.birth-hood.co.uk'
 const serviceSchema = {

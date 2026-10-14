@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
 import FaqAccordion from '@/components/FaqAccordion'
@@ -9,11 +10,12 @@ import { cmsOrStatic } from '@/lib/cms-page'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/faq',
   title: 'Hypnobirthing & Doula FAQs',
   description:
     'Answers to common questions on hypnobirthing, doula support and pregnancy yoga with Leanne at birth-hood in Leicestershire and online UK.',
-}
+})
 
 const generalFaqs = [
   {

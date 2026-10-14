@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
@@ -9,11 +10,12 @@ import { cmsOrStatic } from '@/lib/cms-page'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/booking',
   title: 'Book a Course, Class or Consultation',
   description:
     'Book a hypnobirthing course, pregnancy yoga class or free consultation with birth-hood in Leicestershire and online UK. Secure your place today.',
-}
+})
 
 // Courses & classes are booked via Ticket Tailor; consultations via Calendly.
 const TICKETS = ALL_EVENTS

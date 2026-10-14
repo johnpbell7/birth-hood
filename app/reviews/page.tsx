@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import type { Review } from '@/lib/reviews'
 import type { BirthStory } from '@/lib/birth-stories'
 import MarqueeStrip from '@/components/MarqueeStrip'
@@ -13,11 +14,12 @@ import { cmsOrStatic } from '@/lib/cms-page'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/reviews',
   title: 'Reviews — Rated 5.0 on Google',
   description:
     'Real reviews from birth-hood families across Leicestershire — hypnobirthing, doula support and pregnancy yoga with Leanne. Rated 5.0 from 69 Google reviews.',
-}
+})
 
 
 function ReviewsPageStatic({ reviews, birthStories }: { reviews: Review[]; birthStories: BirthStory[] }) {

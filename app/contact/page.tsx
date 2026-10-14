@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
 import ContactForm from './ContactForm'
@@ -11,11 +12,12 @@ const WHATSAPP = 'https://wa.me/447814504865'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/contact',
   title: 'Contact Leanne at birth-hood',
   description:
     'Get in touch with Leanne at birth-hood in NW Leicestershire — a question, a booking, or just a chat about what support might suit you best.',
-}
+})
 
 function ContactPageStatic() {
   return (

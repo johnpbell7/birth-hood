@@ -10,13 +10,27 @@ import { cmsOrStatic } from '@/lib/cms-page'
 import { featuredReviews } from '@/lib/reviews'
 import { getFreebies, getSiteSettings, type SiteSettings } from '@/lib/sanity-queries'
 import { urlFor } from '@/lib/sanity'
+import { OG_IMAGE } from '@/lib/seo'
+
+const HOME_TITLE = 'Hypnobirthing & Doula Support in Leicestershire | birth-hood'
+const HOME_DESCRIPTION =
+  'Hypnobirthing courses, doula support and pregnancy yoga in NW Leicestershire and online UK. Feel informed, prepared and genuinely excited for birth.'
 
 export const metadata: Metadata = {
   // Absolute so the "| birth-hood" template is not appended — with it, this
   // title ran to 78 characters and Google truncated it.
-  title: { absolute: 'Hypnobirthing & Doula Support in Leicestershire | birth-hood' },
-  description:
-    'Hypnobirthing courses, doula support and pregnancy yoga in NW Leicestershire and online UK. Feel informed, prepared and genuinely excited for birth.',
+  title: { absolute: HOME_TITLE },
+  description: HOME_DESCRIPTION,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    siteName: 'birth-hood',
+    locale: 'en_GB',
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    url: '/',
+    images: [OG_IMAGE],
+  },
 }
 
 export default async function HomePage() {
