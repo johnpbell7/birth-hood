@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { getSiteSettings } from '@/lib/sanity-queries'
-import { EMAIL, PHONE_DIAL, PHONE_DISPLAY, WHATSAPP } from '@/lib/contact-details'
+import { DEFAULT_SOCIAL, EMAIL, PHONE_DIAL, PHONE_DISPLAY, WHATSAPP } from '@/lib/contact-details'
 
 const DEFAULT_TAGLINE = (
   <>
@@ -10,12 +10,6 @@ const DEFAULT_TAGLINE = (
     Leicester, Midlands and online UK-wide.
   </>
 )
-const DEFAULT_SOCIAL = {
-  instagram: 'https://www.instagram.com/birthhooduk',
-  facebook: 'https://www.facebook.com/Birthhooduk',
-  youtube: 'https://youtube.com/@birthhooduk',
-  tiktok: '',
-}
 
 export default async function Footer() {
   const settings = await getSiteSettings()

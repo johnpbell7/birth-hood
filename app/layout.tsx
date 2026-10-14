@@ -4,8 +4,9 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ScrollRevealInit from '@/components/ScrollRevealInit'
 import Analytics from '@/components/Analytics'
-import { getNavigation } from '@/lib/sanity-queries'
+import { getNavigation, getSiteSettings } from '@/lib/sanity-queries'
 import { getAreas, areaServed } from '@/lib/areas'
+import { DEFAULT_SOCIAL, EMAIL } from '@/lib/contact-details'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.birth-hood.co.uk'
 
@@ -35,20 +36,28 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     images: ['/og-image.jpg'],
   },
-  alternates: { canonical: SITE_URL },
 }
 
 // LocalBusiness structured data — helps Google show birth-hood in local / Maps results
-function buildBusinessJsonLd(areas: string[]) {
+function buildBusinessJsonLd(areas: string[], sameAs: string[]) {
   return {
   '@context': 'https://schema.org',
-  '@type': 'HealthAndBeautyBusiness',
+  // LocalBusiness is the type Google's local results read; HealthAndBeautyBusiness is the closer fit.
+  '@type': ['LocalBusiness', 'HealthAndBeautyBusiness'],
+  '@id': `${SITE_URL}/#business`,
   name: 'birth-hood',
+  alternateName: 'Birth Hood',
   description:
     'Hypnobirthing, doula support and prenatal yoga in Leicester, the Midlands and online across the UK.',
   url: SITE_URL,
+  logo: `${SITE_URL}/images/logo.jpg`,
   image: `${SITE_URL}/og-image.jpg`,
-  email: 'leanne@birth-hood.co.uk',
+  founder: {
+    '@type': 'Person',
+    name: 'Leanne',
+    url: `${SITE_URL}/meet-leanne`,
+  },
+  email: EMAIL,
   telephone: '+447814504865',
   priceRange: '££',
   address: {
@@ -64,13 +73,21 @@ function buildBusinessJsonLd(areas: string[]) {
     bestRating: '5',
     worstRating: '1',
   },
-  sameAs: [
-    'https://www.instagram.com/birthhooduk',
-    'https://www.youtube.com/@birthhooduk',
-    'https://calendly.com/birthhood/free-consultation',
-  ],
+  sameAs,
   areaServed: areas,
   }
+}
+
+// Gives Google the site's name, so it can show "birth-hood" above the result.
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
+  name: 'birth-hood',
+  alternateName: 'Birth Hood',
+  url: SITE_URL,
+  inLanguage: 'en-GB',
+  publisher: { '@id': `${SITE_URL}/#business` },
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -78,7 +95,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const navItems = await getNavigation()
   // Coverage comes from Site Settings, so adding a town in the Studio puts it
   // straight into the location data Google reads.
-  const businessJsonLd = buildBusinessJsonLd(areaServed(await getAreas()))
+  // The same social profiles the footer links to (Site Settings, else the defaults).
+  const settings = await getSiteSettings()
+  const social = { ...DEFAULT_SOCIAL, ...(settings?.social ?? {}) }
+  const sameAs = [social.instagram, social.facebook, social.youtube, social.tiktok].filter(
+    (u): u is string => Boolean(u),
+  )
+  const businessJsonLd = buildBusinessJsonLd(areaServed(await getAreas()), sameAs)
   return (
     <html lang="en">
       <head>
@@ -93,6 +116,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <Nav items={navItems} />
         <ScrollRevealInit />
