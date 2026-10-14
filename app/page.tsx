@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { preload } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
@@ -34,6 +35,9 @@ export const metadata: Metadata = {
 }
 
 export default async function HomePage() {
+  // The faint dots behind the hero are the biggest thing on a phone's first screen, so Google times the
+  // page by them. Asking for them in the <head> starts the download straight away instead of after the CSS.
+  preload('/images/dots-pattern.png', { as: 'image', fetchPriority: 'high' })
   const [settings, freebies] = await Promise.all([getSiteSettings(), getFreebies()])
   // The tags under the freebies heading are the actual free resources, read
   // from the same place /freebies reads them — so adding or renaming one
