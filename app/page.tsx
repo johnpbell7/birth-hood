@@ -257,14 +257,15 @@ function HomePageStatic({
           <h1 className="hero-title">
             {heroHeadline.includes('birth-hood') ? (
               <>
-                {heroHeadline.split('birth-hood')[0].trim()}<br />
-                {/* keep "birth-hood" together on one line (non-breaking hyphen) */}
-                <em style={{ whiteSpace: 'nowrap' }}>birth{'‑'}hood</em>
+                {/* the space after <br /> is invisible on screen but keeps the words apart for Google and screen readers */}
+                {heroHeadline.split('birth-hood')[0].trim()}<br />{' '}
+                {/* nowrap keeps "birth-hood" on one line; a normal hyphen so search reads the real name */}
+                <em style={{ whiteSpace: 'nowrap' }}>birth-hood</em>
                 {heroHeadline.split('birth-hood').slice(1).join('birth-hood')}
               </>
             ) : heroHeadline.includes(',') ? (
               <>
-                {heroHeadline.split(',')[0]},<br />
+                {heroHeadline.split(',')[0]},<br />{' '}
                 <em>{heroHeadline.split(',').slice(1).join(',').trim()}</em>
               </>
             ) : (
