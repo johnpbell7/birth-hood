@@ -17,6 +17,8 @@ export interface BirthStory {
   place: string
   /** Short blurb on the card */
   excerpt: string
+  /** Search-result description, 120-155 characters; used when the excerpt is longer. */
+  seoDescription?: string
   /** Highlighted line partway down the story page */
   pullQuote: string
   /** Story body, one string per paragraph */
@@ -32,6 +34,8 @@ export const birthStories: BirthStory[] = [
     place: 'At home',
     excerpt:
       'Britt planned a water birth, then chose home. She declined an induction, laboured through the night with Rich massaging her back, and met Lexie in the pool in her own front room.',
+    seoDescription:
+      'Britt planned a water birth, then chose home. She declined an induction and met Lexie in the birthing pool in her own front room.',
     pullQuote:
       'I have never felt anxious about the birth, just excited — and it’s all down to the tools and information we gained from doing the course.',
     body: [
@@ -54,6 +58,8 @@ export const birthStories: BirthStory[] = [
     place: 'Melton Birthing Unit',
     excerpt:
       'Told at a routine appointment she was already 4cm and in active labour, Hannah went home instead. She and Gary arrived at Melton at 8cm and met Arlo in the pool that evening.',
+    seoDescription:
+      'Told at a routine appointment she was 4cm and in labour, Hannah went home, then reached Melton at 8cm and met Arlo in the pool.',
     pullQuote:
       'Our birth experience is nothing short of amazing, and something we are both extremely proud of.',
     body: [
@@ -109,6 +115,8 @@ export const birthStories: BirthStory[] = [
     place: 'Leicester Royal Infirmary',
     excerpt:
       'Stacie booked a home birth. Her waters broke two weeks early and the plan changed to induction, epidural and theatre — and she and Nick stayed in control of every step of it.',
+    seoDescription:
+      'Stacie booked a home birth, but her waters broke early. Induction, epidural and theatre followed, and she stayed in control of every step.',
     pullQuote:
       'Even though I didn’t necessarily get the birth I had hoped for, I still gave birth to a happy and healthy baby girl.',
     body: [
@@ -161,6 +169,8 @@ export const birthStories: BirthStory[] = [
     place: 'Hospital induction suite',
     excerpt:
       'Diagnosed with cholestasis at 39 weeks and booked for induction, Amy’s body started without the hospital’s help — and the midwives followed her birth plan to the letter.',
+    seoDescription:
+      'Booked for induction with cholestasis at 39 weeks, Amy’s body started on its own and the midwives followed her birth plan to the letter.',
     pullQuote:
       'It was at this point that I noticed my birth plan on a table and realised that the midwives had read and followed exactly what I had wanted.',
     body: [
@@ -191,6 +201,8 @@ export const birthStories: BirthStory[] = [
     place: 'Derby Birthing Centre',
     excerpt:
       'Told she needed an early induction with no medical reason behind it, Hannah declined — and four days later her labour started on its own. She caught Reid herself in the pool.',
+    seoDescription:
+      'Told she needed an early induction for no medical reason, Hannah declined. Four days later labour began on its own and she caught Reid in the pool.',
     pullQuote:
       'We felt empowered to decline the induction knowing this wasn’t the birth we wanted for our son.',
     body: [

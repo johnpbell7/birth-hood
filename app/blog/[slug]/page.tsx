@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { PortableText } from '@portabletext/react'
 import { client, blogPostQuery, isSanityConfigured, urlFor } from '@/lib/sanity'
 import { blogPosts, getBlogPost, type PostBlock } from '@/lib/blog-posts'
+import { pageMetadata } from '@/lib/seo'
 
 export const revalidate = 60
 
@@ -27,7 +28,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const local = getBlogPost(slug)
   const title = cms?.title ?? local?.title
   if (!title) return { title: 'Post not found' }
-  return { title, description: cms?.excerpt ?? local?.excerpt }
+  const excerpt = cms?.excerpt ?? local?.excerpt
+  // The committed posts carry a shorter search title and description; use them
+  // while the post is still the committed one (a post edited in Sanity keeps its own).
+  const unchanged = !cms || (cms.title === local?.title && cms.excerpt === local?.excerpt)
+  return pageMetadata({
+    path: `/blog/${slug}`,
+    title: (unchanged && local?.seoTitle) || title,
+    description: (unchanged && local?.seoDescription) || excerpt || '',
+    ogType: 'article',
+  })
 }
 
 /** Renders the migrated post body — groups consecutive <li> blocks into one list. */

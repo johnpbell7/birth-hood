@@ -23,6 +23,10 @@ export interface BlogPost {
   publishedAt: string
   readingTime: number
   excerpt: string
+  /** Search-result description, 120-155 characters; used when the excerpt is longer. */
+  seoDescription?: string
+  /** Page title for search results, 60 characters or fewer with the site name; used when the title is longer. */
+  seoTitle?: string
   coverImage?: string
   coverAlt?: string
   body: PostBlock[]
@@ -36,6 +40,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2024-06-13',
     readingTime: 6,
     excerpt: `It’s completely normal to bleed after birth — but how much is too much? What a postpartum haemorrhage actually is, what causes one, and the choices that lower your chances.`,
+    seoDescription: `It’s normal to bleed after birth, but how much is too much? What postpartum haemorrhage is, what causes it and the choices that lower your chances.`,
+    seoTitle: `Postpartum Haemorrhage (PPH) Explained`,
     coverImage: '/images/blog/birth-pool-fairy-lights.jpg',
     coverAlt: `An inflatable birth pool in a dimly lit room with fairy lights and a candle`,
     body: [
@@ -192,6 +198,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2023-04-17',
     readingTime: 5,
     excerpt: `Seven hormones do the heavy lifting in pregnancy and birth. Knowing how they work — and what shuts them down — helps you build a birth space that works with your body.`,
+    seoDescription: `Seven hormones do the heavy lifting in pregnancy and birth. Learn how they work and what shuts them down, to build a birth space your body loves.`,
     coverImage: '/images/blog/hormones-activity-cards.jpg',
     coverAlt: `Hypnobirthing hormone activity cards laid out on the floor with fairy lights`,
     body: [
@@ -223,6 +230,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2023-04-17',
     readingTime: 6,
     excerpt: `It’s the name that lets it down. Hypnobirthing is not swinging clocks and vagina whispering — it’s information, mindset, decision-making tools, and yes, the breathing. Send this to the sceptics.`,
+    seoDescription: `Hypnobirthing isn’t swinging clocks and whispering. It’s information, mindset, decision-making tools and breathing. Send this to the sceptics.`,
     coverImage: '/images/blog/hypnobirthing-class-session.jpg',
     coverAlt: `Leanne running a hypnobirthing session with two couples, using activity cards around a table`,
     body: [

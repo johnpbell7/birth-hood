@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import CtaBand from '@/components/CtaBand'
 import BirthStoryCards from '@/components/BirthStoryCards'
-import { birthStories } from '@/lib/birth-stories'
+import { birthStories, getBirthStory } from '@/lib/birth-stories'
+import { pageMetadata } from '@/lib/seo'
 import { loadBirthStories, loadBirthStory } from '@/lib/birth-stories-source'
 
 type Params = { slug: string }
@@ -16,10 +17,12 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params
   const story = await loadBirthStory(slug)
   if (!story) return { title: 'Story not found' }
-  return {
-    title: story.title,
-    description: story.excerpt,
-  }
+  // The committed stories carry a shorter search description; use it while the
+  // excerpt is still the committed one (a story edited in Sanity keeps its own).
+  const committed = getBirthStory(slug)
+  const description =
+    committed?.seoDescription && story.excerpt === committed.excerpt ? committed.seoDescription : story.excerpt
+  return pageMetadata({ path: `/birth-stories/${slug}`, title: story.title, description, ogType: 'article' })
 }
 
 export default async function BirthStoryPage({ params }: { params: Promise<Params> }) {
