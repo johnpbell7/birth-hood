@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
 import CtaBand from '@/components/CtaBand'
@@ -7,11 +8,12 @@ import { getFreebies } from '@/lib/sanity-queries'
 // Hero wording/photos come from Sanity when set, so pick up edits within a minute.
 export const revalidate = 60
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/freebies',
   title: 'Free Birth Resources & Affirmations',
   description:
     'Free birth resources from birth-hood — 20 printable birth affirmations, a newborn checklist and a hypnobirthing relaxation MP3. No cost, no catch.',
-}
+})
 
 const typeLabel = (t?: string) => {
   if (t === 'pdf') return 'PDF Download'
@@ -93,9 +95,9 @@ export default async function FreebiesPage() {
                   {resource.emoji}
                 </div>
 
-                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.15rem', fontWeight: 500, marginBottom: '0.6rem', lineHeight: 1.3 }}>
+                <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.15rem', fontWeight: 500, marginBottom: '0.6rem', lineHeight: 1.3 }}>
                   {resource.title}
-                </h3>
+                </h2>
                 <p style={{ color: 'var(--grey-mid)', fontSize: '0.87rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.2rem' }}>
                   {resource.desc}
                 </p>

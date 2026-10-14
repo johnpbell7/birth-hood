@@ -13,7 +13,7 @@ export default function NextCourse() {
     <div className="next-course">
       <div className="next-course-body">
         <span className="next-course-tag">Next course</span>
-        <h3 className="next-course-title">{NEXT_COURSE.name}</h3>
+        <p className="next-course-title">{NEXT_COURSE.name}</p>
         <dl className="next-course-facts">
           <div><dt>When</dt><dd>{NEXT_COURSE.date}, {NEXT_COURSE.time}</dd></div>
           <div><dt>Where</dt><dd>{NEXT_COURSE.place}</dd></div>

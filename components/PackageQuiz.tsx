@@ -181,7 +181,7 @@ export default function PackageQuiz({ onClose, compact = false }: { onClose?: ()
         <div className="quiz-progress-bar" style={{ width: `${(step / total) * 100}%` }} />
       </div>
       <div className="quiz-step-count">Question {step + 1} of {total}</div>
-      <h3 className="quiz-q">{cur.q}</h3>
+      <h2 className="quiz-q">{cur.q}</h2>
       {cur.help && <p className="quiz-help">{cur.help}</p>}
       <div className="quiz-options">
         {cur.options.map((o, i) => (
