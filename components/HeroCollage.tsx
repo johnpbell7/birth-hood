@@ -155,7 +155,8 @@ export default function HeroCollage({ photos: cmsPhotos }: { photos?: CollagePho
               alt={photo.alt}
               fill
               style={{ objectFit: 'cover', objectPosition: 'center top' }}
-              priority={i === 2}
+              sizes="(max-width: 820px) 190px, 320px"
+              priority={i < 3}
             />
           </div>
           <span className="hero-frame-label">{photo.label}</span>

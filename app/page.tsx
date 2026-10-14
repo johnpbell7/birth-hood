@@ -406,6 +406,7 @@ function HomePageStatic({
                 src={aboutImage}
                 alt="Leanne — birth-hood founder"
                 fill
+                sizes="(max-width: 820px) 95vw, 530px"
                 style={{ objectFit: 'cover', objectPosition: 'center top' }}
               />
             </div>
@@ -554,6 +555,7 @@ function HomePageStatic({
               src="/images/leanne-peace-111.jpg"
               alt="@birthhooduk on Instagram"
               fill
+              sizes="66px"
               style={{ objectFit: 'cover', objectPosition: 'center top' }}
             />
           </div>
