@@ -4,7 +4,7 @@ import { useState, useEffect, FormEvent } from 'react'
 import type { HubResource } from '@/lib/sanity-queries'
 import ResourceIcon from '@/components/ResourceIcon'
 
-const HUB_PASSWORD = 'BHCLIENT26'
+// The password is checked on the server (app/api/hub/unlock); Leanne changes it in the Studio under Hub Password
 const STORAGE_KEY = 'birthhood_hub_unlocked'
 
 type Resource = {
@@ -199,9 +199,14 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
     setChecked(true)
   }, [])
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault()
-    if (password === HUB_PASSWORD) {
+    const res = await fetch('/api/hub/unlock', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password }),
+    }).catch(() => null)
+    if (res?.ok) {
       setUnlocked(true)
       setError(false)
       if (typeof window !== 'undefined') {

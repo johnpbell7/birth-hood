@@ -15,6 +15,15 @@ export const structure: StructureResolver = (S) =>
         .title('Hub Library')
         .child(S.documentTypeList('hubResource').title('Hub Library')),
       S.listItem()
+        .title('Hub Password')
+        .child(
+          S.editor()
+            .id('hubSettings')
+            .schemaType('hubSettings')
+            // a dot in the id keeps it private: see sanity/schemas/hubSettings.ts
+            .documentId('secrets.hubSettings'),
+        ),
+      S.listItem()
         .title('Freebies')
         .child(S.documentTypeList('freebie').title('Freebies')),
       S.listItem()

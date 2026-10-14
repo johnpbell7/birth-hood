@@ -5,6 +5,7 @@ import freebie from './freebie'
 import page from './page'
 import pageHero from './pageHero'
 import hubResource from './hubResource'
+import hubSettings from './hubSettings'
 import siteSettings from './siteSettings'
 import navigation from './navigation'
 import product from './product'
@@ -14,6 +15,7 @@ export const schemaTypes = [
   page,
   pageHero,
   hubResource,
+  hubSettings,
   freebie,
   blogPost,
   birthStory,
