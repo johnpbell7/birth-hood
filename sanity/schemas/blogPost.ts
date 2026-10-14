@@ -48,6 +48,21 @@ export default defineType({
       validation: (Rule) => Rule.max(200),
     }),
     defineField({
+      name: 'metaTitle',
+      title: 'SEO title',
+      type: 'string',
+      description: 'Shown in browser tabs and Google results. Leave blank to use the post title.',
+      validation: (R) => R.max(60).warning('Google shows about 60 characters'),
+    }),
+    defineField({
+      name: 'metaDescription',
+      title: 'SEO description',
+      type: 'text',
+      rows: 2,
+      description: 'Shown under the title in Google results and when the link is shared. Leave blank to use the built-in one, or the excerpt.',
+      validation: (R) => R.max(160).warning('Google shows about 155 characters'),
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Main Image',
       type: 'image',

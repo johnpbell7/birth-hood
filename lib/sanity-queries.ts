@@ -360,6 +360,8 @@ export async function getShopProductsByIds(ids: string[]): Promise<ShopProductFu
 
 export type SanityBirthStory = {
   title: string
+  metaTitle?: string
+  metaDescription?: string
   slug: string
   type: string
   baby?: string
@@ -375,7 +377,7 @@ export async function getBirthStories(): Promise<SanityBirthStory[]> {
   try {
     return await client.fetch<SanityBirthStory[]>(
       `*[_type == "birthStory"] | order(order asc, title asc) {
-        title, "slug": slug.current, type, baby, place, excerpt, pullQuote, body
+        title, "slug": slug.current, type, baby, place, excerpt, metaTitle, metaDescription, pullQuote, body
       }`,
     )
   } catch (e) { console.error('Sanity getBirthStories failed:', e); return [] }

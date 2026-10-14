@@ -34,8 +34,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const unchanged = !cms || (cms.title === local?.title && cms.excerpt === local?.excerpt)
   return pageMetadata({
     path: `/blog/${slug}`,
-    title: (unchanged && local?.seoTitle) || title,
-    description: (unchanged && local?.seoDescription) || excerpt || '',
+    title: cms?.metaTitle || (unchanged && local?.seoTitle) || title,
+    description: cms?.metaDescription || (unchanged && local?.seoDescription) || excerpt || '',
     ogType: 'article',
   })
 }

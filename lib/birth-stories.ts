@@ -19,6 +19,9 @@ export interface BirthStory {
   excerpt: string
   /** Search-result description, 120-155 characters; used when the excerpt is longer. */
   seoDescription?: string
+  /** SEO title and description typed in the Studio; these win when filled in. */
+  metaTitle?: string
+  metaDescription?: string
   /** Highlighted line partway down the story page */
   pullQuote: string
   /** Story body, one string per paragraph */

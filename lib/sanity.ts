@@ -30,6 +30,8 @@ export const blogPostsQuery = `*[_type == "blogPost"] | order(publishedAt desc) 
   slug,
   publishedAt,
   excerpt,
+  metaTitle,
+  metaDescription,
   category,
   mainImage,
   "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180)

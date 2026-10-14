@@ -20,6 +20,8 @@ export async function loadBirthStories(): Promise<BirthStory[]> {
     baby: s.baby ?? '',
     place: s.place ?? '',
     excerpt: s.excerpt,
+    metaTitle: s.metaTitle || undefined,
+    metaDescription: s.metaDescription || undefined,
     pullQuote: s.pullQuote ?? '',
     // Portable Text -> plain paragraphs, which is all a story body needs.
     body: (s.body ?? [])

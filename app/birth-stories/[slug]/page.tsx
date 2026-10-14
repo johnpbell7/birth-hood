@@ -21,8 +21,9 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   // excerpt is still the committed one (a story edited in Sanity keeps its own).
   const committed = getBirthStory(slug)
   const description =
-    committed?.seoDescription && story.excerpt === committed.excerpt ? committed.seoDescription : story.excerpt
-  return pageMetadata({ path: `/birth-stories/${slug}`, title: story.title, description, ogType: 'article' })
+    story.metaDescription ||
+    (committed?.seoDescription && story.excerpt === committed.excerpt ? committed.seoDescription : story.excerpt)
+  return pageMetadata({ path: `/birth-stories/${slug}`, title: story.metaTitle || story.title, description, ogType: 'article' })
 }
 
 export default async function BirthStoryPage({ params }: { params: Promise<Params> }) {
