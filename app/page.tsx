@@ -11,7 +11,7 @@ import { cmsOrStatic } from '@/lib/cms-page'
 import { featuredReviews } from '@/lib/reviews'
 import { getFreebies, getSiteSettings, type SiteSettings } from '@/lib/sanity-queries'
 import { urlFor } from '@/lib/sanity'
-import { OG_IMAGE } from '@/lib/seo'
+import { shareImageFor } from '@/lib/seo'
 
 const HOME_TITLE = 'Hypnobirthing & Doula Support in Leicestershire | birth-hood'
 const HOME_DESCRIPTION =
@@ -30,7 +30,13 @@ export const metadata: Metadata = {
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
     url: '/',
-    images: [OG_IMAGE],
+    images: [shareImageFor('/')],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: [shareImageFor('/')],
   },
 }
 

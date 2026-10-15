@@ -37,6 +37,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: cms?.metaTitle || (unchanged && local?.seoTitle) || title,
     description: cms?.metaDescription || (unchanged && local?.seoDescription) || excerpt || '',
     ogType: 'article',
+    // A post with its own main image in the Studio shares that picture; otherwise the page's default.
+    image: cms?.mainImage?.asset
+      ? {
+          url: urlFor(cms.mainImage).width(1200).height(630).fit('crop').url(),
+          width: 1200,
+          height: 630,
+          alt: cms.mainImage.alt || title,
+        }
+      : undefined,
   })
 }
 

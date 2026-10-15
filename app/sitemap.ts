@@ -15,7 +15,7 @@ const routes = [
   '', 'hypnobirthing', 'yoga', 'doula', 'birth-doula', 'postnatal-doula',
   'overnight-doula', 'virtual-doula', 'birth-trauma', 'meet-leanne',
   'course-info', 'session-outlines', 'booking', 'contact',
-  'faq', 'find-your-package', 'reviews', 'podcast', 'links', 'terms',
+  'faq', 'find-your-package', 'reviews', 'podcast', 'terms',
   'freebies', 'shop', 'blog', 'birth-stories',
   ...birthStories.map((s) => `birth-stories/${s.slug}`),
   ...blogPosts.map((p) => `blog/${p.slug}`),

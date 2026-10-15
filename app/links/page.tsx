@@ -8,6 +8,8 @@ export const metadata: Metadata = pageMetadata({
   title: 'All birth-hood Links',
   description:
     'Every birth-hood link in one place — book a consultation, reach the client hub, browse courses, yoga and free resources, and follow Leanne online.',
+  // Leanne's Instagram link-in-bio page: a list of links, not something to find through Google.
+  noindex: true,
 })
 
 const CALENDLY = 'https://calendly.com/birthhood/free-consultation'
