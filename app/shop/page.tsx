@@ -4,6 +4,7 @@ import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import CmsPageHero from '@/components/CmsPageHero'
 import ShopClient from '@/components/ShopClient'
+import ShopHowItWorks from '@/components/ShopHowItWorks'
 import { getShopProducts, getSiteSettings } from '@/lib/sanity-queries'
 import { PLACEHOLDER_PRODUCTS } from '@/lib/shop-placeholders'
 
@@ -57,6 +58,7 @@ export default async function ShopPage() {
               <Link href="/contact" className="btn-outline">Get in touch</Link>
             </div>
           </div>
+          <ShopHowItWorks open={false} />
         </section>
       </>
     )
@@ -93,6 +95,10 @@ export default async function ShopPage() {
           )}
           <ShopClient products={products} demo={demo} />
         </div>
+      </section>
+
+      <section className="section-pad" style={{ paddingTop: 0 }}>
+        <ShopHowItWorks open />
       </section>
     </>
   )
