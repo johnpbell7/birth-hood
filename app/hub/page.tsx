@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import HubClient from './HubClient'
-import { getHubResources } from '@/lib/sanity-queries'
 
 export const metadata: Metadata = {
   title: 'Client Hub',
@@ -8,7 +7,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
-export default async function HubPage() {
-  const resources = await getHubResources()
-  return <HubClient sanityResources={resources} />
+// The files are not fetched here, so none of them are in the page: HubClient asks /api/hub for them after the password
+export default function HubPage() {
+  return <HubClient />
 }

@@ -4,7 +4,8 @@ import { useState, useEffect, FormEvent } from 'react'
 import type { HubResource } from '@/lib/sanity-queries'
 import ResourceIcon from '@/components/ResourceIcon'
 
-// The password is checked on the server (app/api/hub/unlock); Leanne changes it in the Studio under Hub Password
+// The password is checked on the server (app/api/hub/unlock); Leanne changes it in the Studio under Hub Password.
+// This flag only remembers "unlocked in this tab"; the files themselves need the cookie the unlock sets.
 const STORAGE_KEY = 'birthhood_hub_unlocked'
 
 type Resource = {
@@ -175,9 +176,15 @@ function buildUsefulSites(resources: HubResource[]): UsefulSite[] {
     }))
 }
 
-type HubClientProps = { sanityResources?: HubResource[] }
+/** The files come from the server only after the password (the page itself has none of them). */
+async function readResources(res: Response | null): Promise<HubResource[] | null> {
+  if (!res?.ok) return null
+  const data = await res.json().catch(() => null)
+  return Array.isArray(data?.resources) ? data.resources : null
+}
 
-export default function HubClient({ sanityResources = [] }: HubClientProps) {
+export default function HubClient() {
+  const [sanityResources, setSanityResources] = useState<HubResource[]>([])
   const liveGroups = buildPdfGroups(sanityResources)
   const liveAlbums = buildAudioAlbums(sanityResources)
   const liveSites = buildUsefulSites(sanityResources)
@@ -193,10 +200,23 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
   const [checked, setChecked] = useState(false)
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && sessionStorage.getItem(STORAGE_KEY) === '1') {
-      setUnlocked(true)
+    if (typeof window === 'undefined' || sessionStorage.getItem(STORAGE_KEY) !== '1') {
+      setChecked(true)
+      return
     }
-    setChecked(true)
+    // unlocked earlier in this tab: the cookie from the unlock gets the files again
+    fetch('/api/hub/resources', { cache: 'no-store' })
+      .catch(() => null)
+      .then(readResources)
+      .then((resources) => {
+        if (resources) {
+          setSanityResources(resources)
+          setUnlocked(true)
+        } else {
+          sessionStorage.removeItem(STORAGE_KEY)
+        }
+        setChecked(true)
+      })
   }, [])
 
   async function handleSubmit(e: FormEvent) {
@@ -206,7 +226,9 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password }),
     }).catch(() => null)
-    if (res?.ok) {
+    const resources = await readResources(res)
+    if (resources) {
+      setSanityResources(resources)
       setUnlocked(true)
       setError(false)
       if (typeof window !== 'undefined') {
@@ -220,6 +242,8 @@ export default function HubClient({ sanityResources = [] }: HubClientProps) {
   function handleLogout() {
     setUnlocked(false)
     setPassword('')
+    setSanityResources([])
+    fetch('/api/hub/unlock', { method: 'DELETE' }).catch(() => null)
     if (typeof window !== 'undefined') {
       sessionStorage.removeItem(STORAGE_KEY)
     }
