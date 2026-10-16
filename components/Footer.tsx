@@ -129,7 +129,7 @@ export default async function Footer() {
 
       <div className="footer-credit">
         <span className="footer-credit-role">Website Design &amp; Development</span>
-        <span className="footer-credit-name">John Bell</span>
+        <span className="footer-credit-name"><a href="https://jbdesignagency.co.uk/" target="_blank" rel="noopener">JB Design Agency</a></span>
         <span className="footer-credit-sep" aria-hidden="true">|</span>
         <span>Graphic Design: Branding, Print &amp; Web</span>
         <span className="footer-credit-sep" aria-hidden="true">|</span>
