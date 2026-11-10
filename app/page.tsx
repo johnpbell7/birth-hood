@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MarqueeStrip from '@/components/MarqueeStrip'
 import HeroCollage from '@/components/HeroCollage'
+import MobileBookFab from '@/components/MobileBookFab'
 import { Sparkles } from '@/components/Decor'
 import { DEFAULT_PHOTOS } from '@/lib/hero-photos'
 import InstagramSection from '@/components/InstagramSection'
@@ -234,14 +235,7 @@ function HomePageStatic({
   return (
     <>
       {/* Mobile floating CTA — mirrors the hero button */}
-      <a
-        href={heroCtaHref}
-        className="mobile-book-fab"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {heroCta}
-      </a>
+      <MobileBookFab href={heroCtaHref} label={heroCta} external />
 
       {/* HOME HERO */}
       <section className="home-hero-split">
