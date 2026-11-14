@@ -104,11 +104,20 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   )
   const businessJsonLd = buildBusinessJsonLd(areaServed(await getAreas()), sameAs)
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* the hero headline's weights, fetched first (fonts are hosted with the site: app/fonts.css) */}
         <link rel="preload" href="/fonts/poppins-600-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/poppins-600i-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        {/* TEMPORARY (14 Nov 2026, 30 minutes): the whole site shows upside down until 21:40 UK time, then
+            switches itself back. Not in the Studio. Remove this script and the .upside-down rules in
+            globals.css afterwards. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "if(Date.now()<Date.parse('2026-11-14T21:40:00Z')&&!/^\\/studio/.test(location.pathname))document.documentElement.classList.add('upside-down')",
+          }}
+        />
       </head>
       <body>
         <script

@@ -2484,3 +2484,20 @@ footer { background: var(--black); padding: 4.5rem 3rem 2rem; }
 }
 .footer-contact a:hover { color: var(--pink); }
 .footer-contact svg { flex-shrink: 0; color: var(--pink); }
+
+/* TEMPORARY (14 Nov 2026, 30 minutes): the site upside down. The page scrolls inside a flipped body so
+   the menu and buttons still work. Remove with the script in app/layout.tsx. */
+html.upside-down,
+html.upside-down body {
+  height: 100% !important;
+  overflow: hidden !important;
+}
+html.upside-down body {
+  overflow-y: auto !important;
+  transform: rotate(180deg);
+}
+html.upside-down .reveal,
+html.upside-down main section {
+  opacity: 1 !important;
+  transform: none !important;
+}
